@@ -1,0 +1,9 @@
+5-results
+4-images/*.png
+7-libraries/bdLibrary/__pycache__
+7-libraries/desktopLibrary/__pycache__
+7-libraries/geracaoDadosLibrary/__pycache__
+7-libraries/reportsLibrary/__pycache__
+7-libraries/seleniumLibraryAuxiliar/__pycache__
+*.log
+*.png
