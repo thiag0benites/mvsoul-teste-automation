@@ -37,19 +37,12 @@ Na instalação marcar a opção ADD PATH na primeira tela
     **pip install robotframework-imagehorizonlibrary**<br>
     **py -m pip install --upgrade pip**
     **pip install selenium robotframework-selenium2library webdrivermanager**
-<<<<<<< HEAD
     **pip install robotframework-SikuliLibrary**
     **pip install -U robotframework-databaselibrary**
-=======
->>>>>>> feature/marcio
     ** - instalar drivers: **
         ex:
             webdrivermanager chrome
 
-<<<<<<< HEAD
-
-=======
->>>>>>> feature/marcio
 ## Configuração de Ambiente Linux
    **OBS: Configuração vai funcionar em qualquer distribuição baseada em Debian ou Ubuntu**
 
