@@ -20,8 +20,8 @@ Resource                  ../../1-resources/auxiliar/Genericos.robot
 Resource                  ../../1-resources/bd/BancoDados.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
-Suite Setup               Nova sessao
-Suite Teardown            Encerra sessao
+# Suite Setup               Nova sessao
+# Suite Teardown            Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup                Nova sessao
 # Test Teardown             Encerra sessao
@@ -36,8 +36,9 @@ ${dados}
 SCR4M-001:Devolucao Paciente Teste RPA
 # robot -v browser:chrome -t "SCR4M-001:Devolucao Paciente Teste RPA" -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
 # robot -v browser:firefox -t "SCR4M-001:Devolucao Paciente Teste RPA" -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-    ${dados}       Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4M-001"
-    Acessar a tela "Materias e Logística>Almoxarifado>Movimentações>Devoluções>De Pacientes"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4M-001"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Devoluções>De Pacientes"@nprint @las
+    # Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Lançamentos>Guias>Central de Autorizações"
     # Clicar em |estoque|
     # Filtrar por "%FARMACIA%CENTRAL%"
     # Na aba Cosulta de atendimento Filtrar pelo nome "PACIENTE TESTE RPA"
