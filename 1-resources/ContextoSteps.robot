@@ -8,7 +8,6 @@ Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
 ### Dados do Teste
 Resource          dados/DadosTeste.robot
-Resource          MonitoracaoFaturamentoStepsTISS.robot
 
 *** Variable ***
 ${imgVisivel}
