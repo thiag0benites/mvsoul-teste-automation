@@ -4,13 +4,8 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource    ../../2-pages/LoginPage.robot
-Resource    ../../2-pages/HomePage.robot
-Resource    ../../2-pages/O_TRANSF_CC_RPA_PAGE.robot
+Resource    ../../2-pages/2-ASSISTENCIAL/O_TRANSF_CC_RPA_PAGE.robot
 ### Metodos Genericos
-Resource    auxiliar/Genericos.robot
-### Dados do Teste
-# Resource    dados/DadosTeste.robot
-Resource    ../1-resources/bd/BancoDados.robot
+
 
 *** Variable ***
