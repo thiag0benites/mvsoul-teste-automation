@@ -20,8 +20,8 @@ Resource            ../../1-resources/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_STEPS.ro
 Suite Setup       Nova sessão
 Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
-Test Setup          Nova sessao
-# Test Teardown       Encerra sessão
+Test Setup        Nova sessão
+# Test Teardown     Encerra sessão
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
