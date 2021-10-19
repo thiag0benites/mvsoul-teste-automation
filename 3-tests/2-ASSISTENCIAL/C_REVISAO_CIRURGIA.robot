@@ -30,6 +30,7 @@ ${suite}
 ${dados}
 
 *** Test Case ***
-Revisar Cirurgia
-# robot -v browser:chrome -t "Revisar Cirurgia" -d ./5-results/SMK-001 "3-tests/0-JORNADA_PACIENTE/JornadaPaciente.robot"
-# robot -v browser:firefox -t "Revisar Cirurgia" -d ./5-results/SMK-001 "3-tests/0-JORNADA_PACIENTE/JornadaPaciente.robot"
+SCR2A-001:Revisar Cirurgia
+# robot -v browser:chrome -t "SCR2A-001:Revisar Cirurgia" -d ./5-results/SCR2A-001 "3-tests/2-ASSISTENCIAL/C_REVISAO_CIRURGIA.robot"
+# robot -v browser:firefox -t "SCR2A-001:Revisar Cirurgia" -d ./5-results/SCR2A-001 "3-tests/2-ASSISTENCIAL/C_REVISAO_CIRURGIA.robot"
+    Acessar a tela "Atendimento>"@nprint @las
