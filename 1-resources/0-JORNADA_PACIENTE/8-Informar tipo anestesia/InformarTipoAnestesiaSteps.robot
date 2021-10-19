@@ -4,8 +4,6 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../../2-pages/LoginPage.robot
-Resource          ../../../2-pages/HomePage.robot
 Resource          ../../../2-pages/Jornada do Paciente/InformarTipoAnestesiaPage.robot
 ### Dados do Teste
 # Resource          ../../bd/BancoDados.robot
