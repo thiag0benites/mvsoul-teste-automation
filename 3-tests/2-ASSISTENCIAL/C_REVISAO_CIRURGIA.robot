@@ -13,15 +13,14 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_PAGE.robot
 Resource            ../../1-resources/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
-Suite Setup       Nova sessão
-Suite Teardown    Encerra sessão
+# Suite Setup       Nova sessão
+# Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessão
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados

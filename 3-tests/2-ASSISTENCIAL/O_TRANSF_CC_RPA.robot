@@ -29,3 +29,4 @@ Test Teardown     Encerra sessao
 # ${dados}
 
 *** Test Case ***
+SCR1AOTRAN-001:Fluxo Principal
