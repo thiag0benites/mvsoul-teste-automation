@@ -4,9 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../../2-pages/LoginPage.robot
-Resource          ../../../2-pages/HomePage.robot
-Resource          ../../../2-pages/Jornada do Paciente/RealizarPreAgendamentoCirurgicoPage.robot
+Resource    ../../../2-pages/0-JORNADA_PACIENTE/RealizarAgendamentoCirurgicoPage.robot
 
 *** Variable ***
 

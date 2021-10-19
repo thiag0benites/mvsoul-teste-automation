@@ -20,6 +20,9 @@ ${i}
 #    Métodos sem retorno (Procedimentos)
 ##############################################################################################################################################################################
 ### Método sikuli (erro: não funciona em linux)
+Nova aba browser
+    Switch Window    NEW
+
 Muda elemento Javascript
     Sleep    1
     ${elemento2}    Get WebElement    ${ContaAtendimentoContadorNotificação}
@@ -61,15 +64,6 @@ Seleciona frame
     Wait Until Element Is Enabled    ${elementoFrame}    ${timeout}    O elemento Frame ${elementoFrame} não esta habilitado
     Select Frame    ${elementoFrame}
     Sleep    1
-# Seleciona aba
-#    [Arguments]    ${numAba}
-#    FOR    ${i}    IN    RANGE    30
-#    Sleep    1
-#    @{abas}    Switch Window
-#    END
-#    Select Window    ${numAba}
-# Seleciona aba
-#    Switch Window    NEW
 
 Click Elemento por titulo
     [Arguments]    ${titulo}    ${timeout}=${60}
@@ -88,6 +82,7 @@ Realcar Elemento
         Execute Javascript    "arguments[0].setAttribute(arguments[1],arguments[2]);",element,'style',${cssOriginal}
         Sleep    0.150
     END
+
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
 ##############################################################################################################################################################################
@@ -206,12 +201,3 @@ Conta Linhas Tabela
     @{Linhas}    Get WebElements    ${LocatorTabela}//tbody//tr
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
-# Valida elemento visivel
-#    [Arguments]    ${elemento}
-#    ${flag}    Set Variable    false
-#    ${x}    ${y}    Get Element Size    ${elemento}
-#    ${cont}    Evaluate    ${x} + ${y}
-#    IF    ${cont} > 0
-#    ${flag}    Set Variable    true
-#    END
-#    [Return]    ${flag}

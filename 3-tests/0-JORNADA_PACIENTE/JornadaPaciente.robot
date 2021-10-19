@@ -3,33 +3,31 @@
 # Decrição: Smoke Test da Jornada do Paciente
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/JornadaPaciente "3-tests\Jornada do paciente/JornadaPaciente.robot"
-# firefox: robot -v browser:firefox -d ./5-results/JornadaPaciente "3-tests\Jornada do paciente/JornadaPaciente.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/0-JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
+# firefox: robot -v browser:firefox -d ./5-results/JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/JornadaPaciente "3-tests\Jornada do paciente/JornadaPaciente.robot"
-# firefox: robot -v browser:headlessfirefox -d ./5-results/JornadaPaciente "3-tests\Jornada do paciente/JornadaPaciente.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
+# firefox: robot -v browser:headlessfirefox -d ./5-results/JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/bd/BancoDados.robot
-Resource            ../../1-resources/ContextoSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/1-Cadastro de Paciente/CadastroDePacienteSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/2-Cadastrar Pre-Internacao/CadastrarPreInternacaoSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/3-Realizar pre-agendamento cirurgico/RealizarPreAgendamentoCirurgicoSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/4-Consultar Cadastro de Paciente/ConsultarCadastroDePacienteSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/5-Realizar agendamento cirurgico/RealizarAgendamentoCirurgicoSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/6-Realizar atendimento de internacao/RealizarAtendimentoInternacaoConvParticularSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/7-Gerar um aviso de cirurgia/GerarAvisoCirurgiaSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/8-Informar tipo anestesia/InformarTipoAnestesiaSteps.robot
-Resource            ../../1-resources/Jornada do Paciente/9-Informar equipamentos/InformarEquipamentosSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/1-Cadastro de Paciente/CadastroDePacienteSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/2-Cadastrar Pre-Internacao/CadastrarPreInternacaoSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/3-Realizar pre-agendamento cirurgico/RealizarPreAgendamentoCirurgicoSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/4-Consultar Cadastro de Paciente/ConsultarCadastroDePacienteSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/5-Realizar agendamento cirurgico/RealizarAgendamentoCirurgicoSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/6-Realizar atendimento de internacao/RealizarAtendimentoInternacaoConvParticularSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/7-Gerar um aviso de cirurgia/GerarAvisoCirurgiaSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/8-Informar tipo anestesia/InformarTipoAnestesiaSteps.robot
+Resource            ../../1-resources/0-JORNADA_PACIENTE/9-Informar equipamentos/InformarEquipamentosSteps.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
-Test Setup          Nova sessão
+Test Setup          Nova sessao
 # Test Teardown       Encerra sessão
 
 *** Variable ***
@@ -40,8 +38,8 @@ ${dados}
 
 *** Test Case ***
 SMK-001:Jornada do Paciente
-# robot -v browser:chrome -t "SMK-001:Jornada do Paciente" -d ./5-results/SMK-001 "3-tests/Jornada do paciente/JornadaPaciente.robot"
-# robot -v browser:firefox -t "SMK-001:Jornada do Paciente" -d ./5-results/SMK-001 "3-tests/Jornada do paciente/JornadaPaciente.robot"
+# robot -v browser:chrome -t "SMK-001:Jornada do Paciente" -d ./5-results/SMK-001 "3-tests/0-JORNADA_PACIENTE/JornadaPaciente.robot"
+# robot -v browser:firefox -t "SMK-001:Jornada do Paciente" -d ./5-results/SMK-001 "3-tests/0-JORNADA_PACIENTE/JornadaPaciente.robot"
 ### Registros gravados com sucesso (2 registros gravados).
 #SMF-9620:Cadastrar o paciente
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMK-001"

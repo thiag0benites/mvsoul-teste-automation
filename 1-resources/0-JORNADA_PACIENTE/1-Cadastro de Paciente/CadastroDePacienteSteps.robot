@@ -24,8 +24,9 @@ Informar os campos que foram configurados como obrigatorios na tela${print}
     ${cpf}    Replace String    ${cpf}    -    ${EMPTY}
     Preencher campo    ${inputCpf}    ${cpf}
     # Tempo necessário para o preenchimento do campo numero corretamente
-    Sleep    1
+    # Sleep    1
     Preencher campo    ${numeroEndereco}    100
+    Sleep    1
 
 Verificar mensagem de aviso
     Wait Until Element Is Visible    ${msgWarning}    5
@@ -39,7 +40,6 @@ Verificar mensagem de aviso
     # END
 
 Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
-    
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    60
         Click Element    ${btnSalvar}
@@ -51,45 +51,39 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         ELSE
             Log To Console    *** Mensagem de alerta não foi apresentada!
         END
-
     ELSE IF    '${nomeBtn}' == 'Retornar'
         Wait Until Element Is Visible    ${btnRetornar}    30
         Sleep    1
         Click Element    ${btnRetornar}
         Sleep    1
-
     ELSE IF    '${nomeBtn}' == 'Sim'
         Wait Until Element Is Visible    ${btnSim}    30
         Sleep    1
         Click Element    ${btnSim}
         Sleep    1
-
     ELSE IF    '${nomeBtn}' == '1-Pesquisar'
         Wait Until Element Is Visible    ${btnPesquisarNome}    30
         Sleep    1
         Click Element    ${btnPesquisarNome}
-        Sleep    1    
-    
+        Sleep    1
     ELSE IF    '${nomeBtn}' == '3-Confirmar'
         Wait Until Element Is Visible    ${btnConfirmaNome}    30
         Sleep    1
         Click Element    ${btnConfirmaNome}
-        Sleep    1 
-
+        Sleep    1
     ELSE IF    '${nomeBtn}' == 'Internar'
         Wait Until Element Is Visible    ${btnInternar}    30
         Sleep    1
         #Click Element    ${btnInternar}
         Click Javascript    ${btnInternar}
-        Sleep    1     
-
+        Sleep    1
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|
     Sleep    1
-    Should Not Be Empty    ${inputCodPaciente} 
+    Should Not Be Empty    ${inputCodPaciente}
     #${xpathCodPaciente}
-    ${codPaciente}    SeleniumLibrary.Get Element Attribute    ${inputCodPaciente}    title   
+    ${codPaciente}    SeleniumLibrary.Get Element Attribute    ${inputCodPaciente}    title
     #${xpathCodPaciente}    title
     Should Not Be Empty    ${codPaciente}
     ${nome}    SeleniumLibrary.Get Element Attribute    ${inputNomePaciente}    title

@@ -6,10 +6,6 @@
 # Exemplo:
 #                 ${dadosLoginUsuario}
 ##################################################################################################################################
-*** Settings ***
-# Resource        ../../Config.robot
-# Resource        ../../Config_harman.robot
-
 *** Variable ***
 ### Dados de Login
 ${dadosLoginUsuarioQaDevelop}    ANDREVASCONCELOS
