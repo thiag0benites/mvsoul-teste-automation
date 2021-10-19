@@ -65,6 +65,7 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Seleciona frame    ${IdIframe}    180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
+    Sleep    20
 
 Criar Lista Itens Menu Xpath com Index
     [Arguments]    @{listaItensMenu}
