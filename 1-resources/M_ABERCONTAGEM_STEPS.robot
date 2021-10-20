@@ -9,25 +9,23 @@ Resource          ../2-pages/M_ABERCONTAGEM_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Usuário deverá preencher o campo <Estoque>"${estoque}"
-    Wait Until Element Is Visible    ${estoqueTable}          120
+Usuário deverá preencher o campo <Estoque>|${estoque}|,|${motivo}|
+    Wait Until Element is Visible    ${estoqueTable}            120
+    Preencher campo                  ${estoqueTable}           ${estoque} 
+    Click Element                    ${motivoTable}
+    Preencher campo                  ${motivoTableInput}            ${motivo} 
+
+Usuário deverá preencher o campo <Produto>|${produto01}|,|${produto02}|,|${produto03}|,|${produto04}|,|${produto05}|${print}
+    Wait Until Element is Visible    ${produtoTable}            120
+    Click Element                    ${produtoTable}
+    Preencher campo                  ${produtoTableInput}           ${produto01}
+    Clicar no botão Adicionar
     Sleep                            3
-    SeleniumLibrary.Input Text       ${estoqueTable}          ${estoque}
+    Preencher campo                  ${produtoTableInput}           ${produto02}  
+    Clicar no botão Adicionar
+    Preencher campo                  ${produtoTableInput}           ${produto03} 
+    Clicar no botão Adicionar 
+    Preencher campo                  ${produtoTableInput}           ${produto04}  
+    Clicar no botão Adicionar
+    Preencher campo                  ${produtoTableInput}           ${produto05}  
 
-Clicar no botão Adicionar
-    Wait Until Element Is Visible              ${btnAdicionar}                              30
-    Sleep                                      1
-    SeleniumLibrary.Click Element              ${btnAdicionar}
-    Sleep                                      3
-
-Usuário deverá preencher o campo <Produto>"${produto}"
-    Wait Until Element Is Visible    ${produtoTable}          60
-    SeleniumLibrary.Click Element    ${produtoTable}
-    Sleep                            3
-    SeleniumLibrary.Input Text       ${produtoTableInput}          ${produto}
-
-Clicar no botão salvar Abertura
-    Wait Until Element Is Visible              ${btnSalvar}                              30
-    Sleep                                      1
-    SeleniumLibrary.Click Element              ${btnSalvar}
-    Sleep                                      3

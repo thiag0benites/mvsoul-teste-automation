@@ -32,24 +32,15 @@ ${suite}            M_ABERCONTAGEM
 ${dados}
 
 *** Test Case ***
-
-M_ABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de contagem
-# robot -v browser:chrome -t "M_ABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de contagem" -d ./5-results/M_ABERCONTAGEM-001 "3-tests/4-MATERIAIS/M_ABERCONTAGEM.robot"
-# robot -v browser:firefox -t "M_ABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de contagem" -d ./5-results/M_ABERCONTAGEM-001 "3-tests/4-MATERIAIS/M_ABERCONTAGEM.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "M_ABERCONTAGEM-001"
+SCR4MMABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de contagem
+# robot -v browser:chrome -t "SCR4MMABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de contagem" -d ./5-results/SCR4MMABERCONTAGEM-001 "3-tests/4-MATERIAIS/M_ABERCONTAGEM.robot"
+# robot -v browser:firefox -t "SCR4MMABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de contagem" -d ./5-results/SCR4MMABERCONTAGEM-001 "3-tests/4-MATERIAIS/M_ABERCONTAGEM.robot"
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMABERCONTAGEM-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @las
-    Usuário deverá preencher o campo <Estoque>"${dados}[estoque]"
-    Usuário deverá preencher o campo <Produto>"${dados}[produto]"
-    Clicar no botão salvar Abertura
+    Usuário deverá preencher o campo <Estoque>|${dados}[estoque]|,|${dados}[motivo]|
+    Usuário deverá preencher o campo <Produto>|${dados}[produto01]|,|${dados}[produto02]|,|${dados}[produto03]|,|${dados}[produto04]|,|${dados}[produto05]|
+    Clicar no botão Salvar do menu
 
-M_ABERCONTAGEM-002:Abertura de Inventario adicionando produtos ao estoque 
-# robot -v browser:chrome -t "M_ABERCONTAGEM-002:Abertura de Inventario adicionando produtos ao estoque" -d ./5-results/M_ABERCONTAGEM-002 "3-tests/4-MATERIAIS/M_ABERCONTAGEM.robot"
-# robot -v browser:firefox -t "M_ABERCONTAGEM-002:Abertura de Inventario adicionando produtos ao estoque " -d ./5-results/M_ABERCONTAGEM-002 "3-tests/4-MATERIAIS/M_ABERCONTAGEM.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "M_ABERCONTAGEM-002"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @las
-    Usuário deverá preencher o campo <Estoque>"${dados}[estoque]"
-    Usuário deverá preencher o campo <Produto>"${dados}[produto]"
-    Clicar no botão salvar Abertura
 
 
 
