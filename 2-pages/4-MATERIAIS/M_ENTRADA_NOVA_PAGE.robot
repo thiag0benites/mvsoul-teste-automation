@@ -4,13 +4,13 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource                                       ../../Config.robot
+Resource            ../../Config.robot
 
 *** Variable ***
 
 
 ${IconOrdCompra}                                 xpath=//div[@id='entPro_cdOrdCom']//span[@class='ui-button-icon ui-icon mv-basico-reticencias']
-
+# ${IconOrdCompra}                                 xpath=(//span[@class="ui-button-icon ui-icon mv-basico-reticencias"])[7]
 #Pop-Up Lista das Ordens de Compra
 ${PopUpLista}                                    xpath=//span[@class='ui-dialog-title ui-dialog-title-overflow']
 ${IconEvolucao}                                  xpath=//span[@class='mv-hosp-evolucao']
@@ -22,6 +22,8 @@ ${btnOK}                                         xpath=//button[@id="btok"]
 #Pop-Up Tipos de Documento
 ${IconTipodeDoc}                                 xpath=//div[@id='entPro_cdTipDoc']//span[@class='ui-button-icon ui-icon mv-basico-reticencias']
 ${PopUpTiposdeDoc}                               xpath=//span[@class='ui-dialog-title ui-dialog-title-overflow']
+${CampoFiltro}                                   xpath=//input[@id='#filterLov']
+${btnFiltrar}                                     xpath=//button[@id='btfilter']
 # ${btnOK}                                         xpath=//button[@id="btok"]
 #------------------------------------------------------
 
