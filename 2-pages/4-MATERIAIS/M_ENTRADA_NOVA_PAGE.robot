@@ -29,6 +29,7 @@ ${btnFiltrar}                                     xpath=//button[@id='btfilter']
 
 ${CampoNrDoc}                                    xpath=//input[@name="entPro_nrDocumento"]
 ${CampoSerie}                                    xpath=//input[@name="entPro_nrSerie"]  
+${CampoDataEmissao}                              xpath=//input[@id='inp:dtEmissao']
 ${IconDataEmissao}                               xpath=(//span[@class="ui-button-icon ui-icon mv-basico-calendario"])[5]
 ${DropdownMes}                                   xpath=//select[@class='ui-datepicker-month']
 ${DropdownAno}                                   xpath=//select[@class='ui-datepicker-year']

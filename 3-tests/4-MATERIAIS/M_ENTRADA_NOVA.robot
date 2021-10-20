@@ -15,6 +15,7 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/ContextoSteps.robot
 Resource            ../../1-resources/4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
+Resource    ../../../../../Github/pep-test-automation/1-resources/MVPEP_PARECER_MEDICO_SOLIC_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessao
@@ -35,7 +36,11 @@ SRC4MMENTRADANOVA-001:Fluxo Principal
 # robot -v browser:firefox -t "SRC4MMENTRADANOVA-001:Fluxo Principal" -d ./5-results/SRC4MMENTRADANOVA-001 "3-tests/4-MATERIAIS/M_ENTRADA_NOVA.robot"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @las
     Selecionar Ordem de Compra Autorizada
-    Clicar no Botao |OK|
     Selcionar Tipo de Documento |NOTA FISCAL|
-
-
+    Preencher Campo Nr Doc |87654321|
+    Preencher Campo Serie |6|
+    Preencher Campo Data Emissao |15/10/2021|
+    Selcionar CFOP |COMPRA P/USO OU CONSUMO|
+    Clicar no Botao |Produtos|
+    Cadastrar Lote |L888000, 30/09/2022|
+    
