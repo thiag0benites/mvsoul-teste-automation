@@ -6,6 +6,11 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
+<<<<<<< HEAD
+### Dados do Teste
+Resource          dados/DadosTeste.robot
+=======
+>>>>>>> eac0025ca3fe328751569c3c2387a7781f1a8fb6
 
 *** Variable ***
 ${imgVisivel}
