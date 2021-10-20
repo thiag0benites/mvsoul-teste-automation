@@ -10,7 +10,9 @@ Resource         ../../Config.robot
 *** Variables ***
 ${BROWSER}    chrome
 ${SLEEP}    3
-${inputSolicitacao}    xpath=//div[@class="slick-cell b0 f0 selected active editable"]//input[@row="0"]
+${inputSolicitacao}    xpath=//div[@class="ui-widget-content slick-row even active"]//input
+${btnVisualizarProdutos}    id=btnVisualizarOsProdutos
+
 
 
 #     Click Element    xpath=(//span[@class="menu-node-text"])[11]

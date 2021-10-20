@@ -37,4 +37,7 @@ SCR4M-002:Solicitacao de Produtos
 # robot -v browser:firefox -t "SCR4M-002:Solicitacao de Produtos" -d ./5-results/SCR4M-002"3-tests/4-MATERIAIS/SolicitacaoDeProdutos.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4M-002"
     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Atender"@nprint @las
-    Preencher campo  ${inputSolicitacao} ${dados}[codSolicitacao]   
+    Preencher campo de Solicitação |${dados}[codSolicitacao]|
+    Clicar no botão "Executar Consulta"@nprint
+    Clicar no botão "btnVisualizarOsProdutos"@nprint
+

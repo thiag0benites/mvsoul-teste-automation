@@ -9,3 +9,6 @@ Resource                ../../2-pages/4-MATERIAIS/SolicitacaoDeProdutosPage.robo
 *** Variable ***
 
 *** Keywords ***
+Preencher campo de Solicitação |${codSolicitacao}|
+    Preencher campo  ${inputSolicitacao}     ${codSolicitacao}  
+
