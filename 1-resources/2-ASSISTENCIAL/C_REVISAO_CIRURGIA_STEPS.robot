@@ -10,12 +10,13 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_PAGE.robot
 
 *** Keywords ***
 Validar Acesso a Tela
-    Wait Until Element Is Visible           ${TituloPrincipal}              80
+    Wait Until Element Is Visible           ${TituloPrincipal}              100
     Element Should Contain                  ${TituloPrincipal}              Revisão de Cirurgias
 
 Realizar Consulta Por Aviso
     Wait Until Element Is Visible           ${CampoAviso}                   20
     Click Element                           ${CampoAviso}            
+    Wait Until Element Is Visible           ${CampoAvisoEditavel}           20
     SeleniumLibrary.Input Text              ${CampoAvisoEditavel}           44271   
     Click Element                           ${BotaoExecConsulta} 
 
@@ -39,31 +40,87 @@ Validar Campos de Preenchimento Automatico
     Wait Until Element Is Visible           ${CampoConvenio}                20
     Element Should Contain                  ${CampoConvenio}                PARTICULAR BRASILIA
 
-Validar Acesso Das Abas
+Validar Acesso e Conteudo Das Abas
     Click Element                           ${AbaPrestadores}  
-    Sleep  2
+    Exibicao Prestadores                    5739                            GEISHA ABREU SOARES DE PINA                 CIRURGIAO               ABDOMINOPLASTIA
+    Exibicao Prestadores                    100008                          LARISSA OLIVEIRA                            ANESTESISTA             ABDOMINOPLASTIA
+    Exibicao Prestadores                    7894                            ABDON KATTER FILHO                          CIRURGIAO               ABDOMINOPLASTIA
+    Exibicao Prestadores                    14                              LUCIANE FELIX DA SILVA                      CONSULTOR               ABDOMINOPLASTIA
     Click Element                           ${AbaEquipamentos}  
-    Sleep  2
+    Exibição Material                       47                              MONITOR CARDIACO (HORA)                     0
+    Exibição Material                       50                              MONITOR DE PRESSAO INVASIVA                 1
     Click Element                           ${AbaCaixasCir}  
-    Sleep  2
+    Exibição Material                       17195                           CAIXA BÁSICA GRANDE                         1
     Click Element                           ${AbaProdutos}  
-    Sleep  2
+    Exibição Produtos                       17202           ACETIL          ALMOXARIFADO            COMPRIMIDO          1           Normal
     Click Element                           ${AbaImagem}  
-    Sleep  2
+    Exibicao Exames                         551                   BIOPSIA OU CITOLOGIA (ENDOSCOPIA ALTA OU BAIXA)       ENDOSCOPIA - HOBRA      1
     Click Element                           ${AbaLaboratorio}  
-    Sleep  2
+    Exibicao Exames                         2197                            HEMOGRAMA                        LAB DE ANALISES CLÍNICAS 2         1
     Click Element                           ${AbaSangue}  
-    Sleep  2
+    Exibição Material                       31                              CONCENTRADO DE PLAQUETAS                    1
     Click Element                           ${AbaObservacao}  
-    Sleep  2
+    Wait Until Element Is Visible           ${ValidAbaObs}                  20
+    Element Should Be Visible               ${ValidAbaObs} 
     Click Element                           ${AbaConfCanc}  
-    Sleep  2
+    Prestador Confirmacao                   GPINA
     Click Element                           ${AbaHistAlteracoes}  
-    Sleep  2
-    Click Element                           ${AbaHistEvolucao}  
-    Sleep  2
+    Wait Until Element Is Visible           ${ValidAbaHistAlter}            20
+    Element Should Be Visible               ${ValidAbaHistAlter} 
+    Click Element                           ${AbaHistEvolucao}      
+    Wait Until Element Is Visible           ${ValidAbaHistEvol}             20
+    Element Should Be Visible               ${ValidAbaHistEvol}  
     Click Element                           ${AbaHistEmail}  
-    Sleep  2
-    
+    Wait Until Element Is Visible           ${ValidAbaHistEmails}           20
+    Element Should Be Visible               ${ValidAbaHistEmails} 
+   
+Exibicao Prestadores
+    [Arguments]             ${CdPrestador}          ${NmPrestador}              ${Especialidade}            ${Cirurgia}
+    Wait Until Element Is Visible       xpath=//*[@title="${CdPrestador}"]              20
+    Element Should Be Visible           xpath=//*[@title="${CdPrestador}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${NmPrestador}"]            20
+    Element Should Be Visible           xpath=//div[@title="${NmPrestador}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Especialidade}"]          20
+    Element Should Be Visible           xpath=//div[@title="${Especialidade}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Cirurgia}"]               20
+    Element Should Be Visible           xpath=//div[@title="${Cirurgia}"]
 
+Exibição Material
+    [Arguments]             ${CdMat}                ${Desc}                     ${Quant}
+    Wait Until Element Is Visible       xpath=//*[@title="${CdMat}"]                    20
+    Element Should Be Visible           xpath=//*[@title="${CdMat}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Desc}"]                   20
+    Element Should Be Visible           xpath=//div[@title="${Desc}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Desc}"]/../../div[3]/div[@title="${Quant}"]                  20
+    Element Should Be Visible           xpath=//div[@title="${Desc}"]/../../div[3]/div[@title="${Quant}"] 
 
+Exibição Produtos
+    [Arguments]     ${CdProd}      ${Desc}      ${Estoque}         ${Unidade}           ${Quant}        ${TpProd}
+    Wait Until Element Is Visible       xpath=//*[@title="${CdProd}"]                   20    
+    Element Should Be Visible           xpath=//*[@title="${CdProd}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Desc}"]                   20  
+    Element Should Be Visible           xpath=//div[@title="${Desc}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Estoque}"]                20  
+    Element Should Be Visible           xpath=//div[@title="${Estoque}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Unidade}"]                20  
+    Element Should Be Visible           xpath=//div[@title="${Unidade}"]          
+    Wait Until Element Is Visible       xpath=//div[@title="${Desc}"]/../../div[6]/div[@title="${Quant}"]                  20    
+    Element Should Be Visible           xpath=//div[@title="${Desc}"]/../../div[6]/div[@title="${Quant}"]     
+    Wait Until Element Is Visible       xpath=//div[@title="${TpProd}"]                 20  
+    Element Should Be Visible           xpath=//div[@title="${TpProd}"]   
+
+Exibicao Exames
+    [Arguments]             ${CdExame}             ${Desc}                      ${SetorExec}                ${Quant}
+    Wait Until Element Is Visible       xpath=//*[@title="${CdExame}"]                  20
+    Element Should Be Visible           xpath=//*[@title="${CdExame}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Desc}"]                   20
+    Element Should Be Visible           xpath=//div[@title="${Desc}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${SetorExec}"]              20
+    Element Should Be Visible           xpath=//div[@title="${SetorExec}"]
+    Wait Until Element Is Visible       xpath=//div[@title="${Desc}"]/../../div[4]/div[@title="${Quant}"]                  20
+    Element Should Be Visible           xpath=//div[@title="${Desc}"]/../../div[4]/div[@title="${Quant}"]  
+
+Prestador Confirmacao
+    [Arguments]             ${Prestador}
+    Wait Until Element Is Visible       xpath=//*[@title="${Prestador}"]                20   
+    Element Should Be Visible           xpath=//*[@title="${Prestador}"]
