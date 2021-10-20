@@ -28,7 +28,7 @@ Selcionar Tipo de Documento |${TipoDoc}|
     Preencher campo                      ${CampoFiltro}                 ${TipoDoc}
     Sleep    2
     Clicar no Botao |Filtar|
-    Sleep    2
+    Sleep    5
     ${Documento}=                        Get WebElement                 xpath://div[@title='${TipoDoc}']
     Should Be Equal                      ${Documento.text}              ${TipoDoc}
     Click Element                        ${Documento}
@@ -93,15 +93,17 @@ Clicar no Botao |${NomeBotao}|
  
 
 
-Cadastrar Lote |${Lote}, ${DataValidade}|
+Cadastrar Lote |${Lote}|
+    Wait Until Element Is Visible        ${brnCadastrarLote}                    20
     ${Quant}=                         Get WebElement                 xpath://div[@data-member='QT_ENTRADA']
     Clicar no Botao |Cadastrar Lote|
+    Sleep                               5
     Preencher campo                      ${CampoLote}                ${Lote}
-    Sleep                               2
-    Preencher campo                      ${CampoValidade}            ${DataValidade}
-    Sleep                               2
-    Preencher campo                      ${CampoQtdeEntrada}         ${Quant.text}
-    Sleep                               2
+    Sleep                               5
+    # Preencher campo                      ${CampoValidade}            ${DataValidade}
+    # Sleep                               5
+    Preencher campo                      ${CampoQtdeEntrada}         ${Quant}
+    Sleep                               5
     Clicar no Botao |Digitacao de Produtos|
 
 

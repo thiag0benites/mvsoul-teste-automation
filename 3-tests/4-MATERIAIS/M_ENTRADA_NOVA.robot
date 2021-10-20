@@ -15,7 +15,7 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/ContextoSteps.robot
 Resource            ../../1-resources/4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
-Resource    ../../../../../Github/pep-test-automation/1-resources/MVPEP_PARECER_MEDICO_SOLIC_STEPS.robot
+
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessao
@@ -42,5 +42,5 @@ SRC4MMENTRADANOVA-001:Fluxo Principal
     Preencher Campo Data Emissao |15/10/2021|
     Selcionar CFOP |COMPRA P/USO OU CONSUMO|
     Clicar no Botao |Produtos|
-    Cadastrar Lote |L888000, 30/09/2022|
+    Cadastrar Lote |L888000|
     

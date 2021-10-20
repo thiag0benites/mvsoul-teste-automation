@@ -47,9 +47,9 @@ ${browser}        chrome
 # ${ambiente}     qadevelop
 ${ambiente}       qarelease
 # ${ambiente}     qaautomacao
-${url}            http://qarelease.mv.com.br:84/soul-mv/
+# ${url}            http://qarelease.mv.com.br:84/soul-mv/
 # ${url}          http://qadevelop.mv.com.br:83/soul-mv/
-# ${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
+${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
 # ${grid}         http://192.168.0.242:4444/wd/hub
 ${grid}           http://localhost:4444/wd/hub
 
