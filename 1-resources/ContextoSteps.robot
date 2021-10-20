@@ -155,3 +155,9 @@ Seleciona Item Combobox
     Sleep    0.5
     Press Keys    ${elemento}    ENTER
 
+Clicar em Estoque
+    Wait Until Element Is Visible    
+    Click button
+    Sleep                        
+
+Filtrar por "%FARMACIA%CENTRAL%"
