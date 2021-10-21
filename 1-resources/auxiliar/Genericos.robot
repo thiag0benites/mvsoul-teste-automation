@@ -6,6 +6,8 @@
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
+Resource          ../../2-pages/ContextoPage.robot
+Resource          ../../1-resources/ContextoSteps.robot
 
 *** Variable ***
 ${FILE}           ${CURDIR}\\6-files\\upload.txt
@@ -205,3 +207,9 @@ Conta Linhas Tabela
     @{Linhas}    Get WebElements    ${LocatorTabela}//tbody//tr
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
+
+Clicar no botão Salvar do menu
+    Click Element     ${btnSalvar}
+
+Clicar no botão Adicionar
+    Click Element     ${btnAdicionar}
