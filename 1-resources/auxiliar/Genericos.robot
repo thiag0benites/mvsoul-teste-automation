@@ -72,6 +72,12 @@ Click Elemento por titulo
     Sleep    2
     Click Element    ${elemento}
 
+Validar Elemento Pelo Titulo
+    [Arguments]    ${titulo}            ${timeout}=${60}
+    ${elemento}    Set Variable         xpath=//*[@title='${titulo}']
+    Wait Until Element Is Visible       ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
+    Element Should Be Visible           ${elemento}
+
 Realcar Elemento
     [Arguments]    ${element}
     ${i}    Set Variable    1
