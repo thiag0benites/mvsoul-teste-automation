@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../2-pages/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_PAGE.robot
 Resource            ../../1-resources/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_STEPS.robot
-Resource            ../../Config.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
