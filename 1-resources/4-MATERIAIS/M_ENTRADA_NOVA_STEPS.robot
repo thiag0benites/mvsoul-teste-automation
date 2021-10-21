@@ -19,6 +19,7 @@ Selecionar Ordem de Compra Autorizada
     Click Element                        ${IconUltimaPg}
     Sleep    2
     Click Element                        ${PrimeiraLinha} 
+    Sleep    2
     Clicar no Botao |OK|
 
 Selcionar Tipo de Documento |${TipoDoc}|
@@ -32,13 +33,16 @@ Selcionar Tipo de Documento |${TipoDoc}|
     ${Documento}=                        Get WebElement                 xpath://div[@title='${TipoDoc}']
     Should Be Equal                      ${Documento.text}              ${TipoDoc}
     Click Element                        ${Documento}
+    Sleep    2
     Clicar no Botao |OK|
 
 Preencher Campo Nr Doc |${Numero}|
+    Sleep    2
     Preencher campo                      ${CampoNrDoc}                ${Numero}
     Sleep    2
 
 Preencher Campo Serie |${valor}|
+    Sleep    2
     Preencher campo                      ${CampoSerie}                  ${valor}
     Sleep    2   
 
@@ -93,16 +97,22 @@ Clicar no Botao |${NomeBotao}|
  
 
 
-Cadastrar Lote |${Lote}|
+Cadastrar Lote |${Lote},${DataValidade}|
     Wait Until Element Is Visible        ${brnCadastrarLote}                    20
-    ${Quant}=                         Get WebElement                 xpath://div[@data-member='QT_ENTRADA']
+    ${Quant}=                         Get Value                 xpath://div[@data-member='QT_ENTRADA']
+    Log    ${Quant}
+    Log To Console        ${Quant}
     Clicar no Botao |Cadastrar Lote|
     Sleep                               5
-    Preencher campo                      ${CampoLote}                ${Lote}
+    Preencher campo                      ${Campo}               ${Lote}
     Sleep                               5
-    # Preencher campo                      ${CampoValidade}            ${DataValidade}
-    # Sleep                               5
-    Preencher campo                      ${CampoQtdeEntrada}         ${Quant}
+    Press Keys                            ${Campo}                TAB
+    Sleep                                2
+    Preencher campo                      ${Campo}               ${DataValidade}
+    Sleep                                5
+    Press Keys                            ${Campo}                TAB
+    Sleep                                2       
+    Preencher campo                      ${Campo}                ${Quant}
     Sleep                               5
     Clicar no Botao |Digitacao de Produtos|
 

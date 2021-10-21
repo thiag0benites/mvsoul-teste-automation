@@ -38,9 +38,9 @@ SRC4MMENTRADANOVA-001:Fluxo Principal
     Selecionar Ordem de Compra Autorizada
     Selcionar Tipo de Documento |NOTA FISCAL|
     Preencher Campo Nr Doc |87654321|
-    Preencher Campo Serie |6|
+    Preencher Campo Serie |8|
     Preencher Campo Data Emissao |15/10/2021|
     Selcionar CFOP |COMPRA P/USO OU CONSUMO|
     Clicar no Botao |Produtos|
-    Cadastrar Lote |L888000|
+    Cadastrar Lote |L888000,30/09/2022|
     
