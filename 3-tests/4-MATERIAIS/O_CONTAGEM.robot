@@ -38,5 +38,5 @@ SCR4MOCONTAGEM-001:Fluxo Principal
     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @las
     Validar Acesso a Tela
     Realizar Consulta Pelo Codigo
-    Inserir Produto
-    Sleep  5
+    Inserir Produto |ADALAT OROS 30MG COMP LIB PROL-NIFEDIPINO|
+    Clicar Botao Fechar Mov Usuario
