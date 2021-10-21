@@ -47,6 +47,9 @@ Clicar Botao |${Botao}|
     ...    ELSE IF
     ...    '${Botao}' == 'Executar Consulta'
     ...    Click Element    ${BtnExecutarConsulta}
+    ...    ELSE IF
+    ...    '${Botao}' == 'Salvar'
+    ...    Click Element    ${btnSalvar}
 
 Seleciona Transporte Data Chamada
     Wait Until Element Is Visible    ${CampoDataInicial}    30
@@ -54,44 +57,72 @@ Seleciona Transporte Data Chamada
     Click Element                    ${CampoDataInicial}  
     # Click Button                     ${BotaoDataInicial}
     Sleep                                               2
-
+    
 
 Seleciona Trans Hora
     Wait Until Element Is Visible    ${CampoTransHora}       30
-    Sleep                                                    5
+    Sleep                                                    3
     Click Element                    ${CampoTransHora}
-    Sleep                                                    5
-    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    0800
-    Sleep                                                    5
-
+    Sleep                                                    3
+    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1134
+    Sleep                                                    3
+    
 Seleciona Centro Cir Data Transf
     Wait Until Element Is Visible    ${CampoCentCirData}     30
-    Sleep                                                    5
+    Sleep                                                    3
     Click Element                    ${CampoCentCirData}
-    Sleep                                                    5
+    Sleep                                                    3
     Click Element                    ${CampoCentCirData}
 
 Seleciona Centro Cir Hora
     Wait Until Element Is Visible    ${CampoCentCirHora}     30
-    Sleep                                                    5
+    Sleep                                                    3
     Click Element                    ${CampoCentCirHora}
-    Sleep                                                    5
+    Sleep                                                    3
     Click Element                    ${CampoCentCirHora}
+    Sleep    3
+    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1144
+    Validador Elemento|1144|
 
 Seleciona Recuperacao Pos Anestesica
     Click Element                    ${CampoRecAnestSetor}
     Sleep    10                                                    
     Click Element                    ${BtnListaAnestSetor}
     Sleep    5
-    Click Element                    ${ListaSetorPosAnest}    
-    Sleep    10          
+    Click Element                    ${ListaSetorPosAnest} 
+    Sleep    3
+    Click Button                     ${BtnOk}    
+    Sleep    3       
 
 Seleciona listagem RPA
     Click Element                    ${LocalTranfPosCir}
-    Sleep                                                    5
+    Sleep                                                    3
     Click Element                    ${LocalTranfPosCir}
     Sleep    3
     SeleniumLibrary.Input Text       xpath=//*[@id="dsLocalTransfPosCir_ac"]               RPA
+
+Preenche Data e Hora Recuperacao Pro Anestesica
+    Click Element                    ${CampoDataRecPosAnest}
+    Sleep    2
+    # SeleniumLibrary.Input Text       ${CampoDataRecPosAnest}    19/10/2021
+    Sleep    3
+    Click Element                    ${CampoHoraPosAnest}
+    Sleep    2
+    SeleniumLibrary.Input Text       ${CampoTextoHoraPosAnest}    1700
+    Sleep    2
+    Click Element                    ${CampoDataFinalPos}
+    Sleep    2
+    # SeleniumLibrary.Input Text       ${CampoDataFinalPos}        19/10/2021  
+    Click Element                    ${CampoHoraSaidAPosAnt}
+    Sleep    5
+    SeleniumLibrary.Input Text       ${CampoHoraSaidAPosAnt}      1720
+
+Validador Elemento|${Elemento}|
+    Run Keyword If    '${Elemento}' == '${Elemento}'
+    ...    Log To Console    ***${Elemento} Validado Com Sucesso!***
+    
+
+    
 
 
 # Inserir Data de Inicio |${data}|

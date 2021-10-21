@@ -19,6 +19,14 @@ ${CampoCentCirData}        xpath=//*[@id="grdMovCcRpa1"]/div[4]/div[3]/div/div/d
 ${CampoCentCirHora}        xpath=//*[@id="grdMovCcRpa1"]/div[4]/div[3]/div/div/div[5]
 ${LocalTranfPosCir}        xpath=//input[@class='ui-autocomplete-input ui-widget-content ui-buttoninput ui-corner-left']
 ${CampoRecAnestSetor}      xpath=//div[@class='slick-cell b5 f5 selected ui-fixed-width']
+${CampoDataRecPosAnest}    xpath=//div[@data-member='DT_ENTRADA_RPA']
+${CampoTextoDataPosAnes}   xpath=//*[@id="frames821634847023469"]
+${CampoHoraPosAnest}       xpath=//div[@data-member='HR_ENTRADA_RPA_AUX']
+${CampoTextoHoraPosAnest}  xpath=//input[@class='editor-text mode-edit']
+${CampoDataFinalPos}       xpath=//*[@id="grdMovCcRpa1"]/div[4]/div[3]/div/div/div[10]
+${CampoHoraSaidAPosAnt}    xpath=//div[@data-member='HR_SAIDA_RPA_AUX']
+
+
 
 ### Botoes ###
 ${BtnExecutarConsulta}     xpath=//i[@class="mv-basico-confirmar"]  
@@ -29,6 +37,7 @@ ${BotaoDataInicial}        xpath=//button[@class='ui-button ui-widget ui-corner-
 ${SetaDoCalendario}        xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon ui-state-default']
 ${SetaLocalTransfCir}      xpath=//button[@class='ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon']
 ${BtnListaAnestSetor}      xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
+${btnSalvar}               xpath=//li[@id='tb-record-save']
 
 ### Elementos Diversos ###
 ${TabelaCodigoAviso}       xpath=//div[@class='ui-widget-content slick-row even']
