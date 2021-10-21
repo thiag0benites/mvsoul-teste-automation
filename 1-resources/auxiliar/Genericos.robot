@@ -72,17 +72,6 @@ Click Elemento por titulo
     Sleep    2
     Click Element    ${elemento}
 
-Realcar Elemento
-    [Arguments]    ${element}
-    ${i}    Set Variable    1
-    ${cssOriginal}    Set Variable    element['style']
-    FOR    ${i}    IN RANGE    3
-        Execute Javascript    "arguments[0].setAttribute(arguments[1],arguments[2],arguments[3]);",element,'style','border: 5px solid #00FF00;','border-style: dashed;'
-        Sleep    0.150
-        Execute Javascript    "arguments[0].setAttribute(arguments[1],arguments[2]);",element,'style',${cssOriginal}
-        Sleep    0.150
-    END
-
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
 ##############################################################################################################################################################################
