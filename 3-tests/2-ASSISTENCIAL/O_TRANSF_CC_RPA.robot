@@ -19,7 +19,7 @@ Resource            ../../1-resources//2-ASSISTENCIAL/O_TRANSF_CC_RPA_STEPS.robo
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 
 *** Variable ***
@@ -35,4 +35,9 @@ SCR1AOTRAN-001:Fluxo Principal
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Transferência de Paciente>Transferência para Centro Cirúrgico"@nprint @las
     Acessar Cadastro |1000000198|
     Acesso Campo |Codigo Aviso|
-
+    Seleciona listagem RPA
+    Seleciona Transporte Data Chamada
+    Seleciona Trans Hora
+    Seleciona Centro Cir Data Transf
+    Seleciona Centro Cir Hora
+    Seleciona Recuperacao Pos Anestesica
