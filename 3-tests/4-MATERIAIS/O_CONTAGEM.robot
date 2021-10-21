@@ -1,19 +1,21 @@
 #################################################################################################################################################################
 # Autor: Andréa Rodrigues
-# Decrição: Teste da tela Revisão de Cirurgias
+# Decrição: Teste da tela Digitação dos Produtos
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_REVISAO_CIRURGIA.robot"
-# firefox: robot -v browser:firefox -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_REVISAO_CIRURGIA.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\O_CONTAGEM.robot"
+# firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\O_CONTAGEM.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_REVISAO_CIRURGIA.robot"
-# firefox: robot -v browser:headlessfirefox -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_REVISAO_CIRURGIA.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\O_CONTAGEM.robot"
+# firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\O_CONTAGEM.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_STEPS.robot
+Resource            ../../2-pages/4-MATERIAIS/O_CONTAGEM_PAGE.robot
+Resource            ../../1-resources/4-MATERIAIS/O_CONTAGEM_STEPS.robot
+Resource            ../../Config.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -30,11 +32,11 @@ ${suite}
 ${dados}
 
 *** Test Case ***
-SCR2ACREVISAOCIRURGIA-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR2ACREVISAOCIRURGIA-001:Fluxo Principal" -d ./5-results/SCR2ACREVISAOCIRURGIA-001 "3-tests/2-ASSISTENCIAL/C_REVISAO_CIRURGIA.robot"
-# robot -v browser:firefox -t "SCR2ACREVISAOCIRURGIA-001:Fluxo Principal" -d ./5-results/SCR2ACREVISAOCIRURGIA-001 "3-tests/2-ASSISTENCIAL/C_REVISAO_CIRURGIA.robot"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Revisão Agendamento Cirurgia"@nprint @las
+SCR4MOCONTAGEM-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
+# robot -v browser:firefox -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @las
     Validar Acesso a Tela
-    Realizar Consulta Por Aviso
-    Validar Campos de Preenchimento Automatico
-    Validar Acesso e Conteudo Das Abas
+    Realizar Consulta Pelo Codigo
+    Inserir Produto
+    Sleep  5

@@ -6,11 +6,8 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
-<<<<<<< HEAD
-### Dados do Teste
-Resource          dados/DadosTeste.robot
-=======
->>>>>>> eac0025ca3fe328751569c3c2387a7781f1a8fb6
+Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
+
 
 *** Variable ***
 ${imgVisivel}
@@ -58,11 +55,11 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     END
     #### LAS Send Keys #####
     IF    "${las}" == "@las"
-        Sleep    1
+        # Sleep    1
         Seleciona frame    ${IdIframe}    180
         Wait Until Element Is Visible    ${classLasDisplay}    60
         Unselect Frame
-        Sleep    1
+        # Sleep    1
         Send Keys    tab
         Send Keys    enter
     END
@@ -117,7 +114,7 @@ Criar Lista Itens Menu Xpath com Index
 ### Clica nos botões de cabeçalho após a troca do frame
 
 Clicar no botão "${titulo}"${printscreen}
-    Run Keyword If    '${printscreen}' == '@print'    Capture Screen
+    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
 
 Preencher campo
@@ -149,6 +146,34 @@ Preencher campo
 Seleciona Item Combobox
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    10
-    SeleniumLibrary.Input Text    ${elemento}    ${valor}
-    Sleep    0.5
+    Input Text    ${elemento}    ${valor}
+    Wait Until Element Is Enabled    ${elemento}    5
     Press Keys    ${elemento}    ENTER
+
+    FOR    ${i}    IN RANGE    1    11
+        Sleep    0.1
+        ${textoAtual}    Get Element Attribute    ${elemento}    value
+        # ${textoAtual}    Get Text    ${elemento}
+        IF    "${textoAtual}" == "${valor}"
+            Exit For Loop
+        ELSE IF    "${textoAtual}" != "${valor}"
+            IF    "${i}" == "${10}"
+                Log To Console    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
+                Log    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
+                Realcar Elemento Relatorio    ${elemento}
+                Capture Page Screenshot
+                Fail    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
+            ELSE
+                Input Text    ${elemento}    ${valor}
+                Wait Until Element Is Enabled    ${elemento}    5
+                Press Keys    ${elemento}    ENTER
+            END
+        END
+    END
+
+Clicar em Estoque
+    Wait Until Element Is Visible    
+    Click button
+    Sleep                        
+
+Filtrar por "%FARMACIA%CENTRAL%"
