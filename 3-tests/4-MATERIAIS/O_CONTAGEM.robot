@@ -36,7 +36,7 @@ SCR4MOCONTAGEM-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
 # robot -v browser:firefox -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @las
-    Validar Acesso a Tela
+    Validar Acesso a Tela |Contagem Aberta|
     Realizar Consulta Pelo Codigo
     Inserir Produto |ADALAT OROS 30MG COMP LIB PROL-NIFEDIPINO|
     Clicar Botao Fechar Mov Usuario

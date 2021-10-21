@@ -9,10 +9,6 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Validar Acesso a Tela
-    Wait Until Element Is Visible           ${TituloPrincipal}              250
-    Element Should Contain                  ${TituloPrincipal}              Revisão de Cirurgias
-
 Realizar Consulta Por Aviso
     Wait Until Element Is Visible           ${CampoAviso}                   20
     Click Element                           ${CampoAviso}            

@@ -9,10 +9,6 @@ Resource          ../../2-pages/4-MATERIAIS/O_CONTAGEM_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Validar Acesso a Tela
-    Wait Until Element Is Visible           ${TituloPrincipal}              100
-    Element Should Contain                  ${TituloPrincipal}              Contagem Aberta
-
 Realizar Consulta Pelo Codigo
     Preencher Campo                         ${CampoCodigo}                  9307
     Click Element                           ${BotaoExecConsulta} 
