@@ -6,6 +6,8 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
+Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
+
 
 *** Variable ***
 ${imgVisivel}
@@ -112,7 +114,7 @@ Criar Lista Itens Menu Xpath com Index
 ### Clica nos botões de cabeçalho após a troca do frame
 
 Clicar no botão "${titulo}"${printscreen}
-    Run Keyword If    '${printscreen}' == '@print'    Capture Screen
+    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
 
 Preencher campo
@@ -168,3 +170,10 @@ Seleciona Item Combobox
             END
         END
     END
+
+Clicar em Estoque
+    Wait Until Element Is Visible    
+    Click button
+    Sleep                        
+
+Filtrar por "%FARMACIA%CENTRAL%"

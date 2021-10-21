@@ -38,4 +38,3 @@ SCR2ACREVISAOCIRURGIA-001:Fluxo Principal
     Realizar Consulta Por Aviso
     Validar Campos de Preenchimento Automatico
     Validar Acesso e Conteudo Das Abas
-

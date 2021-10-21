@@ -26,11 +26,7 @@ Library           7-libraries/geracaoDadosLibrary/pessoaJuridica.py
 Library           7-libraries/reportsLibrary/realcar.py
 Library           7-libraries/seleniumLibraryAuxiliar/seleniumAuxiliar.py
 ### Dados login
-<<<<<<< HEAD
 Library           1-resources/dados/DadosTeste.robot
-=======
-Resource          1-resources/dados/DadosTeste.robot
->>>>>>> eac0025ca3fe328751569c3c2387a7781f1a8fb6
 ### Gerenciador de Dados
 Resource          1-resources/bd/BancoDados.robot
 ### Metodos Genericos
@@ -52,13 +48,8 @@ ${ambiente}     qadevelop
 # ${ambiente}       qarelease
 # ${ambiente}     qaautomacao
 # ${url}            http://qarelease.mv.com.br:84/soul-mv/
-<<<<<<< HEAD
 ${url}          http://qadevelop.mv.com.br:83/soul-mv/
 # ${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
-=======
-# ${url}          http://qadevelop.mv.com.br:83/soul-mv/
-${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
->>>>>>> feature/rodrigo
 # ${grid}         http://192.168.0.242:4444/wd/hub
 ${grid}           http://localhost:4444/wd/hub
 

@@ -35,4 +35,3 @@ SCR1AOTRAN-001:Fluxo Principal
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Transferência de Paciente>Transferência para Centro Cirúrgico"@nprint @las
     Acessar Cadastro |1000000198|
     Acesso Campo |Codigo Aviso|
-
