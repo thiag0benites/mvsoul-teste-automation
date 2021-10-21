@@ -26,7 +26,11 @@ Library           7-libraries/geracaoDadosLibrary/pessoaJuridica.py
 Library           7-libraries/reportsLibrary/realcar.py
 Library           7-libraries/seleniumLibraryAuxiliar/seleniumAuxiliar.py
 ### Dados login
+<<<<<<< HEAD
 Resource          1-resources/dados/DadosTeste.robot
+=======
+Resource           1-resources/dados/DadosTeste.robot
+>>>>>>> 722931ca2c6b4091017fd68e28b2aaec85d8d1cf
 ### Gerenciador de Dados
 Resource          1-resources/bd/BancoDados.robot
 ### Metodos Genericos
