@@ -78,16 +78,6 @@ Validar Elemento Pelo Titulo
     Wait Until Element Is Visible       ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
     Element Should Be Visible           ${elemento}
 
-Realcar Elemento
-    [Arguments]    ${element}
-    ${i}    Set Variable    1
-    ${cssOriginal}    Set Variable    element['style']
-    FOR    ${i}    IN RANGE    3
-        Execute Javascript    "arguments[0].setAttribute(arguments[1],arguments[2],arguments[3]);",element,'style','border: 5px solid #00FF00;','border-style: dashed;'
-        Sleep    0.150
-        Execute Javascript    "arguments[0].setAttribute(arguments[1],arguments[2]);",element,'style',${cssOriginal}
-        Sleep    0.150
-    END
 
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
@@ -153,6 +143,8 @@ Criar pessoa fisica
     Log To Console    *** Telefone: ${telefone}
     Log To Console    *** Celular: ${celular}
     Log To Console    *** E-mail: ${email}
+    ${cnpj}    Replace String    ${cpf}    .    ${EMPTY}
+    ${cnpj}    Replace String    ${cpf}    -    ${EMPTY}
     ${pessoa}    Create Dictionary    nome=${nome} ${sobreNome}    sexo=${sexo}    nomeMae=${nomeMae} ${sobreNomeMae}    dataNascimento=${dataNascimento}    cpf=${cpf}    ddd=${ddd}    telefone=${telefone}    celular=${celular}    email=${email}
     [Return]    ${pessoa}
 
@@ -174,13 +166,16 @@ Criar pessoa juridica
     Log To Console    *** E-mail: ${email}
     Log To Console    *** DDD: ${ddd}
     Log To Console    *** Telefone: ${telefone}
+    ${cnpj}    Replace String    ${cnpj}    .    ${EMPTY}
+    ${cnpj}    Replace String    ${cnpj}    /    ${EMPTY}
+    ${cnpj}    Replace String    ${cnpj}    -    ${EMPTY}
     ${empresa}    Create Dictionary    cnpj=${cnpj}    empresa=${nomeEmpresa} ${sufixEmpresa}    email=${email}    ddd=${ddd}    telefone=${telefone}
     [Return]    ${empresa}
 
 Cria endereco
     ${estado}    State
     ${cidade}    City
-    ${endereco}    Street Address
+    ${logradouro}    Street Address
     ${cep}    Postcode
     Log To Console    ***
     Log To Console    ****************************************************************
@@ -188,8 +183,11 @@ Cria endereco
     Log To Console    ****************************************************************
     Log To Console    *** Estado: ${estado}
     Log To Console    *** Cidade: ${cidade}
-    Log To Console    *** Endereco: ${endereco}
+    Log To Console    *** Logradouro: ${logradouro}
     Log To Console    *** CEP: ${cep}
+    ${cep}    Replace String    ${cep}    -    ${EMPTY}
+    ${endereco}    Create Dictionary    estado=${estado}    cidade=${cidade}    logradouro=${logradouro}    cep=${cep}
+    [Return]    ${endereco}
 
 Click elemento filho por texto
     [Arguments]    ${locatorElementos}    ${textoItem}

@@ -37,7 +37,7 @@ ${suite}            smoke_jornada_paciente
 ${dados}
 
 *** Test Case ***
-SMK-001:Jornada do Paciente
+SCR0JSMK-001:Jornada do Paciente
 # robot -v browser:chrome -t "SMK-001:Jornada do Paciente" -d ./5-results/SMK-001 "3-tests/0-JORNADA_PACIENTE/JornadaPaciente.robot"
 # robot -v browser:firefox -t "SMK-001:Jornada do Paciente" -d ./5-results/SMK-001 "3-tests/0-JORNADA_PACIENTE/JornadaPaciente.robot"
 ### Registros gravados com sucesso (2 registros gravados).
