@@ -43,4 +43,7 @@ SRC4MMENTRADANOVA-001:Fluxo Principal
     Selcionar CFOP |COMPRA P/USO OU CONSUMO|
     Clicar no Botao |Produtos|
     Cadastrar Lote |L888000,30/09/2022|
+    Confirmar Duplicata
+    Concluir e Avaliar
+    
     

@@ -94,9 +94,44 @@ Clicar no Botao |${NomeBotao}|
         Sleep                               2
         Click Element                       ${btnDigitacaoProd} 
     END
- 
 
+    IF  '${NomeBotao}' == 'Sair'
+        Wait Until Element Is Visible       ${btnSair}                     10
+        Sleep                               2
+        Click Element                       ${btnSair}  
+    END
 
+    IF  '${NomeBotao}' == 'Duplicata'
+        Wait Until Element Is Visible       ${btnDuplicata}                10
+        Sleep                               2
+        Click Element                       ${btnDuplicata} 
+    END
+
+    IF  '${NomeBotao}' == 'Sim'
+        Wait Until Element Is Visible       ${btnSim}                10
+        Sleep                               2
+        Click Element                       ${btnSim}
+    END
+
+    IF  '${NomeBotao}' == 'Nao'
+        Wait Until Element Is Visible       ${btnNao}                  10
+        Sleep                               2
+        Click Element                       ${btnNao}  
+    END
+
+    IF  '${NomeBotao}' == 'Confirmar Duplicata'
+        Wait Until Element Is Visible       ${btnConfirmarDuplicata}                  10
+        Sleep                               2
+        Click Element                       ${btnConfirmarDuplicata}   
+    END
+
+    IF  '${NomeBotao}' == 'Concluir'
+        Wait Until Element Is Visible       ${btnConcluir}                             10
+        Sleep                               2
+        Click Element                       ${btnConcluir}  
+    END
+                                   
+                                   
 Cadastrar Lote |${Lote},${DataValidade}|
     Wait Until Element Is Visible        ${brnCadastrarLote}                    20
     ${Quant}=                         Get Value                 xpath://div[@data-member='QT_ENTRADA']
@@ -115,8 +150,25 @@ Cadastrar Lote |${Lote},${DataValidade}|
     Preencher campo                      ${Campo}                ${Quant}
     Sleep                               5
     Clicar no Botao |Digitacao de Produtos|
+    Sleep                               5
+    Clicar no Botao |Sair|
+    Sleep                               2
 
+Confirmar Duplicata
+    Sleep                               5
+    Clicar no Botao |Duplicata|
+    Sleep                               5
+    Clicar no Botao |Sim|
+    Sleep                               5
+    Clicar no Botao |Confirmar Duplicata|
 
+Concluir e Avaliar
+    Sleep                               5
+    Clicar no Botao |Concluir|
+    Sleep                               5
+    Clicar no Botao |Sim|
+    Sleep                               5
+    Clicar no Botao |Nao|
 
                                   
                                
