@@ -13,8 +13,8 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource                  ../../2-pages/4-/M_DEVPAC_Pages.robot
-Resource                  ../../1-resources/ContextoSteps.robot
+Resource                  ../../2-pages/4-MATERIAIS/M_DEVPAC_Pages.robot
+Resource                  ../../1-resources/4-MATERIAIS/M_DEVPAC_Steps.robot
 Resource                  ../../Config.robot
 Resource                  ../../1-resources/auxiliar/Genericos.robot
 Resource                  ../../1-resources/bd/BancoDados.robot
@@ -39,6 +39,8 @@ SCR4M-001:Devolucao Paciente Teste RPA
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4M-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Devoluções>De Pacientes"@nprint @las
     Selecionar campo estoque e preencher com "${dados}[Pesq_Estoque]"
-    # Na aba Cosulta de atendimento Filtrar pelo nome "PACIENTE TESTE RPA"
-    # Clicar em |Confirmar|
+    Selecionar campo consulta de atendimento e filtrar pelo nome "${dados}[Nome]"
+    Selecionar campo motivo e filtrar pelo nome
+    Preencher campo de Observacoes com "${dados}[Observacao]"
+    Preencher campo com Codido de Barra "${dados}[Cod_Barra]"
 

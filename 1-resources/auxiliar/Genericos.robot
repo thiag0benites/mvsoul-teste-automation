@@ -37,10 +37,10 @@ Valida Mensagem
 
 Click Javascript
     [Arguments]    ${elemento}
-    # Sleep    3
+    Sleep    3
     ${elemento2}    Get WebElement    ${elemento}
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
-    # Capture Page Screenshot
+    Capture Page Screenshot
 
 Click na imagem sikuli
     [Arguments]    ${imagem}    ${timeout}=${60}
@@ -65,11 +65,12 @@ Seleciona frame
     Select Frame    ${elementoFrame}
     Sleep    1
 
+    
 Click Elemento por titulo
-    [Arguments]    ${titulo}    ${timeout}=${60}
+    [Arguments]    ${titulo}    ${timeout}=${120}
     ${elemento}    Set Variable    xpath=//a[@title='${titulo}']
     Wait Until Element Is Visible    ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
-    Sleep    2
+    Sleep    3
     Click Element    ${elemento}
 
 Realcar Elemento

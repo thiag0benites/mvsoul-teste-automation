@@ -154,10 +154,23 @@ Seleciona Item Combobox
     SeleniumLibrary.Input Text    ${elemento}    ${valor}
     Sleep    0.5
     Press Keys    ${elemento}    ENTER
+                      
+Click no Item
+    [Arguments]       ${elemento}
+    Wait Until Element Is Visible    ${elemento}        120
+    Sleep    3
+    Click Element     ${elemento}
+    Capture Page Screenshot
 
-Clicar em Estoque
-    Wait Until Element Is Visible    
-    Click button
-    Sleep                        
+# Clicar Botao Executar
+#     Sleep    3
+#     Wait Until Element Is Visible    ${BotaoExecutar}        120
+#     Click no Item                    ${BotaoExecutar}
 
-Filtrar por "%FARMACIA%CENTRAL%"
+Click e Input Text
+    [Arguments]    ${elemento}    ${valor}
+    Sleep                                             3
+    Wait Until Element Is Visible    ${elemento}      10
+    SeleniumLibrary.Click Element    ${elemento}
+    SeleniumLibrary.Input Text       ${elemento}      ${valor}   
+
