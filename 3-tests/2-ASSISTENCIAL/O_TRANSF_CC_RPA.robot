@@ -37,7 +37,8 @@ SCR1AOTRAN-001:Fluxo Principal
     Acesso Campo |Codigo Aviso|
     Seleciona listagem RPA
     Seleciona Transporte Data Chamada
+    Seleciona Recuperacao Pos Anestesica
     Seleciona Trans Hora
     Seleciona Centro Cir Data Transf
     Seleciona Centro Cir Hora
-    Seleciona Recuperacao Pos Anestesica
+    
