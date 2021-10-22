@@ -19,23 +19,22 @@ ${imgVisivel}
 Login
     Nova sessao
     Realiza Login    ${dadosLoginUsuario}    ${dadosLoginSenha}    ${dadosLoginEmpresa}
-
 ### Enviar o caminho completo do menu separado por >
 ### Exemplo:
 ###    titulo_do_menu>titulo_do_submenu>titulo_do_menu
+
 Quando navego no menu "${caminhoSelecaoMenu}"
     @{listaItensMenu}    Converte string em lista    ${listaItensMenu}    >
-
     FOR    ${itemMenu}    IN    @{listaXpathItensMenu}
         Seleciona item no menu    ${itemMenu}
         Log To Console    *** Item ${itemMenu} selecionado no menu
         Log    *** Item ${itemMenu} selecionado no menu
         Capture Page Screenshot
     END
-
 ### Enviar o caminho completo do menu separado por >
 ### Exemplo:
 ###    titulo_do_menu>titulo_do_submenu>titulo_do_menu
+
 Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Unselect Frame
     # Realcar Elemento    ${HomeXpathBtnMenu}
@@ -43,7 +42,6 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Click Element    ${HomeXpathBtnMenu}
     @{listaItensMenu}    Converte string em lista    ${caminhoSelecaoMenu}    >
     @{listaXpathItensMenu}    Criar Lista Itens Menu Xpath com Index    @{listaItensMenu}
-
     FOR    ${itemMenu}    IN    @{listaXpathItensMenu}
         ${visivel}    Elemento Visivel    xpath=${itemMenu}
         Log To Console    *** Visivel: ${visivel}
@@ -55,22 +53,21 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Log To Console    *** Item ${itemMenu} selecionado no menu
         Log    *** Item ${itemMenu} selecionado no menu
     END
-
     #### LAS Send Keys #####
     IF    "${las}" == "@las"
-        Sleep    1
+        # Sleep    1
         Seleciona frame    ${IdIframe}    180
         Wait Until Element Is Visible    ${classLasDisplay}    60
         Unselect Frame
-        Sleep    1
+        # Sleep    1
         Send Keys    tab
         Send Keys    enter
     END
     #### End LAS Send Keys #####
-
     Seleciona frame    ${IdIframe}    180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
+    Sleep    60
 
 Criar Lista Itens Menu Xpath com Index
     [Arguments]    @{listaItensMenu}
@@ -114,8 +111,8 @@ Criar Lista Itens Menu Xpath com Index
         END
     END
     [Return]    @{novaListaItensMenu}
-
 ### Clica nos botões de cabeçalho após a troca do frame
+
 Clicar no botão "${titulo}"${printscreen}
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
@@ -127,12 +124,10 @@ Preencher campo
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Input Text    ${elemento}    ${valor}
-    
     FOR    ${i}    IN RANGE    1    11
         Sleep    0.1
         ${textoAtual}    Get Element Attribute    ${elemento}    value
         # ${textoAtual}    SeleniumLibrary.Get Text    ${elemento}
-
         IF    "${textoAtual}" == "${valor}"
             Exit For Loop
         ELSE IF    "${textoAtual}" != "${valor}"
@@ -151,18 +146,41 @@ Preencher campo
 Seleciona Item Combobox
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    10
-    SeleniumLibrary.Input Text    ${elemento}    ${valor}
-    Sleep    0.5
+    Input Text    ${elemento}    ${valor}
+    Wait Until Element Is Enabled    ${elemento}    5
     Press Keys    ${elemento}    ENTER
-                      
+
+    FOR    ${i}    IN RANGE    1    11
+        Sleep    0.1
+        ${textoAtual}    Get Element Attribute    ${elemento}    value
+        # ${textoAtual}    Get Text    ${elemento}
+        IF    "${textoAtual}" == "${valor}"
+            Exit For Loop
+        ELSE IF    "${textoAtual}" != "${valor}"
+            IF    "${i}" == "${10}"
+                Log To Console    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
+                Log    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
+                Realcar Elemento Relatorio    ${elemento}
+                Capture Page Screenshot
+                Fail    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
+            ELSE
+                Input Text    ${elemento}    ${valor}
+                Wait Until Element Is Enabled    ${elemento}    5
+                Press Keys    ${elemento}    ENTER
+            END
+        END
+    END
+
+Clicar em Estoque
+    Wait Until Element Is Visible    
+    Click button
+    Sleep                        
+
+Filtrar por "%FARMACIA%CENTRAL%"
+
+
 Click no Item
     [Arguments]       ${elemento}
     Wait Until Element Is Visible    ${elemento}        120
     Sleep                3
     Click Element     ${elemento}
-    Capture Page Screenshot
-
-Clicar Botao se estiver Visivel
-    [Arguments]             ${Button}
-    ${Status}           Run Keyword And Return Status          Wait Until Element Is Visible    ${Button}        120  
-    Run Keyword If          '${Status}' == 'True'               Click no Item        ${Button}
