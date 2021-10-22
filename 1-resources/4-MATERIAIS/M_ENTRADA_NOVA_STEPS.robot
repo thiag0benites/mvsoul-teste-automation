@@ -10,8 +10,22 @@ Library    SeleniumLibrary
 *** Variable ***
 
 *** Keywords ***
-Selecionar Ordem de Compra Autorizada
+Selecionar Ordem de Compra Autorizada |${CodigoOC}|
     Sleep    10
+    Click Element                        ${IconOrdCompra}
+    Wait Until Element Is Visible        ${PopUpLista}                   10
+    Click Element                        ${IconEvolucao}
+    Preencher campo                      ${CampoFiltro}                  ${CodigoOC}
+    Sleep    2
+    Clicar no Botao |Filtar|
+    Sleep    5
+    ${Codigo}=                            Get WebElement                 xpath://div[@title='${CodigoOC}']
+    Should Be Equal                      ${Codigo.text}                  ${CodigoOC}
+    Click Element                        ${Codigo}
+    Sleep    2
+    Clicar no Botao |OK|
+
+Selecionar Ultima Ordem de Compra da Lista
     Click Element                        ${IconOrdCompra}
     Wait Until Element Is Visible        ${PopUpLista}                 10
     Click Element                        ${IconEvolucao}
@@ -23,6 +37,7 @@ Selecionar Ordem de Compra Autorizada
     Clicar no Botao |OK|
 
 Selcionar Tipo de Documento |${TipoDoc}|
+    Sleep    2
     Click Element                        ${IconTipodeDoc}
     Wait Until Element Is Visible        ${PopUpTiposdeDoc}             10
     Sleep    2
@@ -37,16 +52,20 @@ Selcionar Tipo de Documento |${TipoDoc}|
     Clicar no Botao |OK|
 
 Preencher Campo Nr Doc |${Numero}|
+    Click Element                        ${CampoNrDoc}  
     Sleep    2
     Preencher campo                      ${CampoNrDoc}                ${Numero}
     Sleep    2
 
 Preencher Campo Serie |${valor}|
-    Sleep    2
+    Click Element                        ${CampoSerie}  
+    Sleep    5
     Preencher campo                      ${CampoSerie}                  ${valor}
     Sleep    2   
 
 Preencher Campo Data Emissao |${Data}|
+    Click Element                        ${CampoDataEmissao} 
+    Sleep    2
     Preencher campo                      ${CampoDataEmissao}            ${Data}
     Sleep    2
 
@@ -134,9 +153,9 @@ Clicar no Botao |${NomeBotao}|
                                    
 Cadastrar Lote |${Lote},${DataValidade}|
     Wait Until Element Is Visible        ${brnCadastrarLote}                    20
-    ${Quant}=                         Get Value                 xpath://div[@data-member='QT_ENTRADA']
-    Log    ${Quant}
-    Log To Console        ${Quant}
+    ${Quant}=                         Get Element Attribute                  xpath://div[@data-member='QT_ENTRADA']     attribute=title
+    # Log    ${Quant.text}
+    # Log To Console        ${Quant.text}
     Clicar no Botao |Cadastrar Lote|
     Sleep                               5
     Preencher campo                      ${Campo}               ${Lote}
