@@ -97,9 +97,9 @@ Seleciona Recuperacao Pos Anestesica
 Seleciona listagem RPA
     Click Element                    ${LocalTranfPosCir}
     Sleep                                                    3
-    Click Element                    ${LocalTranfPosCir}
-    Sleep    3
-    SeleniumLibrary.Input Text       xpath=//*[@id="dsLocalTransfPosCir_ac"]               RPA
+    # Click Element                    ${LocalTranfPosCir}
+    # Sleep    3
+    # SeleniumLibrary.Input Text       xpath=//*[@id="dsLocalTransfPosCir_ac"]               RPA
 
 Preenche Data e Hora Recuperacao Pro Anestesica
     Click Element                    ${CampoDataRecPosAnest}
@@ -115,7 +115,7 @@ Preenche Data e Hora Recuperacao Pro Anestesica
     # SeleniumLibrary.Input Text       ${CampoDataFinalPos}        19/10/2021  
     Click Element                    ${CampoHoraSaidAPosAnt}
     Sleep    5
-    SeleniumLibrary.Input Text       ${CampoHoraSaidAPosAnt}      1720
+    SeleniumLibrary.Input Text       ${CampoTextoHoraFinalPos}      1720
 
 Validador Elemento|${Elemento}|
     Run Keyword If    '${Elemento}' == '${Elemento}'
