@@ -42,6 +42,7 @@ SCR1AOTRAN-001:Fluxo Principal
     Seleciona listagem RPA
     Seleciona Recuperacao Pos Anestesica
     Preenche Data e Hora Recuperacao Pro Anestesica
-    # Clicar Botao |Salvar|
+    Clicar Botao |Salvar|
+    Validador
 
     

@@ -17,7 +17,7 @@ Acessar Cadastro |${Item}|
     Sleep    5
     SeleniumLibrary.Input Text       ${CampoAtendimento}            ${Item}
     Clicar Botao |Executar Consulta|
-    Should Be String                 AADA TEIXEIRA PINTO MARTINS
+    Validador Elemento|AADA TEIXEIRA PINTO MARTINS|  
 
 # Acesso Campo |${Campo}|
 #     ${Campo}    Run Keyword If    
@@ -37,7 +37,7 @@ Acesso Campo |${Campo}|
     SeleniumLibrary.Click Button     ${BtnListaCodigoAviso}
     SeleniumLibrary.Click Element    ${TabelaCodigoAviso}
     Clicar Botao |Ok|
-    Should Be String                 44199
+    Validador Elemento|44199|                 
     # ...    ELSE IF
 Clicar Botao |${Botao}|
     Sleep                                               10
@@ -51,6 +51,8 @@ Clicar Botao |${Botao}|
     ...    '${Botao}' == 'Salvar'
     ...    Click Element    ${btnSalvar}
 
+Validador
+    Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|@print
 Seleciona Transporte Data Chamada
     Wait Until Element Is Visible    ${CampoDataInicial}    30
     Sleep                                                   1
@@ -84,10 +86,8 @@ Seleciona Centro Cir Hora
     SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1144
     Validador Elemento|1144|
 
-Seleciona Recuperacao Pos Anestesica
-    Click Element                    ${CampoRecAnestSetor}
-    Sleep    10                                                    
-    Click Element                    ${BtnListaAnestSetor}
+Seleciona Recuperacao Pos Anestesica                                         
+    Click Button                     ${BtnListaAnestSetor}
     Sleep    5
     Click Element                    ${ListaSetorPosAnest} 
     Sleep    3
@@ -97,15 +97,16 @@ Seleciona Recuperacao Pos Anestesica
 Seleciona listagem RPA
     Click Element                    ${LocalTranfPosCir}
     Sleep                                                    3
-    # Click Element                    ${LocalTranfPosCir}
+    Click Button                     ${BtnLocalTranPosCir}
     # Sleep    3
-    # SeleniumLibrary.Input Text       xpath=//*[@id="dsLocalTransfPosCir_ac"]               RPA
-
+    SeleniumLibrary.Input Text       xpath=//*[@id="dsLocalTransfPosCir_ac"]               R
+    Sleep    5
+    Send Keys    enter
+    Sleep    5
 Preenche Data e Hora Recuperacao Pro Anestesica
     Click Element                    ${CampoDataRecPosAnest}
     Sleep    2
     # SeleniumLibrary.Input Text       ${CampoDataRecPosAnest}    19/10/2021
-    Sleep    3
     Click Element                    ${CampoHoraPosAnest}
     Sleep    2
     SeleniumLibrary.Input Text       ${CampoTextoHoraPosAnest}    1700
@@ -119,7 +120,7 @@ Preenche Data e Hora Recuperacao Pro Anestesica
 
 Validador Elemento|${Elemento}|
     Run Keyword If    '${Elemento}' == '${Elemento}'
-    ...    Log To Console    ***${Elemento} Validado Com Sucesso!***
+    ...    Log To Console    ***'${Elemento}' Validado Com Sucesso!***
     
 
     
