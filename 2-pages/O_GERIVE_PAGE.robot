@@ -10,4 +10,4 @@ Resource          ../Config.robot
 ### Elementos da Pagina de O_GERIVE - Geração do Inventário
 ${codigoContagem}               xpath=//div[@data-name='cdContagem']//input
 ${buttonConfirmar}              xpath=//button[@data-name='butCdEstoque']
-${buttonOk}                     xpath=//li[@class='notification-buttons']//button
+${buttonSim}                    xpath=//li[@class='notification-buttons']//button[2]

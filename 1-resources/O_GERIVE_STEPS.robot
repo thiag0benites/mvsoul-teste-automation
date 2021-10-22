@@ -16,6 +16,6 @@ Usuário deverá preencher o campo <Contagem>|${codContagem}|
 Clicar no botão Confirmar
     Click Element     ${buttonConfirmar}
 
-Clicar no botão Ok no modal de notificacao
-    Wait Until Element is Visible    ${buttonOk}            30
-    Click Element     ${buttonOk}
+Clicar no botão Sim no modal de notificacao
+    Wait Until Element is Visible    ${buttonSim}            30
+    Click Element     ${buttonSim}

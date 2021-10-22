@@ -39,4 +39,4 @@ SCR4MOGERIVE-001:Geracao do Inventario
      Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Geração do Inventário"@nprint @las
      Usuário deverá preencher o campo <Contagem>|${dados}[codContagem]|
      Clicar no botão Confirmar
-     Clicar no botão Ok no modal de notificacao
+     Clicar no botão Sim no modal de notificacao
