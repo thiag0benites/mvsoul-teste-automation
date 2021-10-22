@@ -33,10 +33,27 @@ Selecionar campo motivo e filtrar pelo nome
     Click no Item                        ${BotaoOk} 
 
 Preencher campo de Observacoes com "${Obs}"
-    # Preencher campo                   ${CampoObsInput}                ${Obs}
-    Click no Item                     ${CampoSim} 
-
+    Preencher campo                   ${CampoObsInput}                ${Obs}
 
 Preencher campo com Codido de Barra "${COD}"
-    Preencher campo                   ${CampoCodInput}                "${COD}"  
+    Click no Item                         ${CampoCod}
+    Clicar Botao se estiver Visivel       ${CampoSim}
+    Preencher campo                       ${CampoCodInput}                ${COD}
+    Click no Item                         ${BtnSeguinte}
+
+Preencher campo produto "${Produto}" e Qntde Recebida "${Qntde}"
+    Click no Item                         ${CodProduto}
+    Preencher campo                       ${CampoProduto}                 ${Produto}
+    Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${CampoQntdeInput}              ${Qntde}
+
+Preencher campos da Linha2 "${Produto_Linha2}" e Lote "${Lote_DevProd}" e Unidade "${Unidade}" e Qntde Recebida "${Qntde_Recebida2}" 
+    Click no Item                         ${BtnSeguinte}
+    Click no Item                         ${BtnProdutoL2}
+    Preencher campo                       ${CampoProdutoL2}                 ${Produto_Linha2}
+    # Click no Item                         ${BtnOK}
+    # Click no Item                         ${BtnSeguinte}
+
+
+
 

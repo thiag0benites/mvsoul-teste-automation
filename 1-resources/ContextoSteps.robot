@@ -122,7 +122,7 @@ Clicar no botão "${titulo}"${printscreen}
 
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
-    Wait Until Element Is Visible    ${elemento}    10
+    Wait Until Element Is Visible    ${elemento}    120
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
@@ -158,19 +158,11 @@ Seleciona Item Combobox
 Click no Item
     [Arguments]       ${elemento}
     Wait Until Element Is Visible    ${elemento}        120
-    Sleep    3
+    Sleep                3
     Click Element     ${elemento}
     Capture Page Screenshot
 
-# Clicar Botao Executar
-#     Sleep    3
-#     Wait Until Element Is Visible    ${BotaoExecutar}        120
-#     Click no Item                    ${BotaoExecutar}
-
-Click e Input Text
-    [Arguments]    ${elemento}    ${valor}
-    Sleep                                             3
-    Wait Until Element Is Visible    ${elemento}      10
-    SeleniumLibrary.Click Element    ${elemento}
-    SeleniumLibrary.Input Text       ${elemento}      ${valor}   
-
+Clicar Botao se estiver Visivel
+    [Arguments]             ${Button}
+    ${Status}           Run Keyword And Return Status          Wait Until Element Is Visible    ${Button}        120  
+    Run Keyword If          '${Status}' == 'True'               Click no Item        ${Button}
