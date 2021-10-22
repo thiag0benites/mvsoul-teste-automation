@@ -11,9 +11,8 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_PAGE.robot
 *** Keywords ***
 Realizar Consulta Por Aviso
     Wait Until Element Is Visible           ${CampoAviso}                   20
-    Click Element                           ${CampoAviso}            
-    Wait Until Element Is Visible           ${CampoAvisoEditavel}           20
-    SeleniumLibrary.Input Text              ${CampoAvisoEditavel}           44298   
+    Click Element                           ${CampoAviso}     
+    Preencher Campo                         ${CampoAvisoEditavel}           44298 
     Click Element                           ${BotaoExecConsulta} 
 
 Validar Campos de Preenchimento Automatico

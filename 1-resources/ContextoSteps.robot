@@ -183,12 +183,12 @@ Click no Item
 
 Validar Item
     [Arguments]             ${element}
-    Wait Until Element Is Visible           ${element}           20
+    Wait Until Element Is Visible           ${element}               20
     Element Should Be Visible               ${element} 
 
 Validar Informacao Item
     [Arguments]             ${element}      ${ResultadoEsperado}     
-    Wait Until Element Is Visible           ${CampoDataAviso}               20
-    Element Should Contain                  ${CampoDataAviso}               ${ResultadoEsperado} 
+    Wait Until Element Is Visible           ${element}               20
+    Element Should Contain                  ${element}               ${ResultadoEsperado} 
 
 Filtrar por "%FARMACIA%CENTRAL%"
