@@ -42,6 +42,7 @@ ${PopUpCod}                                      xpath=//div[@class='ui-dialog-t
 
 ${btnProdutos}                                   xpath=//button[@id='btnProdutos']
 ${brnCadastrarLote}                              xpath=//button[@id='btnCadastraLote']
+${Campo}                                         xpath=//div[@role='gridcell']//input[@type='text']
 ${CampoLote}                                     xpath=//div[@role='gridcell']//input[@type='text']
 ${CampoValidade}                                 xpath=//div[@class='ui-layout-positional ui-content-full ui-panel ui-widget stackedcanvas ui-view-finished-loading']//div[@class='slick-viewport slick-viewport-top slick-viewport-left']//div[2]
 ${CampoQtdeEntrada}                              xpath=//input[@id="#frames842"]
