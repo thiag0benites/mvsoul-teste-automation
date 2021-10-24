@@ -119,7 +119,7 @@ Clicar no botão "${titulo}"${printscreen}
 
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
-    Wait Until Element Is Visible    ${elemento}    10
+    Wait Until Element Is Visible    ${elemento}    120
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
@@ -179,10 +179,11 @@ Clicar em Estoque
 Filtrar por "%FARMACIA%CENTRAL%"
 
 Click no Item
-    [Arguments]             ${element}
-    Wait Until Element Is Visible           ${element}               20
-    Click Element                           ${element}
-
+    [Arguments]       ${elemento}
+    Wait Until Element Is Visible    ${elemento}        120
+    Sleep                3
+    Click Element     ${elemento}
+    
 Validar Item
     [Arguments]             ${element}
     Wait Until Element Is Visible           ${element}               20

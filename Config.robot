@@ -44,10 +44,17 @@ ${so}             windows
 # ${so}           ubuntu
 ### Configurações do Browser
 ${browser}        chrome
+<<<<<<< HEAD
+${ambiente}       qadevelop
+# ${ambiente}       qarelease
+# ${ambiente}       qaautomacao
+# ${url}          http://qarelease.mv.com.br:84/soul-mv/
+=======
 ${ambiente}     qadevelop
 # ${ambiente}       qarelease
 # ${ambiente}     qaautomacao
 # ${url}            http://qarelease.mv.com.br:84/soul-mv/
+>>>>>>> 722931ca2c6b4091017fd68e28b2aaec85d8d1cf
 ${url}          http://qadevelop.mv.com.br:83/soul-mv/
 # ${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
 # ${grid}         http://192.168.0.242:4444/wd/hub
