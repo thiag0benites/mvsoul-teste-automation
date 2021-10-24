@@ -9,8 +9,8 @@ Library           Collections
 Library           AutoRecorder
 Library           SeleniumLibrary    #timeout=10
 ### Interagir com elemento por imagem
-Library           SikuliLibrary
-Library           ImageHorizonLibrary    ${CURDIR}/4-images
+# Library           SikuliLibrary
+# Library           ImageHorizonLibrary    ${CURDIR}/4-images
 ### Trabalha com stings
 Library           String
 Library           DateTime
@@ -51,7 +51,7 @@ ${ambiente}       qadevelop
 ${url}            http://qadevelop.mv.com.br:83/soul-mv/
 # ${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
 # ${grid}         http://192.168.0.242:4444/wd/hub
-${grid}           http://localhost:4444/wd/hub
+# ${grid}           http://localhost:4444/wd/hub
 
 *** Keywords ***
 ### Cria Nova Sessão do browser

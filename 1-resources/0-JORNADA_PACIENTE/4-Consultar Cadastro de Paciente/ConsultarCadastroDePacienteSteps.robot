@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../../2-pages/Jornada do Paciente/ConsultarCadastroDePacientePage.robot
+Resource          ../../../2-pages/0-JORNADA_PACIENTE/ConsultarCadastroDePacientePage.robot
 Resource          ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 ### Dados do Teste
 # Resource        ../../bd/BancoDados.robot
