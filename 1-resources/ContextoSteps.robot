@@ -119,7 +119,7 @@ Clicar no botão "${titulo}"${printscreen}
 
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
-    Wait Until Element Is Visible    ${elemento}    10
+    Wait Until Element Is Visible    ${elemento}    120
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
@@ -181,7 +181,16 @@ Click no Item
     Sleep  2
     Wait Until Element Is Visible           ${element}               20
     Click Element                           ${element}
+=======
+Filtrar por "%FARMACIA%CENTRAL%"
+>>>>>>> 3900f5ad6adf93ee206bdd07bb348a78722be5c6
 
+Click no Item
+    [Arguments]       ${elemento}
+    Wait Until Element Is Visible    ${elemento}        120
+    Sleep                3
+    Click Element     ${elemento}
+    
 Validar Item
     [Arguments]             ${element}
     Wait Until Element Is Visible           ${element}               20
@@ -200,3 +209,43 @@ Clicar no Campo e Preencher Informacao
 
 
 Filtrar por "%FARMACIA%CENTRAL%"
+=======
+Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${print}
+    ${Cont}    Set Variable    0
+    Log To Console    *** Com Resultado: ${LocatorComResultado}
+    Log To Console    *** Sem Resultado: ${LocatorSemResultado}
+    ${CondicaoComResultados}    Run Keyword And Return Status    Wait Until Element Is Visible    ${LocatorComResultado}    10
+    ${CondicaoSemResultados}    Run Keyword And Return Status    Wait Until Element Is Visible    ${LocatorSemResultado}    10
+
+    IF    ${CondicaoComResultados} == True
+        ${Cont}    Evaluate    ${Cont} + 1
+        Log To Console    *** Pesquisa realizada com resultados!
+    ELSE
+        Log    *** Insira o locator de pesquisa com resultado.
+        Log To Console    *** Insira o locator de pesquisa com resultado.
+    END
+    IF    ${CondicaoSemResultados} == True
+        ${Cont}    Evaluate    ${Cont} + 1
+        Log To Console    *** Pesquisa realizada, porém sem resultado!
+    ELSE
+        Log    *** Insira o locator de pesquisa sem resultado.
+        Log To Console    *** Insira o locator de pesquisa sem resultado.
+    END
+    IF    ${Cont} == 0
+        Fail    *** Falha na pesquisa!
+    END
+    # IF    ${CondicaoComResultados} == False
+    # END
+    # IF    ${CondicaoSemResultados} == False
+    #    Fail    *** Falha na pesquisa!'
+    # END
+    Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
+# Validar Ausencia de Resultados[${Locator}]${print}
+#    ${Condicao}    Page Should Contain Element    ${Locator}
+#    Wait Until Element Is Visible    ${Locator}    10
+#    Sleep    2
+#    IF    '${Condicao}' == 'True'
+#    Log To Console    *** Pesquisa realizada, porém sem resultado!
+#    END
+#    Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
+>>>>>>> 3900f5ad6adf93ee206bdd07bb348a78722be5c6
