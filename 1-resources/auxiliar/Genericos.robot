@@ -44,21 +44,21 @@ Click Javascript
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
 
-Click na imagem sikuli
-    [Arguments]    ${imagem}    ${timeout}=${60}
-    Add Image Path    ${imagens}
-    ${exist}    Exists    ${imagem}    ${timeout}
-    Run Keyword If    ${exist}==True    SikuliLibrary.Click    ${imagem}
-    Log To Console    *** Efetuado o click em ${imagem}
+# Click na imagem sikuli
+#     [Arguments]    ${imagem}    ${timeout}=${60}
+#     Add Image Path    ${imagens}
+#     ${exist}    Exists    ${imagem}    ${timeout}
+#     Run Keyword If    ${exist}==True    SikuliLibrary.Click    ${imagem}
+#     Log To Console    *** Efetuado o click em ${imagem}
 
-Click na imagem
-    [Arguments]    ${imagem}    ${timeout}=${60}
-    Log    *** Imagem Procurada: ${imagem}
-    Log To Console    *** Imagem Procurada: ${imagem}
-    ImageHorizonLibrary.Wait For    ${imagem}    ${timeout}
-    Sleep    2
-    ImageHorizonLibrary.Click Image    ${imagem}
-    Log To Console    *** Efetuado o click em ${imagem}
+# Click na imagem
+#     [Arguments]    ${imagem}    ${timeout}=${60}
+#     Log    *** Imagem Procurada: ${imagem}
+#     Log To Console    *** Imagem Procurada: ${imagem}
+#     ImageHorizonLibrary.Wait For    ${imagem}    ${timeout}
+#     Sleep    2
+#     ImageHorizonLibrary.Click Image    ${imagem}
+#     Log To Console    *** Efetuado o click em ${imagem}
 
 Seleciona frame
     [Arguments]    ${elementoFrame}    ${timeout}=${60}
@@ -99,7 +99,7 @@ Pega elemento filho por texto
     @{elementos}    Get WebElements    ${locatorElementos}
     Log List    ${elementos}
     FOR    ${elemento}    IN    @{elementos}
-        ${textoItemAtual}    SeleniumLibrary.Get Text    ${elemento}
+        ${textoItemAtual}    Get Text    ${elemento}
         ${localizouTexto}    Run Keyword And Ignore Error    Should Contain    ${textoItemAtual}    ${textoItem}
         Log To Console    *** Texto Procurado: ${textoItem}
         Log    *** Texto Procurado: ${textoItem}
@@ -199,7 +199,7 @@ Click elemento filho por texto
     [Arguments]    ${locatorElementos}    ${textoItem}
     @{elementos}    Get WebElements    ${locatorElementos}
     FOR    ${elemento}    IN    @{elementos}
-        ${textoItemAtual}    SeleniumLibrary.Get Text    ${elemento}
+        ${textoItemAtual}    Get Text    ${elemento}
         # ${localizouTexto}    Run Keyword And Ignore Error    Should Contain    ${textoItemAtual}    ${textoItem}
         Run Keyword If    ${localizouTexto} == ('PASS', None)    Click Element    ${elemento}
         Exit For Loop If    ${localizouTexto} == ('PASS', None)

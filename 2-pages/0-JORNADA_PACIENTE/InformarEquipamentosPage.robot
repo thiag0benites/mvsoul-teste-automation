@@ -5,6 +5,5 @@
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
-Resource          ../../1-resources/auxiliar/Genericos.robot
 
 *** Variable ***

@@ -40,8 +40,8 @@ ${dados}
 
 *** Test Case ***
 SCR0JSMK-001:Jornada do Paciente
-# robot -v browser:chrome -t "SCR0JSMK-001:Jornada do Paciente" -d ./5-results/SCR0JSMK-001 "3-tests/Jornada do paciente/JornadaPaciente.robot"
-# robot -v browser:firefox -t "SCR0JSMK-001:Jornada do Paciente" -d ./5-results/SCR0JSMK-001 "3-tests/Jornada do paciente/JornadaPaciente.robot"
+# robot -v browser:chrome -t "SCR0JSMK-001:Jornada do Paciente" -d ./5-results/0-JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
+# robot -v browser:firefox -t "SCR0JSMK-001:Jornada do Paciente" -d ./5-results/0-JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
 ### Registros gravados com sucesso (2 registros gravados).
 #SMF-9620:Cadastrar o paciente
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
@@ -50,11 +50,18 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [Salvar]|${dados}[cadPacMsgEsperada]|
     Captura codigo do Paciente Cadastrado|${suite}|${dados}[id]|
 ## Valida Mensagem
-#SMF-8250:Cadastrar Pré-Internação com Convênio do Tipo Convênio
+#SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo "Particular"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+
+# SMF-8250:Cadastrar Pré-Internação com Convênio do Tipo Convênio
+#     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+#     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
+#     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
+#     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+
 #SMF-9621:Consultar o cadastro do paciente para gerar uma internação
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Sim]
@@ -64,11 +71,13 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [Internar]||
 #SMF-9644:Realizar Atendimento de Internação vinculando uma pré-internação por convênio particular
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Internação>Atendimento>Internação"@nprint @nlas
+    #Acessar a tela "Atendimento>Internação>Atendimento>Internação"@nprint @nlas
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Não]
-    Pesquisar pre-internacao existente pelo codigo do paciente |${dados}[cadPacOutputCodPaciente]| 
+    #Pesquisar pre-internacao existente pelo codigo do paciente |${dados}[cadPacOutputCodPaciente]| 
     Clicar no botao [Sim]|${dados}[intPacMsgEsperada]| 
     Clicar no botao [OK]||
+    Data previsao hoje + 10
+    Campo leito 300
     Clicar no botao [Salvar]||
     Clicar no botao [Imprimir]||
     Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
@@ -87,7 +96,7 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [1-Agendar]||
     Preencher os campos e confirmar |${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurEqpMedica]|,|${dados}[agCirurAnestesista]|,|${dados}[agCirurNumCid]|
     Clicar no botao [Não]|${dados}[agCirurMsgEsperada]|
-SMF-9622:Gerar um aviso de cirurgia
+#SMF-9622:Gerar um aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @las
     Preencher os campos |${dados}[preAgDtHrPrevInter]|,|${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurNumCid]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[agCirurEqpMedica]|,|${dados}[preIntCodMedico]|@print

@@ -27,5 +27,6 @@ Seleciona item no menu
     [Arguments]    ${xpathTituloItemMenu}
     ${titleItemMenu}    Set Variable    xpath=${xpathTituloItemMenu}
     Wait Until Element Is Visible    ${titleItemMenu}    5
+    Realcar Elemento Execucao    ${titleItemMenu}
     Click Javascript    ${titleItemMenu}
     Sleep    1.5

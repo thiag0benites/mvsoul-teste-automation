@@ -6,8 +6,6 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
-Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
-
 
 *** Variable ***
 ${imgVisivel}
@@ -37,7 +35,6 @@ Quando navego no menu "${caminhoSelecaoMenu}"
 
 Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Unselect Frame
-    # Realcar Elemento    ${HomeXpathBtnMenu}
     ${cont}    Set Variable    ${1}
     Click Element    ${HomeXpathBtnMenu}
     @{listaItensMenu}    Converte string em lista    ${caminhoSelecaoMenu}    >
@@ -67,7 +64,6 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Seleciona frame    ${IdIframe}    180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
-    Sleep    60
 
 Criar Lista Itens Menu Xpath com Index
     [Arguments]    @{listaItensMenu}
@@ -117,17 +113,26 @@ Clicar no botão "${titulo}"${printscreen}
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
 
+# Preencher campo
+#     [Arguments]    ${elemento}    ${valor}
+#     Wait Until Element Is Visible    ${elemento}    10
+#     Wait Until Element Is Enabled    ${elemento}    5
+#     Click Element    ${elemento}
+#     Sleep    1.5
+#     Input Text    ${elemento}    ${valor}
+
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    120
     Wait Until Element Is Enabled    ${elemento}    5
-    SeleniumLibrary.Click Element    ${elemento}
+    Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
-    SeleniumLibrary.Input Text    ${elemento}    ${valor}
+    Sleep    0.3
+    Input Text    ${elemento}    ${valor}
     FOR    ${i}    IN RANGE    1    11
         Sleep    0.1
         ${textoAtual}    Get Element Attribute    ${elemento}    value
-        # ${textoAtual}    SeleniumLibrary.Get Text    ${elemento}
+        # ${textoAtual}    Get Text    ${elemento}
         IF    "${textoAtual}" == "${valor}"
             Exit For Loop
         ELSE IF    "${textoAtual}" != "${valor}"
@@ -138,7 +143,7 @@ Preencher campo
                 Capture Page Screenshot
                 Fail    *** Falha ao tentar preencher o campo ${elemento}
             ELSE
-                SeleniumLibrary.Input Text    ${elemento}    ${valor}
+                Input Text    ${elemento}    ${valor}
             END
         END
     END
@@ -224,6 +229,8 @@ Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${prin
     #    Fail    *** Falha na pesquisa!'
     # END
     Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
+
+    
 # Validar Ausencia de Resultados[${Locator}]${print}
 #    ${Condicao}    Page Should Contain Element    ${Locator}
 #    Wait Until Element Is Visible    ${Locator}    10
