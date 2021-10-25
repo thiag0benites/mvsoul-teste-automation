@@ -12,6 +12,9 @@ Resource                ../../2-pages/4-MATERIAIS/M_BAIXA_SOL_PAGE.robot
 Preencher campo de Solicitação |${codSolicitacao}|
     Preencher campo  ${inputSolicitacao}     ${codSolicitacao}  
 
+Preencher campo de Código de Barra |${codDeBarra}|
+    Preencher campo  ${inputCodDeBarra}     ${codDeBarra}  
+
 Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    60
@@ -46,10 +49,10 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Click Element    ${btnRetorna}
         # Click Javascript    ${btnInternar}
         Sleep    1
-    ELSE IF    '${nomeBtn}' == '1 - Visualizar os Produtos'
-        Wait Until Element Is Visible    ${btnVisualizarProdutos}    30
+    ELSE IF    '${nomeBtn}' == '2 - Confirmar Produtos'
+        Wait Until Element Is Visible    ${btnConfirmarProdutos}    30
         Sleep    1
-        Click Element    ${btnVisualizarProdutos}
+        Click Element    ${btnConfirmarProdutos}
         # Click Javascript    ${btnInternar}
         Sleep    1
     END

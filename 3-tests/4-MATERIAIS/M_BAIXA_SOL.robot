@@ -42,4 +42,5 @@ SCR4M-002:Solicitacao de Produtos
     Clicar no botao [1 - Visualizar os Produtos]||
     Clicar no botao [7 - Retornar]||
     Clicar no botao [2 - Confirmar Produtos]||
+    Preencher campo de Código de Barra |${dados}[codSolicitacao]|
 

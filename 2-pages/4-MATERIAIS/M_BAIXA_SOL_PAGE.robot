@@ -21,6 +21,7 @@ ${SLEEP}      3
 
 #Inputs
 ${inputSolicitacao}    xpath=//div[@class="ui-widget-content slick-row even active"]//input
+${inputCodDeBarra}     xpath=//div[@data-name="dspCodigoDeBarrasAuto"]//input
 
 #Buttons
 # ${btnSalvar}              xpath=//li[@id='toolbar']//*[@id='tb-record-save']
@@ -31,6 +32,7 @@ ${inputSolicitacao}    xpath=//div[@class="ui-widget-content slick-row even acti
 # ${btnConfirmaNome}        id=pacientes_btnOk
 # ${btnInternar}            xpath=(//button[@data-member='EXIT'])[2]
 ${btnVisualizarProdutos}    id=btnVisualizarOsProdutos
+${btnConfirmarProdutos}     id=btnConfirmaProdutos
 ${btnRetorna}               id=btnRetorna
 
 #Selectors
