@@ -10,7 +10,7 @@ Library    SeleniumLibrary
 *** Variable ***
 
 *** Keywords ***
-Selecionar Selecionar Setor Solicitante|${Setor}|
+Selecionar Selecionar Setor Solicitante |${Setor}|
     Sleep    30
     Click Element                        ${IconSetorSolicitante} 
     Wait Until Element Is Visible        ${PopUpLista}                   10

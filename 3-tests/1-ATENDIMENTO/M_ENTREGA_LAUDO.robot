@@ -34,11 +34,11 @@ ${dados}
 SRC1MMENTREGALAUDO-001:Fluxo Principal
 # robot -v browser:chrome -t "SRC1MMENTREGALAUDO-001:Fluxo Principal" -d ./5-results/SRC1MMENTREGALAUDO-001 "3-tests/1-ATENDIMENTO/M_ENTREGA_LAUDO.robot"
 # robot -v browser:firefox -t "SRC1MMENTREGALAUDO-001:Fluxo Principal" -d ./5-results/SRC1MMENTREGALAUDO-001 "3-tests/1-ATENDIMENTO/M_ENTREGA_LAUDO.robot"
-    # ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1MMENTREGALAUDO-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1MMENTREGALAUDO-001"
     Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Registro de Entrega de Laudos"@nprint @las
-    Selecionar Selecionar Setor Solicitante|APARTAMENTO - UNID 01|
-    Clicar no Botao |Pesquisar|
-    Selecionar Pedido de Exame Por Laudo |24079|
+    Selecionar Selecionar Setor Solicitante |${dados}[Setor]|
+    Clicar no Botao |${dados}[Botao1]|
+    Selecionar Pedido de Exame Por Laudo |${dados}[N_Laudo]|
     Validar Pop Up de Observacoes 
-    Clicar no Botao |Voltar|
+    Clicar no Botao |${dados}[Botao2]|
     
