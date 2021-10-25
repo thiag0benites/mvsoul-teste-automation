@@ -178,6 +178,7 @@ Clicar em Estoque
 
 Click no Item
     [Arguments]             ${element}
+    Sleep  2
     Wait Until Element Is Visible           ${element}               20
     Click Element                           ${element}
 
@@ -190,5 +191,12 @@ Validar Informacao Item
     [Arguments]             ${element}      ${ResultadoEsperado}     
     Wait Until Element Is Visible           ${element}               20
     Element Should Contain                  ${element}               ${ResultadoEsperado} 
+
+Clicar no Campo e Preencher Informacao
+    [Arguments]         ${CampoClick}           ${CampoEditavel}                ${DadoInserido}           
+    Click no Item                               ${CampoClick}
+    Sleep  1 
+    Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
+
 
 Filtrar por "%FARMACIA%CENTRAL%"

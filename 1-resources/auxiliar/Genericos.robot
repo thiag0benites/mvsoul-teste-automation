@@ -69,7 +69,7 @@ Seleciona frame
 
 Click Elemento por titulo
     [Arguments]    ${titulo}    ${timeout}=${60}
-    ${elemento}    Set Variable    xpath=//a[@title='${titulo}']
+    ${elemento}    Set Variable    xpath=//*[contains(@title, '${titulo}')]
     Wait Until Element Is Visible    ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
     Sleep    2
     Click Element    ${elemento}

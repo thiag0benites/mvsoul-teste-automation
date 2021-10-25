@@ -37,5 +37,10 @@ SCR2AMCONTROLEGASES-001:Fluxo Principal
     Validar Acesso a Tela |Monitoração de Aparelhos / Gases|
     Realizar Pesquisa de Atendimento
     Validar Tabela Descricao Do Procedimento
+    Selecionar Procedimento |AR COMPRIMIDO - HORA|
     Preencher Campos Com Dados Do Procedimento
-    Sleep  5
+    Clicar Botao Salvar
+    # Retornar massa de dados para status inicial
+    Selecionar Procedimento |AR COMPRIMIDO - HORA|
+    Excluir Dados Inseridos
+ 
