@@ -66,7 +66,7 @@ Seleciona Trans Hora
     Sleep                                                    3
     Click Element                    ${CampoTransHora}
     Sleep                                                    3
-    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1134
+    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1110
     Sleep                                                    3
     
 Seleciona Centro Cir Data Transf
@@ -83,7 +83,7 @@ Seleciona Centro Cir Hora
     Sleep                                                    3
     Click Element                    ${CampoCentCirHora}
     Sleep    3
-    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1144
+    SeleniumLibrary.Input Text       xpath=//input[@class='editor-text mode-edit']    1120
     Validador Elemento|1144|
 
 Seleciona Recuperacao Pos Anestesica                                         
@@ -109,14 +109,14 @@ Preenche Data e Hora Recuperacao Pro Anestesica
     # SeleniumLibrary.Input Text       ${CampoDataRecPosAnest}    19/10/2021
     Click Element                    ${CampoHoraPosAnest}
     Sleep    2
-    SeleniumLibrary.Input Text       ${CampoTextoHoraPosAnest}    1700
+    SeleniumLibrary.Input Text       ${CampoTextoHoraPosAnest}    1125
     Sleep    2
     Click Element                    ${CampoDataFinalPos}
     Sleep    2
     # SeleniumLibrary.Input Text       ${CampoDataFinalPos}        19/10/2021  
     Click Element                    ${CampoHoraSaidAPosAnt}
     Sleep    5
-    SeleniumLibrary.Input Text       ${CampoTextoHoraFinalPos}      1720
+    SeleniumLibrary.Input Text       ${CampoTextoHoraFinalPos}      1145
 
 Validador Elemento|${Elemento}|
     Run Keyword If    '${Elemento}' == '${Elemento}'
