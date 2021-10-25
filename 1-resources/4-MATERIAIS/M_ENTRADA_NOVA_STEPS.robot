@@ -156,6 +156,7 @@ Cadastrar Lote |${Lote},${DataValidade}|
     ${Quant}=                         Get Element Attribute                  xpath://div[@data-member='QT_ENTRADA']     attribute=title
     # Log    ${Quant.text}
     # Log To Console        ${Quant.text}
+    Sleep                               5
     Clicar no Botao |Cadastrar Lote|
     Sleep                               5
     Preencher campo                      ${Campo}               ${Lote}
@@ -169,9 +170,9 @@ Cadastrar Lote |${Lote},${DataValidade}|
     Preencher campo                      ${Campo}                ${Quant}
     Sleep                               5
     Clicar no Botao |Digitacao de Produtos|
-    Sleep                               5
+    Sleep    240
     Clicar no Botao |Sair|
-    Sleep                               2
+    Sleep                             20
 
 Confirmar Duplicata
     Sleep                               5
