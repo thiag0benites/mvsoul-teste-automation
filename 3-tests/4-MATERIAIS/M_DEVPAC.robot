@@ -3,12 +3,12 @@
 # Decrição: Teste da tela Revisão de Cirurgias
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-# firefox: robot -v browser:firefox -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+# firefox: robot -v browser:firefox -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-# firefox: robot -v browser:headlessfirefox -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+# firefox: robot -v browser:headlessfirefox -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
@@ -33,10 +33,10 @@ ${suite}             m_devpac
 ${dados}
 
 *** Test Case ***
-SCR4M-001:Devolucao Paciente Teste RPA
-# robot -v browser:chrome -t "SCR4M-001:Devolucao Paciente Teste RPA" -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-# robot -v browser:firefox -t "SCR4M-001:Devolucao Paciente Teste RPA" -d ./5-results/SCR4M-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4M-001"
+SCR4MDEVPAC-001:Fluxo principal
+# robot -v browser:chrome -t "SCR4MDEVPAC-001:Fluxo principal" -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+# robot -v browser:firefox -t "SCR4MDEVPAC-001:Fluxo principal" -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MDEVPAC-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Devoluções>De Pacientes"@nprint @las
     Selecionar campo estoque e preencher com "${dados}[Pesq_Estoque]"
     Selecionar campo consulta de atendimento e filtrar pelo nome "${dados}[Nome]"
