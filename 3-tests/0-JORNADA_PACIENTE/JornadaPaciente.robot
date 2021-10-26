@@ -55,13 +55,11 @@ SCR0JSMK-001:Jornada do Paciente
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
-
 # SMF-8250:Cadastrar Pré-Internação com Convênio do Tipo Convênio
 #     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
 #     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
 #     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
 #     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
-
 #SMF-9621:Consultar o cadastro do paciente para gerar uma internação
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Sim]
@@ -74,13 +72,12 @@ SCR0JSMK-001:Jornada do Paciente
     #Acessar a tela "Atendimento>Internação>Atendimento>Internação"@nprint @nlas
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Não]
     #Pesquisar pre-internacao existente pelo codigo do paciente |${dados}[cadPacOutputCodPaciente]| 
-    Clicar no botao [Sim]|${dados}[intPacMsgEsperada]| 
+    Clicar no botao [Sim]|${dados}[intPacMsgEsperada]|
     Clicar no botao [OK]||
-    Data previsao hoje + 10
-    Campo leito 300
-    Clicar no botao [Salvar]||
+    Revisar os dados de internacao incluindo leito |${dados}[intPacCodLeito]|,|${dados}[preAgDtHrPrevInter]|@nprint
+    Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
     Clicar no botao [Imprimir]||
-    Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
+    #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
 #SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas

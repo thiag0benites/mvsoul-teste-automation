@@ -7,4 +7,8 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-### Elementos da Pagina 
+### Elementos da Pagina
+${inputIntCodPaciente}    id=inp:atendime_cdPaciente
+${inputMedRef}    id=inp:nmPrestadorReferencia
+${inputDataHrPrevAlta}    id=inp:dtPrevistaAlta
+${inputLeito}     xpath=(//div[@data-member='CD_LEITO']//input[@id='inp:cdLeito'])[2]

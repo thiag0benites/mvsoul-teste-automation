@@ -32,7 +32,8 @@ ${btnConfirmaNome}              id=pacientes_btnOk
 ${btnInternar}                  xpath=//*[@*='Botão de acesso à Tela de Atendimento do Paciente']
 ${btnAgendar}                   xpath=//button[@data-member='BTN_AGENDAR']
 ${btnConfirmar}                 xpath=//button[@id='aSimples_btnConfirmar']
-${btnOkMed}                     xpath=//button[@id='btok']  
+${btnOkMed}                     xpath=//button[@id='btok'] 
+${btnPrintInt}                  xpath=//button[@data-member='BTN_5']
 
 #Selectors
 ${selectSexo}                   xpath=//*[@id="tpSexo_ac"]

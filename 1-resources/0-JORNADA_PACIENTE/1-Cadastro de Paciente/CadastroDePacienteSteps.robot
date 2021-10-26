@@ -107,6 +107,13 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Click Element    ${btnOkMed}   
         Sleep    1
 
+    ELSE IF    '${nomeBtn}' == '5-Imprimir'
+        Wait Until Element Is Visible    ${btnPrintInt}    30
+        Sleep    1
+        Click Element    ${btnPrintInt}   
+        Sleep    1
+    
+
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|
