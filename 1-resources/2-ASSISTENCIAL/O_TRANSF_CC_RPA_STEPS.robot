@@ -19,26 +19,14 @@ Acessar Cadastro |${Item}|
     Clicar Botao |Executar Consulta|
     Validador Elemento|AADA TEIXEIRA PINTO MARTINS|  
 
-# Acesso Campo |${Campo}|
-#     ${Campo}    Run Keyword If    
-#     ...   '${Campo}' == 'Codigo Aviso'
-#     ...    Click Element                    ${IdeCodigoAviso}
-#     ...    Sleep    5
-#     ...    SeleniumLibrary.Click Button     ${BtnListaCodigoAviso}
-#     ...    SeleniumLibrary.Click Element    ${TabelaCodigoAviso}
-#     ...    Clicar Botao |Ok|
-#     ...    Should Be String                 44199
-#     # ...    ELSE IF
 Acesso Campo |${Campo}|
-    # ${Campo}    Run Keyword If
-    # ...   '${Campo}' == 'Codigo Aviso'
     Click Element                    ${IdeCodigoAviso}
     Sleep    5
     SeleniumLibrary.Click Button     ${BtnListaCodigoAviso}
     SeleniumLibrary.Click Element    ${TabelaCodigoAviso}
     Clicar Botao |Ok|
     Validador Elemento|44199|                 
-    # ...    ELSE IF
+
 Clicar Botao |${Botao}|
     Sleep                                               10
     ${Botao}    Run Keyword If
@@ -121,9 +109,6 @@ Preenche Data e Hora Recuperacao Pro Anestesica
 Validador Elemento|${Elemento}|
     Run Keyword If    '${Elemento}' == '${Elemento}'
     ...    Log To Console    ***'${Elemento}' Validado Com Sucesso!***
-    
-
-    
 
 
 # Inserir Data de Inicio |${data}|
