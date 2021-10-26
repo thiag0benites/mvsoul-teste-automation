@@ -176,14 +176,6 @@ Clicar em Estoque
     Click button
     Sleep                        
 
-Click no Item
-    [Arguments]             ${element}
-    Sleep  2
-    Wait Until Element Is Visible           ${element}               20
-    Click Element                           ${element}
-=======
-Filtrar por "%FARMACIA%CENTRAL%"
->>>>>>> 3900f5ad6adf93ee206bdd07bb348a78722be5c6
 
 Click no Item
     [Arguments]       ${elemento}

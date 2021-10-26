@@ -85,6 +85,14 @@ Validar Acesso a Tela |${TituloEsperado}|
     Wait Until Element Is Visible           xpath=//div[@id="dspTitulo01"]              250
     Element Should Contain                  xpath=//div[@id="dspTitulo01"]              ${TituloEsperado}
 
+Selecionar Item Na Lista         
+    [Arguments]                             ${Item}                         ${ItemLista}   
+    Click no Item                           xpath=//input[@name="filterLov"]                  
+    Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
+    Click no Item                           xpath=//button[@id="btfilter"]                  
+    Click Elemento por titulo               ${ItemLista}
+    Click no Item                           xpath=//button[@id="btok"]
+
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
 ##############################################################################################################################################################################

@@ -28,14 +28,6 @@ Inserir Produto |${Produto}|
     Preencher Campo                         ${CampoValidade}                /10/30
     Preencher Campo                         ${CampoQtEstoque}               1000
 
-Selecionar Item Na Lista         
-    [Arguments]                             ${Item}                         ${ItemLista}   
-    Click no Item                           ${CampoFiltro}                  
-    Preencher Campo                         ${CampoFiltro}                  %${Item}
-    Click no Item                           ${BotaoFiltrar}                 
-    Validar Elemento Pelo Titulo            ${ItemLista}
-    
-
 Clicar Botao Fechar Mov Usuario
     Click no Item                           ${BotaoFecharMov}               
     Valida Mensagem                         ${MensagemFecharMov}            Fechamento da leitura realizado com sucesso!
