@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Denner Ricardo
-# Decrição: Elementos e metodos da tela de Solicitação de Produtos
+# Decrição: Elementos e metodos da tela de Gerar nota fiscal de convenio
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais

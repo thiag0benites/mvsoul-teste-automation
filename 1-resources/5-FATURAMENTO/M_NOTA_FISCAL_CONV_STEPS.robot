@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/4-MATERIAIS/M_NOTA_FISCAL_CONV_PAGE.robot
+Resource                ../../2-pages/5-FATURAMENTO/M_NOTA_FISCAL_CONV_PAGE.robot
 
 *** Variable ***
 

@@ -3,20 +3,19 @@
 # Decrição:  Gerar nota fiscal de convenio, com sucesso.
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -t "SCR4M-001:M_NOTA_FISCAL_CONV" -d ./5-results/SCR4M-002 "3-tests/4-MATERIAIS/M_NOTA_FISCAL_CONV).robot"
-# firefox: robot -v browser:firefox -t "SCR4M-002:M_NOTA_FISCAL_CONV" -d ./5-results/SCR4M-002"3-tests/4-MATERIAIS/M_NOTA_FISCAL_CONV).robot"
+# chrome:   robot -v browser:chrome -t "SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio" -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/5-FATURAMENTO/M_NOTA_FISCAL_CONV.robot"
+# firefox:  robot -v browser:firefox -t "SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio" -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/5-FATURAMENTO/M_NOTA_FISCAL_CONV.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/SCR4M-002 "3-tests/4-MATERIAIS/M_NOTA_FISCAL_CONV.robot"
-# firefox: robot -v browser:headlessfirefox -d ./5-results/SCR4M-002 "3-tests/4-MATERIAIS/M_NOTA_FISCAL_CONV.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/5-FATURAMENTO/M_NOTA_FISCAL_CONV.robot"
+# firefox: robot -v browser:headlessfirefox -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/5-FATURAMENTOS/M_NOTA_FISCAL_CONV.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 
-Resource            ../../1-resources/4-MATERIAIS/M_NOTA_FISCAL_CONV_STEPS.robot
-Resource            ../../1-resources/auxiliar/Genericos    
-.robot
+Resource            ../../1-resources/5-FATURAMENTO/M_NOTA_FISCAL_CONV_STEPS.robot
+Resource            ../../1-resources/auxiliar/Genericos.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -34,8 +33,8 @@ ${dados}
 
 *** Test Case ***
 SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio
-# robot -v browser:chrome -t "SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio" -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/4-MATERIAIS/M_NOTA_FISCAL_CONV.robot"
-# robot -v browser:firefox -t "SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio" -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/4-MATERIAIS/M_NOTA_FISCAL_CONV.robot"
+# robot -v browser:chrome -t "SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio" -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/5-FATURAMENTO/M_NOTA_FISCAL_CONV.robot"
+# robot -v browser:firefox -t "SCR4M_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio" -d ./5-results/SCR4M_M_NOTA_FISCAL_CONV-001 "3-tests/5-FATURAMENTO/M_NOTA_FISCAL_CONV.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4M_M_NOTA_FISCAL_CONV-001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Solicitações>Nota Fiscal do Convênio"@nprint @las
     Preencher campo de Convenio |${dados}[codConvenio]|
