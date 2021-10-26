@@ -176,7 +176,10 @@ Clicar em Estoque
     Click button
     Sleep                        
 
-Filtrar por "%FARMACIA%CENTRAL%"
+Clicar Botao se estiver Visivel
+    [Arguments]             ${Botao}                        
+    ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}          
+    Run Keyword If          '${Status}' == 'True'               Click no Item                        ${Botao}
 
 
 Click no Item

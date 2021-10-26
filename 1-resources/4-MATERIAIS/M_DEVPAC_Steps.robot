@@ -33,7 +33,7 @@ Selecionar campo motivo e filtrar pelo nome
     Click no Item                        ${BotaoOk} 
 
 Preencher campo de Observacoes com "${Obs}"
-    Preencher campo                   ${CampoObsInput}                ${Obs}
+    Preencher campo                      ${CampoObsInput}                ${Obs}
 
 Preencher campo com Codido de Barra "${COD}"
     Click no Item                         ${CampoCod}
@@ -41,19 +41,50 @@ Preencher campo com Codido de Barra "${COD}"
     Preencher campo                       ${CampoCodInput}                ${COD}
     Click no Item                         ${BtnSeguinte}
 
-Preencher campo produto "${Produto}" e Qntde Recebida "${Qntde}"
+Preencher campo Primeiro produto "${Produto}" e Qntde Recebida "${Qntde_Recebida}"
     Click no Item                         ${CodProduto}
     Preencher campo                       ${CampoProduto}                 ${Produto}
     Click no Item                         ${BtnSeguinte}
-    Preencher campo                       ${CampoQntdeInput}              ${Qntde}
+    Preencher campo                       ${CampoQntdeInput}              ${Qntde_Recebida}
 
-Preencher campos da Linha2 "${Produto_Linha2}" e Lote "${Lote_DevProd}" e Unidade "${Unidade}" e Qntde Recebida "${Qntde_Recebida2}" 
+Preencher campo Segundo produto "${Produto2}", Unidade "${Unidade}" e Qntde Recebida "${Qntde_Recebida}"
     Click no Item                         ${BtnSeguinte}
-    Click no Item                         ${BtnProdutoL2}
-    Preencher campo                       ${CampoProdutoL2}                 ${Produto_Linha2}
-    # Click no Item                         ${BtnOK}
-    # Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${InputProdutoCod}                   ${Produto2}    
+    Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${InputQntde2}                       ${Qntde_Recebida}
+    Click no Item                         ${CampoBtnUnidade}
+    Click no Item                         ${BtnUnidade}
+    Click no Item                         ${SelectUnidade}
+    Click no Item                         ${BotaoOk}
+    Click no Item                         ${BtnSeguinte}
 
+Preencher campo Terceiro produto "${Produto3}" e Qntde Recebida "${Qntde_Recebida}"
+    Click no Item                         ${BtnSelecionarProduto}
+    Preencher campo                       ${InputProduto}                      ${Produto3}    
+    Click no Item                         ${BotaoFiltrar}
+    Click no Item                         ${SelectProd3}
+    Click no Item                         ${BotaoOk}
+    Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${InputQntde3}                       ${Qntde_Recebida}
+    Click no Item                         ${BtnSeguinte}
 
+Preencher campo Quarto produto "${Produto4}", Unidade e Qntde Recebida "${Qntde_Recebida}" 
+    Preencher campo                       ${InputProdutoCod}                   ${Produto4}
+    Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${InputQntde4}                       ${Qntde_Recebida}
+    Click no Item                         ${CampoBtnUnidade4}
+    Click no Item                         ${BtnUnidade4}
+    Click no Item                         ${SelectUnidade4}
+    Click no Item                         ${BotaoOk}
+    Click no Item                         ${BtnSeguinte}
 
+Preencher campo Quinto produto "${Produto5}", Unidade e Qntde Recebida "${Qntde_Recebida}" 
+    Preencher campo                       ${InputProdutoCod}                   ${Produto5}
+    Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${InputQntde5}                       ${Qntde_Recebida}
+    Click no Item                         ${CampoBtnUnidade5}
+    Click no Item                         ${BtnUnidade5}
+    Click no Item                         ${SelectUnidade5}
+    Click no Item                         ${BotaoOk}
+    Click no Item                         ${BtnSeguinte}
 

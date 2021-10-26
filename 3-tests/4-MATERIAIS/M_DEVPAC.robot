@@ -43,6 +43,11 @@ SCR4M-001:Devolucao Paciente Teste RPA
     Selecionar campo motivo e filtrar pelo nome
     Preencher campo de Observacoes com "${dados}[Observacao]"
     Preencher campo com Codido de Barra "${dados}[Cod_Barra]"
-    Preencher campo produto "${dados}[Produto1]" e Qntde Recebida "${dados}[Qntde_Recebida]"
-    Preencher campos da Linha2 "${dados}[Produto_Linha2]" e Lote "${dados}[Lote_DevProd]" e Unidade "${dados}[Unidade]" e Qntde Recebida "${dados}[Qntde_Recebida2]" 
+    Preencher campo Primeiro produto "${dados}[Produto1]" e Qntde Recebida "${dados}[Qntde_Recebida]"
+    Preencher campo Segundo produto "${dados}[Produto_Linha2]", Unidade "${dados}[Unidade]" e Qntde Recebida "${dados}[Qntde_Recebida]" 
+    Preencher campo Terceiro produto "${dados}[Produto_Linha3]" e Qntde Recebida "${dados}[Qntde_Recebida]"
+    Preencher campo Quarto produto "${dados}[Produto_Linha4]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
+    Preencher campo Quinto produto "${dados}[Produto_Linha5]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
+
+
 
