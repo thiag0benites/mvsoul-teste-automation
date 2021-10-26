@@ -41,32 +41,14 @@ Validar Pop Up de Observacoes
 
 Clicar no Botao |${NomeBotao}|
     IF  '${NomeBotao}' == 'OK'
-        Wait Until Element Is Visible       ${btnOK}                 10
-        Sleep                               2
-        Click Element                       ${btnOK} 
-    END
-
-    IF  '${NomeBotao}' == 'Filtar'
-        Wait Until Element Is Visible       ${btnFiltrar}                 10
-        Sleep                               2
-        Click Element                       ${btnFiltrar} 
-    END
-
-    IF  '${NomeBotao}' == 'Obs. Pedido'
-        Wait Until Element Is Visible       ${btnObsPedido}                10
-        Sleep                               2
-        Click Element                       ${btnObsPedido}
-    END
-
-    IF  '${NomeBotao}' == 'Voltar'
-        Wait Until Element Is Visible       ${btnVoltar}                 10
-        Sleep                               2
-        Click Element                       ${btnVoltar} 
-    END
-    
-    IF  '${NomeBotao}' == 'Pesquisar'
-        Wait Until Element Is Visible       ${btnPesquisar}                10
-        Sleep                               2
-        Click Element                       ${btnPesquisar}
+        Click no Item                       ${btnOK} 
+    ELSE IF  '${NomeBotao}' == 'Filtar'
+        Click no Item                       ${btnFiltrar} 
+    ELSE IF  '${NomeBotao}' == 'Obs. Pedido'
+        Click no Item                       ${btnObsPedido}
+    ELSE IF  '${NomeBotao}' == 'Voltar'
+        Click no Item                       ${btnVoltar} 
+    ELSE IF  '${NomeBotao}' == 'Pesquisar'
+        Click no Item                       ${btnPesquisar}
     END
     
