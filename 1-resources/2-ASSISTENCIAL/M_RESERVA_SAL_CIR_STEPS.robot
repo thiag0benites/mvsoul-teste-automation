@@ -5,7 +5,6 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/2-ASSISTENCIAL/M_RESERVA_SAL_CIR_PAGE.robot
-#Resource          ../../1-resources/4-MATERIAIS/O_CONTAGEM_STEPS.robot  
 
 *** Variable ***
 
