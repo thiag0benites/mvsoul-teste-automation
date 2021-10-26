@@ -33,12 +33,16 @@ SCR1AOTRAN-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AOTRAN-001:Fluxo Principal" -d ./5-results/SCR1AOTRAN-001 "3-tests\2-ASSISTENCIAL/O_TRANSF_CC_RPA.robot"
 # robot -v browser:firefox -t "SCR1AOTRAN-001:Fluxo Principal" -d ./5-results/SCR1AOTRAN-001 "3-tests\ 2-ASSISTENCIAL/O_TRANSF_CC_RPA.robot"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Transferência de Paciente>Transferência para Centro Cirúrgico"@nprint @las
-    Acessar Cadastro |1000000198|
-    Acesso Campo |Codigo Aviso|
-    Seleciona listagem RPA
+    Acessar Cadastro |1000002187|
+    Acesso Campo |Codigo Aviso|    
     Seleciona Transporte Data Chamada
-    Seleciona Recuperacao Pos Anestesica
     Seleciona Trans Hora
     Seleciona Centro Cir Data Transf
     Seleciona Centro Cir Hora
+    Seleciona listagem RPA
+    Seleciona Recuperacao Pos Anestesica
+    Preenche Data e Hora Recuperacao Pro Anestesica
+    Clicar Botao |Salvar|
+    Validador
+
     

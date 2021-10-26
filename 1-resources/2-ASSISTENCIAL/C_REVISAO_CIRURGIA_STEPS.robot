@@ -9,36 +9,23 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_REVISAO_CIRURGIA_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Validar Acesso a Tela
-    Wait Until Element Is Visible           ${TituloPrincipal}              250
-    Element Should Contain                  ${TituloPrincipal}              Revisão de Cirurgias
-
 Realizar Consulta Por Aviso
     Wait Until Element Is Visible           ${CampoAviso}                   20
-    Click Element                           ${CampoAviso}            
-    Wait Until Element Is Visible           ${CampoAvisoEditavel}           20
-    SeleniumLibrary.Input Text              ${CampoAvisoEditavel}           44298   
+    Click Element                           ${CampoAviso}     
+    Preencher Campo                         ${CampoAvisoEditavel}           44298 
     Click Element                           ${BotaoExecConsulta} 
 
 Validar Campos de Preenchimento Automatico
-    Wait Until Element Is Visible           ${CampoDataAviso}               20
-    Element Should Contain                  ${CampoDataAviso}               13/10/2021
-    Wait Until Element Is Visible           ${CampoStatusAviso}             20
-    Element Should Contain                  ${CampoStatusAviso}             Checagem
-    Wait Until Element Is Visible           ${CampoSuspensaoAviso}          20
-    Element Should Contain                  ${CampoSuspensaoAviso}          Não
-    Wait Until Element Is Visible           ${CampoCentroCirurgico}         20
-    Element Should Contain                  ${CampoCentroCirurgico}         HOBRA CENTRO CIRURGICO
-    Wait Until Element Is Visible           ${CampoSalaCirurgica}           20
-    Element Should Contain                  ${CampoSalaCirurgica}           HOBRA SALA 01
+    Validar Informacao Item                 ${CampoDataAviso}               13/10/2021
+    Validar Informacao Item                 ${CampoStatusAviso}             Checagem
+    Validar Informacao Item                 ${CampoSuspensaoAviso}          Não
+    Validar Informacao Item                 ${CampoCentroCirurgico}         HOBRA CENTRO CIRURGICO
+    Validar Informacao Item                 ${CampoSalaCirurgica}           HOBRA SALA 01
     Validar Elemento Pelo Titulo            1312609
     Validar Elemento Pelo Titulo            PACIENTE TESTE RPA
-    Wait Until Element Is Visible           ${CampoProcFatura}              20
-    Element Should Contain                  ${CampoProcFatura}              31003079
-    Wait Until Element Is Visible           ${CampoDescCirurgia}            20
-    Element Should Contain                  ${CampoDescCirurgia}            APENDICECTOMIA
-    Wait Until Element Is Visible           ${CampoConvenio}                20
-    Element Should Contain                  ${CampoConvenio}                PARTICULAR BRASILIA
+    Validar Informacao Item                 ${CampoProcFatura}              31003079
+    Validar Informacao Item                 ${CampoDescCirurgia}            APENDICECTOMIA
+    Validar Informacao Item                 ${CampoConvenio}                PARTICULAR BRASILIA
 
 Validar Acesso e Conteudo Das Abas
     Click Element                           ${AbaPrestadores}  
@@ -46,34 +33,25 @@ Validar Acesso e Conteudo Das Abas
     Click Element                           ${AbaEquipamentos}  
     Exibição Material                       47                              MONITOR CARDIACO (HORA)                     0
     Click Element                           ${AbaCaixasCir}  
-    Wait Until Element Is Visible           ${ValidAbaCaixasCir}            20
-    Element Should Be Visible               ${ValidAbaCaixasCir}
+    Validar Item                            ${ValidAbaCaixasCir}
     Click Element                           ${AbaProdutos}  
-    Wait Until Element Is Visible           ${ValidAbaProduto}              20
-    Element Should Be Visible               ${ValidAbaProduto}
+    Validar Item                            ${ValidAbaProduto}
     Click Element                           ${AbaImagem}  
-    Wait Until Element Is Visible           ${ValidAbaImagem}               20
-    Element Should Be Visible               ${ValidAbaImagem}
+    Validar Item                            ${ValidAbaImagem}
     Click Element                           ${AbaLaboratorio}  
-    Wait Until Element Is Visible           ${ValidAbaLab}                  20
-    Element Should Be Visible               ${ValidAbaLab}
+    Validar Item                            ${ValidAbaLab}
     Click Element                           ${AbaSangue}  
-    Wait Until Element Is Visible           ${ValidAbaSangue}               20
-    Element Should Be Visible               ${ValidAbaSangue}     
+    Validar Item                            ${ValidAbaSangue}     
     Click Element                           ${AbaObservacao}  
-    Wait Until Element Is Visible           ${ValidAbaObs}                  20
-    Element Should Be Visible               ${ValidAbaObs} 
+    Validar Item                            ${ValidAbaObs} 
     Click Element                           ${AbaConfCanc}  
     Validar Elemento Pelo Titulo            ANDREVASCONCELOS
     Click Element                           ${AbaHistAlteracoes}  
-    Wait Until Element Is Visible           ${ValidAbaHistAlter}            20
-    Element Should Be Visible               ${ValidAbaHistAlter} 
+    Validar Item                            ${ValidAbaHistAlter} 
     Click Element                           ${AbaHistEvolucao}      
-    Wait Until Element Is Visible           ${ValidAbaHistEvol}             20
-    Element Should Be Visible               ${ValidAbaHistEvol}  
+    Validar Item                            ${ValidAbaHistEvol}  
     Click Element                           ${AbaHistEmail}  
-    Wait Until Element Is Visible           ${ValidAbaHistEmails}           20
-    Element Should Be Visible               ${ValidAbaHistEmails} 
+    Validar Item                            ${ValidAbaHistEmails} 
    
 Exibicao Prestadores
     [Arguments]             ${CdPrestador}          ${NmPrestador}              ${Especialidade}            ${Cirurgia}
