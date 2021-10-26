@@ -93,6 +93,10 @@ Selecionar Item Na Lista
     Click Elemento por titulo               ${ItemLista}
     Click no Item                           xpath=//button[@id="btok"]
 
+Clicar Botao Salvar 
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
+
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
 ##############################################################################################################################################################################
