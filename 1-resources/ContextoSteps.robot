@@ -35,7 +35,6 @@ Quando navego no menu "${caminhoSelecaoMenu}"
 
 Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Unselect Frame
-    # Realcar Elemento    ${HomeXpathBtnMenu}
     ${cont}    Set Variable    ${1}
     Click Element    ${HomeXpathBtnMenu}
     @{listaItensMenu}    Converte string em lista    ${caminhoSelecaoMenu}    >
@@ -113,6 +112,14 @@ Criar Lista Itens Menu Xpath com Index
 Clicar no botão "${titulo}"${printscreen}
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
+
+# Preencher campo
+#     [Arguments]    ${elemento}    ${valor}
+#     Wait Until Element Is Visible    ${elemento}    10
+#     Wait Until Element Is Enabled    ${elemento}    5
+#     Click Element    ${elemento}
+#     Sleep    1.5
+#     Input Text    ${elemento}    ${valor}
 
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
@@ -222,6 +229,8 @@ Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${prin
     #    Fail    *** Falha na pesquisa!'
     # END
     Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
+
+    
 # Validar Ausencia de Resultados[${Locator}]${print}
 #    ${Condicao}    Page Should Contain Element    ${Locator}
 #    Wait Until Element Is Visible    ${Locator}    10

@@ -17,9 +17,9 @@ Preencher campos da tela de pre-agendamento |${dataHr}|,|${dataHrSugerida}|,|${t
     Preencher campo    ${inputTempoPrev}    ${tempoPrev}
     Sleep    1
     Preencher campo    ${inputDataHrPrevIntern}    ${dataHrPrevInter}
-    Sleep    2
+    Sleep    1
     Preencher campo    ${inputCodPacientePreAg}    ${codPaciente}
-    Sleep    2
+    Sleep    1
     Preencher campo    ${inputTipoInternacaoPreAg}    ${tipoInternacao}
     Sleep    1
     Preencher campo    ${inputSalaCirurgica}    ${salaCirurgica}
