@@ -48,11 +48,7 @@ SCR4MDEVPAC-001:Fluxo principal
     Preencher campo Terceiro produto "${dados}[Produto_Linha3]" e Qntde Recebida "${dados}[Qntde_Recebida]"
     Preencher campo Quarto produto "${dados}[Produto_Linha4]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
     Preencher campo Quinto produto "${dados}[Produto_Linha5]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
-    Preencher campo Sexto produto "${dados}[Produto_Linha6]" e Qntde Recebida "${dados}[Qntde_Recebida]"
-    # Preencher campo Setimo produto "${dados}[Produto_Linha7]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
-    # Preencher campo Oitavo produto "${dados}[Produto_Linha8]" e Qntde Recebida "${dados}[Qntde_Recebida]"
-    # Preencher campo Nono produto "${dados}[Produto_Linha9]" e Qntde Recebida "${dados}[Qntde_Recebida]"
-    # Clicar em Salvar, negando o pop-pup e Imprimindo registro
+    Clicar em Salvar, negando o pop-pup e Imprimindo registro
 
 
 

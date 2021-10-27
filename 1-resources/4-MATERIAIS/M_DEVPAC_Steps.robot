@@ -87,12 +87,6 @@ Preencher campo Quinto produto "${Produto5}", Unidade e Qntde Recebida "${Qntde_
     Click no Item                         ${SelectUnidade5}
     Click no Item                         ${BotaoOk}
     Click no Item                         ${BtnSeguinte}
-
-Preencher campo Sexto produto "${Produto6}" e Qntde Recebida "${Qntde_Recebida}"
-    Preencher campo                       ${InputProdutoCod}                   ${Produto6}
-    Click no Item                         ${BtnSeguinte}
-    Preencher campo                       ${InputQntde6}                       ${Qntde_Recebida}
-    Click no Item                         ${BtnSeguinte}
     
 Clicar em Salvar, negando o pop-pup e Imprimindo registro
     Click no Item                         ${Salvar}
