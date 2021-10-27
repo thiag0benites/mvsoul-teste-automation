@@ -19,7 +19,7 @@ Selecionar campo estoque e preencher com "${Estoque}"
     Preencher campo                      ${EstoqueInput}                ${Estoque} 
     Click no Item                        ${BotaoFiltrar}
     Click no Item                        ${SelectFarmacia}
-
+    
 Selecionar campo consulta de atendimento e filtrar pelo nome "${NomePaciente}"
     Click no Item                        ${ClickLupa}
     Click no Item                        ${CampoNome} 
@@ -88,3 +88,15 @@ Preencher campo Quinto produto "${Produto5}", Unidade e Qntde Recebida "${Qntde_
     Click no Item                         ${BotaoOk}
     Click no Item                         ${BtnSeguinte}
 
+Preencher campo Sexto produto "${Produto6}" e Qntde Recebida "${Qntde_Recebida}"
+    Preencher campo                       ${InputProdutoCod}                   ${Produto6}
+    Click no Item                         ${BtnSeguinte}
+    Preencher campo                       ${InputQntde6}                       ${Qntde_Recebida}
+    Click no Item                         ${BtnSeguinte}
+    
+Clicar em Salvar, negando o pop-pup e Imprimindo registro
+    Click no Item                         ${Salvar}
+    Clicar Botao se estiver Visivel       ${Nao}
+    Click no Item                         ${Imprimir}
+    Click no Item                         ${Confirmar}
+    Close Window
