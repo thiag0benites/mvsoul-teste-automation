@@ -26,17 +26,17 @@ Informar os campos que foram configurados como obrigatorios na tela${print}
     # Tempo necessário para o preenchimento do campo numero corretamente
     # Sleep    1
     Preencher campo    ${numeroEndereco}    100
-    Sleep    1
+    Sleep    2
 
 Verificar mensagem de aviso
     Wait Until Element Is Visible    ${msgWarning}    5
-    SeleniumLibrary.Click Button    ${msgWargingBtnSim}
+    Click Button    ${msgWargingBtnSim}
     # Sleep    1
-    # ${ExisteMsgAviso}    SeleniumLibrary.Get Text    ${msgWarning}
+    # ${ExisteMsgAviso}    Get Text    ${msgWarning}
     # ${ExisteMsgAviso}    Should Be String    ${msgWarning}    Atenção! Alterações podem ser perdidas.
     # ${ExisteMsgAviso}    Element Should Contain    ${msgWarning}    Atenção! Alterações podem ser perdidas.
     # IF    ${ExisteMsgAviso} <> ""
-    #    SeleniumLibrary.Click Button    ${msgWargingBtnSim}
+    #    Click Button    ${msgWargingBtnSim}
     # END
 
 Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
@@ -45,7 +45,7 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Click Element    ${btnSalvar}
         Wait Until Element Is Visible    ${notificacaoGravarRegistro}    5
         Sleep    0.5
-        ${msgObtida}    SeleniumLibrary.Get Text    ${notificacaoGravarRegistro}
+        ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
         IF    "${msgObtida}" != ""
             Should Be Equal As Strings    ${cadPacMsgEsperada}    ${msgObtida}
         ELSE
@@ -83,20 +83,20 @@ Captura codigo do Paciente Cadastrado|${suite}|${id}|
     Sleep    1
     Should Not Be Empty    ${inputCodPaciente}
     #${xpathCodPaciente}
-    ${codPaciente}    SeleniumLibrary.Get Element Attribute    ${inputCodPaciente}    title
+    ${codPaciente}    Get Element Attribute    ${inputCodPaciente}    title
     #${xpathCodPaciente}    title
     Should Not Be Empty    ${codPaciente}
-    ${nome}    SeleniumLibrary.Get Element Attribute    ${inputNomePaciente}    title
+    ${nome}    Get Element Attribute    ${inputNomePaciente}    title
     Should Not Be Empty    ${nome}
-    ${idade}    SeleniumLibrary.Get Element Attribute    ${inputIdade}    title
+    ${idade}    Get Element Attribute    ${inputIdade}    title
     Should Not Be Empty    ${idade}
-    ${cpf}    SeleniumLibrary.Get Element Attribute    ${inputCpf}    title
+    ${cpf}    Get Element Attribute    ${inputCpf}    title
     Should Not Be Empty    ${cpf}
     # Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacCodPaciente", valor ""
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputCodPaciente", valor "${codPaciente}"
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputNomePaciente", valor "${nome}"
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputIdade", valor "${idade}"
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputCpf", valor "${cpf}"
-    SeleniumLibrary.Click Element    ${btnSair}
+    Click Element    ${btnSair}
     Sleep    3
     # Unselect Frame

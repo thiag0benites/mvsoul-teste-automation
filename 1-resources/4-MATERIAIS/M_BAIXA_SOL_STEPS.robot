@@ -18,7 +18,7 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Click Element    ${btnSalvar}
         Wait Until Element Is Visible    ${notificacaoGravarRegistro}    5
         Sleep    0.5
-        ${msgObtida}    SeleniumLibrary.Get Text    ${notificacaoGravarRegistro}
+        ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
         IF    "${msgObtida}" != ""
             Should Be Equal As Strings    ${cadPacMsgEsperada}    ${msgObtida}
         ELSE

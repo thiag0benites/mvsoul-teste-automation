@@ -12,6 +12,6 @@ Resource    ../../../2-pages/0-JORNADA_PACIENTE/RealizarAtendimentoInternacaoCon
 Pesquisar pre-internacao existente pelo codigo do paciente |${intCodPaciente}|${print}
     Wait Until Element Is Visible    ${inputIntCodPaciente}    180
     Preencher campo    ${inputIntCodPaciente}    ${intCodPaciente}
-    SeleniumLibrary.Click Element    ${inputMedRef}
+    Click Element    ${inputMedRef}
     
 Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>

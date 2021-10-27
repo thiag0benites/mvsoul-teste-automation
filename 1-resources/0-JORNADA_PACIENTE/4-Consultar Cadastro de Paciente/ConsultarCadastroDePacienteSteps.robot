@@ -19,7 +19,7 @@ Configurar a tela para consulta de paciente [${status}]
     Acessar a tela "Atendimento>Internação>Configurações>Parâmetros"@nprint @nlas
     Wait Until Element Is Visible    ${idAbaAtendimento}    50
     Sleep    1
-    SeleniumLibrary.Click Element    ${idAbaAtendimento}
+    Click Element    ${idAbaAtendimento}
     Sleep    2
     Seleciona Item Combobox    ${selectConsultaPaciente}   
     Sleep    2
@@ -27,7 +27,7 @@ Configurar a tela para consulta de paciente [${status}]
 Clicar no botao de Pesquisa
     Wait Until Element Is Visible    ${btnPesquisar}    50
     Sleep    1
-    SeleniumLibrary.Click Element    ${btnPesquisar}
+    Click Element    ${btnPesquisar}
     Sleep    60
 
 Pesquisar paciente pelo Nome |${nomePaciente}|${print}
@@ -39,13 +39,13 @@ Pesquisar paciente pelo Nome |${nomePaciente}|${print}
 Selecionar o nome na lista e confirmar
     Wait Until Element Is Visible    ${selectNomeLista}    20
     Sleep    1
-    SeleniumLibrary.Click Element    ${selectNomeLista} 
+    Click Element    ${selectNomeLista} 
     Sleep    1
     Clicar no botao [3-Confirmar]||
 Clicar em Internar
     Wait Until Element Is Visible    ${btnInternar}    50
     Sleep    1
-    SeleniumLibrary.Click Element    ${btnInternar}
+    Click Element    ${btnInternar}
     Sleep    60
 Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [${status}]
     Acessar a tela "Atendimento>Internação>Atendimento>Internação"@nprint @las
