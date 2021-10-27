@@ -217,3 +217,6 @@ Clicar no botão Salvar do menu
 
 Clicar no botão Adicionar
     Click Element     ${btnAdicionar}
+
+Clicar no botão Executar 
+    Click Element     ${btnExecute}

@@ -1,21 +1,21 @@
 #################################################################################################################################################################
 # Autor: Letícia Andrade
-# Decrição: Testes da tela O_GERIVE - Geração do Inventário
+# Decrição: Testes da tela CON_ATE
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/O_GERIVE "3-tests/4-MATERIAIS/O_GERIVE.robot"
-# firefox: robot -v browser:firefox -d ./5-results/O_GERIVE "3-tests/4-MATERIAIS/O_GERIVE.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/CON_ATE "3-tests/1-ATENDIMENTO/CON_ATE.robot"
+# firefox: robot -v browser:firefox -d ./5-results/CON_ATE "3-tests/1-ATENDIMENTO/CON_ATE.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/O_GERIVE "3-tests/4-MATERIAIS/O_GERIVE.robot"
-# firefox: robot -v browser:headlessfirefox -d ./5-results/O_GERIVE "3-tests/4-MATERIAIS/O_GERIVE.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/CON_ATE "3-tests/1-ATENDIMENTO/CON_ATE.robot"
+# firefox: robot -v browser:headlessfirefox -d ./5-results/CON_ATE "3-tests/1-ATENDIMENTO/CON_ATE.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/bd/BancoDados.robot
 Resource            ../../1-resources/ContextoSteps.robot 
-Resource            ../../1-resources/4-MATERIAIS/O_GERIVE_STEPS.robot
+Resource            ../../1-resources/1-ATENDIMENTO/CON_ATE_STEPS.robot
 Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -23,20 +23,19 @@ Resource            ../../1-resources/dados/DadosTeste.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+#Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            O_GERIVE
+${suite}            CON_ATE
 # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR4MOGERIVE-001:Geracao do Inventario
-# robot -v browser:chrome -t "SCR4MOGERIVE-001:Geracao do Inventario" -d ./5-results/SCR4MOGERIVE-001 "3-tests/4-MATERIAIS/O_GERIVE.robot"
-# robot -v browser:firefox -t "SCR4MOGERIVE-001:Geracao do Inventario" -d ./5-results/SCR4MOGERIVE-001 "3-tests/4-MATERIAIS/O_GERIVE.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MOGERIVE-001"
-     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Geração do Inventário"@nprint @las
-     Usuário deverá preencher o campo <Contagem>|${dados}[codContagem]|
-     Clicar no botão Confirmar
-     Clicar no botão Sim no modal de notificacao
+SMF-10550:Consulta de Atendimentos
+# robot -v browser:chrome -t "SMF-10550:Consulta de Atendimentos" -d ./5-results/SMF-10550 "3-tests/1-ATENDIMENTO/CON_ATE.robot"
+# robot -v browser:firefox -t "SMF-10550:Consulta de Atendimentos" -d ./5-results/SMF-10550 "3-tests/1-ATENDIMENTO/CON_ATE.robot"
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10550"
+    Acessar a tela "Atendimento>Internação>Consultas>Atendimentos"@nprint @las
+    Usuário deverá preencher o campo <Dt. Ini. Atend.>|${dados}[dataIniAtend]|,|${dados}[dataFimAtend]|,|${dados}[Internacao]|
+    Clicar no botão Executar 
