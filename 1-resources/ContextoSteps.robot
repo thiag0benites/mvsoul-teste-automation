@@ -176,7 +176,6 @@ Clicar em Estoque
     Click button
     Sleep                        
 
-Filtrar por "%FARMACIA%CENTRAL%"
 
 Click no Item
     [Arguments]       ${elemento}
@@ -194,6 +193,15 @@ Validar Informacao Item
     Wait Until Element Is Visible           ${element}               20
     Element Should Contain                  ${element}               ${ResultadoEsperado} 
 
+Clicar no Campo e Preencher Informacao
+    [Arguments]         ${CampoClick}           ${CampoEditavel}                ${DadoInserido}           
+    Click no Item                               ${CampoClick}
+    Sleep  1 
+    Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
+
+
+Filtrar por "%FARMACIA%CENTRAL%"
+=======
 Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${print}
     ${Cont}    Set Variable    0
     Log To Console    *** Com Resultado: ${LocatorComResultado}
