@@ -119,7 +119,7 @@ Clicar no botão "${titulo}"${printscreen}
 
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
-    Wait Until Element Is Visible    ${elemento}    120
+    Wait Until Element Is Visible    ${elemento}    180
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
@@ -176,6 +176,10 @@ Clicar em Estoque
     Click button
     Sleep                        
 
+Clicar Botao se estiver Visivel
+    [Arguments]             ${Botao}                        
+    ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}          
+    Run Keyword If          '${Status}' == 'True'               Click no Item                        ${Botao}
 
 Click no Item
     [Arguments]       ${elemento}
