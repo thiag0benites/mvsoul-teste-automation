@@ -18,7 +18,7 @@ Resource          ../../1-resources//2-ASSISTENCIAL/M_ADMISSAO_CO_STEPS.robot
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+# Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -32,3 +32,5 @@ SCR2AMADMI-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR2AMADMI-001:Fluxo Principal" -d ./5-results/SCR2AMADMI-001 "3-tests\ 2-ASSISTENCIAL/M_ADMISSAO_CO.Robot"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Ficha Obstétrica"@nprint @las
     Acessar Atendimento |%Teste|
+    Inserir Data do Parto |19/Out/2021|
+    Acessar Tipo Parto |Parto Normal|
