@@ -41,6 +41,7 @@ SCR6CO_IMP_CAIXA-001:Caixa Importar movimentação
    	
     # Informar no campo [Período] o período de deseja importar para a Contabilidade
     # Clicar no botão<Liberar>para iniciar o processo de importação
-   
-    //*[@title='Contabilidade'][1]
 
+    # ${menuContabilidade}    xpath=(//*[@title='Contabilidade'])[1]
+
+    # Click Element    ${menuContabilidade}
