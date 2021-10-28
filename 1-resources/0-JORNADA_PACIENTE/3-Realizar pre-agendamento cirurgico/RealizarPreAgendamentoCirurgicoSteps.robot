@@ -22,7 +22,7 @@ Preencher campos da tela de pre-agendamento |${dataHr}|,|${dataHrSugerida}|,|${t
     Sleep    1.5
     Preencher campo    ${inputTipoInternacaoPreAg}    ${tipoInternacao}
     Sleep    1.5
-    Preencher campo    ${inputSalaCirurgica}    ${salaCirurgica}
+    Preencher campo    ${inputPreSalaCirur}    ${salaCirurgica}
     Sleep    1.5
     Preencher campo    ${inputMedicoAssociado}    ${medicoAssociado}
     Sleep    1
