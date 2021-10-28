@@ -5,12 +5,19 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../../2-pages/0-JORNADA_PACIENTE/AvisoCirurgiaPage.robot
+Resource          ../../../2-pages/0-JORNADA_PACIENTE/AssociarExamesImagemAvisoCirurgiaPage.robot
 
 *** Variable ***
 
 *** Keywords ***
-Clicar no botão Pesquisar
-Informar o codigo do aviso de cirurgia
+Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
+    Wait Until Element Is Visible    ${btnPesquisar}    30
+    Sleep    1
+    Click Element    ${btnPesquisar}   
+    Sleep    1
+
+Informar o codigo do aviso de cirurgia |${codAgCirurgia}|
+    Preencher campo    $elemento    $valor
 Clicar no botão executar 
 Clicar no botão Equipamento
 Selecionar um equipamento na lista 

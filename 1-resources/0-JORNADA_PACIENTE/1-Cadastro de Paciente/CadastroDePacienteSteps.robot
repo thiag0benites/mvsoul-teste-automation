@@ -112,8 +112,11 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnPrintInt}   
         Sleep    1
-    
-
+    ELSE IF    '${nomeBtn}' == 'Clicar no botao [Pesquisa]||'
+        Wait Until Element Is Visible    ${btnPrintInt}    30
+        Sleep    1
+        Click Element    ${btnPrintInt}   
+        Sleep    1
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|
