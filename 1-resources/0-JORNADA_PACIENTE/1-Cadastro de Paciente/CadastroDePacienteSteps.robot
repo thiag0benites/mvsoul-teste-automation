@@ -105,7 +105,7 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Wait Until Element Is Visible    ${btnOkMed}    30
         Sleep    1
         Click Element    ${btnOkMed}   
-        Sleep    1
+        Sleep    1.5
 
     ELSE IF    '${nomeBtn}' == '5-Imprimir'
         Wait Until Element Is Visible    ${btnPrintInt}    30

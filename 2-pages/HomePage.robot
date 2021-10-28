@@ -29,4 +29,4 @@ Seleciona item no menu
     Wait Until Element Is Visible    ${titleItemMenu}    5
     Realcar Elemento Execucao    ${titleItemMenu}
     Click Javascript    ${titleItemMenu}
-    Sleep    1.5
+    Sleep    1
