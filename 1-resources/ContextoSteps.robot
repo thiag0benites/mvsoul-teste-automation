@@ -118,7 +118,7 @@ Preencher campo
     Wait Until Element Is Visible    ${elemento}    120
     Wait Until Element Is Enabled    ${elemento}    5
     Click Element    ${elemento}
-    Sleep    0.5
+    Sleep    1
     Wait Until Element Is Enabled    ${elemento}    5
     Sleep    0.3
     Input Text    ${elemento}    ${valor}

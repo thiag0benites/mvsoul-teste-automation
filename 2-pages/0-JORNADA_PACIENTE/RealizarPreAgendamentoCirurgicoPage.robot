@@ -15,11 +15,12 @@ ${inputDataHrPrevIntern}    id=inp:dtPrevisaoInternacao
 ${inputTipoInternacao}    xpath=//input[@id='inp:cdTipoInternacao']
 ${inputPreSalaCirur}    id=inp:aviCir_cdSalCir
 ${inputMedicoAssociado}    id=inp:cdPrestadorIndicacao
-${btnAdicionarCirurgia}    xpath=//button[@data-member='BTN_NOVA_CIRURGIA']
 ${inputCirurgia}    id=inp:cdCirurgia          
 ${inputPotencialCont}    id=inp:cdNaturezaCirurgia
 ${inputgrupoCirurgia}    id=inp:cdGrupoCirurgia
 ${inputAtividadeMed}    id=inp:cdAtiMed
+${inputCodAtendimentoPreAgCir}    id=inp:cdAtendimento
+${divAvisoCirurgia}    xpath=//div[@data-member='CD_AVISO_CIRURGIA']
 
 ### Elementos indexados
 #[2]
