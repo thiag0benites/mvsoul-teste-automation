@@ -113,19 +113,12 @@ Clicar no botão "${titulo}"${printscreen}
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
 
-# Preencher campo
-#     [Arguments]    ${elemento}    ${valor}
-#     Wait Until Element Is Visible    ${elemento}    10
-#     Wait Until Element Is Enabled    ${elemento}    5
-#     Click Element    ${elemento}
-#     Sleep    1.5
-#     Input Text    ${elemento}    ${valor}
-
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    120
     Wait Until Element Is Enabled    ${elemento}    5
     Click Element    ${elemento}
+    Sleep    0.5
     Wait Until Element Is Enabled    ${elemento}    5
     Sleep    0.3
     Input Text    ${elemento}    ${valor}

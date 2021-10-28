@@ -4,28 +4,28 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource    ../../../2-pages/0-JORNADA_PACIENTE/RealizarAgendamentoCirurgicoPage.robot
+Resource    ../../../2-pages/0-JORNADA_PACIENTE/RealizarPreAgendamentoCirurgicoPage.robot
 
 *** Variable ***
 
 *** Keywords ***
 Preencher campos da tela de pre-agendamento |${dataHr}|,|${dataHrSugerida}|,|${tempoPrev}|,|${dataHrPrevInter}|,|${codPaciente}|,|${tipoInternacao}|,|${salaCirurgica}|,|${medicoAssociado}|${print}
     Preencher campo    ${inputDataHr}    ${dataHr}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputDataHrSugerida}    ${dataHrSugerida}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputTempoPrev}    ${tempoPrev}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputDataHrPrevIntern}    ${dataHrPrevInter}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputCodPacientePreAg}    ${codPaciente}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputTipoInternacaoPreAg}    ${tipoInternacao}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputSalaCirurgica}    ${salaCirurgica}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputMedicoAssociado}    ${medicoAssociado}
-    Sleep    0.5
+    Sleep    1
 
 Clicar no botao [Adicionar Cirurgia]
     Wait Until Element Is Visible    ${btnAdicionarCirurgia}    30

@@ -55,11 +55,6 @@ SCR0JSMK-001:Jornada do Paciente
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
-# SMF-8250:Cadastrar Pré-Internação com Convênio do Tipo Convênio
-#    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-#    Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
-#    Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
-#    Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
 #SMF-9621:Consultar o cadastro do paciente para gerar uma internação
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Sim]
@@ -76,11 +71,11 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [OK]||
     Revisar os dados de internacao incluindo leito |${dados}[intPacCodLeito]|,|${dados}[preAgDtHrPrevInter]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
-    Clicar no botao [Imprimir]||
+    #Clicar no botao [Imprimir]||
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
-#SMF-9619:Realizar um pré-agendamento cirúrgico
-    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas
+SMF-9619:Realizar um pré-agendamento cirúrgico
+   ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
     Preencher campos da tela de pre-agendamento |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[preAgTipoInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Clicar no botao [Adicionar Cirurgia]
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
@@ -94,24 +89,25 @@ SCR0JSMK-001:Jornada do Paciente
     Preencher os campos e confirmar |${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurEqpMedica]|,|${dados}[agCirurAnestesista]|,|${dados}[agCirurNumCid]|
     Clicar no botao [Não]|${dados}[agCirurMsgEsperada]|
 #SMF-9622:Gerar um aviso de cirurgia
-    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @las
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
     Preencher os campos |${dados}[preAgDtHrPrevInter]|,|${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurNumCid]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[agCirurEqpMedica]|,|${dados}[preIntCodMedico]|@print
     Clicar no botao [Salvar]||
-# #SMF-9625:Informar o tipo da anestesia no aviso de cirurgia
-#    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
-#    Clicar no botão Pesquisar
-# #SMF-9626:Informar os equipamentos no aviso de cirurgia
-#    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
-#    Clicar no botão Pesquisar
-#    Informar o código do aviso de cirurgia
-#    Clicar no botão executar
-#    Clicar no botão Equipamento
-#    Selecionar um equipamento na lista
-#    Informar a quantidade solicitada
-#    Clicar no botão Salvar
-
-SMF-9630:Associar os exames de imagem no aviso de cirurgia
+#SMF-9625:Informar o tipo da anestesia no aviso de cirurgia
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
+    Clicar no botao [Pesquisar]||
+#SMF-0:Informar os equipamentos no aviso de cirurgia
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
+    Clicar no botão Pesquisar
+    Informar o código do aviso de cirurgia
+    Clicar no botão executar 
+    Clicar no botão Equipamento
+    Selecionar um equipamento na lista
+    Informar a quantidade solicitada 
+    Clicar no botão Salvar
+# SMF-9630:Associar os exames de imagem no aviso de cirurgia
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @las
     Clicar no botao |Pesquisa|
     Informar o codigo do aviso de cirurgia |111|
@@ -121,8 +117,7 @@ SMF-9630:Associar os exames de imagem no aviso de cirurgia
     Informar a quantidade para o exame
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]||
-
-SMF-9632:Associar os exames laboratoriais no aviso de cirurgia
+# SMF-9632:Associar os exames laboratoriais no aviso de cirurgia
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @las
     Clicar no botao [Pesquisa]||
     Informar o codigo do aviso de cirurgia |111|
