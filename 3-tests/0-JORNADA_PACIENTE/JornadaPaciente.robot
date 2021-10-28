@@ -21,9 +21,10 @@ Resource          ../../1-resources/0-JORNADA_PACIENTE/5-Realizar agendamento ci
 Resource          ../../1-resources/0-JORNADA_PACIENTE/6-Realizar atendimento de internacao/RealizarAtendimentoInternacaoConvParticularSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/7-Gerar um aviso de cirurgia/GerarAvisoCirurgiaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/8-Informar tipo anestesia/InformarTipoAnestesiaSteps.robot
-Resource          ../../1-resources/0-JORNADA_PACIENTE/9-Informar equipamentos/InformarEquipamentosSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/9-Aviso Cirurgia/AvisoCirurgiaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/10-Associar os exames de imagem no aviso de cirurgia/AssociarExamesImagemAvisoCirurgiaSteps.robot
-Resource          ../../1-resources/0-JORNADA_PACIENTE/16-Confirmar a cirurgia/ConfirmarCirurgiaRealizadaSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/17-Confirmar a cirurgia/ConfirmarCirurgiaRealizadaSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/23-Geracao do inventario/
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
@@ -99,16 +100,19 @@ SCR0JSMK-001:Jornada do Paciente
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
     Clicar no botao [Pesquisar]||
+
+# <<<<<<<<<<< FUNCIONANDO ATÉ AQUI >>>>>>>>>>>>>
+
 #SMF-9626:Informar os equipamentos no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
-    Clicar no botão Pesquisar
-    Informar o código do aviso de cirurgia
-    Clicar no botão executar 
-    Clicar no botão Equipamento
+    Clicar no botao [Pesquisar]||
+    Informar o codigo do aviso de cirurgia
+    Clicar no botao [Executar]||
+    Clicar no botao [Equipamento]||
     Selecionar um equipamento na lista
     Informar a quantidade solicitada 
-    Clicar no botão Salvar
+    Clicar no botao [Salvar]||
 # SMF-9630:Associar os exames de imagem no aviso de cirurgia
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
     Clicar no botao |Pesquisa|
@@ -129,7 +133,7 @@ SCR0JSMK-001:Jornada do Paciente
     Informar a quantidade para o exame
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]||
-# SMF-9633:Associar sangue e derivados no aviso de cirurgia (Thiago)
+# SMF-9633:Associar sangue e derivados no aviso de cirurgia
     # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
     Clicar no botao [Pesquisa]||
     Informar o codigo do aviso de cirurgia |111|
@@ -139,8 +143,24 @@ SCR0JSMK-001:Jornada do Paciente
     Informar a quantidade para o exame
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]||
-# SMF-9634:Informar os prestadores no aviso da cirurgia (Gabriel)
-# SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia (Gabriel)
+# SMF-9634:Informar os prestadores no aviso da cirurgia
+    Clicar no botao [Pesquisa]||
+    Informar o codigo do aviso de cirurgia |111|
+    Clicar no botao [Executar]||
+    Clicar no botao [Prestadores]||
+    Selecionar um exame de imagem e o setor na lista de valores
+    Informar a quantidade para o exame
+    Clicar no botao [Salvar]||
+    Clicar no botao [Retornar]||
+# SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia
+    Clicar no botao [Pesquisa]||
+    Informar o codigo do aviso de cirurgia |111|
+    Clicar no botao [Executar]||
+    Clicar no botao [Avulsos\Consignados]||
+    Selecionar um exame de imagem e o setor na lista de valores
+    Informar a quantidade para o exame
+    Clicar no botao [Salvar]||
+    Clicar no botao [Retornar]||
 # SMF-???:Digitar gasto de sala sem salvar (????)
 # SMF-9635:Registrar a descrição cirúrgica (Amanda)
 # SMF-9638:Confirmar a cirurgia realizada
@@ -158,14 +178,29 @@ SCR0JSMK-001:Jornada do Paciente
 #     Preencher os campos Aviso de cirurgia |${dados}[impRelAvisoCirurgia]|, Descricao cirurgica |${dados}[impRelDescCirurgia]|
 #     Clicar no botao [Imprimir]||
 #     Valida abertura relatorio
-
 # SMF-4046:Solicitar produtos ao estoque
-# SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC 
-# SMF-786:Abertura de Inventário para Alguns Produtos
-# SMF-789:Digitar produtos do Inventário
-# SMF-791:Geração do inventário
+#     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Produtos ao Estoque"@nprint @nlas
+#     Usuario devera marcar o checkbox Estoque |${dados}[checkBoxEstoque]|
+#     Preencher os campos Estoque |${dados}[66]|, Estoque destino |${dados}[67]|, Setor |${dados}[solProdSetor]|
+#     Validar redirecionamento para Produtos Solicitados
+#     Preencher os campos Produto |${dados}[solProdProduto]|, Qtde |${dados}|solProdQtde||
+#     Clicar no botao [Salvar Registro]|Atenção: Imprimir Solicitação?|
+#     Clicar no botao [Não]|Atenção: Movimentação Salva com Sucesso ! Deseja Limpar a Tela?|
+# SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC (Gabriel)
+# SMF-786:Abertura de Inventário para Alguns Produtos (Gabriel)
+# SMF-789:Digitar produtos do Inventario
+#     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @nlas
+#     Clicar no botao [Pesquisar]||
+#     Preencher os campos codigo do produto |${dados}[digProdInvProduto]|, lote |${dados}[digProdInvLote]|, data de validade |${dados}[digProdInvValidade]|, Qrde. Estoque |${dados}[digProdInvQtdeEstoque]|
+#     Concluir a digitação de todos os produtos acionar
+#     Clicar no botao [Fechar Mov. do Usuário]|Fechamento da leitura realizado com sucesso!|
+# SMF-791:Geracao do inventario
+#     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura de inventário"@nprint @nlas
+#     Informar o codigo da contagem realizada |${dados}[invCodContagem]|
+#     Validar preenchimento automatico dos campos <Data>, <Estoque> e <Tipo de Contagem>
+#     Clicar no botao [Confirmar]|Processo Completo.|
 # SMF-753:Atender a solicitação do paciente (Amanda)
 # SMF-7617:Devolução de produtos (Amanda)
 # SMF-792:Informar gasto de sala (Amanda)
-# SMF-8320:Realizar alta médica (Gabriel)
-# SMF-8286:Realizar alta hospitalar (Gabriel)
+# SMF-8320:Realizar alta médica (erro no testlink)
+# SMF-8286:Realizar alta hospitalar (Thiago)

@@ -1,9 +1,11 @@
 ##################################################################################################################################
 # Autor: Thiago Benites
-# Decrição: Elementos e metodos da página Informar equipamentos
+# Decrição: 
 ##################################################################################################################################
 *** Settings ***
-### Configurações iniciais
-Resource          ../../Config.robot
+### Pages utilizadas na Suite de teste
+Resource          ../../../2-pages/0-JORNADA_PACIENTE/GeracaoInventarioPage.robot
 
 *** Variable ***
+
+*** Keywords ***

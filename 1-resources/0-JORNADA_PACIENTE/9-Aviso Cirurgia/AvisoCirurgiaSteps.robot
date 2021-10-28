@@ -4,13 +4,13 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../../2-pages/0-JORNADA_PACIENTE/InformarEquipamentosPage.robot
+Resource          ../../../2-pages/0-JORNADA_PACIENTE/AvisoCirurgiaPage.robot
 
 *** Variable ***
 
 *** Keywords ***
 Clicar no botão Pesquisar
-Informar o código do aviso de cirurgia
+Informar o codigo do aviso de cirurgia
 Clicar no botão executar 
 Clicar no botão Equipamento
 Selecionar um equipamento na lista 
