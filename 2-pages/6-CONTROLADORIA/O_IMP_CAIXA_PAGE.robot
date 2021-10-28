@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Denner Ricardo
-# Decrição: Elementos e metodos de Consulta Paciente
+# Decrição: Elementos e metodos da tela de Gerar nota fiscal de convenio
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
@@ -13,7 +13,15 @@ ${SLEEP}      3
 
 
 
+        
+
+${menuControladoria}                    xpath=//li[@role='presentation']//a[@title='Controladoria']
+${menuContabilidade}                    xpath=//a[@title='Contabilidade']
+${menuLiberacaoMovimentacoes}           xpath=//a[@title='Liberação de Movimentações']
+${menuCaixa}                            xpath=//a[@title='Caixa']
+
 #Inputs
+
 ${inputCodConvenio}     id=inp:cdConvenio
 ${inputCodRemessa}      xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]//input
 
