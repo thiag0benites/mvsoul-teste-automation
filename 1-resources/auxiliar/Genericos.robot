@@ -86,7 +86,8 @@ Validar Acesso a Tela |${TituloEsperado}|
     Element Should Contain                  xpath=//div[text()="${TituloEsperado}"]              ${TituloEsperado}
 
 Selecionar Item Na Lista         
-    [Arguments]                             ${Item}                         ${ItemLista}   
+    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
+    Click no Item                           ${BotaoLov}    
     Click no Item                           xpath=//input[@name="filterLov"]                  
     Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
     Click no Item                           xpath=//button[@id="btfilter"]                  

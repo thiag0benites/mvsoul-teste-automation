@@ -57,7 +57,7 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     IF    "${las}" == "@las"
         # Sleep    1
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    60
+        Wait Until Element Is Visible    ${classLasDisplay}    120
         Unselect Frame
         # Sleep    1
         Send Keys    tab

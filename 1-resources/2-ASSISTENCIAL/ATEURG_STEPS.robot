@@ -13,10 +13,17 @@ Validar Configuracao de Acesso a Tela
     Acessar a tela "Atendimento>Internação>Configurações>Parâmetros"@nprint @las
     Validar Acesso a Tela |Configurações do Sistema de Internação|
     Click no Item                           ${AbaAssocAtendimento}
-    # Click no Item                           ${ListaConfig}
-    # Click no Item                           ${SelecNao}
-    Select From List By Value               ${SelecNao}                         Não
+    Wait Until Element Is Visible           ${CampoConfig}                      20    
+    Preencher Campo                         ${CampoConfig}                      Não
     Click Elemento por titulo               Salvar
+    Click Elemento por titulo               Sair  
+
+Acessa a Tela Pela Busca
+    Unselect Frame
+    Click Element                           ${BotaoBuscaTela}
+    Preencher Campo                         ${CampoBuscaTela}                   ATEURG
+    Click Elemento por titulo               Atendimento
+    Seleciona frame                         ${IdIframe}                         180
 
 Clicar Botao Paciente
     Click no Item                           ${BotaoPaciente}
@@ -28,22 +35,15 @@ Pesquisar Pelo Paciente
     Click no Item                           ${BotaoAtender}
 
 Preencher Campos Obrigatorios
-    Click no Item                           ${BotaoLovPrestador}
-    Selecionar Item Na Lista                GEISHA ABREU SOARES DE PINA         GEISHA ABREU SOARES DE PINA
-    Click no Item                           ${BotaoLovOrigem}
-    Selecionar Item Na Lista                ORIGEM URGENCIA                     ORIGEM URGENCIA
-    Click no Item                           ${BotaoLovLocalProced}
-    Selecionar Item Na Lista                DOMICILIO                           DOMICILIO
-    Click no Item                           ${BotaoLovDestino}
-    Selecionar Item Na Lista                CONSULTORIO MEDICO                  CONSULTORIO MEDICO
-    Click no Item                           ${BotaoLovTipoPaciente}
-    Selecionar Item Na Lista                EMERGENCIA ADULTO                   EMERGENCIA ADULTO
-    Click no Item                           ${BotaoLovServico}
-    Selecionar Item Na Lista                CARDIOLOGIA CLINICA                 CARDIOLOGIA CLINICA
-    Click no Item                           ${BotaoLovCID}
-    Selecionar Item Na Lista                ABDOME AGUDO                        ABDOME AGUDO
-    Click no Item                           ${BotaoLovProced}
-    Selecionar Item Na Lista                BIÓPSIA DE NERVO                    BIÓPSIA DE NERVO 
+    Click no Item                           ${BotaoSimValidAtend}
+    Selecionar Item Na Lista                ${BotaoLovPrestador}                GEISHA ABREU SOARES DE PINA         GEISHA ABREU SOARES DE PINA
+    Selecionar Item Na Lista                ${BotaoLovOrigem}                   ORIGEM URGENCIA                     ORIGEM URGENCIA
+    Selecionar Item Na Lista                ${BotaoLovLocalProced}              DOMICILIO                           DOMICILIO
+    Selecionar Item Na Lista                ${BotaoLovDestino}                  CONSULTORIO MEDICO                  CONSULTORIO MEDICO
+    Selecionar Item Na Lista                ${BotaoLovTipoPaciente}             EMERGENCIA ADULTO                   EMERGENCIA ADULTO
+    Selecionar Item Na Lista                ${BotaoLovServico}                  CARDIOLOGIA CLINICA                 CARDIOLOGIA CLINICA
+    Preencher Campo                         ${CampoCID}                         R100
+    Selecionar Item Na Lista                ${BotaoLovProced}     BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)        BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)                
 
 Clicar Botao Carteira
     Click no Item                           ${BotaoCarteira} 
@@ -53,6 +53,13 @@ Validar Informacoes Carteira
     Validar Elemento Pelo Titulo            30/10/2023 
     Click no Item                           ${BotaoSelecionar} 
 
+Confirmar Atendimento  
+    Click Elemento por titulo               Salvar
+    Click no Item                           ${BotaoSimValidAtend}
+    Click no Item                           ${BotaoSimValidAtend}
+    Click no Item                           ${BotaoSimValidAtend}
+    Click no Item                           ${BotaoOKConfAtend}
+    Valida Mensagem                         ${MensagemSucesso}                  Registro Salvo com Sucesso!
 
 
 
