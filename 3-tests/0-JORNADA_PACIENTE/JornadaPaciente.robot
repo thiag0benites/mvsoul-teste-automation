@@ -23,6 +23,7 @@ Resource          ../../1-resources/0-JORNADA_PACIENTE/7-Gerar um aviso de cirur
 Resource          ../../1-resources/0-JORNADA_PACIENTE/8-Informar tipo anestesia/InformarTipoAnestesiaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/9-Informar equipamentos/InformarEquipamentosSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/10-Associar os exames de imagem no aviso de cirurgia/AssociarExamesImagemAvisoCirurgiaSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/16-Registrar a descrição cirurgica/RegistrarDescricaoCirurgicaSteps.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
@@ -130,7 +131,16 @@ SCR0JSMK-001:Jornada do Paciente
 # SMF-9634:Informar os prestadores no aviso da cirurgia (Gabriel)
 # SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia (Gabriel)
 # SMF-???:Digitar gasto de sala sem salvar (????)
-# SMF-9635:Registrar a descrição cirúrgica (Amanda)
+# SMF-9635:Registrar a descrição cirúrgica (Amanda in progress)
+SMF-9635:Registrar a descricao cirurgica
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
+    Informar o codigo do aviso de cirurgia |111|
+    Clicar no botao [Executar]||
+    Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
+    Clicar no botao [NovaDescricao]||
+    Descrever a cirurgia
+    Clicar no botao [Salvar]||
+    Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
 # SMF-9638:Confirmar a cirurgia realizada
 # SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva
 # SMF-4046:Solicitar produtos ao estoque
