@@ -13,8 +13,8 @@ ${inputDataHrSugerida}    id=inp:dtSugerida
 ${inputTempoPrev}    id=inp:vlTempoPrevisto
 ${inputDataHrPrevIntern}    id=inp:dtPrevisaoInternacao
 ${inputTipoInternacao}    xpath=//input[@id='inp:cdTipoInternacao']
-${inputSalaCirurgica}    xpath=//div[@id='frames77']/div[@id='aviCir_cdSalCir']/input[@id='inp:aviCir_cdSalCir']
-${inputMedicoAssociado}    xpath=//div[@id='frames78']/div[@id='cdPrestadorIndicacao']/input[@id='inp:cdPrestadorIndicacao']
+${inputPreSalaCirur}    id=inp:aviCir_cdSalCir
+${inputMedicoAssociado}    id=inp:cdPrestadorIndicacao
 ${btnAdicionarCirurgia}    xpath=//button[@data-member='BTN_NOVA_CIRURGIA']
 ${inputCirurgia}    id=inp:cdCirurgia          
 ${inputPotencialCont}    id=inp:cdNaturezaCirurgia
