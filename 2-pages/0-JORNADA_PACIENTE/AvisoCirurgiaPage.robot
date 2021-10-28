@@ -7,3 +7,5 @@
 Resource          ../../Config.robot
 
 *** Variable ***
+${btnPesquisar}    xpath=//i[@class="mv-basico-pesquisar"]
+${txtCodAvisoCir}    id=inp:cdAvisoCirurgia

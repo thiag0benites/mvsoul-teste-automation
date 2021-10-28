@@ -11,7 +11,6 @@ Resource          ../../../2-pages/0-JORNADA_PACIENTE/AssociarExamesImagemAvisoC
 *** Keywords ***
 Selecionar um exame de imagem e o setor na lista de valores
 Informar a quantidade para o exame
-Informar o codigo do aviso de cirurgia |${codAgCirurgia}|
 
 Clicar no botao |${textoBtn}|
     Convert To Lower Case    ${textoBtn}

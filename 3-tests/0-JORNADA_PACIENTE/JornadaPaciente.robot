@@ -113,19 +113,19 @@ SCR0JSMK-001:Jornada do Paciente
 
 # <<<<<<<<<<< FUNCIONANDO ATÉ AQUI >>>>>>>>>>>>>
 
-#SMF-9626:Informar os equipamentos no aviso de cirurgia
+SMF-9626:Informar os equipamentos no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
     Clicar no botao [Pesquisar]||
-    Informar o codigo do aviso de cirurgia
+    Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Executar]||
     Clicar no botao [Equipamento]||
     Selecionar um equipamento na lista
     Informar a quantidade solicitada 
     Clicar no botao [Salvar]||
 # SMF-9630:Associar os exames de imagem no aviso de cirurgia
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao |Pesquisa|
+    # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+    Clicar no botao [Pesquisar]||
     Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Executar]||
     Clicar no botao [Imagem]||
