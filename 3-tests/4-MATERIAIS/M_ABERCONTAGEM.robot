@@ -15,7 +15,7 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/bd/BancoDados.robot
 Resource            ../../1-resources/ContextoSteps.robot 
-Resource            ../../1-resources/M_ABERCONTAGEM_STEPS.robot
+Resource            ../../1-resources/4-MATERIAIS/M_ABERCONTAGEM_STEPS.robot
 Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -38,7 +38,7 @@ SCR4MMABERCONTAGEM-001:Abertura de Inventario (Processo de conferencia) Tipo de 
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMABERCONTAGEM-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @las
     Usuário deverá preencher o campo <Estoque>|${dados}[estoque]|,|${dados}[motivo]|
-    Usuário deverá preencher o campo <Produto>|${dados}[produto01]|,|${dados}[produto02]|,|${dados}[produto03]|,|${dados}[produto04]|,|${dados}[produto05]|
+    Usuário deverá preencher o campo <Produto>|${dados}[produto01]|,|${dados}[produto02]|,|${dados}[produto03]|,|${dados}[produto04]|,|${dados}[produto05]|,|${dados}[produto06]|,|${dados}[produto07]|
     Clicar no botão Salvar do menu
 
 

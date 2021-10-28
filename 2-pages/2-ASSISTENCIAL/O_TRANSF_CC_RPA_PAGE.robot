@@ -5,7 +5,6 @@
 *** Settings ***
 ### Configurações iniciais
 Resource                                       ../../Config.robot
-
 *** Variable ***
 ### Elementos da Pagina de Manutenção de Remessa
 ### Campos ###
@@ -26,8 +25,6 @@ ${CampoTextoHoraPosAnest}  xpath=//input[@class='editor-text mode-edit']
 ${CampoDataFinalPos}       xpath=//*[@id="grdMovCcRpa1"]/div[4]/div[3]/div/div/div[10]
 ${CampoHoraSaidAPosAnt}    xpath=//*[@id="grdMovCcRpa1"]/div[4]/div[3]/div/div/div[11]
 ${CampoTextoHoraFinalPos}  xpath=//input[@class='editor-text mode-edit']
-
-
 
 ### Botoes ###
 ${BtnExecutarConsulta}     xpath=//i[@class="mv-basico-confirmar"]  
