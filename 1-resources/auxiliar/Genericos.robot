@@ -82,11 +82,12 @@ Validar Elemento Pelo Titulo
     Element Should Be Visible           ${elemento}
 
 Validar Acesso a Tela |${TituloEsperado}|
-    Wait Until Element Is Visible           xpath=//div[@id="dspTitulo01"]              250
-    Element Should Contain                  xpath=//div[@id="dspTitulo01"]              ${TituloEsperado}
+    Wait Until Element Is Visible           xpath=//div[text()="${TituloEsperado}"]              250
+    Element Should Contain                  xpath=//div[text()="${TituloEsperado}"]              ${TituloEsperado}
 
 Selecionar Item Na Lista         
-    [Arguments]                             ${Item}                         ${ItemLista}   
+    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
+    Click no Item                           ${BotaoLov}    
     Click no Item                           xpath=//input[@name="filterLov"]                  
     Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
     Click no Item                           xpath=//button[@id="btfilter"]                  
