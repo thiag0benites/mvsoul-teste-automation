@@ -232,3 +232,4 @@ Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${prin
 #    Log To Console    *** Pesquisa realizada, porém sem resultado!
 #    END
 #    Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
+
