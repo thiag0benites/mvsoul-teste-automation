@@ -208,9 +208,6 @@ Clicar no Campo e Preencher Informacao
     Sleep  1 
     Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
 
-
-Filtrar por "%FARMACIA%CENTRAL%"
-=======
 Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${print}
     ${Cont}    Set Variable    0
     Log To Console    *** Com Resultado: ${LocatorComResultado}

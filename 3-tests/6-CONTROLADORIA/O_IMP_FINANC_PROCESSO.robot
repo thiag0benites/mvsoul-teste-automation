@@ -32,7 +32,7 @@ Test Setup                Nova sessao
 # Suite registrada no gerenciador de dados
 ${suite}             O_IMP_FINANC_PROCESSO
 # Recebe dados do gerenciador
-${dados}
+${dados}        
 
 *** Test Case ***
 SCR6COIMPFINANCPROCESSO-001:Fluxo principal
@@ -42,4 +42,3 @@ SCR6COIMPFINANCPROCESSO-001:Fluxo principal
     Acessar a tela "Controladoria>Contabilidade>Liberação de Movimentações>Financeiro"@nprint @las
     # Preencher campo Período com "${dados}[DataInicial]" e "${dados}[DataFinal]"
     # Validar Pop-Pup e campos preenchidos referente ao retorno da pesquisa
-    
