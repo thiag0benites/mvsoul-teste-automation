@@ -186,15 +186,20 @@ Click no Item
     Wait Until Element Is Visible    ${elemento}        120
     Sleep                3
     Click Element     ${elemento}
+
+Validar Pop-Pup de Alerta e Clicar
+    [Arguments]             ${Alert}     ${Botao}                            
+    ${Status}           Run Keyword And Return Status           Validar Item            ${Alert}          
+    Run Keyword If          '${Status}' == 'True'               Click no Item           ${Botao}
     
 Validar Item
     [Arguments]             ${element}
-    Wait Until Element Is Visible           ${element}               20
+    Wait Until Element Is Visible           ${element}               120
     Element Should Be Visible               ${element} 
 
 Validar Informacao Item
     [Arguments]             ${element}      ${ResultadoEsperado}     
-    Wait Until Element Is Visible           ${element}               20
+    Wait Until Element Is Visible           ${element}               120
     Element Should Contain                  ${element}               ${ResultadoEsperado} 
 
 Clicar no Campo e Preencher Informacao
@@ -203,9 +208,6 @@ Clicar no Campo e Preencher Informacao
     Sleep  1 
     Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
 
-
-Filtrar por "%FARMACIA%CENTRAL%"
-=======
 Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${print}
     ${Cont}    Set Variable    0
     Log To Console    *** Com Resultado: ${LocatorComResultado}
