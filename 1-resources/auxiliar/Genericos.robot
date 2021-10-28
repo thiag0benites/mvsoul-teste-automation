@@ -224,9 +224,7 @@ Clicar no botão Executar
 Clicar no botão Não 
     Wait Until Element Is Visible   ${btnNaoNotifications}    60
     Click Element     ${btnNaoNotifications}
-    Sleep             30
 
 Clicar no botão Sim
     Wait Until Element Is Visible    ${btnSimNotifications}   60
     Click Element     ${btnSimNotifications}
-    Sleep             5
