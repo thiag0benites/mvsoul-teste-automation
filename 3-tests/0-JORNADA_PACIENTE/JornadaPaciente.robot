@@ -49,8 +49,7 @@ SCR0JSMK-001:Jornada do Paciente
     Informar os campos que foram configurados como obrigatorios na tela@print
     Clicar no botao [Salvar]|${dados}[cadPacMsgEsperada]|
     Captura codigo do Paciente Cadastrado|${suite}|${dados}[id]|
-## Valida Mensagem
-#SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo "Particular"
+#SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo Particular
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
@@ -73,7 +72,7 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
     #Clicar no botao [Imprimir]||
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
-SMF-9619:Realizar um pré-agendamento cirúrgico
+# SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
     Preencher campos da tela de pre-agendamento |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[preAgTipoInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
@@ -97,7 +96,7 @@ SMF-9619:Realizar um pré-agendamento cirúrgico
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
     Clicar no botao [Pesquisar]||
-#SMF-0:Informar os equipamentos no aviso de cirurgia
+#SMF-9626:Informar os equipamentos no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
     Clicar no botão Pesquisar
@@ -127,3 +126,20 @@ SMF-9619:Realizar um pré-agendamento cirúrgico
     Informar a quantidade para o exame
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]||
+# SMF-9633:Associar sangue e derivados no aviso de cirurgia (Thiago)
+# SMF-9634:Informar os prestadores no aviso da cirurgia (Gabriel)
+# SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia (Gabriel)
+# SMF-???:Digitar gasto de sala sem salvar (????)
+# SMF-9635:Registrar a descrição cirúrgica (Amanda)
+# SMF-9638:Confirmar a cirurgia realizada
+# SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva
+# SMF-4046:Solicitar produtos ao estoque
+# SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC 
+# SMF-786:Abertura de Inventário para Alguns Produtos
+# SMF-789:Digitar produtos do Inventário
+# SMF-791:Geração do inventário
+# SMF-753:Atender a solicitação do paciente
+# SMF-7617:Devolução de produtos
+# SMF-792:Informar gasto de sala
+# SMF-8320:Realizar alta médica
+# SMF-8286:Realizar alta hospitalar
