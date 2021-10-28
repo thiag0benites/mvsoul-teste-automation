@@ -5,7 +5,6 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource    ../../2-pages/2-ASSISTENCIAL/M_ADMISSAO_CO_PAGE.robot
-Resource    ../../../pep-test-automation/1-resources/MVPEP_LISTA_PACIENTES_INTERNACAO_STEPS.robot
 ### Metodos Genericos
 
 
@@ -13,25 +12,134 @@ Resource    ../../../pep-test-automation/1-resources/MVPEP_LISTA_PACIENTES_INTER
 
 *** Keywords ***
 Acessar Atendimento |${Item}|
-    Click no Item                    ${BtnSetaAtendimento}
-    # Wait Until Element Is Visible    ${BtnSetaAtendimento}          30
-    # SeleniumLibrary.Click Element    ${BtnSetaAtendimento}
+    Wait Until Element Is Visible    ${BtnSetaAtendimento}           60
+    SeleniumLibrary.Click Element    ${BtnSetaAtendimento}
     # Sleep    5
-    SeleniumLibrary.Input Text       ${CampoFiltroAtend}              ${Item}
-    Click no Item                    ${BtnFiltrar}
-    Click no Item                    ${SelecionaAtendimento}
-    # Wait Until Element Is Visible    ${SelecionaAtendimento}        30
-    # Click Element                    ${SelecionaAtendimento}
+    # Wait Until Element Is Visible    ${BtnFiltrar}                  10
+    # Preencher campo       ${CampoFiltroAtend}             %${Item}
+    Sleep    5
+    Click Button                     ${BtnFiltrar}
+    # Wait Until Element Is Visible    ${SelecionaAtendimento}         30
+    Sleep    5
+    Click Element                    ${SelecionaAtendimento}
     Click Button                     ${BtnOk}
 
 Acessar Tipo Parto |${Item}|
     Click no Item                    ${CampoTipoParto}
     Click no Item                    ${BtnTipoParto}
     Click no Item                    ${CampoFIltoParto}
-    SeleniumLibrary.Input Text       ${CampoFIltoParto}               %${Item}
+    Preencher campo                  ${CampoFIltoParto}              %${Item}
     Click no Item                    ${BtnFiltrar}
     Click no Item                    ${BtnOk}
 
+Acessar Motivo do Parto |${Item}|
+    Click no Item                    ${CampoMotivoParto}
+    Click no Item                    ${BtnMotivoParto}
+    Click no Item                    ${CampoFIltoParto}
+    Preencher campo                  ${CampoFIltoParto}              %${Item}
+    Click no Item                    ${BtnFiltrar}
+    Click no Item                    ${BtnOk}
+
+Preenche Dados Quantidade Filhos |${Item1}| e Semanas |${Item2}|
+    Click no Item                    ${CampoQtdFilhos}
+    Sleep    5
+    Preencher campo                  ${CampoQtdFilhos}               ${Item1}
+    Click no Item                    ${CampoQtdSemanas}
+    Sleep    5
+    Preencher campo                  ${CampoQtdSemanas}              ${Item2}
+    
+ Acessar Motivo do Parto |${Item}|
+    Click no Item                    ${CampoMotivoParto}
+    Click no Item                    ${BtnMotivoParto}
+    Click no Item                    ${CampoFIltoParto}
+    Preencher campo                  ${CampoFIltoParto}              %${Item}
+    Click no Item                    ${BtnFiltrar}
+    Click no Item                    ${BtnOk}
+
+Acessar Tipo de Anestesia |${Item}|
+    Click no Item                    ${CampoTipoAnestesia}
+    Click no Item                    ${BtnTipoAnest}
+    Click no Item                    ${CampoFIltoParto}
+    Preencher campo                  ${CampoFIltoParto}              %${Item}
+    Click no Item                    ${BtnFiltrar}
+    Click no Item                    ${BtnOk}
+
+Acessar Botao Obstestricia
+    Click no Item                    ${BtnObstetricia}
+    Click no Item                    ${CheckBoxPartoNormal}
+    Click no Item                    ${BtnSair}
+
+Acesso Tela Recem Nascido
+    Click no Item                    ${BtnRecemNascido}
+    Sleep    5
+    Click no Item                    ${CampoDataHoraRN}
+    Sleep    5
+    Preencher campo                  ${CampoDataHoraRN}                191020212035
+    Click no Item                    ${CampoTipoSexo}
+    Sleep    5
+    Preencher campo                  ${CampoTipoSexo}                  M
+    Sleep    5
+    Send Keys                                                          enter
+    Click no Item                    ${CampoNroPulseira}
+    Sleep    5
+    Preencher campo                  ${CampoNroPulseira}               030303
+
+Preenche Registro Civil
+    Click no Item                    ${BtnRegistroCivil}
+    Sleep    5
+    Click no Item                    ${DeclNascidoVivo}
+    Sleep    3
+    Preencher campo                  ${DeclNascidoVivo}                30302020
+    Click no Item                    ${BtnOk}
+    Click no Item                    ${CampoNroPulseira}
+    Sleep    5
+    Preencher campo                  ${CampoNroPulseira}               030303
+
+Preenche Apgar, Perimetro e Medidas
+    Click no Item                    ${Apgar1Min}
+    Preencher campo                  ${Apgar1Min}                       6
+    Click no Item                    ${Apgar5Min}
+    Preencher campo                  ${Apgar5Min}                       9
+    Click no Item                    ${PerimetroCefalico}
+    Preencher campo                  ${PerimetroCefalico}               32,0
+    Click no Item                    ${PerimetroToracico}
+    Preencher campo                  ${PerimetroToracico}               32,0
+    Click no Item                    ${PerimetroAbdominal}
+    Preencher campo                  ${PerimetroAbdominal}              35,0
+    Click no Item                    ${MedidaAltura} 
+    Preencher campo                  ${MedidaAltura}                    49,0
+    Click no Item                    ${MedidaPeso}
+    Preencher campo                  ${MedidaPeso}                      3200
+
+Seleciona Pediatra Responsavel e Leito
+    Click no Item                    ${CampoPediatraResp}
+    Click no Item                    ${BtnPediatraResp}
+    Preencher campo                  ${CampoFIltoParto}              AARON
+    Click no Item                    ${BtnFiltrar}
+    Click no Item                    ${BtnOk}
+    Click no Item                    ${CampoLeito}
+    Sleep    5
+    Click no Item                    ${BtnLeito}
+    Preencher campo                  ${CampoFIltoParto}              %Leito
+    Click no Item                    ${BtnFiltrar}
+    Sleep    3
+    Click no Item                    ${BtnOk}
+    Click no Item                    ${CampoServicoLeito}
+    Click no Item                    ${BtnServico}
+    Sleep    3 
+    Preencher campo                  ${CampoFIltoParto}              %Pediatria
+    Click no Item                    ${BtnFiltrar}
+    Click no Item                    ${BtnOk}
+    Click no Item                    ${BtnSalvar}
+    Click no Item                    ${BtnOkMensagem}
+    Validar Item                     ${MensagemValidacao}               
+
+
+
+
+    
+    
+    
 
 
 
