@@ -23,9 +23,14 @@ Resource          ../../1-resources/0-JORNADA_PACIENTE/7-Gerar um aviso de cirur
 Resource          ../../1-resources/0-JORNADA_PACIENTE/8-Informar tipo anestesia/InformarTipoAnestesiaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/9-Aviso Cirurgia/AvisoCirurgiaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/10-Associar os exames de imagem no aviso de cirurgia/AssociarExamesImagemAvisoCirurgiaSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/16-Registrar a descrição cirurgica/RegistrarDescricaoCirurgicaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/17-Confirmar a cirurgia/ConfirmarCirurgiaRealizadaSteps.robot
-Resource          ../../1-resources/0-JORNADA_PACIENTE/23-Geracao do inventario/
-
+Resource          ../../1-resources/0-JORNADA_PACIENTE/22-Digitar produtos do Inventario/DigitarProdutosInventarioSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/23-Geracao do inventario/GeracaoInventarioSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/25-Atender a solicitacao do paciente/AtenderSolicitacaoPacienteSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/26-Devolucao de Produtos/DevolucaoProdutosSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/27-Informar gastos Sala/InformarGastosSalaSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/29-Realizar alta hospitalar/RealizarAltaHospitalarSteps.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
@@ -162,7 +167,16 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]||
 # SMF-???:Digitar gasto de sala sem salvar (????)
-# SMF-9635:Registrar a descrição cirúrgica (Amanda)
+# SMF-9635:Registrar a descrição cirúrgica (Amanda in progress)
+SMF-9635:Registrar a descricao cirurgica
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
+    Informar o codigo do aviso de cirurgia |111|
+    Clicar no botao [Executar]||
+    Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
+    Clicar no botao [NovaDescricao]||
+    Descrever a cirurgia
+    Clicar no botao [Salvar]||
+    Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
 # SMF-9638:Confirmar a cirurgia realizada
 #     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
 #     Informar o codigo do aviso de cirurgia |111|
@@ -199,8 +213,36 @@ SCR0JSMK-001:Jornada do Paciente
 #     Informar o codigo da contagem realizada |${dados}[invCodContagem]|
 #     Validar preenchimento automatico dos campos <Data>, <Estoque> e <Tipo de Contagem>
 #     Clicar no botao [Confirmar]|Processo Completo.|
-# SMF-753:Atender a solicitação do paciente (Amanda)
-# SMF-7617:Devolução de produtos (Amanda)
-# SMF-792:Informar gasto de sala (Amanda)
-# SMF-8320:Realizar alta médica (erro no testlink)
-# SMF-8286:Realizar alta hospitalar (Thiago)
+# SMF-753:Atender a solicitação do paciente
+#     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Solicitações>Atender"@nprint @nlas
+#     Informar o código no campo |solicitação|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Visualizar produtos]
+#     Clicar no botao [Retornar]
+#     Clicar no botao [Cod. do Produto]
+#     Informar os campos Produto |${dados}[atendSolicPacProduto]|, Lote |${dados}[atendSolicPacLote]|, Qtde. Disp |${dados}[atendSolicPacQtdeDisp]|
+#     Clicar no botao [Fecha a baixa]|${dados}[atendSolicPacMsgEsperada]|
+# SMF-7617:Devolução de produtos
+#     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Solicitações>Devolução de Produtos"@nprint @nlas
+#     Marcar o check box <2- Setor> e preencher os seguintes campos com dados válidos |${dados}[DevProdMsgEsperada]|
+#     Clicar no botão [Sim] da mensagem e na tecla <TAB>
+# #     Informar todos os produtos digitados na saída |${dados}[DevProdMsgEsperadaFinal]|
+# SMF-792:Informar gasto de sala
+#     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Movimentações>Saída de Produtos>Gasto de Sala"@nprint @nlas
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Digitar Cód. do Prod.]
+#     Informar o <Código do Produto>
+#     Informar a <Qtde. Disp.>
+#     Clicar no botao [Salvar]|${dados}[InfoGastSalaMsgEsperada]|
+# # SMF-8320:Realizar alta médica (erro no testlink)
+# 8286:Realizar alta hospitalar
+#     Acessar a tela "Atendimento>Internação> Alta> Efetivação> Alta Hospitalar "@nprint @nlas
+#     Informar código "Atendimento" no campo < Atendimento>
+#     Clicar no botao [Executar]||
+#     Informar os campos Motivo da Alta |${dados}[realAltaHospMotivAlta]|,Tipo de Limpeza |${dados}[realAltaHospTipLimp]|, Procedimento da Alta |${dados}[realAltaHospProcAlta]|, Procedimento CIH |${dados}[realAltaHospProcCih]|, Observação da Alta |${dados}[realAltaHospObsAlta]|
+#     Clicar no botao [Confirmar Alta]|${dados}[realAltaHospMsgEsperadaConfirmar]|   
+#     Clicar no botao [Sim] da mensagem
+#     Seleciona na opção [Saída do Relatório] a opção 'Tela'
+#     Clicar no botao [Imprimir]
+#     Clicar no botao [Sair] da tela "Comprovante de Alta Hospitalar do Paciente"
+#     Clicar no [Ok] da mensagem;
