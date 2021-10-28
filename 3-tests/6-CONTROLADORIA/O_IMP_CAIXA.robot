@@ -37,11 +37,12 @@ SCR6CO_IMP_CAIXA-001:Caixa Importar movimentação
 # robot -v browser:chrome -t "SCR6CO_IMP_CAIXA-001:Caixa Importar movimentação" -d ./5-results/SCR6CO_IMP_CAIXA-001 "3-tests/6-CONTROLADORIA/O_IMP_CAIXA.robot"
 # robot -v browser:firefox -t "SCR6CO_IMP_CAIXA-001:Caixa Importar movimentação" -d ./5-results/SCR6CO_IMP_CAIXA-001 "3-tests/6-CONTROLADORIA/O_IMP_CAIXA.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CO_IMP_CAIXA-001"
-    Acessar a tela "Controladoria>Contabilidade>Liberação de Movimentações>Caixa"@nprint @las
+    # Acessar a tela de Caixa ${printscreen} ${las}
+    Acessar a tela "Controladoria>Caixa>Caixa>Abertura"@nprint @las
    	
     # Informar no campo [Período] o período de deseja importar para a Contabilidade
     # Clicar no botão<Liberar>para iniciar o processo de importação
 
-    # ${menuContabilidade}    xpath=(//*[@title='Contabilidade'])[1]
+        # xpath=(//*[@title='Contabilidade'])[1]
 
     # Click Element    ${menuContabilidade}
