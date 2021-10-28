@@ -138,7 +138,6 @@ SCR0JSMK-001:Jornada do Paciente
     Informar a quantidade para o exame
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]||
-    
 # SMF-9634:Informar os prestadores no aviso da cirurgia (Gabriel)
 # SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia (Gabriel)
 # SMF-???:Digitar gasto de sala sem salvar (????)
@@ -153,12 +152,11 @@ SCR0JSMK-001:Jornada do Paciente
 #     Clicar no botao [Confirmar]|${dados}[confCirurMsgAviso]|
 #     # confCirurMsgConfCirurgia - A Confirmação da Cirurgia foi realizada com sucesso !
 #     Valida confirmacao de cirurgia |${dados}[confCirurMsgConfCirurgia]|
-
-SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Relatórios>Operacionais>Ficha Descritiva da Cirurgia"@nprint @nlas
-    Preencher os campos Aviso de cirurgia |${dados}[impRelAvisoCirurgia]|, Descricao cirurgica |${dados}[impRelDescCirurgia]|
-    Clicar no botao [Imprimir]||
-    Valida abertura relatorio
+# SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva
+#     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Relatórios>Operacionais>Ficha Descritiva da Cirurgia"@nprint @nlas
+#     Preencher os campos Aviso de cirurgia |${dados}[impRelAvisoCirurgia]|, Descricao cirurgica |${dados}[impRelDescCirurgia]|
+#     Clicar no botao [Imprimir]||
+#     Valida abertura relatorio
 
 # SMF-4046:Solicitar produtos ao estoque
 # SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC 
