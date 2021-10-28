@@ -22,4 +22,3 @@ Preencher os campos |${numAtend}|,|${nomePrestadorDest}|,|${motivoTransferencia}
 
 Confirmar Transferencia de Prestador
     Click Element                    ${buttonTransferencia}
-    Sleep                             120

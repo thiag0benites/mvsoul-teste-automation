@@ -226,12 +226,19 @@ Conta Linhas Tabela
 
 Clicar no botão Salvar do menu
     Click Element     ${btnSalvar}
+    Sleep             60
 
 Clicar no botão Adicionar
     Click Element     ${btnAdicionar}
 
+Clicar no botão Pesquisar
+    Wait Until Element Is Visible    ${btnPesquisar}   120
+    Click Element     ${btnPesquisar}   
+
 Clicar no botão Executar 
-    Click Element     ${btnExecute}     
+    Sleep              5
+    Click Element     ${btnExecute} 
+    Sleep              30   
 
 Clicar no botão Não 
     Wait Until Element Is Visible   ${btnNaoNotifications}    60
