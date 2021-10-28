@@ -87,10 +87,11 @@ Preencher campo Quinto produto "${Produto5}", Unidade e Qntde Recebida "${Qntde_
     Click no Item                         ${SelectUnidade5}
     Click no Item                         ${BotaoOk}
     Click no Item                         ${BtnSeguinte}
-    
+
 Clicar em Salvar, negando o pop-pup e Imprimindo registro
     Click no Item                         ${Salvar}
-    Clicar Botao se estiver Visivel       ${Nao}
-    Click no Item                         ${Imprimir}
-    Click no Item                         ${Confirmar}
-    Close Window
+    Sleep                                 20        
+    # Clicar Botao se estiver Visivel       ${Nao}
+    # Click no Item                         ${Imprimir}
+    # Click no Item                         ${Confirmar}
+    # Close Window

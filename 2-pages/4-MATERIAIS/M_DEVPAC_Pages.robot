@@ -34,7 +34,6 @@ ${SelectUnidade}                 xpath=//div[@title='MILILITRO']
 ${BtnSelecionarProduto}          xpath=//button[@style='vertical-align: top; width: 22px; height: 22px; right: 0px;']
 ${SelectProd3}                   xpath=//div[@class='ui-widget-content slick-row even']//div[@class='slick-cell b0 f0 selected']
 ${InputQntde3}                   xpath=//div[@class='slick-cell b6 f6 selected active editable']/input
-
 ${InputProdutoCod}               xpath=//div[@class='ui-buttoninput ui-widget ui-lovinput mode-edit']//input
 ${InputQntde4}                   xpath=//div[@class='slick-cell b6 f6 selected active editable']//input
 ${CampoBtnUnidade4}              xpath=//div[@class='slick-cell b5 f5 selected']//div[@class='ui-text']
@@ -45,6 +44,7 @@ ${CampoBtnUnidade5}              xpath=//div[@class='slick-cell b5 f5 selected']
 ${BtnUnidade5}                   xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
 ${SelectUnidade5}                xpath=//div[@class='slick-cell b0 f0']//div[@title='MILIGRAMA']
 ${InputQntde6}                   xpath=//div[@class='slick-cell b6 f6 selected active editable']//input
+
 ${Salvar}                        xpath=//a[@title='Salvar']//i[@class='mv-basico-salvar']
 ${Nao}                           xpath=
 ${Imprimir}                      xpath=
