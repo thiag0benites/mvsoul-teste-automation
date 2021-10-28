@@ -69,8 +69,8 @@ Seleciona frame
 
     
 Click Elemento por titulo
-    [Arguments]    ${titulo}    ${timeout}=${120}
-    ${elemento}    Set Variable    xpath=//a[@title='${titulo}']
+    [Arguments]    ${titulo}    ${timeout}=${60}
+    ${elemento}    Set Variable    xpath=//*[contains(@title, '${titulo}')]
     Wait Until Element Is Visible    ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
     Sleep    3
     Click Element    ${elemento}
@@ -84,6 +84,18 @@ Validar Elemento Pelo Titulo
 Validar Acesso a Tela |${TituloEsperado}|
     Wait Until Element Is Visible           xpath=//div[@id="dspTitulo01"]              250
     Element Should Contain                  xpath=//div[@id="dspTitulo01"]              ${TituloEsperado}
+
+Selecionar Item Na Lista         
+    [Arguments]                             ${Item}                         ${ItemLista}   
+    Click no Item                           xpath=//input[@name="filterLov"]                  
+    Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
+    Click no Item                           xpath=//button[@id="btfilter"]                  
+    Click Elemento por titulo               ${ItemLista}
+    Click no Item                           xpath=//button[@id="btok"]
+
+Clicar Botao Salvar 
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
 
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
