@@ -13,43 +13,47 @@ Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 Preencher os campos e adicionar nova cirurgia |${AvDtPrevInter}|,|${AvTempoPrevisto}|,|${AvCodPaciente}|,|${AvCid}|,|${AvUnidInt}|,|${AvCentrCir}|,|${AvSalaCir}|,|${AvEqptMed}|,|${AvMedAssoc}|${print}
     Wait Until Element Is Visible    ${inputAvDtPrevInter}    120
     Preencher campo    ${inputAvDtPrevInter}    ${AvDtPrevInter}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvTempoPrevisto}    ${AvTempoPrevisto}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvCodPaciente}    ${AvCodPaciente}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvCid}    ${AvCid}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvUnidInt}    ${AvUnidInt}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvCentrCir}    ${AvCentrCir}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvSalaCir}    ${AvSalaCir}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvEqptMed}    ${AvEqptMed}
-    Sleep    1
+    Sleep    0.5
     Preencher campo    ${inputAvMedAssoc}    ${AvMedAssoc}
-    Sleep    1
+    Sleep    0.5
     Clicar no botao [Adicionar Cirurgia]||
 
-Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${grupCirurgia}|,|${prestCirurgiao}|,|${atividadeMed}|${print}
+Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${grupCirurgia}|,|${prestCirurgiao}|,|${atividadeMed}| e |${btnAviso}| na mensagem |${msgAviso}|${print}
     Preencher campo    ${inputCirurgia}    ${cirurgia}
-    Sleep    1
-    Preencher campo    ${inputConvenioCir}    ${IntCodConvenio}
-    Sleep    1
-    Preencher campo    ${inputCodPlano}    ${IntCodPlano}
-    Sleep    1
-    Preencher campo    ${inputPotencialCont}    ${potencialCont}
-    Sleep    1
-    Preencher campo    ${inputgrupoCirurgia}     ${grupCirurgia}
-    Sleep    1
-    Preencher campo    ${inputPrestCirurgiao}    ${prestCirurgiao}
-    Sleep    1
-    Preencher campo    ${inputAtividadeMed}     ${atividadeMed}
-    Sleep    3
-    Clicar no botao [Retornar]||
     Sleep    0.5
-    Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
+    Preencher campo    ${inputConvenioCir}    ${IntCodConvenio}
+    Sleep    0.5
+    Preencher campo    ${inputCodPlano}    ${IntCodPlano}
+    Sleep    0.5
+    Preencher campo    ${inputPotencialCont}    ${potencialCont}
+    Sleep    0.5
+    Preencher campo    ${inputgrupoCirurgia}     ${grupCirurgia}
+    Sleep    0.5
+    Preencher campo    ${inputPrestCirurgiao}    ${prestCirurgiao}
+    Sleep    0.5
+    Preencher campo    ${inputAtividadeMed}     ${atividadeMed}
+    Sleep    0.5
+    Clicar no botao [Retornar]||
+    Sleep    0.5 
+    Wait Until Element Is Visible    ${notificacaoGravarRegistro}    5
+    Sleep    0.5
+    ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
+    Should Be Equal As Strings    ${msgAviso}    ${msgObtida}    error=*** Mensagem de alerta não foi apresentada!
+    Clicar no botao [Sim]||
    
     
    

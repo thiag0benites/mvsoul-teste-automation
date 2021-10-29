@@ -39,7 +39,6 @@ Valida Mensagem
 
 Click Javascript
     [Arguments]    ${elemento}
-    Sleep    3
     ${elemento2}    Get WebElement    ${elemento}
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
