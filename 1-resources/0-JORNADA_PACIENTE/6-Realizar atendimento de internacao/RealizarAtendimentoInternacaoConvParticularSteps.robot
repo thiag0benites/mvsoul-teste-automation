@@ -5,7 +5,7 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource    ../../../2-pages/0-JORNADA_PACIENTE/RealizarAtendimentoInternacaoConvParticularPage.robot
-Resource    ../../4-MATERIAIS/M_BAIXA_SOL_STEPS.robot
+Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 
 *** Variable ***
 
@@ -21,7 +21,13 @@ Revisar os dados de internacao incluindo leito |${CodLeito}|,|${dataHrPrevAlta}|
   Sleep     2
   Preencher campo    ${inputDataHrPrevAlta}    ${dataHrPrevAlta}
   Sleep     1
-
+Captura codigo do Atendimento Cadastrado|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${inputCodAtendimento}
+    ${codAtendimento}    Get Element Attribute    ${inputCodAtendimento}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputCodAtendimento", valor "${codAtendimento}"
+    Clicar no botao [Sair]||
+    Sleep    3
 #Data previsao hoje + 10
 #Campo leito 300
     

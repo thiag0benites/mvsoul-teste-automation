@@ -53,6 +53,12 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
             Log To Console    *** Mensagem de alerta não foi apresentada!
         END
 
+    ELSE IF    '${nomeBtn}' == 'Sair'
+        Wait Until Element Is Visible    ${btnSair}    30
+        Sleep    1
+        Click Element    ${btnSair}
+        Sleep    1    
+
     ELSE IF    '${nomeBtn}' == 'Retornar'
         Wait Until Element Is Visible    ${btnRetornar}    30
         Sleep    1
@@ -112,11 +118,13 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnPrintInt}   
         Sleep    1
-    ELSE IF    '${nomeBtn}' == 'Clicar no botao [Pesquisa]||'
-        Wait Until Element Is Visible    ${btnPrintInt}    30
+    
+    ELSE IF    '${nomeBtn}' == 'Adicionar Cirurgia'
+        Wait Until Element Is Visible    ${btnAdicionarCirurgia}    30
         Sleep    1
-        Click Element    ${btnPrintInt}   
+        Click Element    ${btnAdicionarCirurgia}   
         Sleep    1
+
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|
@@ -137,6 +145,6 @@ Captura codigo do Paciente Cadastrado|${suite}|${id}|
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputNomePaciente", valor "${nome}"
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputIdade", valor "${idade}"
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputCpf", valor "${cpf}"
-    Click Element    ${btnSair}
+    Clicar no botao [Sair]||
     Sleep    3
     # Unselect Frame

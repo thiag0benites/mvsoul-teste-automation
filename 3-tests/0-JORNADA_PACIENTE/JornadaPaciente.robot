@@ -57,11 +57,20 @@ SCR0JSMK-001:Jornada do Paciente
     Informar os campos que foram configurados como obrigatorios na tela@print
     Clicar no botao [Salvar]|${dados}[cadPacMsgEsperada]|
     Captura codigo do Paciente Cadastrado|${suite}|${dados}[id]|
+#SMF-9622:Gerar um aviso de cirurgia
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+    Preencher os campos e adicionar nova cirurgia |${dados}[preAgDtHrPrevInter]|,|${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurNumCid]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[agCirurEqpMedica]|,|${dados}[preIntCodMedico]|@print
+    Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
+    Clicar no botao [Salvar]||
+    Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
+    Clicar no botao [Sair]||
 #SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo Particular
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
     Preencher campos |${dados}[cadPacOutputCodPaciente]|,|${dados}[preIntOrigem]|,|${dados}[preIntCodMedico]|,|${dados}[preIntCodEspecialidade]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[preIntCodProcedimento]|,|${dados}[preIntAcomodacao]|,|${dados}[preAgTipoInternacao]|,|${dados}[preIntAcompanhante]|,|${dados}[preIntCodServico]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+    Clicar no botao [Sair]||
 #SMF-9621:Consultar o cadastro do paciente para gerar uma internação
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Sim]
@@ -78,16 +87,17 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [OK]||
     Revisar os dados de internacao incluindo leito |${dados}[intPacCodLeito]|,|${dados}[preAgDtHrPrevInter]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+    Captura codigo do Atendimento Cadastrado|${suite}|${dados}[id]|
+    Clicar no botao [Sair]||
     #Clicar no botao [Imprimir]||
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
-# SMF-9619:Realizar um pré-agendamento cirúrgico
+#SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas
-    Preencher campos da tela de pre-agendamento |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[preAgTipoInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
-    Clicar no botao [Adicionar Cirurgia]
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
+    Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
-    Clicar no botao [Retornar]||
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
+    Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
 #SMF-9623:Realizar agendamento cirúrgico
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Agendamento"@nprint @nlas
@@ -96,11 +106,6 @@ SCR0JSMK-001:Jornada do Paciente
     #Preencher os campos e confirmar |${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurEqpMedica]|,|${dados}[agCirurAnestesista]|,|${dados}[agCirurNumCid]|
     Preencher os campos e confirmar |${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirPacMsgEsperada]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurEqpMedica]|,|${dados}[agCirurAnestesista]|,|${dados}[agCirurNumCid]|
     Clicar no botao [Não]|${dados}[agCirurMsgEsperada]|
-#SMF-9622:Gerar um aviso de cirurgia
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @las
-    Preencher os campos |${dados}[preAgDtHrPrevInter]|,|${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurNumCid]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[agCirurEqpMedica]|,|${dados}[preIntCodMedico]|@print
-    Clicar no botao [Salvar]||
 #SMF-9625:Informar o tipo da anestesia no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
@@ -168,7 +173,7 @@ SMF-9626:Informar os equipamentos no aviso de cirurgia
     Clicar no botao [Retornar]||
 # SMF-???:Digitar gasto de sala sem salvar (????)
 # SMF-9635:Registrar a descrição cirúrgica (Amanda in progress)
-SMF-9635:Registrar a descricao cirurgica
+# SMF-9635:Registrar a descricao cirurgica
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
     Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Executar]||
