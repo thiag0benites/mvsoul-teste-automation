@@ -23,7 +23,10 @@ ${CampoCodInput}			     xpath=//input[@style='height: 22px; text-transform: uppe
 ${CampoCod}                      xpath=//div[@class="slick-cell b0 f0 selected"]
 ${BtnSeguinte}                   xpath=//a[@title='Seguinte']
 ${CodProduto}                    xpath=//button[@data-member='BTN_CD_PRODUTO']
+
+${ClickCampoProd}                xpath=//div[@class='ui-buttoninput ui-widget ui-lovinput mode-edit']
 ${CampoProduto}                  xpath=//div[@class='ui-buttoninput ui-widget ui-lovinput mode-edit']/input
+
 ${CampoQntdeInput}               xpath=//div[@class='slick-cell b6 f6 selected active editable']//input
 ${BtnProdutoL2}                  xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
 ${InputProduto}                  xpath=//input[@class='filterinput']

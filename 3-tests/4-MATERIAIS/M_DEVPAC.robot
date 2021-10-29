@@ -44,10 +44,10 @@ SCR4MDEVPAC-001:Fluxo principal
     Preencher campo de Observacoes com "${dados}[Observacao]"
     Preencher campo com Codido de Barra "${dados}[Cod_Barra]"
     Preencher campo Primeiro produto "${dados}[Produto1]" e Qntde Recebida "${dados}[Qntde_Recebida]"
-    Preencher campo Segundo produto "${dados}[Produto_Linha2]", Unidade "${dados}[Unidade]" e Qntde Recebida "${dados}[Qntde_Recebida]" 
-    Preencher campo Terceiro produto "${dados}[Produto_Linha3]" e Qntde Recebida "${dados}[Qntde_Recebida]"
-    Preencher campo Quarto produto "${dados}[Produto_Linha4]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
-    Preencher campo Quinto produto "${dados}[Produto_Linha5]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
+    # Preencher campo Segundo produto "${dados}[Produto_Linha2]", Unidade "${dados}[Unidade]" e Qntde Recebida "${dados}[Qntde_Recebida]" 
+    # Preencher campo Terceiro produto "${dados}[Produto_Linha3]" e Qntde Recebida "${dados}[Qntde_Recebida]"
+    # Preencher campo Quarto produto "${dados}[Produto_Linha4]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
+    # Preencher campo Quinto produto "${dados}[Produto_Linha5]", Unidade e Qntde Recebida "${dados}[Qntde_Recebida]" 
     Clicar em Salvar, negando o pop-pup e Imprimindo registro
 
 
