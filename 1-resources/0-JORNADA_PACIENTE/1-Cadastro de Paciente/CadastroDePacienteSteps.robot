@@ -125,6 +125,12 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Click Element    ${btnAdicionarCirurgia}   
         Sleep    1
 
+    ELSE IF    '${nomeBtn}' == 'Pesquisar Paciente'
+        Wait Until Element Is Visible    ${btnPesquisarPaciente}    30
+        Sleep    1
+        Click Element    ${btnPesquisarPaciente}   
+        Sleep    1   
+
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|

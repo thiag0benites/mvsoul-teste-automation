@@ -10,7 +10,7 @@ Resource          ../../../2-pages/0-JORNADA_PACIENTE/AssociarExamesImagemAvisoC
 *** Variable ***
 
 *** Keywords ***
-Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
+#Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
     Wait Until Element Is Visible    ${btnPesquisar}    30
     Sleep    1
     Click Element    ${btnPesquisar}   
