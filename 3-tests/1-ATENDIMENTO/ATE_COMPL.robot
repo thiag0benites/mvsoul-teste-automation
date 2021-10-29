@@ -42,4 +42,3 @@ SCR1AATECOMPL-001:Fluxo Principal
     Confirmar Diagnostico
     # Retornar massa de dados ao ponto incial do teste
     Cancelamento Diagnostico
-    Sleep  5
