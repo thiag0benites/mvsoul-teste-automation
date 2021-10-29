@@ -17,7 +17,7 @@ Resource          ../../../2-pages/0-JORNADA_PACIENTE/AssociarExamesImagemAvisoC
     Sleep    1
 
 Informar o codigo do aviso de cirurgia |${codAgCirurgia}|
-    Preencher campo    $elemento    $valor
+    Preencher campo    ${txtCodAvisoCir}    ${codAgCirurgia}
 Clicar no botão executar 
 Clicar no botão Equipamento
 Selecionar um equipamento na lista 
