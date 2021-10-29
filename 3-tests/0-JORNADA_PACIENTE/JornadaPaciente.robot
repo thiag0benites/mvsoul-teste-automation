@@ -59,14 +59,14 @@ SCR0JSMK-001:Jornada do Paciente
     Informar os campos que foram configurados como obrigatorios na tela@print
     Clicar no botao [Salvar]|${dados}[cadPacMsgEsperada]|
     Captura codigo do Paciente Cadastrado|${suite}|${dados}[id]|
-#SMF-9622:Gerar um aviso de cirurgia
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Preencher os campos e adicionar nova cirurgia |${dados}[preAgDtHrPrevInter]|,|${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurNumCid]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[agCirurEqpMedica]|,|${dados}[preIntCodMedico]|@print
-    Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
-    Clicar no botao [Salvar]||
-    Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
-    Clicar no botao [Sair]||
+# #SMF-9622:Gerar um aviso de cirurgia
+#     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+#     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+#     Preencher os campos e adicionar nova cirurgia |${dados}[preAgDtHrPrevInter]|,|${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurNumCid]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[agCirurEqpMedica]|,|${dados}[preIntCodMedico]|@print
+#     Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|,|${dados}[preAgCirurMsgEsperada]|@nprint
+#     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+#     Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
+#     Clicar no botao [Sair]||
 #SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo Particular
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
@@ -95,7 +95,7 @@ SCR0JSMK-001:Jornada do Paciente
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
 #SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nas
     Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
@@ -113,77 +113,77 @@ SCR0JSMK-001:Jornada do Paciente
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
     Clicar no botao [Pesquisar]||
 
-# <<<<<<<<<<< FUNCIONANDO ATÉ AQUI >>>>>>>>>>>>>
+# # <<<<<<<<<<< FUNCIONANDO ATÉ AQUI >>>>>>>>>>>>>
 
-SMF-9626:Informar os equipamentos no aviso de cirurgia
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao [Pesquisar]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Clicar no botao [Equipamento]||
-    Selecionar um equipamento na lista
-    Informar a quantidade solicitada 
-    Clicar no botao [Salvar]||
-# SMF-9630:Associar os exames de imagem no aviso de cirurgia
-    # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao [Pesquisar]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Clicar no botao [Imagem]||
-    Selecionar um exame de imagem e o setor na lista de valores
-    Informar a quantidade para o exame
-    Clicar no botao [Salvar]||
-    Clicar no botao [Retornar]||
-# SMF-9632:Associar os exames laboratoriais no aviso de cirurgia
-    # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao [Pesquisa]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Clicar no botao [Laboratorio]||
-    Selecionar um exame de imagem e o setor na lista de valores
-    Informar a quantidade para o exame
-    Clicar no botao [Salvar]||
-    Clicar no botao [Retornar]||
-# SMF-9633:Associar sangue e derivados no aviso de cirurgia
-    # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao [Pesquisa]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Clicar no botao [Sangue e Derivados]||
-    Selecionar um exame de imagem e o setor na lista de valores
-    Informar a quantidade para o exame
-    Clicar no botao [Salvar]||
-    Clicar no botao [Retornar]||
-# SMF-9634:Informar os prestadores no aviso da cirurgia
-    Clicar no botao [Pesquisa]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Clicar no botao [Prestadores]||
-    Selecionar um exame de imagem e o setor na lista de valores
-    Informar a quantidade para o exame
-    Clicar no botao [Salvar]||
-    Clicar no botao [Retornar]||
-# SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia
-    Clicar no botao [Pesquisa]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Clicar no botao [Avulsos\Consignados]||
-    Selecionar um exame de imagem e o setor na lista de valores
-    Informar a quantidade para o exame
-    Clicar no botao [Salvar]||
-    Clicar no botao [Retornar]||
-# SMF-???:Digitar gasto de sala sem salvar (????)
-# SMF-9635:Registrar a descrição cirúrgica (Amanda in progress)
-# SMF-9635:Registrar a descricao cirurgica
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
-    Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
-    Clicar no botao [NovaDescricao]||
-    Descrever a cirurgia
-    Clicar no botao [Salvar]||
-    Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
+# SMF-9626:Informar os equipamentos no aviso de cirurgia
+#     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+#     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+#     Clicar no botao [Pesquisar]||
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Equipamento]||
+#     Selecionar um equipamento na lista
+#     Informar a quantidade solicitada 
+#     Clicar no botao [Salvar]||
+# # SMF-9630:Associar os exames de imagem no aviso de cirurgia
+#     # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+#     Clicar no botao [Pesquisar]||
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Imagem]||
+#     Selecionar um exame de imagem e o setor na lista de valores
+#     Informar a quantidade para o exame
+#     Clicar no botao [Salvar]||
+#     Clicar no botao [Retornar]||
+# # SMF-9632:Associar os exames laboratoriais no aviso de cirurgia
+#     # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+#     Clicar no botao [Pesquisa]||
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Laboratorio]||
+#     Selecionar um exame de imagem e o setor na lista de valores
+#     Informar a quantidade para o exame
+#     Clicar no botao [Salvar]||
+#     Clicar no botao [Retornar]||
+# # SMF-9633:Associar sangue e derivados no aviso de cirurgia
+#     # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+#     Clicar no botao [Pesquisa]||
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Sangue e Derivados]||
+#     Selecionar um exame de imagem e o setor na lista de valores
+#     Informar a quantidade para o exame
+#     Clicar no botao [Salvar]||
+#     Clicar no botao [Retornar]||
+# # SMF-9634:Informar os prestadores no aviso da cirurgia
+#     Clicar no botao [Pesquisa]||
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Prestadores]||
+#     Selecionar um exame de imagem e o setor na lista de valores
+#     Informar a quantidade para o exame
+#     Clicar no botao [Salvar]||
+#     Clicar no botao [Retornar]||
+# # SMF-9636:Informar o produto consignado ou avulso no aviso de cirurgia
+#     Clicar no botao [Pesquisa]||
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Clicar no botao [Avulsos\Consignados]||
+#     Selecionar um exame de imagem e o setor na lista de valores
+#     Informar a quantidade para o exame
+#     Clicar no botao [Salvar]||
+#     Clicar no botao [Retornar]||
+# # SMF-???:Digitar gasto de sala sem salvar (????)
+# # SMF-9635:Registrar a descrição cirúrgica (Amanda in progress)
+# # SMF-9635:Registrar a descricao cirurgica
+#     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
+#     Informar o codigo do aviso de cirurgia |111|
+#     Clicar no botao [Executar]||
+#     Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
+#     Clicar no botao [NovaDescricao]||
+#     Descrever a cirurgia
+#     Clicar no botao [Salvar]||
+#     Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
 # SMF-9638:Confirmar a cirurgia realizada
 #     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
 #     Informar o codigo do aviso de cirurgia |111|

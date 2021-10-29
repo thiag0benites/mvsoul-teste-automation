@@ -32,7 +32,7 @@ Preencher os campos e adicionar nova cirurgia |${AvDtPrevInter}|,|${AvTempoPrevi
     Sleep    1
     Clicar no botao [Adicionar Cirurgia]||
 
-Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${grupCirurgia}|,|${prestCirurgiao}|,|${atividadeMed}|${print}
+Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${grupCirurgia}|,|${prestCirurgiao}|,|${atividadeMed}|,|${AgCirurMsgEsperada}|${print}
     Preencher campo    ${inputCirurgia}    ${cirurgia}
     Sleep    1
     Preencher campo    ${inputConvenioCir}    ${IntCodConvenio}
@@ -49,7 +49,7 @@ Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${In
     Sleep    3
     Clicar no botao [Retornar]||
     Sleep    0.5
-    Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
+    Clicar no botao [Sim]|${AgCirurMsgEsperada}|
    
     
    
