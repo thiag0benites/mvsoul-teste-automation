@@ -127,7 +127,7 @@ Seleciona Pediatra Responsavel e Leito
     Click no Item                    ${CampoServicoLeito}
     Click no Item                    ${BtnServico}
     Sleep    3 
-    Preencher campo                  ${CampoFIltoParto}              %Pediatria
+    Preencher campo                  ${CampoFIltoParto}              86
     Click no Item                    ${BtnFiltrar}
     Click no Item                    ${BtnOk}
     Click no Item                    ${BtnSalvar}
