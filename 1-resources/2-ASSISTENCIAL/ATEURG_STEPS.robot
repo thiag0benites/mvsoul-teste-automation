@@ -43,7 +43,7 @@ Preencher Campos Obrigatorios
     Selecionar Item Na Lista                ${BotaoLovTipoPaciente}             EMERGENCIA ADULTO                   EMERGENCIA ADULTO
     Selecionar Item Na Lista                ${BotaoLovServico}                  CARDIOLOGIA CLINICA                 CARDIOLOGIA CLINICA
     Preencher Campo                         ${CampoCID}                         R100
-    Selecionar Item Na Lista                ${BotaoLovProced}     BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)        BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)                
+    Selecionar Item Na Lista                ${BotaoLovProced}     BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)       BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)                
 
 Clicar Botao Carteira
     Click no Item                           ${BotaoCarteira} 
