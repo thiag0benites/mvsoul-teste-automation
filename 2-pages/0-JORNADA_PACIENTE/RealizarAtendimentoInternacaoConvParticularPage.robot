@@ -11,5 +11,5 @@ Resource          ../../Config.robot
 ${inputIntCodPaciente}    id=inp:atendime_cdPaciente
 ${inputMedRef}    id=inp:nmPrestadorReferencia
 ${inputDataHrPrevAlta}    id=inp:dtPrevistaAlta
-${inputLeito}     xpath=(//div[@data-member='CD_LEITO']//input[@id='inp:cdLeito'])[2]
+${inputLeito}     xpath=//div[@data-member='CD_LEITO']//input[@id='inp:cdLeito']
 ${inputCodAtendimento}    xpath=//input[@id='inp:cdAtendimento']
