@@ -10,6 +10,5 @@ Resource          ../../2-pages/4-MATERIAIS/O_RECEBE_SOL_PAGE.robot
 
 *** Keywords ***
 Marcar o checkbox Recebe e clicar no botão para receber solicitações
-    Click Element           ${checkboxRecebe}
-    Sleep                   3
-    Click Element           ${btnReceberSolicitacoes}
+    Click no Item           ${checkboxRecebe}
+    Click no Item          ${btnReceberSolicitacoes}
