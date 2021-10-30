@@ -25,6 +25,8 @@ Resource          ../../1-resources/0-JORNADA_PACIENTE/9-Aviso Cirurgia/AvisoCir
 Resource          ../../1-resources/0-JORNADA_PACIENTE/10-Associar os exames de imagem no aviso de cirurgia/AssociarExamesImagemAvisoCirurgiaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/16-Registrar a descrição cirurgica/RegistrarDescricaoCirurgicaSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/17-Confirmar a cirurgia/ConfirmarCirurgiaRealizadaSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/20-Realizar entrada de produtos normais controle de lote e validade e sem OC/RealizarEntradaProdutosNormaisControleLoteValidadeSemOcSteps.robot
+Resource          ../../1-resources/0-JORNADA_PACIENTE/21-Abertura de inventario para alguns produtos/AberturaInventarioAlgunsProdutosSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/22-Digitar produtos do Inventario/DigitarProdutosInventarioSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/23-Geracao do inventario/GeracaoInventarioSteps.robot
 Resource          ../../1-resources/0-JORNADA_PACIENTE/25-Atender a solicitacao do paciente/AtenderSolicitacaoPacienteSteps.robot
@@ -205,8 +207,31 @@ SCR0JSMK-001:Jornada do Paciente
 #     Preencher os campos Produto |${dados}[solProdProduto]|, Qtde |${dados}|solProdQtde||
 #     Clicar no botao [Salvar Registro]|Atenção: Imprimir Solicitação?|
 #     Clicar no botao [Não]|Atenção: Movimentação Salva com Sucesso ! Deseja Limpar a Tela?|
-# SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC (Gabriel)
-# SMF-786:Abertura de Inventário para Alguns Produtos (Gabriel)
+
+# SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC
+#     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @nlas
+#     Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
+#     Indicar o estoque onde será efetuada a entrada do produto no campo <Estoque>
+#     Informar os campos Nr Doc |${dados}[realEntProdNrDoc]|,Serie |${dados}[realEntProdSerie]|, Fornecedor |${dados}[realEntProdFornecedor]|, Dt Emissao |${dados}[rrealEntProdDtEmissao]|, CFOP |${dados}[realEntProdCFOP]|, Vl Total da Nota |${dados}[realEntProdVlTotalNota]|
+#     Clicar no botao [Produtos]||
+#     Informar os campos Produto |${dados}[realEntProdCodProd]|, Quantidade |${dados}[realEntProdQtde]|, Valor unitario |${dados}[realEntProdVrUnit]|
+#     Clicar no botao [Sim] da mensagem
+#     Clicar no botao [Sair]||
+#     Clicar no botao [Duplicata]||
+#     Informar os campos Parcela |${dados}[realEntProdParcela]|, Data Vencimento |${dados}[realEntProdDtVencimento]|, Valor |${dados}[realEntProdValor]|
+#     Clicar no botao [Concluir e Avaliar]||
+#     Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
+#     Clicar no botao [Sim] da mensagem
+
+SMF-786:Abertura de Inventário para Alguns Produtos
+    Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @nlas
+    Informar o <Codigo do Estoque>
+    Informar o <Motivo>
+    Informar o valor "Não" no campo <Digitar por etapas>
+    Informar o <Codigo do Produto>
+    Clicar no botao [Enter]||
+    Clicar no botao [Salvar]|${dados}[abertInventMsgEsperada]|
+
 # SMF-789:Digitar produtos do Inventario
 #     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @nlas
 #     Clicar no botao [Pesquisar]||
