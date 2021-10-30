@@ -12,7 +12,7 @@ Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 *** Keywords ***
 Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|${dataHrSugerida}|,|${tempoPrev}|,|${dataHrPrevInter}|,|${codAtendPreAgCir}|,|${tipoInternacao}|,|${salaCirurgica}|,|${medicoAssociado}|${print}
     Preencher campo    ${inputDataHr}    ${dataHr}
-    Sleep    1
+    Sleep    1.5
     Preencher campo    ${inputDataHrSugerida}    ${dataHrSugerida}
     Sleep    1
     Preencher campo    ${inputTempoPrev}    ${tempoPrev}
