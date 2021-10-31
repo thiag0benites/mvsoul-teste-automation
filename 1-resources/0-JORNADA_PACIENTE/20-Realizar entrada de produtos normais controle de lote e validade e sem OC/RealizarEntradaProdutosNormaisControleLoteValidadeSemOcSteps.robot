@@ -12,7 +12,7 @@ Resource          ../../../2-pages/0-JORNADA_PACIENTE/RealizarEntradaProdutosNor
 
 Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
     
-Indicar o estoque onde será efetuada a entrada do produto no campo <Estoque>
+Indicar o estoque onde sera efetuada a entrada do produto no campo Estoque |${dados}[realEntProdEstoque]|
     
 Informar os campos Nr Doc |${dados}[realEntProdNrDoc]|,Serie |${dados}[realEntProdSerie]|, Fornecedor |${dados}[realEntProdFornecedor]|, Dt Emissao |${dados}[rrealEntProdDtEmissao]|, CFOP |${dados}[realEntProdCFOP]|, Vl Total da Nota |${dados}[realEntProdVlTotalNota]|
 
