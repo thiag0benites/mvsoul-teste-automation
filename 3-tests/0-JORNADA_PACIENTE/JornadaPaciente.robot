@@ -95,8 +95,8 @@ SCR0JSMK-001:Jornada do Paciente
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
 #SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas
-    Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
+    Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
     Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
@@ -197,38 +197,38 @@ SCR0JSMK-001:Jornada do Paciente
 #     Preencher os campos Aviso de cirurgia |${dados}[impRelAvisoCirurgia]|, Descricao cirurgica |${dados}[impRelDescCirurgia]|
 #     Clicar no botao [Imprimir]||
 #     Valida abertura relatorio
-# SMF-4046:Solicitar produtos ao estoque
+# SMF-4046:Solicitar produtos ao estoque (Não há estoque)
 #     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Produtos ao Estoque"@nprint @nlas
-#     Usuario devera marcar o checkbox Estoque |${dados}[checkBoxEstoque]|
+#     Usuario devera marcar o radioButton |${dados}[checkBoxEstoque]|
 #     Preencher os campos Estoque |${dados}[66]|, Estoque destino |${dados}[67]|, Setor |${dados}[solProdSetor]|
 #     Validar redirecionamento para Produtos Solicitados
 #     Preencher os campos Produto |${dados}[solProdProduto]|, Qtde |${dados}|solProdQtde||
 #     Clicar no botao [Salvar Registro]|Atenção: Imprimir Solicitação?|
 #     Clicar no botao [Não]|Atenção: Movimentação Salva com Sucesso ! Deseja Limpar a Tela?|
 
-# SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC
-#     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @nlas
-#     Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
-#     Indicar o estoque onde será efetuada a entrada do produto no campo <Estoque>
-#     Informar os campos Nr Doc |${dados}[realEntProdNrDoc]|,Serie |${dados}[realEntProdSerie]|, Fornecedor |${dados}[realEntProdFornecedor]|, Dt Emissao |${dados}[rrealEntProdDtEmissao]|, CFOP |${dados}[realEntProdCFOP]|, Vl Total da Nota |${dados}[realEntProdVlTotalNota]|
-#     Clicar no botao [Produtos]||
-#     Informar os campos Produto |${dados}[realEntProdCodProd]|, Quantidade |${dados}[realEntProdQtde]|, Valor unitario |${dados}[realEntProdVrUnit]|
-#     Clicar no botao [Sim] da mensagem
-#     Clicar no botao [Sair]||
-#     Clicar no botao [Duplicata]||
-#     Informar os campos Parcela |${dados}[realEntProdParcela]|, Data Vencimento |${dados}[realEntProdDtVencimento]|, Valor |${dados}[realEntProdValor]|
-#     Clicar no botao [Concluir e Avaliar]||
-#     Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
-#     Clicar no botao [Sim] da mensagem
+SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC
+    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @nlas
+    Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
+    Indicar o estoque onde sera efetuada a entrada do produto no campo Estoque |${dados}[realEntProdEstoque]|
+    Informar os campos Nr Doc |${dados}[realEntProdNrDoc]|,Serie |${dados}[realEntProdSerie]|, Fornecedor |${dados}[realEntProdFornecedor]|, Dt Emissao |${dados}[rrealEntProdDtEmissao]|, CFOP |${dados}[realEntProdCFOP]|, Vl Total da Nota |${dados}[realEntProdVlTotalNota]|
+    Clicar no botao [Produtos]||
+    Informar os campos Produto |${dados}[realEntProdCodProd]|, Quantidade |${dados}[realEntProdQtde]|, Valor unitario |${dados}[realEntProdVrUnit]|
+    Clicar no botao [Sim] da mensagem
+    Clicar no botao [Sair]||
+    Clicar no botao [Duplicata]||
+    Informar os campos Parcela |${dados}[realEntProdParcela]|, Data Vencimento |${dados}[realEntProdDtVencimento]|, Valor |${dados}[realEntProdValor]|
+    Clicar no botao [Concluir e Avaliar]||
+    Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
+    Clicar no botao [Sim] da mensagem
 
-#SMF-786:Abertura de Inventário para Alguns Produtos
-    Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @nlas
-    Informar o <Codigo do Estoque>
-    Informar o <Motivo>
-    Informar o valor "Não" no campo <Digitar por etapas>
-    Informar o <Codigo do Produto>
-    Clicar no botao [Enter]||
-    Clicar no botao [Salvar]|${dados}[abertInventMsgEsperada]|
+# SMF-786:Abertura de Inventário para Alguns Produtos
+#     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @nlas
+#     Informar o <Codigo do Estoque>
+#     Informar o <Motivo>
+#     Informar o valor "Não" no campo <Digitar por etapas>
+#     Informar o <Codigo do Produto>
+#     Clicar no botao [Enter]||
+#     Clicar no botao [Salvar]|${dados}[abertInventMsgEsperada]|
 
 # SMF-789:Digitar produtos do Inventario
 #     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @nlas

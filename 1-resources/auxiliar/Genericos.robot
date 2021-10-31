@@ -39,7 +39,6 @@ Valida Mensagem
 
 Click Javascript
     [Arguments]    ${elemento}
-    Sleep    3
     ${elemento2}    Get WebElement    ${elemento}
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
@@ -72,6 +71,7 @@ Click Elemento por titulo
     [Arguments]    ${titulo}    ${timeout}=${120}
     ${elemento}    Set Variable    xpath=//a[@title='${titulo}']
     Wait Until Element Is Visible    ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
+    Wait Until Element Is Enabled    ${elemento}    ${timeout}    O elemento ${elemento} não esta habilitado
     Sleep    3
     Click Element    ${elemento}
 
