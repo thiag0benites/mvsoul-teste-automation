@@ -95,7 +95,7 @@ SCR0JSMK-001:Jornada do Paciente
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
 #SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas
     Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
@@ -112,7 +112,6 @@ SCR0JSMK-001:Jornada do Paciente
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
     Clicar no botao [Pesquisar]||
-
 #SMF-9626:Informar os equipamentos no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
@@ -182,7 +181,7 @@ SCR0JSMK-001:Jornada do Paciente
     Descrever a cirurgia
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
-SMF-9638:Confirmar a cirurgia realizada
+#SMF-9638:Confirmar a cirurgia realizada
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
     Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Executar]||
@@ -192,7 +191,8 @@ SMF-9638:Confirmar a cirurgia realizada
     Clicar no botao [Confirmar]|${dados}[confCirurMsgAviso]|
     # confCirurMsgConfCirurgia - A Confirmação da Cirurgia foi realizada com sucesso !
     Valida confirmacao de cirurgia |${dados}[confCirurMsgConfCirurgia]|
-# SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva
+
+# SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva 
 #     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Relatórios>Operacionais>Ficha Descritiva da Cirurgia"@nprint @nlas
 #     Preencher os campos Aviso de cirurgia |${dados}[impRelAvisoCirurgia]|, Descricao cirurgica |${dados}[impRelDescCirurgia]|
 #     Clicar no botao [Imprimir]||
@@ -221,7 +221,7 @@ SMF-9638:Confirmar a cirurgia realizada
 #     Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
 #     Clicar no botao [Sim] da mensagem
 
-SMF-786:Abertura de Inventário para Alguns Produtos
+#SMF-786:Abertura de Inventário para Alguns Produtos
     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @nlas
     Informar o <Codigo do Estoque>
     Informar o <Motivo>
@@ -236,12 +236,14 @@ SMF-786:Abertura de Inventário para Alguns Produtos
 #     Preencher os campos codigo do produto |${dados}[digProdInvProduto]|, lote |${dados}[digProdInvLote]|, data de validade |${dados}[digProdInvValidade]|, Qrde. Estoque |${dados}[digProdInvQtdeEstoque]|
 #     Concluir a digitação de todos os produtos acionar
 #     Clicar no botao [Fechar Mov. do Usuário]|Fechamento da leitura realizado com sucesso!|
+
+#GABRIEL
 # SMF-791:Geracao do inventario
 #     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura de inventário"@nprint @nlas
 #     Informar o codigo da contagem realizada |${dados}[invCodContagem]|
 #     Validar preenchimento automatico dos campos <Data>, <Estoque> e <Tipo de Contagem>
 #     Clicar no botao [Confirmar]|Processo Completo.|
-SMF-753:Atender a solicitação do paciente
+#SMF-753:Atender a solicitação do paciente
     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Solicitações>Atender"@nprint @nlas
     Informar o código no campo |solicitação|
     Clicar no botao [Executar]||
@@ -250,12 +252,12 @@ SMF-753:Atender a solicitação do paciente
     Clicar no botao [Cod. do Produto]
     Informar os campos Produto |${dados}[atendSolicPacProduto]|, Lote |${dados}[atendSolicPacLote]|, Qtde. Disp |${dados}[atendSolicPacQtdeDisp]|
     Clicar no botao [Fecha a baixa]|${dados}[atendSolicPacMsgEsperada]|
-SMF-7617:Devolução de produtos
+#SMF-7617:Devolução de produtos
     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Solicitações>Devolução de Produtos"@nprint @nlas
     Marcar o check box <2- Setor> e preencher os seguintes campos com dados válidos |${dados}[DevProdMsgEsperada]|
     Clicar no botão [Sim] da mensagem e na tecla <TAB>
 #     Informar todos os produtos digitados na saída |${dados}[DevProdMsgEsperadaFinal]|
-SMF-792:Informar gasto de sala
+#SMF-792:Informar gasto de sala
     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Movimentações>Saída de Produtos>Gasto de Sala"@nprint @nlas
     Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Digitar Cód. do Prod.]
@@ -263,14 +265,17 @@ SMF-792:Informar gasto de sala
     Informar a <Qtde. Disp.>
     Clicar no botao [Salvar]|${dados}[InfoGastSalaMsgEsperada]|
 # SMF-8320:Realizar alta médica (erro no testlink)
-8286:Realizar alta hospitalar
-    Acessar a tela "Atendimento>Internação> Alta> Efetivação> Alta Hospitalar "@nprint @nlas
-    Informar código "Atendimento" no campo < Atendimento>
-    Clicar no botao [Executar]||
-    Informar os campos Motivo da Alta |${dados}[realAltaHospMotivAlta]|,Tipo de Limpeza |${dados}[realAltaHospTipLimp]|, Procedimento da Alta |${dados}[realAltaHospProcAlta]|, Procedimento CIH |${dados}[realAltaHospProcCih]|, Observação da Alta |${dados}[realAltaHospObsAlta]|
-    Clicar no botao [Confirmar Alta]|${dados}[realAltaHospMsgEsperadaConfirmar]|   
-    Clicar no botao [Sim] da mensagem
-    Seleciona na opção [Saída do Relatório] a opção 'Tela'
-    Clicar no botao [Imprimir]
-    Clicar no botao [Sair] da tela "Comprovante de Alta Hospitalar do Paciente"
-    Clicar no [Ok] da mensagem;
+
+SMF-8286:Realizar alta hospitalar
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Atendimento>Internação>Atendimento>Alta>Efetivação>Alta Hospitalar"@nprint @las
+    Informar o codigo de atendimento |${dados}[cadPacOutputCodAtendimento]|
+    Preencher os campos |${dados}[altaHospPacMotivoAlta]|,|${dados}[altaHospPacTipoLimpeza]|,|${dados}[altaHospPacTipoCih]|,|${dados}[altaHospPacObsAlta]|@print
+    Clicar no botao [3-Confirmar Alta]|${dados}[altaHospPacMsgEsperada]|   
+    Clicar no botao [Sim]||
+    Clicar no botao [Sair Alta]||
+    Clicar no botao [Sair Alta]||
+    # Seleciona na opção [Saída do Relatório] a opção 'Tela'
+    # Clicar no botao [Imprimir]
+    # Clicar no botao [Sair] da tela "Comprovante de Alta Hospitalar do Paciente"
+    # Clicar no [Ok] da mensagem;

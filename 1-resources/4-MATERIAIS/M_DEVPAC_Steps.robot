@@ -37,7 +37,7 @@ Preencher campo de Observacoes com "${Obs}"
 
 Preencher campo com Codido de Barra "${COD}"
     Click no Item                         ${CampoCod}
-    Clicar Botao se estiver Visivel       ${CampoSim}
+    #Clicar Botao se estiver Visivel       ${CampoSim}
     Preencher campo                       ${CampoCodInput}                ${COD}
     Click no Item                         ${BtnSeguinte}
 

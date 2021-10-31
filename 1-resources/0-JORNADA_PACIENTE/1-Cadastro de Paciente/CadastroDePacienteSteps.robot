@@ -129,7 +129,25 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Wait Until Element Is Visible    ${btnPesquisarPaciente}    30
         Sleep    1
         Click Element    ${btnPesquisarPaciente}   
-        Sleep    1   
+        Sleep    1
+    
+    ELSE IF    '${nomeBtn}' == 'Executar'
+        Wait Until Element Is Visible    ${btnExecutar}    30
+        Sleep    1
+        Click Element    ${btnExecutar}   
+        Sleep    1
+
+    ELSE IF    '${nomeBtn}' == '3-Confirmar Alta'
+        Wait Until Element Is Visible    ${btnConfAlta}    30
+        Sleep    1
+        Click Element    ${btnConfAlta} 
+        Sleep    1
+
+    ELSE IF    '${nomeBtn}' == 'Sair Alta'
+        Wait Until Element Is Visible    ${btnSairAlta}    30
+        Sleep    1
+        Click Element    ${btnSairAlta}
+        Sleep    1
 
     END
 
