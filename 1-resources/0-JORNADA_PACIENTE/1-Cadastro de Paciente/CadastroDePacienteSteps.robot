@@ -42,9 +42,9 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
     
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    60
-        Sleep    0.5
+        Sleep    1
         Click Element    ${btnSalvar}
-        Wait Until Element Is Visible    ${notificacaoGravarRegistro}    5
+        Wait Until Element Is Visible    ${notificacaoGravarRegistro}    60
         Sleep    1
         ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
         IF    "${msgObtida}" != ""

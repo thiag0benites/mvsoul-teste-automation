@@ -13,6 +13,7 @@ ${inputDataHrSugerida}    id=inp:dtSugerida
 ${inputTempoPrev}    id=inp:vlTempoPrevisto
 ${inputDataHrPrevIntern}    id=inp:dtPrevisaoInternacao
 ${inputTipoInternacao}    xpath=//input[@id='inp:cdTipoInternacao']
+${inputCentroCirurgico}    id=inp:cdCenCir
 ${inputPreSalaCirur}    id=inp:aviCir_cdSalCir
 ${inputMedicoAssociado}    id=inp:cdPrestadorIndicacao
 ${inputCirurgia}    id=inp:cdCirurgia          
