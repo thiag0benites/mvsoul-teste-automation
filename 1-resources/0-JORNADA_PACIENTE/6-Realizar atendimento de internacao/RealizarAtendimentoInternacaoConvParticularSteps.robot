@@ -18,7 +18,7 @@ Pesquisar pre-internacao existente pelo codigo do paciente |${intCodPaciente}|${
 Revisar os dados de internacao incluindo leito |${CodLeito}|,|${dataHrPrevAlta}|${print}
   Wait Until Element Is Visible    ${inputLeito}    30
   Preencher campo    ${inputLeito}   ${CodLeito}
-  Sleep     2
+  Sleep     3
   Preencher campo    ${inputDataHrPrevAlta}    ${dataHrPrevAlta}
   Sleep     1
 Captura codigo do Atendimento Cadastrado|${suite}|${id}|

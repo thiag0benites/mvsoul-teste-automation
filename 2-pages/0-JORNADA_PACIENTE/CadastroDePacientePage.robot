@@ -36,6 +36,9 @@ ${btnOkMed}                     xpath=//button[@id='btok']
 ${btnPrintInt}                  xpath=//button[@data-member='BTN_5']
 ${btnAdicionarCirurgia}         xpath=//button[@data-member='BTN_NOVA_CIRURGIA']
 ${btnPesquisarPaciente}         xpath=//button[@data-member='BTN_PACIENTE']
+${btnExecutar}                  xpath=//a[@title="Executar Consulta"]
+${btnConfAlta}                  xpath=//button[@data-member='BTN_CONFIRMAR']
+${btnSairAlta}                  xpath=//button[@data-member='BTN_SAIR']    
 
 #Selectors
 ${selectSexo}                   xpath=//*[@id="tpSexo_ac"]
