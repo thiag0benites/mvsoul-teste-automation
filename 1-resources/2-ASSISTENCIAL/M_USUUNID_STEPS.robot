@@ -62,9 +62,13 @@ Desmarcar Checkbox |${CheckboxMov}|
     Log To Console    *** ${StatusCheckbox}
     Run Keyword If    ${StatusCheckbox} == False    Click Element    ${CheckboxMov}
 
+### Keyword para retornar massa de dados ao status inicial do teste ###
+Excluir Unidade de Internacao
+    Click Elemento por titulo                   Apagar
+    Clicar Botao Salvar
 
 
 
 
-
+    
 

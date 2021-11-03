@@ -41,3 +41,6 @@ SCR2AMUSUUNID-001:Fluxo Principal
     Validar Checkbox de Solicitacao Marcado
     Validar Checkbox de Movimentacao Desmarcado
     Clicar Botao Salvar 
+    # Retornar massa de dados para status inicial dos testes
+    Excluir Unidade de Internacao
+    Sleep  5
