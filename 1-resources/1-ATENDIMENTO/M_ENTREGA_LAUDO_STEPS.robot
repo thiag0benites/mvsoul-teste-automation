@@ -26,11 +26,10 @@ Selecionar Selecionar Setor Solicitante |${Setor}|
 
 
 Selecionar Pedido de Exame Por Laudo |${Numero}|
-    Sleep    5
-    ${Laudo}=                      Get WebElement                  xpath://div[@title='${Numero}']
-    Should Be Equal                      ${Laudo.text}             ${Numero}
+    ${Laudo}=                      Get WebElement                  xpath://input[@class='editor-text ui-state-readonly mode-edit'][@value='${Numero}']
+    # Should Be Equal                      ${Laudo.text}             ${Numero}
     Click Element                        ${Laudo}
-    Sleep    2
+    Sleep       2
     Clicar no Botao |Obs. Pedido|
 
 Validar Pop Up de Observacoes  
@@ -40,7 +39,8 @@ Validar Pop Up de Observacoes
        
 
 Clicar no Botao |${NomeBotao}|
-    IF  '${NomeBotao}' == 'OK'
+    Sleep    5
+    IF       '${NomeBotao}' == 'OK'
         Click no Item                       ${btnOK} 
     ELSE IF  '${NomeBotao}' == 'Filtar'
         Click no Item                       ${btnFiltrar} 
@@ -50,5 +50,8 @@ Clicar no Botao |${NomeBotao}|
         Click no Item                       ${btnVoltar} 
     ELSE IF  '${NomeBotao}' == 'Pesquisar'
         Click no Item                       ${btnPesquisar}
+    ELSE IF  '${NomeBotao}' == 'Pesquisa'
+        Click no Item                       ${btnPesquisa}
     END
+    Sleep    5
     

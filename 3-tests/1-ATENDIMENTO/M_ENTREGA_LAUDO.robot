@@ -22,7 +22,7 @@ Resource            ../../1-resources/1-ATENDIMENTO/M_ENTREGA_LAUDO_STEPS.robot
 # Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-Test Teardown       Encerra sessao
+# Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -37,7 +37,7 @@ SRC1MMENTREGALAUDO-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1MMENTREGALAUDO-001"
     Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Registro de Entrega de Laudos"@nprint @las
     Selecionar Selecionar Setor Solicitante |${dados}[Setor]|
-    Clicar no Botao |${dados}[Botao1]|
+    Clicar no Botao |Pesquisa|
     Selecionar Pedido de Exame Por Laudo |${dados}[N_Laudo]|
     Validar Pop Up de Observacoes 
     Clicar no Botao |${dados}[Botao2]|
