@@ -34,7 +34,7 @@ SCR2AMUSUUNID-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMUSUUNID-001:Fluxo Principal" -d ./5-results/SCR2AMUSUUNID-001 "3-tests/2-ASSISTENCIAL/M_USUUNID.robot"
 # robot -v browser:firefox -t "SCR2AMUSUUNID-001:Fluxo Principal" -d ./5-results/SCR2AMUSUUNID-001 "3-tests/2-ASSISTENCIAL/M_USUUNID.robot"
     #Acessar a tela "Apoio a TI>Gestão de Usuários>Configurações de Acesso>Acessos Gerais>Usuário por Unidade de Internação e Setor"@nprint @las
-    Acessa a Tela Pela Busca @las
+    Acessa a Tela Pela Busca |M_USUUNID||Usuário por Unidade de Internação e Setor| @las
     Validar Acesso a Tela |Usuário por Unidade de Internação|
     Selecionar Usuario
     Selecionar Unidade de Internacao

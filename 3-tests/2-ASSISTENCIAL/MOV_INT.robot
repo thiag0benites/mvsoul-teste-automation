@@ -33,6 +33,6 @@ ${dados}
 SCR2AMOVINT-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMOVINT-001:Fluxo Principal" -d ./5-results/SCR2AMOVINT-001 "3-tests/2-ASSISTENCIAL/MOV_INT.robot"
 # robot -v browser:firefox -t "SCR2AMOVINT-001:Fluxo Principal" -d ./5-results/SCR2AMOVINT-001 "3-tests/2-ASSISTENCIAL/MOV_INT.robot"
-    Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Secretaria>Transferência de Leito"@nprint @las
-    #Acessa a Tela Pela Busca @las
+    #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Secretaria>Transferência de Leito"@nprint @las
+    Acessa a Tela Pela Busca |MOV_INT||Transferência de Leito| @las
     Validar Acesso a Tela |Transferência de Paciente|

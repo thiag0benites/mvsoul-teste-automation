@@ -10,22 +10,6 @@ Resource          ../2-pages/ContextoPage.robot
 *** Variable ***
 
 *** Keywords ***
-Acessa a Tela Pela Busca ${las}
-    Unselect Frame
-    Click Element                           ${BotaoBuscaTela}
-    Preencher Campo                         ${CampoBuscaTela}                   M_USUUNID
-    Click Elemento por titulo               Usuário por Unidade de Internação e Setor
-    IF    "${las}" == "@las"
-        # Sleep    1
-        Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    120
-        Unselect Frame
-        # Sleep    1
-        Send Keys    tab
-        Send Keys    enter
-    END
-    Seleciona frame                         ${IdIframe}                         180
-
 Selecionar Usuario
     Preencher Campo                             ${CampoEditavel}                    GPINA
     Send Keys                                   Enter
@@ -70,5 +54,5 @@ Excluir Unidade de Internacao
 
 
 
-    
+
 

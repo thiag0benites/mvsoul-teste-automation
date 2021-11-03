@@ -33,8 +33,8 @@ ${dados}
 SCR2AATEURG-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AATEURG-001:Fluxo Principal" -d ./5-results/SCR2AATEURG-001 "3-tests/2-ASSISTENCIAL/ATEURG.robot"
 # robot -v browser:firefox -t "SCR2AATEURG-001:Fluxo Principal" -d ./5-results/SCR2AATEURG-001 "3-tests/2-ASSISTENCIAL/ATEURG.robot"
-    Validar Configuracao de Acesso a Tela           ## Keyword para configurar parâmetro de acesso a tela principal ##
-    Acessa a Tela Pela Busca
+    #Validar Configuracao de Acesso a Tela           ## Keyword para configurar parâmetro de acesso a tela principal ##
+    Acessa a Tela Pela Busca |ATEURG||Atendimento| @no
     #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
     Validar Acesso a Tela |Atendimento de Urgência/Emergência|
     Clicar Botao Paciente   
