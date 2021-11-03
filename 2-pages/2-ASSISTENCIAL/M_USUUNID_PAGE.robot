@@ -7,6 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
+${BotaoLov}                                     xpath=//button[@class="ui-button ui-widget ui-corner-right ui-button-icon"]
 ${BotaoBuscaTela}                               xpath=//*[@class='mv-basico-menu dp32']
 ${CampoBuscaTela}                               xpath=//input[@placeholder="Search"]
 ${CampoEditavel}                                xpath=//input[@class="ui-widget-content ui-buttoninput ui-corner-left"]
