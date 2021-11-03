@@ -43,4 +43,3 @@ SCR2AATEURG-001:Fluxo Principal
     Clicar Botao Carteira
     Validar Informacoes Carteira
     Confirmar Atendimento 
-    Sleep  5
