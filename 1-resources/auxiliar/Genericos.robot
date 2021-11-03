@@ -232,18 +232,14 @@ Clicar no botão Adicionar
     Click Element     ${btnAdicionar}
 
 Clicar no botão Pesquisar
-    Wait Until Element Is Visible    ${btnPesquisar}   120
-    Click Element     ${btnPesquisar}   
+    Click no Item               ${btnPesquisar}   
 
 Clicar no botão Executar 
-    Sleep              5
-    Click Element     ${btnExecute} 
+    Click no Item            ${btnExecute} 
     Sleep              30   
 
 Clicar no botão Não 
-    Wait Until Element Is Visible   ${btnNaoNotifications}    60
-    Click Element     ${btnNaoNotifications}
+    Click no Item            ${btnNaoNotifications}
 
 Clicar no botão Sim
-    Wait Until Element Is Visible    ${btnSimNotifications}   60
-    Click Element     ${btnSimNotifications}
+    Click no Item            ${btnSimNotifications}
