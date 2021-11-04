@@ -66,13 +66,13 @@ Informar os campos Produto |${realEntProdCodProd}|, Quantidade |${realEntProdQtd
     Click Element    ${inputProdutos}
     Preencher campo    ${inputProdutos}    7907
     Press Keys        ${inputProdutos}        ENTER
-    Sleep    1
+    Sleep    3
     Press Keys        ${inputUnidade}        ENTER
-    Sleep    1
+    Sleep    3
     Click Element    ${inputQtdEntrada}        
     Preencher campo    ${inputQtdEntrada}    2000
     Press Keys        ${inputQtdEntrada}        ENTER
-    Sleep    1
+    Sleep    3
     Click Element   ${inputVlrUnitario}
     Preencher campo        ${inputVlrUnitario}        5
     Press Keys        ${inputVlrUnitario}        ENTER
@@ -90,15 +90,15 @@ Clicar no botao [Duplicata]
 Informar os campos Parcela |${realEntProdParcela}|, Data Vencimento |${realEntProdDtVencimento}|, Valor |${realEntProdValor}|
     Sleep    3
     Click Element    ${inputParcela}
-    Preencher campo         ${inputParcela}     1
+    Preencher campo         ${inputParcela}         ${realEntProdParcela}
     Press Keys    ${inputParcela}        ENTER
-    Sleep    1
+    Sleep    3
     Click Element    ${inputDtVencimento}         
-    Preencher campo    ${inputDtVencimento}     29/11/2021
+    Preencher campo    ${inputDtVencimento}         ${realEntProdDtVencimento}
     Press Keys        ${inputDtVencimento}     ENTER
-    Sleep    1
+    Sleep    3
     Click Element    ${inputValorParcela}
-    Preencher campo    ${inputValorParcela}    1
+    Preencher campo    ${inputValorParcela}        ${realEntProdValor}
     Press Keys        ${inputValorParcela}        ENTER
 
 Clicar no botao [Confirma a(s) duplicata(s)]    

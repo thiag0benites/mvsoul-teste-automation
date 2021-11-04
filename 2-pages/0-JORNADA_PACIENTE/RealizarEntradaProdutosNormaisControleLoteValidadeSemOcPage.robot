@@ -41,7 +41,7 @@ ${inputDtVencimento}        xpath=//*[@id="frames791635836344554"]
 ${inputValorParcela}        xpath=//*[@id="#frames84"]
 ${btnConfirmDuplicata}        id=btnBaixa
 ${btnConcluirAvaliar}        id=btnConcluir
-${btnSimPrimMsg}            xpath=//*[@id="frames75"]
-${btnSimMsgFinal}            xpath=""
+${btnSimPrimMsg}            xpath=//*[@id="frames80"]
+${btnSimMsgFinal}            xpath=//*[@id="frames83"]
 
 
