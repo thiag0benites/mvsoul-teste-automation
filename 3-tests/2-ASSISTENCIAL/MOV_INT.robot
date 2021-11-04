@@ -14,6 +14,7 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/2-ASSISTENCIAL/MOV_INT_STEPS.robot
+Resource            ../../1-resources/1-ATENDIMENTO/M_ENCAMINHA_OBSERVACAO_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -36,3 +37,10 @@ SCR2AMOVINT-001:Fluxo Principal
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Secretaria>Transferência de Leito"@nprint @las
     Acessa a Tela Pela Busca |MOV_INT||Transferência de Leito| @las
     Validar Acesso a Tela |Transferência de Paciente|
+    Selecionar Paciente
+    Validar campos Preenchidos Apos Consulta
+    Selecionar Leito
+    Selecionar Motivo
+    Selecionar Tipo de Limpeza
+    Clicar Botao Salvar
+
