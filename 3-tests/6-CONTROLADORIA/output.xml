@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.2 on win32)" generated="20211103 16:22:50.565" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.26.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Acessar a tela &quot;Controladoria&gt;Caixa&gt;Caixa&gt;Reabertura de Lotes&quot;@nprint @las">
+<msg timestamp="20211103 16:22:51.798" level="FAIL">No keyword with name 'Acessar a tela "Controladoria&gt;Caixa&gt;Caixa&gt;Reabertura de Lotes"@nprint @las' found.</msg>
+<status status="FAIL" starttime="20211103 16:22:51.798" endtime="20211103 16:22:51.798"/>
+</kw>
+<status status="PASS" starttime="20211103 16:22:50.600" endtime="20211103 16:22:56.928"/>
+</kw>
+<status status="PASS" starttime="20211103 16:22:50.599" endtime="20211103 16:22:56.928"/>
+</test>
+<status status="PASS" starttime="20211103 16:22:50.568" endtime="20211103 16:22:56.929"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
