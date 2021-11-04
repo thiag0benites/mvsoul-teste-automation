@@ -66,7 +66,6 @@ SCR0JSMK-001:Jornada do Paciente
 #     Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|,|${dados}[preAgCirurMsgEsperada]|@nprint
 #     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
 #     Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
-#     Clicar no botao [Sair]||
 #SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo Particular
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @nlas
@@ -99,7 +98,8 @@ SCR0JSMK-001:Jornada do Paciente
     Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
-    Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
+    Clicar no botao [Sair]||
+    #Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
 #SMF-9623:Realizar agendamento cirúrgico
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Agendamento"@nprint @nlas
@@ -244,7 +244,7 @@ SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem O
 #     Informar o codigo da contagem realizada |${dados}[invCodContagem]|
 #     Validar preenchimento automatico dos campos <Data>, <Estoque> e <Tipo de Contagem>
 #     Clicar no botao [Confirmar]|Processo Completo.|
-#SMF-753:Atender a solicitação do paciente
+SMF-753:Atender a solicitação do paciente
     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Solicitações>Atender"@nprint @nlas
     Informar o código no campo |solicitação|
     Clicar no botao [Executar]||
@@ -258,7 +258,7 @@ SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem O
     Marcar o check box <2- Setor> e preencher os seguintes campos com dados válidos |${dados}[DevProdMsgEsperada]|
     Clicar no botão [Sim] da mensagem e na tecla <TAB>
 #     Informar todos os produtos digitados na saída |${dados}[DevProdMsgEsperadaFinal]|
-#SMF-792:Informar gasto de sala
+SMF-792:Informar gasto de sala
     Acessar a tela "Atendimento>Materiais e Logística>Almoxarifado>Movimentações>Saída de Produtos>Gasto de Sala"@nprint @nlas
     Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Digitar Cód. do Prod.]
@@ -276,6 +276,7 @@ SMF-8286:Realizar alta hospitalar
     Clicar no botao [Sim]||
     Clicar no botao [Sair Alta]||
     Clicar no botao [Sair Alta]||
+    Clicar no botao [OK]|${dados}[preIntMsgEsperada]|,|${dados}[altaHospPacMgsEsperadaFinal]|
     # Seleciona na opção [Saída do Relatório] a opção 'Tela'
     # Clicar no botao [Imprimir]
     # Clicar no botao [Sair] da tela "Comprovante de Alta Hospitalar do Paciente"
