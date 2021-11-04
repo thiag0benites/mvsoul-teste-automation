@@ -108,17 +108,16 @@ SCR0JSMK-001:Jornada do Paciente
     #Preencher os campos e confirmar |${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurEqpMedica]|,|${dados}[agCirurAnestesista]|,|${dados}[agCirurNumCid]|
     Preencher os campos e confirmar |${dados}[cadPacOutputCodPaciente]|,|${dados}[agCirPacMsgEsperada]|,|${dados}[agCirurUnidInternacao]|,|${dados}[agCirurEqpMedica]|,|${dados}[agCirurAnestesista]|,|${dados}[agCirurNumCid]|
     Clicar no botao [Não]|${dados}[agCirurMsgEsperada]|
-# SMF-9625:Informar o tipo da anestesia no aviso de cirurgia
-#     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
-#     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @las
-
-#     Clicar no botao [Pesquisar]||
+#SMF-9625:Informar o tipo da anestesia no aviso de cirurgia
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+    Clicar no botao [Pesquisar]||  
 #SMF-9626:Informar os equipamentos no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao [Pesquisar]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
+    Clicar no botao "Procurar"
+    Informar o codigo do aviso de cirurgia |{$dados}[preAgCirAvisoCirurgia.]|
+    Clicar no botao "Executar Consulta"
     Clicar no botao [Equipamento]||
     Selecionar um equipamento na lista
     Informar a quantidade solicitada 
@@ -182,7 +181,7 @@ SCR0JSMK-001:Jornada do Paciente
     Descrever a cirurgia
     Clicar no botao [Salvar]||
     Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
-#SMF-9638:Confirmar a cirurgia realizada
+SMF-9638:Confirmar a cirurgia realizada
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
     Informar o codigo do aviso de cirurgia |111|
     Clicar no botao [Executar]||
@@ -192,8 +191,7 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [Confirmar]|${dados}[confCirurMsgAviso]|
     # confCirurMsgConfCirurgia - A Confirmação da Cirurgia foi realizada com sucesso !
     Valida confirmacao de cirurgia |${dados}[confCirurMsgConfCirurgia]|
-
-# SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva 
+# SMF-9647:Imprimir o relatório Ficha de Cirurgia Descritiva
 #     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Relatórios>Operacionais>Ficha Descritiva da Cirurgia"@nprint @nlas
 #     Preencher os campos Aviso de cirurgia |${dados}[impRelAvisoCirurgia]|, Descricao cirurgica |${dados}[impRelDescCirurgia]|
 #     Clicar no botao [Imprimir]||
@@ -207,20 +205,22 @@ SCR0JSMK-001:Jornada do Paciente
 #     Clicar no botao [Salvar Registro]|Atenção: Imprimir Solicitação?|
 #     Clicar no botao [Não]|Atenção: Movimentação Salva com Sucesso ! Deseja Limpar a Tela?|
 
+#robot -v browser:chrome -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/0-JORNADA_PACIENTE "3-tests\0-JORNADA_PACIENTE\JornadaPaciente.robot"
 SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC
-    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @nlas
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @las
     Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
     Indicar o estoque onde sera efetuada a entrada do produto no campo Estoque |${dados}[realEntProdEstoque]|
-    Informar os campos Nr Doc |${dados}[realEntProdNrDoc]|,Serie |${dados}[realEntProdSerie]|, Fornecedor |${dados}[realEntProdFornecedor]|, Dt Emissao |${dados}[rrealEntProdDtEmissao]|, CFOP |${dados}[realEntProdCFOP]|, Vl Total da Nota |${dados}[realEntProdVlTotalNota]|
-    Clicar no botao [Produtos]||
+    Informar os campos |${dados}[realEntProdNrDoc]|,|${dados}[realEntProdSerie]|,|${dados}[realEntProdFornecedor]|,|${dados}[realEntProdDtEmissao]|,|${dados}[realEntProdCFOP]|, |${dados}[realEntProdVlTotalNota]|
+    Clicar no botao [Produtos]
     Informar os campos Produto |${dados}[realEntProdCodProd]|, Quantidade |${dados}[realEntProdQtde]|, Valor unitario |${dados}[realEntProdVrUnit]|
-    Clicar no botao [Sim] da mensagem
-    Clicar no botao [Sair]||
-    Clicar no botao [Duplicata]||
+    Clicar no botao [Sair]
+    Clicar no botao [Duplicata]
     Informar os campos Parcela |${dados}[realEntProdParcela]|, Data Vencimento |${dados}[realEntProdDtVencimento]|, Valor |${dados}[realEntProdValor]|
-    Clicar no botao [Concluir e Avaliar]||
-    Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
+    Clicar no botao [Confirma a(s) duplicata(s)]
+    Clicar no botao [Concluir e Avaliar]
     Clicar no botao [Sim] da mensagem
+    Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
 
 # SMF-786:Abertura de Inventário para Alguns Produtos
 #     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @nlas
