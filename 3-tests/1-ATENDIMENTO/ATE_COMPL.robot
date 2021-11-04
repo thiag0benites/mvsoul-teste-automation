@@ -26,7 +26,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            ate_compl
 # Recebe dados do gerenciador
 ${dados}
 
@@ -34,8 +34,9 @@ ${dados}
 SCR1AATECOMPL-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AATECOMPL-001:Fluxo Principal" -d ./5-results/SCR1AATECOMPL-001 "3-tests/1-ATENDIMENTO/ATE_COMPL.robot"
 # robot -v browser:firefox -t "SCR1AATECOMPL-001:Fluxo Principal" -d ./5-results/SCR1AATECOMPL-001 "3-tests/1-ATENDIMENTO/ATE_COMPL.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AATECOMPL-001"
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Confirmação"@nprint @las
-    Validar Acesso a Tela |Diagnóstico do Atendimento|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Campo Atendimento
     Validar Dados Apos Selecao do Atendimento
     Preencher Campos Obrigatórios

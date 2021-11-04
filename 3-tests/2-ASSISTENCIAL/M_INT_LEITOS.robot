@@ -25,7 +25,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            m_int_leitos
 # Recebe dados do gerenciador
 ${dados}
 
@@ -33,13 +33,14 @@ ${dados}
 SCR2AMINTLEITOS-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMINTLEITOS-001:Fluxo Principal" -d ./5-results/SCR2AMINTLEITOS-001 "3-tests/2-ASSISTENCIAL/M_INT_LEITOS.robot"
 # robot -v browser:firefox -t "SCR2AMINTLEITOS-001:Fluxo Principal" -d ./5-results/SCR2AMINTLEITOS-001 "3-tests/2-ASSISTENCIAL/M_INT_LEITOS.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMINTLEITOS-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Liberação e Interdição de Leitos"@nprint @las
-    Validar Acesso a Tela |Liberação e Interdição de Leitos|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Consultar Leito
     Validar Informacaoes do Leito
-    Alterar Campo Ocupacao |Reforma|
+    Alterar Campo Ocupacao |${dados}[Ocupacao]|
     Clicar Botao Salvar
     # Retornar massa de dados para status inicial do teste
     Tela em Modo de Busca
-    Alterar Campo Ocupacao |Vago|
+    Alterar Campo Ocupacao |${dados}[RetornaOcupacao]|
     Clicar Botao Salvar

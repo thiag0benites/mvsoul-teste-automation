@@ -25,7 +25,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            m_encaminha_observacao
 # Recebe dados do gerenciador
 ${dados}
 
@@ -33,8 +33,9 @@ ${dados}
 SCR1AMENCAMINHAOBSERVACAO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AMENCAMINHAOBSERVACAO-001:Fluxo Principal" -d ./5-results/SCR1AMENCAMINHAOBSERVACAO-001 "3-tests/1-ATENDIMENTO/M_ENCAMINHA_OBSERVACAO.robot"
 # robot -v browser:firefox -t "SCR1AMENCAMINHAOBSERVACAO-001:Fluxo Principal" -d ./5-results/SCR1AMENCAMINHAOBSERVACAO-001 "3-tests/1-ATENDIMENTO/M_ENCAMINHA_OBSERVACAO.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMENCAMINHAOBSERVACAO-001"
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Observação>Encaminhamento"@nprint @las
-    Validar Acesso a Tela |Encaminhamento de Pacientes para Observação|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Atendimento
     Validar Dados Do Paciente
     Selecionar Leito

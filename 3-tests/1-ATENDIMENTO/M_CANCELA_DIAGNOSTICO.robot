@@ -26,7 +26,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            m_cancela_diagnostico
 # Recebe dados do gerenciador
 ${dados}
 
@@ -34,9 +34,10 @@ ${dados}
 SCR1AMCANCELADIAGNOSTICO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AMCANCELADIAGNOSTICO-001:Fluxo Principal" -d ./5-results/SCR1AMCANCELADIAGNOSTICO-001 "3-tests/1-ATENDIMENTO/M_CANCELA_DIAGNOSTICO.robot"
 # robot -v browser:firefox -t "SCR1AMCANCELADIAGNOSTICO-001:Fluxo Principal" -d ./5-results/SCR1AMCANCELADIAGNOSTICO-001 "3-tests/1-ATENDIMENTO/M_CANCELA_DIAGNOSTICO.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMCANCELADIAGNOSTICO-001"
     Confirmacao Diagnostico               ####   Keyword para validar pré requisito do teste   ###
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Cancelamento"@nprint @no
-    Validar Acesso a Tela |Cancelamento de Diagnóstico do Atendimento|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Atendimento
     Validar Dados Apos Selecao do Atendimento
     Confirmar Cancelamento de Diagnostico

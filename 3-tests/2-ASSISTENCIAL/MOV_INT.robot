@@ -26,7 +26,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            mov_int
 # Recebe dados do gerenciador
 ${dados}
 
@@ -34,9 +34,10 @@ ${dados}
 SCR2AMOVINT-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMOVINT-001:Fluxo Principal" -d ./5-results/SCR2AMOVINT-001 "3-tests/2-ASSISTENCIAL/MOV_INT.robot"
 # robot -v browser:firefox -t "SCR2AMOVINT-001:Fluxo Principal" -d ./5-results/SCR2AMOVINT-001 "3-tests/2-ASSISTENCIAL/MOV_INT.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMOVINT-001"
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Secretaria>Transferência de Leito"@nprint @las
-    Acessa a Tela Pela Busca |MOV_INT||Transferência de Leito| @las
-    Validar Acesso a Tela |Transferência de Paciente|
+    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Selecionar Paciente
     Validar campos Preenchidos Apos Consulta
     Selecionar Leito
