@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource          ../Config.robot
+Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de Contagem - Abertura de inventário
