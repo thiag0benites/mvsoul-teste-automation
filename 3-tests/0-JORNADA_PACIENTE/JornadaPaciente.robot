@@ -214,15 +214,15 @@ SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem O
     Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
     Indicar o estoque onde sera efetuada a entrada do produto no campo Estoque |${dados}[realEntProdEstoque]|
     Informar os campos |${dados}[realEntProdNrDoc]|,|${dados}[realEntProdSerie]|,|${dados}[realEntProdFornecedor]|,|${dados}[realEntProdDtEmissao]|,|${dados}[realEntProdCFOP]|, |${dados}[realEntProdVlTotalNota]|
-    Clicar no botao [Produtos]||
+    Clicar no botao [Produtos]
     Informar os campos Produto |${dados}[realEntProdCodProd]|, Quantidade |${dados}[realEntProdQtde]|, Valor unitario |${dados}[realEntProdVrUnit]|
-    Clicar no botao [Sim] da mensagem
-    Clicar no botao [Sair]||
-    Clicar no botao [Duplicata]||
+    Clicar no botao [Sair]
+    Clicar no botao [Duplicata]
     Informar os campos Parcela |${dados}[realEntProdParcela]|, Data Vencimento |${dados}[realEntProdDtVencimento]|, Valor |${dados}[realEntProdValor]|
-    Clicar no botao [Concluir e Avaliar]||
-    Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
+    Clicar no botao [Confirma a(s) duplicata(s)]
+    Clicar no botao [Concluir e Avaliar]
     Clicar no botao [Sim] da mensagem
+    Clicar no botao [Sim]|${dados}[realEntProdMsgEsperada]|
 
 # SMF-786:Abertura de Inventário para Alguns Produtos
 #     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Abertura do Inventário"@nprint @nlas

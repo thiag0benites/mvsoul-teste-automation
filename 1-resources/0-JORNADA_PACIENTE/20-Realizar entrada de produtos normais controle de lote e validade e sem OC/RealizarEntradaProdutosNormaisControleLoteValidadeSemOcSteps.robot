@@ -5,17 +5,21 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../../2-pages/0-JORNADA_PACIENTE/RealizarEntradaProdutosNormaisControleLoteValidadeSemOcPage.robot
+Library    pabot.PabotLib
 
 *** Variable ***
 
 *** Keywords ***
 
 Informar a opcao "Nota Fiscal" no campo <Tipo de Documento>
-    Wait Until Element Is Visible        ${btnTipoDoc}        120
+    Wait Until Element Is Visible        ${btnTipoDoc}        240
     Click Element            ${btnTipoDoc}
+    Sleep    2
+    Click Element    ${inputCodJust} 
+    Preencher campo    ${inputCodJust}     6
     Sleep    1
-    Wait Until Element Is Visible        ${btnVoltarJust}        15
-    Click Button           ${btnVoltarJust}
+    Click Button   ${btnConfirmaJust}
+    Sleep    1
     Wait Until Element Is Visible        ${inputTipoDoc}        30
     Sleep    1
     Click Element            ${inputTipoDoc}
@@ -37,9 +41,70 @@ Informar os campos |${realEntProdNrDoc}|,|${realEntProdSerie}|,|${realEntProdFor
     Sleep    1
     Click Element    ${inputNrFornecedor}
     Preencher campo        ${inputNrFornecedor}        ${realEntProdFornecedor}
-    Press Keys    ${inputNrFornecedor}    ENTER
+    Press Keys    ${inputNrFornecedor}    ENTER    
+    Sleep    1
+    Click Element        ${inputDtEmissao}
+    Preencher campo    ${inputDtEmissao}        ${realEntProdDtEmissao}
+    Press Keys        ${inputDtEmissao}        ENTER
+    Sleep    1
+    Click Element    ${inputCFOP}
+    Preencher campo        ${inputCFOP}        ${realEntProdCFOP}
+    Press Keys    ${inputCFOP}    ENTER
+    Sleep    1
+    Click Element    ${inputVlrTotNota}
+    Preencher campo    ${inputVlrTotNota}    ${realEntProdVlTotalNota}
+    Press Keys    ${inputVlrTotNota}    ENTER
+    Sleep    1
+    
+    
+Clicar no botao [Produtos]
+    Sleep    1
+    Click Element    ${btnProdutos}
 
 Informar os campos Produto |${realEntProdCodProd}|, Quantidade |${realEntProdQtde}|, Valor unitario |${realEntProdVrUnit}|
-
-Informar os campos Parcela |${dados}[realEntProdParcela]|, Data Vencimento |${dados}[realEntProdDtVencimento]|, Valor |${dados}[realEntProdValor]|
+    Sleep    3
+    Click Element    ${inputProdutos}
+    Preencher campo    ${inputProdutos}    7907
+    Press Keys        ${inputProdutos}        ENTER
+    Sleep    1
+    Press Keys        ${inputUnidade}        ENTER
+    Sleep    1
+    Click Element    ${inputQtdEntrada}        
+    Preencher campo    ${inputQtdEntrada}    2000
+    Press Keys        ${inputQtdEntrada}        ENTER
+    Sleep    1
+    Click Element   ${inputVlrUnitario}
+    Preencher campo        ${inputVlrUnitario}        5
+    Press Keys        ${inputVlrUnitario}        ENTER
     
+Clicar no botao [Sair]
+    Sleep    3
+    Click Button    ${btnSairProd}
+   
+    
+Clicar no botao [Duplicata]
+    Sleep    3
+    Wait Until Element Is Visible    ${btnDuplicata}        320
+    Click Button    ${btnDuplicata}
+   
+Informar os campos Parcela |${realEntProdParcela}|, Data Vencimento |${realEntProdDtVencimento}|, Valor |${realEntProdValor}|
+    Sleep    3
+    Click Element    ${inputParcela}
+    Preencher campo         ${inputParcela}     1
+    Press Keys    ${inputParcela}        ENTER
+    Sleep    1
+    Click Element    ${inputDtVencimento}         
+    Preencher campo    ${inputDtVencimento}     29/11/2021
+    Press Keys        ${inputDtVencimento}     ENTER
+    Sleep    1
+    Click Element    ${inputValorParcela}
+    Preencher campo    ${inputValorParcela}    1
+    Press Keys        ${inputValorParcela}        ENTER
+
+Clicar no botao [Confirma a(s) duplicata(s)]    
+    Sleep    3
+    Click Button       ${btnConfirmDuplicata}
+
+Clicar no botao [Concluir e Avaliar]
+    Sleep    3
+    Click Button    ${btnConcluirAvaliar}
