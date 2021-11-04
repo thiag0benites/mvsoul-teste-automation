@@ -95,7 +95,7 @@ SCR0JSMK-001:Jornada do Paciente
     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
 #SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @las
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas
     Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodAtendimento]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|,|${dados}[preIntCodMedico]|@nprint
     Preencher os campos da cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
@@ -110,15 +110,15 @@ SCR0JSMK-001:Jornada do Paciente
     Clicar no botao [Não]|${dados}[agCirurMsgEsperada]|
 #SMF-9625:Informar o tipo da anestesia no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"    
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"
-    Clicar no botao [Pesquisar]||
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
+    Clicar no botao [Pesquisar]||  
 
 #SMF-9626:Informar os equipamentos no aviso de cirurgia
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Aviso de Cirurgia"@nprint @nlas
-    Clicar no botao [Pesquisar]||
-    Informar o codigo do aviso de cirurgia |111|
-    Clicar no botao [Executar]||
+    Clicar no botao "Procurar"
+    Informar o codigo do aviso de cirurgia |{$dados}[preAgCirAvisoCirurgia.]|
+    Clicar no botao "Executar Consulta"
     Clicar no botao [Equipamento]||
     Selecionar um equipamento na lista
     Informar a quantidade solicitada 
