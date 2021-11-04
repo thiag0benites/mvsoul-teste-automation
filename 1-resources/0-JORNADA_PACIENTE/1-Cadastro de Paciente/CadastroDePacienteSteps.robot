@@ -67,9 +67,17 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
 
     ELSE IF    '${nomeBtn}' == 'Sim'
         Wait Until Element Is Visible    ${btnSim}    30
-        Sleep    1
-        Click Element    ${btnSim}
-        Sleep    1
+        Sleep    5
+        ${visivel}    Elemento Visivel    ${btnSim}
+        IF    ${visivel}
+            Sleep    1
+            Click Element    ${btnSim}
+            Sleep    1 
+        END
+        # Wait Until Element Is Visible    ${btnSim}    30
+        # Sleep    1
+        # Click Element    ${btnSim}
+        # Sleep    1 
 
      ELSE IF    '${nomeBtn}' == 'Não'
         Wait Until Element Is Visible    ${btnNao}    30

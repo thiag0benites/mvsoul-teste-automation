@@ -16,7 +16,8 @@ Pesquisar pre-internacao existente pelo codigo do paciente |${intCodPaciente}|${
   Click Element    ${inputMedRef}
 
 Revisar os dados de internacao incluindo leito |${CodLeito}|,|${dataHrPrevAlta}|${print}
-  Wait Until Element Is Visible    ${inputLeito}    30
+  Wait Until Element Is Visible    ${inputLeito}    120
+  Sleep     2
   Preencher campo    ${inputLeito}   ${CodLeito}
   Sleep     3
   Preencher campo    ${inputDataHrPrevAlta}    ${dataHrPrevAlta}
