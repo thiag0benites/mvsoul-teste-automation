@@ -34,4 +34,4 @@ Test Teardown     Encerra sessao
 SCR6OCANCMOVCAIXA-001:Fluxo principal
 # robot -v browser:chrome -t "SCR6OCANCMOVCAIXA-001:Fluxo principal" -d ./5-results/SCR6OCANCMOVCAIXA-001 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
 # robot -v browser:firefox -t "SCR6OCANCMOVCAIXA-001:Fluxo principal" -d ./5-results/SCR6OCANCMOVCAIXA-001 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
-    Acessar a tela "Controladoria >Caixa>Movimentação>Cancelamento de Lançamentos"@nprint @las
+    Acessar a tela "Controladoria>Caixa>Movimentação>Cancelamento de Lançamentos"@nprint @las
