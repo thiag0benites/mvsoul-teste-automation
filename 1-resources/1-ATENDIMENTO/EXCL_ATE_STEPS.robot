@@ -11,9 +11,9 @@ Resource          ../../2-pages/1-ATENDIMENTO/EXCL_ATE_PAGE.robot
 *** Keywords ***
 Usuário deverá preencher os campos |${numAtend}|,|${motivo}|
     Preencher campo                  ${atendimento}              ${numAtend} 
-    Sleep                            2
+    Sleep                            3
+    Click no Item                    ${motivo}
     Preencher campo                  ${motivo}                   ${motivo} 
 
 Clicar no botão Excluir Atendimento
     Click no Item                   ${btnExcluirAtendimento}
-    Sleep       40
