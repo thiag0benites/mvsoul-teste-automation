@@ -10,23 +10,26 @@ Resource                ../../2-pages/5-FATURAMENTO/M_PACOTE_PAGE.robot
 
 *** Keywords ***
 Clicar na aba Exceções
-    Click Element               ${abaExcecoes}
-    Sleep                       2
+    Click no Item                   ${abaExcecoes}
 
 Usuário deverá preencher os campos|${grupoProced}|,|${procedimento}|,|${setor}|,|${acomodacao}|
-    Click Element                    ${grupoProced}
-    Sleep                            2
     Preencher campo                  ${grupoProcedInput}                     ${grupoProced}
+    Sleep                            2
 
-    Click Element                    ${procedimento}
+    Wait Until Element is Visible    ${procedimentoTable}                       60
+    Click no Item                    ${procedimentoTable}
     Sleep                            2
     Preencher campo                  ${procedimentoInput}                    ${procedimento}
-    
-    Click Element                    ${setor}
+    Sleep                            2
+
+    Wait Until Element is Visible    ${setor}                                   60
+    Click no Item                    ${setor}
     Sleep                            2
     Preencher campo                  ${setorInput}                           ${setor}
+    Sleep                            2
 
-    Click Element                    ${acomodacao}
+    Click no Item                    ${acomodacao}
     Sleep                            2
     Preencher campo                  ${acomodacaoInput}                      ${acomodacao}
     Sleep                            2
+
