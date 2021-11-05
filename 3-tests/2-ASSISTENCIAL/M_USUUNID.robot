@@ -25,7 +25,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            m_usuunid
 # Recebe dados do gerenciador
 ${dados}
 
@@ -33,9 +33,10 @@ ${dados}
 SCR2AMUSUUNID-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMUSUUNID-001:Fluxo Principal" -d ./5-results/SCR2AMUSUUNID-001 "3-tests/2-ASSISTENCIAL/M_USUUNID.robot"
 # robot -v browser:firefox -t "SCR2AMUSUUNID-001:Fluxo Principal" -d ./5-results/SCR2AMUSUUNID-001 "3-tests/2-ASSISTENCIAL/M_USUUNID.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMUSUUNID-001"
     #Acessar a tela "Apoio a TI>Gestão de Usuários>Configurações de Acesso>Acessos Gerais>Usuário por Unidade de Internação e Setor"@nprint @las
-    Acessa a Tela Pela Busca @las
-    Validar Acesso a Tela |Usuário por Unidade de Internação|
+    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Selecionar Usuario
     Selecionar Unidade de Internacao
     Validar Checkbox de Solicitacao Marcado
@@ -43,4 +44,4 @@ SCR2AMUSUUNID-001:Fluxo Principal
     Clicar Botao Salvar 
     # Retornar massa de dados para status inicial dos testes
     Excluir Unidade de Internacao
-    Sleep  5
+

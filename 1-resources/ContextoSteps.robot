@@ -208,6 +208,22 @@ Clicar no Campo e Preencher Informacao
     Sleep  1 
     Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
 
+Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
+    Unselect Frame
+    Click Element                           ${BotaoBuscaTela}
+    Preencher Campo                         ${CampoBuscaTela}                   ${NomeTela}
+    Click Elemento por titulo               ${NomeMenu}
+    IF    "${las}" == "@las"
+        # Sleep    1
+        Seleciona frame    ${IdIframe}    180
+        Wait Until Element Is Visible    ${classLasDisplay}    120
+        Unselect Frame
+        # Sleep    1
+        Send Keys    tab
+        Send Keys    enter
+    END
+    Seleciona frame                         ${IdIframe}                         180
+
 Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${print}
     ${Cont}    Set Variable    0
     Log To Console    *** Com Resultado: ${LocatorComResultado}

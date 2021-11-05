@@ -26,7 +26,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            m_usuori
 # Recebe dados do gerenciador
 ${dados}
 
@@ -34,8 +34,9 @@ ${dados}
 SCR2AMUSUORI-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMUSUORI-001:Fluxo Principal" -d ./5-results/SCR2AMUSUORI-001 "3-tests/2-ASSISTENCIAL/M_USUORI.robot"
 # robot -v browser:firefox -t "SCR2AMUSUORI-001:Fluxo Principal" -d ./5-results/SCR2AMUSUORI-001 "3-tests/2-ASSISTENCIAL/M_USUORI.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMUSUORI-001"
     Acessar a tela "Apoio a TI>Gestão de Usuários>Configurações de Acesso>Acessos Gerais>Usuários por Origem"@nprint @las
-    Validar Acesso a Tela |Usuários por Origem|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Selecionar Usuario
     Selecionar Origem
     Clicar Botao Salvar

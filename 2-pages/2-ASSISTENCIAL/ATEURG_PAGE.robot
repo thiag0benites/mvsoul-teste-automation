@@ -7,8 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoBuscaTela}                                   xpath=//*[@class='mv-basico-menu dp32']
-${CampoBuscaTela}                                   xpath=//input[@placeholder="Search"]
 ${AbaAssocAtendimento}                              xpath=//a[@aria-controls="TAB_CANVAS-TB_ATENDIMENTO"]
 ${CampoConfig}                                      xpath=//div[@id="TB_ATENDIMENTO_snMostraConsulta"]/input
 ${BotaoPaciente}                                    xpath=//button[@id="novopac"]

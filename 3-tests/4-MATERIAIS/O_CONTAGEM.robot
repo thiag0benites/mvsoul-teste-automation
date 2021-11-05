@@ -27,7 +27,7 @@ Test Setup          Nova sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            o_contagem
 # Recebe dados do gerenciador
 ${dados}
 
@@ -35,8 +35,9 @@ ${dados}
 SCR4MOCONTAGEM-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
 # robot -v browser:firefox -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MOCONTAGEM-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Inventário>Digitação dos Produtos"@nprint @las
-    Validar Acesso a Tela |Contagem Aberta|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Realizar Consulta Pelo Codigo
-    Inserir Produto |ADALAT OROS 30MG COMP LIB PROL-NIFEDIPINO|
+    Inserir Produto |${dados}[Produto]|
     Clicar Botao Fechar Mov Usuario
