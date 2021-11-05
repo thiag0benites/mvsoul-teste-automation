@@ -21,7 +21,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/O_REABRE_LOTE_STEPS.robot
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+# Test Teardown     Encerra sessao
 
 
 *** Variable ***
@@ -36,5 +36,5 @@ SCR6OREABRELOTE-001:Fluxo principal
 # robot -v browser:chrome -t "SCR6OREABRELOTE-001:Fluxo principal" -d ./5-results/SCR6OREABRELOTE-001 "3-tests/6-CONTROLADORIA/O_REABRE_LOTE.robot"
 # robot -v browser:firefox -t "SCR6OREABRELOTE-001:Fluxo principal" -d ./5-results/SCR6OREABRELOTE-001 "3-tests/6-CONTROLADORIA/O_REABRE_LOTE.robot"
     Acessar a tela "Controladoria>Caixa>Caixa>Reabertura de Lotes"@nprint @las
-    Acessa e Preenche Campo Codigo |CAIXA TESTE|
+    Acessa e Preenche Campo Codigo |HOBRA CAIXA|
     Seleciona Lote para Reabrir E Preenche Justificativa
