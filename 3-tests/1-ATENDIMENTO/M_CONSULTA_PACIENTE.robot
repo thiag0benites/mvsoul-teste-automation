@@ -39,6 +39,9 @@ SCR1TM_CONSULTA_PACIENTE-001:Cadastro de Agendas
     Acessar a tela "Atendimento>Central de Agendamento>Tabelas>Cadastro de Agendas"@nprint @las
     Clicar no botão "Procurar"@nprint
     Clicar no botão "Executar Consulta"@nprint
+    Validar Informacao Prestador  
+   
+    
     
 
 

@@ -59,5 +59,5 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnOk}
         # Click Javascript    ${btnInternar}
-        Sleep    1
+        Sleep    3
     END

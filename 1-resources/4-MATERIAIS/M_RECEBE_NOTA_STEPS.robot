@@ -47,7 +47,7 @@ Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    60
         Click Element    ${btnSalvar}
-        Sleep    0.5
+        Sleep    1
     ELSE IF    '${nomeBtn}' == 'Realizar Tombamento'
         Wait Until Element Is Visible    ${btnRealizaTombamento}    30
         Sleep    1
@@ -59,3 +59,5 @@ Clicar no botao [${nomeBtn}]
         Click Element    ${abaManutencao}
         Sleep    1
     END
+ 
+
