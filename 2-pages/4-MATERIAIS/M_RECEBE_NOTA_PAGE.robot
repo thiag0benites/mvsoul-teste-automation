@@ -20,4 +20,4 @@ ${abaManutencao}                     id=CNV_INFORMACOES_CNV_INFORMACOES_tab2
 ${inputAnos}                         id=inp:nrAnosUtil
 ${inputDias}                         id=inp:nrDiasPreventiva
 ${inputVencimentoGarantia}           id=inp:dtVctoGarantia
-
+${mensagemNotification}              xpath=//div[@class='notifications-item']

@@ -41,6 +41,7 @@ SCR4MM_RECEBE_NOTA-001:Importar as Notas Fiscais de compras de bens patrimoniais
     Clicar no botao [Realizar Tombamento]
     Preencher Dados do bem |${dados}[descricaoPlaqueta]|,|${dados}[numeroSerie]|,|${dados}[modelo]|,|${dados}[tipoAquisicao]|,|${dados}[classificacao]|,|${dados}[subClassificacao]|,|${dados}[centroCusto]|,|${dados}[localidade]|,|${dados}[anos]|,|${dados}[dias]|,|${dados}[vencimentoGarantia]|@nprint
     Clicar no botao [Salvar]
+    Valida Mensagem         ${mensagemNotification}         Cadastro de Bens realizado com sucesso!
     
 
 

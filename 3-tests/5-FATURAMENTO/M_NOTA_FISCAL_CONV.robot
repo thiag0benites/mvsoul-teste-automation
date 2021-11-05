@@ -41,6 +41,7 @@ SCR5F_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio
     Clicar no campo [Remessa]
     Preencher campo de Remessa |${dados}[codRemessa]|
     Clicar no botao [Concluir]||
+    Valida Mensagem  ${MensagemSucesso}  ${MensagemSucesso}
     Clicar no botao [OK]||
     
 
