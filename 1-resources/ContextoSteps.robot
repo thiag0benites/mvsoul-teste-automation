@@ -272,3 +272,12 @@ Preencher Input inativo
     Wait Until Element Is Visible       ${input}        120
     Sleep                               3
     Input Text                          ${input}        ${text}
+
+Preencher o Campo Input
+    [Arguments]         ${ClickInput}    ${input}              ${text}
+    Wait Until Element Is Visible        ${ClickInput}         120
+    Click Element                        ${ClickInput}
+    Sleep                                                      3
+    Wait Until Element Is Visible        ${input}              120
+    Input Text                           ${input}              ${text}
+    Sleep                                                      3

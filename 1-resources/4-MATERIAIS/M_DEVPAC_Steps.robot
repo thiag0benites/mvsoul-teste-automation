@@ -43,7 +43,8 @@ Preencher campo com Codido de Barra "${COD}"
 
 Preencher campo Primeiro produto "${Produto}" e Qntde Recebida "${Qntde_Recebida}"
     Click no Item                         ${CodProduto}
-    Preencher campo                       ${CampoProduto}                 ${Produto}
+    Preencher o Campo Input               ${ClickCampoProd}            ${CampoProduto}            ${Produto}
+    # Preencher campo                       ${CampoProduto}                 ${Produto}
     Click no Item                         ${BtnSeguinte}
     Preencher campo                       ${CampoQntdeInput}              ${Qntde_Recebida}
 
@@ -59,11 +60,12 @@ Preencher campo Segundo produto "${Produto2}", Unidade "${Unidade}" e Qntde Rece
     Click no Item                         ${BtnSeguinte}
 
 Preencher campo Terceiro produto "${Produto3}" e Qntde Recebida "${Qntde_Recebida}"
-    Click no Item                         ${BtnSelecionarProduto}
-    Preencher campo                       ${InputProduto}                      ${Produto3}    
-    Click no Item                         ${BotaoFiltrar}
-    Click no Item                         ${SelectProd3}
-    Click no Item                         ${BotaoOk}
+    Preencher campo                       ${InputProdutoCod}                   ${Produto3}
+    # Click no Item                         ${BtnSelecionarProduto}
+    # Preencher campo                       ${InputProduto}                      ${Produto3}    
+    # Click no Item                         ${BotaoFiltrar}
+    # Click no Item                         ${SelectProd3}
+    # Click no Item                         ${BotaoOk}
     Click no Item                         ${BtnSeguinte}
     Preencher campo                       ${InputQntde3}                       ${Qntde_Recebida}
     Click no Item                         ${BtnSeguinte}
