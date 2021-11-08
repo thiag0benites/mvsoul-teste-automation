@@ -20,5 +20,10 @@ Preencher os campos |${numAtend}|,|${nomePrestadorDest}|,|${motivoTransferencia}
     Sleep                            2
     Preencher campo                  ${servicoTableInput}                     ${servico}
 
+Validar atendimento 
+    Validar Item   1000001675  
+
 Confirmar Transferencia de Prestador
     Click Element                    ${buttonTransferencia}
+    Valida Mensagem  ${MensagemSalvar}   Atendimentos Transferidos.....:1
+    Sleep               5
