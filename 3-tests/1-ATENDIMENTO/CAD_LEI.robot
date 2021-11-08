@@ -23,7 +23,7 @@ Resource            ../../1-resources/dados/DadosTeste.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -38,5 +38,7 @@ SMF-8593:Cadastro de Leitos
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8593"
     Acessar a tela "Atendimento>Internação>Tabelas>Leitos"@nprint @las
     Clicar no botão Pesquisar
-    #Informar o código da Unid de Internacao
-    #Clicar no botão Executar 
+    Preencher o campo código de unidade da internacao |${dados}[codigo]|
+    Clicar no botão Executar 
+    Preencher os campos da tabela |${dados}[leito]|,|${dados}[descResumida]|,|${dados}[enferm]|,|${dados}[acomod]|
+    Clicar no botão Salvar do menu
