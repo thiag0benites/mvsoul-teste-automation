@@ -41,4 +41,3 @@ SCR6CPLANO_CONTABIL-001:Cadastrar Plano Contábil
     Preecher Empresas Associadas |${dados}[codigoDaEmpresa]|
     Clicar no botão Salvar do menu
     Valida Mensagem        ${mensagemPlanoContabil}        Registros gravados com sucesso (2 registros gravados).
-    Sleep  1 
