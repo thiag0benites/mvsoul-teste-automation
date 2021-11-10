@@ -11,7 +11,7 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_CANC_MOV_CAI
 
 *** Keywords ***
 
-Acessa e Preenche Campo Codigo |${Item}|
+Acessa e Preenche Campo Codigo |${Item}| 
     Click no Item                             ${CampoCodigo}
     Click no Item                             ${BtnListaCampoCodigo}
     Sleep    5
@@ -32,3 +32,23 @@ Seleciona Lote para Cancelar E Preenche Justificativa |${Item}|
     Click no Item                             ${BtnCancelarMovim}
     Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|@print         
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Acessar o Campo Caixa e Preencher Dados
+#     Click no Item    ${CampoCaixa}
+#     Click no Item    ${BtnCaixa}
+#     Click no Item    ${CampoFiltro}
+#     Clicar no Campo e Preencher Informacao    ${CampoFiltro}    ${CampoFiltro}    HOBRA CAIXA

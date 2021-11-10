@@ -34,4 +34,34 @@ ${BtnCancelarMovim}                   xpath=//button[@id='btnCancelar']
 ${Codigo}                             xpath=//div[@class='ui-text'][@title='${Item}']
 ${ValidMsg}                           xpath=//p[@class='notifications-item-text']
 ${LocatorSemResultado}                xpath=//p[@class='notifications-item-text'][contains(text(),'Nenhum item foi marcado!')]
-${LocatorComResultado}                xpath=//p[@class='notifications-item-text'][contains(text(),'Cancelamento efetuado com sucesso.')]
+${LocatorComResultado}                xpath=//p[@class='notifications-item-text'][contains(text(),'A movimentação do caixa número: 33380, foi contabilizada. ')]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
