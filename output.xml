@@ -1,0 +1,1947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.2 on win32)" generated="20211108 15:37:04.696" rpa="false" schemaversion="2">
+<suite id="s1" name="O CANC MOV CAIXA" source="c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\3-tests\6-CONTROLADORIA\O_CANC_MOV_CAIXA.robot">
+<test id="s1-t1" name="SMF-8951 : Cancelar movimentacoes ocorridas no Caixa">
+<kw name="Nova sessao" library="Config" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>*** Teste no Sistema Operacional: ${so}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211108 15:37:12.234" level="INFO">*** Teste no Sistema Operacional: windows</msg>
+<status status="PASS" starttime="20211108 15:37:12.233" endtime="20211108 15:37:12.234"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Teste no Sistema Operacional: ${so}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:12.234" endtime="20211108 15:37:12.235"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211108 15:37:12.235" level="INFO">Opening browser 'chrome' to base url 'http://qadevelop.mv.com.br:83/soul-mv/'.</msg>
+<status status="PASS" starttime="20211108 15:37:12.235" endtime="20211108 15:37:15.827"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211108 15:37:15.828" endtime="20211108 15:37:15.952"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qadevelop'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaDevelop}</arg>
+<arg>${dadosLoginSenhaQaDevelop}</arg>
+<arg>${dadosLoginEmpresaQaDevelop}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Realiza Login" library="LoginPage">
+<arg>${dadosLoginUsuarioQaDevelop}</arg>
+<arg>${dadosLoginSenhaQaDevelop}</arg>
+<arg>${dadosLoginEmpresaQaDevelop}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PageIdTxtUsuario}</arg>
+<arg>10</arg>
+<arg>error=Erro ao efetuar o login</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:15.955" endtime="20211108 15:37:16.008"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PageIdTxtUsuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211108 15:37:16.009" level="INFO">Typing text 'ANDREVASCONCELOS' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20211108 15:37:16.008" endtime="20211108 15:37:16.120"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PageIdTxtSenha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211108 15:37:16.122" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20211108 15:37:16.121" endtime="20211108 15:37:16.511"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${PageIdSelectEmpresa}</arg>
+<arg>${empresa}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211108 15:37:16.512" level="INFO">Selecting options from selection list 'id=companies' by label 5 - HOSPITAL MV - MATRIZ - TESTES WATI.</msg>
+<status status="PASS" starttime="20211108 15:37:16.511" endtime="20211108 15:37:16.589"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PageIdBtnLogin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211108 15:37:16.589" level="INFO">Clicking button 'name=submit'.</msg>
+<status status="PASS" starttime="20211108 15:37:16.589" endtime="20211108 15:37:21.263"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PageIClassListMenu}</arg>
+<arg>timeout=30</arg>
+<arg>error=Erro ao efetuar o login</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:21.264" endtime="20211108 15:37:22.198"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:25.214" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:37:22.198" endtime="20211108 15:37:25.214"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:15.954" endtime="20211108 15:37:25.214"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:15.952" endtime="20211108 15:37:25.214"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qarelease'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaRelease}</arg>
+<arg>${dadosLoginSenhaQaRelease}</arg>
+<arg>${dadosLoginEmpresaQaRelease}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211108 15:37:25.215" endtime="20211108 15:37:25.215"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qaautomacao'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaAutomacao}</arg>
+<arg>${dadosLoginSenhaQaAutomacao}</arg>
+<arg>${dadosLoginEmpresaQaAutomacao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211108 15:37:25.215" endtime="20211108 15:37:25.216"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:12.233" endtime="20211108 15:37:25.216"/>
+</kw>
+<kw name="Acessar a tela &quot;Controladoria&gt;Caixa&gt;Caixa&gt;Movimentação&gt;Cancelamento de Lançamentos&quot;@nprint @las" library="ContextoSteps" sourcename="Acessar a tela &quot;${caminhoSelecaoMenu}&quot;${printscreen} ${las}">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20211108 15:37:25.216" endtime="20211108 15:37:25.219"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${cont}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.220" level="INFO">${cont} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.219" endtime="20211108 15:37:25.220"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomeXpathBtnMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:37:25.221" level="INFO">Clicking element 'xpath=//*[@class='mv-basico-menu dp32']'.</msg>
+<status status="PASS" starttime="20211108 15:37:25.221" endtime="20211108 15:37:25.286"/>
+</kw>
+<kw name="Converte string em lista" library="Genericos">
+<var>@{listaItensMenu}</var>
+<arg>${caminhoSelecaoMenu}</arg>
+<arg>&gt;</arg>
+<kw name="Split String" library="String">
+<var>@{lista}</var>
+<arg>${valor}</arg>
+<arg>${caracter}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20211108 15:37:25.288" level="INFO">@{lista} = [ Controladoria | Caixa | Caixa | Movimentação | Cancelamento de Lançamentos ]</msg>
+<status status="PASS" starttime="20211108 15:37:25.287" endtime="20211108 15:37:25.288"/>
+</kw>
+<msg timestamp="20211108 15:37:25.288" level="INFO">@{listaItensMenu} = [ Controladoria | Caixa | Caixa | Movimentação | Cancelamento de Lançamentos ]</msg>
+<status status="PASS" starttime="20211108 15:37:25.287" endtime="20211108 15:37:25.288"/>
+</kw>
+<kw name="Criar Lista Itens Menu Xpath com Index" library="ContextoSteps">
+<var>@{listaXpathItensMenu}</var>
+<arg>@{listaItensMenu}</arg>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>@{novaListaItensMenu}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211108 15:37:25.290" level="INFO">@{novaListaItensMenu} = [ ]</msg>
+<status status="PASS" starttime="20211108 15:37:25.289" endtime="20211108 15:37:25.290"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>@{validaItemExistente}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211108 15:37:25.291" level="INFO">@{validaItemExistente} = [ ]</msg>
+<status status="PASS" starttime="20211108 15:37:25.291" endtime="20211108 15:37:25.291"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${contLista}</var>
+<arg>${novaListaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.292" level="INFO">Length is 0</msg>
+<msg timestamp="20211108 15:37:25.292" level="INFO">${contLista} = 0</msg>
+<status status="PASS" starttime="20211108 15:37:25.291" endtime="20211108 15:37:25.292"/>
+</kw>
+<if>
+<branch type="IF" condition="${contLista} &gt; 0">
+<for flavor="IN">
+<var>${item}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${item}">${item}</var>
+<kw name="Remove Values From List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>${item}</arg>
+<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.292" endtime="20211108 15:37:25.293"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.292" endtime="20211108 15:37:25.293"/>
+</iter>
+<status status="NOT RUN" starttime="20211108 15:37:25.292" endtime="20211108 15:37:25.293"/>
+</for>
+<status status="NOT RUN" starttime="20211108 15:37:25.292" endtime="20211108 15:37:25.293"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.292" endtime="20211108 15:37:25.293"/>
+</if>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexXPath}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.294" level="INFO">${indexXPath} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.293" endtime="20211108 15:37:25.295"/>
+</kw>
+<for flavor="IN">
+<var>${itemMenu}</var>
+<value>@{listaItensMenu}</value>
+<iter>
+<var name="${itemMenu}">Controladoria</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.297" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.295" endtime="20211108 15:37:25.297"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${contLista}</var>
+<arg>${novaListaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.297" level="INFO">Length is 0</msg>
+<msg timestamp="20211108 15:37:25.297" level="INFO">${contLista} = 0</msg>
+<status status="PASS" starttime="20211108 15:37:25.297" endtime="20211108 15:37:25.297"/>
+</kw>
+<if>
+<branch type="IF" condition="${contLista} &gt; 0">
+<kw name="Get Length" library="BuiltIn">
+<var>${contListMenu}</var>
+<arg>${listaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.298"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">${novoItemMenu}</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>false</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.298"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">${novoItemMenu}</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.299" endtime="20211108 15:37:25.299"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.299" endtime="20211108 15:37:25.299"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.300" endtime="20211108 15:37:25.300"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.299" endtime="20211108 15:37:25.300"/>
+</branch>
+<status status="NOT RUN" starttime="20211108 15:37:25.299" endtime="20211108 15:37:25.300"/>
+</if>
+<status status="NOT RUN" starttime="20211108 15:37:25.299" endtime="20211108 15:37:25.300"/>
+</iter>
+<status status="NOT RUN" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.300"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${flag}&quot; == &quot;true&quot;">
+<kw name="Get Substring" library="String">
+<var>${indexXPath}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-1</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.300" endtime="20211108 15:37:25.300"/>
+</kw>
+<if>
+<branch type="IF" condition="'${indexXPath}' == ']'">
+<kw name="Get Substring" library="String">
+<var>${indexHtml}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.301" endtime="20211108 15:37:25.301"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${indexHtml}</var>
+<arg>${indexHtml}</arg>
+<arg>]</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.301" endtime="20211108 15:37:25.301"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${${indexHtml}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.301" endtime="20211108 15:37:25.301"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${indexHtml} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.301" endtime="20211108 15:37:25.302"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.300" endtime="20211108 15:37:25.302"/>
+</branch>
+<status status="NOT RUN" starttime="20211108 15:37:25.300" endtime="20211108 15:37:25.302"/>
+</if>
+<status status="NOT RUN" starttime="20211108 15:37:25.300" endtime="20211108 15:37:25.302"/>
+</branch>
+<status status="NOT RUN" starttime="20211108 15:37:25.300" endtime="20211108 15:37:25.302"/>
+</if>
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.302" endtime="20211108 15:37:25.302"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.302" endtime="20211108 15:37:25.302"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.302"/>
+</iter>
+<status status="NOT RUN" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.302"/>
+</for>
+<status status="NOT RUN" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.303"/>
+</branch>
+<branch type="ELSE">
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20211108 15:37:25.303" endtime="20211108 15:37:25.303"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.303" endtime="20211108 15:37:25.303"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.298" endtime="20211108 15:37:25.303"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.295" endtime="20211108 15:37:25.304"/>
+</iter>
+<iter>
+<var name="${itemMenu}">Caixa</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.305" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.304" endtime="20211108 15:37:25.305"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${contLista}</var>
+<arg>${novaListaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.306" level="INFO">Length is 1</msg>
+<msg timestamp="20211108 15:37:25.306" level="INFO">${contLista} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.305" endtime="20211108 15:37:25.306"/>
+</kw>
+<if>
+<branch type="IF" condition="${contLista} &gt; 0">
+<kw name="Get Length" library="BuiltIn">
+<var>${contListMenu}</var>
+<arg>${listaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.307" level="INFO">Length is 5</msg>
+<msg timestamp="20211108 15:37:25.307" level="INFO">${contListMenu} = 5</msg>
+<status status="PASS" starttime="20211108 15:37:25.306" endtime="20211108 15:37:25.307"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>false</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.308" level="INFO">${flag} = false</msg>
+<status status="PASS" starttime="20211108 15:37:25.307" endtime="20211108 15:37:25.308"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.308" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.309" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.308" endtime="20211108 15:37:25.309"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.309" endtime="20211108 15:37:25.309"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.309" endtime="20211108 15:37:25.309"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.309" endtime="20211108 15:37:25.309"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.309" endtime="20211108 15:37:25.309"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.308" endtime="20211108 15:37:25.309"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.308" endtime="20211108 15:37:25.310"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${flag}&quot; == &quot;true&quot;">
+<kw name="Get Substring" library="String">
+<var>${indexXPath}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-1</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.310" endtime="20211108 15:37:25.310"/>
+</kw>
+<if>
+<branch type="IF" condition="'${indexXPath}' == ']'">
+<kw name="Get Substring" library="String">
+<var>${indexHtml}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.310" endtime="20211108 15:37:25.311"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${indexHtml}</var>
+<arg>${indexHtml}</arg>
+<arg>]</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.311" endtime="20211108 15:37:25.311"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${${indexHtml}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.311" endtime="20211108 15:37:25.311"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${indexHtml} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.311" endtime="20211108 15:37:25.311"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.310" endtime="20211108 15:37:25.312"/>
+</branch>
+<status status="NOT RUN" starttime="20211108 15:37:25.310" endtime="20211108 15:37:25.312"/>
+</if>
+<status status="NOT RUN" starttime="20211108 15:37:25.310" endtime="20211108 15:37:25.312"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.310" endtime="20211108 15:37:25.312"/>
+</if>
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20211108 15:37:25.312" endtime="20211108 15:37:25.313"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20211108 15:37:25.313" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211108 15:37:25.313" endtime="20211108 15:37:25.314"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.307" endtime="20211108 15:37:25.314"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.307" endtime="20211108 15:37:25.314"/>
+</for>
+<status status="PASS" starttime="20211108 15:37:25.306" endtime="20211108 15:37:25.314"/>
+</branch>
+<branch type="ELSE">
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.315" endtime="20211108 15:37:25.315"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.315" endtime="20211108 15:37:25.315"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.306" endtime="20211108 15:37:25.315"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.304" endtime="20211108 15:37:25.315"/>
+</iter>
+<iter>
+<var name="${itemMenu}">Caixa</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.317" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.315" endtime="20211108 15:37:25.317"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${contLista}</var>
+<arg>${novaListaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.318" level="INFO">Length is 2</msg>
+<msg timestamp="20211108 15:37:25.318" level="INFO">${contLista} = 2</msg>
+<status status="PASS" starttime="20211108 15:37:25.317" endtime="20211108 15:37:25.318"/>
+</kw>
+<if>
+<branch type="IF" condition="${contLista} &gt; 0">
+<kw name="Get Length" library="BuiltIn">
+<var>${contListMenu}</var>
+<arg>${listaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.319" level="INFO">Length is 5</msg>
+<msg timestamp="20211108 15:37:25.319" level="INFO">${contListMenu} = 5</msg>
+<status status="PASS" starttime="20211108 15:37:25.318" endtime="20211108 15:37:25.319"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>false</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.320" level="INFO">${flag} = false</msg>
+<status status="PASS" starttime="20211108 15:37:25.319" endtime="20211108 15:37:25.320"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.321" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.321" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.320" endtime="20211108 15:37:25.321"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.322" endtime="20211108 15:37:25.322"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.322" endtime="20211108 15:37:25.322"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.321" endtime="20211108 15:37:25.322"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.321" endtime="20211108 15:37:25.322"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.320" endtime="20211108 15:37:25.322"/>
+</iter>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Caixa'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.323" level="INFO">1 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.323" level="INFO">${existe} = (//*[@title='Caixa'])[1]</msg>
+<status status="PASS" starttime="20211108 15:37:25.322" endtime="20211108 15:37:25.323"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.324" level="INFO">${flag} = true</msg>
+<status status="PASS" starttime="20211108 15:37:25.323" endtime="20211108 15:37:25.324"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20211108 15:37:25.324" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211108 15:37:25.324" endtime="20211108 15:37:25.324"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.323" endtime="20211108 15:37:25.325"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.323" endtime="20211108 15:37:25.325"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.322" endtime="20211108 15:37:25.325"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.320" endtime="20211108 15:37:25.325"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${flag}&quot; == &quot;true&quot;">
+<kw name="Get Substring" library="String">
+<var>${indexXPath}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-1</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20211108 15:37:25.326" level="INFO">${indexXPath} = ]</msg>
+<status status="PASS" starttime="20211108 15:37:25.325" endtime="20211108 15:37:25.328"/>
+</kw>
+<if>
+<branch type="IF" condition="'${indexXPath}' == ']'">
+<kw name="Get Substring" library="String">
+<var>${indexHtml}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20211108 15:37:25.330" level="INFO">${indexHtml} = 1]</msg>
+<status status="PASS" starttime="20211108 15:37:25.329" endtime="20211108 15:37:25.330"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${indexHtml}</var>
+<arg>${indexHtml}</arg>
+<arg>]</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20211108 15:37:25.333" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.330" endtime="20211108 15:37:25.333"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${${indexHtml}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.335" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.334" endtime="20211108 15:37:25.335"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${indexHtml} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211108 15:37:25.336" level="INFO">${indexHtml} = 2</msg>
+<status status="PASS" starttime="20211108 15:37:25.335" endtime="20211108 15:37:25.336"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.328" endtime="20211108 15:37:25.336"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.328" endtime="20211108 15:37:25.336"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.325" endtime="20211108 15:37:25.336"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.325" endtime="20211108 15:37:25.336"/>
+</if>
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20211108 15:37:25.336" endtime="20211108 15:37:25.337"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20211108 15:37:25.337" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211108 15:37:25.337" endtime="20211108 15:37:25.338"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.319" endtime="20211108 15:37:25.338"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.319" endtime="20211108 15:37:25.338"/>
+</for>
+<status status="PASS" starttime="20211108 15:37:25.318" endtime="20211108 15:37:25.338"/>
+</branch>
+<branch type="ELSE">
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.338" endtime="20211108 15:37:25.338"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.338" endtime="20211108 15:37:25.339"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.318" endtime="20211108 15:37:25.339"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.315" endtime="20211108 15:37:25.339"/>
+</iter>
+<iter>
+<var name="${itemMenu}">Movimentação</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.340" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.339" endtime="20211108 15:37:25.340"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${contLista}</var>
+<arg>${novaListaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.341" level="INFO">Length is 3</msg>
+<msg timestamp="20211108 15:37:25.341" level="INFO">${contLista} = 3</msg>
+<status status="PASS" starttime="20211108 15:37:25.340" endtime="20211108 15:37:25.341"/>
+</kw>
+<if>
+<branch type="IF" condition="${contLista} &gt; 0">
+<kw name="Get Length" library="BuiltIn">
+<var>${contListMenu}</var>
+<arg>${listaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.342" level="INFO">Length is 5</msg>
+<msg timestamp="20211108 15:37:25.342" level="INFO">${contListMenu} = 5</msg>
+<status status="PASS" starttime="20211108 15:37:25.342" endtime="20211108 15:37:25.342"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>false</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.343" level="INFO">${flag} = false</msg>
+<status status="PASS" starttime="20211108 15:37:25.343" endtime="20211108 15:37:25.343"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.345" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.345" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.344" endtime="20211108 15:37:25.345"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.345" endtime="20211108 15:37:25.346"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.346" endtime="20211108 15:37:25.346"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.345" endtime="20211108 15:37:25.346"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.345" endtime="20211108 15:37:25.346"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.344" endtime="20211108 15:37:25.346"/>
+</iter>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Caixa'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.347" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.347" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.347" endtime="20211108 15:37:25.347"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.348" endtime="20211108 15:37:25.348"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.348" endtime="20211108 15:37:25.348"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.348" endtime="20211108 15:37:25.348"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.347" endtime="20211108 15:37:25.349"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.346" endtime="20211108 15:37:25.349"/>
+</iter>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Caixa'])[2]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.350" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.350" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.349" endtime="20211108 15:37:25.350"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.351" endtime="20211108 15:37:25.351"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.351" endtime="20211108 15:37:25.351"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.350" endtime="20211108 15:37:25.351"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.350" endtime="20211108 15:37:25.351"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.349" endtime="20211108 15:37:25.351"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.344" endtime="20211108 15:37:25.351"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${flag}&quot; == &quot;true&quot;">
+<kw name="Get Substring" library="String">
+<var>${indexXPath}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-1</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.352" endtime="20211108 15:37:25.352"/>
+</kw>
+<if>
+<branch type="IF" condition="'${indexXPath}' == ']'">
+<kw name="Get Substring" library="String">
+<var>${indexHtml}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.352" endtime="20211108 15:37:25.352"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${indexHtml}</var>
+<arg>${indexHtml}</arg>
+<arg>]</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.353" endtime="20211108 15:37:25.353"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${${indexHtml}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.353" endtime="20211108 15:37:25.353"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${indexHtml} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.353" endtime="20211108 15:37:25.353"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.352" endtime="20211108 15:37:25.353"/>
+</branch>
+<status status="NOT RUN" starttime="20211108 15:37:25.352" endtime="20211108 15:37:25.353"/>
+</if>
+<status status="NOT RUN" starttime="20211108 15:37:25.352" endtime="20211108 15:37:25.353"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.351" endtime="20211108 15:37:25.353"/>
+</if>
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20211108 15:37:25.354" endtime="20211108 15:37:25.354"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20211108 15:37:25.354" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211108 15:37:25.354" endtime="20211108 15:37:25.355"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.343" endtime="20211108 15:37:25.355"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.342" endtime="20211108 15:37:25.355"/>
+</for>
+<status status="PASS" starttime="20211108 15:37:25.341" endtime="20211108 15:37:25.355"/>
+</branch>
+<branch type="ELSE">
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.355" endtime="20211108 15:37:25.355"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.355" endtime="20211108 15:37:25.355"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.341" endtime="20211108 15:37:25.355"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.339" endtime="20211108 15:37:25.355"/>
+</iter>
+<iter>
+<var name="${itemMenu}">Cancelamento de Lançamentos</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.357" level="INFO">${indexHtml} = 1</msg>
+<status status="PASS" starttime="20211108 15:37:25.356" endtime="20211108 15:37:25.357"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${contLista}</var>
+<arg>${novaListaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.358" level="INFO">Length is 4</msg>
+<msg timestamp="20211108 15:37:25.358" level="INFO">${contLista} = 4</msg>
+<status status="PASS" starttime="20211108 15:37:25.357" endtime="20211108 15:37:25.358"/>
+</kw>
+<if>
+<branch type="IF" condition="${contLista} &gt; 0">
+<kw name="Get Length" library="BuiltIn">
+<var>${contListMenu}</var>
+<arg>${listaItensMenu}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20211108 15:37:25.359" level="INFO">Length is 5</msg>
+<msg timestamp="20211108 15:37:25.359" level="INFO">${contListMenu} = 5</msg>
+<status status="PASS" starttime="20211108 15:37:25.358" endtime="20211108 15:37:25.359"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>false</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.360" level="INFO">${flag} = false</msg>
+<status status="PASS" starttime="20211108 15:37:25.359" endtime="20211108 15:37:25.360"/>
+</kw>
+<for flavor="IN">
+<var>${novoItemMenu}</var>
+<value>@{novaListaItensMenu}</value>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.361" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.361" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.360" endtime="20211108 15:37:25.361"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.361" endtime="20211108 15:37:25.361"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.361" endtime="20211108 15:37:25.362"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.361" endtime="20211108 15:37:25.362"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.361" endtime="20211108 15:37:25.362"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.360" endtime="20211108 15:37:25.362"/>
+</iter>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Caixa'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.362" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.363" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.362" endtime="20211108 15:37:25.363"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.363" endtime="20211108 15:37:25.363"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.363" endtime="20211108 15:37:25.363"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.363" endtime="20211108 15:37:25.363"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.363" endtime="20211108 15:37:25.363"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.362" endtime="20211108 15:37:25.363"/>
+</iter>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Caixa'])[2]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.364" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.364" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.364" endtime="20211108 15:37:25.364"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.365" endtime="20211108 15:37:25.365"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.365" endtime="20211108 15:37:25.365"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.364" endtime="20211108 15:37:25.365"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.364" endtime="20211108 15:37:25.365"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.364" endtime="20211108 15:37:25.365"/>
+</iter>
+<iter>
+<var name="${novoItemMenu}">(//*[@title='Movimentação'])[1]</var>
+<kw name="Get Lines Containing String" library="String">
+<var>${existe}</var>
+<arg>${novoItemMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[</arg>
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<msg timestamp="20211108 15:37:25.366" level="INFO">0 out of 1 lines matched</msg>
+<msg timestamp="20211108 15:37:25.366" level="INFO">${existe} = </msg>
+<status status="PASS" starttime="20211108 15:37:25.365" endtime="20211108 15:37:25.366"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existe}&quot; != &quot;&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${flag}</var>
+<arg>true</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.366" endtime="20211108 15:37:25.366"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.367" endtime="20211108 15:37:25.367"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.366" endtime="20211108 15:37:25.367"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.366" endtime="20211108 15:37:25.367"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.365" endtime="20211108 15:37:25.367"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.360" endtime="20211108 15:37:25.367"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${flag}&quot; == &quot;true&quot;">
+<kw name="Get Substring" library="String">
+<var>${indexXPath}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-1</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.367" endtime="20211108 15:37:25.367"/>
+</kw>
+<if>
+<branch type="IF" condition="'${indexXPath}' == ']'">
+<kw name="Get Substring" library="String">
+<var>${indexHtml}</var>
+<arg>${novoItemMenu}</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.368" endtime="20211108 15:37:25.368"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${indexHtml}</var>
+<arg>${indexHtml}</arg>
+<arg>]</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.368" endtime="20211108 15:37:25.368"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${${indexHtml}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.368" endtime="20211108 15:37:25.368"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${indexHtml}</var>
+<arg>${indexHtml} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.369" endtime="20211108 15:37:25.369"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.368" endtime="20211108 15:37:25.369"/>
+</branch>
+<status status="NOT RUN" starttime="20211108 15:37:25.368" endtime="20211108 15:37:25.369"/>
+</if>
+<status status="NOT RUN" starttime="20211108 15:37:25.367" endtime="20211108 15:37:25.369"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.367" endtime="20211108 15:37:25.369"/>
+</if>
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20211108 15:37:25.369" endtime="20211108 15:37:25.369"/>
+</kw>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20211108 15:37:25.370" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211108 15:37:25.370" endtime="20211108 15:37:25.370"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.359" endtime="20211108 15:37:25.370"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.359" endtime="20211108 15:37:25.370"/>
+</for>
+<status status="PASS" starttime="20211108 15:37:25.358" endtime="20211108 15:37:25.370"/>
+</branch>
+<branch type="ELSE">
+<kw name="Append To List" library="Collections">
+<arg>${novaListaItensMenu}</arg>
+<arg>(//*[@title='${itemMenu}'])[${indexHtml}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20211108 15:37:25.371" endtime="20211108 15:37:25.371"/>
+</kw>
+<status status="NOT RUN" starttime="20211108 15:37:25.371" endtime="20211108 15:37:25.371"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.358" endtime="20211108 15:37:25.371"/>
+</if>
+<status status="PASS" starttime="20211108 15:37:25.356" endtime="20211108 15:37:25.371"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.295" endtime="20211108 15:37:25.371"/>
+</for>
+<msg timestamp="20211108 15:37:25.371" level="INFO">@{listaXpathItensMenu} = [ (//*[@title='Controladoria'])[1] | (//*[@title='Caixa'])[1] | (//*[@title='Caixa'])[2] | (//*[@title='Movimentação'])[1] | (//*[@title='Cancelamento de Lançamentos'])[1] ]</msg>
+<status status="PASS" starttime="20211108 15:37:25.289" endtime="20211108 15:37:25.371"/>
+</kw>
+<for flavor="IN">
+<var>${itemMenu}</var>
+<value>@{listaXpathItensMenu}</value>
+<iter>
+<var name="${itemMenu}">(//*[@title='Controladoria'])[1]</var>
+<kw name="Elemento Visivel" library="seleniumAuxiliar">
+<var>${visivel}</var>
+<arg>xpath=${itemMenu}</arg>
+<msg timestamp="20211108 15:37:25.406" level="INFO">${visivel} = True</msg>
+<status status="PASS" starttime="20211108 15:37:25.372" endtime="20211108 15:37:25.406"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${visivel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:25.406" endtime="20211108 15:37:25.407"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${classe}</var>
+<arg>xpath=${itemMenu}/ancestor::li[1]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20211108 15:37:25.435" level="INFO">${classe} = menu-node</msg>
+<status status="PASS" starttime="20211108 15:37:25.407" endtime="20211108 15:37:25.435"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${classe}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:25.435" endtime="20211108 15:37:25.436"/>
+</kw>
+<if>
+<branch type="IF" condition="'${classe}' == 'menu-node'">
+<kw name="Seleciona item no menu" library="HomePage">
+<arg>${itemMenu}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${titleItemMenu}</var>
+<arg>xpath=${xpathTituloItemMenu}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:25.438" level="INFO">${titleItemMenu} = xpath=(//*[@title='Controladoria'])[1]</msg>
+<status status="PASS" starttime="20211108 15:37:25.438" endtime="20211108 15:37:25.438"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${titleItemMenu}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:25.438" endtime="20211108 15:37:25.471"/>
+</kw>
+<kw name="Click Javascript" library="Genericos">
+<arg>${titleItemMenu}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:28.474" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:37:25.472" endtime="20211108 15:37:28.474"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento2}</var>
+<arg>${elemento}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211108 15:37:28.482" level="INFO">${elemento2} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="37559984-cabf-4413-a407-8bd7475c2910")&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:28.474" endtime="20211108 15:37:28.482"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${elemento2}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211108 15:37:28.483" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="37559984-cabf-4413-a407-8bd7475c2910")&gt;'</msg>
+<status status="PASS" starttime="20211108 15:37:28.483" endtime="20211108 15:37:28.494"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211108 15:37:28.637" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:28.494" endtime="20211108 15:37:28.637"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.471" endtime="20211108 15:37:28.638"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:30.145" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20211108 15:37:28.638" endtime="20211108 15:37:30.145"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.437" endtime="20211108 15:37:30.145"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.436" endtime="20211108 15:37:30.145"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:25.436" endtime="20211108 15:37:30.145"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:30.146" endtime="20211108 15:37:30.146"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211108 15:37:30.147" level="INFO">*** Item (//*[@title='Controladoria'])[1] selecionado no menu</msg>
+<status status="PASS" starttime="20211108 15:37:30.147" endtime="20211108 15:37:30.147"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.372" endtime="20211108 15:37:30.147"/>
+</iter>
+<iter>
+<var name="${itemMenu}">(//*[@title='Caixa'])[1]</var>
+<kw name="Elemento Visivel" library="seleniumAuxiliar">
+<var>${visivel}</var>
+<arg>xpath=${itemMenu}</arg>
+<msg timestamp="20211108 15:37:30.172" level="INFO">${visivel} = True</msg>
+<status status="PASS" starttime="20211108 15:37:30.147" endtime="20211108 15:37:30.172"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${visivel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:30.172" endtime="20211108 15:37:30.172"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${classe}</var>
+<arg>xpath=${itemMenu}/ancestor::li[1]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20211108 15:37:30.193" level="INFO">${classe} = menu-node</msg>
+<status status="PASS" starttime="20211108 15:37:30.173" endtime="20211108 15:37:30.193"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${classe}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:30.193" endtime="20211108 15:37:30.194"/>
+</kw>
+<if>
+<branch type="IF" condition="'${classe}' == 'menu-node'">
+<kw name="Seleciona item no menu" library="HomePage">
+<arg>${itemMenu}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${titleItemMenu}</var>
+<arg>xpath=${xpathTituloItemMenu}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:30.197" level="INFO">${titleItemMenu} = xpath=(//*[@title='Caixa'])[1]</msg>
+<status status="PASS" starttime="20211108 15:37:30.196" endtime="20211108 15:37:30.197"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${titleItemMenu}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:30.197" endtime="20211108 15:37:30.223"/>
+</kw>
+<kw name="Click Javascript" library="Genericos">
+<arg>${titleItemMenu}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:33.238" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:37:30.224" endtime="20211108 15:37:33.238"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento2}</var>
+<arg>${elemento}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211108 15:37:33.246" level="INFO">${elemento2} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="4a8ae826-6e7b-4154-bc79-a122885ec9af")&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:33.238" endtime="20211108 15:37:33.246"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${elemento2}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211108 15:37:33.247" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="4a8ae826-6e7b-4154-bc79-a122885ec9af")&gt;'</msg>
+<status status="PASS" starttime="20211108 15:37:33.246" endtime="20211108 15:37:33.256"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211108 15:37:33.402" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:33.256" endtime="20211108 15:37:33.402"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:30.224" endtime="20211108 15:37:33.402"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:34.916" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20211108 15:37:33.402" endtime="20211108 15:37:34.916"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:30.195" endtime="20211108 15:37:34.916"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:30.195" endtime="20211108 15:37:34.916"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:30.194" endtime="20211108 15:37:34.916"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:34.917" endtime="20211108 15:37:34.917"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211108 15:37:34.917" level="INFO">*** Item (//*[@title='Caixa'])[1] selecionado no menu</msg>
+<status status="PASS" starttime="20211108 15:37:34.917" endtime="20211108 15:37:34.918"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:30.147" endtime="20211108 15:37:34.918"/>
+</iter>
+<iter>
+<var name="${itemMenu}">(//*[@title='Caixa'])[2]</var>
+<kw name="Elemento Visivel" library="seleniumAuxiliar">
+<var>${visivel}</var>
+<arg>xpath=${itemMenu}</arg>
+<msg timestamp="20211108 15:37:34.942" level="INFO">${visivel} = True</msg>
+<status status="PASS" starttime="20211108 15:37:34.918" endtime="20211108 15:37:34.942"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${visivel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:34.943" endtime="20211108 15:37:34.943"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${classe}</var>
+<arg>xpath=${itemMenu}/ancestor::li[1]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20211108 15:37:34.961" level="INFO">${classe} = menu-node</msg>
+<status status="PASS" starttime="20211108 15:37:34.943" endtime="20211108 15:37:34.961"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${classe}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:34.962" endtime="20211108 15:37:34.962"/>
+</kw>
+<if>
+<branch type="IF" condition="'${classe}' == 'menu-node'">
+<kw name="Seleciona item no menu" library="HomePage">
+<arg>${itemMenu}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${titleItemMenu}</var>
+<arg>xpath=${xpathTituloItemMenu}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:34.964" level="INFO">${titleItemMenu} = xpath=(//*[@title='Caixa'])[2]</msg>
+<status status="PASS" starttime="20211108 15:37:34.963" endtime="20211108 15:37:34.964"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${titleItemMenu}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:34.966" endtime="20211108 15:37:34.988"/>
+</kw>
+<kw name="Click Javascript" library="Genericos">
+<arg>${titleItemMenu}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:37.993" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:37:34.989" endtime="20211108 15:37:37.993"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento2}</var>
+<arg>${elemento}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211108 15:37:38.001" level="INFO">${elemento2} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="a3016ba3-449b-4563-a7d0-8780c1448a7f")&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:37.993" endtime="20211108 15:37:38.001"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${elemento2}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211108 15:37:38.002" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="a3016ba3-449b-4563-a7d0-8780c1448a7f")&gt;'</msg>
+<status status="PASS" starttime="20211108 15:37:38.002" endtime="20211108 15:37:38.012"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211108 15:37:38.129" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:38.013" endtime="20211108 15:37:38.130"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:34.988" endtime="20211108 15:37:38.130"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:39.644" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20211108 15:37:38.130" endtime="20211108 15:37:39.644"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:34.963" endtime="20211108 15:37:39.644"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:34.963" endtime="20211108 15:37:39.644"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:34.962" endtime="20211108 15:37:39.644"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:39.645" endtime="20211108 15:37:39.647"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211108 15:37:39.647" level="INFO">*** Item (//*[@title='Caixa'])[2] selecionado no menu</msg>
+<status status="PASS" starttime="20211108 15:37:39.647" endtime="20211108 15:37:39.647"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:34.918" endtime="20211108 15:37:39.647"/>
+</iter>
+<iter>
+<var name="${itemMenu}">(//*[@title='Movimentação'])[1]</var>
+<kw name="Elemento Visivel" library="seleniumAuxiliar">
+<var>${visivel}</var>
+<arg>xpath=${itemMenu}</arg>
+<msg timestamp="20211108 15:37:39.671" level="INFO">${visivel} = True</msg>
+<status status="PASS" starttime="20211108 15:37:39.648" endtime="20211108 15:37:39.671"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${visivel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:39.671" endtime="20211108 15:37:39.672"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${classe}</var>
+<arg>xpath=${itemMenu}/ancestor::li[1]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20211108 15:37:39.692" level="INFO">${classe} = menu-node</msg>
+<status status="PASS" starttime="20211108 15:37:39.672" endtime="20211108 15:37:39.692"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${classe}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:39.693" endtime="20211108 15:37:39.693"/>
+</kw>
+<if>
+<branch type="IF" condition="'${classe}' == 'menu-node'">
+<kw name="Seleciona item no menu" library="HomePage">
+<arg>${itemMenu}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${titleItemMenu}</var>
+<arg>xpath=${xpathTituloItemMenu}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:39.694" level="INFO">${titleItemMenu} = xpath=(//*[@title='Movimentação'])[1]</msg>
+<status status="PASS" starttime="20211108 15:37:39.694" endtime="20211108 15:37:39.694"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${titleItemMenu}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:39.695" endtime="20211108 15:37:39.718"/>
+</kw>
+<kw name="Click Javascript" library="Genericos">
+<arg>${titleItemMenu}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:42.720" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:37:39.719" endtime="20211108 15:37:42.720"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento2}</var>
+<arg>${elemento}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211108 15:37:42.728" level="INFO">${elemento2} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="600faa9a-e57e-4861-9932-9d7f73a9873f")&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:42.720" endtime="20211108 15:37:42.728"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${elemento2}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211108 15:37:42.729" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="600faa9a-e57e-4861-9932-9d7f73a9873f")&gt;'</msg>
+<status status="PASS" starttime="20211108 15:37:42.729" endtime="20211108 15:37:42.741"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211108 15:37:42.886" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:42.742" endtime="20211108 15:37:42.886"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:39.719" endtime="20211108 15:37:42.887"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:44.401" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20211108 15:37:42.887" endtime="20211108 15:37:44.401"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:39.693" endtime="20211108 15:37:44.401"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:39.693" endtime="20211108 15:37:44.401"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:39.693" endtime="20211108 15:37:44.401"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:44.402" endtime="20211108 15:37:44.402"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211108 15:37:44.403" level="INFO">*** Item (//*[@title='Movimentação'])[1] selecionado no menu</msg>
+<status status="PASS" starttime="20211108 15:37:44.402" endtime="20211108 15:37:44.403"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:39.648" endtime="20211108 15:37:44.403"/>
+</iter>
+<iter>
+<var name="${itemMenu}">(//*[@title='Cancelamento de Lançamentos'])[1]</var>
+<kw name="Elemento Visivel" library="seleniumAuxiliar">
+<var>${visivel}</var>
+<arg>xpath=${itemMenu}</arg>
+<msg timestamp="20211108 15:37:44.429" level="INFO">${visivel} = True</msg>
+<status status="PASS" starttime="20211108 15:37:44.403" endtime="20211108 15:37:44.429"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${visivel}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:44.429" endtime="20211108 15:37:44.429"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${classe}</var>
+<arg>xpath=${itemMenu}/ancestor::li[1]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20211108 15:37:44.450" level="INFO">${classe} = menu-node</msg>
+<status status="PASS" starttime="20211108 15:37:44.430" endtime="20211108 15:37:44.450"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Visivel: ${classe}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:44.450" endtime="20211108 15:37:44.450"/>
+</kw>
+<if>
+<branch type="IF" condition="'${classe}' == 'menu-node'">
+<kw name="Seleciona item no menu" library="HomePage">
+<arg>${itemMenu}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${titleItemMenu}</var>
+<arg>xpath=${xpathTituloItemMenu}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211108 15:37:44.452" level="INFO">${titleItemMenu} = xpath=(//*[@title='Cancelamento de Lançamentos'])[1]</msg>
+<status status="PASS" starttime="20211108 15:37:44.452" endtime="20211108 15:37:44.452"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${titleItemMenu}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:44.452" endtime="20211108 15:37:44.473"/>
+</kw>
+<kw name="Click Javascript" library="Genericos">
+<arg>${titleItemMenu}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:47.476" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:37:44.474" endtime="20211108 15:37:47.476"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento2}</var>
+<arg>${elemento}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211108 15:37:47.484" level="INFO">${elemento2} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="34bfbead-ec16-474a-8e29-706f229195da")&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:47.476" endtime="20211108 15:37:47.485"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${elemento2}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211108 15:37:47.486" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4b32a8021a811ae55d0949ef84b46ef5", element="34bfbead-ec16-474a-8e29-706f229195da")&gt;'</msg>
+<status status="PASS" starttime="20211108 15:37:47.485" endtime="20211108 15:37:49.712"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211108 15:37:49.820" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211108 15:37:49.712" endtime="20211108 15:37:49.820"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:44.473" endtime="20211108 15:37:49.821"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:51.327" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20211108 15:37:49.821" endtime="20211108 15:37:51.327"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:44.451" endtime="20211108 15:37:51.327"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:44.451" endtime="20211108 15:37:51.327"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:44.451" endtime="20211108 15:37:51.327"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211108 15:37:51.328" endtime="20211108 15:37:51.328"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Item ${itemMenu} selecionado no menu</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211108 15:37:51.328" level="INFO">*** Item (//*[@title='Cancelamento de Lançamentos'])[1] selecionado no menu</msg>
+<status status="PASS" starttime="20211108 15:37:51.328" endtime="20211108 15:37:51.329"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:44.403" endtime="20211108 15:37:51.329"/>
+</iter>
+<status status="PASS" starttime="20211108 15:37:25.371" endtime="20211108 15:37:51.329"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${las}&quot; == &quot;@las&quot;">
+<kw name="Seleciona frame" library="Genericos">
+<arg>${IdIframe}</arg>
+<arg>180</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elementoFrame}</arg>
+<arg>${timeout}</arg>
+<arg>O elemento Frame ${elementoFrame} não foi carregado</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:51.330" endtime="20211108 15:37:51.353"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${elementoFrame}</arg>
+<arg>${timeout}</arg>
+<arg>O elemento Frame ${elementoFrame} não esta habilitado</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20211108 15:37:51.353" endtime="20211108 15:37:51.375"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${elementoFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20211108 15:37:51.376" level="INFO">Selecting frame 'id=child_APOIO.HTML,ATEND.HTML,CONEC.HTML,CONTR.HTML,DIAGN.HTML,FATUR-CONV.HTML,FATUR-SUS.HTML,FINAN.HTML,GLOBAL.HTML,INTER.HTML,PAGU.HTML,PLANO.HTML,SUPRI.HTML'.</msg>
+<status status="PASS" starttime="20211108 15:37:51.376" endtime="20211108 15:37:51.406"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:37:52.420" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211108 15:37:51.406" endtime="20211108 15:37:52.420"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:51.329" endtime="20211108 15:37:52.420"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${classLasDisplay}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:37:52.421" endtime="20211108 15:38:12.484"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20211108 15:38:12.484" endtime="20211108 15:38:12.487"/>
+</kw>
+<kw name="Send Keys" library="desktop">
+<arg>tab</arg>
+<doc>Works on Windows/Mac/Linux</doc>
+<status status="PASS" starttime="20211108 15:38:12.487" endtime="20211108 15:38:12.590"/>
+</kw>
+<kw name="Send Keys" library="desktop">
+<arg>enter</arg>
+<doc>Works on Windows/Mac/Linux</doc>
+<status status="PASS" starttime="20211108 15:38:12.590" endtime="20211108 15:38:12.699"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:51.329" endtime="20211108 15:38:12.699"/>
+</branch>
+<status status="PASS" starttime="20211108 15:37:51.329" endtime="20211108 15:38:12.699"/>
+</if>
+<kw name="Seleciona frame" library="Genericos">
+<arg>${IdIframe}</arg>
+<arg>180</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elementoFrame}</arg>
+<arg>${timeout}</arg>
+<arg>O elemento Frame ${elementoFrame} não foi carregado</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:38:12.700" endtime="20211108 15:38:12.718"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${elementoFrame}</arg>
+<arg>${timeout}</arg>
+<arg>O elemento Frame ${elementoFrame} não esta habilitado</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20211108 15:38:12.719" endtime="20211108 15:38:12.738"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${elementoFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20211108 15:38:12.738" level="INFO">Selecting frame 'id=child_APOIO.HTML,ATEND.HTML,CONEC.HTML,CONTR.HTML,DIAGN.HTML,FATUR-CONV.HTML,FATUR-SUS.HTML,FINAN.HTML,GLOBAL.HTML,INTER.HTML,PAGU.HTML,PLANO.HTML,SUPRI.HTML'.</msg>
+<status status="PASS" starttime="20211108 15:38:12.738" endtime="20211108 15:38:12.759"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:38:13.768" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211108 15:38:12.759" endtime="20211108 15:38:13.768"/>
+</kw>
+<status status="PASS" starttime="20211108 15:38:12.699" endtime="20211108 15:38:13.769"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:38:16.771" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:38:13.769" endtime="20211108 15:38:16.771"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${printscreen}' == '@print'</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211108 15:38:16.771" endtime="20211108 15:38:16.772"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>60</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:16.773" level="INFO">Slept 1 minute</msg>
+<status status="PASS" starttime="20211108 15:38:16.772" endtime="20211108 15:39:16.773"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:25.216" endtime="20211108 15:39:16.773"/>
+</kw>
+<kw name="Acessa e Preenche Campo Codigo |CAIXA TESTE SUL|" library="O_CANC_MOV_CAIXA_STEPS" sourcename="Acessa e Preenche Campo Codigo |${Item}|">
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${CampoCodigo}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:39:16.774" endtime="20211108 15:39:16.804"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:19.819" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:16.804" endtime="20211108 15:39:19.819"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:19.820" level="INFO">Clicking element 'xpath=//input[@id='inp:cdCaixa']'.</msg>
+<status status="PASS" starttime="20211108 15:39:19.819" endtime="20211108 15:39:19.931"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:16.774" endtime="20211108 15:39:19.931"/>
+</kw>
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${BtnListaCampoCodigo}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:39:19.932" endtime="20211108 15:39:19.959"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:22.968" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:19.959" endtime="20211108 15:39:22.968"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:22.969" level="INFO">Clicking element 'xpath=//*[@id="cdCaixa"]/button'.</msg>
+<status status="PASS" starttime="20211108 15:39:22.968" endtime="20211108 15:39:23.071"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:19.932" endtime="20211108 15:39:23.072"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:28.078" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:23.072" endtime="20211108 15:39:28.078"/>
+</kw>
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${CampoPesquisa}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:39:28.079" endtime="20211108 15:39:28.102"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:31.106" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:28.102" endtime="20211108 15:39:31.106"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:31.107" level="INFO">Clicking element 'xpath=//*[@id="#filterLov"]'.</msg>
+<status status="PASS" starttime="20211108 15:39:31.106" endtime="20211108 15:39:31.195"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:28.078" endtime="20211108 15:39:31.195"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CampoPesquisa}</arg>
+<arg>%${Item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:31.196" level="INFO">Typing text '%CAIXA TESTE SUL' into text field 'xpath=//*[@id="#filterLov"]'.</msg>
+<status status="PASS" starttime="20211108 15:39:31.196" endtime="20211108 15:39:31.348"/>
+</kw>
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${BtnFiltrar}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:39:31.350" endtime="20211108 15:39:31.374"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:34.377" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:31.374" endtime="20211108 15:39:34.377"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:34.378" level="INFO">Clicking element 'xpath=//*[@id="btfilter"]'.</msg>
+<status status="PASS" starttime="20211108 15:39:34.377" endtime="20211108 15:39:34.472"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:31.349" endtime="20211108 15:39:34.472"/>
+</kw>
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${BtnOk}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:39:34.473" endtime="20211108 15:39:34.497"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:37.506" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:34.497" endtime="20211108 15:39:37.506"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:37.507" level="INFO">Clicking element 'xpath=//*[@id="btok"]'.</msg>
+<status status="PASS" starttime="20211108 15:39:37.506" endtime="20211108 15:39:37.621"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:34.472" endtime="20211108 15:39:37.621"/>
+</kw>
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${BtnExecutarConsulta}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>120</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211108 15:39:37.622" endtime="20211108 15:39:37.647"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211108 15:39:40.656" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211108 15:39:37.648" endtime="20211108 15:39:40.656"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211108 15:39:40.657" level="INFO">Clicking element 'xpath=//*[@id="tb-execute"]/a/i'.</msg>
+<status status="PASS" starttime="20211108 15:39:40.656" endtime="20211108 15:39:40.754"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:37.621" endtime="20211108 15:39:40.754"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:16.773" endtime="20211108 15:39:40.755"/>
+</kw>
+<kw name="Encerra sessao" library="Config" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211108 15:39:40.756" endtime="20211108 15:39:43.038"/>
+</kw>
+<status status="PASS" starttime="20211108 15:39:40.755" endtime="20211108 15:39:43.038"/>
+</kw>
+<kw name="Stop Recording Test" library="AutoRecorder">
+<arg>SMF-8951 : Cancelar movimentacoes ocorridas no Caixa</arg>
+<doc>There is no need to execute this keyword manually.
+Basically - alias for https://mihaiparvu.github.io/ScreenCapLibrary/ScreenCapLibrary.html#Stop%20Video%20Recording</doc>
+<msg timestamp="20211108 15:39:43.147" level="INFO" html="true">&lt;a href="recording_3.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_3.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211108 15:39:43.039" endtime="20211108 15:39:43.147"/>
+</kw>
+<status status="PASS" starttime="20211108 15:37:10.122" endtime="20211108 15:39:43.038"/>
+</test>
+<status status="PASS" starttime="20211108 15:37:04.699" endtime="20211108 15:39:43.148"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="O CANC MOV CAIXA">O CANC MOV CAIXA</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211108 15:37:10.050" level="ERROR">Error in file 'c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\Config.robot' on line 20: Importing library 'FakerLibrary' failed: ModuleNotFoundError: No module named 'FakerLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.27.0\src\robotframework_debug_adapter
+  c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation
+  c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.27.0\src
+  c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.27.0\src\robotframework_ls\vendored
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
+<msg timestamp="20211108 15:37:10.059" level="ERROR">Error in file 'c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\Config.robot' on line 24: Importing library 'c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\7-libraries\geracaoDadosLibrary\pessoaFisica.py' failed: ModuleNotFoundError: No module named 'unidecode'
+Traceback (most recent call last):
+  File "c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\7-libraries\geracaoDadosLibrary\pessoaFisica.py", line 6, in &lt;module&gt;
+    from unidecode import unidecode
+PYTHONPATH:
+  c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.27.0\src\robotframework_debug_adapter
+  c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation
+  c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.27.0\src
+  c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.27.0\src\robotframework_ls\vendored
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39
+  C:\Users\Danilo\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
+<msg timestamp="20211108 15:37:10.112" level="ERROR">Error in file 'c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\1-resources\ContextoSteps.robot' on line 9: Resource file '..\2-pages\4M-M_DEVPAC\M_DEVPAC_Pages.robot' does not exist.</msg>
+<msg timestamp="20211108 15:37:10.116" level="ERROR">Error in file 'c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\2-pages\6-CONTROLADORIA\O_CANC_MOV_CAIXA_PAGE.robot' on line 34: Setting variable '${Codigo}' failed: Variable '${Item}' not found.</msg>
+</errors>
+</robot>

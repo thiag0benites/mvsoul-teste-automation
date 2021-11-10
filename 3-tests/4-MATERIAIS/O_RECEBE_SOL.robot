@@ -23,7 +23,7 @@ Resource            ../../1-resources/dados/DadosTeste.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -32,12 +32,15 @@ ${suite}            O_RECEBE_SOL
 ${dados}
 
 *** Test Case ***
-SMF-4051:Receber solicitacao de compras
-# robot -v browser:chrome -t "SMF-4051:Receber solicitacao de compras" -d ./5-results/O_RECEBE_SOL "3-tests/4-MATERIAIS/O_RECEBE_SOL.robot"
-# robot -v browser:firefox -t "SMF-4051:Receber solicitacao de compras" -d ./5-results/O_RECEBE_SOL "3-tests/4-MATERIAIS/O_RECEBE_SOL.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4051"
+SCR4MORECEBESOL-001:Fluxo principal
+# robot -v browser:chrome -t "SCR4MORECEBESOL-001:Fluxo principal" -d ./5-results/SCR4MORECEBESOL-001 "3-tests/4-MATERIAIS/O_RECEBE_SOL.robot"
+# robot -v browser:firefox -t "SCR4MORECEBESOL-001:Fluxo principal" -d ./5-results/SCR4MORECEBESOL-001 "3-tests/4-MATERIAIS/O_RECEBE_SOL.robot"
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MORECEBESOL-001"
     Acessar a tela "Materiais e Logística>Compras>Compras>Solicitação de Compras>Receber Solicitação"@nprint @las
     Marcar o checkbox Recebe e clicar no botão para receber solicitações
     Clicar no botão Não 
+    Validar mensagem de confirmação
+
+
 
      
