@@ -16,8 +16,8 @@ Selecionar Checkbox, Preencher Estoque e Setor
 
 Preencher Produtos
     Clicar no Campo e Preencher Informacao    ${CampoCdProduto}     ${CampoCdProdutoEditavel}    2
-    Clicar no Campo e Preencher Informacao    ${CampoQtd}     ${CampoQtdEditavel}    1
-    Validar Elemento Pelo Titulo     REOPRO 2MG/ML-5ML FR/AMP IV- ABCIXIMABE
+    Clicar no Campo e Preencher Informacao    ${CampoQtd}           ${CampoQtdEditavel}          1
+    Validar Elemento Pelo Titulo              REOPRO 2MG/ML-5ML FR/AMP IV- ABCIXIMABE
 
 Nao Imprimir Solicitacao
     Valida Mensagem                  ${MensagemToast}                Atenção: Imprimir Solicitação?
