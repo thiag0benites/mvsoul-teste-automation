@@ -244,3 +244,4 @@ Clicar no botão Não
 
 Clicar no botão Sim
     Click no Item            ${btnSimNotifications}
+    

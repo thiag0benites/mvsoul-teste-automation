@@ -23,7 +23,7 @@ Resource            ../../1-resources/dados/DadosTeste.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+# Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -32,10 +32,12 @@ ${suite}            O_TRANSF_PREST
 ${dados}
 
 *** Test Case ***
-SMF-10362:Transferencia de Medicos
-# robot -v browser:chrome -t "SMF-10362:Transferencia de Medicos" -d ./5-results/SMF-10362 "3-tests/1-ATENDIMENTO/O_TRANSF_PREST.robot"
-# robot -v browser:firefox -t "SMF-10362:Transferencia de Medicos" -d ./5-results/SMF-10362 "3-tests/1-ATENDIMENTO/O_TRANSF_PREST.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10362"
+SRC1AOTRANSFPREST-001:Fluxo Principal
+# robot -v browser:chrome -t "SRC1AOTRANSFPREST-001:Fluxo Principal" -d ./5-results/SRC1AOTRANSFPREST-001 "3-tests/1-ATENDIMENTO/O_TRANSF_PREST.robot"
+# robot -v browser:firefox -t "SRC1AOTRANSFPREST-001:Fluxo Principal" -d ./5-results/SRC1AOTRANSFPREST-001 "3-tests/1-ATENDIMENTO/O_TRANSF_PREST.robot"
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AOTRANSFPREST-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Transferência de Médico"@nprint @las
     Preencher os campos |${dados}[numAtend]|,|${dados}[nomePrestadorDest]|,|${dados}[motivoTransferencia]|,|${dados}[servico]|
-    Confirmar Transferencia de Prestador
+    Validar atendimento 
+    # Confirmar Transferencia de Prestador
+
