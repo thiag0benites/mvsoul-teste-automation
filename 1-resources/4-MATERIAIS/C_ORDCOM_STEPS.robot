@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/6-CONTROLADORIA/C_ORDCOM_PAGE.robot
+Resource                ../../2-pages/4-MATERIAIS/C_ORDCOM_PAGE.robot
 
 *** Variable ***
 
