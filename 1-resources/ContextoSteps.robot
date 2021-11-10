@@ -125,7 +125,7 @@ Preencher campo
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Input Text    ${elemento}    ${valor}
     FOR    ${i}    IN RANGE    1    11
-        Sleep    0.5
+        Sleep    1
         ${textoAtual}    Get Element Attribute    ${elemento}    value
         # ${textoAtual}    SeleniumLibrary.Get Text    ${elemento}
         IF    "${textoAtual}" == "${valor}"
