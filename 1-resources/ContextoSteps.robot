@@ -53,15 +53,15 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     #### LAS Send Keys #####
     IF    "${las}" == "@las"
         # Sleep    1
-        Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    60
+        Seleciona frame    ${IdIframe}    240
+        Wait Until Element Is Visible    ${classLasDisplay}    120
         Unselect Frame
         # Sleep    1
         Send Keys    tab
         Send Keys    enter
     END
     #### End LAS Send Keys #####
-    Seleciona frame    ${IdIframe}    180
+    Seleciona frame    ${IdIframe}    240
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
 
