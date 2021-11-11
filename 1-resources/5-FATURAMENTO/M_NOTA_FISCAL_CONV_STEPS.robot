@@ -12,6 +12,7 @@ Resource                ../../2-pages/5-FATURAMENTO/M_NOTA_FISCAL_CONV_PAGE.robo
 Preencher campo de Convenio |${codConvenio}|
     Preencher campo  ${inputCodConvenio}     ${codConvenio}  
 
+
 Preencher campo de Remessa |${codRemessa}|
     Preencher campo  ${inputCodRemessa}     ${codRemessa}  
 
