@@ -31,7 +31,9 @@ Test Teardown     Encerra sessao
 # ${dados}
 
 *** Test Case ***
-SCR6OCANCMOVCAIXA-001:Fluxo principal
-# robot -v browser:chrome -t "SCR6OCANCMOVCAIXA-001:Fluxo principal" -d ./5-results/SCR6OCANCMOVCAIXA-001 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
-# robot -v browser:firefox -t "SCR6OCANCMOVCAIXA-001:Fluxo principal" -d ./5-results/SCR6OCANCMOVCAIXA-001 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
-    Acessar a tela "Controladoria>Caixa>Movimentação>Cancelamento de Lançamentos"@nprint @las
+SMF-8951 : Cancelar movimentacoes ocorridas no Caixa
+# robot -v browser:chrome -t "SMF-8951 : Cancelar movimentacoes ocorridas no Caixa" -d ./5-results/SMF-8951 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
+# robot -v browser:firefox -t "SMF-8951 : Cancelar movimentacoes ocorridas no Caixa" -d ./5-results/SMF-8951 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
+    Acessar a tela "Controladoria>Caixa>Caixa>Movimentação>Cancelamento de Lançamentos"@nprint @las
+    Acessa e Preenche Campo Codigo |CAIXA TESTE SUL|
+    Seleciona Lote para Cancelar E Preenche Justificativa |ERRO DE LANCAMENTO (REUT.)|

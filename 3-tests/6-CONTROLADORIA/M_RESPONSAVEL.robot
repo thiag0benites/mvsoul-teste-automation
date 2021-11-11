@@ -32,9 +32,3 @@ Test Teardown     Encerra sessao
 
 *** Test Case ***
 
-SCR6OREABRELOTE-001:Fluxo principal
-# robot -v browser:chrome -t "SCR6OREABRELOTE-001:Fluxo principal" -d ./5-results/SCR6OREABRELOTE-001 "3-tests/6-CONTROLADORIA/O_REABRE_LOTE.robot"
-# robot -v browser:firefox -t "SCR6OREABRELOTE-001:Fluxo principal" -d ./5-results/SCR6OREABRELOTE-001 "3-tests/6-CONTROLADORIA/O_REABRE_LOTE.robot"
-    Acessar a tela "Controladoria>Caixa>Caixa>Reabertura de Lotes"@nprint @las
-    Acessa e Preenche Campo Codigo |HOBRA CAIXA|
-    Seleciona Lote para Reabrir E Preenche Justificativa

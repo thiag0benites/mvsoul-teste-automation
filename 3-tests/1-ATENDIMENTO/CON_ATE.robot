@@ -32,9 +32,9 @@ ${suite}            CON_ATE
 ${dados}
 
 *** Test Case ***
-SMF-10550:Consulta de Atendimentos
-# robot -v browser:chrome -t "SMF-10550:Consulta de Atendimentos" -d ./5-results/SMF-10550 "3-tests/1-ATENDIMENTO/CON_ATE.robot"
-# robot -v browser:firefox -t "SMF-10550:Consulta de Atendimentos" -d ./5-results/SMF-10550 "3-tests/1-ATENDIMENTO/CON_ATE.robot"
+SRC1ACONATE-001:Consulta de Atendimentos
+# robot -v browser:chrome -t "SRC1ACONATE-001:Consulta de Atendimentos" -d ./5-results/SRC1ACONATE-001 "3-tests/1-ATENDIMENTO/CON_ATE.robot"
+# robot -v browser:firefox -t "SRC1ACONATE-001:Consulta de Atendimentos" -d ./5-results/SRC1ACONATE-001 "3-tests/1-ATENDIMENTO/CON_ATE.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10550"
     Acessar a tela "Atendimento>Internação>Consultas>Atendimentos"@nprint @las
     Usuário deverá preencher o campo <Dt. Ini. Atend.>|${dados}[dataIniAtend]|,|${dados}[dataFimAtend]|,|${dados}[Internacao]|
