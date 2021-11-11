@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.2 on win32)" generated="20211103 16:22:50.565" rpa="false" schemaversion="2">
-<suite id="s1" name="Robot Interactive Console" source="c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.26.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211111 17:03:58.082" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\Neto Rocha\.vscode\extensions\robocorp.robotframework-lsp-0.28.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<kw name="Acessar a tela &quot;Controladoria&gt;Caixa&gt;Caixa&gt;Reabertura de Lotes&quot;@nprint @las">
-<msg timestamp="20211103 16:22:51.798" level="FAIL">No keyword with name 'Acessar a tela "Controladoria&gt;Caixa&gt;Caixa&gt;Reabertura de Lotes"@nprint @las' found.</msg>
-<status status="FAIL" starttime="20211103 16:22:51.798" endtime="20211103 16:22:51.798"/>
+<kw name="Acessar a tela &quot;Controladoria&gt;Caixa&gt;Caixa&gt;Movimentação&gt;Cancelamento de Lançamentos&quot;@nprint @las">
+<msg timestamp="20211111 17:03:59.442" level="FAIL">No keyword with name 'Acessar a tela "Controladoria&gt;Caixa&gt;Caixa&gt;Movimentação&gt;Cancelamento de Lançamentos"@nprint @las' found.</msg>
+<status status="FAIL" starttime="20211111 17:03:59.442" endtime="20211111 17:03:59.442"/>
 </kw>
-<status status="PASS" starttime="20211103 16:22:50.600" endtime="20211103 16:22:56.928"/>
+<kw name="Acessa e Preenche Campo Codigo |CAIXA TESTE SUL|">
+<status status="NOT RUN" starttime="20211111 17:03:59.444" endtime="20211111 17:03:59.444"/>
 </kw>
-<status status="PASS" starttime="20211103 16:22:50.599" endtime="20211103 16:22:56.928"/>
+<kw name="Seleciona Lote para Cancelar E Preenche Justificativa |ERRO DE LANCAMENTO (REUT.)|">
+<status status="NOT RUN" starttime="20211111 17:03:59.446" endtime="20211111 17:03:59.446"/>
+</kw>
+<status status="PASS" starttime="20211111 17:03:58.129" endtime="20211111 17:04:01.807"/>
+</kw>
+<status status="PASS" starttime="20211111 17:03:58.128" endtime="20211111 17:04:01.807"/>
 </test>
-<status status="PASS" starttime="20211103 16:22:50.568" endtime="20211103 16:22:56.929"/>
+<status status="PASS" starttime="20211111 17:03:58.086" endtime="20211111 17:04:01.808"/>
 </suite>
 <statistics>
 <total>
