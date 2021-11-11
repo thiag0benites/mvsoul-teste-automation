@@ -1,6 +1,6 @@
 #################################################################################################################################################################
-# Autor: Danilo Campanello
-# Decrição: Exemplo de como criar uma suite de teste
+# Autor:          Danilo Campanello
+# Decrição:       Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/O_REABRE_LOTE_STEPS "3-tests\2 - ASSISTENCIAL\O_REABRE_LOTE.robot"
@@ -35,6 +35,7 @@ SMF-8820 : Cadastrar Responsaveis
 # robot -v browser:chrome -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
 # robot -v browser:firefox -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
     Acessar a tela "Controladoria>Caixa>Tabelas>Responsáveis"@nprint @las 
+
 
 
 
