@@ -18,3 +18,4 @@ Clicar no botão Confirmar
 Clicar no botão Sim no modal de notificacao
     Wait Until Element is Visible    ${buttonSim}            30
     Click Element     ${buttonSim}
+    Sleep             30

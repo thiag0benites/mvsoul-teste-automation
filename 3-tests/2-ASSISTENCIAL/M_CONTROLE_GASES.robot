@@ -25,7 +25,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            
+${suite}            m_controle_gases
 # Recebe dados do gerenciador
 ${dados}
 
@@ -33,9 +33,15 @@ ${dados}
 SCR2AMCONTROLEGASES-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMCONTROLEGASES-001:Fluxo Principal" -d ./5-results/SCR2AMCONTROLEGASES-001 "3-tests/2-ASSISTENCIAL/M_CONTROLE_GASES.robot"
 # robot -v browser:firefox -t "SCR2AMCONTROLEGASES-001:Fluxo Principal" -d ./5-results/SCR2AMCONTROLEGASES-001 "3-tests/2-ASSISTENCIAL/M_CONTROLE_GASES.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONTROLEGASES-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Solicitações>Monitoração de Aparelhos/Gases"@nprint @las
-    Validar Acesso a Tela |Monitoração de Aparelhos / Gases|
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Realizar Pesquisa de Atendimento
     Validar Tabela Descricao Do Procedimento
+    Selecionar Procedimento |${dados}[Procedimento]|
     Preencher Campos Com Dados Do Procedimento
-    Sleep  5
+    Clicar Botao Salvar
+    # Retornar massa de dados para status inicial
+    Selecionar Procedimento |${dados}[RetornaProcedimento]|
+    Excluir Dados Inseridos
+ 

@@ -15,7 +15,7 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/bd/BancoDados.robot
 Resource            ../../1-resources/ContextoSteps.robot 
-Resource            ../../1-resources/O_GERIVE_STEPS.robot
+Resource            ../../1-resources/4-MATERIAIS/O_GERIVE_STEPS.robot
 Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
