@@ -13,8 +13,10 @@ ${TelaDepreciacao}      xpath=//*[@id="dtDeprecia"]/label
 ${mesAnoGeracao}        id=inp:dtDeprecia
 ${realDeprec}           id=inp:nmSolicitante
 ${empresa}              id=inp:cdMultiEmpresa
-${tipoDeprec}           id=tpDepreciacao
-${deprecAtrasadas}      xpath=//*[@id="autocomplete_tpDepreciacaoPendentes_ac_2"]
+${selectTipDeprec}      xpath=//*[@id="tpDepreciacao"]
+${tipoDeprec}           xpath=//*[@id="tpDepreciacao"]/button
+${selectDeprecAtrasadas}        xpath=//*[@id="tpDepreciacaoPendentes"]
+${deprecAtrasadas}      xpath=//*[@id="inp:tpDepreciacaoPendentes"]/button
 ${btnGerarDeprec}       id=btGerar
-${listaItensDeprec}     id=grdItdeprecia
+${listaItensDeprec}     xpath=//*[@id="grdItdeprecia"]/div[4]
 ${btnDesfazerDeprec}        id=btDesfazer

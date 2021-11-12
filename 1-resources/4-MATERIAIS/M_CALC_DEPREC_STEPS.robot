@@ -18,27 +18,28 @@ Validar Acesso a Tela |NomeTela|
     Wait Until Element Is Visible       ${TelaDepreciacao}      120
 
 Preencher o campo |Mês/Ano geração|
-    Preencher Campo        ${mesAnoGeracao}        12/2021
+    Preencher Campo        ${mesAnoGeracao}        01/2023
     Press Keys    ${mesAnoGeracao}    ENTER
     Sleep      3    
 
-Selecionar Tipo de depreciação
-    Click Element       ${tipoDeprec}
-    #Selecionar Item Na Lista         ${tipoDeprec}             Mensal            Mensal
-    Preencher Campo        ${tipoDeprec}        ${EMPTY}
-    Preencher Campo        ${tipoDeprec}        Mensal
-         
-Selecionar no campo [Para depreciações atrasadas,contabilizar em]
-    Click Element       ${deprecAtrasadas}
-    #Selecionar Item Na Lista         ${deprecAtrasadas}             Mês/Ano de geração da depreciação            Mês/Ano de geração da depreciação
-    Preencher Campo        ${deprecAtrasadas}        Mês/Ano de geração da depreciação
-
+# Selecionar Tipo de depreciação
+#     #Click Button       ${tipoDeprec}
+#     Seleciona Item Combobox        ${selectTipDeprec}       Mensal
+#     Sleep       3
+     
+# Selecionar no campo [Para depreciações atrasadas,contabilizar em]
+#     #Click Button       ${deprecAtrasadas}
+#     Seleciona Item Combobox        ${selectDeprecAtrasadas}       Mês/Ano de geração da depreciação
+#     Sleep       3
+    
 Clicar no botao [Gerar depreciação]
     Click Button       ${btnGerarDeprec}
     Wait Until Element Is Visible       ${listaItensDeprec}      120
- 
-Clicar no botão [Desfazer depreciações]
+    
+Clicar no botao [Desfazer depreciações]
+    Sleep       4
     Click Button       ${btnDesfazerDeprec}
 
-Validar que foi desfeito a depreciação
+Validar mensagem
+    Sleep       20
     Valida Mensagem                  ${MensagemToast}                Nenhum registro foi recuperado. Informe a consulta novamente.

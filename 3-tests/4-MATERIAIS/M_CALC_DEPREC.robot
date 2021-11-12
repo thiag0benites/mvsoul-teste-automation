@@ -40,11 +40,8 @@ MCALCDEPREC-001:Fluxo Principal
     Acessar a tela "Materiais e Logística>Patrimônio>Depreciação>Cálculo da Depreciação do Bem"@nprint @las
     #Validar Acesso a Tela |NomeTela|
     Preencher o campo |Mês/Ano geração|
-    #Validar campos preenchidos 
-    Selecionar Tipo de depreciação
-    Selecionar no campo [Para depreciações atrasadas,contabilizar em]
-    Clicar no botão[Gerar depreciação]
-    Clicar no botão [Desfazer depreciações]
-    Clicar no botão Sim
-    Validar que foi desfeito a depreciação
+    Clicar no botao [Gerar depreciação]
+    Clicar no botao [Desfazer depreciações]
+    Clicar no botao Sim
+    Validar mensagem
     
