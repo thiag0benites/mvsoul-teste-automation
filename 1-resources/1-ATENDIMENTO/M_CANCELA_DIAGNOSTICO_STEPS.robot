@@ -22,8 +22,8 @@ Confirmacao Diagnostico
     Click Elemento Por Titulo              Sair
 ###    ===========================================   ###
 
-Preencher Atendimento
-    Preencher Campo                         ${CampoAtendimento}             1000002161
+Preencher Atendimento |${Atendimento}|
+    Preencher Campo                         ${CampoAtendimento}             ${Atendimento}    
     Send Keys                               Enter
 
 Confirmar Cancelamento de Diagnostico

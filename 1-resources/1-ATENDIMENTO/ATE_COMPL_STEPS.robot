@@ -14,11 +14,11 @@ Preencher Campo Atendimento
     Send Keys                               Enter
     Click no Item                           ${BotaoOk} 
 
-Validar Dados Apos Selecao do Atendimento
-    Validar Elemento Pelo Titulo            1308645
-    Validar Elemento Pelo Titulo            MARIA RITA
-    Validar Elemento Pelo Titulo            CLINICA MEDICA HOBRA
-    Validar Elemento Pelo Titulo            GEISHA ABREU SOARES DE PINA
+Validar Dados Apos Selecao do Atendimento |${CdPaciente}| |${Paciente}| |${UnidInternacao}| |${Prestador}|
+    Validar Elemento Pelo Titulo            ${CdPaciente}1308645
+    Validar Elemento Pelo Titulo            ${Paciente}MARIA RITA
+    Validar Elemento Pelo Titulo            ${UnidInternacao}CLINICA MEDICA HOBRA
+    Validar Elemento Pelo Titulo            ${Prestador}GEISHA ABREU SOARES DE PINA
 
 Preencher Campos Obrigatórios
     Preencher Campo                         ${CampoCID}                     R100
