@@ -9,6 +9,7 @@ Resource          ../../Config.robot
 Resource          ../../2-pages/ContextoPage.robot
 Resource          ../../1-resources/ContextoSteps.robot
 
+
 *** Variable ***
 ${FILE}           ${CURDIR}\\6-files\\upload.txt
 ${cssOriginal}
@@ -244,4 +245,10 @@ Clicar no botão Não
 
 Clicar no botão Sim
     Click no Item            ${btnSimNotifications}
+
+Pegar data atual
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+
     
