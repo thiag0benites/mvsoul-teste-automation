@@ -38,6 +38,6 @@ SCR8SMSETEXA-001:Fluxo Principal
     Acessa a Tela Pela Busca |M_SETEXA||Setores de Exames| @las
     #Acessar a tela "Serviços de Apoio>Global>Globais>Setores de exames"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Campos Obrigatorios
-    Validar Preenchimento dos Campos
+    Preencher Campos Obrigatorios |${dados}[Nome]| |${dados}[TpStExame]| |${dados}[NrAtual]| |${dados}[CentroCusto]| |${dados}[Prestador]|
+    Validar Preenchimento dos Campos |${dados}[Nome]| |${dados}[TpStExame]| |${dados}[NrAtual]| |${dados}[CentroCusto]| |${dados}[Prestador]|
     Clicar Botao Salvar

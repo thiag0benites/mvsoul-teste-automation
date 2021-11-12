@@ -36,7 +36,7 @@ SCR1AMENCAMINHAOBSERVACAO-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMENCAMINHAOBSERVACAO-001"
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Observação>Encaminhamento"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Atendimento
-    Validar Dados Do Paciente
+    Preencher Atendimento |${dados}[Atendimento]|
+    Validar Dados Do Paciente |${dados}[CdPaciente]| |${dados}[Paciente]| |${dados}[CID]|
     Selecionar Leito
     Validar Encaminhar Paciente

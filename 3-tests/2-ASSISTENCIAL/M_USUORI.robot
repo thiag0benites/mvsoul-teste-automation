@@ -37,9 +37,9 @@ SCR2AMUSUORI-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMUSUORI-001"
     Acessar a tela "Apoio a TI>Gestão de Usuários>Configurações de Acesso>Acessos Gerais>Usuários por Origem"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Selecionar Usuario
-    Selecionar Origem
+    Selecionar Usuario |${dados}[CdUsuario]| |${dados}[NomeUsuario]|
+    Selecionar Origem |${dados}[Origem]|
     Clicar Botao Salvar
     # Retornar massa de dados ao status inicial do teste
-    Excluir Origem
+    Excluir Origem |${dados}[Origem]|
 

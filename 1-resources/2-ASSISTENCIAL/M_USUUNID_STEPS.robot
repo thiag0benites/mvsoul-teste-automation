@@ -10,15 +10,15 @@ Resource          ../2-pages/ContextoPage.robot
 *** Variable ***
 
 *** Keywords ***
-Selecionar Usuario
-    Preencher Campo                             ${CampoEditavel}                    GPINA
+Selecionar Usuario |${CdUsuario}| |${NomeUsuario}|
+    Preencher Campo                             ${CampoEditavel}                    ${CdUsuario}
     Send Keys                                   Enter
-    Validar Elemento Pelo Titulo                GEISHA ABREU SOARES DE PINA
+    Validar Elemento Pelo Titulo                ${NomeUsuario}
 
-Selecionar Unidade de Internacao
-    Preencher Campo                             ${CampoEditavel}                    174
+Selecionar Unidade de Internacao |${CdUnidInternacao}| |${NomeUnidInterncao}|
+    Preencher Campo                             ${CampoEditavel}                    ${CdUnidInternacao}
     Send Keys                                   Enter
-    Validar Elemento Pelo Titulo                AADBR UNIDADE INTERNAÇÃO
+    Validar Elemento Pelo Titulo                ${NomeUnidInterncao}
 
 Validar Checkbox de Solicitacao Marcado
     Marcar Checkbox |${CbProdutoSetor}|

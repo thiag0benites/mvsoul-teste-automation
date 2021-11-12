@@ -10,15 +10,15 @@ Resource          ../../2-pages/1-ATENDIMENTO/ATE_COMPL_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Atendimento
-    Preencher Campo                         ${CampoAtendimento}             1000002198
+Preencher Atendimento |${Atendimento}|
+    Preencher Campo                         ${CampoAtendimento}             ${Atendimento}
     Send Keys                               Enter
     Click no Item                           ${BotaoOk}
 
-Validar Dados Do Paciente
-    Validar Elemento Pelo Titulo            505146
-    Validar Elemento Pelo Titulo            ACACIA MARIA MAIA COSTA
-    Validar Elemento Pelo Titulo            ABDOME AGUDO
+Validar Dados Do Paciente |${CdPaciente}| |${Paciente}| |${CID}|
+    Validar Elemento Pelo Titulo            ${CdPaciente}
+    Validar Elemento Pelo Titulo            ${Paciente}
+    Validar Elemento Pelo Titulo            ${CID}
 
 Selecionar Leito
     Click no Item                           ${BotaoLovLeito}                

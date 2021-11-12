@@ -6,6 +6,7 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
+Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
 
 
 *** Variable ***
@@ -119,7 +120,7 @@ Clicar no botão "${titulo}"${printscreen}
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    180
-    Wait Until Element Is Enabled    ${elemento}    5
+    Wait Until Element Is Enabled    ${elemento}    20
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Input Text    ${elemento}    ${valor}
