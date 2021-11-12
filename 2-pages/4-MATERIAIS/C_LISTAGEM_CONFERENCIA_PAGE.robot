@@ -13,17 +13,17 @@ ${CampoFiltro}                  xpath=//*[@id="#filterLov"]
 
 
 ### Botoes ###
-${BtnCodigo}                    xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
+${BtnCodigo}                    xpath=//button[@tabindex='-1']
 ${BtnFiltrar}                   xpath=//*[@id="btfilter"]
 ${BtOk}                         xpath=//*[@id="btok"]
 ${BtnConsultar}                 xpath=//*[@id="tb-execute"]/a
-${BtnCheckBox}                  xpath=//button[@title='Selec']
+${BtnCheckBoxCt34421}           xpath=//button[@title='Selec']
 ${BtnConfirmar}                 xpath=//*[@id="butConfirmar"]
-${BtnAlerta}                    xpath=//button[@class='btn btn-primary']
+${BtnAlerta}                    xpath=//*[@id="frames32"]
 
 
 ### Diversos ###
-${Alerta}                       //p[@class='notifications-item-text'][contains(text(),"Conta(s) a receber gerada(s) com sucesso !")]             
+${Alerta}                       Conta(s) a receber gerada(s) com sucesso !             
 
 
 

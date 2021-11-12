@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 
-Resource            ../../1-resources/6-CONTROLADORIA/M_CON_REC_PART_STEPS.robot
+Resource            ../../1-resources/4-MATERIAIS/C_LISTAGEM_CONFERENCIA_STEPS.robot
 
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -36,7 +36,7 @@ SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto
 # robot -v browser:chrome -t "SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto" -d ./5-results/SMF-6210 "3-tests/6-CONTROLADORIA/M_CON_REC_PART.robot"
 # robot -v browser:firefox -t "SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto" -d ./5-results/SMF-6210 "3-tests/6-CONTROLADORIA/M_CON_REC_PART.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Cadastros>Previsão>Geração de Contas a Receber"@nprint @las
-    Campo Previsao |teste automacao|
+    Campo Previsao
     Selecionar a Previsao
 
 
