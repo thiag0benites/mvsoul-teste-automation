@@ -11,7 +11,7 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_ESTORNO_RECE
 
 *** Keywords ***
 Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada
-    Seleciona Item Combobox    ${CampoTipoConta}    Cliente
+    Seleciona Item Combobox                   ${CampoTipoConta}    Cliente
 Informar Nome
     Clicar Botao se estiver Visivel           ${BtnPopupCliente}
     Clicar no Campo e Preencher Informacao    ${CampoPreencherFiltro}    ${CampoPreencherFiltro}    %AMIL DF
