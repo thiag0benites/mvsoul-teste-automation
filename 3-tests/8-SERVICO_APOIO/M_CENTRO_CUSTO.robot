@@ -32,8 +32,8 @@ ${dados}
 
 *** Test Case ***
 SCR8SMCENTROCUSTO-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR8SMCENTROCUSTO-001:Fluxo Principal" -d ./5-results/SCR8SMSETEXA-001 "3-tests/8-SERVICO_APOIO/M_CENTRO_CUSTO.robot"
-# robot -v browser:firefox -t "SCR8SMCENTROCUSTO-001:Fluxo Principal" -d ./5-results/SCR8SMSETEXA-001 "3-tests/8-SERVICO_APOIO/M_CENTRO_CUSTO.robot"
+# robot -v browser:chrome -t "SCR8SMCENTROCUSTO-001:Fluxo Principal" -d ./5-results/SCR8SMCENTROCUSTO-001 "3-tests/8-SERVICO_APOIO/M_CENTRO_CUSTO.robot"
+# robot -v browser:firefox -t "SCR8SMCENTROCUSTO-001:Fluxo Principal" -d ./5-results/SCR8SMCENTROCUSTO-001 "3-tests/8-SERVICO_APOIO/M_CENTRO_CUSTO.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMCENTROCUSTO-001"
     Acessar a tela "Serviços de Apoio>Global>Globais>Centro de Custo"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
