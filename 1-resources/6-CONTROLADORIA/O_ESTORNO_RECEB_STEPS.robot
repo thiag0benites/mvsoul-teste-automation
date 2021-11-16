@@ -20,7 +20,7 @@ Informar Nome
     Clicar Botao se estiver Visivel           ${BtnOk}
 Informar Periodo do Pagamento
     Clicar no Campo e Preencher Informacao    ${CampoDataInicial}        ${CampoDataInicial}    01/01/2020
-    Clicar no Campo e Preencher Informacao    ${CampoDataFinal}          ${CampoDataFinal}      12/11/2021
+    Clicar no Campo e Preencher Informacao    ${CampoDataFinal}          ${CampoDataFinal}      16/11/2021
 Selecionar o Tipo de Lancamento
     Clicar Botao se estiver Visivel           ${BtnPopupTipoLancamento}
     Clicar no Campo e Preencher Informacao    ${CampoPreencherFiltro}    ${CampoPreencherFiltro}    %ESTORNO RECEBIMENTO
@@ -34,9 +34,15 @@ Selecionar Motivo do Cancelamento
     Click no Item                             ${CampoDescricaoMotCancelamento}
     Clicar Botao se estiver Visivel           ${BtnOk}
 Informar Data que o Estorno foi Realizado
-    Clicar no Campo e Preencher Informacao    ${CampoDataEstorno}        ${CampoDataEstorno}    12/11/2021
+    Clicar no Campo e Preencher Informacao    ${CampoDataEstorno}        ${CampoDataEstorno}    16/11/2021
+    Click no Item                             ${CampoRecebimento}
+Selecionar os Recebimentos a Serem Estornados
+    Click no Item                             ${BtnCheckMarcar}
+Informar o Numero de Documento Referente ao Recebimento
+    Clicar no Campo e Preencher Informacao    ${CampoNrDocumento}    ${CampoNrDocumento}    777777
+Selecionar Confirmar
+    Clicar Botao se estiver Visivel           ${BtnConfirmar}
 
-### FALTAM OS PASSOS 9/10/4 ###
 
 
 

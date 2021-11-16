@@ -16,7 +16,8 @@ ${CampoDataFinal}                          xpath=//*[@id="inp:dtFinal"]
 ${CampoDescricaoLancamento}                xpath=//div[@title='ESTORNO RECEBIMENTO']
 ${CampoDescricaoMotCancelamento}           xpath=//div[@title='CONTA INDEVIDA (INUTILIZA)']
 ${CampoDataEstorno}                        xpath=//*[@id="inp:dtEstorno"]
-
+${CampoNrDocumento}                        xpath=//*[@id="inp:nrDocumento"]
+${CampoRecebimento}                        xpath=//div[@data-member='CHECK_MARCAR']
 
 ### Botoes ###
 ${BtnPopupCliente}                         xpath=//*[@id="cdFornecedor"]/button
@@ -24,4 +25,6 @@ ${BtnFiltrar}                              xpath=//*[@id="btfilter"]
 ${BtnOk}                                   xpath=//*[@id="btok"]
 ${BtnPopupTipoLancamento}                  xpath=//*[@id="cdLanConcor"]/button
 ${BtnPopupMotCancelamento}                 xpath=//*[@id="cdMotivoCanc"]/button
+${BtnCheckMarcar}                          xpath=//button[@data-rowid='AAAdlcAAOAACXSaAAD']
+${BtnConfirmar}                            xpath=//*[@id="butConfirmar"]
 ### Diversos ###

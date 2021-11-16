@@ -38,4 +38,9 @@ SMF-6281 : Estornar Recebimento
     Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada
     Informar Nome
     Informar Periodo do Pagamento
+    Selecionar o Tipo de Lancamento
+    Selecionar Motivo do Cancelamento
     Informar Data que o Estorno foi Realizado
+    Selecionar os Recebimentos a Serem Estornados
+    Informar o Numero de Documento Referente ao Recebimento
+    Selecionar Confirmar
