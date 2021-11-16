@@ -35,10 +35,16 @@ SMF-8820 : Cadastrar Responsaveis
 # robot -v browser:chrome -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
 # robot -v browser:firefox -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
     Acessar a tela "Controladoria>Caixa>Tabelas>Responsáveis"@nprint @las 
-    Seleciona Pessoa Fisica ou Pessoa Juridica |PJ|      ### PREENCHER COM PF ou PJ ###
+    Seleciona Pessoa Fisica ou Pessoa Juridica |PJ|        ### PREENCHER COM PF ou PJ ###
     Seleciona Cadastro Estrangeiro ou Resp Ativo |Responsavel Ativo|
     Informar o Nome |CLIENTE TESTE AUTOMACAO| e a Nacionalidade |BRASILEIRA| da Pessoa
-    Informar CPF ou CNPJ |PJ| nos campos apresentados    ### PREENCHER COM PF ou PJ ###
+    Informar CPF ou CNPJ |CNPJ| nos campos apresentados    ### PREENCHER COM PF ou CNPJ ###
+    Preencher Inscricao Municipal e Estadual
+    Pesquisa CEP
+    Informar os dados bancarios do responsavel
+    Clicar no botao <Cadastro de Nacionalidade>     ### AÇÃO OPCIONAL ###
+    Clicar no botao<Salvar>
+
 
 
 

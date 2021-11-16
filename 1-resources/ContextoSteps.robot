@@ -113,7 +113,7 @@ Criar Lista Itens Menu Xpath com Index
     [Return]    @{novaListaItensMenu}
 ### Clica nos botões de cabeçalho após a troca do frame
 
-Clicar no botão "${titulo}"${printscreen}
+Clicar no botao "${titulo}"${printscreen}
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Click Elemento por titulo    ${titulo}    120
 
@@ -271,7 +271,7 @@ Preencher Input inativo
     Sleep                               3
     Wait Until Element Is Visible       ${input}        120
     Sleep                               3
-    Input Text                          ${input}        ${text}
+    SeleniumLibrary.Input Text          ${input}        ${text}
 
 Preencher o Campo Input
     [Arguments]         ${ClickInput}    ${input}              ${text}
