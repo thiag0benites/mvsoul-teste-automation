@@ -38,10 +38,10 @@ MCALCDEPREC-001:Fluxo Principal
 # robot -v browser:firefox -t "MCALCDEPREC-001:Fluxo Principal" -d ./5-results/MCALCDEPREC-001 "3-tests/4-MATERIAIS/M_CALC_DEPREC.robot"
     #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "MCALCDEPREC-001"
     Acessar a tela "Materiais e Logística>Patrimônio>Depreciação>Cálculo da Depreciação do Bem"@nprint @las
-    #Validar Acesso a Tela |NomeTela|
-    Preencher o campo |Mês/Ano geração|
+    Validar Acesso a Tela
+    Preencher o campo Mês/Ano geração
     Clicar no botao [Gerar depreciação]
     Clicar no botao [Desfazer depreciações]
-    Clicar no botao Sim
+    Clicar no botao [Sim]
     Validar mensagem
     

@@ -20,3 +20,4 @@ ${deprecAtrasadas}      xpath=//*[@id="inp:tpDepreciacaoPendentes"]/button
 ${btnGerarDeprec}       id=btGerar
 ${listaItensDeprec}     xpath=//*[@id="grdItdeprecia"]/div[4]
 ${btnDesfazerDeprec}        id=btDesfazer
+${btnSim}               xpath=//*[@id="frames231"]
