@@ -208,6 +208,11 @@ Clicar no Campo e Preencher Informacao
     Sleep  1 
     Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
 
+Clicar Item e Selecionar da Lista
+    [Arguments]    ${CampoClick}          ${BotaoLov}        ${Item}           ${ItemLista}          
+    Click no Item                   ${CampoClick}   
+    Selecionar Item Na Lista        ${BotaoLov}        ${Item}         ${ItemLista}    
+
 Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     Unselect Frame
     Click Element                           ${BotaoBuscaTela}

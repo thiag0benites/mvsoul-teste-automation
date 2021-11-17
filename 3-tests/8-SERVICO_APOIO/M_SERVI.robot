@@ -26,7 +26,7 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            m_centro_custo
+${suite}            m_servi
 # Recebe dados do gerenciador
 ${dados}
 
@@ -35,5 +35,10 @@ SCR8SMSERVI-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR8SMSERVI-001:Fluxo Principal" -d ./5-results/SCR8SMSERVI-001 "3-tests/8-SERVICO_APOIO/M_SERVI.robot"
 # robot -v browser:firefox -t "SCR8SMSERVI-001:Fluxo Principal" -d ./5-results/SCR8SMSERVI-001 "3-tests/8-SERVICO_APOIO/M_SERVI.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMSERVI-001"
-    Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Recebimento de Solicitações"@nprint @las
-    Validar Acesso a Tela |Cadastro de Serviços|
+    Acessar a tela "Serviços de Apoio>Manutenção>Tabelas>Serviços"@nprint @las
+    Validar Acesso a Tela |${dados}[NomeTela]|
+    Preencher Campos Obrigatorios |${dados}[Descricao]| |${dados}[Peso]| |${dados}[ServReinf]| |${dados}[DMS]| |${dados}[CtContab]| |${dados}[CtCusto]| |${dados}[SPED]| |${dados}[HrMax]| |${dados}[MinMax]| |${dados}[HrMin]| |${dados}[MinMin]| |${dados}[Categoria]| |${dados}[Especie]| |${dados}[Classe]| |${dados}[SubClasse]| |${dados}[VlServ]| |${dados}[SIGFE]|
+    Validar Campos com Preenchimento Automatico |${dados}[CtContab]| |${dados}[CtCusto]| |${dados}[Especie]| |${dados}[Classe]| |${dados}[SubClasse]|
+    Clicar Botao Salvar
+    ### Retornar massa de dados para status inicial do teste ###
+    Excluir Servico Cadastrado |${dados}[Descricao]| |${dados}[MensagemEsperadaExcluir]| |${dados}[MensagemEsperadaSucesso]|    
