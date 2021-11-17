@@ -82,6 +82,7 @@ Clicar no botao <Cadastro de Nacionalidade> 
     Preencher Input inativo                    ${CampoDescriNacInat}       ${CampoDescriNacAtivo}       TESTE AUTOMACAO
     Click no Item                              ${BtnSalvar}
     Validar Item                               ${ValidNacinalidade}
+    Send Keys    tab        
     Click no Item                              ${FecharAba}    
 
 Clicar no botao<Salvar>

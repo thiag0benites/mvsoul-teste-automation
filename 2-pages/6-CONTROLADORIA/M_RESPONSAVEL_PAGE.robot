@@ -50,7 +50,7 @@ ${BtnBanco}                                     xpath=//*[@id="cdBanco"]/button
 ${BtnCodPais}                                   xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
 ${BtnSalvar}                                    xpath=//i[@class='mv-basico-salvar']
 ${BtnCadastroNac}                               xpath=//*[@id="btChamaNacionalidade"]
-${FecharAba}                                    xpath=//*[@id="react"]/div/div[1]/ul/li[2]/a[2]/i
+${FecharAba}                                    xpath=//*[@id="react"]/div/div[1]/ul/li[2]/a[2]
 
 
 ### VARIADOS  ###

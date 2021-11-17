@@ -42,7 +42,7 @@ SMF-8820 : Cadastrar Responsaveis
     Preencher Inscricao Municipal e Estadual
     Pesquisa CEP
     Informar os dados bancarios do responsavel
-    Clicar no botao <Cadastro de Nacionalidade>     ### AÇÃO OPCIONAL ###
+    # Clicar no botao <Cadastro de Nacionalidade>     ### AÇÃO OPCIONAL ###
     Clicar no botao<Salvar>
 
 
