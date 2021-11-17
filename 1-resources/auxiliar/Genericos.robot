@@ -32,12 +32,6 @@ Muda elemento Javascript
     Execute Javascript    arguments[0].class() = 'notification-item';    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
 
-Valida Mensagem
-    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
-    Wait Until Element Is Visible    ${MensagemRecebida}    120
-    Sleep    3
-    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
-
 Click Javascript
     [Arguments]    ${elemento}
     Sleep    3
@@ -250,5 +244,3 @@ Pegar data atual
     ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
     [Return]        ${CurrentDate}
     Log To Console      ${CurrentDate}
-
-    

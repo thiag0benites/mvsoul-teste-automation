@@ -282,6 +282,8 @@ Preencher o Campo Input
     Input Text                           ${input}              ${text}
     Sleep                                                      3
 
-Pegar data atual
-    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
-    Log    ${CurrentDate}
+Valida Mensagem
+    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
+    Wait Until Element Is Visible    ${MensagemRecebida}    120
+    Sleep    3
+    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
