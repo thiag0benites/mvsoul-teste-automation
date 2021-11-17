@@ -281,3 +281,7 @@ Preencher o Campo Input
     Wait Until Element Is Visible        ${input}              120
     Input Text                           ${input}              ${text}
     Sleep                                                      3
+
+Pegar data atual
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
+    Log    ${CurrentDate}
