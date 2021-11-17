@@ -39,4 +39,6 @@ SCR4MOCONSOLIDACAO-001:Fluxo principal
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Preencher campos mes e ano 
     Clicar no botão de confirmacao 
+    Validar mensagem de confirmação
+
     

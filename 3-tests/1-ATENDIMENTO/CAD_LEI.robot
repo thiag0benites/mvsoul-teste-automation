@@ -42,3 +42,4 @@ SMF-8593:Cadastro de Leitos
     Clicar no botão Executar 
     Preencher os campos da tabela |${dados}[leito]|,|${dados}[descResumida]|,|${dados}[enferm]|,|${dados}[acomod]|
     Clicar no botão Salvar do menu
+    Validar mensagem de confirmação

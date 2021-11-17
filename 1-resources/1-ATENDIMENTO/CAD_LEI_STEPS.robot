@@ -33,3 +33,8 @@ Preencher os campos da tabela |${leito}|,|${descResumida}|,|${enferm}|,|${acomod
     Click no Item                        ${campoAcomod}
     Sleep      2
     Preencher campo                      ${campoAcomodInput}                    ${acomod}
+
+Validar mensagem de confirmação ao cadastrar o leito
+    Valida Mensagem         ${MensagemSalvar}               Fim da Consolidação para o Mês 11/2021 .
+
+
