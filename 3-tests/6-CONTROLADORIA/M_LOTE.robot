@@ -13,8 +13,8 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../2-pages/6-CONTROLADORIA\M_LOTE_PAGE.robot
-Resource            ../../1-resources/6-CONTROLADORIA\M_LOTE_STEPS.robot
+Resource            ../../2-pages/6-CONTROLADORIA/M_LOTE_PAGE.robot
+Resource            ../../1-resources/6-CONTROLADORIA/M_LOTE_STEPS.robot
 Resource            ../../Config.robot
 
 
@@ -37,9 +37,10 @@ MLOTE-001:Fluxo Principal
 # robot -v browser:chrome -t "MLOTE-001:Fluxo Principal" -d ./5-results/MLOTE-001 "3-tests/6-CONTROLADORIA\M_LOTE.robot"
 # robot -v browser:firefox -t "MLOTE-001:Fluxo Principal" -d ./5-results/MLOTE-001 "3-tests/6-CONTROLADORIA\M_LOTE.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "MLOTE-001"
-    Acessar a tela "Controladoria>Contabilidade>Lançamentos>Lotes>Cadastro/Fechamento de lote"@nprint @las
-    Preencher o campo Descrição |${dados}[descricao]
-    Preencher o campo Data final |${dados}[dataFinal] a data do lançamento final do lote
+    #Acessar a tela "Controladoria>Contabilidade>Lançamentos>Lotes>Cadastro /Fechamento de lote"@nprint @las
+    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
+    Preencher campo Descrição |${dados}[descricao]
+    Preencher campo Data final |${dados}[dataFinal] a data do lançamento final do lote
     Clicar no botão [Salvar]
     Clicar no botao [Sim]
     Valida Mensagem         ${mensagemEsperada}     |${dados}[msgEsperada]|

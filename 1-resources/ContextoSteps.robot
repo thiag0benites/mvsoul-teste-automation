@@ -6,7 +6,7 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
-Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
+#Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
 
 
 *** Variable ***
@@ -216,7 +216,7 @@ Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     IF    "${las}" == "@las"
         # Sleep    1
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    120
+        Wait Until Element Is Visible    ${classLasDisplay}    180
         Unselect Frame
         # Sleep    1
         Send Keys    tab
