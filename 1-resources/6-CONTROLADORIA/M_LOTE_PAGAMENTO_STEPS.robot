@@ -22,13 +22,10 @@ Acione a tecla pesquisar contas a pagar
     Click no Item                                 ${BtnPesquisarContasPagar} 
 
 Pesquisar por data de vencimento/previsao de pagamento
-    #Click no Item                                 ${BtnData}
-    
-    #Clicar Botao se estiver Visivel               ${BtnData}
-    Preencher campo                               ${BtnData}                         Vencimento
-    #Select From List By Label                     ${BtnData}                         vencimento                
-    Preencher campo                               ${BtnDataInicial}                  01/01/2021
-    Preencher campo                               ${BtnDataFinal}                    10/11/2021
+    Click no Item                                 ${BtnData}
+    Click no Item                                 ${CampoSelecionado}                   
+    Preencher campo                               ${BtnDataInicial}                                    01/01/2021
+    Preencher campo                               ${BtnDataFinal}                                      10/11/2021
     Click no Item                                 ${BtnPesquisarDatas}
     
 
@@ -38,5 +35,6 @@ Clicar em associar
 Aprovar o lote alterando do nivel 0 para o proximo nivel
     Click no Item                                 ${CheckBox}
     Click no Item                                 ${BtnAlterarNivel}
-    Seleciona Item Combobox                       ${BtnAutorizacao}                    Nivel 1
-    Click no Item                                 ${BtnOkNivel}    
+    Seleciona Item Combobox                       ${BtnAutorizacao}                    Nível 1
+    Click no Item                                 ${BtnOkNivel}
+    Valida Mensagem                               ${MsgConfirmacao}                    Registros gravados com sucesso
