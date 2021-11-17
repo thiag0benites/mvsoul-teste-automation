@@ -35,7 +35,7 @@ Pesquisar Pelo Paciente
     Click no Item                           ${BotaoAtender}
 
 Preencher Campos Obrigatorios
-    Click no Item                           ${BotaoSimValidAtend}
+    #Click no Item                           ${BotaoSimValidAtend}    ### Usado para atendimento criado com menos de 24h
     Selecionar Item Na Lista                ${BotaoLovPrestador}                GEISHA ABREU SOARES DE PINA         GEISHA ABREU SOARES DE PINA
     Selecionar Item Na Lista                ${BotaoLovOrigem}                   ORIGEM URGENCIA                     ORIGEM URGENCIA
     Selecionar Item Na Lista                ${BotaoLovLocalProced}              DOMICILIO                           DOMICILIO
@@ -55,9 +55,9 @@ Validar Informacoes Carteira
 
 Confirmar Atendimento  
     Click Elemento por titulo               Salvar
-    Click no Item                           ${BotaoSimValidAtend}
-    Click no Item                           ${BotaoSimValidAtend}
-    Click no Item                           ${BotaoSimValidAtend}
+    #Click no Item                           ${BotaoSimValidAtend}    ### Usado para atendimento criado com menos de 24h
+    #Click no Item                           ${BotaoSimValidAtend}
+    #Click no Item                           ${BotaoSimValidAtend}
     Click no Item                           ${BotaoOKConfAtend}
     Valida Mensagem                         ${MensagemSucesso}                  Registro Salvo com Sucesso!
 
