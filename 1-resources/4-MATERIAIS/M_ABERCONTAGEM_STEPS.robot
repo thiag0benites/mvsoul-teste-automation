@@ -10,13 +10,11 @@ Resource          ../../2-pages/4-MATERIAIS/M_ABERCONTAGEM_PAGE.robot
 
 *** Keywords ***
 Usuário deverá preencher o campo <Estoque>|${estoque}|,|${motivo}|
-    Wait Until Element is Visible    ${estoqueTable}            120
     Preencher campo                  ${estoqueTable}           ${estoque} 
     Sleep                            5
 
 Usuário deverá preencher o campo <Produto>|${produto01}|,|${produto02}|,|${produto03}|,|${produto04}|,|${produto05}|,|${produto06}|,|${produto07}|${print}
-    Wait Until Element is Visible    ${produtoTable}            120
-    Click Element                    ${produtoTable}
+    Click no Item                    ${produtoTable}
     Preencher campo                  ${produtoTableInput}           ${produto01}
     Clicar no botão Adicionar
     Sleep                            3

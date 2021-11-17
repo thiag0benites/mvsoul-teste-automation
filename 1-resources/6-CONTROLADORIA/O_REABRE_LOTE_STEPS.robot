@@ -17,6 +17,7 @@ Acessa e Preenche Campo Codigo |${Item}|
     Sleep    5
     Click no Item                             ${CampoPesquisa}
     SeleniumLibrary.Input Text                ${CampoPesquisa}                %${Item}  
+    # Validar Informacao Item                   ${CampoDescricao}               ${Item}
     Click no Item                             ${BtnFiltrar}
     Click no Item                             ${BtnOk}  
     Click no Item                             ${BtnExecutarConsulta}
@@ -25,6 +26,7 @@ Seleciona Lote para Reabrir E Preenche Justificativa
     Click no Item                              ${SelecionaLote}
     Wait Until Element Is Visible              ${CampoTextoJustif}            30
     SeleniumLibrary.Input Text                 ${CampoTextoJustif}            Teste de automação, Reabertura de lote
+    # Validar Informacao Item                    ${CampoTextoJustif}            Teste de automação, Reabertura de lote
     Click no Item                              ${BtnOkRegRelatorio}
     Click no Item                              ${BtnReabrirLote}
     Validar Item                               ${ValidMsg}

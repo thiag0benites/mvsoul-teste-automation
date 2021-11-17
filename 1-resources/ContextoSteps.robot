@@ -125,7 +125,7 @@ Preencher campo
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Input Text    ${elemento}    ${valor}
     FOR    ${i}    IN RANGE    1    11
-        Sleep    1
+        Sleep    0.5
         ${textoAtual}    Get Element Attribute    ${elemento}    value
         # ${textoAtual}    SeleniumLibrary.Get Text    ${elemento}
         IF    "${textoAtual}" == "${valor}"
@@ -254,7 +254,7 @@ Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${prin
     #    Fail    *** Falha na pesquisa!'
     # END
     Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
-# Validar Ausencia de Resultados[${Locator}]${print}
+# Validar Ausencia de Resultados[${Locator}]${printf}
 #    ${Condicao}    Page Should Contain Element    ${Locator}
 #    Wait Until Element Is Visible    ${Locator}    10
 #    Sleep    2
@@ -281,3 +281,8 @@ Preencher o Campo Input
     Wait Until Element Is Visible        ${input}              120
     Input Text                           ${input}              ${text}
     Sleep                                                      3
+
+Validar cadastro realizado
+    Sleep       30
+    Valida Mensagem                  ${MensagemToast}                Registros gravados com sucesso (1 registros gravados).
+

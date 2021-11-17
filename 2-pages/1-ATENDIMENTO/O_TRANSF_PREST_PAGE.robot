@@ -16,4 +16,4 @@ ${textareaMotivo}                   xpath=//textarea[@id='inp:dsMotivo']
 ${servicoTable}                     xpath=//div[@class='slick-cell b5 f5 selected ui-fixed-width']
 ${servicoTableInput}                xpath=//div[@class='slick-cell b5 f5 selected ui-fixed-width active editable']//input
 ${buttonTransferencia}              xpath=//button[@id='butConfTranf']
-${atendimento}                      xpath=//span[text()="1000001675"]
+${atendTable}                       xpath=//div[@class='slick-cell b0 f0 selected ui-fixed-width']//div[contains(text(),'1000001675')]

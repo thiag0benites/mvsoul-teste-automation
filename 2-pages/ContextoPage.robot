@@ -18,4 +18,5 @@ ${btnNaoNotifications}  xpath=//li[@class='notification-buttons']//button[2]
 ${btnSimNotifications}  xpath=//li[@class='notification-buttons']//button[1]
 ${BotaoBuscaTela}       xpath=//*[@class='mv-basico-menu dp32']
 ${CampoBuscaTela}       xpath=//input[@placeholder="Search"]
+${MensagemToast}        xpath=//p[@class="notifications-item-text"]
 *** Keywords ***

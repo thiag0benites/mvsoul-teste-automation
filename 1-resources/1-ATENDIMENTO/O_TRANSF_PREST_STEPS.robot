@@ -22,7 +22,7 @@ Preencher os campos |${numAtend}|,|${nomePrestadorDest}|,|${motivoTransferencia}
 
 Validar atendimento 
     Sleep                            2
-    Validar Item   ${atendimento}
+    Validar Item   ${atendTable}
 
 Confirmar Transferencia de Prestador
     Click Element                    ${buttonTransferencia}
