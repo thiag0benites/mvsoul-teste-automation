@@ -9,14 +9,21 @@ Library    SeleniumLibrary
 
 *** Variable ***
 
-${CurrentDate}
-
 *** Keywords ***
 
-Preencher o campo [Descrição]
-    
-Preencher o campo [Data final] a data do lançamento final do lote
-    
+Preencher o campo Descrição |${descricao}|
+    Wait Until Element Is Visible      ${cpDescricao}       180 
+    Click Element       ${cpDescricao}
+    Preencher Campo        ${cpDescricao}       ${descricao}   
+    Press Keys    ${cpDescricao}    ENTER
+    Sleep      3
+
+Preencher o campo Data final |${dataFinal}| a data do lançamento final do lote
+    Click Element       ${dtFinal}
+    Preencher Campo        ${dtFinal}       ${dataFinal}
+    Press Keys    ${dtFinal}    ENTER
+    Sleep      3
+   
 Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    60
@@ -30,4 +37,5 @@ Clicar no botao [${nomeBtn}]
     END
     
 Clicar duas vezes no campo [Lote] ou [Descrição]
-    
+    Double Click Element       ${cpDescricao}
+    Sleep 3
