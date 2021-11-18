@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/M_CON_REC_PART_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,7 +21,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_CON_REC_PART_STEPS.robot
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
-
 *** Variable ***
  # Suite registrada no gerenciador de dados
 ${suite}          m_con_rec_part
@@ -31,7 +28,6 @@ ${suite}          m_con_rec_part
 ${dados}
 
 *** Test Case ***
-
 SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto
 # robot -v browser:chrome -t "SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto" -d ./5-results/SMF-6210 "3-tests/6-CONTROLADORIA/M_CON_REC_PART.robot"
 # robot -v browser:firefox -t "SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto" -d ./5-results/SMF-6210 "3-tests/6-CONTROLADORIA/M_CON_REC_PART.robot"
