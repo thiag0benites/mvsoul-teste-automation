@@ -27,4 +27,4 @@ Seleciona Lote para Reabrir E Preenche Justificativa
     SeleniumLibrary.Input Text                 ${CampoTextoJustif}            Teste de automação, Reabertura de lote
     Click no Item                              ${BtnOkRegRelatorio}
     Click no Item                              ${BtnReabrirLote}
-    Validar Item                               ${ValidMsg}
+    Validar Pop-Pup de Alerta e Clicar         ${ValidMsg}                    ${BtnOkMensagem}

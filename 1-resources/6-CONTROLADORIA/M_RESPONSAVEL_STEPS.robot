@@ -87,6 +87,7 @@ Clicar no botao <Cadastro de Nacionalidade> 
 
 Clicar no botao<Salvar>
     Click no Item                              ${BtnSalvar}
+    Validar Item                               ${ValidNacinalidade}
     
     
 
