@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../2-pages/6-CONTROLADORIA/M_FECH_CONT_PAGE.robot
 Resource            ../../1-resources/6-CONTROLADORIA/M_FECH_CONT_STEPS.robot
-Resource            ../../Config.robot
 
 
 ### Inicia/fecha sessão do navegador por suite de teste
