@@ -40,4 +40,3 @@ SCR8SMSOLICITACAOOS-001:Fluxo Principal
     Preencher Campos Obrigatorios |${dados}[Descricao]| |${dados}[DtPrev]| |${dados}[HrPrev]| |${dados}[Especialidade]| |${dados}[TipoOS]| |${dados}[BemPatrimonial]| |${dados}[Oficina]| |${dados}[Solicitante]|
     Preencher Aba Servico |${dados}[CdServico]| |${dados}[CdFuncionario]|
     Salvar Ordem de Servico |${dados}[MensagemEsperadaSucesso]| |${dados}[MensagemEsperadaConfirma]|
-    Sleep  5
