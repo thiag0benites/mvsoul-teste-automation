@@ -33,6 +33,7 @@ Clicar no Botao |${nomeBtn}|
     END    
 
 
-    
+Validar Ordem de Compra
+        Validar Informacao Item  ${campoNomeFornecedor}    1000 MARCAS  
           
 

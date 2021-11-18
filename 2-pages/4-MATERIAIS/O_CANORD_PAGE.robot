@@ -14,6 +14,8 @@ ${SLEEP}      3
 
 ${inputCodigo}                       xpath=//input[@class='editor-text mode-search']
 
+${campoNomeFornecedor}               xpath=//div[@class='slick-cell b2 f2 selected']//div[@data-row='0']
+
 ${btnProdutos}                       xpath=//button[@data-member='BTN_PRODUTOS']
 
 ${btnCancelarQtdePendente}           xpath=//button[@data-member='BTN_CANCELA_PEND']

@@ -40,3 +40,5 @@ SCR4MCORDCOM-001:Consultar Ordem de Compra
     Validar Acesso a Tela |Ordens de Compra|
     Preencher Código |${dados}[codigo]|
     Clicar no botão Executar
+    Validar Ordem de Compra pelo fornecedor
+   

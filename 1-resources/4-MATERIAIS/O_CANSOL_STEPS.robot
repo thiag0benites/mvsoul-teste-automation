@@ -32,6 +32,10 @@ Clicar no Botao |${nomeBtn}|
     END    
 
 
+Validar Código
+    Validar Informacao Item  ${campoDescricaoSetor}    AMBULATORIO HOBRA
+
+
     
           
 

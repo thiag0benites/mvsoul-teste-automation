@@ -37,6 +37,7 @@ SRC4OCANORD-001:Rateio - Ordem de Compra
     Acessar a tela "Materiais e Logística>Compras>Compras>Ordem de Compra>Cancelamento"@nprint @las
     Pesquisar por uma ordem de compras |${dados}[codigo]| 
     Clicar no botão Executar
+    Validar Ordem de Compra 
     Clicar no Botao |Produtos| 
     Clicar no Botao |Cancelar Qtde. Pendente|
     Valida Mensagem        ${mensagemCancelarQntPendente}         Solicitação de compras não aprovada!

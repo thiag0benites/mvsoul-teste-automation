@@ -36,7 +36,7 @@ Clicar no campo [${nomeCampo}]
         Sleep    1
     END
 
-Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
+Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    60
         Click Element    ${btnSalvar}
@@ -52,12 +52,10 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Wait Until Element Is Visible    ${btnConcluir}    30
         Sleep    1
         Click Element    ${btnConcluir}
-        # Click Javascript    ${btnInternar}
         Sleep    1
-    ELSE IF    '${nomeBtn}' == 'Ok'
+    ELSE IF    '${nomeBtn}' == 'OK'
         Wait Until Element Is Visible    ${btnOk}    30
         Sleep    1
         Click Element    ${btnOk}
-        # Click Javascript    ${btnInternar}
         Sleep    3
     END

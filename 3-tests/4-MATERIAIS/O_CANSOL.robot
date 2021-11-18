@@ -38,6 +38,7 @@ SRC4OCANSOL-001:Cancelar uma solicitação de compra
     Clicar no botão Pesquisar
     Preencher o Código |${dados}[codigo]|
     Clicar no botão Executar 
+    Validar Código
     Clicar no botão de Autorização 
     Clicar no botão de Não Autorizar 
     Valida Mensagem        ${mensagemNaoAprovada}         Solicitação de compras não aprovada!
