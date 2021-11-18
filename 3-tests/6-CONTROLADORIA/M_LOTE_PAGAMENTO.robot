@@ -26,19 +26,20 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          m_lote_pagamento
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 
-SCR6CMLOTEPAGAMENTO-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR6CMLOTEPAGAMENTO-001:Fluxo Principal" -d ./5-results/SCR6CMLOTEPAGAMENTO-001 "3-tests/6-CONTROLADORIA/M_LOTE_PAGAMENTO.robot"
-# robot -v browser:firefox -t "SCR6CMLOTEPAGAMENTO-001:Fluxo Principal" -d ./5-results/SCR6CMLOTEPAGAMENTO-001 "3-tests/6-CONTROLADORIA/M_LOTE_PAGAMENTO.robot"
+SMF-5451 : Agrupar os títulos no Lote de Pagamento pesquisando por Data de vencimento
+# robot -v browser:chrome -t "SMF-5451 : Agrupar os títulos no Lote de Pagamento pesquisando por Data de vencimento" -d ./5-results/SMF-5451 "3-tests/6-CONTROLADORIA/M_LOTE_PAGAMENTO.robot"
+# robot -v browser:firefox -t "SMF-5451 : Agrupar os títulos no Lote de Pagamento pesquisando por Data de vencimento" -d ./5-results/SMF-5451 "3-tests/6-CONTROLADORIA/M_LOTE_PAGAMENTO.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5451"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Pagamentos>Lotes de Pagamentos"@nprint @las
-    Atribuir no campo descricao uma nomenclatura 
+    Atribuir no campo descricao uma nomenclatura |${dados}[Descricao]|
     Aperte em Salvar
     Acione a tecla pesquisar contas a pagar
-    Pesquisar por data de vencimento/previsao de pagamento
+    Pesquisar por data de vencimento/previsao de pagamento |${dados}[DtInicial]| |${dados}[DtFinal]|
     Clicar em associar
-    Aprovar o lote alterando do nivel 0 para o proximo nivel
+    Aprovar o lote alterando do nivel 0 para o proximo nivel |${dados}[Autorizacao]| |${dados}[MsgConfirmacao]|

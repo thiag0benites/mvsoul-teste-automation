@@ -12,8 +12,8 @@ Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords ***
 
-Atribuir no campo descricao uma nomenclatura 
-    Preencher campo                               ${CampoDescricao}                 TESTEFLAVIO3
+Atribuir no campo descricao uma nomenclatura |${Descricao}|
+    Preencher campo                               ${CampoDescricao}                    ${Descricao}
 
 Aperte em Salvar
     Click no Item                                 ${BtnSalvar}
@@ -21,20 +21,20 @@ Aperte em Salvar
 Acione a tecla pesquisar contas a pagar
     Click no Item                                 ${BtnPesquisarContasPagar} 
 
-Pesquisar por data de vencimento/previsao de pagamento
+Pesquisar por data de vencimento/previsao de pagamento |${DtInicial}| |${DtFinal}|
     Click no Item                                 ${BtnData}
     Click no Item                                 ${CampoSelecionado}                   
-    Preencher campo                               ${BtnDataInicial}                                    01/01/2021
-    Preencher campo                               ${BtnDataFinal}                                      10/11/2021
+    Preencher campo                               ${BtnDataInicial}                    ${DtInicial}
+    Preencher campo                               ${BtnDataFinal}                      ${DtFinal}
     Click no Item                                 ${BtnPesquisarDatas}
     
 
 Clicar em associar
     Click no Item                                 ${BtnAssociar}
 
-Aprovar o lote alterando do nivel 0 para o proximo nivel
+Aprovar o lote alterando do nivel 0 para o proximo nivel |${Autorizacao}| |${MsgEsperadaConfirmacao}|
     Click no Item                                 ${CheckBox}
     Click no Item                                 ${BtnAlterarNivel}
-    Seleciona Item Combobox                       ${BtnAutorizacao}                    Nível 1
+    Seleciona Item Combobox                       ${BtnAutorizacao}                     ${Autorizacao}
     Click no Item                                 ${BtnOkNivel}
-    Valida Mensagem                               ${MsgConfirmacao}                    Registros gravados com sucesso
+    Valida Mensagem                               ${MsgConfirmacao}                     ${MsgEsperadaConfirmacao}
