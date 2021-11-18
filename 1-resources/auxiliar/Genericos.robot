@@ -39,21 +39,21 @@ Click Javascript
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
 
-Click na imagem sikuli
-    [Arguments]    ${imagem}    ${timeout}=${60}
-    Add Image Path    ${imagens}
-    ${exist}    Exists    ${imagem}    ${timeout}
-    Run Keyword If    ${exist}==True    SikuliLibrary.Click    ${imagem}
-    Log To Console    *** Efetuado o click em ${imagem}
+# Click na imagem sikuli
+#     [Arguments]    ${imagem}    ${timeout}=${60}
+#     Add Image Path    ${imagens}
+#     ${exist}    Exists    ${imagem}    ${timeout}
+#     Run Keyword If    ${exist}==True    SikuliLibrary.Click    ${imagem}
+#     Log To Console    *** Efetuado o click em ${imagem}
 
-Click na imagem
-    [Arguments]    ${imagem}    ${timeout}=${60}
-    Log    *** Imagem Procurada: ${imagem}
-    Log To Console    *** Imagem Procurada: ${imagem}
-    ImageHorizonLibrary.Wait For    ${imagem}    ${timeout}
-    Sleep    2
-    ImageHorizonLibrary.Click Image    ${imagem}
-    Log To Console    *** Efetuado o click em ${imagem}
+# Click na imagem
+#     [Arguments]    ${imagem}    ${timeout}=${60}
+#     Log    *** Imagem Procurada: ${imagem}
+#     Log To Console    *** Imagem Procurada: ${imagem}
+#     ImageHorizonLibrary.Wait For    ${imagem}    ${timeout}
+#     Sleep    2
+#     ImageHorizonLibrary.Click Image    ${imagem}
+#     Log To Console    *** Efetuado o click em ${imagem}
 
 Seleciona frame
     [Arguments]    ${elementoFrame}    ${timeout}=${60}
