@@ -37,7 +37,7 @@ MLOTE-001:Fluxo Principal
 # robot -v browser:chrome -t "MLOTE-001:Fluxo Principal" -d ./5-results/MLOTE-001 "3-tests/6-CONTROLADORIA\M_LOTE.robot"
 # robot -v browser:firefox -t "MLOTE-001:Fluxo Principal" -d ./5-results/MLOTE-001 "3-tests/6-CONTROLADORIA\M_LOTE.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "MLOTE-001"
-    Acessar "M_LOTE"@nprint @las
+    Acessar |${dados}[tela]|@nprint @las
     Preencher Campo Descrição |${dados}[descricao]|
     Preencher Campo Data final |${dados}[dataFinal]| a data do lançamento final do lote
     Clicar no botao [Salvar]

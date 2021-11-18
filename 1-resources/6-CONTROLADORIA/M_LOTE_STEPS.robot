@@ -11,10 +11,10 @@ Library    SeleniumLibrary
 
 
 *** Keywords ***
-Acessar "M_LOTE"${printscreen} ${las}
+Acessar |${tela}|${printscreen} ${las}
     Unselect Frame
     Click Element    ${HomeXpathBtnPesquisa}
-    Preencher campo  ${HomeXpathBtnPesquisaInput}       M_LOTE
+    Preencher campo  ${HomeXpathBtnPesquisaInput}       ${tela}
     Sleep    1
     Click Element    ${ScreenCadastroFechamentoLote} 
 
