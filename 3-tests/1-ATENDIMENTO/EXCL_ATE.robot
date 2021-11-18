@@ -32,10 +32,10 @@ ${suite}            EXCL_ATE
 ${dados}
 
 *** Test Case ***
-SMF-10357:Excluir atendimento de internacao
-# robot -v browser:chrome -t "SMF-10357:Excluir atendimento de internacao" -d ./5-results/EXCL_ATE_SMF_10357 "3-tests/1-ATENDIMENTO/EXCL_ATE.robot"
-# robot -v browser:firefox -t "SMF-10357:Excluir atendimento de internacao" -d ./5-results/EXCL_ATE_SMF_10357 "3-tests/1-ATENDIMENTO/EXCL_ATE.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10357"
+SRC1AEXCLATE-001:Fluxo principal
+# robot -v browser:chrome -t "SRC1AEXCLATE-001:Fluxo principal" -d ./5-results/EXCL_ATE_SMF_10357 "3-tests/1-ATENDIMENTO/EXCL_ATE.robot"
+# robot -v browser:firefox -t "SRC1AEXCLATE-001:Fluxo principal" -d ./5-results/EXCL_ATE_SMF_10357 "3-tests/1-ATENDIMENTO/EXCL_ATE.robot"
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AEXCLATE-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Exclusão de Atendimento"@nprint @las
     Usuário deverá preencher os campos |${dados}[numAtend]|,|${dados}[motivo]|
     Clicar no botão Excluir Atendimento

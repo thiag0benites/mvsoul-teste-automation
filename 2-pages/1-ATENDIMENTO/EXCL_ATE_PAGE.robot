@@ -10,4 +10,4 @@ Resource          ../Config.robot
 ### Elementos da Pagina de EXCL_ATE
 ${btnExcluirAtendimento}                        xpath=//button[@data-member='BTN_EXCLUI']
 ${atendimento}                                  xpath=//input[@id='inp:cdAtendimento']
-${motivo}                                       xpath=//input[@id='inp:dspDsMotivo']
+${CampoMotivo}                                  xpath=//input[@id='inp:dspDsMotivo']
