@@ -14,6 +14,7 @@ Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada |${TipoDeConta
     Seleciona Item Combobox                   ${CampoTipoConta}    ${TipoDeConta}
 Informar Nome |${Cliente}|
     Clicar Botao se estiver Visivel           ${BtnPopupCliente}
+    Replace String    string    search_for    replace_with
     Clicar no Campo e Preencher Informacao    ${CampoPreencherFiltro}    ${CampoPreencherFiltro}    ${Cliente}
     Clicar Botao se estiver Visivel           ${BtnFiltrar}
     Click no Item                             ${CampoNomeFantasiaCliente}

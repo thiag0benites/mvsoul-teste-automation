@@ -22,12 +22,28 @@ Selecionar o Tipo de Recibo para Imprimir
     Clicar Botao se estiver Visivel           ${BtnRecebimento}
 Executar Pesquisa
     Clicar Botao se estiver Visivel           ${BtnExecutarPesquisa}
-#Imprimir Recibo
-#    Click no Item                             ${ColunaStatus}
-
-
-#Clicar Botao se estiver Aguardando
-#    [Arguments]             ${Botao}                        
-#    ${Status}               Run Keyword And Return Status           Wait Until Element Is Visible                 ${BtnImprimir}          
-#    Run Keyword If          '${PrimeiraLinhaStatus}' == 'Aguardando'               Click no Item                  ${BtnImprimir}                    
-    #ELSE IF                 
+Imprimir Recibo
+    Click no Item                             ${StatusAguardando}
+    Clicar Botao se estiver Visivel           ${BtnImprimir}
+    Clicar Botao se estiver Visivel           ${BtnImprimirReciboPag}
+Limpar Pesquisa
+    Clicar Botao se estiver Visivel           ${BtnLimparPesquisa}
+Executar Reimpressão
+    Clicar Botao se estiver Visivel           ${BtnExecutarPesquisa}
+    Click no Item                             ${StatusEmitido}
+    Clicar Botao se estiver Visivel           ${BtnReimpressao}
+    Clicar Botao se estiver Visivel           ${BtnImprimirReciboPag}
+Cancelar Recibo
+    Click no Item                             ${StatusAguardando}
+    Clicar Botao se estiver Visivel           ${BtnImprimir}
+    Clicar Botao se estiver Visivel           ${BtnImprimirReciboPag}
+    Click no Item                             ${StatusEmitido}
+    Clicar Botao se estiver Visivel           ${BtnMoticoCancel}
+    Clicar no Campo e Preencher Informacao    ${CampoFiltroMotCancel}    ${CampoFiltroMotCancel}    $BORDERO REAUTILIZAVEL
+    Clicar Botao se estiver Visivel           ${BtnFiltrar}
+    Clicar Botao se estiver Visivel           ${BtnOk}
+    Clicar Botao se estiver Visivel           ${BtnCancel}
+Cadastrar Responsável
+    Clicar Botao se estiver Visivel           ${BtnCadastrarResp}
+Finalizar Sistema
+    Click no Item                             ${SairDoSistema}

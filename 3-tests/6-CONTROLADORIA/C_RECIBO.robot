@@ -39,4 +39,8 @@ SMF-6378 : Imprimir Recibos
     Selecionar o Tipo de Recibo para Imprimir
     Executar Pesquisa
     Imprimir Recibo
-    Imprimir Recibo
+    Limpar Pesquisa
+    Executar Reimpressão
+    Cancelar Recibo
+    Cadastrar Responsável
+    Finalizar Sistema

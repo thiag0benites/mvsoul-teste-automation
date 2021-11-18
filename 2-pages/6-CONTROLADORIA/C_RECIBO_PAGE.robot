@@ -8,7 +8,7 @@ Resource    ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-
+${CampoFiltroMotCancel}                            xpath=//*[@id="#filterLov"]
 
 
 ### Botoes ###
@@ -20,9 +20,18 @@ ${BtnPagamento}                                    xpath=//*[@id="inp:snPagament
 ${BtnDevolucaoDepAnt}                              xpath=//*[@id="inp:snDevolucaoCaucao_btn"]
 ${BtnExecutarPesquisa}                             xpath=//*[@id="btnPesquisa"]
 ${BtnImprimir}                                     xpath=//*[@id="btnImprimir"]
+${BtnImprimirReciboPag}                            xpath=//button[@data-member='BTN_IMPRIMIR'][@class='ui-widget ui-button ui-center-horizontal ui-center-vertical btn btn-default ui-state-default ui-button-text-only mode-edit']
+${BtnLimparPesquisa}                               xpath=//*[@id="btnLimpa"]
+${BtnReimpressao}                                  xpath=//*[@id="btnReImprimir"]
+${BtnMoticoCancel}                                 xpath=//*[@id="cdMotivoCanc"]/button
+${BtnFiltrar}                                      xpath=//*[@id="btfilter"]
+${BtnOk}                                           xpath=//*[@id="btok"]
+${BtnCancel}                                       xpath=//*[@id="btnCancelar"]
+${BtnCadastrarResp}                                xpath=//*[@id="btChamaResp"]
 
 
 
 ### Diversos ###
-${ColunaStatus}                                    xpath=//*[@id="slickgrid_727657grdRecibo_col3_lbl"]
-${PrimeiraLinhaStatus}                             xpath=//*[@id="grdRecibo"]/div[4]/div[3]/div/div[1]/div[4]/div
+${StatusAguardando}                               xpath=//div[@data-member='TP_STATUS'][@title='Aguardando']
+${StatusEmitido}                                  xpath=//div[@data-member='TP_STATUS'][@title='Emitido']
+${SairDoSistema}                                  xpath=//*[@id="tb-exit"]/a
