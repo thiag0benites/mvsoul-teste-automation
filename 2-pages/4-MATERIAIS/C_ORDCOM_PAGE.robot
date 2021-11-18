@@ -10,10 +10,5 @@ Resource    ../../Config.robot
 *** Variables ***
 ${BROWSER}    chrome
 ${SLEEP}      3
-
-
-
-        
-
 ${inputCodigo}                        xpath=//input[@class='editor-text mode-search']
 
