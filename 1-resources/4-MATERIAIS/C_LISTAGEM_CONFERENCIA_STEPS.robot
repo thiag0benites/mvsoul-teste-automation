@@ -11,16 +11,18 @@ Resource                            ../../2-pages/4-MATERIAIS/C_LISTAGEM_CONFERE
 
 *** Keywords ***
 
-Campo Previsao
-    Click no Item                                           ${BtnCodigo}
-    Clicar no Campo e Preencher Informacao                  ${CampoFiltro}      ${CampoFiltro}      %TESTE LUIZ HENRIQUE
-    Click no Item                                           ${BtnFiltrar} 
-    Click no Item                                           ${BtOk}
-    Click no Item                                           ${BtnConsultar}
-   
-Selecionar a Previsao   
-    Click no Item                                           ${BtnCheckBoxCt34421}
-    Click no Item                                           ${BtnConfirmar}
-    Validar Pop-Pup de Alerta e Clicar                      ${Alerta}           ${BtnAlerta}
-    Sleep   3
+Consultar Lista dos Processos a Serem Validados
+    Click no Item                                           ${btnPesquisar}
+    Click no Item                                           ${BtnExecutarConsulta} 
 
+   
+Validacao dos Processo |${Processo}||${MsgEsperada1}||${MsgEsperada2}|
+    Click no Item                                           ${CampoaValidar}
+    Click no Item                                           ${BtnValidar}
+    ${MsgEsperada1}                                         Replace String    ${MsgEsperada1}    processo    ${Processo}
+    Valida Mensagem                                         ${Alerta}    ${MsgEsperada1}
+    Click no Item                                           ${BtnAlerta}
+    ${MsgEsperada2}                                         Replace String    ${MsgEsperada2}    processo    ${Processo}
+    Valida Mensagem                                         ${Alerta}    ${MsgEsperada2}
+    Click no Item                                           ${BtnOk}
+    

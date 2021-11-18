@@ -9,18 +9,19 @@ Resource    ../../Config.robot
 *** Variables ***
 
 ### Campos ###
-${CampoaValidar}                   xpath=//div[@title='Conferida'] 
-
+${CampoDescricao}                   xpath=//input[@class='editor-text mode-edit']
+${CampoTipo}                        xpath=//div[@data-member='TP_ESTOQUE']/..
 
 ### Botoes ###
-${btnPesquisar}                    xpath=//*[@id="tb-search"]/a
-${BtnValidar}                      xpath=//button[@id='btnValidar']
-${BtnAlerta}                       xpath=//button[@class='btn btn-primary'][contains(text(),"Sim")]
-${BtnExecutarConsulta}             xpath=//a[@title='Executar Consulta']
-${BtnOk}                           xpath=//button[@class='btn btn-primary'][contains(text(),"OK")]
+${btnTipo}                         xpath=//input[@id='undefined_ac']
+${BtnValidar}                      xpath=
+${BtnAlerta}                       xpath=
+${BtnExecutarConsulta}             xpath=
+${BtnOk}                           xpath=
 
 ### Diversos ###
 ${Alerta}                          xpath=//p[@class='notifications-item-text']
+
 
 
 
