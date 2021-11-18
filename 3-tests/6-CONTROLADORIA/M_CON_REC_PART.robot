@@ -34,8 +34,3 @@ SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Cadastros>Previsão>Geração de Contas a Receber"@nprint @las
     Campo Previsao |teste automacao|
     Selecionar a Previsao
-
-
-
-
-
