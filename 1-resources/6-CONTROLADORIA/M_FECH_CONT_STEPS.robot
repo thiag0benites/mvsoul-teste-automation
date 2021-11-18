@@ -5,7 +5,6 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/6-CONTROLADORIA/M_FECH_CONT_PAGE.robot
-Library    SeleniumLibrary
 
 *** Variable ***
 
