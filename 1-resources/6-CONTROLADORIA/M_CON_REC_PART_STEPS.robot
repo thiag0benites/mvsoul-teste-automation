@@ -18,10 +18,7 @@ Campo Previsao |${Item}|
     Click no Item                                           ${BtOk}
     Click no Item                                           ${BtnConsultar}
    
-Selecionar a Previsao   
-                             
+Selecionar a Previsao                           
     Click no Item                                           ${BtnCheckBox}
     Click no Item                                           ${BtnConfirmar}
     Validar Pop-Pup de Alerta e Clicar                      ${Alerta}           ${BtnAlerta}
-    
-
