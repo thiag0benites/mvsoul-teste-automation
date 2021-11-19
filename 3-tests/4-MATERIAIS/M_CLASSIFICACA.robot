@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 
-Resource            ../../1-resources/4-MATERIAIS/M_ESTOQUE_STEPS.robot
+Resource            ../../1-resources/4-MATERIAIS/M_CLASSIFICACA_STEPS.robot
 
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -25,20 +25,20 @@ Test Teardown     Encerra sessao
 
 
 *** Variable ***
-# Suite registrada no gerenciador de dados
-${suite}          m_estoque
-# Recebe dados do gerenciador
-${dados}
+# # Suite registrada no gerenciador de dados
+# ${suite}          fat_consultas_conta_paciente
+# # Recebe dados do gerenciador
+# ${dados}
 
 *** Test Case ***
 
-SCR6CMESTOQUE-001:Fluxo Principal          #SMF-10602 : Cadastrar estoque do tipo rouparia com um estoque do mesmo tipo já cadastrado 
-# robot -v browser:chrome -t "SCR6CMESTOQUE-001:Fluxo Principal" -d ./5-results/SCR6CMESTOQUE-001 "3-tests/4-MATERIAIS/M_ESTOQUE.robot"
-# robot -v browser:firefox -t "SCR6CMESTOQUE-001:Fluxo Principal" -d ./5-results/SCR6CMESTOQUE-001 "3-tests/4-MATERIAIS/M_ESTOQUE.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CMESTOQUE"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Tabelas>Gerais>Estoques"@nprint @las
-    Campos Obrigatorias a serem preenchidas |${dados}[Descricao]||${dados}[Tipo]||${dados}[Rouparia]||${dados}[Setor]|
-    Salvar e validar |${dados}[Informacao1]||${dados}[Informacao2]|
+SCR4MMCLASSIFICACA-001:Fluxo Principal          #SMF-1897 : Cadastrar as Classificações dos Produtos 
+# robot -v browser:chrome -t "SCR4MMCLASSIFICACA-001:Fluxo Principal" -d ./5-results/SCR4MMCLASSIFICACA-001 "3-tests/4-MATERIAIS/M_CLASSIFICACA.robot"
+# robot -v browser:firefox -t "SCR4MMCLASSIFICACA-001:Fluxo Principal" -d ./5-results/SCR4MMCLASSIFICACA-001 "3-tests/4-MATERIAIS/M_CLASSIFICACA.robot"
+    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-1897"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Tabelas>Classificação dos Produtos>Classificação"@nprint @las
+    Campos Obrigatorias a serem preenchidas
+    Salvar e validar
 
 
 

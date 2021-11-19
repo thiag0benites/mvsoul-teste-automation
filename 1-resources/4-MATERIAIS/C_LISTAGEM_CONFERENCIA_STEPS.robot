@@ -19,10 +19,10 @@ Consultar Lista dos Processos a Serem Validados
 Validacao dos Processo |${Processo}||${MsgEsperada1}||${MsgEsperada2}|
     Click no Item                                           ${CampoaValidar}
     Click no Item                                           ${BtnValidar}
-    ${MsgEsperada1}                                         Replace String    ${MsgEsperada1}    processo    ${Processo}
+    ${MsgEsperada1}                                         Replace String    ${MsgEsperada1}    Processo    ${Processo}
     Valida Mensagem                                         ${Alerta}    ${MsgEsperada1}
     Click no Item                                           ${BtnAlerta}
-    ${MsgEsperada2}                                         Replace String    ${MsgEsperada2}    processo    ${Processo}
+    ${MsgEsperada2}                                         Replace String    ${MsgEsperada2}    Processo    ${Processo}
     Valida Mensagem                                         ${Alerta}    ${MsgEsperada2}
     Click no Item                                           ${BtnOk}
     

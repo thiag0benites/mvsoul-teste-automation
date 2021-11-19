@@ -11,21 +11,23 @@ Resource                            ../../2-pages/4-MATERIAIS/M_ESTOQUE_PAGE.rob
 
 *** Keywords ***
 
-Campos Obrigatorias a serem preenchidas
-    Preencher campo                                         ${CampoDescricao}    ESTOQUE TESTE 
+Campos Obrigatorias a serem preenchidas |${Descricao}||${Tipo}||${Rouparia}||${Setor}|
+    Click no Item                                           ${CampoDescricao}
+    Preencher campo                                         ${CampoDescricao}    ${Descricao}
     Click no Item                                           ${CampoTipo}
-    Preencher campo                                         ${BtnTipo}           Distribuição 
+    SeleniumLibrary.Input Text                              ${BtnTipo}           ${Tipo}
     Click no Item                                           ${BtnMultiEmpresa}
     Click no Item                                           ${BtnOK}
-    Preencher campo                                         ${BtnRouparia}    S
-    Send Keys                                               Enter        
-    Selecionar Item Na Lista                                ${BtnSetor}    ALMOXARIFADO   ALMOXARIFADO    
+    Sleep    3
+    Clicar no Campo e Preencher Informacao                  ${CampoRouparia}        ${CampoRouparia}       ${Rouparia}
+    Send Keys                                               enter       
+    Selecionar Item Na Lista                                ${BtnSetor}    ${Setor}   ${Setor}    
     
-Salvar e validar      
-    Click Elemento por titulo                               Salvar        
-    Validar Informacao Item                                 ${Alerta}    Há estoque cadastrado para controle de produtos de rouparia. Deseja cadastrar este também?
+Salvar e validar |${Informacao1}||${Informacao2}|     
+    Click Elemento por titulo                               Salvar      
+    Validar Informacao Item                                 ${Alerta}    ${Informacao1}
     Click no Item                                           ${BtnAlerta}
-    Validar Informacao Item                                 ${Alerta}    Registros gravados com sucesso
+    Validar Informacao Item                                 ${Alerta}    ${Informacao2}
 
 
 
