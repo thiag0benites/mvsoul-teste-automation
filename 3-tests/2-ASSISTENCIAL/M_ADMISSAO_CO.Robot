@@ -24,9 +24,9 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          m_admissao_co
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 SCR2AMADMI-001:Fluxo Principal

@@ -26,19 +26,20 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          m_responsavel
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 SMF-8820 : Cadastrar Responsaveis
 # robot -v browser:chrome -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
 # robot -v browser:firefox -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8820"
     Acessar a tela "Controladoria>Caixa>Tabelas>Responsáveis"@nprint @las 
-    Seleciona Pessoa Fisica ou Pessoa Juridica |PJ|        ### PREENCHER COM PF ou PJ ###
-    Seleciona Cadastro Estrangeiro ou Resp Ativo |Responsavel Ativo|
-    Informar o Nome |CLIENTE TESTE AUTOMACAO| e a Nacionalidade |BRASILEIRA| da Pessoa
-    Informar CPF ou CNPJ |CNPJ| nos campos apresentados    ### PREENCHER COM PF ou CNPJ ###
+    Seleciona Pessoa Fisica ou Pessoa Juridica |${dados}[SelecionaPFouPJ]|        ### PREENCHER COM PF ou PJ ###
+    Seleciona Cadastro Estrangeiro ou Resp Ativo |${dados}[CadEstrangeiroRespAtivo]|
+    Informar o Nome |${dados}[NomeCliente]| e a Nacionalidade |${dados}[Nacionalidade]| da Pessoa
+    Informar CPF ou CNPJ |${dados}[CPFouCNPJ]| nos campos apresentados    ### PREENCHER COM PF ou CNPJ ###
     Preencher Inscricao Municipal e Estadual
     Pesquisa CEP
     Informar os dados bancarios do responsavel

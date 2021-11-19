@@ -28,7 +28,7 @@ Test Teardown     Encerra sessao
 # # Suite registrada no gerenciador de dados
 ${suite}          o_canc_mov_caixa
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 SMF-8951 : Cancelar movimentacoes ocorridas no Caixa
