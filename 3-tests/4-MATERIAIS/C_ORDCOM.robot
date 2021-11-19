@@ -38,7 +38,7 @@ SCR4MCORDCOM-001:Consultar Ordem de Compra
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MCORDCOM-001"
     Acessar a tela "Materiais e Logística>Compras>Consultas>Ordem de Compra"@nprint @las
     Validar Acesso a Tela |Ordens de Compra|
-    Preencher Código |${dados}[codigo]|
+    Preencher Codigo |${dados}[codigo]|
     Clicar no botão Executar
     Validar Ordem de Compra pelo fornecedor
    

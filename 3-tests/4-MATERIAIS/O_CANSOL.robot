@@ -36,10 +36,12 @@ SRC4OCANSOL-001:Cancelar uma solicitação de compra
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC4OCANSOL-001"
     Acessar a tela "Materiais e Logística>Compras>Compras>Solicitação de Compras>Aprovação"@nprint @las
     Clicar no botão Pesquisar
-    Preencher o Código |${dados}[codigo]|
+    Preencher o Codigo |${dados}[codigo]|
     Clicar no botão Executar 
-    Validar Código
-    Clicar no botão de Autorização 
-    Clicar no botão de Não Autorizar 
-    Valida Mensagem        ${mensagemNaoAprovada}         Solicitação de compras não aprovada!
+    Validar Codigo
+    Clicar no botao de Autorizacao  
+    Clicar no botao de Nao Autorizar 
+    Valida Mensagem        ${mensagemNaoAprovada}         |${dados}[mensagemNaoAprovacao]|
     Clicar no Botao |OK|
+
+    

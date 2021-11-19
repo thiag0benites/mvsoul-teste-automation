@@ -41,7 +41,7 @@ SCR5F_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio
     Clicar no campo [Remessa]
     Preencher campo de Remessa |${dados}[codRemessa]|
     Clicar no botao [Concluir]
-    Valida Mensagem  ${MensagemSucesso}     Nota Fiscal Nº 9439-B gerada com sucesso.
+    Valida Mensagem  ${MensagemSucesso}     |${dados}[MensagemSucesso]|
     Clicar no botao [OK]
     
 

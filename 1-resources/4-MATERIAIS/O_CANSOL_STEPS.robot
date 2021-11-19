@@ -10,16 +10,16 @@ Resource                ../../2-pages/4-MATERIAIS/O_CANSOL_PAGE.robot
 
 *** Keywords ***
 
-Preencher o Código |${codigo}|
+Preencher o Codigo |${codigo}|
     Sleep            1
     Preencher campo  ${inputCodigo}  ${codigo}            
 
-Clicar no botão de Autorização 
+Clicar no botao de Autorizacao 
     Sleep            1
     Click Element    ${btnAprovacao}
 
 
-Clicar no botão de Não Autorizar 
+Clicar no botao de Nao Autorizar 
     Sleep            1
     Click Element    ${btnNaoAutorizar}
 

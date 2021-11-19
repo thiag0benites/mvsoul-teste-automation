@@ -39,7 +39,7 @@ SCR4MMAPROVASOLCOM-001:Aprovar Solicitação Automática - Apenas Primeiro Níve
     Acessar a tela "Materiais e Logística>Compras>Compras>Solicitação de Compras>Aprovação"@nprint @las
     Validar Acesso a Tela |Aprovação da Solicitação de Compras|
     Clicar no botão Pesquisar
-    Preencher Código |${dados}[codigo]|
+    Preencher Codigo |${dados}[codigo]|
     Clicar no botão Executar
-    Validar Código de Aprovação
+    Validar Codigo de Aprovacao
    

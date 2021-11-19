@@ -10,7 +10,7 @@ Resource                ../../2-pages/4-MATERIAIS/C_ORDCOM_PAGE.robot
 
 *** Keywords ***
 
-Preencher Código |${codigo}|
+Preencher Codigo |${codigo}|
     Sleep          1
     Preencher campo  ${inputCodigo}  ${codigo}            
 

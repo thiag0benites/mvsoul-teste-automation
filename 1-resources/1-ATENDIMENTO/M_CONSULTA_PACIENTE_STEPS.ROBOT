@@ -12,6 +12,4 @@ Resource                ../../1-resources/auxiliar/Genericos.robot
 *** Keywords ***
 
 Validar Informacao Prestador 
-    Sleep   5
-    Validar Elemento Pelo Titulo          OLIVIER DENIS DANIEL MATHIEU  
-    Sleep   5
+    Validar Elemento Pelo Titulo          |${dados}[validarPrestador]|  
