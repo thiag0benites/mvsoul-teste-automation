@@ -22,7 +22,7 @@ Resource            ../../1-resources/1-ATENDIMENTO/M_ENTREGA_LAUDO_STEPS.robot
 # Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados

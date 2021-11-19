@@ -24,21 +24,22 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          m_admissao_co
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 SCR2AMADMI-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMADMI-001:Fluxo Principal" -d ./5-results/SCR2AMADMI-001 "3-tests\2-ASSISTENCIAL/M_ADMISSAO_CO.Robot"
 # robot -v browser:firefox -t "SCR2AMADMI-001:Fluxo Principal" -d ./5-results/SCR2AMADMI-001 "3-tests\ 2-ASSISTENCIAL/M_ADMISSAO_CO.Robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMADMI-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Ficha Obstétrica"@nprint @las
-    Acessar Atendimento |Teste|
-    Inserir Data do Parto |19/Out/2021|
-    Acessar Tipo Parto |Parto Normal|
-    Acessar Motivo do Parto |Trabalho de Parto|
-    Preenche Dados Quantidade Filhos |1| e Semanas |42|
-    Acessar Tipo de Anestesia |RAQUI ANESTESIA CONTINUA|
+    Acessar Atendimento |${dados}[AcessarAtendimento]|
+    Inserir Data do Parto |17/Nov/2021|
+    Acessar Tipo Parto |${dados}[TipoParto]|
+    Acessar Motivo do Parto |${dados}[MotivoParto]|
+    Preenche Dados Quantidade Filhos |${dados}[QtdFilhos]| e Semanas |${dados}[QtdSemanas]|
+    Acessar Tipo de Anestesia |${dados}[TipoAnestesia]|
     Acessar Botao Obstestricia
     Acesso Tela Recem Nascido
     Preenche Apgar, Perimetro e Medidas
