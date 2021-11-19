@@ -14,11 +14,16 @@ Pesquisar pre-internacao existente pelo codigo do paciente |${intCodPaciente}|${
   Wait Until Element Is Visible    ${inputIntCodPaciente}    180
   Preencher campo    ${inputIntCodPaciente}    ${intCodPaciente}
   Click Element    ${inputMedRef}
-
-Revisar os dados de internacao incluindo leito |${CodLeito}|,|${dataHrPrevAlta}|${print}
-  Wait Until Element Is Visible    ${inputLeito}    30
+Preencher campos da tela internacao do paciente |${origem}|,|${servico}|,|${acompanhante}|,|${CodLeito}|,|${dataHrPrevAlta}|${print}
+  Wait Until Element Is Visible    ${inputOrigem}    30
+  Preencher campo    ${inputOrigem}    ${origem}
+  Sleep    1
+  Preencher campo    ${inputServico}    ${servico}
+  Sleep    1
+  Seleciona Item Combobox    ${selectAcompanhante}    ${acompanhante}
+  Sleep    3
   Preencher campo    ${inputLeito}   ${CodLeito}
-  Sleep     3
+  Sleep     1.5
   Preencher campo    ${inputDataHrPrevAlta}    ${dataHrPrevAlta}
   Sleep     1
 Captura codigo do Atendimento Cadastrado|${suite}|${id}|

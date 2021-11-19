@@ -48,12 +48,13 @@ Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${In
     Preencher campo    ${inputAtividadeMed}     ${atividadeMed}
     Sleep    0.5
     Clicar no botao [Retornar]||
-    Sleep    0.5 
+    Sleep    0.5
     Wait Until Element Is Visible    ${notificacaoGravarRegistro}    5
     Sleep    0.5
 #     ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
 #     Should Be Equal As Strings    ${AgCirurMsgEsperada}    ${msgObtida}    error=*** Mensagem de alerta não foi apresentada!
     Clicar no botao [Sim]|${AgCirurMsgEsperada}|
+    Sleep    1
 
     
    

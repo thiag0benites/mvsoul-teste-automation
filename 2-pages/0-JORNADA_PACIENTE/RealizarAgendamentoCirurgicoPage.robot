@@ -16,6 +16,7 @@ ${inputPlano}     id=inp:cdConPla
 ${inputPrestadorCirurgiao}    id=inp:cdPrestadorCirurgiao
 ${inputMedAssociado}    id=inp:cdPrestadorIndicacao
 ${inputCdPaciente}     id=inp:aSimples_cdPaciente
+${inputAgAtendimento}    xpath=//input[@id='inp:aSimples_cdAtendimento']
 ${inputUnidInternacao}    id=inp:cdUnidIntAge
 ${inputEqpMedica}    id=inp:aSimples_cdEquipeMedica    
 ${inputAnestesista}    id=inp:cdPrestadorAnestesista    

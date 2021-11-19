@@ -10,7 +10,7 @@ Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|${dataHrSugerida}|,|${tempoPrev}|,|${dataHrPrevInter}|,|${codAtendPreAgCir}|,|${tipoInternacao}|,|${centroCirurgico}|,|${salaCirurgica}|,|${medicoAssociado}|${print}
+Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|${dataHrSugerida}|,|${tempoPrev}|,|${dataHrPrevInter}|,|${codPacPreAgCir}|,|${tipoInternacao}|,|${centroCirurgico}|,|${salaCirurgica}|${print}
     Preencher campo    ${inputDataHr}    ${dataHr}
     Sleep    1.5
     Preencher campo    ${inputDataHrSugerida}    ${dataHrSugerida}
@@ -19,8 +19,8 @@ Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|
     Sleep    1
     Preencher campo    ${inputDataHrPrevIntern}    ${dataHrPrevInter}
     Sleep    1
-    Preencher campo    ${inputCodAtendimentoPreAgCir}    ${codAtendPreAgCir}
-    Press Keys    ${inputCodAtendimentoPreAgCir}    ENTER
+    Preencher campo    ${inputCodPacientePreAgCir}    ${codPacPreAgCir}
+    Press Keys    ${inputCodPacientePreAgCir}    ENTER
     Sleep    1
     Preencher campo    ${inputTipoInternacaoPreAg}    ${tipoInternacao}
     Sleep    1
@@ -28,11 +28,13 @@ Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|
     Sleep    1
     Preencher campo    ${inputPreSalaCirur}    ${salaCirurgica}
     Sleep    1
-    Preencher campo    ${inputMedicoAssociado}    ${medicoAssociado}
-    Sleep    1
+    # Preencher campo    ${inputMedicoAssociado}    ${medicoAssociado}
+    # Sleep    1
     Clicar no botao [Adicionar Cirurgia]||
 
-Preencher os campos da cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${grupCirurgia}|,|${prestCirurgiao}|,|${atividadeMed}|${print}
+Preencher os campos da cirurgia |${grupCirurgia}|,|${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${prestCirurgiao}|,|${atividadeMed}|${print}
+    Preencher campo    ${inputgrupoCirurgia}     ${grupCirurgia}
+    Sleep    1
     Preencher campo    ${inputCirurgia}    ${cirurgia}
     Sleep    1
     Preencher campo    ${inputConvenioCir}    ${IntCodConvenio}
@@ -41,19 +43,26 @@ Preencher os campos da cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano
     Sleep    1
     Preencher campo    ${inputPotencialCont}    ${potencialCont}
     Sleep    1
-    Preencher campo    ${inputgrupoCirurgia}     ${grupCirurgia}
-    Sleep    1
     Preencher campo    ${inputPrestCirurgiao}    ${prestCirurgiao}
     Sleep    1
     Preencher campo    ${inputAtividadeMed}     ${atividadeMed}
-    Sleep    3
+    Press Keys    ${inputAtividadeMed}    ENTER
+    Sleep    1.5
     Clicar no botao [Retornar]||
+    Sleep    1
 
 Captura do codigo do aviso de cirurgia|${suite}|${id}|
-    Sleep    1
-    Should Not Be Empty   ${divAvisoCirurgia}
-    ${codAvisoCir}    Get Element Attribute    ${divAvisoCirurgia}    title
+    Wait Until Element Is Visible    ${inputAvisoCirurgia}    30
+    Should Not Be Empty   ${inputAvisoCirurgia}
+    ${codAvisoCir}    Get Element Attribute    ${inputAvisoCirurgia}    title
     Altera massa de dados da "${suite}", linha "${id}", coluna "preAgCirAvisoCirurgia", valor "${codAvisoCir}"
+    Sleep    2
+
+Preencher os campos e reservar sala de cirurgia |${dataPrevAlta}|
+    Preencher campo    ${inputDtPrevAlta}    ${dataPrevAlta}
+    Sleep    1
+    Clicar no botao [1-Agendar]||
+    Clicar no botao [OK]|agCirurMsgEsperada|
+    Clicar no botao [Sair Tela]||
     Clicar no botao [Sair]||
-    Sleep    3
 

@@ -10,6 +10,10 @@ Resource          ../../Config.robot
 ### Elementos da Pagina
 ${inputIntCodPaciente}    id=inp:atendime_cdPaciente
 ${inputMedRef}    id=inp:nmPrestadorReferencia
+
+${inputOrigem}    xpath=//*[@id="inp:cdOriAte"]
+${inputServico}    xpath=//*[@id="inp:cdServico"]
+${selectAcompanhante}    id=snAcompanhante_ac
+${inputLeito}     xpath=//input[@id='inp:cdLeito']
 ${inputDataHrPrevAlta}    id=inp:dtPrevistaAlta
-${inputLeito}     xpath=//div[@data-member='CD_LEITO']//input[@id='inp:cdLeito']
-${inputCodAtendimento}    xpath=//input[@id='inp:cdAtendimento']
+${inputCodAtendimento}    id=inp:cdAtendimento
