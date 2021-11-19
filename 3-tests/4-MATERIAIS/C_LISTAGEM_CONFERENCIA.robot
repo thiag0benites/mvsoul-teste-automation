@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/4-MATERIAIS/C_LISTAGEM_CONFERENCIA_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,7 +21,6 @@ Resource            ../../1-resources/4-MATERIAIS/C_LISTAGEM_CONFERENCIA_STEPS.r
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
-
 *** Variable ***
  # Suite registrada no gerenciador de dados
 ${suite}          c_listagem_conferencia
@@ -31,7 +28,6 @@ ${suite}          c_listagem_conferencia
 ${dados}
 
 *** Test Case ***
-
 SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal          #SMF-10345 : Listagem
 # robot -v browser:chrome -t "SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal" -d ./5-results/SCR4MCLISTAGEMCONFERENCIA-001 "3-tests/4-MATERIAIS/C_LISTAGEM_CONFERENCIA.robot"
 # robot -v browser:firefox -t "SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal" -d ./5-results/SCR4MCLISTAGEMCONFERENCIA-001 "3-tests/4-MATERIAIS/C_LISTAGEM_CONFERENCIA.robot"

@@ -32,12 +32,7 @@ SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto
 # robot -v browser:chrome -t "SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto" -d ./5-results/SMF-6210 "3-tests/6-CONTROLADORIA/M_CON_REC_PART.robot"
 # robot -v browser:firefox -t "SMF-6210 : Gerar a previsão de receita para compor o Contas a Receber previsto" -d ./5-results/SMF-6210 "3-tests/6-CONTROLADORIA/M_CON_REC_PART.robot"
     ${dados}    Seleciona toda massa de dados da tabela "SMF-6210"
-    
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Cadastros>Previsão>Geração de Contas a Receber"@nprint @las   
     Campo Previsao |${dados}[CampoPrevisao]|
     Selecionar a Previsao
     Altera massa de dados da "${suite}", linha "${dados}[id]", coluna "STATUS", valor "USADA"
-
-
-
-

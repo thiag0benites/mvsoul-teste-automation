@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/4-MATERIAIS/M_ESTOQUE_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,7 +21,6 @@ Resource            ../../1-resources/4-MATERIAIS/M_ESTOQUE_STEPS.robot
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
-
 *** Variable ***
 # Suite registrada no gerenciador de dados
 ${suite}          m_estoque
@@ -31,7 +28,6 @@ ${suite}          m_estoque
 ${dados}
 
 *** Test Case ***
-
 SCR6CMESTOQUE-001:Fluxo Principal          #SMF-10602 : Cadastrar estoque do tipo rouparia com um estoque do mesmo tipo já cadastrado 
 # robot -v browser:chrome -t "SCR6CMESTOQUE-001:Fluxo Principal" -d ./5-results/SCR6CMESTOQUE-001 "3-tests/4-MATERIAIS/M_ESTOQUE.robot"
 # robot -v browser:firefox -t "SCR6CMESTOQUE-001:Fluxo Principal" -d ./5-results/SCR6CMESTOQUE-001 "3-tests/4-MATERIAIS/M_ESTOQUE.robot"
@@ -39,8 +35,3 @@ SCR6CMESTOQUE-001:Fluxo Principal          #SMF-10602 : Cadastrar estoque do tip
     Acessar a tela "Materiais e Logística>Almoxarifado>Tabelas>Gerais>Estoques"@nprint @las
     Campos Obrigatorias a serem preenchidas |${dados}[Descricao]||${dados}[Tipo]||${dados}[Rouparia]||${dados}[Setor]|
     Salvar e validar |${dados}[Informacao1]||${dados}[Informacao2]|
-
-
-
-
-
