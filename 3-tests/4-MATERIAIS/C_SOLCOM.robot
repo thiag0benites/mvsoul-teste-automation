@@ -15,7 +15,6 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/4-MATERIAIS/C_SOLCOM_STEPS.robot
 
-
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
 #Suite Teardown    Encerra sessao
