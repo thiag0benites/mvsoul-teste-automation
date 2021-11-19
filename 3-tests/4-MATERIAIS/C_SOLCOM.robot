@@ -32,11 +32,11 @@ ${dados}
 
 *** Test Case ***
 SMF-4050:Fluxo Principal
-# robot -v browser:chrome -t "SMF-8719:Fluxo Principal" -d ./5-results/SMF-4050 "3-tests/4-MATERIAIS/C_SOLCOM.robot"
-# robot -v browser:firefox -t "SMF-8719:Fluxo Principal" -d ./5-results/SMF-4050 "3-tests/4-MATERIAIS/C_SOLCOM.robot"
+# robot -v browser:chrome -t "SMF-4050:Fluxo Principal" -d ./5-results/SMF-4050 "3-tests/4-MATERIAIS/C_SOLCOM.robot"
+# robot -v browser:firefox -t "SMF-4050:Fluxo Principal" -d ./5-results/SMF-4050 "3-tests/4-MATERIAIS/C_SOLCOM.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4050"
     Acessar a tela "Materiais e Logística>Compras>Consultas>Solicitação de Compras"@nprint @las
     Preencher Campo codigo |${dados}[codigo]|
     Clicar no botao [Executar]
     Clicar no botao [Histórico de Autorização]
-    Validar preenchimento automatico dos campos [solicitada] e [Autorizada]
+    Validar exibicao do pop up Historico

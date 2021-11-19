@@ -11,38 +11,31 @@ Resource          ../../2-pages/4-MATERIAIS/C_SOLCOM_PAGE.robot
 
 *** Keywords ***
 
-Preencher Campo Ano |${codigo}|
-    Wait Until Element Is Visible      ${}       240
-    Click Element       ${campoAno}
-    Preencher Campo        ${campoAno}       ${EMPTY}   
-    Click Element       ${campoAno}
-    Preencher Campo        ${campoAno}       ${codigo} 
-    Press Keys    ${campoAno}    ENTER
+Preencher Campo codigo |${codigo}|
+    Wait Until Element Is Visible      ${cpCodigo}       30
+    Click Element       ${cpCodigo}
+    Preencher Campo        ${cpCodigo}       ${codigo} 
     Sleep      3
 
-Selecionar o mês
-    Wait Until Element Is Visible    ${mesFech}    60
-    Click Element       ${mesFech}
-    Sleep       3
-
-Selecionar a Empresa
-    Wait Until Element Is Visible    ${empresa}    60
-    Click Element       ${empresa}
-    Sleep       3
     
 Clicar no botao [${nomeBtn}]
-    IF    '${nomeBtn}' == 'Fechar'
-        Wait Until Element Is Visible    ${btnFechar}    60
-        Click Element    ${btnFechar}
+    IF    '${nomeBtn}' == 'Executar'
+        Wait Until Element Is Visible    ${btnExecutar}    60
+        Click Element    ${btnExecutar}
         Sleep    3
-    ELSE IF     '${nomeBtn}' == 'OK'
-        Wait Until Element Is Visible    ${btnOk}    60
-        Click Element    ${btnOk}
-        Sleep    3
-    ELSE IF     '${nomeBtn}' == 'Abrir'
-        Wait Until Element Is Visible    ${btnAbrir}    60
-        Click Element    ${btnAbrir}
+    ELSE IF     '${nomeBtn}' == 'Histórico de Autorização'
+        Wait Until Element Is Visible    ${btnHistorico}    60
+        Click Button    ${btnHistorico}
         Sleep    3
     END
+
+Validar exibicao do pop up Historico
+    Wait Until Element Is Visible    ${popUpHistorico}    60
+    Sleep       1
+    Wait Until Element Is Visible       ${cpUsuario}     60
+    Sleep       1
+    Wait Until Element Is Visible       ${cpNivAutorizador}     60
+    Sleep       1
+    
 
 
