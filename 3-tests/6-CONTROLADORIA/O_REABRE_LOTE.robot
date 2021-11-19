@@ -26,15 +26,16 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          o_reabre_lote
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 
 SMF-8969 : Reabrir Lote
 # robot -v browser:chrome -t "SMF-8969 : Reabrir Lote" -d ./5-results/SMF-8969 "3-tests/6-CONTROLADORIA/O_REABRE_LOTE.robot"
 # robot -v browser:firefox -t "SMF-8969 : Reabrir Lote" -d ./5-results/SMF-8969 "3-tests/6-CONTROLADORIA/O_REABRE_LOTE.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8969"
     Acessar a tela "Controladoria>Caixa>Caixa>Reabertura de Lotes"@nprint @las
-    Acessa e Preenche Campo Codigo |HOBRA CAIXA|
+    Acessa e Preenche Campo Codigo |${dados}[CampoCodigo]|
     Seleciona Lote para Reabrir E Preenche Justificativa
