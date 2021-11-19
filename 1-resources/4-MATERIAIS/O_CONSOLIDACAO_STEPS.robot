@@ -12,7 +12,7 @@ Resource          ../../2-pages/4-MATERIAIS/O_CONSOLIDACAO_PAGE.robot
 Preencher campos mes e ano |${data}|
     Preencher Campo                         ${CampoMesAno}                  ${data} 
 
-Clicar no botão de confirmacao 
+Clicar no botao de confirmacao 
     Click no Item  ${BtnConfirmacao}
     Sleep    20
 

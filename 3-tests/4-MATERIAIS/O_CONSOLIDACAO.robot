@@ -35,7 +35,7 @@ SCR4MOCONSOLIDACAO-001:Fluxo principal
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MOCONSOLIDACAO-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Preencher campos mes e ano |${dados}[data]|
-    Clicar no botão de confirmacao 
+    Clicar no botao de confirmacao 
     Validar mensagem de confirmacao |${dados}[mensagem]|
 
     

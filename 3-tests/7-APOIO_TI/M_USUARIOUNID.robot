@@ -38,6 +38,3 @@ SCR7AMUSUARIOUNID-001:Fluxo principal
     Selecionar Cod Unidade de Internacao |${dados}[codUnidInternacao]|,|${dados}[validaCodInternacao]|
     Clicar no botão Salvar do menu
     Validar cadastro realizado |${dados}[mensagem]|
-    
-
-    
