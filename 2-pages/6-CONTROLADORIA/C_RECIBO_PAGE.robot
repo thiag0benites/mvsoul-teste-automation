@@ -32,6 +32,7 @@ ${BtnCadastrarResp}                                xpath=//*[@id="btChamaResp"]
 
 
 ### Diversos ###
-${StatusAguardando}                               xpath=//div[@data-member='TP_STATUS'][@title='Aguardando']
+${ListaStatus}                                    xpath=//div[@title="Status do Recibo"]
 ${StatusEmitido}                                  xpath=//div[@data-member='TP_STATUS'][@title='Emitido']
 ${SairDoSistema}                                  xpath=//*[@id="tb-exit"]/a
+${FiltraStatus}                                   xpath=(//div[@class="slick-cell b3 f3"]//div[@data-member="TP_STATUS"][contains(text(),'Aguardando')])[1]
