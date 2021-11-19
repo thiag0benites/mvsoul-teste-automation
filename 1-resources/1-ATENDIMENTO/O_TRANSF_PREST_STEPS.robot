@@ -24,7 +24,7 @@ Validar atendimento
     Sleep                            2
     Validar Item   ${atendTable}
 
-Confirmar Transferencia de Prestador
+Confirmar Transferencia de Prestador|${mensagem}|
     Click Element                    ${buttonTransferencia}
-    Valida Mensagem  ${MensagemSalvar}   Atendimentos Transferidos.....:1
+    Valida Mensagem  ${MensagemSalvar}   ${mensagem}
     Sleep               5

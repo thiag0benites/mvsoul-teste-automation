@@ -37,10 +37,10 @@ SCR7AMUSUARIOUNID-001:Fluxo principal
 # robot -v browser:firefox -t "SCR7AMUSUARIOUNID-001:Fluxo principal" -d ./5-results/SCR7AMUSUARIOUNID-001 "3-tests/7-APOIO_TI/M_USUARIOUNID.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR7AMUSUARIOUNID-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Selecionar Cod Usuario
-    Selecionar Cod Unidade de Internacao
+    Selecionar Cod Usuario |${dados}[codUsuario]|,|${dados}[validaCodUsuario]|
+    Selecionar Cod Unidade de Internacao |${dados}[codUnidInternacao]|,|${dados}[validaCodInternacao]|
     Clicar no botão Salvar do menu
-    Validar cadastro realizado
+    Validar cadastro realizado |${dados}[mensagem]|
     
 
     

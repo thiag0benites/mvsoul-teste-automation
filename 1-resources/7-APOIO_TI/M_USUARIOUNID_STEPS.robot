@@ -10,17 +10,17 @@ Resource                ../../2-pages/7-APOIO_TI/M_USUARIOUNID_PAGE.robot
 
 *** Keywords ***
 
-Selecionar Cod Usuario
-    Preencher Campo                             ${CampoEditavel}                    GPINA
+Selecionar Cod Usuario |${codUsuario}|,|${validaCodUsuario}|
+    Preencher Campo                             ${CampoEditavel}                    ${codUsuario}
     Send Keys                                   Enter
-    Validar Elemento Pelo Titulo                GEISHA ABREU SOARES DE PINA
+    Validar Elemento Pelo Titulo                ${validaCodUsuario}
 
-Selecionar Cod Unidade de Internacao
-    Preencher Campo                             ${CampoEditavel}                    174
+Selecionar Cod Unidade de Internacao |${codUnidInternacao}|,|${validaCodInternacao}|
+    Preencher Campo                             ${CampoEditavel}                    ${codUnidInternacao}
     Send Keys                                   Enter
-    Validar Elemento Pelo Titulo                AADBR UNIDADE INTERNAÇÃO
+    Validar Elemento Pelo Titulo                ${validaCodInternacao}
 
-Validar cadastro realizado
+Validar cadastro realizado |${mensagem}|
     Sleep       30
-    Valida Mensagem                  ${MensagemToast}                Registros gravados com sucesso (1 registros gravados).
+    Valida Mensagem                  ${MensagemToast}                ${mensagem}
 

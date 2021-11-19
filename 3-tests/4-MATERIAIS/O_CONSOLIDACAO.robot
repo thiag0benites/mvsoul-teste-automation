@@ -37,8 +37,8 @@ SCR4MOCONSOLIDACAO-001:Fluxo principal
 # robot -v browser:firefox -t "SCR4MOCONSOLIDACAO-001:Fluxo principal" -d ./5-results/SCR4MOCONSOLIDACAO-001 "3-tests/4-MATERIAIS/O_CONSOLIDACAO.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MOCONSOLIDACAO-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Preencher campos mes e ano 
+    Preencher campos mes e ano |${dados}[data]|
     Clicar no botão de confirmacao 
-    Validar mensagem de confirmação
+    Validar mensagem de confirmacao |${dados}[mensagem]|
 
     

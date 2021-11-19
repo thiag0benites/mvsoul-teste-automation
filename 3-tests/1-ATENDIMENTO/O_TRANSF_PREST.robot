@@ -39,5 +39,5 @@ SRC1AOTRANSFPREST-001:Fluxo Principal
     Acessar a tela "Atendimento>Internação>Atendimento>Transferência de Médico"@nprint @las
     Preencher os campos |${dados}[numAtend]|,|${dados}[nomePrestadorDest]|,|${dados}[motivoTransferencia]|,|${dados}[servico]|
     Validar atendimento 
-    # Confirmar Transferencia de Prestador
+    Confirmar Transferencia de Prestador|${dados}[mensagem]|
 
