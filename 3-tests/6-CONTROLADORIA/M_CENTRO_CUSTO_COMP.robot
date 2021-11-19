@@ -26,14 +26,19 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_lote_pagamento
+${suite}          m_centro_custo_comp
 # # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 
 SMF-9478 : Cadastrar Centro de Custo - Bloco Classificação-1
 # robot -v browser:chrome -t "SMF-9478 : Cadastrar Centro de Custo - Bloco Classificação-1" -d ./5-results/SMF-9478 "3-tests/6-CONTROLADORIA/M_CENTRO_CUSTO_COMP.robot"
 # robot -v browser:firefox -t "SMF-9478 : Cadastrar Centro de Custo - Bloco Classificação-1" -d ./5-results/SMF-9478 "3-tests/6-CONTROLADORIA/M_CENTRO_CUSTO_COMP.robot"
-
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-9478"
     Acessar a tela "Controladoria>Custos>Tabelas>Centros de Custo"@nprint @las
+    Preencha no campo descricao/ codigo hierarquico e Selecione no campo centro de custo consolidador |${dados}[Descricao]| |${dados}[Hierarquico]|
+    Selecionar no campo Grupo de Centros de Custo
+    Selecionar no campo Calcula Evento
+    Selecionar no campo Aceita Lancamento
+    Clicar no botao Salvar |${dados}[MsgConfirmacaoEsperada]|
