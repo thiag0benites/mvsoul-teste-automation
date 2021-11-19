@@ -8,6 +8,7 @@ Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
 #Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
 
+Library    XML
 
 *** Variable ***
 ${imgVisivel}
@@ -283,7 +284,9 @@ Preencher o Campo Input
     Sleep                                                      3
 
 Valida Mensagem
-    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
+    [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${MensagemRecebida}    120
     Sleep    3
-    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
+    ${MensagemRecebida}    Get Element Text    ${ElementoMsgRecebida}
+    Should Be Equal As Strings    ${MensagemRecebida}   ${MensagemEsperada}
+    # Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}

@@ -15,7 +15,6 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/6-CONTROLADORIA/M_FECH_CONT_STEPS.robot
 
-
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
 #Suite Teardown    Encerra sessao
@@ -24,9 +23,8 @@ Test Setup          Nova sessao
 Test Teardown       Encerra sessao
 
 *** Variable ***    
-
 # Suite registrada no gerenciador de dados
-${suite}           M_FECH_CONT
+${suite}           m_fech_cont
 # Recebe dados do gerenciador
 ${dados}
 
@@ -40,10 +38,10 @@ SMF-8719:Fluxo Principal
     Selecionar o mês 
     Selecionar a Empresa 
     Clicar no botao [Fechar]
-    Valida Mensagem     ${mensagemEsperada}     Fechamento concluído com sucesso!
+    Valida Mensagem     ${mensagemEsperada}     ${dados}[msgEsperada]
     Clicar no botao [OK]
     Selecionar o mês 
     Selecionar a Empresa 
     Clicar no botao [Abrir]
-    Valida Mensagem     ${mensagemEsperada}     Abertura concluída com sucesso!
+    Valida Mensagem     ${mensagemEsperada}     ${dados}[msgEsperada2]
     Clicar no botao [OK]

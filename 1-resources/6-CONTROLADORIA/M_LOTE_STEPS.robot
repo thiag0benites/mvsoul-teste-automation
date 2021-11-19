@@ -4,8 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/6-CONTROLADORIA/M_LOTE_PAGE.robot
-Library    SeleniumLibrary
+Resource        ../../2-pages/6-CONTROLADORIA/M_LOTE_PAGE.robot
 
 *** Variable ***
 
@@ -56,7 +55,7 @@ Clicar no botao [${nomeBtn}]
         Sleep    3
     END
 
-Clicar duas vezes no campo [Lote] ou [Descrição]
+Clicar duas vezes no campo [Descrição]
     Wait Until Element Is Visible    ${cpDescricaoPs}    10
     Double Click Element       ${cpDescricaoPs}
     Sleep       3

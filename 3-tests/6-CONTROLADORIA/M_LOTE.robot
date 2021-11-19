@@ -13,10 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../2-pages/6-CONTROLADORIA/M_LOTE_PAGE.robot
-Resource            ../../1-resources/6-CONTROLADORIA/M_LOTE_STEPS.robot
-Resource            ../../Config.robot
-
+Resource        ../../1-resources/6-CONTROLADORIA/M_LOTE_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -42,5 +39,4 @@ MLOTE-001:Fluxo Principal
     Preencher Campo Data final |${dados}[dataFinal]| a data do lançamento final do lote
     Clicar no botao [Salvar]
     Valida Mensagem     ${mensagemEsperada}     ${dados}[msgEsperada]
-    Clicar duas vezes no campo [Lote] ou [Descrição]
-    
+    Clicar duas vezes no campo [Descrição]  
