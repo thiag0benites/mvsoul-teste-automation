@@ -12,13 +12,10 @@ Resource    ../../2-pages/2-ASSISTENCIAL/M_ADMISSAO_CO_PAGE.robot
 
 *** Keywords ***
 Acessar Atendimento |${Item}|
-    Wait Until Element Is Visible    ${BtnSetaAtendimento}           60
-    SeleniumLibrary.Click Element    ${BtnSetaAtendimento}
-    # Sleep    5
+    Click no Item                    ${BtnSetaAtendimento}
     # Wait Until Element Is Visible    ${BtnFiltrar}                  10
     # Preencher campo       ${CampoFiltroAtend}             %${Item}
-    Sleep    5
-    Click Button                     ${BtnFiltrar}
+    Click no Item                    ${BtnFiltrar}
     # Wait Until Element Is Visible    ${SelecionaAtendimento}         30
     Sleep    5
     Click Element                    ${SelecionaAtendimento}
@@ -71,17 +68,12 @@ Acessar Botao Obstestricia
 
 Acesso Tela Recem Nascido
     Click no Item                    ${BtnRecemNascido}
-    Sleep    5
+    Validar Item                     ${MensagemValidacao}
     Click no Item                    ${CampoDataHoraRN}
-    Sleep    5
-    Preencher campo                  ${CampoDataHoraRN}                191020212035
-    Click no Item                    ${CampoTipoSexo}
-    Sleep    5
-    Preencher campo                  ${CampoTipoSexo}                  M
-    Sleep    5
+    Preencher campo                  ${CampoDataHoraRN}                171120212035
+    Clicar no Campo e Preencher Informacao    ${CampoTipoSexo}    ${CampoTipoSexo}    M
     Send Keys                                                          enter
     Click no Item                    ${CampoNroPulseira}
-    Sleep    5
     Preencher campo                  ${CampoNroPulseira}               030303
 
 Preenche Registro Civil

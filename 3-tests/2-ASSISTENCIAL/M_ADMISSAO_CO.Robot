@@ -34,7 +34,7 @@ SCR2AMADMI-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR2AMADMI-001:Fluxo Principal" -d ./5-results/SCR2AMADMI-001 "3-tests\ 2-ASSISTENCIAL/M_ADMISSAO_CO.Robot"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Ficha Obstétrica"@nprint @las
     Acessar Atendimento |Teste|
-    Inserir Data do Parto |19/Out/2021|
+    Inserir Data do Parto |17/Nov/2021|
     Acessar Tipo Parto |Parto Normal|
     Acessar Motivo do Parto |Trabalho de Parto|
     Preenche Dados Quantidade Filhos |1| e Semanas |42|

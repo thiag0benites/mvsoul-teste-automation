@@ -57,4 +57,4 @@ ${BtnOkMensagem}                 xpath=//button[@class='btn btn-primary']
 ${SelecionaAtendimento}          xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[1]/div
 ${SelecionaTipoParto}            xpath=//div[@class='ui-widget-content slick-row even']
 ${SelecionaLeito}                xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[2]
-${MensagemValidacao}             xpath=//p[@class='notifications-item-text'][contains(text(),'Registros gravados com sucesso (1 registros gravados).')]
+${MensagemValidacao}             xpath=//p[@class='notifications-item-text'][contains(text(),'Registros gravados com sucesso')]
