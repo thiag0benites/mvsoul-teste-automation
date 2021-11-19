@@ -38,4 +38,4 @@ SMF-8969 : Reabrir Lote
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8969"
     Acessar a tela "Controladoria>Caixa>Caixa>Reabertura de Lotes"@nprint @las
     Acessa e Preenche Campo Codigo |${dados}[CampoCodigo]|
-    Seleciona Lote para Reabrir E Preenche Justificativa
+    Seleciona Lote para Reabrir E Preenche Justificativa |${dados}[TxtJustificativa]|
