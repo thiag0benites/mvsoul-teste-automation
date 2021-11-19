@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/M_CENTRO_CUSTO_COMP_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,7 +21,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_CENTRO_CUSTO_COMP_STEPS.
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
-
 *** Variable ***
 # # Suite registrada no gerenciador de dados
 ${suite}          m_centro_custo_comp
@@ -31,7 +28,6 @@ ${suite}          m_centro_custo_comp
 ${dados}
 
 *** Test Case ***
-
 SMF-9478 : Cadastrar Centro de Custo - Bloco Classificação-1
 # robot -v browser:chrome -t "SMF-9478 : Cadastrar Centro de Custo - Bloco Classificação-1" -d ./5-results/SMF-9478 "3-tests/6-CONTROLADORIA/M_CENTRO_CUSTO_COMP.robot"
 # robot -v browser:firefox -t "SMF-9478 : Cadastrar Centro de Custo - Bloco Classificação-1" -d ./5-results/SMF-9478 "3-tests/6-CONTROLADORIA/M_CENTRO_CUSTO_COMP.robot"
