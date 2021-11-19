@@ -26,7 +26,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          o_canc_mov_caixa
 # # Recebe dados do gerenciador
 # ${dados}
 
@@ -34,6 +34,7 @@ Test Teardown     Encerra sessao
 SMF-8951 : Cancelar movimentacoes ocorridas no Caixa
 # robot -v browser:chrome -t "SMF-8951 : Cancelar movimentacoes ocorridas no Caixa" -d ./5-results/SMF-8951 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
 # robot -v browser:firefox -t "SMF-8951 : Cancelar movimentacoes ocorridas no Caixa" -d ./5-results/SMF-8951 "3-tests/6-CONTROLADORIA/O_CANC_MOV_CAIXA.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8951"
     Acessar a tela "Controladoria>Caixa>Caixa>Movimentação>Cancelamento de Lançamentos"@nprint @las
-    Acessa e Preenche Campo Codigo |CAIXA TESTE SUL|
-    Seleciona Lote para Cancelar E Preenche Justificativa |ERRO DE LANCAMENTO (REUT.)|
+    Acessa e Preenche Campo Codigo |${dados}[CampoCodigo]|
+    Seleciona Lote para Cancelar E Preenche Justificativa |${dados}[TxtJustificativa]|

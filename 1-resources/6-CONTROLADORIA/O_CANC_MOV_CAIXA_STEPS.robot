@@ -32,23 +32,3 @@ Seleciona Lote para Cancelar E Preenche Justificativa |${Item}|
     Click no Item                             ${BtnCancelarMovim}
     Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|@print         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Acessar o Campo Caixa e Preencher Dados
-#     Click no Item    ${CampoCaixa}
-#     Click no Item    ${BtnCaixa}
-#     Click no Item    ${CampoFiltro}
-#     Clicar no Campo e Preencher Informacao    ${CampoFiltro}    ${CampoFiltro}    HOBRA CAIXA
