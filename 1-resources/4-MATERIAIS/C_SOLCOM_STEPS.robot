@@ -10,35 +10,13 @@ Resource          ../../2-pages/4-MATERIAIS/C_SOLCOM_PAGE.robot
 
 
 *** Keywords ***
-Acessar |${tela}|${printscreen} ${las}
-    Unselect Frame
-    Click Element    ${HomeXpathBtnPesquisa}
-    Preencher campo  ${HomeXpathBtnPesquisaInput}       ${tela}
-    Sleep    1
-    Click Element    ${ScreenCadastroFechamento} 
 
-    #### LAS Send Keys #####
-    IF    "${las}" == "@las"
-        # Sleep    1
-        Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    60
-        Unselect Frame
-        # Sleep    1
-        Send Keys    tab
-        Send Keys    enter
-    END
-    #### End LAS Send Keys #####
-    Seleciona frame    ${IdIframe}    180
-    Sleep    3
-    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
-    Sleep    60
-
-Preencher Campo Ano |${cpAno}|
-    Wait Until Element Is Visible      ${campoAno}       240
+Preencher Campo Ano |${codigo}|
+    Wait Until Element Is Visible      ${}       240
     Click Element       ${campoAno}
     Preencher Campo        ${campoAno}       ${EMPTY}   
     Click Element       ${campoAno}
-    Preencher Campo        ${campoAno}       ${cpAno} 
+    Preencher Campo        ${campoAno}       ${codigo} 
     Press Keys    ${campoAno}    ENTER
     Sleep      3
 
