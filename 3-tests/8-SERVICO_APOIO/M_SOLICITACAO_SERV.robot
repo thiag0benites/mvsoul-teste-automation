@@ -34,7 +34,13 @@ ${dados}
 SCR8SMSOLICITACAOSERV-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR8SMSOLICITACAOSERV-001:Fluxo Principal" -d ./5-results/SCR8SMSOLICITACAOSERV-001 "3-tests/8-SERVICO_APOIO/M_SOLICITACAO_SERV.robot"
 # robot -v browser:firefox -t "SCR8SMSOLICITACAOSERV-001:Fluxo Principal" -d ./5-results/SCR8SMSOLICITACAOSERV-001 "3-tests/8-SERVICO_APOIO/M_SOLICITACAO_SERV.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMSOLICITACAOSERV-001"
-    Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Cadastro"@nprint @las
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMSOLICITACAOSERV-001"
+    Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Solicitação de Serviço"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-
+    Validar Campos Preenchidos ao Acessar Tela
+    Preencher Tipo de OS e Bem Patrimonial |${dados}[TipoOS]| |${dados}[BemPatrimonial]|
+    Validar Campos com Preenchimento Automatico |${dados}[Localidade]|
+    Preencher Descricao |${dados}[Descricao]|
+    Preencher Campos Obrigatorios |${dados}[Oficina]| |${dados}[Ramal]| |${dados}[Email]| |${dados}[Prioridade]|
+    Salvar Solicitacao de Servico |${dados}[MsgConfirmacao]| |${dados}[MsgSucesso]|
+    Sleep  5
