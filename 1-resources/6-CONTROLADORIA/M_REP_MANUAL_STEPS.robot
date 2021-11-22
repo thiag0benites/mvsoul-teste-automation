@@ -53,10 +53,8 @@ Inserir Data Repasse |${dd}/${MES}/${aaaa}|
 
     # ${MES}                         Get Substring        ${data}         3     6
     # ${aaaa}                        Get Substring        ${data}         7     12
-    Click Element                  ${CampoDataRepasse} 
-    Sleep                                               5     
-    Click Element                  ${BtnCalendDataRepasse}
-    Sleep                                               10
+    Click no Item                  ${CampoDataRepasse} 
+    Click no Item                  ${BtnCalendDataRepasse}
     # Click Element                  ${SetaDoCalendario}
     # Sleep                                               2
     ${anoInicio}=                  Get WebElement                       xpath://select[@class='ui-datepicker-year']//option[contains(text(),'${aaaa}')]
@@ -72,16 +70,53 @@ Inserir Data Repasse |${dd}/${MES}/${aaaa}|
     Click Element                  ${diaInicio}
     Sleep                                               5
 
+Usuario devera informar no campo <Codigo> o prestador que recebera o repasse |${Prestador}|
+    Click no Item                                        ${CampoCodigo}
+    Clicar no Campo e Preencher Informacao               ${BtnCampoCodigo}           ${CampoFiltro}       ${Prestador}
+    Clicar Botao se estiver Visivel                      ${BtnFiltro}
+    Click no Item                                        ${SelecionaFiltro}
+    Clicar Botao se estiver Visivel                      ${BtnOk}
+
 
 Clicar no botao [Buscar]
     Click no Item                                        ${BtnProcurar}
     
-No campo <Competencia> inserir a competência desejada e clicar no botao [Executar]
-    Inserir Data Competencia |18/Nov/2019|
+No campo <Competencia> inserir a competencia desejada e clicar no botao [Executar]
+    Inserir Data Competencia |20/Mai/2019|
     Click no Item                                        ${BtnExecutarConsulta} 
 
 Clicar no botao [Adicionar] para realizar lancamento manual    
     Click no Item                                        ${BtnAdicionar(+)}       
 
-Usuario devera informar no campo <Competencia> para identificacao do Repasse a ser lancado manualmente no sistema
-    Inserir Data Repasse |20/11/2019|
+Usuario devera informar no campo <Grupo de Repasse> o grupo ao qual o prestador foi associado |${Grupo}|
+    Click no Item                                        ${CampoGrupoRepasse}
+    Clicar no Campo e Preencher Informacao               ${BtnGrupoRepasse}           ${CampoFiltro}      ${Grupo}
+    Clicar Botao se estiver Visivel                      ${BtnFiltro}
+    Click no Item                                        ${SelecionaFiltro}
+    Clicar Botao se estiver Visivel                      ${BtnOk}
+    Inserir Data Competencia |20/Mai/2019|
+
+Usuario devera informar no campo <Setor> qual setor o prestador selecionado presta serviços |${Setor}|
+    Click no Item                                        ${CampoSetor}
+    Clicar no Campo e Preencher Informacao               ${BtnSetor}           ${CampoFiltro}      ${Setor}
+    Clicar Botao se estiver Visivel                      ${BtnFiltro}
+    Click no Item                                        ${SelecionaFiltro}
+    Clicar Botao se estiver Visivel                      ${BtnOk}
+
+Usuario devera informar no campo <Valor faturado> o valor referente aos procedimentos executados pelo prestador selecionado |${Valor}|
+    Clicar no Campo e Preencher Informacao               ${CampoValorFaturado}        ${CampoEdit}        ${Valor}
+
+Usuario devera informar no campo <Valor Repasse> o valor a ser repassado para o prestador |${Repasse}|
+    Clicar no Campo e Preencher Informacao               ${CampoValorRepasse}         ${CampoEdit}        ${Repasse}
+
+Usuario devera informar no campo <Descricao> a identificacao do repasse em referencia |${Descricao}|
+    Preencher campo                                      ${CampoDescricao}            ${Descricao}
+
+Usuario devera clicar no botao [Salvar]
+    Click no Item                                        ${BtnSalvar}
+    Validar Item    ${ValidMsg}
+
+    
+
+
+
