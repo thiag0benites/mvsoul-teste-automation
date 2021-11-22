@@ -1,15 +1,9 @@
 ##################################################################################################################################
-# Autor: Denner Ricardo
-# Decrição: Elementos e metodos da tela de Ordens de compra
+# Autor: Danilo Campanello
+# Decrição: Elementos e metodos da tela de Gerar nota fiscal de convenio
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource    ../../Config.robot
 
-
 *** Variables ***
-${BROWSER}    chrome
-${SLEEP}      3
-${inputCodigo}                        xpath=//input[@class='editor-text mode-search']
-
-${campoNomeDoFornecedor}              xpath=//div[@class='slick-cell b5 f5 selected']//div[@data-row='0']
