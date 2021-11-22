@@ -16,4 +16,5 @@ ${BotaoSim}                                      xpath=//li[@class="notification
 ${CbRecebida}                                    xpath=//button[@data-member="SN_RECEBIDA"]
 ${BotaoOrdemServico}                             xpath=//button[@id="btnChamar"]
 ${BotaoNao}                                      xpath=//li[@class="notification-buttons"]/button[text()="Não"]  
+${BotaoOk}                                      xpath=//li[@class="notification-buttons"]/button[text()="OK"]  
 

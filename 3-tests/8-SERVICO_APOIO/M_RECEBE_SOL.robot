@@ -35,11 +35,14 @@ SCR8SMRECEBESOL-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR8SMRECEBESOL-001:Fluxo Principal" -d ./5-results/SCR8SMRECEBESOL-001 "3-tests/8-SERVICO_APOIO/M_RECEBE_SOL.robot"
 # robot -v browser:firefox -t "SCR8SMRECEBESOL-001:Fluxo Principal" -d ./5-results/SCR8SMRECEBESOL-001 "3-tests/8-SERVICO_APOIO/M_RECEBE_SOL.robot"
     #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMRECEBESOL-001"
-    Criar Solicitacao de Servico e Acessar Tela |Recebimento de Solicitações de Serviço|
+    #Criar Solicitacao de Servico e Acessar Tela |Recebimento de Solicitações de Serviço|
+    Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Recebimento de Solicitações"@nprint @las
+    Validar Acesso a Tela |Recebimento de Solicitações de Serviço|
+    Realizar Consulta Pelo Codigo de Solicitacao |1146|
     Validar Dados da Solicitacao
     Preencher Campos Sem Preenchimento
     Salvar Alteracoes
     Clicar Checkbox 'Recebida'
     Clicar Botao Ordem de Servico
-    Sleep  5
+
 
