@@ -11,8 +11,9 @@ Resource                            ../../2-pages/6-CONTROLADORIA/M_REP_MANUAL_P
 
 *** Keywords ***
 
-# Inserir Data de Inicio |${data}|
 Inserir Data Competencia |${dd}/${MES}/${aaaa}|
+# Inserir Data de Inicio |${data}|
+
     # Sleep    2
     # ${dd}                          Get Substring        ${data}         0     2
     # ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
@@ -23,12 +24,11 @@ Inserir Data Competencia |${dd}/${MES}/${aaaa}|
 
     # ${MES}                         Get Substring        ${data}         3     6
     # ${aaaa}                        Get Substring        ${data}         7     12
-    Click Element                  ${CampoDataCompet} 
-    Sleep                                               5     
-    Click Element                  ${BotaoDataCompetencia}
-    Sleep                                               10
-    # Click Element                  ${SetaDoCalendario}
-    # Sleep                                               2
+
+    Click no Item                  ${CampoDataCompet} 
+    Click no Item                  ${BotaoDataCompetencia}
+    # Click no Item                  ${SetaDoCalendario}
+
     ${anoInicio}=                  Get WebElement                       xpath://select[@class='ui-datepicker-year']//option[contains(text(),'${aaaa}')]
     Should Be Equal                ${anoInicio.text}                    ${aaaa}
     Click Element                  ${anoInicio}
@@ -43,6 +43,7 @@ Inserir Data Competencia |${dd}/${MES}/${aaaa}|
     Sleep                                               5
 
 Inserir Data Repasse |${dd}/${MES}/${aaaa}|
+# Inserir Data Repasse |${data}|
     # Sleep    2
     # ${dd}                          Get Substring        ${data}         0     2
     # ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
@@ -53,10 +54,11 @@ Inserir Data Repasse |${dd}/${MES}/${aaaa}|
 
     # ${MES}                         Get Substring        ${data}         3     6
     # ${aaaa}                        Get Substring        ${data}         7     12
+    
     Click no Item                  ${CampoDataRepasse} 
     Click no Item                  ${BtnCalendDataRepasse}
-    # Click Element                  ${SetaDoCalendario}
-    # Sleep                                               2
+    # Click no Item                  ${SetaDoCalendario}
+
     ${anoInicio}=                  Get WebElement                       xpath://select[@class='ui-datepicker-year']//option[contains(text(),'${aaaa}')]
     Should Be Equal                ${anoInicio.text}                    ${aaaa}
     Click Element                  ${anoInicio}
