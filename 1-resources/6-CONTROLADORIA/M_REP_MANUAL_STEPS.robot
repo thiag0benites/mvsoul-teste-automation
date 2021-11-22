@@ -25,7 +25,7 @@ Inserir Data Competencia |${dd}/${MES}/${aaaa}|
     # ${aaaa}                        Get Substring        ${data}         7     12
     Click Element                  ${CampoDataCompet} 
     Sleep                                               5     
-    Click Element                  ${BotaoDataInicial}
+    Click Element                  ${BotaoDataCompetencia}
     Sleep                                               10
     # Click Element                  ${SetaDoCalendario}
     # Sleep                                               2
