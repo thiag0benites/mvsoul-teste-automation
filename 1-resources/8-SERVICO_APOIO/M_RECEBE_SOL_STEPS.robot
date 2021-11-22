@@ -28,18 +28,18 @@ Resource          ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 
 #### ------------------------------------------------------------- ####
 
-Realizar Consulta Pelo Codigo de Solicitacao |${RecebeCodSolic}|
+Realizar Consulta Pelo Codigo de Solicitacao |${CodSolic}|
     Click Elemento por titulo                    Procurar
-    Preencher Campo                              ${CampoCodSolic}            ${RecebeCodSolic}  
+    Preencher Campo                              ${CampoCodSolic}            ${CodSolic}  
     Click Elemento por titulo                    Executar Consulta
 
-Validar Dados da Solicitacao
-    Validar Elemento Pelo Titulo                 DESCRICAO TESTE AUTOMACAO
-    Validar Elemento Pelo Titulo                 ALMOXARIFADO
-    Validar Elemento Pelo Titulo                 ANDREVASCONCELOS
+Validar Dados da Solicitacao |${Descricao}| |${Estoque}| |${Usuario}|
+    Validar Elemento Pelo Titulo                 ${Descricao}
+    Validar Elemento Pelo Titulo                 ${Estoque}
+    Validar Elemento Pelo Titulo                 ${Usuario}
 
-Preencher Campos Sem Preenchimento
-    Selecionar Item Na Lista                 ${BotaoLovFuncResp}             GPINA                    GPINA
+Preencher Campos Sem Preenchimento |${UsuarioSolicitante}|
+    Selecionar Item Na Lista                 ${BotaoLovFuncResp}             ${UsuarioSolicitante}      ${UsuarioSolicitante}
     # ${RecebeFuncionario}            SeleniumLibrary.Get Text     ${CampoFuncionario}
     # IF      ${RecebeFuncionario} == 'GPINA'
     #     Selecionar Item Na Lista                 ${BotaoLovFuncResp}         ANDREVASCONCELOS         ANDREVASCONCELOS
@@ -47,24 +47,24 @@ Preencher Campos Sem Preenchimento
     #     Selecionar Item Na Lista                 ${BotaoLovFuncResp}         GPINA                    GPINA
     # END
 
-Salvar Alteracoes
+Salvar Alteracoes |${MensagemConf}| |${MensagemSucesso}|
     Click Elemento por titulo                    Salvar
-    Valida Mensagem                              ${MensagemToast}            Atenção: Deseja salvar?
+    Valida Mensagem                              ${MensagemToast}            ${MensagemConf}
     Click no Item                                ${BotaoSim}
-    Valida Mensagem                              ${MensagemToast}            Registros gravados com sucesso
+    Valida Mensagem                              ${MensagemToast}            ${MensagemSucesso}
 
 Clicar Checkbox 'Recebida'
     Marcar Checkbox |${CbRecebida}|
 
-Clicar Botao Ordem de Servico
+Clicar Botao Ordem de Servico |${EnvioEmail}| |${GravarAlteracoes}| |${MensagemSucesso}|
     Click no Item                                ${BotaoOrdemServico}
-    Valida Mensagem                              ${MensagemToast}            Atenção: Não haverá envio de email no processo de recebimento pois esta oficina está configurada para não enviar email.
+    Valida Mensagem                              ${MensagemToast}            ${EnvioEmail}
     Click no Item                                ${BotaoOk}
     Validar Acesso a Tela |Ordem de Serviço|
     Click Elemento por titulo                    Sair
-    Valida Mensagem                              ${MensagemToast}            Pretende gravar as alterações efetuadas?
+    Valida Mensagem                              ${MensagemToast}            ${GravarAlteracoes}
     Click no Item                                ${BotaoNao}
-    Valida Mensagem                              ${MensagemToast}            Registros gravados com sucesso
+    Valida Mensagem                              ${MensagemToast}            ${MensagemSucesso}
     
 
 
