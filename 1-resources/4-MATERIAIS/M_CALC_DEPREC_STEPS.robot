@@ -5,43 +5,32 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/M_CALC_DEPREC_PAGE.robot
-Library    SeleniumLibrary
 
 *** Variable ***
-
-${CurrentDate}
+${dados}
 
 *** Keywords ***
 
-Preencher o campo Mês/Ano geração
-    Preencher Campo        ${mesAnoGeracao}       11/2015
+Preencher o campo Mês/Ano geracao|${mesAno}|
+    Preencher Campo        ${mesAnoGeracao}       ${mesAno}
     Press Keys    ${mesAnoGeracao}    ENTER
     Sleep      3    
-
-Selecionar Tipo de depreciação
-    #Click Button       ${tipoDeprec}
-    Seleciona Item Combobox        ${selectTipDeprec}       Mensal
-    Sleep       3
-     
-Selecionar no campo [Para depreciações atrasadas,contabilizar em]
-    #Click Button       ${deprecAtrasadas}
-    Seleciona Item Combobox        ${selectDeprecAtrasadas}       Mês/Ano de geração da depreciação
-    Sleep       3
-    
+   
 Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Gerar depreciação'
         Wait Until Element Is Visible    ${btnGerarDeprec}    60
         Click Button    ${btnGerarDeprec}
         Sleep    3
+        Wait Until Element Is Visible       ${listaItensDeprec}     60
+        Sleep       3
     ELSE IF    '${nomeBtn}' == 'Desfazer depreciações'
         Wait Until Element Is Visible    ${btnDesfazerDeprec}    30
         Sleep    3
         Click Button    ${btnDesfazerDeprec}
         Sleep    1
     ELSE IF    '${nomeBtn}' == 'Sim'
-        Wait Until Element Is Visible    ${btnSim}    30
+        Wait Until Element Is Visible    ${mensagemPop}    30
         Sleep    1
         Click Element    ${btnSim}
         Sleep    6
-        Valida Mensagem                  ${MensagemToast}                Nenhum registro foi recuperado. Informe a consulta novamente.
     END

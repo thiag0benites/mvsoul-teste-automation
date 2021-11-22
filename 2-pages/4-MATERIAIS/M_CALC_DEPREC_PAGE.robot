@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource          ../Config.robot
+Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Página de Calculo da Depreciação do Bem 
@@ -20,4 +20,5 @@ ${deprecAtrasadas}      xpath=//*[@id="inp:tpDepreciacaoPendentes"]/button
 ${btnGerarDeprec}       id=btGerar
 ${listaItensDeprec}     xpath=//*[@id="grdItdeprecia"]/div[4]
 ${btnDesfazerDeprec}        id=btDesfazer
-${btnSim}               xpath=//*[@id="frames231"]
+${btnSim}               xpath=//*[@id="frames15"]
+${mensagemPop}                    class=notifications-item-text
