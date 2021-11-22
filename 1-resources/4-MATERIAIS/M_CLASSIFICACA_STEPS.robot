@@ -11,18 +11,19 @@ Resource                            ../../2-pages/4-MATERIAIS/M_CLASSIFICACA_PAG
 
 *** Keywords ***
 
-Campos Obrigatorias a serem preenchidas
+Campos Obrigatorios a serem preenchidos e Salvar
+    Click no Item                                           ${CampoTipo}
     Preencher campo                                         ${CampoDescricao}    ESTOQUE TESTE 
     Click no Item                                           ${CampoTipo}
     Preencher campo                                         ${BtnTipo}           Distribuição 
     Click no Item                                           ${BtnMultiEmpresa}
-    Click no Item                                           ${BtnOK}
     Preencher campo                                         ${BtnRouparia}    S
     Send Keys                                               Enter        
-    Selecionar Item Na Lista                                ${BtnSetor}    ALMOXARIFADO   ALMOXARIFADO    
-    
+    Click Elemento por titulo                               Prescrição 
+    Selecionar Item Na Lista                                ${BtnTipoDeEsquema}    CUIDADOS DE ENFERMAGEM   CUIDADOS DE ENFERMAGEM    
+    Click Elemento por titulo                               Prescrição
 Salvar e validar      
-    Click Elemento por titulo                               Salvar        
+           
     Validar Informacao Item                                 ${Alerta}    Há estoque cadastrado para controle de produtos de rouparia. Deseja cadastrar este também?
     Click no Item                                           ${BtnAlerta}
     Validar Informacao Item                                 ${Alerta}    Registros gravados com sucesso
