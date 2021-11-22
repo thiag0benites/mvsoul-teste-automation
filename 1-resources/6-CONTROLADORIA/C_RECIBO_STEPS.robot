@@ -21,24 +21,28 @@ Executar Pesquisa
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
 Imprimir Recibo
     Click no Item                                  ${ListaStatus}
-    Clicar Botao se estiver Visivel                ${FiltraStatus}
+    Clicar Botao se estiver Visivel                ${FiltraStatusAguardando}
     Clicar Botao se estiver Visivel                ${BtnImprimir}
     Clicar Botao se estiver Visivel                ${BtnImprimirReciboPag}
     Sleep    8
     Switch Window
 Limpar Pesquisa
-    Clicar Botao se estiver Visivel                ${BtnLimparPesquisa}
+    Click no Item                                  ${BtnLimparPesquisa}
 Executar Reimpressão
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
-    Click no Item                                  ${StatusEmitido}
+    Click no Item                                  ${ListaStatus}
+    Clicar Botao se estiver Visivel                ${FiltraStatusEmitido}
     Clicar Botao se estiver Visivel                ${BtnReimpressao}
     Clicar Botao se estiver Visivel                ${BtnImprimirReciboPag}
-Cancelar Recibo
-    Click no Item                                  ${StatusAguardando}
-    Clicar Botao se estiver Visivel                ${BtnImprimir}
-    Clicar Botao se estiver Visivel                ${BtnImprimirReciboPag}
-    Click no Item                                  ${StatusEmitido}
-    Clicar Botao se estiver Visivel                ${BtnMoticoCancel}
+    Sleep    8
+    Switch Window
+Cancelar Recibo 
+#|${CampoMotCanc}|
+    Clicar Botao se estiver Visivel                ${BtnLimparPesquisa}
+    Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
+    Click no Item                                  ${ListaStatus}
+    Clicar Botao se estiver Visivel                ${FiltraStatusEmitido}
+    Clicar Botao se estiver Visivel                ${BtnMotivoCancel}
     Clicar no Campo e Preencher Informacao         ${CampoFiltroMotCancel}    ${CampoFiltroMotCancel}    $BORDERO REAUTILIZAVEL
     Clicar Botao se estiver Visivel                ${BtnFiltrar}
     Clicar Botao se estiver Visivel                ${BtnOk}
