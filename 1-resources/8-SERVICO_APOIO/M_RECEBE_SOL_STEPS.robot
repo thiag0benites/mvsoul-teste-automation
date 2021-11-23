@@ -12,19 +12,19 @@ Resource          ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 
 *** Keywords ***
 ### Keyword para criação da massa de dados necessária para o teste ###
-# Criar Solicitacao de Servico e Acessar Tela |${NomeTela}|
-#     Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Solicitação de Serviço"@nprint @las
-#     Validar Acesso a Tela |Solicitação de Serviços|
-#     Preencher Tipo de OS e Bem Patrimonial |ELETIVA| |BEM AGREGADO - BEM AGREGADO - MARCA|
-#     Preencher Descricao |DESCRICAO TESTE AUTOMACAO|
-#     Preencher Campos Obrigatorios |OFICINA DE TRABALHO| |3333-4444| |soulmv@mv.com.br| |Alta|
-#     Salvar Solicitacao de Servico |Atenção: Existem solicitações de serviços em aberta(s) para este Bem.| |Registros gravados com sucesso|
-#     Convert To String         ${CampoCodSolicTelaSolic}
-#     ${RecebeCodSolic}         SeleniumLibrary.Get Text    ${CampoCodSolicTelaSolic}
-#     Click Elemento por titulo                    Sair
-#     Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Recebimento de Solicitações"@nprint @no
-#     Validar Acesso a Tela |${NomeTela}|
-#     Realizar Consulta Pelo Codigo de Solicitacao |${RecebeCodSolic}|
+Criar Solicitacao de Servico e Acessar Tela |${NomeTela}| |${Suite}| |${LinhaGerenciador}|
+    Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Solicitação de Serviço"@nprint @las
+    Validar Acesso a Tela |Solicitação de Serviços|
+    Preencher Tipo de OS e Bem Patrimonial |ELETIVA| |BEM AGREGADO - BEM AGREGADO - MARCA|
+    Preencher Descricao |DESCRICAO TESTE AUTOMACAO|
+    Preencher Campos Obrigatorios |OFICINA DE TRABALHO| |3333-4444| |soulmv@mv.com.br| |Alta|
+    Salvar Solicitacao de Servico |Atenção: Existem solicitações de serviços em aberta(s) para este Bem.| |Registros gravados com sucesso|
+    ${RecebeCodSolic}         Get Element Attribute       ${CampoCodSolicTelaSolic}    title
+    Altera massa de dados da "${Suite}", linha "${LinhaGerenciador}", coluna "CdSolicitacao", valor "${RecebeCodSolic}"
+    Click Elemento por titulo                    Sair
+    Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Recebimento de Solicitações"@nprint @no
+    Validar Acesso a Tela |${NomeTela}|
+    Realizar Consulta Pelo Codigo de Solicitacao |${RecebeCodSolic}|
 
 #### ------------------------------------------------------------- ####
 
