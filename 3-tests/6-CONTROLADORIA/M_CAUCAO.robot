@@ -1,14 +1,14 @@
 #################################################################################################################################################################
-# Autor: Danilo Campanello
-# Decrição: Exemplo de como criar uma suite de teste
+# Autor: Marcos Costa
+# Decrição: Registrar a entrada de um depósito de pagamento antecipado
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/O_REABRE_LOTE_STEPS "3-tests\2 - ASSISTENCIAL\O_REABRE_LOTE.robot"
-# chrome:         robot -v browser:firefox -d ./5-results/O_REABRE_LOTE_STEPS "3-tests\2 - ASSISTENCIAL\O_REABRE_LOTE.robot"
+# chrome:         robot -v browser:chrome -t "SRCMCAUCAO001:Fluxo Principal" -d ./5-results/SRCMCAUCAO001 "3-tests/6-CONTROLADORIA/M_CAUCAO.robot"
+# chrome:         robot -v browser:firefox -t "SRCMCAUCAO001:Fluxo Principal" -d ./5-results/SRCMCAUCAO001 "3-tests/6-CONTROLADORIA/M_CAUCAO.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/O_REABRE_LOTE_STEPS "3-tests\2 - ASSISTENCIAL\O_REABRE_LOTE.robot"
-# chrome:         robot -v browser:headlessfirefox -d ./5-results/O_REABRE_LOTE_RPA_STEPS "3-tests\2 - ASSISTENCIAL\O_REABRE_LOTE.robot"
+# chrome:         robot -v browser:headlesschrome -t "SRCMCAUCAO001:Fluxo Principal" -d ./5-results/SRCMCAUCAO001 "3-tests/6-CONTROLADORIA/M_CAUCAO.robot"
+# chrome:         robot -v browser:headlessfirefox -t "SRCMCAUCAO001:Fluxo Principal" -d ./5-results/SRCMCAUCAO001 "3-tests/6-CONTROLADORIA/M_CAUCAO.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes

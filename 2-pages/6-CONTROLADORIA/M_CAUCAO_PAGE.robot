@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Marcos Costa
-# Decrição: Elementos e metodos da tela de Gerar nota fiscal de convenio
+# Decrição: Registrar a entrada de um depósito de pagamento antecipado
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
