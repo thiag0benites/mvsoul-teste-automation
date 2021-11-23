@@ -17,6 +17,6 @@ ${BtnGrupoCusto}                       xpath=//div[@id="cdGrupoDeCusto"]//button
 ${CampoGrupoCusto}                     xpath=//div[@class="slick-cell b0 f0 slick-last-cell selected"]
 ${BtnCalculaEvento}                    xpath=//button[@class="ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon"]//span[@class="ui-button-icon ui-icon mv-basico-seta_baixo_simples"]
 ${CampoSelecionadoCalculaEvento}       xpath=//input[@title="Sim"][@id="snCalculoEvento_ac"]
-${CampoSelecionadoAceitaLancamento}    xpath=//input[@id="snAceitaLancamento_ac"][@title="Sim"]
+${CampoSelecionadoAceitaLancamento}    xpath=//input[@id="snAceitaLancamento_ac"][@title="Sim"] 
 ${BtnSalvar}                           xpath=//i[@class="mv-basico-salvar"]
 ${MsgConfirmacao}                      xpath=//p[@class="notifications-item-text"]

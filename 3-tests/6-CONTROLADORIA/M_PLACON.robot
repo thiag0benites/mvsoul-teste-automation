@@ -3,16 +3,18 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/M_ANEXO_ATENDIMENTO_STEPS "3-tests\1 - ATENDIMENTO\M_ANEXO_ATENDIMENTO.robot"
-# chrome:         robot -v browser:firefox -d ./5-results/M_ANEXO_ATENDIMENTO_STEPS "3-tests\1 - ATENDIMENTO\M_ANEXO_ATENDIMENTO.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/M_PLACON_STEPS "3-tests\6 - CONTROLADORIA\M_PLACON.robot"
+# chrome:         robot -v browser:firefox -d ./5-results/M_PLACON_STEPS "3-tests\6 - CONTROLADORIA\M_PLACON.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/M_ANEXO_ATENDIMENTO_STEPS "3-tests\1 - ATENDIMENTO\M_ANEXO_ATENDIMENTO.robot"
-# chrome:         robot -v browser:headlessfirefox -d ./5-results/M_ANEXO_ATENDIMENTO_STEPS "3-tests\1 - ATENDIMENTO\M_ANEXO_ATENDIMENTO.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/M_PLACON_STEPS "3-tests\6 - CONTROLADORIA\M_PLACON.robot"
+# chrome:         robot -v browser:headlessfirefox -d ./5-results/M_PLACON_STEPS "3-tests\6 - CONTROLADORIA\M_PLACON.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/1-ATENDIMENTO/M_ANEXO_ATENDIMENTO_STEPS.robot
+
+Resource            ../../1-resources/6-CONTROLADORIA/M_PLACON_STEPS.robot
+
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -21,20 +23,22 @@ Resource            ../../1-resources/1-ATENDIMENTO/M_ANEXO_ATENDIMENTO_STEPS.ro
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
+
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_centro_custo_comp
+#${suite}          m_lote_pagamento
 # # Recebe dados do gerenciador
 #${dados}
 
 *** Test Case ***
-SMF-10552 : Anexar documentos do paciente
-# robot -v browser:chrome -t "SMF-10552 : Anexar documentos do paciente" -d ./5-results/SMF-10552 "3-tests/1-ATENDIMENTO/M_ANEXO_ATENDIMENTO.robot"
-# robot -v browser:firefox -t "SMF-10552 : Anexar documentos do paciente" -d ./5-results/SMF-10552 "3-tests/1-ATENDIMENTO/M_ANEXO_ATENDIMENTO.robot"
-    Acessar a tela "Atendimento>Internação>Atendimento>Pré-Internação"@nprint @las
-    Pesquisar ou cadastrar uma pre internacao para o paciente
-    Clicar no botao Documentos do paciente
-    Clicar no botao Novo documento
-    Preencher os campos e clicar no botao anexar documento
-    #Teste Upload
-    #Faz upload de um arquivo 
+SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)
+# robot -v browser:chrome -t "SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)" -d ./5-results/SMF-8287 "3-tests/6-CONTROLADORIA/M_PLACON.robot"
+# robot -v browser:firefox -t "SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)" -d ./5-results/SMF-8287 "3-tests/6-CONTROLADORIA/M_PLACON.robot"
+    Acessa a Tela Pela Busca |M_PLACON||Conta de Movimentação| @las
+    Informar o numero no campo codigo da empresa
+    No grid Contas clicar no campo codigo 
+    Clicar Descricao da Conta
+    Clicar no campo Natureza
+    Clicar no campo Grupo da Conta 
+    Indicar no campo Exporta ANS 
+    Clicar no botao Salvar

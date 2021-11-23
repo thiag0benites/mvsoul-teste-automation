@@ -27,16 +27,19 @@ Clicar no botao Novo documento
 
 Preencher os campos e clicar no botao anexar documento
     Click no Item                    ${BtnTipoDoc}  
-    Click no Item                    ${CampoTipoDoc} 
-    Click no Item                    ${BtnOk}    
-    Preencher campo                  ${CampoDescricao}                    TESTE
-    Click no Item                    ${BtnAnexarDoc}    
+    Click no Item                    ${CampoTipoDoc}
+    Click no Item                    ${BtnOk}  
+    Click no Item                    ${BtnTipoStatus}
+    Click no Item                    ${CampoTipoStatus}
+    Click no Item                    ${BtnOk} 
+    Preencher campo                  ${CampoDescricao}                    TESTE 
+    #Click no Item                    ${BtnAnexarDoc}    
 
 Teste Upload
     Faz upload de um arquivo
 
 Faz upload de um arquivo  
-    Open Browser                http://qadevelop.mv.com.br:83/soul-mv/?t=1637584139003/upload    chrome
+    Open Browser                http://qadevelop.mv.com.br:83/soul-mv/?t=1637584139003/upload        chrome
     Wait Until Element Is Visible           file-submit
     Choose File                             file-upload     ${FILE}
     Click Button                            file-submit
