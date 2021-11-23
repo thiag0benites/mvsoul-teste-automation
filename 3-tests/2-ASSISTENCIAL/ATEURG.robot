@@ -39,8 +39,8 @@ SCR2AATEURG-001:Fluxo Principal
     #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
     Validar Acesso a Tela |${dados}[NomeTela]|
     Clicar Botao Paciente   
-    Pesquisar Pelo Paciente
-    Preencher Campos Obrigatorios
-    Clicar Botao Carteira
-    Validar Informacoes Carteira
-    Confirmar Atendimento 
+    Pesquisar Pelo Paciente |${dados}[Paciente]| |${dados}[CdPaciente]|
+    Preencher Campos Obrigatorios |${dados}[Medico]| |${dados}[Origem]| |${dados}[LocalProc]| |${dados}[Destino]| |${dados}[TipoPaciente]| |${dados}[Servico]| |${dados}[CID]| |${dados}[Procedimento]|
+    Clicar Botao Carteira 
+    Validar Informacoes Carteira |${dados}[NumCarteira]| |${dados}[ValidadeCarteira]|
+    Confirmar Atendimento |${dados}[MensagemSucesso]|
