@@ -21,7 +21,7 @@ ${BtnProcedimentoCIH}                     xpath=//div[@id="dspCdSsmCih"]//button
 ${BtnAlerta}                              xpath=//li[@class='notification-buttons']//button
 ${BtnTipoDeEsquema}                       xpath=//div[@id='PRESCRICAO_cdTipEsq']//button
 ${BtnConfirmarAlta}                       xpath=//button[@data-member="BTN_CONFIRMAR"]
-${BtnSaidaDoRelatorio}                    xpath=//div[@data-member="TP_SAIDA"]
+${BtnSaidaDoRelatorio}                    xpath=//div[@data-member="TP_SAIDA"]//input
 ${BtnImprimir}                            xpath=//div[@id="CV_PADRAO_PARAMETER"]//button[@data-member="BTN_IMPRIMIR"]
 ${BtnSair}                                xpath=//div[@id="CV_PADRAO_PARAMETER"]//button[@data-member="BTN_SAIR"]
 ${BtnOK}                                  xpath=//button[@class="btn btn-primary"]
