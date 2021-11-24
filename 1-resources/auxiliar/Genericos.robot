@@ -244,3 +244,14 @@ Pegar data atual
     ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
     [Return]        ${CurrentDate}
     Log To Console      ${CurrentDate}
+
+Captura data e hora TESTE
+
+    Wait Until Element Is Visible    ${elemento}    120
+    [Arguments]    ${elemento}    
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y %H:%M
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+    Click Element    ${elemento}
+    Sleep    2
+    Input Text    ${elemento}    ${CurrentDate}    
