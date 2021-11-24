@@ -75,3 +75,10 @@ Preencher o campo Produto|${produto}|, Unidade.|${unidade}|, Qtde. Disp.|${qtdDi
 Selecionar checkbox Doacao
     Click Element       ${checkDoacao}
     Sleep      3
+
+Captura codigo|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${inputCodigo}
+    ${codBaixa}    Get Element Attribute    ${inputCodigo}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "codigo", valor "${codBaixa}"
+    Sleep    3

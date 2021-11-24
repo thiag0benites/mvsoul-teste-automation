@@ -20,7 +20,7 @@ Resource            ../../1-resources/4-MATERIAIS/M_BAIPRO_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -40,4 +40,5 @@ SMF-5117:Fluxo Principal
     Preencher o campo Produto|${dados}[produto]|, Unidade.|${dados}[unidade]|, Qtde. Disp.|${dados}[qtdDisp]|
     Selecionar checkbox Doacao
     Clicar no botao [Salvar]
+    Captura codigo|${suite}|${dados}[id]|
     

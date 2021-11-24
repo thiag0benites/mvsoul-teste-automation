@@ -23,3 +23,4 @@ ${QtdDisponivel}        xpath=(//*[@id="grdItmvtoEstoque"])//*[@class="slick-cel
 ${inpQtdDisp}           xpath=//*[@id="#frames15"]
 ${checkDoacao}          xpath=//button[@title="Doação"]
 ${btnSalvar}            xpath=//*[@id="tb-record-save"]
+${inputCodigo}          xpath=//*[@id="inp:cdMvtoEstoque"]
