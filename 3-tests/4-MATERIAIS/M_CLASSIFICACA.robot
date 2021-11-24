@@ -37,8 +37,8 @@ SCR4MMCLASSIFICACA-001:Fluxo Principal          #SMF-1897 : Cadastrar as Classif
 # robot -v browser:firefox -t "SCR4MMCLASSIFICACA-001:Fluxo Principal" -d ./5-results/SCR4MMCLASSIFICACA-001 "3-tests/4-MATERIAIS/M_CLASSIFICACA.robot"
     #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-1897"
     Acessar a tela "Materiais e Logística>Almoxarifado>Tabelas>Classificação dos Produtos>Classificação"@nprint @las
-    Campos Obrigatorias a serem preenchidas
-    Salvar e validar
+    Campos Obrigatorios a serem preenchidos e Salvar
+    Preencher Abas de Prescricao e Faturamento e Salvar
 
 
 

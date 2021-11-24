@@ -12,24 +12,29 @@ Resource                            ../../2-pages/4-MATERIAIS/M_CLASSIFICACA_PAG
 *** Keywords ***
 
 Campos Obrigatorios a serem preenchidos e Salvar
-    Click no Item                                           ${CampoTipo}
-    Preencher campo                                         ${CampoDescricao}    ESTOQUE TESTE 
-    Click no Item                                           ${CampoTipo}
-    Preencher campo                                         ${BtnTipo}           Distribuição 
-    Click no Item                                           ${BtnMultiEmpresa}
-    Preencher campo                                         ${BtnRouparia}    S
-    Send Keys                                               Enter        
-    Click Elemento por titulo                               Prescrição 
-    Selecionar Item Na Lista                                ${BtnTipoDeEsquema}    CUIDADOS DE ENFERMAGEM   CUIDADOS DE ENFERMAGEM    
-    Click Elemento por titulo                               Prescrição
-Salvar e validar      
-           
-    Validar Informacao Item                                 ${Alerta}    Há estoque cadastrado para controle de produtos de rouparia. Deseja cadastrar este também?
-    Click no Item                                           ${BtnAlerta}
-    Validar Informacao Item                                 ${Alerta}    Registros gravados com sucesso
+    Preencher campo                                         ${CampoEditavel}    20
+    Click no Item                                           ${DescricaoEspecies}
+    Preencher campo                                         ${CampoEditavel}    AUTOMACAO
+    Click no Item                                           ${CodigoClasse}
+    Preencher campo                                         ${CampoEditavel}    20
+    Click no Item                                           ${DescricaoClasse}
+    Preencher campo                                         ${CampoEditavel}    AUTOMACAO
+    Click no Item                                           ${CodigoSubclasse}
+    Preencher campo                                         ${CampoEditavel}    20
+    Click no Item                                           ${DescricaoSubclasse}
+    Preencher campo                                         ${CampoEditavel}    AUTOMACAO
+    Clicar Botao Salvar
+    
+    
+Preencher Abas de Prescricao e Faturamento e Salvar    
+    Click no Item                                           ${BtnPrescricao}
+    Selecionar Item Na Lista                                ${BtnTipoDeEsquema}           CUIDADOS DE ENFERMAGEM                 CUIDADOS DE ENFERMAGEM
+    Click no Item                                           ${BtnFaturamento}
+    Selecionar Item Na Lista                                ${BtnGrupoDeProcedimentos}    ANATOMIA PATOLOGICA E CITOPATOLOGIA    ANATOMIA PATOLOGICA E CITOPATOLOGIA
+    Selecionar Item Na Lista                                ${BtnTabelaFaturamento}       192                                    192
+    Clicar Botao Salvar
 
-
-
+    
 
 
 

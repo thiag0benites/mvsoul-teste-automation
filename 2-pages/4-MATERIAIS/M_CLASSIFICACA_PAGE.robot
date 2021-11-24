@@ -18,14 +18,19 @@ ${CampoEditavel}                          xpath=//input[@class='editor-text mode
 
 ### Botoes ###
 
-${BtnAlerta}                              xpath=//li[@class='notification-buttons']//button
-${BtnTipoDeEsquema}                       xpath=//div[@id='PRESCRICAO_cdTipEsq']//button
+
+${BtnPrescricao}                          xpath=//li[@aria-controls="TAB_CONFIGURACOES-PRESCRICAO"]
+${BtnFaturamento}                         xpath=//li[@aria-controls="TAB_CONFIGURACOES-FATURAMENTO"]
+${BtnTipoDeEsquema}                       xpath=//div[@id="PRESCRICAO_cdTipEsq"]//button
+${BtnGrupoDeProcedimentos}                xpath=//div[@id="FATURAMENTO_cdGruPro"]//button
+${BtnTabelaFaturamento}                   xpath=//div[@id="FATURAMENTO_cdTabFat"]//button
+
 
 ### Diversos ###
 ${Alerta}                                 xpath=//p[@class='notifications-item-text']
    
 
-#//a[@id='TAB_CONFIGURACOES_TAB_CONFIGURACOES_tab1']
+
 
 
 
