@@ -37,4 +37,11 @@ SCR4MMRECEBESOLICITACAO-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR4MMRECEBESOLICITACAO-001:Fluxo Principal" -d ./5-results/SCR4MMRECEBESOLICITACAO "3-tests/4-MATERIAIS/M_RECEBE_SOLICITACAO.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMRECEBESOLICITACAO-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Recebimento de Solicitação"@nprint @las
+    Informar o codigo Solicitacao
+    Clicar no botão Executar 
+    Preencher o campo Usuario responsavel pela entrega
+    Marcar o checkbox confirmar
+    Clicar no botao Confirmar 
+    Validar mensagem de confirmacao  
+    Clicar no botao OK
     
