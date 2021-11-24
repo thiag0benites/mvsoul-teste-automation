@@ -10,3 +10,4 @@ Resource          ../../Config.robot
 ### Elementos da Pagina de Consulta de Cadastro de Paciente
 ${inputTransfCodAtend}    id=inp:cdAtendimento
 ${selectGridAvCir}  xpath=//div[@data-member='CD_AVISO_CIRURGIA']
+${inputHoraCentroCir}    xpath=//input[@class='editor-text mode-edit']

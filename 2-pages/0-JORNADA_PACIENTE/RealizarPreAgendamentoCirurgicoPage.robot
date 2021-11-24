@@ -27,4 +27,5 @@ ${inputTipoInternacaoPreAg}    xpath=(//input[@id='inp:cdTipoInternacao'])
 ${inputConvenioCir}    xpath=(//*[@id='inp:cdConvenio'])
 ${inputCodPlano}     xpath=(//input[@id='inp:cdConPla'])
 ${inputPrestCirurgiao}    xpath=(//input[@id="inp:cdPrestador"])
-${inputDtPrevAlta}    id=inp:dtPrevAlta
+${inputDtPrevInter}    xpath=//input[@id='inp:dtPrevInter']
+${notifMsgSucesso}     xpath=//li[@class='notification-warning']  

@@ -23,7 +23,7 @@ ${numeroEndereco}               id=inp:nrEndereco
 
 #Buttons
 ${btnSim}                       xpath=//ul[@class='dropdown-menu workspace-notifications-menu']//li[@class='notification-buttons']/button[contains(text(),'Sim')]
-${btnNao}                       xpath=//ul[@class='dropdown-menu workspace-notifications-menu']//li[@class='notification-buttons']//button[contains(text(),'Não')]
+${btnNao}                       xpath=//ul[@class='dropdown-menu workspace-notifications-menu']//li[@class='notification-buttons']/button[contains(text(),'Não')]
 ${btnMsgOK}                     xpath=//ul[@class='dropdown-menu workspace-notifications-menu']/li[@class='notification-buttons']/button[contains(text(),'OK')]
 ${btnOKTela}                    xpath=//button[@id='btok']
 ${btnSair}                      xpath=//li[@id='tb-exit']//a

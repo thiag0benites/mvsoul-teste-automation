@@ -51,8 +51,8 @@ Preencher os campos do aviso de cirurgia |${cirurgia}|,|${IntCodConvenio}|,|${In
     Sleep    0.5
     Wait Until Element Is Visible    ${notificacaoGravarRegistro}    5
     Sleep    0.5
-#     ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
-#     Should Be Equal As Strings    ${AgCirurMsgEsperada}    ${msgObtida}    error=*** Mensagem de alerta não foi apresentada!
+    ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
+    Should Be Equal As Strings    ${AgCirurMsgEsperada}    ${msgObtida}    error=*** Mensagem de alerta não foi apresentada!
     Clicar no botao [Sim]|${AgCirurMsgEsperada}|
     Sleep    1
 

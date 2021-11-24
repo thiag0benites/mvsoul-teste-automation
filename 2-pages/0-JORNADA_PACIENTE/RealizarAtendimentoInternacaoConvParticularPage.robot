@@ -17,3 +17,4 @@ ${selectAcompanhante}    id=snAcompanhante_ac
 ${inputLeito}     xpath=//input[@id='inp:cdLeito']
 ${inputDataHrPrevAlta}    id=inp:dtPrevistaAlta
 ${inputCodAtendimento}    id=inp:cdAtendimento
+${inputCobertura}         id=inp:cdTipAcomCobertura

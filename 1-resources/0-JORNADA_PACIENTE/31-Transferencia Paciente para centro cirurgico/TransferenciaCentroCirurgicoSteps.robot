@@ -6,7 +6,6 @@
 ### Pages utilizadas na Suite de teste
 Resource    ../../../2-pages/0-JORNADA_PACIENTE/TransferenciaCentroCirurgicoPage.robot
 Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
-Resource    ../../4-MATERIAIS/O_GERIVE_STEPS.robot
 
 *** Variable ***
 
@@ -17,14 +16,14 @@ Pesquisar o paciente pelo codigo de atendimento |${CodAtendimento}|${print}
     Sleep    1
     Clicar no botao [Executar]||
 
-Preencher os campos do registro de transferencias
+Preencher os campos do registro de transferencias |${preIntMsgEsperada}|
     Clicar no botao [Reticencias]||
     Clicar no botao [OK Tela]||
     Send Keys    enter
-    Sleep    1.5
     Send Keys    enter
-    Sleep    1.5
+    Preencher campo com data e hora    ${inputHoraCentroCir}    %H:%M    0   
     Send Keys    enter
-    Sleep    1.5
     Send Keys    enter
-    Sleep    1.5
+    Clicar no botao [Salvar]|${preIntMsgEsperada}|
+    
+    

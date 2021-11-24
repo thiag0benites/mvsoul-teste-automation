@@ -217,3 +217,27 @@ Clicar no botão Salvar do menu
 
 Clicar no botão Adicionar
     Click Element     ${btnAdicionar}
+    
+Captura hora atual
+    ${CurrentTime}    Get Current Date    result_format=%H:%M
+    [Return]        ${CurrentTime}
+    Log To Console      ${CurrentTime}
+
+Captura data atual
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+
+Preencher campo com data e hora
+    Wait Until Element Is Visible    ${elemento}    120
+    [Arguments]    ${elemento}    ${formato}    ${incremento}    
+    ${CurrentDate}    Get Current Date    result_format=${formato}    increment=${incremento}
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+    Click Element    ${elemento}
+    Sleep    2
+    Input Text    ${elemento}    ${CurrentDate}
+    
+
+
+

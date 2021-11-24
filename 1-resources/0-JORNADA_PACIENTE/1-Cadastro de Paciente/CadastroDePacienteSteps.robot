@@ -110,8 +110,8 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
     ELSE IF    '${nomeBtn}' == 'OK'
         Wait Until Element Is Visible    ${btnMsgOK}    30
         Sleep    1
-        Click Element    ${btnMsgOK}   
-        Sleep    1.5
+        Click Element    ${btnMsgOK}
+        Sleep    1 
 
     ELSE IF    '${nomeBtn}' == 'OK Tela'
         Wait Until Element Is Visible    ${btnOKTela}    30
@@ -169,7 +169,7 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Wait Until Element Is Visible    ${btnAvisoCirurgia}    30
         Sleep    1
         Click Element    ${btnAvisoCirurgia}
-        Sleep    1
+        Sleep    5
 
     ELSE IF    '${nomeBtn}' == 'Reticencias'
         Wait Until Element Is Visible    ${btnReticencias}    30

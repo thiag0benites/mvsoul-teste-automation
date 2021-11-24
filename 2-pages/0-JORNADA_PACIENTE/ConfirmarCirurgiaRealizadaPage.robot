@@ -10,4 +10,6 @@ Resource          ../../Config.robot
 ### Elementos da Pagina de Cadastro de Paciente
 
 #Inputs
-${inputNomePaciente}            id=inp:nmPaciente
+${inputDtHrEntradaSala}    xpath=//input[@id='inp:dtEntradaSala']
+${inputDtHrIniCirurgia}    xpath=//input[@id='inp:dtInicioCirurgia']
+${inputDtHrSaidaSala}      Xpath=//input[@id='inp:dtSaidaSala']

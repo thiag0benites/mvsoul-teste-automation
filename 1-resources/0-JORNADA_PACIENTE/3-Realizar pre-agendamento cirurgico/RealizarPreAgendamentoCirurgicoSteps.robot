@@ -10,14 +10,12 @@ Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|${dataHrSugerida}|,|${tempoPrev}|,|${dataHrPrevInter}|,|${codPacPreAgCir}|,|${tipoInternacao}|,|${centroCirurgico}|,|${salaCirurgica}|${print}
-    Preencher campo    ${inputDataHr}    ${dataHr}
-    Sleep    1.5
-    Preencher campo    ${inputDataHrSugerida}    ${dataHrSugerida}
-    Sleep    1
+#Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|${dataHrSugerida}|,|${tempoPrev}|,|${dataHrPrevInter}|,|${codPacPreAgCir}|,|${tipoInternacao}|,|${centroCirurgico}|,|${salaCirurgica}|${print}
+Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${tempoPrev}|,|${codPacPreAgCir}|,|${tipoInternacao}|,|${centroCirurgico}|,|${salaCirurgica}|${print}
+    Preencher campo com data e hora    ${inputDataHr}    %d/%m/%Y %H:%M    0
+    Preencher campo com data e hora    ${inputDataHrSugerida}   %d/%m/%Y %H:%M    04:00:00
+    Preencher campo com data e hora    ${inputDataHrPrevIntern}    %d/%m/%Y %H:%M    0
     Preencher campo    ${inputTempoPrev}    ${tempoPrev}
-    Sleep    1
-    Preencher campo    ${inputDataHrPrevIntern}    ${dataHrPrevInter}
     Sleep    1
     Preencher campo    ${inputCodPacientePreAgCir}    ${codPacPreAgCir}
     Press Keys    ${inputCodPacientePreAgCir}    ENTER
@@ -28,8 +26,6 @@ Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dataHr}|,|
     Sleep    1
     Preencher campo    ${inputPreSalaCirur}    ${salaCirurgica}
     Sleep    1
-    # Preencher campo    ${inputMedicoAssociado}    ${medicoAssociado}
-    # Sleep    1
     Clicar no botao [Adicionar Cirurgia]||
 
 Preencher os campos da cirurgia |${grupCirurgia}|,|${cirurgia}|,|${IntCodConvenio}|,|${IntCodPlano}|,|${potencialCont}|,|${prestCirurgiao}|,|${atividadeMed}|${print}
@@ -51,6 +47,13 @@ Preencher os campos da cirurgia |${grupCirurgia}|,|${cirurgia}|,|${IntCodConveni
     Clicar no botao [Retornar]||
     Sleep    1
 
+Captura da data e hora sugerida do pre-agendamento|${suite}|${dados}[id]|
+    Wait Until Element Is Visible    ${inputDataHrSugerida}    30
+    Should Not Be Empty   ${inputDataHrSugerida}
+    ${DataHrSugerida}    Get Element Attribute    ${inputDataHrSugerida}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "preAgDtHrSugerida", valor "${DataHrSugerida}"
+    Sleep    2
+
 Captura do codigo do aviso de cirurgia|${suite}|${id}|
     Wait Until Element Is Visible    ${inputAvisoCirurgia}    30
     Should Not Be Empty   ${inputAvisoCirurgia}
@@ -58,11 +61,18 @@ Captura do codigo do aviso de cirurgia|${suite}|${id}|
     Altera massa de dados da "${suite}", linha "${id}", coluna "preAgCirAvisoCirurgia", valor "${codAvisoCir}"
     Sleep    2
 
-Preencher os campos e reservar sala de cirurgia |${dataPrevAlta}|
-    Preencher campo    ${inputDtPrevAlta}    ${dataPrevAlta}
+Preencher os campos e reservar sala de cirurgia |${CirurMsgEsperada}|
+    Wait Until Element Is Visible    ${inputDtPrevInter}    30
+    Click Element    ${inputDtPrevInter}  
+    Send Keys    enter  
     Sleep    1
     Clicar no botao [1-Agendar]||
-    Clicar no botao [OK]|agCirurMsgEsperada|
+    Sleep    2
+    Wait Until Element Is Visible    ${notifMsgSucesso}    30
+    ${msgObtida}    Get Text    ${notifMsgSucesso}
+    #Should Be Equal As Strings    ${CirurMsgEsperada}    ${msgObtida}
+    #Log To Console    *** Mensagem de alerta não foi apresentada!
+    Clicar no botao [OK]||
     Clicar no botao [Sair Tela]||
     Clicar no botao [Sair]||
 
