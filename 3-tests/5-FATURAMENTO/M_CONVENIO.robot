@@ -33,12 +33,24 @@ ${dados}
 SCR5FMCONVENIO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR5FMCONVENIO-001:Fluxo Principal" -d ./5-results/SCR5FMCONVENIO-001 "3-tests/5-FATURAMENTO/M_CONVENIO.robot"
 # robot -v browser:firefox -t "SCR5FMCONVENIO-001:Fluxo Principal" -d ./5-results/SCR5FMCONVENIO-001 "3-tests/5-FATURAMENTO/M_CONVENIO.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMCONVENIO-001"
-    Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Tabelas>Gerais>Convênios e Planos"@nprint @las
-    Validar Acesso a Tela |Cadastro de Convênios|
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMCONVENIO-001"
+    Acessa a Tela Pela Busca |M_CONVENIO||Convênios e Planos| @las
+    #Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Tabelas>Gerais>Convênios e Planos"@nprint @las
+    Validar Acesso a Tela |${dados}[NomeTela]|
     Cancelar Consulta
     Prencher Dados Cadastrais
     Preencher Dados do Faturamento
     Preencher Enderecos Adicionais
     Acessar Aba Complemento
-    Sleep  5
+    Preencher Dados do Financeiro
+    Preencher Controle de Retorno de Atendimentos
+    Marcar Checkbox Paciente Internado
+    Preencher Requisicao Medica 
+    Preencher Faixa de Guias
+    Preencher Configuracao para Taxa de Acrescimo
+    Preencher Posicao do Codigo da Carteira
+    Preencher Guia de OPME
+    Acessar aba Empresa
+    Preencher Dados da Empresa
+    Clicar Botao Salvar
+ 

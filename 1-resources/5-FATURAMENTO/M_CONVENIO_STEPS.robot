@@ -5,9 +5,9 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/5-FATURAMENTO/M_CONVENIO_PAGE.robot
-Resource    ../4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
 Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
-Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
+
+
 
 *** Variable ***
 
@@ -76,7 +76,8 @@ Marcar Checkbox Paciente Internado
 
 Preencher Requisicao Medica 
     Preencher Campo                              ${CampoValidMax}             5
-    Preencher Campo                              ${CampoRegANS}               123456789
+    Sleep  2
+    #Preencher Campo                              ${CampoRegANS}               123456789
 
 Preencher Faixa de Guias
     Preencher Campo                              ${CampoQtdFimFaixa}           5
@@ -104,3 +105,13 @@ Preencher Guia de OPME
     Marcar Checkbox |${CbCriaAtdCir}|
     Marcar Checkbox |${CbObrigaPlano}|
     Marcar Checkbox |${CbImpedeFechamento}|
+
+Acessar aba Empresa
+    Click no Item                                 ${AbaEmpresa}
+    Validar Acesso a Tela |Informações do Convênio por Empresa|
+
+Preencher Dados da Empresa
+    Preencher Campo                               ${CampoCdEmpresa}              5
+    Clicar Item e Selecionar da Lista             ${CampoFormularioNF}           ${BotaoLov}         FORMULARIO NF GERAL        FORMULARIO NF GERAL
+    Clicar Item e Selecionar da Lista             ${CampoFormaApresentacao}      ${BotaoLov}         MODELO PADRAO CBHPM        MODELO PADRAO CBHPM
+    
