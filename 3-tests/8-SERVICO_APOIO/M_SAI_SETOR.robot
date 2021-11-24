@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/8-SERVICO_APOIO/M_SAI_SETOR_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste

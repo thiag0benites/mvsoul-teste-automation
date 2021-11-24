@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/8-SERVICO_APOIO/M_RECEBE_SOL_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -43,6 +42,4 @@ SCR8SMRECEBESOL-001:Fluxo Principal
     Preencher Campos Sem Preenchimento |${dados[UsuarioSolicitante]}|
     Salvar Alteracoes |${dados[MensagemConf]}| |${dados[MensagemSucesso]}|
     Clicar Checkbox 'Recebida'
-    Clicar Botao Ordem de Servico |${dados[EnvioEmail]}| |${dados[GravarAlteracoes]}| |${dados[MensagemSucesso]}| 
-
-
+    Clicar Botao Ordem de Servico |${dados[EnvioEmail]}| |${dados[GravarAlteracoes]}| |${dados[MensagemSucesso]}|
