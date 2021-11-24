@@ -7,6 +7,7 @@
 Resource          ../../2-pages/5-FATURAMENTO/M_CONVENIO_PAGE.robot
 Resource    ../4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
 Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
+Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Variable ***
 
@@ -41,7 +42,6 @@ Preencher Dados do Faturamento
     Preencher Campo                              ${CampoISS}                 10
     Preencher Campo                              ${CampoIdConvEstrang}       ESTRANGEIRO
     Selecionar Item Na Lista                     ${BotaoLovModelMatric}      Calculo Unibanco                Calculo Unibanco
-    #Preencher Campo                              ${CampoObjIntegracao}       INTEGRACAO
 
 Preencher Enderecos Adicionais
     Preencher Campo                              ${CampoEndCorresp}          ENDERECO TESTE
@@ -66,6 +66,41 @@ Preencher Dados do Financeiro
 Preencher Controle de Retorno de Atendimentos
     Preencher Campo                              ${CampoDiasAmb}             1                      
     Preencher Campo                              ${CampoDiasExterno}         1                      
-    Preencher Campo                              ${CampoHorasUrgencia}       1      ]
+    Preencher Campo                              ${CampoHorasUrgencia}       1      
 
-                
+Marcar Checkbox Paciente Internado
+    Marcar Checkbox |${CbPermiteAtdAmb}|
+    Marcar Checkbox |${CbPermiteAtdExt}|
+    Marcar Checkbox |${CbPermiteAtdUrg}|
+    Marcar Checkbox |${CbExigeLaudo}|
+
+Preencher Requisicao Medica 
+    Preencher Campo                              ${CampoValidMax}             5
+    Preencher Campo                              ${CampoRegANS}               123456789
+
+Preencher Faixa de Guias
+    Preencher Campo                              ${CampoQtdFimFaixa}           5
+    Marcar Checkbox |${CbConsignadoConta}|
+    Marcar Checkbox |${CbGuiaPrestador}|
+    Marcar Checkbox |${CbEmailNotificacao}|
+    Preencher Campo                              ${CampoLimiteRemessa}         5
+    Marcar Checkbox |${CbFechaAmbSemImprimir}|
+
+Preencher Configuracao para Taxa de Acrescimo
+    Selecionar Item Na Lista                     ${BotaoLovProcedimento}       BIÓPSIA DE NERVO         BIÓPSIA DE NERVO
+    Preencher Campo                              ${CampoPercentual}            5        
+    Selecionar Item Na Lista                     ${BotaoLovMotAuditoria}       ACEITO DIFERENÇA DE VALOR    ACEITO DIFERENÇA DE VALOR
+
+Preencher Posicao do Codigo da Carteira
+    Preencher Campo                              ${CampoCdCarteiraCaracter}     5        
+    Preencher Campo                              ${CampoCdCarteiraQtd}          5        
+    Preencher Campo                              ${CampoCdCarteiraFinal}        5        
+    Preencher Campo                              ${CampoDtValidadeCaracter}     5        
+    Preencher Campo                              ${CampoDtValidadeQtd}          5        
+    Preencher Campo                              ${CampoDtValidadeFinal}        5        
+
+Preencher Guia de OPME
+    Preencher Campo                              ${CampoNrDiasAutorizacao}      5
+    Marcar Checkbox |${CbCriaAtdCir}|
+    Marcar Checkbox |${CbObrigaPlano}|
+    Marcar Checkbox |${CbImpedeFechamento}|

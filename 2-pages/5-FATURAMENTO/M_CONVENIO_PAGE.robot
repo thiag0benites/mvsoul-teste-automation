@@ -57,8 +57,31 @@ ${CbPermiteAtdAmb}                      xpath=//button[@id="inp:snPermiteAtendAm
 ${CbPermiteAtdExt}                      xpath=//button[@id="inp:snPermiteAtendExtInt_btn"]
 ${CbPermiteAtdUrg}                      xpath=//button[@id="inp:snPermiteAtendUrgInt_btn"]
 
-${ExigeLaudo}                           xpath=//button[@id="inp:snExigeLaudoTxt_btn"]
+${CbExigeLaudo}                         xpath=//button[@id="inp:snExigeLaudoTxt_btn"]
 
 ${CampoValidMax}                        xpath=//input[@id="inp:nrDiasRequisicaoMedica"]
 
 ${CampoRegANS}                          xpath=//input[@id="inp:nrRegistroOperadoraAns"]
+
+${CampoQtdFimFaixa}                     xpath=//input[@id="inp:nrLimitePreimpre"]
+${CbConsignadoConta}                    xpath=//button[@id="inp:snLancaConsignadoNaConta_btn"]
+${CbGuiaPrestador}                      xpath=//button[@id="inp:snProtGuiaPrestador_btn"]
+${CbEmailNotificacao}                   xpath=//button[@id="inp:snEmailNotificacao_btn"]
+${CampoLimiteRemessa}                   xpath=//input[@id="inp:nrLimitePreRemessa"]
+${CbFechaAmbSemImprimir}                xpath=//button[@id="inp:snFechaAmbSemImprimir_btn"]
+
+${BotaoLovProcedimento}                 xpath=//div[@id="TAB_EXTRAS_convenio_cdProFat"]/button
+${CampoPercentual}                      xpath=//input[@id="inp:vlPercentual"]
+${BotaoLovMotAuditoria}                 xpath=//div[@id="TAB_EXTRAS_cdMotivoAuditoria"]/button
+
+${CampoCdCarteiraCaracter}              xpath=//input[@id="inp:cdChrAntNrCarteiraBarra"]
+${CampoCdCarteiraQtd}                   xpath=//input[@id="inp:nrPosIniCdCarteiraBarras"]
+${CampoCdCarteiraFinal}                 xpath=//input[@id="inp:nrPosFimCdCarteiraBarras"]
+${CampoDtValidadeCaracter}              xpath=//input[@id="inp:cdChrAntDtValidadeBarra"]
+${CampoDtValidadeQtd}                   xpath=//input[@id="inp:nrPosIniDtValidadeBarras"]
+${CampoDtValidadeFinal}                 xpath=//input[@id="inp:nrPosFimDtValidadeBarras"]
+
+${CbCriaAtdCir}                         xpath=//button[@id="inp:snCriaGuiaOpmeFscc_btn"]
+${CbObrigaPlano}                        xpath=//button[@id="inp:snObrigaPlanoAgenda_btn"]
+${CbImpedeFechamento}                   xpath=//button[@id="inp:snImpedeFechamConta_btn"]
+${CampoNrDiasAutorizacao}               xpath=//input[@id="inp:nrDiasAutorizaOpme"]
