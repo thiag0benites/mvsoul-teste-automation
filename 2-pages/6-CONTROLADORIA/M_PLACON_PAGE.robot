@@ -13,9 +13,9 @@ ${BtnCodigo}                    xpath=//button[@class="ui-button ui-widget ui-bu
 ${CampoBuscaEmpresa}            xpath=//div[@title="5"]     
 ${BtnOk}                        xpath=//button[@id="btok"]
 ${BtnNotificacao}               xpath=//a[@class="notification-toggle"]
-${CampoConta}                   xpath=//div[@id="frames28"]//input[@class="editor-text mode-search"][@id="#frames28"]
-${CampoDescricao}               xpath=//div[@class="slick-cell b1 f1 selected active editable"]//input[@class="editor-text mode-search"]
-${BtnNatureza}                  xpath=//div[@class="ui-combobox ui-buttoninput ui-widget mode-edit"]//option[@value="C"] 
+${CampoConta}                   xpath=//input[@class="editor-text mode-search"]
+#${CampoDescricao}               xpath=//input[@class="editor-text mode-search"]/.
+${BtnNatureza}                  xpath=(//input[@class="ui-autocomplete-input ui-widget-content ui-buttoninput ui-corner-left"])[1]
 ${BtnGrupoConta}                xpath=//button[@class="ui-button ui-widget ui-corner-right ui-button-icon"]
-${CampoGrupoConta}              xpath=//div[@title="1"]
+${CampoGrupoConta}              xpath=(//div[@class="ui-text"][@data-member="CD_GRUPO_CONTA"])[2]
 ${CheckBoxExpotaAns}            xpath=//button[@data-member="SN_EXPORTA_ANS"]    

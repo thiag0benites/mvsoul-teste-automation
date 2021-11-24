@@ -21,13 +21,23 @@ Informar o numero no campo codigo da empresa
 
 No grid Contas clicar no campo codigo  
     Preencher campo                  ${CampoConta}                    5501
-
+    Send Keys    enter
+    
 Clicar Descricao da Conta
-    Click no Item                    ${CampoDescricao}  
-    Preencher campo                  ${CampoDescricao}                ESTOQUE GAS
+    
+    Preencher campo                  ${CampoConta}                    ESTOQUE GAS
+    Send Keys    enter
 
-Clicar no campo Natureza 
-    Click no Item                    ${BtnNatureza}
+Clicar no campo Natureza
+   
+    #SeleniumLibrary.Input Text    ${''}    ${''}
+    #Seleciona Item Combobox    ${BtnNatureza}    Credora
+    Preencher campo                   ${BtnNatureza}    Credora
+    Press Keys    ${BtnNatureza}        ENTER
+    #Click no Item                     ${BtnNatureza}
+
+    
+    
 
 Clicar no campo Grupo da Conta 
     Click no Item                    ${BtnGrupoConta}

@@ -41,4 +41,4 @@ SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)
     Clicar no campo Natureza
     Clicar no campo Grupo da Conta 
     Indicar no campo Exporta ANS 
-    Clicar no botao Salvar
+    # Clicar no botao Salvar
