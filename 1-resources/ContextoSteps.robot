@@ -285,8 +285,8 @@ Preencher o Campo Input
 
 Valida Mensagem
     [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    Wait Until Element Is Visible    ${MensagemRecebida}    120
+    Wait Until Element Is Visible    ${ElementoMsgRecebida}    120
     Sleep    3
-    ${MensagemRecebida}    Get Element Text    ${ElementoMsgRecebida}
-    Should Be Equal As Strings    ${MensagemRecebida}   ${MensagemEsperada}
-    # Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
+    #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
+    #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
+    Element Should Contain    ${ElementoMsgRecebida}    ${MensagemEsperada}
