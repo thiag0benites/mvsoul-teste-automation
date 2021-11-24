@@ -14,9 +14,7 @@ Preencher campos mes e ano |${data}|
 
 Clicar no botão de confirmacao 
     Click no Item  ${BtnConfirmacao}
-    Sleep    20
+    Sleep    5
 
 Validar mensagem de confirmacao |${mensagem}|
-    Valida Mensagem         ${MensagemSalvar}               ${mensagem}
-
-
+    Valida Mensagem         ${MensagemSave}               ${mensagem}

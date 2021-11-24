@@ -8,7 +8,7 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de O_TRANS_PREST
-${MensagemSalvar}                   xpath=//p[@class="notifications-item-text"]
+${MensagemSalvar}                   xpath=//li[@class='notification-info']//p[@class="notifications-item-text"]
 ${inputAtend}                       xpath=//input[@id='inp:cdAtendimento']
 ${searchBtn}                        xpath=//button[@id='btnCdAtendimento']
 ${inputPrestadorDestino}            xpath=//input[@id='inp:cdPrestadorDestino']
