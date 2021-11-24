@@ -37,4 +37,3 @@ SRC1AOTRANSFPREST-001:Fluxo Principal
     Preencher os campos |${dados}[numAtend]|,|${dados}[nomePrestadorDest]|,|${dados}[motivoTransferencia]|,|${dados}[servico]|
     Validar atendimento 
     Confirmar Transferencia de Prestador|${dados}[mensagem]|
-
