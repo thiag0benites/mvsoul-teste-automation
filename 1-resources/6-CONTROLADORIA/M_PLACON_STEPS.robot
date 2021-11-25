@@ -16,27 +16,24 @@ Informar o numero no campo codigo da empresa
     Click no Item                    ${BtnCodigo} 
     Click no Item                    ${CampoBuscaEmpresa}  
     Click no Item                    ${BtnOk} 
-    Click Elemento por titulo        Procurar
-    #Click no Item                    ${BtnNotificacao} 
-
-No grid Contas clicar no campo codigo  
-    Preencher campo                  ${CampoConta}                    5501
-    Send Keys    enter
+    Click Elemento por titulo        Adicionar
     
-Clicar Descricao da Conta
-    
-    Preencher campo                  ${CampoConta}                    ESTOQUE GAS
-    Send Keys    enter
 
-Clicar no campo Natureza
+No grid Contas clicar no campo codigo |${MsgCampoConta}|
+    Preencher campo                  ${CampoConta}                    ${MsgCampoConta}
+    Send Keys                                                         enter
+    
+Clicar Descricao da Conta |${MsgCampoConta2}|
+    
+    Preencher campo                  ${CampoConta}                    ${MsgCampoConta2}
+    Send Keys                                                         enter
+
+Clicar no campo Natureza |${BtnNatureza2}|
    
     #SeleniumLibrary.Input Text    ${''}    ${''}
     #Seleciona Item Combobox    ${BtnNatureza}    Credora
-    Preencher campo                   ${BtnNatureza}    Credora
-    Press Keys    ${BtnNatureza}        ENTER
-    #Click no Item                     ${BtnNatureza}
-
-    
+    Preencher campo                  ${BtnNatureza}                   ${BtnNatureza2} 
+    Press Keys                       ${BtnNatureza}                   ENTER
     
 
 Clicar no campo Grupo da Conta 
@@ -47,5 +44,6 @@ Clicar no campo Grupo da Conta
 Indicar no campo Exporta ANS 
     Click no Item                    ${CheckBoxExpotaAns}
 
-Clicar no botao Salvar
-    #Click Elemento por titulo        Salvar
+Clicar no botao Salvar |${MsgVerificada}|
+    Click Elemento por titulo        Salvar
+    Valida Mensagem                  ${MsgValidada}                   ${MsgVerificada}

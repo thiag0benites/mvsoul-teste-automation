@@ -26,19 +26,20 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_lote_pagamento
+${suite}          m_placon
 # # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)
 # robot -v browser:chrome -t "SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)" -d ./5-results/SMF-8287 "3-tests/6-CONTROLADORIA/M_PLACON.robot"
 # robot -v browser:firefox -t "SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)" -d ./5-results/SMF-8287 "3-tests/6-CONTROLADORIA/M_PLACON.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8287"
     Acessa a Tela Pela Busca |M_PLACON||Conta de Movimentação| @las
     Informar o numero no campo codigo da empresa
-    No grid Contas clicar no campo codigo 
-    Clicar Descricao da Conta
-    Clicar no campo Natureza
+    No grid Contas clicar no campo codigo |${dados}[MsgCampoConta]|
+    Clicar Descricao da Conta |${dados}[MsgCampoConta2]|
+    Clicar no campo Natureza |${dados}[BtnNatureza2]|
     Clicar no campo Grupo da Conta 
     Indicar no campo Exporta ANS 
-    # Clicar no botao Salvar
+    Clicar no botao Salvar |${dados}[MsgVerificada]|
