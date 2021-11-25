@@ -65,8 +65,7 @@ Seleciona frame
     Wait Until Element Is Enabled    ${elementoFrame}    ${timeout}    O elemento Frame ${elementoFrame} não esta habilitado
     Select Frame    ${elementoFrame}
     Sleep    1
-
-    
+        
 Click Elemento por titulo
     [Arguments]    ${titulo}    ${timeout}=${120}
     ${elemento}    Set Variable    xpath=//a[@title='${titulo}']

@@ -19,11 +19,21 @@ Pesquisar o paciente pelo codigo de atendimento |${CodAtendimento}|${print}
 Preencher os campos do registro de transferencias |${preIntMsgEsperada}|
     Clicar no botao [Reticencias]||
     Clicar no botao [OK Tela]||
-    Send Keys    enter
-    Send Keys    enter
-    Preencher campo com data e hora    ${inputHoraCentroCir}    %H:%M    0   
-    Send Keys    enter
-    Send Keys    enter
-    Clicar no botao [Salvar]|${preIntMsgEsperada}|
+    Press Keys    ${divAvisoCir}    ENTER
+    Sleep     1
+    Preencher campo com data e hora    ${divDtTransp}    %d/%m/%Y %H:%M    0
+    Press Keys    ${divDtTransp}    ENTER
+    Sleep     1
+    Preencher campo com data e hora    ${inputHrCentroCir}    23:00    0    
+    Press Keys    ${inputHrCentroCir}    ENTER
+    Sleep     1
+    Preencher campo com data e hora    ${divDtTransfCC}    %d/%m/%Y %H:%M    0
+    Press Keys    ${divDtTransfCC}    ENTER
+    Sleep     1
+    Preencher campo com data e hora    ${inputHrCentroCir}    23:05    0
+    Press Keys    ${inputHrCentroCir}    ENTER
+    Sleep     1
+    
+    #Clicar no botao [Salvar]|${preIntMsgEsperada}|
     
     

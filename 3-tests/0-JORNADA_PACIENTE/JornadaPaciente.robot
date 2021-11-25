@@ -106,13 +106,14 @@ SCR0JSMK-001:Jornada do Paciente
     #Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|,|${dados}[preAgCirurMsgEsperada]|@nprint
     #Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
     #Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
-#SMF-9624:Transferência de Paciente para Centro Cirúrgico e Rpa / SMF-9638:Confirmar a cirurgia realizada 
+SMF-9624:Transferência de Paciente para Centro Cirúrgico e Rpa / SMF-9638:Confirmar a cirurgia realizada 
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Transferência de Paciente>Transferência para Centro Cirúrgico"@nprint @nlas
+    #Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Transferência de Paciente>Transferência para Centro Cirúrgico"@nprint @nlas
+    Acessar a tela pela busca |Transferência para Centro Cirúrgico||Transferência para Centro Cirúrgico|@nprint @las
     Pesquisar o paciente pelo codigo de atendimento |${dados}[cadPacOutputCodAtendimento]|
     Preencher os campos do registro de transferencias |${dados}[preIntMsgEsperada]|
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
-    Informar o codigo de aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
+    # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
+    # Informar o codigo de aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
     Preencher os campos com as datas da cirurgia
 
     # Selecionar o local de transferência pós cirurgia

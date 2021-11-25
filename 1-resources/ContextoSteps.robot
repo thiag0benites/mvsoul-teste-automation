@@ -50,18 +50,30 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Log To Console    *** Item ${itemMenu} selecionado no menu
         Log    *** Item ${itemMenu} selecionado no menu
     END
-    #### LAS Send Keys #####
     IF    "${las}" == "@las"
-        # Sleep    1
         Seleciona frame    ${IdIframe}    180
         Wait Until Element Is Visible    ${classLasDisplay}    60
         Unselect Frame
-        # Sleep    1
         Send Keys    tab
         Send Keys    enter
     END
-    #### End LAS Send Keys #####
     Seleciona frame    ${IdIframe}    180
+    Sleep    3
+    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
+
+Acessar a tela pela busca |${tela}||${nomeItem}|${printscreen} ${las}
+    Unselect Frame
+    Click Element                           ${HomeXpathBtnMenu}
+    Preencher Campo                         ${HomeXpathInputPesquisa}       ${tela}
+    Click Elemento por titulo               ${nomeItem}                   
+    IF    "${las}" == "@las"
+        Seleciona frame    ${IdIframe}    180
+        Wait Until Element Is Visible    ${classLasDisplay}    60
+        Unselect Frame
+        Send Keys    tab
+        Send Keys    enter
+    END
+    Seleciona frame                         ${IdIframe}                         180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
 
