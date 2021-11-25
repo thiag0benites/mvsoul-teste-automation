@@ -42,7 +42,5 @@ SCR2AMADMI-001:Fluxo Principal
     Acessar Tipo de Anestesia |${dados}[TipoAnestesia]|
     Acessar Botao Obstestricia
     Acesso Tela Recem Nascido
-    Preenche Apgar, Perimetro e Medidas
+    Preenche Apagar, Perimetro e Medidas
     Seleciona Pediatra Responsavel e Leito
-
-

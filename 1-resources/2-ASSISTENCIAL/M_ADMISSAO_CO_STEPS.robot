@@ -87,7 +87,7 @@ Preenche Registro Civil
     Sleep    5
     Preencher campo                  ${CampoNroPulseira}               030303
 
-Preenche Apgar, Perimetro e Medidas
+Preenche Apagar, Perimetro e Medidas
     Click no Item                    ${Apgar1Min}
     Preencher campo                  ${Apgar1Min}                       6
     Click no Item                    ${Apgar5Min}
@@ -136,8 +136,8 @@ Seleciona Pediatra Responsavel e Leito
 
 
 
-# Inserir Data de Inicio |${data}|
-Inserir Data do Parto |${dd}/${MES}/${aaaa}|
+Inserir Data de Inicio |${data}|
+# Inserir Data do Parto |${dd}/${MES}/${aaaa}|
     # Sleep    2
     # ${dd}                          Get Substring        ${data}         0     2
     # ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
