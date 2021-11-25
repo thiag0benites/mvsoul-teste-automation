@@ -35,10 +35,20 @@ ${dados}
 SCR4MMENTRADASERV-001:Fluxo Principal   
 # robot -v browser:chrome -t "SCR4MMENTRADASERV-001:Fluxo Principal" -d ./5-results/SCR4MMENTRADASERV-001 "3-tests/4-MATERIAIS/M_ENTRADA_SERV.robot"
 # robot -v browser:firefox -t "SCR4MMENTRADASERV-001:Fluxo Principal" -d ./5-results/SCR4MMENTRADASERV-001 "3-tests/4-MATERIAIS/M_ENTRADA_SERV.robot"
-   # ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMENTRADASERV-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMENTRADASERV-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Serviços"@nprint @las
-    Validar Acesso a Tela |Entrada dos Serviços|
-    Preencher Campo Ord Compra
-    Preencher Campo Tipo de Documento
-    Sleep  5
+    Validar Acesso a Tela |${dados}[NomeTela]|
+    Preencher Campo Tipo de Documento |${dados}[TpDocumento]|
+    Preencher Campo Oficina |${dados}[Oficina]|
+    Preencher Campos Obrigatorios |${dados}[NrDocumento]| |${dados}[Serie]| |${dados}[Fornecedor]| |${dados}[DtEmissao]| |${dados}[CFOP]| |${dados}[VlTotal]|
+    Clicar no Botao Servicos |${dados}[TelaServico]|
+    Preencher Dados do Servico |${dados}[Servico]| |${dados}[QtdEntrada]| |${dados}[VlUnitario]| 
+    Clicar Botao Rateio por Setor
+    Preencher Informacoes de Rateio |${dados}[Setor]| |${dados}[TxRateio]|
+    Clicar Botao Sair |${dados}[NomeTela]|
+    Clicar Botao Duplicata |${dados}[TelaDuplicata]|
+    Preencher Campos Duplicata |${dados}[Parcela]| |${dados}[DtVencimento]| |${dados}[VlParcela]|
+    Concluir e Avaliar |${dados}[MensagemSalvar]|
+    #Retornar massa de dados para status inicial do teste
+    Excluir Nota de Entrada Criada |${dados}[NrDocumento]| |${dados}[Serie]| |${dados}[Fornecedor]| |${dados}[MensagemExcluir]| |${dados}[MensagemExcluirSucesso]|
 
