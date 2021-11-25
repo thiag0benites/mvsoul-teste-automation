@@ -7,6 +7,7 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource          ../../2-pages/6-CONTROLADORIA/M_RESPONSAVEL_PAGE.robot
+Library    Process
 
 *** Keywords ***
 Seleciona Pessoa Fisica ou Pessoa Juridica |${Item}|
@@ -30,39 +31,44 @@ Informar o Nome |${Nome}| e a Nacionalidade |${Nacionalidade}| da Pessoa
     Clicar no Campo e Preencher Informacao    ${BtnNacionalidade}    ${CampoFiltro}        %${Nacionalidade}
     Click no Item                             ${BtnFiltrar}
     Click no Item                             ${BtnOk}
-Informar CPF ou CNPJ |${CPF/CNPJ}| nos campos apresentados
-    ${CPF/CNPJ}    Run Keyword If
+Informar CPF ou CNPJ |${CPF/CNPJ}| nos campos apresentados |${Suite}| |${LinhaGerenc}|
+    Run Keyword If
     ...    '${CPF/CNPJ}' == 'CPF'
-    ...    Clicar no Campo e Preencher Informacao    ${CampoCPF}      ${CampoCPF}    79054456078
+    ...    ${PessoaFis}    Criar pessoa fisica    masculino    
+    ...    Clicar no Campo e Preencher Informacao    ${CampoCPF}      ${CampoCPF}    ${PessoaFis.cpf}
+    ...    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "OutPutNroDoc", valor "${PessoaFis.cpf}"
     ...    ELSE IF
     ...    '${CPF/CNPJ}' == 'CNPJ'
-    ...    Clicar no Campo e Preencher Informacao    ${CampoCNPJ}     ${CampoCNPJ}   34456378000116
+    ...    ${PessoaJur}    Criar pessoa juridica     
+    ...    Clicar no Campo e Preencher Informacao    ${CampoCNPJ}     ${CampoCNPJ}   ${PessoaJur.cnpj}
+    ...    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "OutPutNroDoc", valor "${PessoaJur.cnpj}"
     Send Keys    tab
     Click no Item                                    ${BtnOkPopUp}
 
-Preencher Inscricao Municipal e Estadual
-    Clicar no Campo e Preencher Informacao    ${CampoInscMunicipal}    ${CampoInscMunicipal}    123456
-    Clicar no Campo e Preencher Informacao    ${CampoInscEstadual}     ${CampoInscEstadual}     654321
+Preencher Inscricao Municipal |${IncMunic}| e Estadual |${InsEstad}|
+    Clicar no Campo e Preencher Informacao    ${CampoInscMunicipal}    ${CampoInscMunicipal}    ${IncMunic}
+    Clicar no Campo e Preencher Informacao    ${CampoInscEstadual}     ${CampoInscEstadual}     ${InsEstad}
 
 
-Pesquisa CEP
+Pesquisa CEP |${DadosCep}|
+    ${PesquisaCep}    Split To Lines           ${DadosCep}
     Click no Item                              ${BtnCEP}
-    Clicar no Campo e Preencher Informacao     ${BtnUF}              ${CampoFiltro}        %SAO PAULO
+    Clicar no Campo e Preencher Informacao     ${BtnUF}              ${CampoFiltro}        ${DadosCep}[0]
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${BtnOk}
-    Clicar no Campo e Preencher Informacao     ${BtnLocalidade}      ${CampoFiltro}        ADAMANTINA
+    Clicar no Campo e Preencher Informacao     ${BtnLocalidade}      ${CampoFiltro}        ${DadosCep}[1]
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${SelectCidade}                
     Click no Item                              ${BtnOk}
-    Clicar no Campo e Preencher Informacao     ${BtnBairro}          ${CampoFiltro}        CENTRO
+    Clicar no Campo e Preencher Informacao     ${BtnBairro}          ${CampoFiltro}        ${DadosCep}[2]
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${BtnOk}
-    Clicar no Campo e Preencher Informacao     ${BtnLogradouro}      ${CampoProcurar}        SALLES FILHO
+    Clicar no Campo e Preencher Informacao     ${BtnLogradouro}      ${CampoProcurar}      ${DadosCep}[3]
     Click no Item                              ${BtnProcurar}
     Click no Item                              ${BtnConfirmaLogradouro}
     Click no Item                              ${BtnConfirmar}
-    Preencher campo                            ${CampoNumero}                              1000
-    Preencher campo                            ${CampoTelefone}                            912345678
+    Preencher campo                            ${CampoNumero}                              ${DadosCep}[4]
+    Preencher campo                            ${CampoTelefone}                            ${DadosCep}[5]
 
 Informar os dados bancarios do responsavel
     Clicar no Campo e Preencher Informacao     ${BtnBanco}           ${CampoFiltro}        ITAU
