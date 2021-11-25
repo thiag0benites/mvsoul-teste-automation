@@ -13,7 +13,7 @@ ${CampoCompetencia}                                        xpath=//input[@id='in
 ### BOTOES ###
 ${BtnCalendCompetencia}                                    xpath=//button[@class='ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon ui-state-default']            
 ${BtnConsultar}                                            xpath=//button[@id='btnConsultar']
-${BtnAlertaSimParaTodos}                                   xpath=//*[@id="frames59"]
+${BtnAlertaSimParaTodos}                                   xpath=//button[@class='btn btn-primary'][contains(text(),"Sim Todos")]
 ${CkBoxTodos}                                              xpath=//button[@id='inp:ckbTodos_btn']
 ${BtnConfirmar}                                            xpath=//*[@id="btnConfirmar"]
 ${BtnPagarTodos}                                           xpath=//*[@id="btnPagarTodos"]
