@@ -27,6 +27,7 @@ Imprimir Recibo
     Sleep    8
     Switch Window
 Limpar Pesquisa
+    Seleciona frame                                ${IdIframe}                180
     Click no Item                                  ${BtnLimparPesquisa}
 Executar Reimpressão
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
@@ -37,13 +38,14 @@ Executar Reimpressão
     Sleep    8
     Switch Window
 Cancelar Recibo 
-#|${CampoMotCanc}|
+#${CampoMotCanc}|
+    Seleciona frame                                ${IdIframe}                180
     Clicar Botao se estiver Visivel                ${BtnLimparPesquisa}
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
     Click no Item                                  ${ListaStatus}
     Clicar Botao se estiver Visivel                ${FiltraStatusEmitido}
     Clicar Botao se estiver Visivel                ${BtnMotivoCancel}
-    Clicar no Campo e Preencher Informacao         ${CampoFiltroMotCancel}    ${CampoFiltroMotCancel}    $BORDERO REAUTILIZAVEL
+    Clicar no Campo e Preencher Informacao         ${CampoFiltroMotCancel}    ${CampoFiltroMotCancel}    %BORDERO REAUTILIZAVEL
     Clicar Botao se estiver Visivel                ${BtnFiltrar}
     Clicar Botao se estiver Visivel                ${BtnOk}
     Clicar Botao se estiver Visivel                ${BtnCancel}

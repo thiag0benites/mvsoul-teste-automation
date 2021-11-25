@@ -26,7 +26,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+# ${suite}          c_recibo
 # # Recebe dados do gerenciador
 # ${dados}
 
@@ -34,7 +34,8 @@ Test Teardown     Encerra sessao
 SMF-6378 : Imprimir Recibos
 # robot -v browser:chrome -t "SMF-6378 : Imprimir Recibos" -d ./5-results/SMF-6378 "3-tests/6-CONTROLADORIA/C_RECIBO.robot"
 # robot -v browser:firefox -t "SMF-6378 : Imprimir Recibos" -d ./5-results/SMF-6378 "3-tests/6-CONTROLADORIA/C_RECIBO.robot"
-    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Manutenção de Recibos"@nprint @las
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6378"
+    # Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Manutenção de Recibos"@nprint @las
     Remover Marcacao do Campo Argumentos de Pesquisa
     Executar Pesquisa
     Imprimir Recibo
@@ -44,3 +45,8 @@ SMF-6378 : Imprimir Recibos
     Cadastrar Responsável
     Finalizar Sistema
     
+
+
+
+
+#|${dados}[CampoMotCanc]|
