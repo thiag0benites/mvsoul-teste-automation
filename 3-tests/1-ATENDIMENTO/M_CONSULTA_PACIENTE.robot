@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/1-ATENDIMENTO/M_CONSULTA_PACIENTE_STEPS.robot
 Resource            ../../1-resources/auxiliar/Genericos.robot
 
@@ -23,11 +22,11 @@ Resource            ../../1-resources/auxiliar/Genericos.robot
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessão
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_CONSULTA_PACIENTE
+${suite}            m_consulta_paciente
 # Recebe dados do gerenciador
 ${dados}
 
@@ -37,11 +36,6 @@ SCR1TM_CONSULTA_PACIENTE-001:Cadastro de Agendas
 # robot -v browser:firefox -t "SCR1TM_CONSULTA_PACIENTE-001:Cadastro de Agendas" -d ./5-results/SCR1TM_CONSULTA_PACIENTE-001 "3-tests/1-ATENDIMENTO/M_CONSULTA_PACIENTE.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1TM_CONSULTA_PACIENTE-001"
     Acessar a tela "Atendimento>Central de Agendamento>Tabelas>Cadastro de Agendas"@nprint @las
-    Clicar no botão "Procurar"@nprint
-    Clicar no botão "Executar Consulta"@nprint
-    Validar Informacao Prestador  
-   
-    
-    
-
-
+    Clicar no botao "Procurar"@nprint
+    Clicar no botao "Executar Consulta"@nprint
+    Validar Informacao Prestador

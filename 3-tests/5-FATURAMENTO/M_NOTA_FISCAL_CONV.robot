@@ -25,7 +25,7 @@ Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_NOTA_FISCAL_CONV
+${suite}            m_nota_fiscal_conv
 # Recebe dados do gerenciador
 ${dados}
 
