@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/C_RECIBO_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -22,7 +20,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/C_RECIBO_STEPS.robot
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -44,9 +41,3 @@ SMF-6378 : Imprimir Recibos
     Cancelar Recibo
     Cadastrar Responsável
     Finalizar Sistema
-    
-
-
-
-
-#|${dados}[CampoMotCanc]|
