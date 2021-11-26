@@ -9,54 +9,54 @@ Resource          ../../2-pages/4-MATERIAIS/M_CONSIGNADO_ENT_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Tipo de Consignacao
-    Preencher Campo                         ${CampoTpConsignacao}                    Permanente
+Preencher Tipo de Consignacao |${TpConsignacao}|
+    Preencher Campo                         ${CampoTpConsignacao}                    ${TpConsignacao}
 
-Preencher Estoque e Gerar Aplicacao Direta
-    Selecionar Item Na Lista                ${BotaoLovEstoque}                       ALMOXARIFADO            ALMOXARIFADO
-    Preencher Campo                         ${CampoGerarAplDireta}                   Movimentação
+Preencher Estoque e Gerar Aplicacao Direta |${Estoque}| |${GerarAplicacaoDireta}|
+    Selecionar Item Na Lista                ${BotaoLovEstoque}                       ${Estoque}               ${Estoque}
+    Preencher Campo                         ${CampoGerarAplDireta}                   ${GerarAplicacaoDireta}
 
-Preencher Campos do Documento
-    Preencher Campo                         ${CampoNrDocumento}                      123456
-    Preencher Campo                         ${CampoNrSerie}                          1
-    Selecionar Item Na Lista                ${BotaoLovFornecedor}                    3M                      3M
-    Selecionar Item Na Lista                ${BotaoLovCFOP}                          ENTRADA CONSIGNAÇÃO     ENTRADA CONSIGNAÇÃO
-    Preencher Campo                         ${CampoDtEmissao}                        25/11/2021
-    Preencher Campo                         ${CampoDtEntrada}                        25/11/2021
+Preencher Campos do Documento |${NrDocumento}| |${NrSerie}| |${Fornecedor}| |${CFOP}| |${DtEmissao}| |${DtEntrada}|
+    Preencher Campo                         ${CampoNrDocumento}                      ${NrDocumento}
+    Preencher Campo                         ${CampoNrSerie}                          ${NrSerie}
+    Selecionar Item Na Lista                ${BotaoLovFornecedor}                    ${Fornecedor}            ${Fornecedor}          
+    Selecionar Item Na Lista                ${BotaoLovCFOP}                          ${CFOP}                  ${CFOP} 
+    Preencher Campo                         ${CampoDtEmissao}                        ${DtEmissao}
+    Preencher Campo                         ${CampoDtEntrada}                        ${DtEntrada}
 
-Preencher Campos do Produto
-    Clicar Item e Selecionar da Lista       ${CampoProduto}                ${BotaoLov}    ACICLOVIR CONSIGNADO    ACICLOVIR CONSIGNADO
-    Validar Elemento Pelo Titulo            CAPSULA    
-    Clicar no Campo e Preencher Informacao  ${CampoQtdEntrada}                       ${CampoEditavel}        1
-    Clicar no Campo e Preencher Informacao  ${CampoVlUnitario}                       ${CampoEditavel}        100
+Preencher Campos do Produto |${Produto}| |${Unidade}| |${QtdEntrada}| |${VlUnitario}|
+    Clicar Item e Selecionar da Lista       ${CampoProduto}                ${BotaoLov}    ${Produto}         ${Produto}
+    Validar Elemento Pelo Titulo            ${Unidade}    
+    Clicar no Campo e Preencher Informacao  ${CampoQtdEntrada}                       ${CampoEditavel}        ${QtdEntrada}
+    Clicar no Campo e Preencher Informacao  ${CampoVlUnitario}                       ${CampoEditavel}        ${VlUnitario}
     Click no Item                           ${CampoQtdEntrada}   
  
-Preencher Campos do Lote
-    Clicar no Campo e Preencher Informacao  ${CampoLote}                              ${CampoEditavel}        123
-    Clicar no Campo e Preencher Informacao  ${CampoValidade}                          ${CampoValidadeEdit}    25/11/2030
-    Clicar no Campo e Preencher Informacao  ${CampoQtdEntradaLote}                    ${CampoEditavel}        1
+Preencher Campos do Lote |${Lote}| |${Validade}| |${QtdEntradaLote}|
+    Clicar no Campo e Preencher Informacao  ${CampoLote}                              ${CampoEditavel}        ${Lote}
+    Clicar no Campo e Preencher Informacao  ${CampoValidade}                          ${CampoValidadeEdit}    ${Validade}
+    Clicar no Campo e Preencher Informacao  ${CampoQtdEntradaLote}                    ${CampoEditavel}        ${QtdEntradaLote}
 
-Concluir e Avaliar
+Concluir e Avaliar |${MensagemSucesso}| |${MensagemAlerta}| |${MensagemSucessoFinal}|
     Click no Item                           ${BotaoConcluirAvaliar} 
-    Valida Mensagem                         ${MensagemToast}                Registros gravados com sucesso
-    Valida Mensagem                         ${MensagemToast2}               Atenção: Esta entrada de consignado está configurada para não permitir avaliação!
+    Valida Mensagem                         ${MensagemToast}                ${MensagemSucesso}
+    Valida Mensagem                         ${MensagemToast2}               ${MensagemAlerta}
     Click no Item                           ${BotaoOK}
-    Valida Mensagem                         ${MensagemToast}                Atenção: Movimentação Salva com Sucesso !
+    Valida Mensagem                         ${MensagemToast}                ${MensagemSucessoFinal}
     Click no Item                           ${BotaoSim}
     Sleep  2
     Element Should Not Be Visible           ${CampoEstoquePreenchido}
 
 #### Keyword para retornar massa de dados para status inicial do teste ####
-Excluir Entrada do Consignado
+Excluir Entrada do Consignado |${NrDocumento}| |${NrSerie}| |${Fornecedor}| |${Estoque}| |${MensagemExcluir}| |${MensagemExcluirSucesso}|
     Click Elemento por titulo               Procurar
-    Preencher Campo                         ${CampoNrDocumento}             123456            #${NrDocumento}
-    Preencher Campo                         ${CampoNrSerie}                 1            #${Serie}
-    Selecionar Item Na Lista                ${BotaoLovFornecedor}           3M        3M            #${Fornecedor}                     ${Fornecedor}
+    Preencher Campo                         ${CampoNrDocumento}             ${NrDocumento}
+    Preencher Campo                         ${CampoNrSerie}                 ${NrSerie}
+    Selecionar Item Na Lista                ${BotaoLovFornecedor}           ${Fornecedor}                     ${Fornecedor}
     Click Elemento por titulo               Executar Consulta
-    Validar Elemento Pelo Titulo            ALMOXARIFADO
+    Validar Elemento Pelo Titulo            ${Estoque}
     Click no Item                           ${CampoNrDocumento}
     Click Elemento por titulo               Apagar
-    Valida Mensagem                         ${MensagemToast}                Deseja excluir a entrada de consignado?
+    Valida Mensagem                         ${MensagemToast}                ${MensagemExcluir}
     Click no Item                           ${BotaoSim}
-    Valida Mensagem                         ${MensagemToast}                Entrada de Consignado excluída com sucesso!
+    Valida Mensagem                         ${MensagemToast}                ${MensagemExcluirSucesso}
     Click no Item                           ${BotaoOK}

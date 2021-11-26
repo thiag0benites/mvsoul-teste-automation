@@ -35,17 +35,17 @@ ${dados}
 SCR4MMCONSIGNADOENT-001:Fluxo Principal   
 # robot -v browser:chrome -t "SCR4MMCONSIGNADOENT-001:Fluxo Principal" -d ./5-results/SCR4MMCONSIGNADOENT-001 "3-tests/4-MATERIAIS/M_CONSIGNADO_ENT.robot"
 # robot -v browser:firefox -t "SCR4MMCONSIGNADOENT-001:Fluxo Principal" -d ./5-results/SCR4MMCONSIGNADOENT-001 "3-tests/4-MATERIAIS/M_CONSIGNADO_ENT.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMCONSIGNADOENT-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMCONSIGNADOENT-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Consignado"@nprint @las
-    Validar Acesso a Tela |Entrada de Consignado|
-    Preencher Tipo de Consignacao
-    Preencher Estoque e Gerar Aplicacao Direta
-    Preencher Campos do Documento
-    Preencher Campos do Produto
-    Preencher Campos do Lote
-    Concluir e Avaliar
+    Validar Acesso a Tela |${dados}[NomeTela]|
+    Preencher Tipo de Consignacao |${dados}[TpConsignacao]|
+    Preencher Estoque e Gerar Aplicacao Direta |${dados}[Estoque]| |${dados}[GerarAplicacaoDireta]|
+    Preencher Campos do Documento |${dados}[NrDocumento]| |${dados}[NrSerie]| |${dados}[Fornecedor]| |${dados}[CFOP]| |${dados}[DtEmissao]| |${dados}[DtEntrada]|
+    Preencher Campos do Produto |${dados}[Produto]| |${dados}[Unidade]| |${dados}[QtdEntrada]| |${dados}[VlUnitario]|
+    Preencher Campos do Lote |${dados}[Lote]| |${dados}[Validade]| |${dados}[QtdEntradaLote]| 
+    Concluir e Avaliar |${dados}[MensagemSucesso]| |${dados}[MensagemAlerta]| |${dados}[MensagemSucessoFinal]| 
     #Retornar massa de dados para status inicial do teste
-    Excluir Entrada do Consignado
+    Excluir Entrada do Consignado |${dados}[NrDocumento]| |${dados}[NrSerie]| |${dados}[Fornecedor]| |${dados}[Estoque]| |${dados}[MensagemExcluir]| |${dados}[MensagemExcluirSucesso]| 
     Sleep  5
  
 
