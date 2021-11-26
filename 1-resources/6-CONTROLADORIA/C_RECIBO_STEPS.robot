@@ -11,25 +11,25 @@ Resource                            ../../2-pages/6-CONTROLADORIA/C_RECIBO_PAGE.
 
 *** Keywords ***
 
-Remover Marcacao do Campo Argumentos de Pesquisa
+Selecionar o Tipo de Recibo que Necessita Imprimir
     Clicar Botao se estiver Visivel                ${BtnDepAntecipado}
     Clicar Botao se estiver Visivel                ${BtnReceitaDireta}
     Clicar Botao se estiver Visivel                ${BtnDespesaDireta}
     Clicar Botao se estiver Visivel                ${BtnPagamento}
     Clicar Botao se estiver Visivel                ${BtnDevolucaoDepAnt}
-Executar Pesquisa
+Clicar em <Executar Pesquisa>
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
-Imprimir Recibo
+Clicar em <Imprimir>
     Click no Item                                  ${ListaStatus}
     Clicar Botao se estiver Visivel                ${FiltraStatusAguardando}
     Clicar Botao se estiver Visivel                ${BtnImprimir}
     Clicar Botao se estiver Visivel                ${BtnImprimirReciboPag}
     Sleep    8
     Switch Window
-Limpar Pesquisa
+Clicar em <Limpar Pesquisa>
     Seleciona frame                                ${IdIframe}                180
     Click no Item                                  ${BtnLimparPesquisa}
-Executar Reimpressão
+Clicar em <Reimpressao>
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
     Click no Item                                  ${ListaStatus}
     Clicar Botao se estiver Visivel                ${FiltraStatusEmitido}
@@ -37,7 +37,7 @@ Executar Reimpressão
     Clicar Botao se estiver Visivel                ${BtnImprimirReciboPag}
     Sleep    8
     Switch Window
-Cancelar Recibo 
+Clicar em <Cancelar>
 #${CampoMotCanc}|
     Seleciona frame                                ${IdIframe}                180
     Clicar Botao se estiver Visivel                ${BtnLimparPesquisa}
@@ -49,7 +49,7 @@ Cancelar Recibo
     Clicar Botao se estiver Visivel                ${BtnFiltrar}
     Clicar Botao se estiver Visivel                ${BtnOk}
     Clicar Botao se estiver Visivel                ${BtnCancel}
-Cadastrar Responsável
+Clicar em <Cadastrar Responsavel>
     Clicar Botao se estiver Visivel                ${BtnCadastrarResp}
-Finalizar Sistema
+Clicar em <Sair>
     Click no Item                                  ${SairDoSistema}

@@ -36,14 +36,14 @@ SMF-6378 : Imprimir Recibos
 # robot -v browser:firefox -t "SMF-6378 : Imprimir Recibos" -d ./5-results/SMF-6378 "3-tests/6-CONTROLADORIA/C_RECIBO.robot"
     # ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6378"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Manutenção de Recibos"@nprint @las
-    Remover Marcacao do Campo Argumentos de Pesquisa
-    Executar Pesquisa
-    Imprimir Recibo
-    Limpar Pesquisa
-    Executar Reimpressão
-    Cancelar Recibo
-    Cadastrar Responsável
-    Finalizar Sistema
+    Selecionar o Tipo de Recibo que Necessita Imprimir
+    Clicar em <Executar Pesquisa>
+    Clicar em <Imprimir>
+    Clicar em <Limpar Pesquisa>
+    Clicar em <Reimpressao>
+    Clicar em <Cancelar>
+    Clicar em <Cadastrar Responsavel>
+    Clicar em <Sair>
     
 
 
