@@ -42,4 +42,4 @@ SMF-5514 : Realizar Lançamento Bancário
     Indicar o periodo que se deseja trabalhar e clicar em Pesquisar
     Clicar no icone de adicao
     Preencher os campos com as informacoes do lançamento faltante
-    #Clicar em Concil para algum lancamento
+    Clicar em Concil para algum lancamento

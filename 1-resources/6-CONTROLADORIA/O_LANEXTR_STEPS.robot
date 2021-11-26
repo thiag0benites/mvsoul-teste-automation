@@ -36,22 +36,18 @@ Clicar no icone de adicao
     Click no Item                       ${BtnAdicionar}   
 
 Preencher os campos com as informacoes do lançamento faltante
-    Click no Item                       ${BtnConcil}
     Click no Item                       ${CampoDataLcto}  
-                        
-    Preencher campo                     ${CampoDataLcto}                      25/11/2021
-    #Press Keys                          ${CampoDataLcto}                      ENTER   
+    Click no Item                       ${CampoLcto0}    
     Click no Item                       ${BtnLcto}
     Click no Item                       ${CampoLcto} 
-    Click no Item                       ${BtnOk} 
-    Press Keys                          ${CampoDoc}                            ENTER
-    Preencher campo                     ${CampoDoc}                            R202
-    Press Keys                          ${Descricao}                           ENTER
-    Preencher campo                     ${Descricao}                           RECIBO CREDITO
-    Press Keys                          ${CampoValor}                          ENTER  
-    Preencher campo                     ${CampoValor}                          500
+    Click no Item                       ${BtnOk}
+    Click no Item                       ${LinhaCampoValor} 
+    Sleep                                2    
+    SeleniumLibrary.Input Text          ${CampoValor}                          500
+    Sleep                                2
     #Press Keys                          ${CampoValor}                          enter
 
 Clicar em Concil para algum lancamento
     Click no Item                       ${BtnSalvar}    
+    Sleep                                2
     Valida Mensagem                     ${MsgValidada}                         Registros gravados com sucesso
