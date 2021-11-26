@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/C_RECIBO_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -22,7 +20,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/C_RECIBO_STEPS.robot
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -36,6 +33,7 @@ SMF-6378 : Imprimir Recibos
 # robot -v browser:firefox -t "SMF-6378 : Imprimir Recibos" -d ./5-results/SMF-6378 "3-tests/6-CONTROLADORIA/C_RECIBO.robot"
     # ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6378"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Manutenção de Recibos"@nprint @las
+<<<<<<< HEAD
     Selecionar o Tipo de Recibo que Necessita Imprimir
     Clicar em <Executar Pesquisa>
     Clicar em <Imprimir>
@@ -50,3 +48,13 @@ SMF-6378 : Imprimir Recibos
 
 
 #|${dados}[CampoMotCanc]|
+=======
+    Remover Marcacao do Campo Argumentos de Pesquisa
+    Executar Pesquisa
+    Imprimir Recibo
+    Limpar Pesquisa
+    Executar Reimpressão
+    Cancelar Recibo
+    Cadastrar Responsável
+    Finalizar Sistema
+>>>>>>> c2168d9445b486f8d7855c6823ff6d52bee7bcb1
