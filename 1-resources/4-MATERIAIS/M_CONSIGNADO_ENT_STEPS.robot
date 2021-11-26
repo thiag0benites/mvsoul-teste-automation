@@ -60,3 +60,4 @@ Excluir Entrada do Consignado |${NrDocumento}| |${NrSerie}| |${Fornecedor}| |${E
     Click no Item                           ${BotaoSim}
     Valida Mensagem                         ${MensagemToast}                ${MensagemExcluirSucesso}
     Click no Item                           ${BotaoOK}
+    Sleep  5

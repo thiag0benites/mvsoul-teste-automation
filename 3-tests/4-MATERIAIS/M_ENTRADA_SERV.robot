@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../2-pages/4-MATERIAIS/M_ENTRADA_SERV_PAGE.robot
 Resource            ../../1-resources/4-MATERIAIS/M_ENTRADA_SERV_STEPS.robot
-Resource            ../../Config.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao

@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../2-pages/4-MATERIAIS/M_CONSIGNADO_ENT_PAGE.robot
 Resource            ../../1-resources/4-MATERIAIS/M_CONSIGNADO_ENT_STEPS.robot
-Resource            ../../Config.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -46,6 +44,3 @@ SCR4MMCONSIGNADOENT-001:Fluxo Principal
     Concluir e Avaliar |${dados}[MensagemSucesso]| |${dados}[MensagemAlerta]| |${dados}[MensagemSucessoFinal]| 
     #Retornar massa de dados para status inicial do teste
     Excluir Entrada do Consignado |${dados}[NrDocumento]| |${dados}[NrSerie]| |${dados}[Fornecedor]| |${dados}[Estoque]| |${dados}[MensagemExcluir]| |${dados}[MensagemExcluirSucesso]| 
-    Sleep  5
- 
-
