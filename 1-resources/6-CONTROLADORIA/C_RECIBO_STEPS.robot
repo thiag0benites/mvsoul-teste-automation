@@ -38,7 +38,6 @@ Clicar em <Reimpressao>
     Sleep    8
     Switch Window
 Clicar em <Cancelar>
-#${CampoMotCanc}|
     Seleciona frame                                ${IdIframe}                180
     Clicar Botao se estiver Visivel                ${BtnLimparPesquisa}
     Clicar Botao se estiver Visivel                ${BtnExecutarPesquisa}
