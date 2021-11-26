@@ -33,11 +33,11 @@ SMF-6281 : Estornar Recebimento
 # robot -v browser:firefox -t "SMF-6281 : Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Estorno>Estorno de Recebimentos"@nprint @las
     Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada
-    Informar Nome
-    Informar Periodo do Pagamento
-    Selecionar o Tipo de Lancamento
-    Selecionar Motivo do Cancelamento
-    Informar Data que o Estorno foi Realizado
+    Informar Nome do Cliente ou Paciente
+    Informar o Periodo no Qual Ocorreu o Pagamento(Credito)
+    Selecionar o Tipo de Lancamento que Sera Vinculado ao Estorno
+    Selecionar o "Motivo de Cancelamento" Pelo Qual Esta Sendo Efetuado o Estorno
+    Informar "Dt estorno" a Data em Que Esta Sendo Realizado o Estorno do Recebimento
     Selecionar os Recebimentos a Serem Estornados
-    Informar o Numero de Documento Referente ao Recebimento
-    Selecionar Confirmar
+    Informar o "Nr de documento" Referente ao Recebimento
+    Clicar em <CONFIRMAR>
