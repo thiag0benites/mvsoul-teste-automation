@@ -102,8 +102,9 @@ Preenche Apagar 1 Min|${Apg1Min}| 5 Min|${Apg5Min}|, Perimetro Encefalo|${PerEnc
     Preencher campo                  ${MedidaAltura}                     ${MedAlt}
     Click no Item                    ${MedidaPeso}
     Preencher campo                  ${MedidaPeso}                       ${MedPeso}
+    Sleep    5
 
-Seleciona Pediatra Responsavel|${Pediatra}| e Leito|%{TxtLeito}|,|${FiltroParto}|
+Preenche Pediatra Resp |${Pediatra}|, Leito|%{TxtLeito}| E Filtro|${FiltroParto}|
     Click no Item                    ${CampoPediatraResp}
     Click no Item                    ${BtnPediatraResp}
     Preencher campo                  ${CampoFIltoParto}               ${Pediatra}
@@ -124,11 +125,7 @@ Seleciona Pediatra Responsavel|${Pediatra}| e Leito|%{TxtLeito}|,|${FiltroParto}
     Click no Item                    ${BtnOk}
     Click no Item                    ${BtnSalvar}
     Click no Item                    ${BtnOkMensagem}
-    Validar Item                     ${MensagemValidacao}               
-
-
-
-
+    Validar Item                     ${MensagemValidacao} 
     
     
     
