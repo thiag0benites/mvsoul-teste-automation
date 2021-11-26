@@ -20,11 +20,11 @@ Resource            ../../1-resources/7-APOIO_TI/MED_TIPCOM_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            MED_TIPCOM
+${suite}            med_tipcom
 # Recebe dados do gerenciador
 ${dados}
 
