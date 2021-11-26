@@ -39,11 +39,11 @@ SMF-8820 : Cadastrar Responsaveis
     Seleciona Pessoa Fisica ou Pessoa Juridica |${dados}[SelecionaPFouPJ]|        ### PREENCHER COM PF ou PJ ###
     Seleciona Cadastro Estrangeiro ou Resp Ativo |${dados}[CadEstrangeiroRespAtivo]|
     Informar o Nome |${dados}[NomeCliente]| e a Nacionalidade |${dados}[Nacionalidade]| da Pessoa
-    Informar CPF ou CNPJ |${dados}[CPFouCNPJ]| nos campos apresentados |${suite}| |${dados}[id]|   ### PREENCHER COM PF ou CNPJ ###
-    Preencher Inscricao Municipal |${dados}[InscricaoMinucip]| e Estadual |${dados}[InscricaoEstad]|
+    Informar CPF|${dados}[NumeroCPF]| ou CNPJ|${dados}[NumeroCNPJ]|>|${dados}[CPFouCNPJ]| nos campos apresentados    
+    Preencher Inscricao Municipal |${dados}[InscricaoMunicip]| e Estadual |${dados}[InscricaoEstad]|
     Pesquisa CEP |${dados}[PesquisaCep]|
     Informar os dados bancarios do responsavel
-    # Clicar no botao <Cadastro de Nacionalidade>          ### AÇÃO OPCIONAL ###
+    # Clicar no botao <Cadastro de Nacionalidade> Cod Pais|${dados}[CodigoPais]|> Descricao Nacional|${dados}[DescricaoNacionalidade]|          ### AÇÃO OPCIONAL ###
     Clicar no botao<Salvar>
 
 

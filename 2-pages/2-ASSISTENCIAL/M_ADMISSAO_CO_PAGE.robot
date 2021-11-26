@@ -51,7 +51,8 @@ ${BtnPediatraResp}               xpath=//*[@id="cdPrestador"]/button
 ${BtnLeito}                      xpath=//*[@id="cdLeito"]/button
 ${BtnServico}                    xpath=//*[@id="cdServico"]/button
 ${BtnSalvar}                     xpath=//li[@id='tb-record-save']  
-${BtnOkMensagem}                 xpath=//button[@class='btn btn-primary']                
+${BtnOkMensagem}                 xpath=//button[@class='btn btn-primary'] 
+${BtnOkRegCivil}                 xpath=//button[@id='btnRegCivilOk']             
 
 ### Diversos ###
 ${SelecionaAtendimento}          xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[1]/div

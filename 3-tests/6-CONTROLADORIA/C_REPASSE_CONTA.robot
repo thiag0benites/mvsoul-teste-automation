@@ -48,13 +48,17 @@ SMF-4900 : Consultar os repasses gerados por atendimento para os prestadores
 # robot -v browser:chrome -t "SMF-4900 : Consultar os repasses gerados por atendimento para os prestadores" -d ./5-results/SMF-4900 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
 # robot -v browser:firefox -t "SMF-4900 : Consultar os repasses gerados por atendimento para os prestadores" -d ./5-results/SMF-4900 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Repasse por Atendimento/Conta"@nprint @las
-    Usuario devera informar o codigo do atendimento |31523| no campo <Atendimento>
-    Usuario devera clicar no botao [Execultar Consulta]
+    Usuario devera informar o codigo do atendimento |67050| no campo <Atendimento>
 
 SMF-4911 : Consultar os repasses gerados atraves nome do Paciente
-# robot -v browser:chrome -t "SMF-4911 : Consultar os repasses gerados através nome do Paciente" -d ./5-results/SMF-4911 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
-# robot -v browser:firefox -t "SMF-4911 : Consultar os repasses gerados através nome do Paciente" -d ./5-results/SMF-4911 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
+# robot -v browser:chrome -t "SMF-4911 : Consultar os repasses gerados atraves nome do Paciente" -d ./5-results/SMF-4911 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
+# robot -v browser:firefox -t "SMF-4911 : Consultar os repasses gerados atraves nome do Paciente" -d ./5-results/SMF-4911 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Repasse por Atendimento/Conta"@nprint @las
+    Usuario devera informar nome do paciente |TESTE DA SILVA HOBRA| no campo <Paciente>
+
 SMF-4914 : Consultar o valor do honorário do Atendimento dos repasses gerados por atendiment
 # robot -v browser:chrome -t "SMF-4914 : Consultar o valor do honorário do Atendimento dos repasses gerados por atendiment" -d ./5-results/SMF-4914 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
 # robot -v browser:firefox -t "SMF-4914 : Consultar o valor do honorário do Atendimento dos repasses gerados por atendiment" -d ./5-results/SMF-4914 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
+    Acessar a tela "Controladoria>Repasse Médico>Consultas>Repasse por Atendimento/Conta"@nprint @las
+    Usuario devera informar o codigo do atendimento |67050| no campo <Atendimento>
+    Usuario devera clicar no botao [Honor. do Atend]

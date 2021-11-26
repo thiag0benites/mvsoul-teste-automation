@@ -60,66 +60,66 @@ Acessar Tipo de Anestesia |${Item}|
     Preencher campo                  ${CampoFIltoParto}              %${Item}
     Click no Item                    ${BtnFiltrar}
     Click no Item                    ${BtnOk}
-
+    Acessar Botao Obstestricia
 Acessar Botao Obstestricia
     Click no Item                    ${BtnObstetricia}
     Click no Item                    ${CheckBoxPartoNormal}
     Click no Item                    ${BtnSair}
 
-Acesso Tela Recem Nascido
+Acesso Tela Recem Nascido> Hora do Parto|${HoraDoParto}|>Sexo|${TipoSexo}|>Numero Pulseira|${NroPulseira}|
     Click no Item                    ${BtnRecemNascido}
     Validar Item                     ${MensagemValidacao}
     Click no Item                    ${CampoDataHoraRN}
-    Preencher campo                  ${CampoDataHoraRN}                171120212035
-    Clicar no Campo e Preencher Informacao    ${CampoTipoSexo}    ${CampoTipoSexo}    M
+    Preencher campo                  ${CampoDataHoraRN}                ${HoraDoParto}
+    Clicar no Campo e Preencher Informacao                             ${CampoTipoSexo}    ${CampoTipoSexo}    ${TipoSexo}
     Send Keys                                                          enter
     Click no Item                    ${CampoNroPulseira}
-    Preencher campo                  ${CampoNroPulseira}               030303
+    Preencher campo                  ${CampoNroPulseira}               ${NroPulseira}
 
-Preenche Registro Civil
+Preenche Registro Civil>Declaracao Nacido Vivo|${NascVivo}|>Numero Pulseira|${NroPulseira}|
     Click no Item                    ${BtnRegistroCivil}
     Sleep    5
     Click no Item                    ${DeclNascidoVivo}
     Sleep    3
-    Preencher campo                  ${DeclNascidoVivo}                30302020
-    Click no Item                    ${BtnOk}
+    Preencher campo                  ${DeclNascidoVivo}                ${NascVivo} 
+    Click no Item                    ${BtnOkRegCivil}
     Click no Item                    ${CampoNroPulseira}
     Sleep    5
-    Preencher campo                  ${CampoNroPulseira}               030303
+    Preencher campo                  ${CampoNroPulseira}               ${NroPulseira}
 
-Preenche Apagar, Perimetro e Medidas
+Preenche Apagar 1 Min|${Apg1Min}| 5 Min|${Apg5Min}|, Perimetro Encefalo|${PerEncef}|, Toracico|${PerTorac}|, Abdominal|${PerAbdom}| e Medidas Altura|${MedAlt}|, Peso|${MedPeso}|
     Click no Item                    ${Apgar1Min}
-    Preencher campo                  ${Apgar1Min}                       6
+    Preencher campo                  ${Apgar1Min}                        ${Apg1Min}
     Click no Item                    ${Apgar5Min}
-    Preencher campo                  ${Apgar5Min}                       9
+    Preencher campo                  ${Apgar5Min}                        ${Apg5Min}
     Click no Item                    ${PerimetroCefalico}
-    Preencher campo                  ${PerimetroCefalico}               32,0
+    Preencher campo                  ${PerimetroCefalico}                ${PerEncef}
     Click no Item                    ${PerimetroToracico}
-    Preencher campo                  ${PerimetroToracico}               32,0
+    Preencher campo                  ${PerimetroToracico}                ${PerTorac}
     Click no Item                    ${PerimetroAbdominal}
-    Preencher campo                  ${PerimetroAbdominal}              35,0
+    Preencher campo                  ${PerimetroAbdominal}               ${PerAbdom}
     Click no Item                    ${MedidaAltura} 
-    Preencher campo                  ${MedidaAltura}                    49,0
+    Preencher campo                  ${MedidaAltura}                     ${MedAlt}
     Click no Item                    ${MedidaPeso}
-    Preencher campo                  ${MedidaPeso}                      3200
+    Preencher campo                  ${MedidaPeso}                       ${MedPeso}
 
-Seleciona Pediatra Responsavel e Leito
+Seleciona Pediatra Responsavel|${Pediatra}| e Leito|%{TxtLeito}|,|${FiltroParto}|
     Click no Item                    ${CampoPediatraResp}
     Click no Item                    ${BtnPediatraResp}
-    Preencher campo                  ${CampoFIltoParto}              AARON
+    Preencher campo                  ${CampoFIltoParto}               ${Pediatra}
     Click no Item                    ${BtnFiltrar}
     Click no Item                    ${BtnOk}
     Click no Item                    ${CampoLeito}
     Sleep    5
     Click no Item                    ${BtnLeito}
-    Preencher campo                  ${CampoFIltoParto}              %Leito
+    Preencher campo                  ${CampoFIltoParto}               %{TxtLeito}
     Click no Item                    ${BtnFiltrar}
     Sleep    3
     Click no Item                    ${BtnOk}
     Click no Item                    ${CampoServicoLeito}
     Click no Item                    ${BtnServico}
     Sleep    3 
-    Preencher campo                  ${CampoFIltoParto}              86
+    Preencher campo                  ${CampoFIltoParto}               ${FiltroParto}
     Click no Item                    ${BtnFiltrar}
     Click no Item                    ${BtnOk}
     Click no Item                    ${BtnSalvar}
@@ -136,18 +136,18 @@ Seleciona Pediatra Responsavel e Leito
 
 
 
-Inserir Data de Inicio |${data}|
+Inserir Data do Parto |${data}|
 # Inserir Data do Parto |${dd}/${MES}/${aaaa}|
-    # Sleep    2
-    # ${dd}                          Get Substring        ${data}         0     2
-    # ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
+    Sleep    2
+    ${dd}                          Get Substring        ${data}         0     2
+    ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
 
-    # IF    ${ddPrimeriaPosicao} == 0
-    # ${dd}                          Get Substring        ${data}         1     2
-    # END
+    IF    ${ddPrimeriaPosicao} == 0
+    ${dd}                          Get Substring        ${data}         1     2
+    END
 
-    # ${MES}                         Get Substring        ${data}         3     6
-    # ${aaaa}                        Get Substring        ${data}         7     12
+    ${MES}                         Get Substring        ${data}         3     6
+    ${aaaa}                        Get Substring        ${data}         7     12
     Click Element                  ${CampoDataInicial} 
     Sleep                                               5     
     Click Element                  ${BotaoDataInicial}

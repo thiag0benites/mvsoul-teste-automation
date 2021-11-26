@@ -31,19 +31,15 @@ Informar o Nome |${Nome}| e a Nacionalidade |${Nacionalidade}| da Pessoa
     Clicar no Campo e Preencher Informacao    ${BtnNacionalidade}    ${CampoFiltro}        %${Nacionalidade}
     Click no Item                             ${BtnFiltrar}
     Click no Item                             ${BtnOk}
-Informar CPF ou CNPJ |${CPF/CNPJ}| nos campos apresentados |${Suite}| |${LinhaGerenc}|
+Informar CPF|${NroCPF}| ou CNPJ|${NroCNPJ}|>|${CPF/CNPJ}| nos campos apresentados
     Run Keyword If
     ...    '${CPF/CNPJ}' == 'CPF'
-    ...    ${PessoaFis}    Criar pessoa fisica    masculino    
-    ...    Clicar no Campo e Preencher Informacao    ${CampoCPF}      ${CampoCPF}    ${PessoaFis.cpf}
-    ...    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "OutPutNroDoc", valor "${PessoaFis.cpf}"
+    ...    Clicar no Campo e Preencher Informacao    ${CampoCPF}      ${CampoCPF}    ${NroCPF}
     ...    ELSE IF
     ...    '${CPF/CNPJ}' == 'CNPJ'
-    ...    ${PessoaJur}    Criar pessoa juridica     
-    ...    Clicar no Campo e Preencher Informacao    ${CampoCNPJ}     ${CampoCNPJ}   ${PessoaJur.cnpj}
-    ...    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "OutPutNroDoc", valor "${PessoaJur.cnpj}"
-    Send Keys    tab
-    Click no Item                                    ${BtnOkPopUp}
+    ...    Clicar no Campo e Preencher Informacao    ${CampoCNPJ}     ${CampoCNPJ}   ${NroCNPJ}
+    # Send Keys    tab
+    # Click no Item                                    ${BtnOkPopUp}
 
 Preencher Inscricao Municipal |${IncMunic}| e Estadual |${InsEstad}|
     Clicar no Campo e Preencher Informacao    ${CampoInscMunicipal}    ${CampoInscMunicipal}    ${IncMunic}
@@ -51,7 +47,7 @@ Preencher Inscricao Municipal |${IncMunic}| e Estadual |${InsEstad}|
 
 
 Pesquisa CEP |${DadosCep}|
-    ${PesquisaCep}    Split To Lines           ${DadosCep}
+    ${PesquisaCep}    Split String             ${DadosCep}
     Click no Item                              ${BtnCEP}
     Clicar no Campo e Preencher Informacao     ${BtnUF}              ${CampoFiltro}        ${DadosCep}[0]
     Click no Item                              ${BtnFiltrar}
@@ -79,13 +75,13 @@ Informar os dados bancarios do responsavel
     Preencher campo                            ${CampoContaCorrente}                        12345
     Preencher campo                            ${CampoContaCorDigito}                       6
 
-Clicar no botao <Cadastro de Nacionalidade> 
+Clicar no botao <Cadastro de Nacionalidade> Cod Pais|${CodPais}|> Descricao Nacional|${DescNac}|
     Click no Item                              ${BtnCadastroNac}
     Click no Item                              ${CampoCodPaisInat}
-    Clicar no Campo e Preencher Informacao     ${BtnCodPais}               ${CampoFiltro}               BRASIL
+    Clicar no Campo e Preencher Informacao     ${BtnCodPais}               ${CampoFiltro}               ${CodPais}
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${BtnOk}
-    Preencher Input inativo                    ${CampoDescriNacInat}       ${CampoDescriNacAtivo}       TESTE AUTOMACAO
+    Preencher Input inativo                    ${CampoDescriNacInat}       ${CampoDescriNacAtivo}       ${DescNac}
     Click no Item                              ${BtnSalvar}
     Validar Item                               ${ValidNacinalidade}
     Send Keys    tab        
