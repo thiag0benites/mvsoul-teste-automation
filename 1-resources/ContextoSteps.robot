@@ -6,7 +6,6 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
-Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
 
 
 *** Variable ***
