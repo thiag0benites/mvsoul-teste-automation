@@ -7,23 +7,23 @@ Resource          ../../2-pages/1-ATENDIMENTO/M_TISS_IMPRESSAO_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Informar o código do atendimento 
-    Preencher campo                  ${codAtendimento}              1000001647 
+Informar o codigo do atendimento |${codAtendimento}|
+    Preencher campo                  ${codAtendimento}              ${codAtendimento}
     Sleep                            2
 
-Validar Resultado da Pesquisa do atendimento
-    Validar Elemento Pelo Titulo            40808025
+Validar Resultado da Pesquisa do atendimento |${numAtend}|
+    Validar Elemento Pelo Titulo            ${numAtend}
 
-Clicar no botão Rel. G. TISS 
+Clicar no botao Rel. G. TISS 
     Click no Item  ${btnRelGTISS}
 
-Selecionar na saída do relatorio a opcao tela
+Selecionar na saida do relatorio a opcao tela |${saida}|
     Click no Item         ${selectSaidaRelatorio}
-    Preencher campo       ${selectSaidaRelatorio}           Tela
+    Preencher campo       ${selectSaidaRelatorio}           ${saida}
 
-Selecionar na saída do relatorio a opcao Impressora
+Selecionar na saida do relatorio a opcao Impressora |${saida}|
     Click no Item         ${selectSaidaRelatorio}
-    Preencher campo       ${selectSaidaRelatorio}           Impressora
+    Preencher campo       ${selectSaidaRelatorio}           ${saida}
 
-Clicar no botão Imprimir 
+Clicar no botao Imprimir 
     Click no Item  ${btnImprimir}
