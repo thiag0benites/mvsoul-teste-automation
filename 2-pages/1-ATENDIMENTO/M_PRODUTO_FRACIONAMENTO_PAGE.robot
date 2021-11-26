@@ -8,7 +8,7 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de M_PRODUTO_FRACIONAMENTO
-${CampoEstoque}                             xpath=//div[@class='slick-cell b1 f1 selected active editable']//input
+${campoEstoque}                             xpath=//div[@class='slick-cell b1 f1 selected active editable']//input
 ${CampoCodProduto}                          xpath=//div[@id='cdProduto']//input[@id='inp:cdProduto']
 ${CampoLote}                                xpath=//input[@id='inp:cdLote']
 ${CampoQuantidade}                          xpath=//input[@id='inp:qtProduto']

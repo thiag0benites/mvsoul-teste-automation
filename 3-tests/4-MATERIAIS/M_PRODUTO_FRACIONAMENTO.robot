@@ -36,8 +36,8 @@ SRC4MMPRODUTOFRACIONAMENTO-001:Fluxo Principal
 # robot -v browser:chrome -t "SRC4MMPRODUTOFRACIONAMENTO-001:Fluxo Principal" -d ./5-results/M_PRODUTO_FRACIONAMENTO "3-tests/4-MATERIAIS/M_PRODUTO_FRACIONAMENTO.robot"
 # robot -v browser:firefox -t "SRC4MMPRODUTOFRACIONAMENTO-001:Fluxo Principal" -d ./5-results/M_PRODUTO_FRACIONAMENTO "3-tests/4-MATERIAIS/M_PRODUTO_FRACIONAMENTO.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC4MMPRODUTOFRACIONAMENTO-001"
-    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @no    
+    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las    
     Preencher o campo |${dados}[numEstoque]|
     Preencher os campos |${dados}[codProduto]|,|${dados}[lote]|,|${dados}[quantidade]|,|${dados}[unidade]|,|${dados}[unidadeFracionada]|
-    Clicar no botão Sim no modal de notificacao
-    Clicar no botão Salvar da tela
+    Clicar no botao Sim no modal de notificacao
+    Clicar no botao Salvar da tela

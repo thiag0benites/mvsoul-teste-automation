@@ -10,7 +10,7 @@ Resource          ../../2-pages/4-MATERIAIS/M_PRODUTO_FRACIONAMENTO_PAGE.robot
 
 *** Keywords ***
 Preencher o campo |${numEstoque}|
-    Preencher campo                      ${CampoEstoque}                  ${numEstoque}
+    Preencher campo                      ${campoEstoque}                  ${numEstoque}
 
 Preencher os campos |${codProduto}|,|${lote}|,|${quantidade}|,|${unidade}|,|${unidadeFracionada}|
     Preencher campo                      ${CampoCodProduto}                  ${codProduto}
@@ -23,3 +23,7 @@ Preencher os campos |${codProduto}|,|${lote}|,|${quantidade}|,|${unidade}|,|${un
     Sleep           2
     Preencher campo                      ${CampoUnidFracionado}              ${unidadeFracionada}
     Sleep           2
+
+Clicar no botao Sim no modal de notificacao
+
+Clicar no botao Salvar da tela
