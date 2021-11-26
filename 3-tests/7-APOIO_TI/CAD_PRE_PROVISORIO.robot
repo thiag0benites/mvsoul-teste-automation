@@ -35,4 +35,4 @@ SCR7AMCADPREPROVISORIO-001:Fluxo principal
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR7AMCADPREPROVISORIO-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Preencher os campos |${dados}[cartaoNacionalSaude]|,|${dados}[tipoPrestador]|,|${dados}[crm]|
-    Clicar no botão Salvar do menu
+    Clicar no botao Salvar do menu

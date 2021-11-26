@@ -225,7 +225,7 @@ Conta Linhas Tabela
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
 
-Clicar no botão Salvar do menu
+Clicar no botao Salvar do menu
     Click Element     ${btnSalvar}
     Sleep             60
 
@@ -236,7 +236,7 @@ Clicar no botão Adicionar
 Clicar no botão Pesquisar
     Click no Item               ${btnPesquisar}   
 
-Clicar no botão Executar 
+Clicar no botao Executar 
     Click no Item            ${btnExecute} 
     Sleep              30   
 

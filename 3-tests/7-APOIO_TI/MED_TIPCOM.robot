@@ -34,5 +34,5 @@ SCR7AMMEDTIPCOM-001:Fluxo principal
 # robot -v browser:firefox -t "SCR7AMMEDTIPCOM-001:Fluxo principal" -d ./5-results/SCR7AMMEDTIPCOM-001 "3-tests/7-APOIO_TI/MED_TIPCOM.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR7AMMEDTIPCOM-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Clicar no botão Executar 
+    Clicar no botao Executar 
     Validar Campos De Retorno Da Consulta 
