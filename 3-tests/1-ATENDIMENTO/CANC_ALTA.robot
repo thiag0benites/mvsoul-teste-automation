@@ -37,6 +37,10 @@ SRC1ACANCALTA-001:Fluxo principal
 # robot -v browser:firefox -t "SRC1ACANCALTA-001:Fluxo principal" -d ./5-results/SRC1ACANCALTA-001 "3-tests/1-ATENDIMENTO/CANC_ALTA.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1ACANCALTA-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Alta>Cancelamento>Alta Hospitalar"@nprint @las
-    #Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Preencher o campo atendimento |${dados}[numAtend]|
     Clicar no botao Cancelar Alta 
+    Clicar no botao de confirmacao da exclusao
+    Preencher saida da impressora como Tela |${dados}[saida]|
+    Clicar no botao Imprimir do modal
+    Clicar no botao Sair da impressao 
+    Validar mensagem de confirmacao da exclusao da alta hospitalar |${dados}[mensagem]|
