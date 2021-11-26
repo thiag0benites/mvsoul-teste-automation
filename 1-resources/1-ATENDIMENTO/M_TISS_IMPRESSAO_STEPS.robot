@@ -2,8 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
-### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/1-ATENDIMENTO/M_TISS_IMPRESSAO_PAGE.robot
 
 *** Variable ***

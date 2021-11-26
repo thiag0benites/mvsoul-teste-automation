@@ -13,21 +13,18 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/bd/BancoDados.robot
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/1-ATENDIMENTO/M_TISS_IMPRESSAO_STEPS.robot
-Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}           M_TISS_IMPRESSAO
+${suite}           m_tiss_impressao
 # Recebe dados do gerenciador
 ${dados}
 
@@ -55,5 +52,3 @@ SRC1AMTISSIMPRESSAOSMF-4079:Fluxo Principal
     Clicar no botão Rel. G. TISS 
     Selecionar na saída do relatorio a opcao Impressora
     Clicar no botão Imprimir 
-
-
