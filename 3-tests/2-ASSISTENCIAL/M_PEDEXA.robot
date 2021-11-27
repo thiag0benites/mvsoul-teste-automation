@@ -37,8 +37,9 @@ SCR2AMPEDEXA-001:Fluxo Principal
     Acessa a Tela Pela Busca |M_PEDEXA||Pedidos de Exames Laboratório| @las
     #Acessar a tela "Diagnóstico e Terapia>Laboratório de Análises Clínicas>Atendimento>Pedidos de Exames Laboratório"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Campo Atendimento
-    Validar Campos de Preenchimento Automatico
-    Preencher Dados Faltantes do Paciente
-    Preencher Campos da Aba Exames
+    Preencher Campo Atendimento |${dados}[Atendimento]| |${dados}[MensagemValidacao]|
+    Validar Campos de Preenchimento Automatico |${dados}[NomePaciente]| |${dados}[Convenio]| |${dados}[Plano]| |${dados}[CID]|
+    Preencher Dados Faltantes do Paciente |${dados}[TpSolicitacao]| |${dados}[Medico]|
+    Preencher Campos da Aba Exames |${dados}[Exame]| |${dados}[Laboratorio]| |${dados}[Material]|
     Salvar Solicitacao de Exame |${Suite}| |1| 
+   
