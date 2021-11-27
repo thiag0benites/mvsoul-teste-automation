@@ -1,7 +1,7 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
 # Decrição: Elementos e metodos da página de  Cadastro de Ordem de Compras
-##################################################################################################################################
+###################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
@@ -19,11 +19,10 @@ ${CampoDesconto}                              xpath=//input[@id="inp:vlPercDesco
 ${CampoICMS}                                  xpath=//input[@id="inp:vlPercIcms"]
 ${BotaoServico}                               xpath=//button[@id="btnProduto"]
 ${Servico}                                    xpath=//input[@row="0"]
+${VlServicoClick}                             xpath=//div[@data-member="VL_TOTAL"]
 ${VlServico}                                  xpath=//input[@class="editor-text mode-edit"]
-${BotaoLovClasse}                             xpath=//div[@id="cdClasse"]/button
-${BotaoLovSubclasse}                          xpath=//div[@id="cdSubCla"]/button
-${CampoRegistroAnvisa}                        xpath=//input[@id="snRegistroAnvisa_ac"]
-${BotaoLovAtividade}                          xpath=//div[@id="cdTipAtiv"]/button
-${MensagemToast}                              xpath=//p[@class="notifications-item-text"]
-${BotaoNao}                                   xpath=//li[@class="notification-buttons"]/button[text()="Não"]         
-${BotaoSim}                                   xpath=//li[@class="notification-buttons"]/button[text()="Sim"]          
+${RegistroSalvo}                              xpath=//p[@class="notifications-item-text"]
+${LimpaTela}                                  xpath=//div[@class="notifications-item-body"]/p/br
+${LimparSim}                                  xpath=//li[@class="notification-buttons"]/button[text()="Sim"]
+${ConfereEstoque}                             xpath=//input[@id="inp:dspDsEstoque"][@title="ALMOXARIFADO"]
+       

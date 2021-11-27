@@ -35,20 +35,19 @@ SCR4MMORDCOM-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MMORDCOM-001:Fluxo Principal" -d ./5-results/SCR4MMORDCOM-001 "3-tests/4-MATERIAIS/M_ORDCOM.robot"
 # robot -v browser:firefox -t "SCR4MMORDCOM-001:Fluxo Principal" -d ./5-results/SCR4MMORDCOM-001 "3-tests/4-MATERIAIS/M_ORDCOM.robot"
     #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMORDCOM-001"
+    
     Acessar a tela "Materiais e Logística>Compras>Compras>Ordem de Compra>Cadastro"@nprint @las
+    
     Validar Acesso a Tela |Ordem de Compras|
-    Preencher Estoque |66|
-    Preencher Fornecedor |3911|
-    Preencher Periodo Inicial para Entrega |01/12/2021|
-    Preencher Periodo Final para Entrega |10/12/2021|
-    Preencher Condicao |82|
-    Marcar o CheckBox Servico
-    Informar Valor Total |100|
-    Informar Valor Desconto |0|
-    Informar Valor ICMS |0|
-    CLicar no Botao Servico
-    Preencher Servico |1273|
-    Preencher Valor Servico |100|
+    
+    Preencher Estoque , Fornecedor, e PeriodoEntrega |66| |3911| |01/12/2021| |10/12/2021|
+    
+    Preencher Condicao e Marcar Servico |82|
+  
+    Informar Valor Total , Desconto e ICMS |100| |0| |0|
+
+    CLicar em Servico e Preencher Servico e Valor |1273| |100|
+
     Salvar Registro
-    Sleep   20
+    
   
