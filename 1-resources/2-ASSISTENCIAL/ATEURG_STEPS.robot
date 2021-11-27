@@ -52,7 +52,7 @@ Confirmar Atendimento |${MensagemSucesso}|
     #Click no Item                           ${BotaoSimValidAtend}
     #Click no Item                           ${BotaoSimValidAtend}
     Click no Item                           ${BotaoOKConfAtend}
-    Valida Mensagem                         ${MensagemSucesso}                  ${MensagemSucesso}
+    Valida Mensagem                         ${MensagemToast}                    ${MensagemSucesso}
 
 
 
