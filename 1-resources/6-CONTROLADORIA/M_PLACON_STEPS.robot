@@ -29,9 +29,6 @@ Clicar Descricao da Conta |${MsgCampoConta2}|
     Send Keys                                                         enter
 
 Clicar no campo Natureza |${BtnNatureza2}|
-   
-    #SeleniumLibrary.Input Text    ${''}    ${''}
-    #Seleciona Item Combobox    ${BtnNatureza}    Credora
     Preencher campo                  ${BtnNatureza}                   ${BtnNatureza2} 
     Press Keys                       ${BtnNatureza}                   ENTER
     

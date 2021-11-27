@@ -26,20 +26,21 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_placon
+${suite}          o_lanextr
 # # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 
 SMF-5514 : Realizar Lançamento Bancário
 # robot -v browser:chrome -t "SMF-5514 : Realizar Lançamento Bancário" -d ./5-results/SMF-5514 "3-tests/6-CONTROLADORIA/O_LANEXTR.robot"
 # robot -v browser:firefox -t "SMF-5514 : Realizar Lançamento Bancário" -d ./5-results/SMF-5514 "3-tests/6-CONTROLADORIA/O_LANEXTR.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5514"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Bancário>Movimentação>Lançamentos de Extratos"@nprint @las
     Informar a Empresa no campo correspondente
     Selecionar a conta corrente
     Selecionar uma opcao no campo Conciliado
-    Indicar o periodo que se deseja trabalhar e clicar em Pesquisar
+    Indicar o periodo que se deseja trabalhar e clicar em Pesquisar |${dados}[DataInicial]| |${dados}[DataFinal]|
     Clicar no icone de adicao
-    Preencher os campos com as informacoes do lançamento faltante
-    Clicar em Concil para algum lancamento
+    Preencher os campos com as informacoes do lançamento faltante |${dados}[ValorCampo]|
+    Clicar em Concil para algum lancamento |${dados}[MsgVerificada]|

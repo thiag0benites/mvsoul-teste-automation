@@ -22,20 +22,19 @@ Selecionar a conta corrente
     Click no Item                    ${CampoContaCorrente}
     Click no Item                    ${BtnOk} 
 
-Selecionar uma opcao no campo Conciliado
-    Preencher campo                   ${CampoConciliado}                    Ambos
+Selecionar uma opcao no campo Conciliado 
+    Seleciona Item Combobox           ${CampoConciliado}                     Ambos
     
-
-Indicar o periodo que se deseja trabalhar e clicar em Pesquisar
-    Preencher campo                    ${CampoDataInicial}                   01/10/2014
-    Preencher campo                    ${CampoDataFinal}                     31/10/2014
+Indicar o periodo que se deseja trabalhar e clicar em Pesquisar |${DataInicial}| |${DataFinal}|
+    Preencher campo                    ${CampoDataInicial}                   ${DataInicial}
+    Preencher campo                    ${CampoDataFinal}                     ${DataFinal}
     Click no Item                      ${BtnPesquisar}  
 
 Clicar no icone de adicao
     Sleep                                20                       
     Click no Item                       ${BtnAdicionar}   
 
-Preencher os campos com as informacoes do lançamento faltante
+Preencher os campos com as informacoes do lançamento faltante |${ValorCampo}|
     Click no Item                       ${CampoDataLcto}  
     Click no Item                       ${CampoLcto0}    
     Click no Item                       ${BtnLcto}
@@ -43,11 +42,11 @@ Preencher os campos com as informacoes do lançamento faltante
     Click no Item                       ${BtnOk}
     Click no Item                       ${LinhaCampoValor} 
     Sleep                                2    
-    SeleniumLibrary.Input Text          ${CampoValor}                          500
+    SeleniumLibrary.Input Text          ${CampoValor}                          ${ValorCampo}
     Sleep                                2
-    #Press Keys                          ${CampoValor}                          enter
 
-Clicar em Concil para algum lancamento
+
+Clicar em Concil para algum lancamento |${MsgVerificada}|
     Click no Item                       ${BtnSalvar}    
     Sleep                                2
-    Valida Mensagem                     ${MsgValidada}                         Registros gravados com sucesso
+    Valida Mensagem                     ${MsgValidada}                         ${MsgVerificada}
