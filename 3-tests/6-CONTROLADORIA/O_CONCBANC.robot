@@ -22,7 +22,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/O_CONCBANC_STEPS.robot
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 
 *** Variable ***
@@ -32,19 +32,19 @@ Test Setup        Nova sessao
 # ${dados}
 
 *** Test Case ***
-# SMF-7250
 SROCONCBANC001:Fluxo Principal
+# SMF-7250
 # robot -v browser:chrome -t "SROCONCBANC001:Fluxo Principal" -d ./5-results/SROCONCBANC001 "3-tests/6-CONTROLADORIA/O_CONCBANC.robot"
 # robot -v browser:firefox -t "SROCONCBANC001:Fluxo Principal" -d ./5-results/SROCONCBANC001 "3-tests/6-CONTROLADORIA/O_CONCBANC.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Bancário>Movimentação>Conciliação Bancária"@nprint @las
-    Informar no campo <Período Lanç>|24/11/2021| o período no qual foram realizados os lançamentos 
-    Preencher valor Valor Minmo |500| e Valor Maximo |5000| do campo <Intervalo Valor>
-    Informar no campo <Empresa> o código da empresa Valor Empresa |5 - HOSPITAL MV - MATRIZ|
+    Informar no campo <Periodo Lanc> |01/09/2021| e |30/11/2021| 
+    Preencher valor Valor Minmo |20| e Valor Maximo |1000| do campo <Intervalo Valor>
+    Informar no campo <Empresa> o codigo da empresa Valor Empresa |5 - HOSPITAL MV - MATRIZ|
     Seleciona no campo <Status> uma Opçao |Não Conciliado|
-    Informar no campo <Nr do documento> o Numero de um doc a ser pesquisado |DOC - 35694|
+    Informar no campo <Nr do documento> o Numero de um doc a ser pesquisado |XX34|
     Informar no campo <Conta Corrente> o Nr da Conta Corrente |BRADESCO HOBRA (CONVENIOS)|
     Clicar no Botao Pesquisar
     Selecionar os lancamentos que serao conciliados
     Clicar no botao Salvar
-
+    
     

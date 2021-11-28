@@ -11,20 +11,20 @@
 Resource                            ../../2-pages/6-CONTROLADORIA/O_CONCBANC_PAGE.robot
 
 *** Keywords ***
-
-Informar no campo <Período Lanç>|${PerioLanc}| o período no qual foram realizados os lançamentos
-     Clicar no Campo e Preencher Informacao    ${campoPeriodo}    ${campoPeriodo}   ${PerioLanc}
+Informar no campo <Periodo Lanc> |${PeriodoInicial}| e |${PeriodoFinal}|
+     Clicar no Campo e Preencher Informacao   ${campoPerInicial}   ${campoPerInicial}  ${PeriodoInicial}
+     Clicar no Campo e Preencher Informacao   ${campoPerFinal}   ${campoPerFinal}   ${PeriodoFinal}
 
 Preencher valor Valor Minmo |${VlMinimo}| e Valor Maximo |${VlMaximo}| do campo <Intervalo Valor>
     Clicar no Campo e Preencher Informacao     ${ValorMinimo}   ${ValorMinimo}   ${VlMinimo}
     Clicar no Campo e Preencher Informacao     ${ValoMaximo}    ${ValoMaximo}    ${VlMaximo}
 	
-Informar no campo <Empresa> o código da empresa Valor Empresa |${ValorFiltro}|
+Informar no campo <Empresa> o codigo da empresa Valor Empresa |${ValorFiltro}|
     Click no Item    ${MultEmpresa}
     Clicar no Campo e Preencher Informacao    ${Vfiltro}   ${Vfiltro}   ${ValorFiltro}
     Click no Item    ${BotaoFiltro}
     Click no Item    ${BtOk}
-
+    
 Seleciona no campo <Status> uma Opçao |${NaoConciliado}|
     Click no Item   ${TipoDoc} 
     Clicar no Campo e Preencher Informacao   ${TipoDocLov}   ${TipoDocLov}    ${NaoConciliado}
@@ -48,3 +48,4 @@ Selecionar os lancamentos que serao conciliados
 
 Clicar no botao Salvar
     Click no Item  ${SalConCor}
+    sleep  3
