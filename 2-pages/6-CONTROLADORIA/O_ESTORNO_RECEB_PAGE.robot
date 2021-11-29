@@ -7,7 +7,9 @@
 Resource    ../../Config.robot
 
 *** Variables ***
+
 ### Campos ###
+
 ${CampoTipoConta}                          xpath=//*[@id="tpConta_ac"]
 ${CampoPreencherFiltro}                    xpath=//*[@id="#filterLov"]
 ${CampoNomeFantasiaCliente}                xpath=//div[@title='AMIL DF']
@@ -20,6 +22,7 @@ ${CampoNrDocumento}                        xpath=//*[@id="inp:nrDocumento"]
 ${CampoRecebimento}                        xpath=//div[@data-member='CHECK_MARCAR']
 
 ### Botoes ###
+
 ${BtnPopupCliente}                         xpath=//*[@id="cdFornecedor"]/button
 ${BtnFiltrar}                              xpath=//*[@id="btfilter"]
 ${BtnOk}                                   xpath=//*[@id="btok"]
