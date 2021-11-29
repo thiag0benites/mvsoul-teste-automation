@@ -39,9 +39,10 @@ SMF-6503 : Realizar o Lancamento Manual de Repasse Medico
     Clicar no botao [Buscar]
     No campo <Competencia> inserir a competencia desejada e clicar no botao [Executar]
     Clicar no botao [Adicionar] para realizar lancamento manual
-    Inserir Data Repasse |${dados}[DataRepasse]|
+    Inserir Data Repasse |${dados}[DataRepasse]|   ### PREENCHER dd/Mmm/aaaa ###
     Usuario devera informar no campo <Codigo> o prestador que recebera o repasse |${dados}[Prestador]|
     Usuario devera informar no campo <Grupo de Repasse> o grupo ao qual o prestador foi associado |${dados}[Grupo]|
+    Inserir Data Competencia |${dados}[DataCompetencia]|    ### PREENCHER dd/Mmm/aaaa ###
     Usuario devera informar no campo <Setor> qual setor o prestador selecionado presta serviços |${dados}[Setor]|
     Usuario devera informar no campo <Valor faturado> o valor referente aos procedimentos executados pelo prestador selecionado |${dados}[Valor]|
     Usuario devera informar no campo <Valor Repasse> o valor a ser repassado para o prestador |${dados}[Repasse]|    

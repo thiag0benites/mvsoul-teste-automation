@@ -11,19 +11,18 @@ Resource                            ../../2-pages/6-CONTROLADORIA/M_REP_MANUAL_P
 
 *** Keywords ***
 
-Inserir Data Competencia |${dd}/${MES}/${aaaa}|
-# Inserir Data de Inicio |${data}|
+Inserir Data Competencia |${data}|
 
-    # Sleep    2
-    # ${dd}                          Get Substring        ${data}         0     2
-    # ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
+    Sleep    2
+    ${dd}                          Get Substring        ${data}         0     2
+    ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
 
-    # IF    ${ddPrimeriaPosicao} == 0
-    # ${dd}                          Get Substring        ${data}         1     2
-    # END
+    IF    ${ddPrimeriaPosicao} == 0
+    ${dd}                          Get Substring        ${data}         1     2
+    END
 
-    # ${MES}                         Get Substring        ${data}         3     6
-    # ${aaaa}                        Get Substring        ${data}         7     12
+    ${MES}                         Get Substring        ${data}         3     6
+    ${aaaa}                        Get Substring        ${data}         7     12
 
     Click no Item                  ${CampoDataCompet} 
     Click no Item                  ${BotaoDataCompetencia}
@@ -42,7 +41,6 @@ Inserir Data Competencia |${dd}/${MES}/${aaaa}|
     Click Element                  ${diaInicio}
     Sleep                                               5
 
-# Inserir Data Repasse |${dd}/${MES}/${aaaa}|
 Inserir Data Repasse |${data}|
     Sleep    2
     ${dd}                          Get Substring        ${data}         0     2
@@ -96,7 +94,6 @@ Usuario devera informar no campo <Grupo de Repasse> o grupo ao qual o prestador 
     Clicar Botao se estiver Visivel                      ${BtnFiltro}
     Click no Item                                        ${SelecionaFiltro}
     Clicar Botao se estiver Visivel                      ${BtnOk}
-    Inserir Data Competencia |20/Mai/2019|
 
 Usuario devera informar no campo <Setor> qual setor o prestador selecionado presta serviços |${Setor}|
     Click no Item                                        ${CampoSetor}
