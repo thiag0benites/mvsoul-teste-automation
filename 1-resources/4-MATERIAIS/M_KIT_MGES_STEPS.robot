@@ -50,6 +50,10 @@ Informar os campos Material Medicamento
     Click no Item                    ${BtnProdConsig}    
     Click no Item                    ${LinhaProdConsig2}     
     Click no Item                    ${BtnOk} 
-
+    Press Keys                       ${LinhaProdConsig3}            enter
+    #Click no Item                    ${LinhaQtdProdConsig} 
+    Preencher campo                  ${QtdProdutoConsig}                   2
+    Sleep                                2
+    
 
 
