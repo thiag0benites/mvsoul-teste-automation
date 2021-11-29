@@ -27,4 +27,5 @@ ${BtnPopupTipoLancamento}                  xpath=//*[@id="cdLanConcor"]/button
 ${BtnPopupMotCancelamento}                 xpath=//*[@id="cdMotivoCanc"]/button
 ${BtnCheckMarcar}                          xpath=//button[@data-rowid='AAAdlcAAOAACXSaAAD']
 ${BtnConfirmar}                            xpath=//*[@id="butConfirmar"]
+
 ### Diversos ###
