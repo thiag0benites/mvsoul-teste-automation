@@ -11,6 +11,10 @@ Resource    ../../Config.robot
 ### Campos ###
 
 ### Botoes ###
-
-
+${BtnDtPrevista}               xpath=//button[@id="rbDtPrevista_btn"]
+${BtnPreAg}                    xpath=//div[@id="counterCOUNT_PA"]
+${BtnRevisao}                  xpath=//div[@id="counterCOUNT_RE"]
+${BtnCotacao}                  xpath=//div[@id="counterCOUNT_CO"]
+${BtnAguardCotacao}            xpath=//div[@id="counterCOUNT_AC"]
+${BtnSolicGuia}                xpath=//div[@id="counterCOUNT_SG"]
 ### Diversos ###
