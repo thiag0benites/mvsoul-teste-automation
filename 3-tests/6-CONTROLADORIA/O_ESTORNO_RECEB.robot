@@ -31,13 +31,14 @@ ${dados}
 SMF-6281 : Estornar Recebimento
 # robot -v browser:chrome -t "SMF-6281 : Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
 # robot -v browser:firefox -t "SMF-6281 : Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6281"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Estorno>Estorno de Recebimentos"@nprint @las
-    Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada
-    Informar Nome do Cliente ou Paciente
-    Informar o Periodo no Qual Ocorreu o Pagamento(Credito)
-    Selecionar o Tipo de Lancamento que Sera Vinculado ao Estorno
-    Selecionar o "Motivo de Cancelamento" Pelo Qual Esta Sendo Efetuado o Estorno
-    Informar "Dt estorno" a Data em Que Esta Sendo Realizado o Estorno do Recebimento
+    Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada |${dados}[TipoDeConta]|
+    Informar Nome do Cliente ou Paciente |${dados}[Cliente]|
+    Informar o Periodo no Qual Ocorreu o Pagamento(Credito) |${dados}[DtInicial]| |${dados}[DtFinal]|
+    Selecionar o Tipo de Lancamento que Sera Vinculado ao Estorno |${dados}[TipoLancamento]|
+    Selecionar o "Motivo de Cancelamento" Pelo Qual Esta Sendo Efetuado o Estorno |${dados}[MotivoCancelamento]|
+    Informar "Dt estorno" a Data em Que Esta Sendo Realizado o Estorno do Recebimento |${dados}[DtEstorno]|
     Selecionar os Recebimentos a Serem Estornados
-    Informar o "Nr de documento" Referente ao Recebimento
+    Informar o "Nr de documento" Referente ao Recebimento |${dados}[NrDocumento]|
     Clicar em <CONFIRMAR>
