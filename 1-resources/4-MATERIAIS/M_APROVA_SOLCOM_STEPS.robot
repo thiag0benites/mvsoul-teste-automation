@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/4-MATERIAIS/C_ORDCOM_PAGE.robot
+Resource                ../../2-pages/4-MATERIAIS/M_APROVA_SOLCOM_PAGE.robot
 
 *** Variable ***
 
@@ -14,6 +14,6 @@ Preencher Codigo |${codigo}|
     Sleep          1
     Preencher campo  ${inputCodigo}  ${codigo}            
 
-Validar Codigo de Aprovacao
-    Validar Informacao Item  ${campoNomeDoFornecedor}    690  
+Validar Codigo de Aprovacao |${validaCodAprovacao}|
+    Validar Informacao Item  ${campoNomeDoFornecedor}    ${validaCodAprovacao}  
           

@@ -229,19 +229,19 @@ Clicar no botão Salvar do menu
     Click Element     ${btnSalvar}
     Sleep             60
 
-Clicar no botão Adicionar
+Clicar no botao Adicionar
     Click Element     ${btnAdicionar}
 
-Clicar no botão Pesquisar
+Clicar no botao Pesquisar
     Click no Item               ${btnPesquisar}   
 
-Clicar no botão Executar 
+Clicar no botao Executar 
     Click no Item            ${btnExecute} 
     Sleep              30   
 
-Clicar no botão Não 
+Clicar no botao Nao 
     Click no Item            ${btnNaoNotifications}
 
-Clicar no botão Sim
+Clicar no botao Sim
     Click no Item            ${btnSimNotifications}
     

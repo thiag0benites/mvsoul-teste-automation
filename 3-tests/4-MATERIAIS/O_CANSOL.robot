@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/4-MATERIAIS/O_CANSOL_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -21,7 +20,7 @@ Resource            ../../1-resources/4-MATERIAIS/O_CANSOL_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -35,13 +34,13 @@ SRC4OCANSOL-001:Cancelar uma solicitação de compra
 # robot -v browser:firefox -t "SRC4OCANSOL-001:Cancelar uma solicitação de compra" -d ./5-results/SRC4OCANSOL "3-tests/4-MATERIAIS/O_CANSOL.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC4OCANSOL-001"
     Acessar a tela "Materiais e Logística>Compras>Compras>Solicitação de Compras>Aprovação"@nprint @las
-    Clicar no botão Pesquisar
+    Clicar no botao Pesquisar
     Preencher o Codigo |${dados}[codigo]|
-    Clicar no botão Executar 
-    Validar Codigo
+    Clicar no botao Executar 
+    Validar Codigo |${dados}[validacaoCodigo]|
     Clicar no botao de Autorizacao  
     Clicar no botao de Nao Autorizar 
-    Valida Mensagem        ${mensagemNaoAprovada}         |${dados}[mensagemNaoAprovacao]|
+    Validar Mensagem |${dados}[mensagemNaoAprovacao]|
     Clicar no Botao |OK|
 
     

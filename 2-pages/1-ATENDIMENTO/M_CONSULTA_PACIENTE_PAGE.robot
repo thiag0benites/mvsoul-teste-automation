@@ -8,8 +8,6 @@ Resource    ../../Config.robot
 
 
 *** Variables ***
-${BROWSER}    chrome
-${SLEEP}      3
 
 
 
@@ -24,4 +22,4 @@ ${btnOK}                //button[contains(text(),"OK")]
 # Labels 
 ${campoCodRemessa}     xpath=//div[@class="grid-canvas grid-canvas-top grid-canvas-left"]//div[@class="slick-cell b0 f0 selected ui-fixed-width"]
 ${prestador}           xpath=/html/body/div[2]/div/div[2]/div/div/form/div[1]/fieldset/div/fieldset[2]/div/div[8]/span
-#Selectors
+

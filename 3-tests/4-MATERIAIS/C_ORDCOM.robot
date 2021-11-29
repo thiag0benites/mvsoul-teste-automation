@@ -37,6 +37,6 @@ SCR4MCORDCOM-001:Consultar Ordem de Compra
     Acessar a tela "Materiais e Logística>Compras>Consultas>Ordem de Compra"@nprint @las
     Validar Acesso a Tela |Ordens de Compra|
     Preencher Codigo |${dados}[codigo]|
-    Clicar no botão Executar
-    Validar Ordem de Compra pelo fornecedor
+    Clicar no botao Executar
+    Validar Ordem de Compra pelo fornecedor |${dados}[nomeDoFornecedor]|
    

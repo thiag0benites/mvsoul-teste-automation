@@ -14,6 +14,6 @@ Preencher Codigo |${codigo}|
     Sleep          1
     Preencher campo  ${inputCodigo}  ${codigo}            
 
-Validar Ordem de Compra pelo fornecedor
-        Validar Informacao Item  ${campoNomeDoFornecedor}    MV INFORMATICA  
+Validar Ordem de Compra pelo fornecedor |${nomeDoFornecedor}|
+        Validar Informacao Item  ${campoNomeDoFornecedor}    ${nomeDoFornecedor}  
           
