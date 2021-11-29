@@ -25,7 +25,7 @@ Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            C_ORDCOM
+${suite}            c_ordcom
 # Recebe dados do gerenciador
 ${dados}
 

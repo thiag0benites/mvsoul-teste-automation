@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/1-ATENDIMENTO/M_CONSULTA_PACIENTE_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -26,7 +25,7 @@ Test Teardown       Encerra sessão
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_CONSULTA_PACIENTE
+${suite}            m_consulta_paciente
 # Recebe dados do gerenciador
 ${dados}
 

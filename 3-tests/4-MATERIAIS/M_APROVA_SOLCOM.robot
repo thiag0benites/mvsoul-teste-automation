@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/4-MATERIAIS/M_APROVA_SOLCOM_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -26,7 +25,7 @@ Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_APROVA_SOLCOM
+${suite}            m_aprova_solcom
 # Recebe dados do gerenciador
 ${dados}
 
