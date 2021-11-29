@@ -42,18 +42,18 @@ Inserir Data Competencia |${dd}/${MES}/${aaaa}|
     Click Element                  ${diaInicio}
     Sleep                                               5
 
-Inserir Data Repasse |${dd}/${MES}/${aaaa}|
-# Inserir Data Repasse |${data}|
-    # Sleep    2
-    # ${dd}                          Get Substring        ${data}         0     2
-    # ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
+# Inserir Data Repasse |${dd}/${MES}/${aaaa}|
+Inserir Data Repasse |${data}|
+    Sleep    2
+    ${dd}                          Get Substring        ${data}         0     2
+    ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
 
-    # IF    ${ddPrimeriaPosicao} == 0
-    # ${dd}                          Get Substring        ${data}         1     2
-    # END
+    IF    ${ddPrimeriaPosicao} == 0
+    ${dd}                          Get Substring        ${data}         1     2
+    END
 
-    # ${MES}                         Get Substring        ${data}         3     6
-    # ${aaaa}                        Get Substring        ${data}         7     12
+    ${MES}                         Get Substring        ${data}         3     6
+    ${aaaa}                        Get Substring        ${data}         7     12
     
     Click no Item                  ${CampoDataRepasse} 
     Click no Item                  ${BtnCalendDataRepasse}
