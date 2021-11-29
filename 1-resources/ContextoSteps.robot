@@ -41,7 +41,7 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Click Element    ${HomeXpathBtnMenu}
     @{listaItensMenu}    Converte string em lista    ${caminhoSelecaoMenu}    >
     @{listaXpathItensMenu}    Criar Lista Itens Menu Xpath com Index    @{listaItensMenu}
-    FOR    ${itemMenu}    IN    @{listaXpathItensMenu}
+    FOR    ${itemMenu}    IN    @{listaXpathItensMenu} 
         ${visivel}    Elemento Visivel    xpath=${itemMenu}
         Log To Console    *** Visivel: ${visivel}
         ${classe}    Get Element Attribute    xpath=${itemMenu}/ancestor::li[1]    class
