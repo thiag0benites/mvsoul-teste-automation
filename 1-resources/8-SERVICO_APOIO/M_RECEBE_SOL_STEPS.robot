@@ -9,10 +9,14 @@ Resource          M_SOLICITACAO_SERV_STEPS.robot
 Resource          ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 
 *** Variable ***
-
+# Suite registrada no gerenciador de dados
+${suite}            m_solicitacao_serv
+# Recebe dados do gerenciador
+${dados}
 *** Keywords ***
 ### Keyword para criação da massa de dados necessária para o teste ###
-Criar Solicitacao de Servico e Acessar Tela |${NomeTela}| |${Suite}| |${LinhaGerenciador}|
+Criar Solicitacao de Servico e Acessar Tela |${NomeTela}| |${SuiteExterna}| |${LinhaGerenciador}|
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMSOLICITACAOSERV-001"
     Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Solicitação de Serviço"@nprint @las
     Validar Acesso a Tela |Solicitação de Serviços|
     Preencher Tipo de OS e Bem Patrimonial |ELETIVA| |BEM AGREGADO - BEM AGREGADO - MARCA|
@@ -20,7 +24,7 @@ Criar Solicitacao de Servico e Acessar Tela |${NomeTela}| |${Suite}| |${LinhaGer
     Preencher Campos Obrigatorios |OFICINA DE TRABALHO| |3333-4444| |soulmv@mv.com.br| |Alta|
     Salvar Solicitacao de Servico |Atenção: Existem solicitações de serviços em aberta(s) para este Bem.| |Registros gravados com sucesso|
     ${RecebeCodSolic}         Get Element Attribute       ${CampoCodSolicTelaSolic}    title
-    Altera massa de dados da "${Suite}", linha "${LinhaGerenciador}", coluna "CdSolicitacao", valor "${RecebeCodSolic}"
+    Altera massa de dados da "${SuiteExterna}", linha "${LinhaGerenciador}", coluna "CdSolicitacao", valor "${RecebeCodSolic}"
     Click Elemento por titulo                    Sair
     Acessar a tela "Serviços de Apoio>Manutenção>Ordem Serviço>Recebimento de Solicitações"@nprint @no
     Validar Acesso a Tela |${NomeTela}|
