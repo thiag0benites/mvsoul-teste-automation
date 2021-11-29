@@ -43,4 +43,4 @@ SCR2AMADMI-001:Fluxo Principal
     Acesso Tela Recem Nascido> Hora do Parto|${dados}[HoraDoParto]|>Sexo|${dados}[TipoSexo]|>Numero Pulseira|${dados}[NumeroPulseira]|
     Preenche Registro Civil>Declaracao Nacido Vivo|${dados}[NascidoVivo]|>Numero Pulseira|${dados}[NumeroPulseira]|
     Preenche Apagar 1 Min|${dados}[Apgar1Min]| 5 Min|${dados}[Apgar5Min]|, Perimetro Encefalo|${dados}[PerimetroCefalico]|, Toracico|${dados}[PerimetroToracico]|, Abdominal|${dados}[PerimetroAbdominal]| e Medidas Altura|${dados}[MedidaAltura]|, Peso|${dados}[MedidaPeso]|
-    Preenche Pediatra Resp |${dados}[Pediatra]|, Leito|%{dados}[TxtLeito]| E Filtro|${dados}[FiltroParto]|
+    Preenche Pediatra Resp |${dados}[Pediatra]|, Leito|${dados}[TxtLeito]| E Filtro|${dados}[FiltroParto]|
