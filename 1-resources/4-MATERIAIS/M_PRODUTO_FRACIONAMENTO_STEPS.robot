@@ -29,3 +29,6 @@ Clicar no botao Sim no modal de notificacao
 
 Clicar no botao Salvar da tela
     Click no Item  ${buttonSalvar}
+
+Validar mensagem ao salvar |${mensagem}|
+    Valida Mensagem                         ${notificacao}               ${mensagem}

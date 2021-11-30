@@ -20,7 +20,7 @@ Resource            ../../1-resources/7-APOIO_TI/M_USU_MULTI_EMPRESA_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-Test Teardown       Encerra sessao
+# Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -34,6 +34,7 @@ SCR7AMUSUMULTIEMPRESA-001:Fluxo principal
 # robot -v browser:firefox -t "SCR7AMUSUMULTIEMPRESA-001:Fluxo principal" -d ./5-results/SCR7AMUSUMULTIEMPRESA-001 "3-tests/7-APOIO_TI/CM_USU_MULTI_EMPRESA.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR7AMUSUMULTIEMPRESA-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Preencher os campos |${dados}[usuario]|,|${dados}[empresa]|
+    Preencher os campos |${dados}[empresa]|,|${dados}[usuario]|
     Clicar no botao Salvar do menu
+    Validar mensagem ao salvar |${dados}[mensagem]|
     

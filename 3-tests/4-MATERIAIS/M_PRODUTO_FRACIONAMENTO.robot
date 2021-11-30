@@ -41,3 +41,4 @@ SRC4MMPRODUTOFRACIONAMENTO-001:Fluxo Principal
     Preencher os campos |${dados}[codProduto]|,|${dados}[lote]|,|${dados}[quantidade]|,|${dados}[unidade]|,|${dados}[unidadeFracionada]|
     Clicar no botao Salvar da tela
     Clicar no botao Sim no modal de notificacao
+    Validar mensagem ao salvar |${dados}[mensagem]|
