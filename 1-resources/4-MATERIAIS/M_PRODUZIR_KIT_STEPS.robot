@@ -11,40 +11,39 @@ Resource                            ../../2-pages/4-MATERIAIS/M_PRODUZIR_KIT_PAG
 
 *** Keywords ***
 
-Informacoes para producao dos kits  #|${Competencia}|
+Informacoes para producao dos kits|${Estoque}||${KitASerProduzido}|
     Wait Until Element Is Visible                   ${BtnEstoque}                   120  
     Click no Item                                   ${BtnEstoque}
-    Preencher campo                                 ${CampoFiltro}                  ALMOXARIFADO
+    Preencher campo                                 ${CampoFiltro}                  ${Estoque}
     Click no Item                                   ${BtnFiltro}
-    Click no Item                                   ${Btnok}
-#    Selecionar Item Na Lista                        ${BtnEstoque}          ALMOXARIFADO                      ALMOXARIFADO                                   
-    Selecionar Item Na Lista                        ${BtnKitASerProduzido}          17694                             17694                                   
+    Click no Item                                   ${Btnok}                                  
+    Selecionar Item Na Lista                        ${BtnKitASerProduzido}          ${KitASerProduzido}         ${KitASerProduzido}                                  
     
-Produtos do Kit    
+Produtos do Kit |${Produto1}||${Lote1}||${QntReservada1}||${Produto2}||${Lote2}||${QntReservada2}|  
     Click no Item                                   ${BtnCodDoProduto}
     Click no Item                                   ${BtnCompoEmEdicao}
-    Preencher campo                                 ${CampoFiltro}                  eFEDrina 50 MG, AMP 1 ML
+    Preencher campo                                 ${CampoFiltro}           ${Produto1}
     Click no Item                                   ${BtnFiltro}
     Click no Item                                   ${Btnok}
     Send Keys                                       tab
 
-#    Selecionar Item Na Lista                        ${BtnCompoEmEdicao}    eFEDrina 50 MG, AMP 1 ML          ${CampoEfedrina}
+
     Click no Item                                   ${CampoLote1}  
-    Selecionar Item Na Lista                        ${BtnCompoEmEdicao}    LOTEM                             LOTEM
-    Clicar no Campo e Preencher Informacao          ${CampoQtdReservada1}    ${CampoEditavel}    2
+    Selecionar Item Na Lista                        ${BtnCompoEmEdicao}      ${Lote1}                          ${Lote1}
+    Clicar no Campo e Preencher Informacao          ${CampoQtdReservada1}    ${CampoEditavel}                  ${QntReservada1}
     
     
     Click no Item                                   ${BtnAdicionar}        
     
     
     Click no Item                                   ${BtnCompoEmEdicao}
-    Preencher campo                                 ${CampoFiltro}                  ALLEGRA 180MG COMP
+    Preencher campo                                 ${CampoFiltro}           ${Produto2}
     Click no Item                                   ${BtnFiltro}
     Click no Item                                   ${Btnok}
     
     Click no Item                                   ${CampoLote2}  
-    Selecionar Item Na Lista                        ${BtnCompoEmEdicao}    LOTEP                             LOTEP
-    Clicar no Campo e Preencher Informacao          ${CampoQtdReservada2}    ${CampoEditavel}    1
+    Selecionar Item Na Lista                        ${BtnCompoEmEdicao}      ${Lote2}                         ${Lote2}
+    Clicar no Campo e Preencher Informacao          ${CampoQtdReservada2}    ${CampoEditavel}                 ${QntReservada2}
     
 
 Impressao e Validacao do Teste

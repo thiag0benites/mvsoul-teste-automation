@@ -23,18 +23,18 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-#${suite}          m_produzir_kit
+${suite}          m_produzir_kit
  # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR4MMPRODUZIRKIT-001:Fluxo Principal          #SMF-3254 : Produzir Kit - Código do Produto - com Impressão 
 # robot -v browser:chrome -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
 # robot -v browser:firefox -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COGERACALCULOS"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUZIRKIT"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Produção de Kits>Produzir Kits"@nprint @las
-    Informacoes para producao dos kits
-    Produtos do Kit
+    Informacoes para producao dos kits|${dados}[Estoque]||${dados}[KitASerProduzido]|
+    Produtos do Kit |${dados}[Produto1]||${dados}[Lote1]||${dados}[QntReservada1]||${dados}[Produto2]||${dados}[Lote2]||${dados}[QntReservada2]|
     Impressao e Validacao do Teste
 
 
