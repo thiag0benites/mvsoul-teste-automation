@@ -15,5 +15,4 @@ Preencher Codigo |${codigo}|
     Preencher campo  ${inputCodigo}  ${codigo}            
 
 Validar Codigo de Aprovacao |${validaCodAprovacao}|
-    Validar Informacao Item  ${campoNomeDoFornecedor}    ${validaCodAprovacao}  
-          
+    Validar Informacao Item  ${campoNomeDoFornecedor}    ${validaCodAprovacao}        

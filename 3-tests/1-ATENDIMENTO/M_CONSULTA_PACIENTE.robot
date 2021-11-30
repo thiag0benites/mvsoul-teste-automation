@@ -21,7 +21,7 @@ Resource            ../../1-resources/1-ATENDIMENTO/M_CONSULTA_PACIENTE_STEPS.ro
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-Test Teardown       Encerra sessão
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -38,7 +38,3 @@ SCR1TM_CONSULTA_PACIENTE-001:Cadastro de Agendas
     Clicar no botao "Procurar"@nprint
     Clicar no botao "Executar Consulta"@nprint
     Validar Informacao Prestador |${dados}[validarPrestador]|  
-    
-    
-
-

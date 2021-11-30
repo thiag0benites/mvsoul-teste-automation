@@ -39,4 +39,3 @@ SCR4MCORDCOM-001:Consultar Ordem de Compra
     Preencher Codigo |${dados}[codigo]|
     Clicar no botao Executar
     Validar Ordem de Compra pelo fornecedor |${dados}[nomeDoFornecedor]|
-   
