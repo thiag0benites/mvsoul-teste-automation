@@ -33,14 +33,12 @@ ${dados}
 SCR2AMADMINEXALAB-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMADMINEXALAB-001:Fluxo Principal" -d ./5-results/SCR2AMADMINEXALAB-001 "3-tests/2-ASSISTENCIAL/M_ADMIN_EXA_LAB.robot"
 # robot -v browser:firefox -t "SCR2AMADMINEXALAB-001:Fluxo Principal" -d ./5-results/SCR2AMADMINEXALAB-001 "3-tests/2-ASSISTENCIAL/M_ADMIN_EXA_LAB.robot"
-#  ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMADMINEXALAB-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMADMINEXALAB-001"
     #Acessar a tela "Diagnóstico e Terapia>Laboratório de Análises Clínicas>Atendimento>Gerenciamento de Exames"@nprint @las
     Acessa a Tela Pela Busca |M_ADMIN_EXA_LAB||Gerenciamento de Exames| @las
     Validar Acesso a Tela |Gerenciamento de Exames|
-    Consultar Atendimento
+    Consultar Atendimento |${dados}[Atendimento]|
     Clicar no Pedido
-    Excluir
-    #Alterar Campo Servico |${dados}[Servico]|
-    # Retornar massa de dados para status inicial
-    #Alterar Campo Servico |${dados}[RetornaServico]|
+    Excluir pelo Motivo |${dados}[Motivo]|
+
 

@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Elementos e metodos da página de  Cadastro de Ordem de Compras
+# Decrição: Elementos e metodos da página de  Cadastro de Contas a Receber
 ###################################################################################################################################
 *** Settings ***
 ### Configurações iniciais

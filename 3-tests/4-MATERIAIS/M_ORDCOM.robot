@@ -22,11 +22,11 @@ Resource            ../../1-resources/4-MATERIAIS/M_ORDCOM_STEPS.robot
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
 Test Teardown       Encerra sessao
-
+ 
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-${suite}            m_produto
+${suite}            m_ordcom
 # Recebe dados do gerenciador
 ${dados}
 
@@ -34,19 +34,19 @@ ${dados}
 SCR4MMORDCOM-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MMORDCOM-001:Fluxo Principal" -d ./5-results/SCR4MMORDCOM-001 "3-tests/4-MATERIAIS/M_ORDCOM.robot"
 # robot -v browser:firefox -t "SCR4MMORDCOM-001:Fluxo Principal" -d ./5-results/SCR4MMORDCOM-001 "3-tests/4-MATERIAIS/M_ORDCOM.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMORDCOM-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMORDCOM-001"
     
     Acessar a tela "Materiais e Logística>Compras>Compras>Ordem de Compra>Cadastro"@nprint @las
     
     Validar Acesso a Tela |Ordem de Compras|
     
-    Preencher Estoque , Fornecedor, e PeriodoEntrega |66| |3911| |01/12/2021| |10/12/2021|
+    Preencher Estoque , Fornecedor, e PeriodoEntrega |${dados}[CdEstoque]| |${dados}[CdFornecedor]| |${dados}[DtEntregaIni]| |${dados}[DtEntregaFin]|
     
-    Preencher Condicao e Marcar Servico |82|
+    Preencher Condicao e Marcar Servico |${dados}[CdCondic]|
   
-    Informar Valor Total , Desconto e ICMS |100| |0| |0|
+    Informar Valor Total , Desconto e ICMS |${dados}[VLTotal]| |${dados}[VLDesconto]| |${dados}[VLICMS]|
 
-    CLicar em Servico e Preencher Servico e Valor |1273| |100|
+    CLicar em Servico e Preencher Servico e Valor |${dados}[CdServico]| |${dados}[VlTotaServico]|
 
     Salvar Registro
     

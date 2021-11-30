@@ -14,3 +14,5 @@ ${ConfirmaExcluir}                          xpath=//p[@class="notifications-item
 ${ExcluirSim}                               xpath=//li[@class="notification-buttons"]/button[text()="Sim"]
 ${ConfirmaExcluirOk}                        xpath=//p[@class="notifications-item-text"]
 ${ExcluirOK}                                xpath=//li[@class="notification-buttons"]/button[text()="OK"]
+${MotivoExc}                                xpath=//textarea[@id='inp:blMotivoExclusao_dsMotivo']
+${ConfirmaMotivo}                           xpath=//button[@id='blMotivoExclusao_btnConfirmar']
