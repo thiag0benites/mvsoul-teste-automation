@@ -7,7 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoFiltro}                              xpath=//button[@id="btnFiltro"]  
-${CampoDtInicial}                           xpath=//input[@id="inp:dtPedidoIni"]
-${CampoDtFinal}                             xpath=//input[@id="inp:dtPedidoFim"]
-${BotaoPesquisar}                           xpath=//button[@id="btnPesquisar"]
+${BotaoFiltro}    xpath=//button[@id="btnFiltro"]
+${CampoDtInicial}    xpath=//input[@id="inp:dtPedidoIni"]
+${CampoDtFinal}    xpath=//input[@id="inp:dtPedidoFim"]
+${BotaoPesquisar}    xpath=//button[@id="btnPesquisar"]
