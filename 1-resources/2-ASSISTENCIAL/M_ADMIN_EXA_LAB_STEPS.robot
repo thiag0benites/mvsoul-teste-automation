@@ -16,11 +16,11 @@ Consultar Atendimento |${Atendimento}|
 Clicar no Pedido
     Click no Item                           ${LinhaDoPedido}
 
-Excluir pelo Motivo |${Motivo}|
+Excluir pelo Motivo |${MensagemExclusao}| |${MensagemExclusaoConfirma}| |${Motivo}|
     Click no Item                           ${BotaoExcluir}
-    Valida Mensagem                         ${ConfirmaExcluir}                  O Laudo já foi Emitido. Tem certeza que deseja EXCLUÍ-LO?
+    Valida Mensagem                         ${ConfirmaExcluir}                  ${MensagemExclusao}
     Click no Item                           ${ExcluirSim}
-    Valida Mensagem                         ${ConfirmaExcluirOk}                Deseja confirmar a exclusão?
+    Valida Mensagem                         ${ConfirmaExcluirOk}                ${MensagemExclusaoConfirma}
     Click no Item                           ${ExcluirOK}
     Preencher Campo                         ${MotivoExc}                        ${Motivo}
     Click no Item                           ${ConfirmaMotivo}  

@@ -39,6 +39,6 @@ SCR2AMADMINEXALAB-001:Fluxo Principal
     Validar Acesso a Tela |Gerenciamento de Exames|
     Consultar Atendimento |${dados}[Atendimento]|
     Clicar no Pedido
-    Excluir pelo Motivo |${dados}[Motivo]|
+    Excluir pelo Motivo |${dados}[MensagemExclusao]| |${dados}[MensagemExclusaoConfirma]| |${dados}[Motivo]|
 
 
