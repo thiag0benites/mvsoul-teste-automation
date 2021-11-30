@@ -19,7 +19,6 @@ Informar Nome do Cliente ou Paciente |${Cliente}|
     Clicar Botao se estiver Visivel           ${BtnOk}
 Informar o Periodo no Qual Ocorreu o Pagamento(Credito) |${DtInicial}| |${DtFinal}|
     Clicar no Campo e Preencher Informacao    ${CampoDataInicial}        ${CampoDataInicial}    ${DtInicial}
-
     Clicar no Campo e Preencher Informacao    ${CampoDataFinal}          ${CampoDataFinal}      ${DtFinal}
 Selecionar o Tipo de Lancamento que Sera Vinculado ao Estorno |${TipoLancamento}|
     Clicar Botao se estiver Visivel           ${BtnPopupTipoLancamento}
