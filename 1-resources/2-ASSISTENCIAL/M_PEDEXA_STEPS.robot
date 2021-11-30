@@ -34,7 +34,4 @@ Salvar Solicitacao de Exame |${Suite}| |${LinhaGerenciador}|
     Click Elemento por titulo              Salvar
     Click no Item                          ${BotaoOK}
     ${RecebeCodSolic}         Get Element Attribute       ${CampoCdSolicExame}    title
-    Altera massa de dados da "${Suite}", linha "${LinhaGerenciador}", coluna "CdSolicExame", valor "${RecebeCodSolic}"
-
-
-
+    Altera massa de dados da "${Suite}", linha "${LinhaGerenciador}", coluna "OutputCdSolicExame", valor "${RecebeCodSolic}"

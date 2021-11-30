@@ -41,5 +41,4 @@ SCR2AMPEDEXA-001:Fluxo Principal
     Validar Campos de Preenchimento Automatico |${dados}[NomePaciente]| |${dados}[Convenio]| |${dados}[Plano]| |${dados}[CID]|
     Preencher Dados Faltantes do Paciente |${dados}[TpSolicitacao]| |${dados}[Medico]|
     Preencher Campos da Aba Exames |${dados}[Exame]| |${dados}[Laboratorio]| |${dados}[Material]|
-    Salvar Solicitacao de Exame |${Suite}| |1| 
-   
+    Salvar Solicitacao de Exame |${Suite}| |${dados}[id]| 
