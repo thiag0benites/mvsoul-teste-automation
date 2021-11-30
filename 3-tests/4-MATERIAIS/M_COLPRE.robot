@@ -20,7 +20,7 @@ Resource            ../../1-resources/4-MATERIAIS/M_COLPRE_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -35,13 +35,11 @@ SMF-4044:Fluxo Principal
 # robot -v browser:firefox -t "SMF-4044:Fluxo Principal" -d ./5-results/SMF-4044 "3-tests/4-MATERIAIS/M_COLPRE.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4044"
     Acessar a tela "Materiais e Logística>Compras>Compras>Coleta de Preços (Licitação)>Cadastro de Coleta de Preços"@nprint @las
-    Preencher os campos Solicitacao|${dados}[solicitacao]|, Fornecedor|${dados}[fornecedor]|, Dt Validade|${dados}[dtValidade]|, Condicao pagamentos|${dados}[condPagamentos]|, Valor Total Coleta|${dados}[vlTotColeta]|, Valor frete|${dados}[vlFrete]|, Valor Desconto|${dados}[vlDesconto]|
-    Clicar no botao [Buscar Dados da Solicitação]
-    Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
-    Clicar no botao [Sim]
-    Valida Mensagem     ${mensagemPop2}     ${dados}[msgEsperada2]
-    Clicar no botao [Sim]
-    Preencher o campo Valor Unitario|${dados}[vlUnitario]|
+    Preencher os campos Solicitacao|${dados}[solicitacao]|, Fornecedor|${dados}[fornecedor]|, Dt Validade|${dados}[dtValidade]|, Condicao pagamentos|${dados}[condPagamentos]|, Valor Total Coleta|${dados}[vlTotColeta]|
+    Clicar no botao [Produtos]
+    Preencher O Campo Produto|${dados}[produto]|, Quantidade Cotada|${dados}[qtdCotada]|, Valor Unitario|${dados}[vlUntario]|
+    Clicar no botao [ConfirmaPreco]
     Clicar no botao [Salvar]
-    Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada3]
+    Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
+    Captura codigo|${suite}|${dados}[id]|
     Clicar no botao [Sim]
