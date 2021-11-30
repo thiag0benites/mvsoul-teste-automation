@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/M_REP_MANUAL_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -22,7 +20,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_REP_MANUAL_STEPS.robot
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -48,10 +45,3 @@ SMF-6503 : Realizar o Lancamento Manual de Repasse Medico
     Usuario devera informar no campo <Valor Repasse> o valor a ser repassado para o prestador |${dados}[Repasse]|    
     Usuario devera informar no campo <Descricao> a identificacao do repasse em referencia |${dados}[Descricao]|
     Usuario devera clicar no botao [Salvar]
-
-
-
-
-
-
-

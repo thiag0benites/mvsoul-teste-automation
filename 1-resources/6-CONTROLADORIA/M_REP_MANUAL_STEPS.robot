@@ -6,7 +6,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource                            ../../2-pages/6-CONTROLADORIA/M_REP_MANUAL_PAGE.robot
 
 *** Keywords ***
@@ -114,8 +113,3 @@ Usuario devera informar no campo <Descricao> a identificacao do repasse em refer
 Usuario devera clicar no botao [Salvar]
     Click no Item                                        ${BtnSalvar}
     Validar Item    ${ValidMsg}
-
-    
-
-
-
