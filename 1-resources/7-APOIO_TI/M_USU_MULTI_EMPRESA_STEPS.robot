@@ -11,7 +11,13 @@ Resource                ../../2-pages/7-APOIO_TI/M_USU_MULTI_EMPRESA_PAGE.robot
 *** Keywords ***
 Preencher os campos |${empresa}|,|${usuario}|
     Preencher Campo                             ${campoEmpresa}                    ${empresa}
-    Preencher Campo                             ${campoUsuario}                    ${usuario}
+    Sleep    2
+    Clicar no botao adicionar
+    Sleep    2
+    Preencher Campo                             ${campoUsuarioInput}               ${usuario}
 
 Validar mensagem ao salvar |${mensagem}|
     Valida Mensagem         ${notificacao}         ${mensagem}
+
+Clicar no botao adicionar
+    Click no Item  ${buttonAdicionar}
