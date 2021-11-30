@@ -21,7 +21,7 @@ Usuario devera clicar no botao [Execultar Consulta]
 Usuario devera informar nome do paciente |${NomePac}| no campo <Paciente>
     Clicar no Campo e Preencher Informacao            ${CampoPaciente}            ${CampoPaciente}            ${NomePac}
     Usuario devera clicar no botao [Execultar Consulta]
-    Validar Pesquisa Realizada|${PacienteComResultado}||${PacienteSemResultado}|@print 
+    Validar Pesquisa Realizada|${MsgErroTeste}||${AtendimentoSemResultado}|@print 
 
 Usuario devera clicar no botao [Honor. do Atend]
     Click no Item                                     ${BtnConsultaHonorario}            

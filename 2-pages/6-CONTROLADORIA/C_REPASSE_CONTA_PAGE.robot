@@ -25,3 +25,4 @@ ${PacienteComResultado}                                        xpath=//div[@clas
 ${PacienteSemResultado}                                        xpath=//div[@class='slick-cell b0 f0 selected ui-fixed-width']//div[@title]
 ${HonorComResultado}                                           xpath=//input[@id='inp:vlRepasseTotal'][@title='394,85']
 ${HonorSemResultado}                                           xpath=//input[@id='inp:vlRepasseTotal'][@title]
+${MsgErroTeste}                                                xpath=//p[@class='notifications-item-text']
