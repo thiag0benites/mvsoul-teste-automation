@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/5-FATURAMENTO/M_NOTA_FISCAL_CONV_STEPS.robot
-Resource            ../../1-resources/auxiliar/Genericos.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,11 +21,11 @@ Resource            ../../1-resources/auxiliar/Genericos.robot
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessão
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_NOTA_FISCAL_CONV
+${suite}            m_nota_fiscal_conv
 # Recebe dados do gerenciador
 ${dados}
 
@@ -40,8 +38,8 @@ SCR5F_M_NOTA_FISCAL_CONV-001:Gerar Nota Fiscal de Convênio
     Preencher campo de Convenio |${dados}[codConvenio]|
     Clicar no campo [Remessa]
     Preencher campo de Remessa |${dados}[codRemessa]|
-    Clicar no botao [Concluir]||
-    Valida Mensagem  ${MensagemSucesso}  ${MensagemSucesso}
-    Clicar no botao [OK]||
+    Clicar no botao [Concluir]
+    Valida Mensagem  ${MensagemSucesso}     |${dados}[MensagemSucesso]|
+    Clicar no botao [OK]
     
 

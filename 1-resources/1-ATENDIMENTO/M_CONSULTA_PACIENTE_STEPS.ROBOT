@@ -4,14 +4,11 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/4-MATERIAIS/M_CONSULTA_PACIENTE_PAGE.robot
-Resource                ../../1-resources/auxiliar/Genericos.robot
+Resource    ../../2-pages/1-ATENDIMENTO/M_CONSULTA_PACIENTE_PAGE.robot
 
 *** Variable ***
 
 *** Keywords ***
 
-Validar Informacao Prestador 
-    Sleep   5
-    Validar Elemento Pelo Titulo          OLIVIER DENIS DANIEL MATHIEU  
-    Sleep   5
+Validar Informacao Prestador |${validarPrestador}|
+    Validar Informacao Item  ${campoValidarPrestador}      ${validarPrestador}

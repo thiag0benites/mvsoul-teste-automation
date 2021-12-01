@@ -219,27 +219,6 @@ Conta Linhas Tabela
     @{Linhas}    Get WebElements    ${LocatorTabela}//tbody//tr
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
-
-Clicar no botão Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
-
-Clicar no Botao Adicionar
-    Click Element     ${btnAdicionar}
-
-Clicar no botão Pesquisar
-    Click no Item               ${btnPesquisar}   
-
-Clicar no botão Executar 
-    Click no Item            ${btnExecute} 
-    Sleep              30   
-
-Clicar no botão Não 
-    Click no Item            ${btnNaoNotifications}
-
-Clicar no botão Sim
-    Click no Item            ${btnSimNotifications}
-
 Pegar data atual
     ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
     [Return]        ${CurrentDate}
@@ -254,6 +233,3 @@ Captura data e hora TESTE
     Sleep    2
     Input Text    ${elemento}    ${CurrentDate}   
     [Return]        ${CurrentDate} 
-
-
-    

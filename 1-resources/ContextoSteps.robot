@@ -297,3 +297,33 @@ Valida Mensagem
     # ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
     # Should Be Equal As Strings    ${MensagemEsperada}    ${msgObtida}
     # #Log To Console    *** Mensagem de alerta não foi apresentada!
+
+Clicar no botao ${nomeBtn}
+    IF    '${nomeBtn}' == 'Salvar do menu'
+        Wait Until Element Is Visible    ${btnSalvar}    60
+        Click Element    ${btnSalvar}
+    
+    ELSE IF    '${nomeBtn}' == 'Adicionar'
+        Wait Until Element Is Visible    ${btnAdicionar}    30
+        Click Element    ${btnAdicionar}
+    
+    ELSE IF    '${nomeBtn}' == 'Pesquisar'
+        Wait Until Element Is Visible    ${btnPesquisar}    30
+        Click Element    ${btnPesquisar}
+    
+    ELSE IF    '${nomeBtn}' == 'Executar'
+        Wait Until Element Is Visible    ${btnExecute}    30
+        Click Element    ${btnExecute}
+    
+    ELSE IF    '${nomeBtn}' == 'Pesquisar'
+        Wait Until Element Is Visible    ${abaManutencao}    30
+        Click Element    ${abaManutencao}
+    
+    ELSE IF    '${nomeBtn}' == 'Nao'
+        Wait Until Element Is Visible    ${btnNaoNotifications}    30
+        Click Element    ${btnNaoNotifications}
+    
+    ELSE IF    '${nomeBtn}' == 'Sim'
+        Wait Until Element Is Visible    ${btnSimNotifications}    30
+        Click Element    ${btnSimNotifications}
+    END

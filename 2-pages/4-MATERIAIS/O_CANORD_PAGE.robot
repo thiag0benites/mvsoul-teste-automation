@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Denner Ricardo
-# Decrição: Elementos e metodos da tela de Ordens de compra
+# Decrição: Elementos e metodos da tela de O_CANORD
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
@@ -8,17 +8,19 @@ Resource    ../../Config.robot
 
 
 *** Variables ***
+${BROWSER}    chrome
+${SLEEP}      3
 
 
 ${inputCodigo}                       xpath=//input[@class='editor-text mode-search']
 
+${campoNomeFornecedor}               xpath=//div[@class='slick-cell b2 f2 selected']//div[@data-row='0']
 
-${campoDescricaoSetor}               xpath=//div[@class='slick-cell b3 f3 selected']//div[@data-row='0']
-${btnAprovacao}                      xpath=//div[@class='slick-cell b8 f8 slick-last-cell selected ui-label-position-default mode-edit']//button[@data-member='BTN_APROVACAO']
+${btnProdutos}                       xpath=//button[@data-member='BTN_PRODUTOS']
 
-${btnNaoAutorizar}                   xpath=//button[@data-name='btnNAutorizar']
+${btnCancelarQtdePendente}           xpath=//button[@data-member='BTN_CANCELA_PEND']
 
-${mensagemNaoAprovada}               xpath=/html/body/nav[5]/div/div[2]/ul/li[1]/ul/li[1]/div/div[2]/p
+${mensagemCancelarQntPendente}       xpath=/html/body/nav[5]/div/div[2]/ul/li[1]/ul/li[1]/div/div[2]/p
 
 ${btnOk}                             xpath=//button[@class='btn btn-primary']
 
