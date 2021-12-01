@@ -40,4 +40,4 @@ SCR2AMEXALAB-001:Fluxo Principal
     Selecionar Datas
     Selecionar Tipo |${dados}[CampoTipoRes]|
     Clicar Bt Salvar E Valida Msg |${dados}[MsgDeConfirmacao]|
-    Clicar Botao Apagar       
+    Clicar Botao Apagar
