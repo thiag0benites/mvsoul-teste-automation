@@ -110,15 +110,6 @@ Usuario devera informar no campo <Valor Repasse> o valor a ser repassado para o 
 Usuario devera informar no campo <Descricao> a identificacao do repasse em referencia |${Descricao}|
     Preencher campo                                      ${CampoDescricao}            ${Descricao}
 
-Usuario devera clicar no botao [Salvar]
+Usuario devera clicar no botao [Salvar] "Validar Msg|${VldMsg}|"
     Click no Item                                        ${BtnSalvar}
-<<<<<<< HEAD
-    Validar Item                                         ${ValidMsg}
-
-    
-
-
-
-=======
-    Validar Item    ${ValidMsg}
->>>>>>> 9ccb7b5464b9a6098107a06670d2288fc2c5f7bf
+    Validar Informacao Item                              ${ValidMsg}                  ${VldMsg}

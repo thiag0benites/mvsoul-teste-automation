@@ -44,4 +44,4 @@ SMF-6503 : Realizar o Lancamento Manual de Repasse Medico
     Usuario devera informar no campo <Valor faturado> o valor referente aos procedimentos executados pelo prestador selecionado |${dados}[Valor]|
     Usuario devera informar no campo <Valor Repasse> o valor a ser repassado para o prestador |${dados}[Repasse]|    
     Usuario devera informar no campo <Descricao> a identificacao do repasse em referencia |${dados}[Descricao]|
-    Usuario devera clicar no botao [Salvar]
+    Usuario devera clicar no botao [Salvar] "Validar Msg|${dados}[ValidMsg]|"

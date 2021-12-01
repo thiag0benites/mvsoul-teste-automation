@@ -16,6 +16,8 @@ ${CampoDescrComprom}                                    xpath=//input[@id='inp:d
 ${CampoContaCusto}                                      xpath=//*[@id="CGM_TAB_1_PAGE_3_grdRatconPag"]/div[4]/div[3]/div/div/div[5]
 ${CampoVlCompart}                                       xpath=//*[@id="CGM_TAB_1_PAGE_3_grdRatconPag"]/div[4]/div[3]/div/div/div[13]
 ${CampoEditVlCompart}                                   xpath=//input[@class='editor-text mode-edit']
+${CampoAcrescimo}                                       xpath=//input[@id='inp:vlMoedaAcres']
+
 
 ### BOTOES ###
 ${BtnProcesso}                                          xpath=//*[@id="cdProcesso"]/button
@@ -33,11 +35,15 @@ ${AbaParcelamento}                                      xpath=//a[@id='CGM_TAB_1
 ${btnSalvar}                                            xpath=//li[@id='tb-record-save']
 ${BtnMsgAlerta}                                         xpath=//button[@class='btn btn-primary'][contains(text(),"Antecipa")]
 ${BtnOkAlertaMsg}                                       xpath=//button[@class='btn btn-primary'][contains(text(),"Sim")]
+${BtnAcrescimo}                                         xpath=//*[@id="cdAcrescimo"]/button
+
 
 ### DIVERSOS ###
 ${ValidCampoProcessoPosit}                               xpath=//input[@id='inp:dspProcesso'][@title='1.2.1.1.1 - Contas a Pagar de Diversos']
 ${ValidCampoProcessoNegat}                               xpath=//input[@id='inp:dspProcesso'][@title]
-${TextoValidacao}                                        xpath=//input[@title='REF A COMPRA DE SERVICO/MATER1000 MARCAS LTDA 258 01/12/2021']
+${TextoValidacao}                                        xpath=//input[@title='REF A COMPRA DE SERVICO/MATER1000 MARCAS LTDA 3571 01/12/2021']
 ${AlertaMsgData}                                         xpath=//p[@class='notifications-item-text'][contains(text(),"Data informada não é um dia útil - Escolha uma das opções")]
 ${ValidAlertaSalvar}                                     xpath=//p[@class='notifications-item-text'][contains(text(),"Tipo de documento da conta é diferente de serviço, deseja continuar a salvar os impostos?")]
 ${ValidCodigo}                                           xpath=//input[@id='inp:cdConPag'][@title]
+${ValidAcrescimo}                                        xpath=//div[@id='dspDsAcrescimo']//span[@readonly='readonly'][contains(text(),"ACRESCIMO HSI")]
+${ValiVlAcrescimo}                                       xpath=//input[@id='inp:vlAcrescimo'][@title='100,00']

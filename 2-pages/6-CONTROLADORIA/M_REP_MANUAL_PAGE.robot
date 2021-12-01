@@ -40,5 +40,4 @@ ${CampoDescricao}                                 xpath=//*[@id="inp:dspDsRepass
 
 ### Diversos ###
 ${SelecionaFiltro}                                xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[1]/div/div
-${ValidMsg}                                       xpath=//p[@class='notifications-item-text'][contains(text(),"Registros gravados com sucesso")]
-${AlertaMsg}                                      xpath=//p[@class='notifications-item-text'][contains(text(),"Competência deve ser informada!")]
+${ValidMsg}                                       xpath=//p[@class='notifications-item-text']

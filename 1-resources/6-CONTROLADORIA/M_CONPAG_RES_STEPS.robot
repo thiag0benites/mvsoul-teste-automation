@@ -51,3 +51,12 @@ Preenche Informacoes Aba Impostos "Detalhamento|${CodImpost}|"
     # Validar Pop-Pup de Alerta e Clicar                ${AlertaMsgData}          ${BtnMsgAlerta}
     Validar Pop-Pup de Alerta e Clicar                ${ValidAlertaSalvar}      ${BtnOkAlertaMsg}
     Validar Item                                      ${ValidCodigo}
+
+Preenche Acrescimo "Seleciona Acrescimo|${SelecAcresc}|" "Valor Acrescimo|${VlAcres}|"
+    Clicar no Campo e Preencher Informacao            ${BtnAcrescimo}          ${CampoFiltro}            ${SelecAcresc}    
+    Click no Item                                     ${BtnFiltrar}
+    Click no Item                                     ${BtnOkFiltro}
+    Validar Item                                      ${ValidAcrescimo}        
+    Preencher campo                                   ${CampoAcrescimo}         ${VlAcres}
+    Send Keys    tab    
+    Validar Item                                      ${ValiVlAcrescimo}
