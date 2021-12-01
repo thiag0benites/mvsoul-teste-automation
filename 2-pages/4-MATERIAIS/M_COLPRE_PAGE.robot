@@ -7,7 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-### Elementos da Página de baixa de produtos
+### Elementos da Página M_COLPRE
 ${cpSolicitacao}        xpath=//input[@name="cdSolCom"]
 ${cpFornecedor}         xpath=//input[@name="cdFornecedor"]
 ${cpDtValidade}         xpath=//input[@name="dtValidade"]
@@ -26,4 +26,4 @@ ${mensagemPop}          xpath=//*[@id="notifications"]/ul/li[1]/div
 ${btnSalvar}            xpath=//i[@class="mv-basico-salvar"]
 #${mensagemPop}          xpath=//*[@class="notifications-item"]
 ${btnSim3}               xpath=//*[@id="frames22"]
-${cpCodigo}             xpath=//*[@id="cdColeta"]
+${cpCodigo}             xpath=//*[@id="inp:cdColeta"]
