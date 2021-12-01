@@ -9,20 +9,34 @@ Resource          ../../2-pages/2-ASSISTENCIAL/M_EXALAB_PAGE.robot
 *** Variable ***
 
 *** Keywords ***  
-Preencher Campo Nome
-    Preencher campo                      ${CampoNome}    WATI testes  
+Preencher Campo Nome |${CampoNomeExame}|
+#Preenchimento de campo de Nome.
+    Preencher campo                         ${CampoNome}          ${CampoNomeExame}  
 
-Selecionar Tipo
-    #Click Button                         ${BotaoTipoRes}
-    Preencher campo                      ${BotaoTipoRes}    Sem Resultado
-    Send Keys     tab
+Selecionar Datas 
+#Selecionr datas de exame
+    Click Button                            ${BtSegunda}
+    Click Button                            ${BtTerca}
+    Click Button                            ${BtQuarta}
+    Click Button                            ${BtQuinta}
+    Click Button                            ${BtSexta}
+    Click Button                            ${BtSabado}
+    Click Button                            ${BtDomingo}
+
+Selecionar Tipo |${CampoTipoRes}|
+#Preencher Campo tipo de exame.  
+    Preencher campo                         ${BotaoTipoRes}       ${CampoTipoRes}
+    Send Keys                               tab
        
-Clicar Bt Salvar 
+Clicar Bt Salvar E Valida Msg |${MsgDeConfirmacao}|
+#Clicar no botao salvar atraves do titulo e validar mensagem de retorno.
     Click Elemento por titulo               Salvar
-    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
+    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]              ${MsgDeConfirmacao}
 
-#Preencher Campo Tipo de Resultado
-    #Selecionar Item Na Lista               ${BotaoTipoRes}    Sem Resultado   S 
+Clicar Botao Apagar
+#Deletar registro recen criado para evitar queimar a massa em todo teste.
+    Click Elemento por titulo               Apagar  
+
 
 
 

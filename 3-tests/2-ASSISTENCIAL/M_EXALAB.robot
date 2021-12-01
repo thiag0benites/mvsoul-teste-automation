@@ -36,21 +36,16 @@ ${dados}
 SCR2AMEXALAB-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMEXALAB-001:Fluxo Principal" -d ./5-results/SCR2AMEXALAB-001 "3-tests/2-ASSISTENCIAL/M_EXALAB.robot"
 # robot -v browser:firefox -t "SCR2AMEXALAB-001:Fluxo Principal" -d ./5-results/SCR2AMEXALAB-001 "3-tests/2-ASSISTENCIAL/M_EXALAB.robot"
-    #${dados}           Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMEXALAB-001"
+    ${dados}           Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMEXALAB-001"
     Acessa a Tela Pela Busca |m_exalab||Exames| @las
     Validar Acesso a Tela |Exames|
-    Preencher Campo Nome
-    Selecionar Tipo 
-    Clicar Bt Salvar           
+    Preencher Campo Nome |${dados}[CampoNomeExame]|
+    Selecionar Datas
+    Selecionar Tipo |${dados}[CampoTipoRes]|
+    Clicar Bt Salvar E Valida Msg |${dados}[MsgDeConfirmacao]|
+    Clicar Botao Apagar       
     sleep         5
-    #Clicar no Botao Resultado 
-    #Selecionar o nome na lista e confirmar #sem resultado
-    #Clicar no Botao Salvar
-    #|${dados}[NomeTela]|
-    #Clicar no Botao Filtro
-    #Preencher Campo Data |${dados}[DtInicial]| |${dados}[DtFinal]|
-    #Clicar no Botao Pesquisar
-    #Validar Dados de Campos |${dados}[NomePaciente]| |${dados}[NomeExame]| |${dados}[Idade]|
+
 
 
 
