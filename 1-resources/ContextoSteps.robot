@@ -188,7 +188,7 @@ Clicar em Estoque
 
 Clicar Botao se estiver Visivel
     [Arguments]             ${Botao}                        
-    ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}          
+    ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}    120          
     Run Keyword If          '${Status}' == 'True'               Click no Item                        ${Botao}
 
 Click no Item
