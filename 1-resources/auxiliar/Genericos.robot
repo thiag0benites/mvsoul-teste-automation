@@ -229,7 +229,7 @@ Clicar no botão Salvar do menu
     Click Element     ${btnSalvar}
     Sleep             60
 
-Clicar no botão Adicionar
+Clicar no Botao Adicionar
     Click Element     ${btnAdicionar}
 
 Clicar no botão Pesquisar

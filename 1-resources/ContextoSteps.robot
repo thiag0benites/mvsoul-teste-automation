@@ -120,7 +120,7 @@ Clicar no botão "${titulo}"${printscreen}
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    180
-    Wait Until Element Is Enabled    ${elemento}    5
+    Wait Until Element Is Enabled    ${elemento}    20
     SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
     SeleniumLibrary.Input Text    ${elemento}    ${valor}
@@ -207,6 +207,11 @@ Clicar no Campo e Preencher Informacao
     Click no Item                               ${CampoClick}
     Sleep  1 
     Preencher Campo                             ${CampoEditavel}                ${DadoInserido}     
+
+Clicar Item e Selecionar da Lista
+    [Arguments]    ${CampoClick}          ${BotaoLov}        ${Item}           ${ItemLista}          
+    Click no Item                   ${CampoClick}   
+    Selecionar Item Na Lista        ${BotaoLov}        ${Item}         ${ItemLista}    
 
 Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     Unselect Frame

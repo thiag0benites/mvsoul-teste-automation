@@ -37,8 +37,8 @@ SCR4MMSOLSAIPRO-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMSOLSAIPRO-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Produtos ao Estoque"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Selecionar Checkbox, Preencher Estoque e Setor
-    Preencher Produtos
+    Selecionar Checkbox, Preencher Estoque e Setor |${dados}[Estoque]| |${dados}[Setor]|
+    Preencher Produtos |${dados}[CdProduto]| |${dados}[QtdProduto]| |${dados}[NomeProduto]|
     Clicar Botao Salvar
-    Nao Imprimir Solicitacao
-    Limpar Tela
+    Nao Imprimir Solicitacao |${dados}[MensagemRecebidaConfirmacao]|
+    Limpar Tela |${dados}[MensagemRecebidaLimpar]|

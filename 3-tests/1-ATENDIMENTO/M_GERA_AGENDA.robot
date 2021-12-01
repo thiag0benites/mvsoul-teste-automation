@@ -36,7 +36,7 @@ SCR1AMGERAAGENDA-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMGERAAGENDA-001"
     Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Geração e Liberação de Agendas"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Selecionar Escala e Periodo
-    Validar Dados da Escala
-    Clicar Botao Gerar 
-    Clicar Opcao Sim Para Gerar Escala
+    Selecionar Escala e Periodo |${dados}[Escala]| |${dados}[Periodo]| |${dados}[DtInicial]| |${dados}[DtFinal]|
+    Validar Dados da Escala |${dados}[CdEscala]| |${dados}[TpEscala]| |${dados}[Dia]| |${dados}[HrInicial]| |${dados}[HrFinal]| |${dados}[Prestador]| |${dados}[Recurso]| |${dados}[Feriado]|
+    Clicar Botao Gerar |${dados}[MensagemRecebidaGerar]|
+    Clicar Opcao Sim Para Gerar Escala |${dados}[MensagemRecebidaSucesso]|

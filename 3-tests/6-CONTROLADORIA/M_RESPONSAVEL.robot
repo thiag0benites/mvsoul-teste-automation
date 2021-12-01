@@ -31,4 +31,13 @@ Test Teardown     Encerra sessao
 # ${dados}
 
 *** Test Case ***
+SMF-8820 : Cadastrar Responsaveis
+# robot -v browser:chrome -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
+# robot -v browser:firefox -t "SMF-8820 : Cadastrar Responsaveis" -d ./5-results/SMF-8820 "3-tests/6-CONTROLADORIA/M_RESPONSAVEL.robot"
+    Acessar a tela "Controladoria>Caixa>Tabelas>Responsáveis"@nprint @las 
+
+
+
+
+
 

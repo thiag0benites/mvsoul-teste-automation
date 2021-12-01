@@ -32,7 +32,7 @@ ${suite}            o_contagem
 ${dados}
 
 *** Test Case ***
-SCR4MOCONTAGEM-001:Fluxo Principal
+SCR4MOCONTAGEM-001:Fluxo Principal   
 # robot -v browser:chrome -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
 # robot -v browser:firefox -t "SCR4MOCONTAGEM-001:Fluxo Principal" -d ./5-results/SCR4MOCONTAGEM-001 "3-tests/4-MATERIAIS/O_CONTAGEM.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MOCONTAGEM-001"
