@@ -22,8 +22,8 @@ Selecionar a conta corrente
     Click no Item                    ${CampoContaCorrente}
     Click no Item                    ${BtnOk} 
 
-Selecionar uma opcao no campo Conciliado 
-    Seleciona Item Combobox           ${CampoConciliado}                     Ambos
+Selecionar uma opcao no campo Conciliado |${MsgCampoConciliado}| 
+    Seleciona Item Combobox           ${CampoConciliado}                     ${MsgCampoConciliado}
     
 Indicar o periodo que se deseja trabalhar e clicar em Pesquisar |${DataInicial}| |${DataFinal}|
     Preencher campo                    ${CampoDataInicial}                   ${DataInicial}

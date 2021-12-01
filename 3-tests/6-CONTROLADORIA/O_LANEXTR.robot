@@ -39,7 +39,7 @@ SMF-5514 : Realizar Lançamento Bancário
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Bancário>Movimentação>Lançamentos de Extratos"@nprint @las
     Informar a Empresa no campo correspondente
     Selecionar a conta corrente
-    Selecionar uma opcao no campo Conciliado
+    Selecionar uma opcao no campo Conciliado |${dados}[MsgCampoConciliado]|
     Indicar o periodo que se deseja trabalhar e clicar em Pesquisar |${dados}[DataInicial]| |${dados}[DataFinal]|
     Clicar no icone de adicao
     Preencher os campos com as informacoes do lançamento faltante |${dados}[ValorCampo]|
