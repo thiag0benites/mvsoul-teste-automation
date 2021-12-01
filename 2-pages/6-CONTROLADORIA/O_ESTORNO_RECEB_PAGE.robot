@@ -28,7 +28,8 @@ ${BtnFiltrar}                              xpath=//*[@id="btfilter"]
 ${BtnOk}                                   xpath=//*[@id="btok"]
 ${BtnPopupTipoLancamento}                  xpath=//*[@id="cdLanConcor"]/button
 ${BtnPopupMotCancelamento}                 xpath=//*[@id="cdMotivoCanc"]/button
-${BtnCheckMarcar}                          xpath=//button[@data-rowid='AAAdlcAAOAACXSaAAD']
+${BtnCheckMarcar}                          xpath=////*[@id="grdRecconRec"][1]
 ${BtnConfirmar}                            xpath=//*[@id="butConfirmar"]
+${BtnOkConfirmacao}                        xpath=//button[@id="frames23"]
 
 ### Diversos ###

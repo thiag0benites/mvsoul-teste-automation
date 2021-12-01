@@ -33,3 +33,12 @@ SMF-10543 : Consultar painel workflow
 # robot -v browser:firefox -t "SMF-10543 : Consultar painel workflow" -d ./5-results/SMF-10543 "3-tests/1-ATENDIMENTO/M_PAINEL_WORKFLOW.robot"
     #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10543"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Painel de Workflow"@nprint @las
+    Clicar no Botao <Pre/Agend> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Revisao> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Cotacao> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Aguard Cotacao> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Solic Guia> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Aguard Guia> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Confirmacao> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Aguard Realizacao> e Marcar o Check Button "Dt Prevista"
+    Clicar no Botao <Todos> e Marcar o Check Button "Dt Prevista"
