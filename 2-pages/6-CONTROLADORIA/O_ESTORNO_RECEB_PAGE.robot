@@ -28,7 +28,8 @@ ${BtnFiltrar}                              xpath=//*[@id="btfilter"]
 ${BtnOk}                                   xpath=//*[@id="btok"]
 ${BtnPopupTipoLancamento}                  xpath=//*[@id="cdLanConcor"]/button
 ${BtnPopupMotCancelamento}                 xpath=//*[@id="cdMotivoCanc"]/button
-${BtnCheckMarcar}                          xpath=////*[@id="grdRecconRec"][1]
+${BtnCheck}                                xpath=//button[@data-rowid='MORPHIS.FOUNDATIONS.be6a8765-3477-43b9-89ea-c69bb33dad7e']
+${BtnCheckMarcar}                          xpath=//button[@class='ui-button ui-widget ui-state-default ui-button-icon-only ui-label-position-default mode-edit'][1]
 ${BtnConfirmar}                            xpath=//*[@id="butConfirmar"]
 ${BtnOkConfirmacao}                        xpath=//button[@id="frames23"]
 

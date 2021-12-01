@@ -28,9 +28,9 @@ ${suite}          o_estorno_receb
 ${dados}
 
 *** Test Case ***
-SMF-6281 : Estornar Recebimento
-# robot -v browser:chrome -t "SMF-6281 : Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
-# robot -v browser:firefox -t "SMF-6281 : Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
+SMF-6281:Estornar Recebimento
+# robot -v browser:chrome -t "SMF-6281:Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
+# robot -v browser:firefox -t "SMF-6281:Estornar Recebimento" -d ./5-results/SMF-6281 "3-tests/6-CONTROLADORIA/O_ESTORNO_RECEB.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6281"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Estorno>Estorno de Recebimentos"@nprint @las
     Selecionar Parametros de Pesquisa o Tipo de Conta a Ser Estornada |${dados}[TipoDeConta]|
