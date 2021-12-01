@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/M_PLACON_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -22,7 +20,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_PLACON_STEPS.robot
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
