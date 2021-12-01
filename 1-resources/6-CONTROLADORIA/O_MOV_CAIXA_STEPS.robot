@@ -36,3 +36,44 @@ Clicar no botao Efetuar Deposito
 
 Clicar no botao Limpar Deposito
     Click Elemento por titulo        Limpar
+
+#########################################################################################################################
+
+Informar o caixa que sera vizualizado operado 2
+    Click no Item                    ${BtnCaixa} 
+    Click no Item                    ${DescricaoCaixa} 
+    Click no Item                    ${BtnOk} 
+
+Clicar em Executar Pesquisa 2
+    Click Elemento por titulo        Executar Consulta
+
+Abrir a Aba APLICACAO DIRETA
+    Click no Item                     ${MenuAplicacaoDireta} 
+
+Selecionar no campo Lancamento o tipo de pagamento a efetuar
+    Click no Item                      ${BtnLancamento}  
+    Click no Item                      ${DescricaoConta} 
+    Click no Item                      ${BtnOk} 
+
+Informar o valor no campo valor
+    Preencher campo                    ${Valor}                    1
+    Click no Item                      ${Data}   
+
+Selecionar no campo setor o setor para o qual sera alocado esta despesa
+    Click no Item                       ${BtnSetor}
+    Click no Item                       ${SetorFiltro} 
+    Click no Item                       ${BtnOk} 
+
+Selecionar no campo Motivo de lancamento
+    Click no Item                        ${BtnMotivo} 
+    Click no Item                        ${FiltroMotivo}
+    Click no Item                        ${BtnOk}
+
+Clicar no botao Efetuar Pagamento
+    Click no Item                         ${BtnEfetuarPgto}  
+    Click no Item                         ${BtnSim}   
+    Valida Mensagem                       ${MsgMostrada}             Pagamento efetuado com sucesso
+    Click no Item                         ${BtnOk2}  
+
+Clicar no botao Limpar Pagamento
+    Click no Item                          ${BtnLimpar} 
