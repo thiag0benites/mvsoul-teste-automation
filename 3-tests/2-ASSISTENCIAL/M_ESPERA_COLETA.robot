@@ -41,13 +41,3 @@ SCR2AMESPERACOLETA-001:Fluxo Principal
     Preencher Campo Data |${dados}[DtInicial]| |${dados}[DtFinal]|
     Clicar no Botao Pesquisar
     Validar Dados de Campos |${dados}[NomePaciente]| |${dados}[NomeExame]| |${dados}[Idade]|
-
-
-    
-
-    
-
-    
-
-  
-
