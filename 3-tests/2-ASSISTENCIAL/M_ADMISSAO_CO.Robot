@@ -24,24 +24,23 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          fat_consultas_conta_paciente
+${suite}          m_admissao_co
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 SCR2AMADMI-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMADMI-001:Fluxo Principal" -d ./5-results/SCR2AMADMI-001 "3-tests\2-ASSISTENCIAL/M_ADMISSAO_CO.Robot"
 # robot -v browser:firefox -t "SCR2AMADMI-001:Fluxo Principal" -d ./5-results/SCR2AMADMI-001 "3-tests\ 2-ASSISTENCIAL/M_ADMISSAO_CO.Robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMADMI-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Ficha Obstétrica"@nprint @las
-    Acessar Atendimento |Teste|
-    Inserir Data do Parto |19/Out/2021|
-    Acessar Tipo Parto |Parto Normal|
-    Acessar Motivo do Parto |Trabalho de Parto|
-    Preenche Dados Quantidade Filhos |1| e Semanas |42|
-    Acessar Tipo de Anestesia |RAQUI ANESTESIA CONTINUA|
-    Acessar Botao Obstestricia
-    Acesso Tela Recem Nascido
-    Preenche Apgar, Perimetro e Medidas
-    Seleciona Pediatra Responsavel e Leito
-
-
+    Acessar Atendimento |${dados}[AcessarAtendimento]|
+    Inserir Data do Parto |${dados}[DataDoParto]|     ### PREENCHER DATA COM [dd/Mmm/aaaa] ###
+    Acessar Tipo Parto |${dados}[TipoParto]|
+    Acessar Motivo do Parto |${dados}[MotivoParto]|
+    Preenche Dados Quantidade Filhos |${dados}[QtdFilhos]| e Semanas |${dados}[QtdSemanas]|
+    Acessar Tipo de Anestesia |${dados}[TipoAnestesia]|
+    Acesso Tela Recem Nascido> Hora do Parto|${dados}[HoraDoParto]|>Sexo|${dados}[TipoSexo]|>Numero Pulseira|${dados}[NumeroPulseira]|
+    Preenche Registro Civil>Declaracao Nacido Vivo|${dados}[NascidoVivo]|>Numero Pulseira|${dados}[NumeroPulseira]|
+    Preenche Apagar 1 Min|${dados}[Apgar1Min]| 5 Min|${dados}[Apgar5Min]|, Perimetro Encefalo|${dados}[PerimetroCefalico]|, Toracico|${dados}[PerimetroToracico]|, Abdominal|${dados}[PerimetroAbdominal]| e Medidas Altura|${dados}[MedidaAltura]|, Peso|${dados}[MedidaPeso]|
+    Preenche Pediatra Resp |${dados}[Pediatra]|, Leito|${dados}[TxtLeito]| E Filtro|${dados}[FiltroParto]|
