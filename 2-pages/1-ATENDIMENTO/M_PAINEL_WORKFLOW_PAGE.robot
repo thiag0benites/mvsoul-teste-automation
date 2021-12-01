@@ -21,4 +21,5 @@ ${BtnAguardGuia}               xpath=//div[@id="counterCOUNT_RA"]
 ${BtnConfirmacao}              xpath=//div[@id="counterCOUNT_CP"]
 ${BtnAguardRealizacao}         xpath=//div[@id="counterCOUNT_AR"]
 ${BtnTodos}                    xpath=//div[@id="counterCOUNT_TOTAL"]
+
 ### Diversos ###
