@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/4-MATERIAIS/M_KIT_MGES_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
