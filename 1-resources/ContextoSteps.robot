@@ -144,7 +144,7 @@ Preencher campo
 Seleciona Item Combobox
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    10
-    Input Text    ${elemento}    ${valor}
+    SeleniumLibrary.Input Text    ${elemento}    ${valor}
     Wait Until Element Is Enabled    ${elemento}    5
     Press Keys    ${elemento}    ENTER
 
@@ -162,7 +162,7 @@ Seleciona Item Combobox
                 Capture Page Screenshot
                 Fail    *** Falha ao tentar selecionar o "${valor}" no combobox ${elemento}
             ELSE
-                Input Text    ${elemento}    ${valor}
+                SeleniumLibrary.Input Text    ${elemento}    ${valor}
                 Wait Until Element Is Enabled    ${elemento}    5
                 Press Keys    ${elemento}    ENTER
             END
