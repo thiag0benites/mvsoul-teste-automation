@@ -15,5 +15,5 @@ Preencher Codigo |${codigo}|
     Preencher campo  ${inputCodigo}  ${codigo}            
 
 Validar Ordem de Compra pelo fornecedor |${nomeDoFornecedor}|
-        Validar Informacao Item  ${campoNomeDoFornecedor}    ${nomeDoFornecedor}  
+    Validar Informacao Item  ${campoNomeDoFornecedor}    ${nomeDoFornecedor}  
           

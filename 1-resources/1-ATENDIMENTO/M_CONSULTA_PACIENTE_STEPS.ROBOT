@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/4-MATERIAIS/M_CONSULTA_PACIENTE_PAGE.robot
+Resource    ../../2-pages/1-ATENDIMENTO/M_CONSULTA_PACIENTE_PAGE.robot
 
 *** Variable ***
 
