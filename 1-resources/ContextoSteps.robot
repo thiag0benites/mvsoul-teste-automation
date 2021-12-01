@@ -35,7 +35,6 @@ Quando navego no menu "${caminhoSelecaoMenu}"
 
 Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Unselect Frame
-    # Realcar Elemento    ${HomeXpathBtnMenu}
     ${cont}    Set Variable    ${1}
     Click Element    ${HomeXpathBtnMenu}
     @{listaItensMenu}    Converte string em lista    ${caminhoSelecaoMenu}    >
@@ -51,21 +50,32 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Log To Console    *** Item ${itemMenu} selecionado no menu
         Log    *** Item ${itemMenu} selecionado no menu
     END
-    #### LAS Send Keys #####
     IF    "${las}" == "@las"
-        # Sleep    1
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    120
+        Wait Until Element Is Visible    ${classLasDisplay}    60
         Unselect Frame
-        # Sleep    1
         Send Keys    tab
         Send Keys    enter
     END
-    #### End LAS Send Keys #####
     Seleciona frame    ${IdIframe}    180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
-    Sleep    60
+
+Acessar a tela pela busca |${tela}||${nomeItem}|${printscreen} ${las}
+    Unselect Frame
+    Click Element                           ${HomeXpathBtnMenu}
+    Preencher Campo                         ${HomeXpathInputPesquisa}       ${tela}
+    Click Elemento por titulo               ${nomeItem}                   
+    IF    "${las}" == "@las"
+        Seleciona frame    ${IdIframe}    180
+        Wait Until Element Is Visible    ${classLasDisplay}    60
+        Unselect Frame
+        Send Keys    tab
+        Send Keys    enter
+    END
+    Seleciona frame                         ${IdIframe}                         180
+    Sleep    3
+    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
 
 Criar Lista Itens Menu Xpath com Index
     [Arguments]    @{listaItensMenu}
@@ -118,14 +128,16 @@ Clicar no botao "${titulo}"${printscreen}
 Preencher campo
     [Arguments]    ${elemento}    ${valor}
     Wait Until Element Is Visible    ${elemento}    180
-    Wait Until Element Is Enabled    ${elemento}    20
-    SeleniumLibrary.Click Element    ${elemento}
     Wait Until Element Is Enabled    ${elemento}    5
-    SeleniumLibrary.Input Text    ${elemento}    ${valor}
+    Click Element    ${elemento}
+    Sleep    1
+    Wait Until Element Is Enabled    ${elemento}    5
+    Sleep    0.3
+    Input Text    ${elemento}    ${valor}
     FOR    ${i}    IN RANGE    1    11
         Sleep    1
         ${textoAtual}    Get Element Attribute    ${elemento}    value
-        # ${textoAtual}    SeleniumLibrary.Get Text    ${elemento}
+        # ${textoAtual}    Get Text    ${elemento}
         IF    "${textoAtual}" == "${valor}"
             Exit For Loop
         ELSE IF    "${textoAtual}" != "${valor}"
@@ -136,7 +148,7 @@ Preencher campo
                 Capture Page Screenshot
                 Fail    *** Falha ao tentar preencher o campo ${elemento}
             ELSE
-                SeleniumLibrary.Input Text    ${elemento}    ${valor}
+                Input Text    ${elemento}    ${valor}
             END
         END
     END
@@ -257,6 +269,8 @@ Validar Pesquisa Realizada|${LocatorComResultado}||${LocatorSemResultado}|${prin
     #    Fail    *** Falha na pesquisa!'
     # END
     Run Keyword If    '${print}' == '@print'    Capture Page Screenshot
+
+    
 # Validar Ausencia de Resultados[${Locator}]${print}
 #    ${Condicao}    Page Should Contain Element    ${Locator}
 #    Wait Until Element Is Visible    ${Locator}    10
@@ -284,7 +298,7 @@ Preencher o Campo Input
     Wait Until Element Is Visible        ${input}              120
     Input Text                           ${input}              ${text}
     Sleep                                                      3
-
+    
 Valida Mensagem
     [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${ElementoMsgRecebida}    120

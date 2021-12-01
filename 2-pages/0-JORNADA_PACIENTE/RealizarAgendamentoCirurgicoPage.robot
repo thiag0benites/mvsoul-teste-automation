@@ -5,14 +5,20 @@
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
-
+     
 *** Variable ***
-### Elementos da Pagina de Agendamento cirurgico
-${btnAgendar}     xpath=//button[@data-member='BTN_AGENDAR']
-${inputCentroCirurgico}    xpath=//div[2]/div/div[4]/div/div/form/div/fieldset/div/div[11]/div[1]/input
-${inputSalaCirurgica}    xpath=//input[@name='cdSalCir']
-${inputCirurgia}    xpath=//input[@name='cdCirurgia']
-${inputConvenio}    xpath=//div[2]/div/div[4]/div/div/form/div/fieldset/div/div[10]/div[3]/input
-${inputPlano}     xpath=//div[2]/div/div[4]/div/div/form/div/fieldset/div/div[10]/div[5]/input
-${inputPrestadorCirurgiao}    xpath=//input[@name='cdPrestadorCirurgiao']
-${inputMedicoAssociado}    xpath=//div[2]/div/div[4]/div/div/form/div/fieldset/div/div[21]/div[1]/input
+### Elementos da Pagina de Agendamento cirurgico     
+${inputCentroCirurgico}    id=inp:cdCenCir
+${inputSalaCirurgica}    id=inp:cdSalCir
+${inputCirurgia}    id=inp:cdCirurgia
+${inputConvenio}    id=inp:cdConvenio
+${inputPlano}     id=inp:cdConPla
+${inputPrestadorCirurgiao}    id=inp:cdPrestadorCirurgiao
+${inputMedAssociado}    id=inp:cdPrestadorIndicacao
+${inputCdPaciente}     id=inp:aSimples_cdPaciente
+${inputAgAtendimento}    xpath=//input[@id='inp:aSimples_cdAtendimento']
+${inputUnidInternacao}    id=inp:cdUnidIntAge
+${inputEqpMedica}    id=inp:aSimples_cdEquipeMedica    
+${inputAnestesista}    id=inp:cdPrestadorAnestesista    
+${inputNumCID}    id=inp:cdCid      
+

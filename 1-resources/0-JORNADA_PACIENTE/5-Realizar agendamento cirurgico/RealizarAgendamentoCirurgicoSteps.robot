@@ -5,6 +5,7 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource    ../../../2-pages/0-JORNADA_PACIENTE/RealizarAgendamentoCirurgicoPage.robot
+Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 
 *** Variable ***
 
@@ -26,15 +27,20 @@ Preencher campos da tela de agendamento cirurgico |${centroCirurgico}|,|${salaCi
     Preencher campo    ${inputMedAssociado}    ${medAssociado}
     Sleep    1
 
-Preencher os campos e confirmar |${cdPaciente}|,|${undInternacao}|,|${eqpMedica}|,|${anestesista}|,|${numCID}|${print}
-    Wait Until Element Is Visible    ${inputCdPaciente}    30
-    Preencher campo    ${inputCdPaciente}    ${cdPaciente}
+Preencher os campos e confirmar |${AgAtendimento}|,|${CirPacMsgEsperada}|,|${eqpMedica}|,|${anestesista}|,|${numCID}|${print}
+    Wait Until Element Is Visible    ${inputAgAtendimento}     30
+    Preencher campo    ${inputAgAtendimento}     ${AgAtendimento}
     Sleep    1
-    Preencher campo    ${inputUnidInternacao}    ${undInternacao}
+    Press Keys    ${inputAgAtendimento}    ENTER
     Sleep    1
+    #Clicar no botao [Sim]|${CirPacMsgEsperada}|
+    #Sleep    2
+    # Preencher campo    ${inputUnidInternacao}    ${undInternacao}
+    # Sleep    1
     Preencher campo    ${inputEqpMedica}    ${eqpMedica}
     Sleep    1
     Preencher campo    ${inputAnestesista}    ${anestesista}
     Sleep    1
     Preencher campo    ${inputNumCID}    ${numCID}
     Sleep    1
+    Clicar no botao [8-Confirmar]||
