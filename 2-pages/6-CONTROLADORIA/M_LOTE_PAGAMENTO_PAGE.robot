@@ -6,7 +6,6 @@
 ### Configurações iniciais
 Resource    ../../Config.robot
 
-
 *** Variables ***
 ${CampoDescricao}                   xpath=//input[@id="inp:dsLotePgto"]
 ${BtnSalvar}                        xpath=//li[@id="tb-record-save"]/a/i

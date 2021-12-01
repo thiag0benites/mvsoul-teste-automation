@@ -3,18 +3,16 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6 - CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
-# chrome:         robot -v browser:firefox -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6 - CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6-CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
+# chrome:         robot -v browser:firefox -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6-CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6 - CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
-# chrome:         robot -v browser:headlessfirefox -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6 - CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6-CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
+# chrome:         robot -v browser:headlessfirefox -d ./5-results/M_LOTE_PAGAMENTO_STEPS "3-tests\6-CONTROLADORIA\M_LOTE_PAGAMENTO.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/M_LOTE_PAGAMENTO_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,7 +21,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_LOTE_PAGAMENTO_STEPS.rob
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
-
 *** Variable ***
 # # Suite registrada no gerenciador de dados
 ${suite}          m_lote_pagamento
@@ -31,7 +28,6 @@ ${suite}          m_lote_pagamento
 ${dados}
 
 *** Test Case ***
-
 SMF-5451 : Agrupar os títulos no Lote de Pagamento pesquisando por Data de vencimento
 # robot -v browser:chrome -t "SMF-5451 : Agrupar os títulos no Lote de Pagamento pesquisando por Data de vencimento" -d ./5-results/SMF-5451 "3-tests/6-CONTROLADORIA/M_LOTE_PAGAMENTO.robot"
 # robot -v browser:firefox -t "SMF-5451 : Agrupar os títulos no Lote de Pagamento pesquisando por Data de vencimento" -d ./5-results/SMF-5451 "3-tests/6-CONTROLADORIA/M_LOTE_PAGAMENTO.robot"
