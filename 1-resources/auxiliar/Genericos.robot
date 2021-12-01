@@ -9,6 +9,7 @@ Resource          ../../Config.robot
 Resource          ../../2-pages/ContextoPage.robot
 Resource          ../../1-resources/ContextoSteps.robot
 
+
 *** Variable ***
 ${FILE}           ${CURDIR}\\6-files\\upload.txt
 ${cssOriginal}
@@ -31,12 +32,6 @@ Muda elemento Javascript
     Execute Javascript    arguments[0].class() = 'notification-item';    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
 
-Valida Mensagem
-    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
-    Wait Until Element Is Visible    ${MensagemRecebida}    120
-    Sleep    3
-    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
-
 Click Javascript
     [Arguments]    ${elemento}
     Sleep    3
@@ -44,21 +39,21 @@ Click Javascript
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
 
-Click na imagem sikuli
-    [Arguments]    ${imagem}    ${timeout}=${60}
-    Add Image Path    ${imagens}
-    ${exist}    Exists    ${imagem}    ${timeout}
-    Run Keyword If    ${exist}==True    SikuliLibrary.Click    ${imagem}
-    Log To Console    *** Efetuado o click em ${imagem}
+# Click na imagem sikuli
+#     [Arguments]    ${imagem}    ${timeout}=${60}
+#     Add Image Path    ${imagens}
+#     ${exist}    Exists    ${imagem}    ${timeout}
+#     Run Keyword If    ${exist}==True    SikuliLibrary.Click    ${imagem}
+#     Log To Console    *** Efetuado o click em ${imagem}
 
-Click na imagem
-    [Arguments]    ${imagem}    ${timeout}=${60}
-    Log    *** Imagem Procurada: ${imagem}
-    Log To Console    *** Imagem Procurada: ${imagem}
-    ImageHorizonLibrary.Wait For    ${imagem}    ${timeout}
-    Sleep    2
-    ImageHorizonLibrary.Click Image    ${imagem}
-    Log To Console    *** Efetuado o click em ${imagem}
+# Click na imagem
+#     [Arguments]    ${imagem}    ${timeout}=${60}
+#     Log    *** Imagem Procurada: ${imagem}
+#     Log To Console    *** Imagem Procurada: ${imagem}
+#     ImageHorizonLibrary.Wait For    ${imagem}    ${timeout}
+#     Sleep    2
+#     ImageHorizonLibrary.Click Image    ${imagem}
+#     Log To Console    *** Efetuado o click em ${imagem}
 
 Seleciona frame
     [Arguments]    ${elementoFrame}    ${timeout}=${60}
@@ -244,4 +239,21 @@ Clicar no botão Não
 
 Clicar no botão Sim
     Click no Item            ${btnSimNotifications}
+
+Pegar data atual
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+
+Captura data e hora TESTE
+    [Arguments]    ${elemento}
+    Wait Until Element Is Visible    ${elemento}    120    
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y %H:%M
+    Log To Console      ${CurrentDate}
+    Click Element    ${elemento}
+    Sleep    2
+    Input Text    ${elemento}    ${CurrentDate}   
+    [Return]        ${CurrentDate} 
+
+
     

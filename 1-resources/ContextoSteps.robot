@@ -6,8 +6,9 @@ Resource          ../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../2-pages/LoginPage.robot
 Resource          ../2-pages/HomePage.robot
-Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
+#Resource          ../2-pages/4M-M_DEVPAC/M_DEVPAC_Pages.robot
 
+Library    XML
 
 *** Variable ***
 ${imgVisivel}
@@ -221,7 +222,7 @@ Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     IF    "${las}" == "@las"
         # Sleep    1
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    120
+        Wait Until Element Is Visible    ${classLasDisplay}    180
         Unselect Frame
         # Sleep    1
         Send Keys    tab
@@ -286,3 +287,16 @@ Preencher o Campo Input
     Wait Until Element Is Visible        ${input}              120
     Input Text                           ${input}              ${text}
     Sleep                                                      3
+
+Valida Mensagem
+    [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
+    Wait Until Element Is Visible    ${ElementoMsgRecebida}    120
+    Sleep    3
+    #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
+    #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
+    Element Should Contain    ${ElementoMsgRecebida}    ${MensagemEsperada}
+    #[Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
+    # Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
+    # ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
+    # Should Be Equal As Strings    ${MensagemEsperada}    ${msgObtida}
+    # #Log To Console    *** Mensagem de alerta não foi apresentada!
