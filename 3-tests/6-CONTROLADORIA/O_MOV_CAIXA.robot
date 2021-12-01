@@ -48,3 +48,12 @@ SMF-6478 : Lançamentos/Fechamento - Aplicação Direta - Despesa Direta
 # robot -v browser:chrome -t "SMF-6478 : Lançamentos/Fechamento - Aplicação Direta - Despesa Direta" -d ./5-results/SMF-6478 "3-tests/6-CONTROLADORIA/O_MOV_CAIXA.robot"
 # robot -v browser:firefox -t "SMF-6478 : Lançamentos/Fechamento - Aplicação Direta - Despesa Direta" -d ./5-results/SMF-6478 "3-tests/6-CONTROLADORIA/O_MOV_CAIXA.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Caixa>Caixa>Movimentação>Lançamentos/Fechamento"@nprint @las
+    Informar o caixa que sera vizualizado operado 2
+    Clicar em Executar Pesquisa 2
+    Abrir a Aba APLICACAO DIRETA
+    Selecionar no campo Lancamento o tipo de pagamento a efetuar
+    Informar o valor no campo valor
+    Selecionar no campo setor o setor para o qual sera alocado esta despesa
+    Selecionar no campo Motivo de lancamento
+    Clicar no botao Efetuar Pagamento
+    Clicar no botao Limpar Pagamento
