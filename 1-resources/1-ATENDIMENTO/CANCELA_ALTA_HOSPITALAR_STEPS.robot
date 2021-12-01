@@ -1,27 +1,34 @@
 ##################################################################################################################################
 # Autor: Denner Ricardo
-# Decrição: Passo a Passo para tela de O_GERA_ORDCOM.
+# Decrição: Passo a Passo para tela de O_GERA_DMED.
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/4-MATERIAIS/O_GERA_ORDCOM_PAGE.robot
+
+Resource                ../../2-pages/1-ATENDIMENTO/CANCELA_ALTA_HOSPITALAR_PAGE.robot
 
 *** Variable ***
 
 *** Keywords ***
 
-Preencher Solicitacao de Compra |${solicitacaoDeCompra}| e Consultar
-    Preencher campo  ${campoSolicitacaoDeCompra}  ${solicitacaoDeCompra}
-    Click no Item    ${btnConsultar} 
 
-Validar Consulta |${validaConsulta}|
-    Validar Elemento Pelo Titulo            ${validaConsulta} 
+
+Informar codigo de atendimento |${codigo}|  
+    Preencher campo  ${campoAtendimentoInput}  ${codigo}
+    Send Keys   enter
+
+Validar Preenchimento |${nomePaciente}| 
+    Validar Elemento Pelo Titulo            ${nomePaciente} 
 
 Clicar Botao e Validar Mensagem
     [Arguments]                        ${Botao}                    ${MensagemRecebida}            ${MensagemEsperada}   
     Click no Item                      ${Botao}
     Valida Mensagem                    ${MensagemRecebida}         ${MensagemEsperada}
  
-Clicar Botao |Solicitacao de Compra| e Validar mensagem |${mensagemSucesso}|
-    Clicar Botao e Validar Mensagem    ${btnSugestaoSistema}       ${MensagemToast}              ${mensagemSucesso} 
+    
+Cancelar Altar e validar mensagem |${mensagemSucesso}|
+    Click no Item   ${btnCancelarAlta}
+    Click no Item   ${btnSim}
+    Clicar Botao e Validar Mensagem    ${btnSair}       ${MensagemToast}              ${mensagemSucesso} 
     Click no Item                      ${btnOk}
+    

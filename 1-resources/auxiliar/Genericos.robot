@@ -225,23 +225,6 @@ Conta Linhas Tabela
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
 
-Clicar no botão Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
 
-Clicar no botao Adicionar
-    Click Element     ${btnAdicionar}
+ 
 
-Clicar no botao Pesquisar
-    Click no Item               ${btnPesquisar}   
-
-Clicar no botao Executar 
-    Click no Item            ${btnExecute} 
-    Sleep              30   
-
-Clicar no botao Nao 
-    Click no Item            ${btnNaoNotifications}
-
-Clicar no botao Sim
-    Click no Item            ${btnSimNotifications}
-    
