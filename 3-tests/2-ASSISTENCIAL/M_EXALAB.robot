@@ -14,9 +14,6 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/2-ASSISTENCIAL/M_EXALAB_STEPS.robot
-Resource            ../../2-pages/2-ASSISTENCIAL/M_EXALAB_PAGE.robot
-Resource            ../../Config.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -44,16 +41,3 @@ SCR2AMEXALAB-001:Fluxo Principal
     Selecionar Tipo |${dados}[CampoTipoRes]|
     Clicar Bt Salvar E Valida Msg |${dados}[MsgDeConfirmacao]|
     Clicar Botao Apagar       
-    sleep         5
-
-
-
-
-    
-
-    
-
-    
-
-  
-

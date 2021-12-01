@@ -31,17 +31,9 @@ Selecionar Tipo |${CampoTipoRes}|
 Clicar Bt Salvar E Valida Msg |${MsgDeConfirmacao}|
 #Clicar no botao salvar atraves do titulo e validar mensagem de retorno.
     Click Elemento por titulo               Salvar
-    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]              ${MsgDeConfirmacao}
+    Valida Mensagem                         ${ValidaMsg}             ${MsgDeConfirmacao}
 
 Clicar Botao Apagar
-#Deletar registro recen criado para evitar queimar a massa em todo teste.
-    Click Elemento por titulo               Apagar  
-
-
-
-
-
-
-
-
-
+#Deletar registro recem criado para evitar queimar a massa em todo teste.
+    Click Elemento por titulo               Apagar
+    Sleep    5
