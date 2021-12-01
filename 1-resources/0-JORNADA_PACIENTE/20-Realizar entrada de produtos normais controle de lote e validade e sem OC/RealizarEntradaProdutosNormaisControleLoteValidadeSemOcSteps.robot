@@ -5,7 +5,7 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../../2-pages/0-JORNADA_PACIENTE/RealizarEntradaProdutosNormaisControleLoteValidadeSemOcPage.robot
-Library    pabot.PabotLib
+#Library          pabot.PabotLib
 
 *** Variable ***
 

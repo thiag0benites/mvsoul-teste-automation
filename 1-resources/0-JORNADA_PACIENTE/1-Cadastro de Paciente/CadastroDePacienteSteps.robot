@@ -116,11 +116,17 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1 
 
     ELSE IF    '${nomeBtn}' == 'OK'
-        Wait Until Element Is Visible    ${btnOkMed}    30
+        Wait Until Element Is Visible    ${btnMsgOK}    30
         Sleep    1
-        Click Element    ${btnOkMed}   
-        Sleep    1.5
+        Click Element    ${btnMsgOK}
+        Sleep    1 
 
+    ELSE IF    '${nomeBtn}' == 'OK Tela'
+        Wait Until Element Is Visible    ${btnOKTela}    30
+        Sleep    1
+        Click Element    ${btnOKTela}   
+        Sleep    2
+    
     ELSE IF    '${nomeBtn}' == '5-Imprimir'
         Wait Until Element Is Visible    ${btnPrintInt}    30
         Sleep    1
@@ -155,12 +161,29 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Click Element    ${btnConfAlta} 
         Sleep    1
 
-    ELSE IF    '${nomeBtn}' == 'Sair Alta'
-        Wait Until Element Is Visible    ${btnSairAlta}    30
+    ELSE IF    '${nomeBtn}' == 'Sair Tela'
+        Wait Until Element Is Visible    ${btnSairTela}    30
         Sleep    1
-        Click Element    ${btnSairAlta}
+        Click Element    ${btnSairTela}
         Sleep    1
 
+    ELSE IF    '${nomeBtn}' == 'Reservar Sala'
+        Wait Until Element Is Visible    ${btnReservaSala}    30
+        Sleep    1
+        Click Element    ${btnReservaSala}
+        Sleep    1
+
+    ELSE IF    '${nomeBtn}' == 'Aviso de Cirurgia'
+        Wait Until Element Is Visible    ${btnAvisoCirurgia}    30
+        Sleep    1
+        Click Element    ${btnAvisoCirurgia}
+        Sleep    5
+
+    ELSE IF    '${nomeBtn}' == 'Reticencias'
+        Wait Until Element Is Visible    ${btnReticencias}    30
+        Sleep    1
+        Click Element    ${btnReticencias}
+        Sleep    1
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|

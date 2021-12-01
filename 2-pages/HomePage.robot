@@ -8,6 +8,8 @@ Resource          ../Config.robot
 
 *** Variable ***
 ${HomeXpathBtnMenu}    xpath=//*[@class='mv-basico-menu dp32']
+${HomeXpathInputPesquisa}    xpath=//input[@id='menu-filter-1']
+
 
 *** Keywords ***
 ### Autor: Thiago Benites

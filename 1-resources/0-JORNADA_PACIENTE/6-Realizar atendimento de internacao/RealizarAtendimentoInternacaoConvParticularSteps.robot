@@ -18,10 +18,23 @@ Pesquisar pre-internacao existente pelo codigo do paciente |${intCodPaciente}|${
 Revisar os dados de internacao incluindo leito |${CodLeito}|,|${dataHrPrevAlta}|${print}
   Wait Until Element Is Visible    ${inputLeito}    120
   Sleep     2
+  
+Preencher campos da tela internacao do paciente |${origem}|,|${servico}|,|${acompanhante}|,|${CodLeito}|,|${CodCobertura}|${print}
+  Wait Until Element Is Visible    ${inputOrigem}    30
+  Preencher campo    ${inputOrigem}    ${origem}
+  Sleep    1
+  Preencher campo    ${inputServico}    ${servico}
+  Sleep    1
+  Seleciona Item Combobox    ${selectAcompanhante}    ${acompanhante}
+  Sleep    3
+>>>>>>> 9913bf1d24ed457ce7e2ab13cc7a064a3a90bd3f
   Preencher campo    ${inputLeito}   ${CodLeito}
-  Sleep     3
-  Preencher campo    ${inputDataHrPrevAlta}    ${dataHrPrevAlta}
-  Sleep     1
+  Sleep    1.5
+  # ${dataHrPrevAlta}    Captura data atual adicao de horas
+  # Preencher campo      ${inputDataHrPrevAlta}    ${dataHrPrevAlta}
+  # Sleep    1
+  Preencher campo    ${inputCobertura}    ${CodCobertura}
+  Sleep    1
 Captura codigo do Atendimento Cadastrado|${suite}|${id}|
     Sleep    1
     Should Not Be Empty   ${inputCodAtendimento}
@@ -29,7 +42,5 @@ Captura codigo do Atendimento Cadastrado|${suite}|${id}|
     Altera massa de dados da "${suite}", linha "${id}", coluna "cadPacOutputCodAtendimento", valor "${codAtendimento}"
     Clicar no botao [Sair]||
     Sleep    3
-#Data previsao hoje + 10
-#Campo leito 300
-    
-Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
+   
+#Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>

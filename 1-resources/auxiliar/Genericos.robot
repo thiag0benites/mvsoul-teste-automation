@@ -65,8 +65,7 @@ Seleciona frame
     Wait Until Element Is Enabled    ${elementoFrame}    ${timeout}    O elemento Frame ${elementoFrame} não esta habilitado
     Select Frame    ${elementoFrame}
     Sleep    1
-
-    
+        
 Click Elemento por titulo
     [Arguments]    ${titulo}    ${timeout}=${60}
     ${elemento}    Set Variable    xpath=//*[contains(@title, '${titulo}')]
@@ -231,17 +230,27 @@ Clicar no botão Salvar do menu
 
 Clicar no botão Adicionar
     Click Element     ${btnAdicionar}
-
-Clicar no botão Pesquisar
-    Click no Item               ${btnPesquisar}   
-
-Clicar no botão Executar 
-    Click no Item            ${btnExecute} 
-    Sleep              30   
-
-Clicar no botão Não 
-    Click no Item            ${btnNaoNotifications}
-
-Clicar no botão Sim
-    Click no Item            ${btnSimNotifications}
     
+Captura hora atual
+    ${CurrentTime}    Get Current Date    result_format=%H:%M
+    [Return]        ${CurrentTime}
+    Log To Console      ${CurrentTime}
+
+Captura data atual
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+
+Preencher campo com data e hora
+    Wait Until Element Is Visible    ${elemento}    120
+    [Arguments]    ${elemento}    ${formato}    ${incremento}    
+    ${CurrentDate}    Get Current Date    result_format=${formato}    increment=${incremento}
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+    Click Element    ${elemento}
+    Sleep    2
+    Input Text    ${elemento}    ${CurrentDate}
+    
+
+
+

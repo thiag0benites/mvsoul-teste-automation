@@ -30,9 +30,9 @@ Clicar no botao de Pesquisa
     Click Element    ${btnPesquisar}
     Sleep    60
 
-Pesquisar paciente pelo Nome |${nomePaciente}|${print}
-    Wait Until Element Is Visible    ${inputPrimeiroNome}    240
-    Preencher campo    ${inputPrimeiroNome}    ${nomePaciente}
+Pesquisar paciente pelo prontuario |${prontCodPaciente}|
+    Wait Until Element Is Visible    ${inputProntCodPaciente}    240
+    Preencher campo    ${inputProntCodPaciente}    ${prontCodPaciente}
     Sleep    1
     Clicar no botao [1-Pesquisar]||
 
@@ -42,11 +42,13 @@ Selecionar o nome na lista e confirmar
     Click Element    ${selectNomeLista} 
     Sleep    1
     Clicar no botao [3-Confirmar]||
+
 Clicar em Internar
     Wait Until Element Is Visible    ${btnInternar}    50
     Sleep    1
     Click Element    ${btnInternar}
     Sleep    60
+
 Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [${status}]
     Acessar a tela "Atendimento>Internação>Atendimento>Internação"@nprint @las
 

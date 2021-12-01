@@ -20,13 +20,12 @@ ${inputCirurgia}    id=inp:cdCirurgia
 ${inputPotencialCont}    id=inp:cdNaturezaCirurgia
 ${inputgrupoCirurgia}    id=inp:cdGrupoCirurgia
 ${inputAtividadeMed}    id=inp:cdAtiMed
-${inputCodAtendimentoPreAgCir}    id=inp:cdAtendimento
-${divAvisoCirurgia}    xpath=//div[@data-member='CD_AVISO_CIRURGIA']
-
-### Elementos indexados
-#[2]
+${inputAvisoCirurgia}    xpath=//input[@id='inp:cdAvisoCirurgia']
 ${inputCodPacientePreAg}    xpath=(//input[@id='inp:cdPaciente'])
+${inputCodPacientePreAgCir}    xpath=(//input[@id='inp:cdPaciente'])
 ${inputTipoInternacaoPreAg}    xpath=(//input[@id='inp:cdTipoInternacao'])
 ${inputConvenioCir}    xpath=(//*[@id='inp:cdConvenio'])
 ${inputCodPlano}     xpath=(//input[@id='inp:cdConPla'])
 ${inputPrestCirurgiao}    xpath=(//input[@id="inp:cdPrestador"])
+${inputDtPrevInter}    xpath=//input[@id='inp:dtPrevInter']
+${notifMsgSucesso}     xpath=//li[@class='notification-warning']  
