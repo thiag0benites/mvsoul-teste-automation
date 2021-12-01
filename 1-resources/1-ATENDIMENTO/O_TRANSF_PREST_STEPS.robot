@@ -2,8 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
-### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/1-ATENDIMENTO/O_TRANSF_PREST_PAGE.robot
 
 *** Variable ***
@@ -22,9 +20,9 @@ Preencher os campos |${numAtend}|,|${nomePrestadorDest}|,|${motivoTransferencia}
 
 Validar atendimento 
     Sleep                            2
-    Validar Item   ${atendimento}
+    Validar Item   ${atendTable}
 
-Confirmar Transferencia de Prestador
+Confirmar Transferencia de Prestador|${mensagem}|
     Click Element                    ${buttonTransferencia}
-    Valida Mensagem  ${MensagemSalvar}   Atendimentos Transferidos.....:1
+    Valida Mensagem  ${MensagemSalvar}   ${mensagem}
     Sleep               5

@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/ContextoSteps.robot
 Resource            ../../1-resources/1-ATENDIMENTO/M_ENTREGA_LAUDO_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessao

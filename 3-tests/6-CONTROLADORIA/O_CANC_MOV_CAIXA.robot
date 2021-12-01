@@ -12,9 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
 Resource            ../../1-resources/6-CONTROLADORIA/O_CANC_MOV_CAIXA_STEPS.robot
-
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -22,7 +20,6 @@ Resource            ../../1-resources/6-CONTROLADORIA/O_CANC_MOV_CAIXA_STEPS.rob
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados

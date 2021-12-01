@@ -9,7 +9,6 @@ Resource          ../../Config.robot
 Resource          ../../2-pages/ContextoPage.robot
 Resource          ../../1-resources/ContextoSteps.robot
 
-
 *** Variable ***
 ${FILE}           ${CURDIR}\\6-files\\upload.txt
 ${cssOriginal}
@@ -76,8 +75,8 @@ Validar Elemento Pelo Titulo
     Element Should Be Visible           ${elemento}
 
 Validar Acesso a Tela |${TituloEsperado}|
-    Wait Until Element Is Visible           xpath=//div[contains(text(), "${TituloEsperado}")]              250
-    Element Should Contain                  xpath=//div[contains(text(), "${TituloEsperado}")]              ${TituloEsperado}
+    Wait Until Element Is Visible           xpath=//div[text()="${TituloEsperado}"]              250
+    Element Should Contain                  xpath=//div[text()="${TituloEsperado}"]              ${TituloEsperado}
 
 Selecionar Item Na Lista         
     [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
@@ -234,11 +233,12 @@ Captura data e hora TESTE
     Input Text    ${elemento}    ${CurrentDate}   
     [Return]        ${CurrentDate} 
 
-Clicar no botão Salvar do menu
+Clicar no botao Salvar do menu
     Click Element     ${btnSalvar}
     Sleep             60
 
 Clicar no botão Adicionar
+    Wait Until Element Is Visible       ${btnAdicionar}     120
     Click Element     ${btnAdicionar}
     
 Captura hora atual
