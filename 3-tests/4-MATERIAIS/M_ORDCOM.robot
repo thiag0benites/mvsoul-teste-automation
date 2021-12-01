@@ -48,6 +48,6 @@ SCR4MMORDCOM-001:Fluxo Principal
 
     CLicar em Servico e Preencher Servico e Valor |${dados}[CdServico]| |${dados}[VlTotaServico]|
 
-    Salvar Registro
+    Salvar Registro |${dados}[MsgSalvo]|
     
   

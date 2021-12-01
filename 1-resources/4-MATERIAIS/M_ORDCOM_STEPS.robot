@@ -31,9 +31,9 @@ CLicar em Servico e Preencher Servico e Valor |${cdServico}| |${VlTotaServico}|
     Sleep       2
     Preencher Campo                     ${VlServico}                        ${VlTotaServico}
 
-Salvar Registro
+Salvar Registro |${MsgSalvo}|
     Click Elemento por titulo           Salvar
-    Valida Mensagem                     ${RegistroSalvo}                Registros gravados com sucesso
+    Valida Mensagem                     ${RegistroSalvo}                    ${MsgSalvo}
     Click no Item                       ${LimparSim}
     Wait Until Element Is Not Visible   ${ConfereEstoque}       20
 

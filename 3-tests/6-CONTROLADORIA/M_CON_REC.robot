@@ -32,28 +32,28 @@ ${dados}
 
 *** Test Case ***
 SCR6MMCONREC-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR6MMCONREC-001:Fluxo Principal" -d ./5-results/SCR6MMCONREC-001 "3-tests/6-CONTROLADORIA/M_ORDCOM.robot"
-# robot -v browser:firefox -t "SCR6MMCONREC-001:Fluxo Principal" -d ./5-results/SCR6MMCONREC-001 "3-tests/6-CONTROLADORIA/M_ORDCOM.robot"
+# robot -v browser:chrome -t "SCR6MMCONREC-001:Fluxo Principal" -d ./5-results/SCR6MMCONREC-001 "3-tests/6-CONTROLADORIA/M_CON_REC.robot"
+# robot -v browser:firefox -t "SCR6MMCONREC-001:Fluxo Principal" -d ./5-results/SCR6MMCONREC-001 "3-tests/6-CONTROLADORIA/M_CON_REC.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MMCONREC-001"
     
-    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Receber>Cadastros>Conta a Receber"@nprint @las
-    
+    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Receber>Cadastros>Conta a Receber"@nprint @las
+    Acessa a Tela Pela Busca |M_CON_REC||Conta a Receber| @las
     Validar Acesso a Tela |Contas a Receber|
     
-    Preencher Processo , Data de Emissão, e Data de Lançamento |2626| |20/12/2021| |21/12/2021|
+    Preencher Processo , Data de Emissão, e Data de Lançamento |${dados}[Processo]| |${dados}[DtEmissao]| |${dados}[DtLancamento]|
     
-    Preencher Tipo de Documento, Cliente, Número do Documento, Série e Conta Contabil |114| |261| |15454| |1515| |472|
+    Preencher Tipo de Documento, Cliente, Número do Documento, Série e Conta Contabil |${dados}[TpDocumento]| |${dados}[Cliente]| |${dados}[NrDocumento]| |${dados}[Serie]| |${dados}[ContaContabil]|
   
-    Informar Valor Bruto , Desconto e Acrescimo |100| |12| |1| |3| |1|
+    Informar Valor Bruto , Desconto e Acrescimo |${dados}[VlBruto]| |${dados}[Desconto]| |${dados}[VlDesconto]| |${dados}[Acrescimo]| |${dados}[VlAcrescimo]|
 
-    Informar Hist Padrão e Observação |49| |OBSERVACOES TESTE AUTOMATIZADO|
+    Informar Hist Padrão e Observação |${dados}[HistPadrao]| |${dados}[Observacao]|
 
-    Informar Parcela |100|
+    #Informar Parcela |${dados}[Parcela]|
 
-    Informar Detalhamento |44|
+    Informar Detalhamento |${dados}[Detalhamento]|
 
-    Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |690| |30018| |45| |100|
+    Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${dados}[Setor]| |${dados}[Contabil]| |${dados}[ConCusto| |${dados}[Rateio]|
 
-    Salvar Registro
+    Salvar Registro |${dados}[MensagemRegistroSalvo]|
     
   
