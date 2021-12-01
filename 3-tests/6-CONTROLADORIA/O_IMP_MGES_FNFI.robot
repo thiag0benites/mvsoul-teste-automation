@@ -40,7 +40,6 @@ SMF-5466:Fluxo Principal
     Clicar no botao [Executar]
     Selecionar CheckBox que deseja importar
     Clicar no botao [Importar dados]
-    #Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
     Clicar no botao [Sim]
     Clicar no botao [Sim2]
     Clicar no botao [Imprimir]
