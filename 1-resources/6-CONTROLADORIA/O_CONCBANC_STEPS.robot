@@ -46,6 +46,7 @@ Clicar no Botao Pesquisar
 Selecionar os lancamentos que serao conciliados
     Click no Item  ${CkMovCor} 
 
-Clicar no botao Salvar
+Clicar no botao Salvar |${MsgEsperada}|
     Click no Item  ${SalConCor}
     sleep  3
+    Validar Informacao Item    $element    ${MsgEsperada}
