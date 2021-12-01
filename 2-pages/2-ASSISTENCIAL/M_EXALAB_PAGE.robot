@@ -1,13 +1,11 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Elementos e metodos da página Espera para Coleta de Materiais
+# Decrição: Elementos e metodos da página Exames
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoFiltro}                              xpath=//button[@id="btnFiltro"]  
-${CampoDtInicial}                           xpath=//input[@id="inp:dtPedidoIni"]
-${CampoDtFinal}                             xpath=//input[@id="inp:dtPedidoFim"]
-${BotaoPesquisar}                           xpath=//button[@id="btnPesquisar"]
+${CampoNome}                                 xpath=//input[@id="inp:nmExaLab"]  
+${BotaoTipoRes}                              xpath=//input[@id="CV_TAB_DETALHES_tpResultado_ac"]

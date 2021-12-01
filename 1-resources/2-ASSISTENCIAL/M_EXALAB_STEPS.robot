@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Passos da tela de Espera para Coleta de Materiais
+# Decrição: Passos da tela de Exames
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
@@ -9,20 +9,22 @@ Resource          ../../2-pages/2-ASSISTENCIAL/M_EXALAB_PAGE.robot
 *** Variable ***
 
 *** Keywords ***  
-Clicar no Botao Filtro          
-    Click no Item                          ${BotaoFiltro}
+Preencher Campo Nome
+    Preencher campo                      ${CampoNome}    WATI testes  
 
-Preencher Campo Data |${DtInicial}| |${DtFinal}|
-    Preencher campo                        ${CampoDtInicial}                ${DtInicial}
-    Preencher campo                        ${CampoDtFinal}                  ${DtFinal}
+Selecionar Tipo
+    #Click Button                         ${BotaoTipoRes}
+    Preencher campo                      ${BotaoTipoRes}    Sem Resultado
+    Send Keys     tab
+       
+Clicar Bt Salvar 
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
 
-Clicar no Botao Pesquisar 
-    Click no item                          ${BotaoPesquisar}    
+#Preencher Campo Tipo de Resultado
+    #Selecionar Item Na Lista               ${BotaoTipoRes}    Sem Resultado   S 
 
-Validar Dados de Campos |${NomePaciente}| |${NomeExame}| |${Idade}|                    
-    Validar Elemento Pelo Titulo           ${NomePaciente} 
-    Validar Elemento Pelo Titulo           ${NomeExame}
-    Validar Elemento Pelo Titulo           ${Idade}
+
 
 
 
