@@ -85,3 +85,11 @@ ${CbCriaAtdCir}                         xpath=//button[@id="inp:snCriaGuiaOpmeFs
 ${CbObrigaPlano}                        xpath=//button[@id="inp:snObrigaPlanoAgenda_btn"]
 ${CbImpedeFechamento}                   xpath=//button[@id="inp:snImpedeFechamConta_btn"]
 ${CampoNrDiasAutorizacao}               xpath=//input[@id="inp:nrDiasAutorizaOpme"]
+
+${AbaEmpresa}                           xpath=//a[@id="CNV_PRINCIPAL_CNV_PRINCIPAL_tab2"]
+${CampoCdEmpresa}                       xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/input 
+${CampoFormularioNF}                    xpath=//div[@data-member="CD_FORMULARIO_NF"]/..
+${CampoFormaApresentacao}               xpath=//div[contains(@aria-labelledby, "grdEmpresaConvenio_col4")] 
+${BotaoLov}                             xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button   
+
+
