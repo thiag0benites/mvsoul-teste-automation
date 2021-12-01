@@ -113,7 +113,7 @@ Usuario devera informar no campo <Descricao> a identificacao do repasse em refer
 
 Usuario devera clicar no botao [Salvar]
     Click no Item                                        ${BtnSalvar}
-    Validar Item    ${ValidMsg}
+    Validar Item                                         ${ValidMsg}
 
     
 

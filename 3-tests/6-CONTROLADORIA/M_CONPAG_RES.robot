@@ -18,7 +18,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/M_CONPAG_RES_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+# Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -32,8 +32,13 @@ SMF-5428 : Cadastrar titulos a pagar seguindo o Processo Contas a Pagar de Diver
 # robot -v browser:firefox -t "SMF-5428 : Cadastrar titulos a pagar seguindo o Processo Contas a Pagar de Diversos" -d ./5-results/SMF-5428 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Lançamentos/Adiantamentos>Cadastro"@nprint @las
     Indicar no campo 'Processo'|Contas a Pagar de Diversos| o tipo "Contas a Pagar de Diversos"
-    Preencher Tipo Documento |TESTE DOCUMENTO|
-    
+    Preencher Campos Obrigatorios "Tipo Documento|NOTA FISCAL DE SERVICO|" "Fornecedor|1000 MARCAS|" "Empresa|5 - HOSPITAL MV|" "Valor Bruto|10000|" "Numero Documento|258|"
+    Preenche Informacoes Aba Compartilhamento "Setor|AMBULATORIO HOBRA|" "Campo Custo|TESTE FORMULA|" "Valor Compartilhado|10000|"
+    Preenche Informacoes Aba Impostos "Detalhamento|44|"
 
-
-
+SMF-5434 : Cadastrar titulos a pagar aplicando Acrescimo
+# robot -v browser:chrome -t "SMF-5434 : Cadastrar titulos a pagar aplicando Acrescimo" -d ./5-results/SMF-5434 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
+# robot -v browser:firefox -t "SMF-5434 : Cadastrar titulos a pagar aplicando Acrescimo" -d ./5-results/SMF-5434 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
+    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Lançamentos/Adiantamentos>Cadastro"@nprint @las
+    Indicar no campo 'Processo'|Contas a Pagar de Diversos| o tipo "Contas a Pagar de Diversos"
+    Preencher Campos Obrigatorios "Tipo Documento|NOTA FISCAL DE SERVICO|" "Fornecedor|1000 MARCAS|" "Empresa|5 - HOSPITAL MV|" "Valor Bruto|10000|" "Numero Documento|258|"
