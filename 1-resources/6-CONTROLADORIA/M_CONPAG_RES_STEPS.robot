@@ -28,7 +28,6 @@ Preencher Campos Obrigatorios "Tipo Documento|${TIpoDocumento}|" "Fornecedor|${F
     Preencher campo                                   ${CampoValorBruto}        ${VlBruto}         
     Preencher campo                                   ${CampoNrDocumento}       ${NrDoc}
     Click no Item                                     ${CampoDescrComprom}
-    Validar Item                                      ${TextoValidacao}
 
 Preenche Informacoes Aba Compartilhamento "Setor|${TxtSetor}|" "Campo Custo|${CampoCusto}|" "Valor Compartilhado|${VlCompart}|"
     Click no Item                                     ${AbaCompartil}
@@ -41,22 +40,24 @@ Preenche Informacoes Aba Compartilhamento "Setor|${TxtSetor}|" "Campo Custo|${Ca
     Click no Item                                     ${BtnOkFiltro}
     Clicar no Campo e Preencher Informacao            ${CampoVlCompart}         ${CampoEditVlCompart}     ${VlCompart}  ## Valor compartilhamento deve igual ao valor bruto ##
 
-Preenche Informacoes Aba Impostos "Detalhamento|${CodImpost}|"
+Preenche Informacoes Aba Impostos "Detalhamento|${CodImpost}|" "Validar Alerta|${MsgAlerta}|"
     Click no Item                                     ${AbaImpostos}
     Clicar no Campo e Preencher Informacao            ${BtnCodImposto}          ${CampoFiltro}            ${CodImpost}
     Click no Item                                     ${BtnFiltrar}
     Click no Item                                     ${BtnOkFiltro}
     Click no Item                                     ${AbaParcelamento}
-    Click no Item                                     ${btnSalvar}
+    Click no Item                                     ${BtnSalvar}
     # Validar Pop-Pup de Alerta e Clicar                ${AlertaMsgData}          ${BtnMsgAlerta}
-    Validar Pop-Pup de Alerta e Clicar                ${ValidAlertaSalvar}      ${BtnOkAlertaMsg}
+    Validar Informacao Item                           ${ValidAlertaSalvar}      ${MsgAlerta}
+    Click no Item                                     ${BtnOkAlertaMsg}
     Validar Item                                      ${ValidCodigo}
 
-Preenche Acrescimo "Seleciona Acrescimo|${SelecAcresc}|" "Valor Acrescimo|${VlAcres}|"
-    Clicar no Campo e Preencher Informacao            ${BtnAcrescimo}          ${CampoFiltro}            ${SelecAcresc}    
+Preenche Acrescimo "Seleciona Acrescimo|${SelecAcresc}|" "Valor Acrescimo|${VlAcres}|" "Valid Acrescimo|${ValidAcresc}|" "Valid Valor Acresc|${ValidVlAcresc}|"
+    Clicar no Campo e Preencher Informacao            ${BtnAcrescimo}           ${CampoFiltro}            ${SelecAcresc}    
     Click no Item                                     ${BtnFiltrar}
     Click no Item                                     ${BtnOkFiltro}
-    Validar Item                                      ${ValidAcrescimo}        
+    Validar Informacao Item                           ${ValidAcrescimo}         ${ValidAcresc}       
     Preencher campo                                   ${CampoAcrescimo}         ${VlAcres}
     Send Keys    tab    
     Validar Item                                      ${ValiVlAcrescimo}
+    Validar Informacao Item                           ${ValidAcrescimo}         ${ValidVlAcresc}

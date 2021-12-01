@@ -22,26 +22,28 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          c_repasse_conta
+${suite}          m_conpag_res
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
-SMF-5428 : Cadastrar titulos a pagar seguindo o Processo Contas a Pagar de Diversos
+SMF-5428:Cadastrar titulos a pagar seguindo o Processo Contas a Pagar de Diversos
 # robot -v browser:chrome -t "SMF-5428 : Cadastrar titulos a pagar seguindo o Processo Contas a Pagar de Diversos" -d ./5-results/SMF-5428 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
 # robot -v browser:firefox -t "SMF-5428 : Cadastrar titulos a pagar seguindo o Processo Contas a Pagar de Diversos" -d ./5-results/SMF-5428 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5428"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Lançamentos/Adiantamentos>Cadastro"@nprint @las
-    Indicar no campo 'Processo'|Contas a Pagar de Diversos| o tipo "Contas a Pagar de Diversos"
-    Preencher Campos Obrigatorios "Tipo Documento|NOTA FISCAL DE SERVICO|" "Fornecedor|1000 MARCAS|" "Empresa|5 - HOSPITAL MV|" "Valor Bruto|10000|" "Numero Documento|258|"
-    Preenche Informacoes Aba Compartilhamento "Setor|AMBULATORIO HOBRA|" "Campo Custo|TESTE FORMULA|" "Valor Compartilhado|10000|"
-    Preenche Informacoes Aba Impostos "Detalhamento|44|"
+    Indicar no campo 'Processo'|${dados}[Processo]| o tipo "Contas a Pagar de Diversos"
+    Preencher Campos Obrigatorios "Tipo Documento|${dados}[TipoDocumento]|" "Fornecedor|${dados}[Fornecedor]|" "Empresa|${dados}[Empresa]|" "Valor Bruto|${dados}[ValorBruto]|" "Numero Documento|${dados}[NumeroDoc]|"
+    Preenche Informacoes Aba Compartilhamento "Setor|${dados}[Setor]|" "Campo Custo|${dados}[CampoCusto]|" "Valor Compartilhado|${dados}[ValorBruto]|"    ## Vl Compart usar Vl Bruto
+    Preenche Informacoes Aba Impostos "Detalhamento|${dados}[Detalhamento]|" "Validar Alerta|${dados}[ValidAlerta]|"
 
-SMF-5434 : Cadastrar titulos a pagar aplicando Acrescimo
+SMF-5434:Cadastrar titulos a pagar aplicando Acrescimo
 # robot -v browser:chrome -t "SMF-5434 : Cadastrar titulos a pagar aplicando Acrescimo" -d ./5-results/SMF-5434 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
 # robot -v browser:firefox -t "SMF-5434 : Cadastrar titulos a pagar aplicando Acrescimo" -d ./5-results/SMF-5434 "3-tests/6-CONTROLADORIA/M_CONPAG_RES.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5434"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Lançamentos/Adiantamentos>Cadastro"@nprint @las
-    Indicar no campo 'Processo'|Contas a Pagar de Diversos| o tipo "Contas a Pagar de Diversos"
-    Preencher Campos Obrigatorios "Tipo Documento|NOTA FISCAL DE SERVICO|" "Fornecedor|1000 MARCAS|" "Empresa|5 - HOSPITAL MV|" "Valor Bruto|10000|" "Numero Documento|3571|"
-    Preenche Acrescimo "Seleciona Acrescimo|ACRESCIMO HSI|" "Valor Acrescimo|100|"
-    Preenche Informacoes Aba Compartilhamento "Setor|AMBULATORIO HOBRA|" "Campo Custo|TESTE FORMULA|" "Valor Compartilhado|10000|"
-    Preenche Informacoes Aba Impostos "Detalhamento|44|"
+    Indicar no campo 'Processo'|${dados}[Processo]| o tipo "Contas a Pagar de Diversos"
+    Preencher Campos Obrigatorios "Tipo Documento|${dados}[TipoDocumento]|" "Fornecedor|${dados}[Fornecedor]|" "Empresa|${dados}[Empresa]|" "Valor Bruto|${dados}[ValorBruto]|" "Numero Documento|${dados}[NumeroDoc]|"
+    Preenche Acrescimo "Seleciona Acrescimo|${dados}[SelecAcrescimo]|" "Valor Acrescimo|${dados}[ValorAcresc]|" "Valid Acrescimo|${dados}[ValidAcresc]|" "Valid Valor Acresc|${dados}[AlertaSalvar]|"
+    Preenche Informacoes Aba Compartilhamento "Setor|${dados}[Setor]|" "Campo Custo|${dados}[CampoCusto]|" "Valor Compartilhado|${dados}[ValorBruto]|"    ## Vl Compart usar Vl Bruto
+    Preenche Informacoes Aba Impostos "Detalhamento|${dados}[Detalhamento]|" "Validar Alerta|${dados}[ValidAlerta]|"
