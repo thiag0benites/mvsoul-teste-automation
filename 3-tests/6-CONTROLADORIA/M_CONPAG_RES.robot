@@ -3,12 +3,12 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/C_REPASSE_CONTA "3-tests\6-CONTROLADORIA\C_REPASSE_CONTA.robot"
-# chrome:         robot -v browser:firefox -d ./5-results/C_REPASSE_CONTA "3-tests\6-CONTROLADORIA\C_REPASSE_CONTA.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/M_CONPAG_RES "3-tests\6-CONTROLADORIA\M_CONPAG_RES.robot"
+# chrome:         robot -v browser:firefox -d ./5-results/M_CONPAG_RES "3-tests\6-CONTROLADORIA\M_CONPAG_RES.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/C_REPASSE_CONTA "3-tests\6-CONTROLADORIA\C_REPASSE_CONTA.robot"
-# chrome:         robot -v browser:headlessfirefox -d ./5-results/C_REPASSE_CONTA "3-tests\6-CONTROLADORIA\C_REPASSE_CONTA.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/M_CONPAG_RES "3-tests\6-CONTROLADORIA\M_CONPAG_RES.robot"
+# chrome:         robot -v browser:headlessfirefox -d ./5-results/M_CONPAG_RES "3-tests\6-CONTROLADORIA\M_CONPAG_RES.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
