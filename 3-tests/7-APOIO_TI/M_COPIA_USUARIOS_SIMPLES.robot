@@ -20,7 +20,7 @@ Resource            ../../1-resources/7-APOIO_TI/M_COPIA_USUARIOS_SIMPLES_STEPS.
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -37,6 +37,5 @@ SMF-6540:Fluxo Principal
     Acessar |${dados}[tela]|@nprint @las
     Preencher os campos Usuario Origem|${dados}[usrOrigem]|, Usuario Destino|${dados}[usrDestino]|
     Clicar no botao [Copiar Usuario]
-    Clicar no botao [OK]
     Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
-    
+    Clicar no botao [OK]
