@@ -42,14 +42,18 @@ Informar Hist Padrão e Observação |${HistPadrao}| |${Observacao}|
   #  Preencher Campo                     ${CampoParcela}                     ${Parcela}
 
 Informar Detalhamento |${Detalhamento}|
-    Click no Item                       ${BotaoDetalhamento}
-    Preencher Campo                     ${CampoDetalhamento}                ${Detalhamento}
+    Click no Item                       ${CampoDetalhamento}
+    Selecionar Item Na Lista            ${BotaoDetalhamento}                ${Detalhamento}             ${Detalhamento}
+    #Preencher Campo                     ${CampoDetalhamento}                ${Detalhamento}
 
 Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${Setor}| |${Contabil}| |${ConCusto}| |${Rateio}|
     Click no Item                       ${BotaoCompartilhamento} 
-    Preencher Campo                     ${CampoSetor}                       ${Setor}
-    Preencher Campo                     ${CampoContabil}                    ${Contabil}
-    Preencher Campo                     ${CampoConCusto}                    ${ConCusto}
+    Selecionar Item Na Lista            ${BotaoSetor}                       ${Setor}             ${Setor}
+#    Preencher Campo                     ${CampoContabil}                    ${Contabil}
+    #Click no Item                       ${CampoContabilDes}
+    #Selecionar Item Na Lista            ${CampoContabil}                    ${Contabil}          ${Contabil}
+    Click no Item                       ${CampoCusto}
+    Selecionar Item Na Lista            ${CampoConCusto}                    ${ConCusto}          ${ConCusto}
     Preencher Campo                     ${CampoRateio}                      ${Rateio}
 
 Salvar Registro |${MensagemRegistroSalvo}|

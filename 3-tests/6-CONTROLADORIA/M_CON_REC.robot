@@ -52,7 +52,7 @@ SCR6MMCONREC-001:Fluxo Principal
 
     Informar Detalhamento |${dados}[Detalhamento]|
 
-    Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${dados}[Setor]| |${dados}[Contabil]| |${dados}[ConCusto| |${dados}[Rateio]|
+    Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${dados}[Setor]| |${dados}[Contabil]| |${dados}[ConCusto]| |${dados}[Rateio]|
 
     Salvar Registro |${dados}[MensagemRegistroSalvo]|
     
