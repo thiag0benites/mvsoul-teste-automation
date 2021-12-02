@@ -24,12 +24,14 @@ ${CampoAcrescimo}                           xpath=//input[@id="inp:cdAcrescimo"]
 ${CampoVlAcrescimo}                         xpath=//input[@id="inp:vlMoedaAcrescimo"]
 ${CampoHistPadrao}                          xpath=//input[@id="inp:cdHistoricoPadrao"]
 ${CampoObservacao}                          xpath=//input[@id="inp:conRec_dsObservacao"]
-${BotaoParcelamento}                        xpath=//a[@href="#CGM_TAB_1-CGM_TAB_1_PAGE_1"]
-${CampoParcela}                             xpath=//div[@data-member="VL_MOEDA"][@style="text-align: right"]
+${AbaParcelamento}                          xpath=//a[@href="#CGM_TAB_1-CGM_TAB_1_PAGE_1"]
+${CampoParcelaDes}                          xpath=//div[@class="slick-cell b5 f5 selected MVMask378"]/.
+${CampoParcela}                             xpath=//input[@class="editor-text mode-edit"][@dir="ltr"]
+${AbaDetalhamento}                          xpath=//a[@href="#CGM_TAB_1-CGM_TAB_1_PAGE_2"]
 ${BotaoDetalhamento}                        xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button
 ${CampoDetalhamento}                        xpath=//div[@class="slick-cell b0 f0 selected ui-fixed-width"]
-${BotaoCompartilhamento}                    xpath=//a[@id="CGM_TAB_1_CGM_TAB_1_tab2"]
-#${CampoDetalhamento}                        xpath=//div[@class="slick-cell b0 f0 selected ui-fixed-width"]
+${AbaCompartilhamento}                    xpath=//a[@href="#CGM_TAB_1-CGM_TAB_1_PAGE_3"]
+${CampoDetalhamento}                        xpath=//div[@class="slick-cell b0 f0 selected ui-fixed-width"]
 ${BotaoSetor}                               xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button
 ${CampoSetor}                               xpath=//input[@class="ui-widget-content ui-buttoninput ui-corner-left"][@id="#frames40"]
 ${CampoContabilDes}                         xpath=//div[@data-member="CD_REDUZIDO"][@class="ui-text"]/..

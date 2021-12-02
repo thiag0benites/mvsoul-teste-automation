@@ -29,7 +29,7 @@ Informar Valor Bruto , Desconto e Acrescimo |${VlBruto}| |${Desconto}| |${VlDesc
     Preencher Campo                     ${CampoVlDesconto}                  ${VlDesconto}            
     Preencher Campo                     ${CampoAcrescimo}                   ${Acrescimo}
     Click no Item                       ${CampoVlBruto}
-    Sleep   5
+    Sleep   2
     Preencher Campo                     ${CampoVlAcrescimo}                 ${VlAcrescimo}    
 
 Informar Hist Padrão e Observação |${HistPadrao}| |${Observacao}|
@@ -37,26 +37,26 @@ Informar Hist Padrão e Observação |${HistPadrao}| |${Observacao}|
     Preencher Campo                     ${CampoHistPadrao}                  ${HistPadrao}
     Preencher Campo                     ${CampoObservacao}                  ${Observacao} 
 
-#Informar Parcela |${Parcela}|
- #   Click no Item                       ${BotaoParcelamento}
-  #  Preencher Campo                     ${CampoParcela}                     ${Parcela}
+Informar Parcela |${Parcela}|
+    Click no Item                       ${AbaParcelamento}
+    Click no Item                       ${CampoParcelaDes}
+    Sleep   1
+    Click no Item                       ${CampoParcelaDes}
+    Preencher Campo                     ${CampoParcela}                     ${Parcela}
 
 Informar Detalhamento |${Detalhamento}|
-    Click no Item                       ${CampoDetalhamento}
+    Click no Item                       ${AbaDetalhamento}
     Selecionar Item Na Lista            ${BotaoDetalhamento}                ${Detalhamento}             ${Detalhamento}
-    #Preencher Campo                     ${CampoDetalhamento}                ${Detalhamento}
-
+    
 Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${Setor}| |${Contabil}| |${ConCusto}| |${Rateio}|
-    Click no Item                       ${BotaoCompartilhamento} 
+    Click no Item                       ${AbaCompartilhamento} 
     Selecionar Item Na Lista            ${BotaoSetor}                       ${Setor}             ${Setor}
-#    Preencher Campo                     ${CampoContabil}                    ${Contabil}
-    #Click no Item                       ${CampoContabilDes}
-    #Selecionar Item Na Lista            ${CampoContabil}                    ${Contabil}          ${Contabil}
     Click no Item                       ${CampoCusto}
     Selecionar Item Na Lista            ${CampoConCusto}                    ${ConCusto}          ${ConCusto}
+    Click no Item                       ${CampoRateioDes}   
     Preencher Campo                     ${CampoRateio}                      ${Rateio}
 
 Salvar Registro |${MensagemRegistroSalvo}|
     Click Elemento por titulo           Salvar
     Valida Mensagem                     ${RegistroSalvo}                    ${MensagemRegistroSalvo}
-    Click no Item                       ${LimparSim}
+

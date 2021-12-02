@@ -48,7 +48,7 @@ SCR6MMCONREC-001:Fluxo Principal
 
     Informar Hist Padrão e Observação |${dados}[HistPadrao]| |${dados}[Observacao]|
 
-    #Informar Parcela |${dados}[Parcela]|
+    Informar Parcela |${dados}[Parcela]|
 
     Informar Detalhamento |${dados}[Detalhamento]|
 
