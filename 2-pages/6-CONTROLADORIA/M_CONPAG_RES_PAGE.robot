@@ -44,5 +44,6 @@ ${ValidCampoProcessoNegat}                               xpath=//input[@id='inp:
 ${AlertaMsgData}                                         xpath=//p[@class='notifications-item-text'][contains(text(),"Data informada não é um dia útil - Escolha uma das opções")]
 ${ValidAlertaSalvar}                                     xpath=//p[@class='notifications-item-text'][contains(text(),"Tipo de documento da conta é diferente de serviço, deseja continuar a salvar os impostos?")]
 ${ValidCodigo}                                           xpath=//input[@id='inp:cdConPag'][@title]
-${ValidAcrescimo}                                        xpath=//div[@id='dspDsAcrescimo']//span[@readonly='readonly']
+${ValidAcrescimo}                                        xpath=//span[@title='ACRESCIMO HSI']
 ${ValiVlAcrescimo}                                       xpath=//input[@id='inp:vlAcrescimo'][@title='100,00']
+${AlertaSalvar}                                          xpath=//p[@class='notifications-item-text']

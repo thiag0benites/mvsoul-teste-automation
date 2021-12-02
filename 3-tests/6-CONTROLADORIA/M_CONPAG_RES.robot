@@ -18,7 +18,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/M_CONPAG_RES_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -44,6 +44,6 @@ SMF-5434:Cadastrar titulos a pagar aplicando Acrescimo
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Lançamentos/Adiantamentos>Cadastro"@nprint @las
     Indicar no campo 'Processo'|${dados}[Processo]| o tipo "Contas a Pagar de Diversos"
     Preencher Campos Obrigatorios "Tipo Documento|${dados}[TipoDocumento]|" "Fornecedor|${dados}[Fornecedor]|" "Empresa|${dados}[Empresa]|" "Valor Bruto|${dados}[ValorBruto]|" "Numero Documento|${dados}[NumeroDoc]|"
-    Preenche Acrescimo "Seleciona Acrescimo|${dados}[SelecAcrescimo]|" "Valor Acrescimo|${dados}[ValorAcresc]|" "Valid Acrescimo|${dados}[ValidAcresc]|" "Valid Valor Acresc|${dados}[AlertaSalvar]|"
+    Preenche Acrescimo "Seleciona Acrescimo|${dados}[SelecAcrescimo]|" "Valor Acrescimo|${dados}[ValorAcresc]|" "Valid Acrescimo|${dados}[ValidAcres]|" "Valid Valor Acresc|${dados}[ValorAcresc]|"
     Preenche Informacoes Aba Compartilhamento "Setor|${dados}[Setor]|" "Campo Custo|${dados}[CampoCusto]|" "Valor Compartilhado|${dados}[ValorBruto]|"    ## Vl Compart usar Vl Bruto
     Preenche Informacoes Aba Impostos "Detalhamento|${dados}[Detalhamento]|" "Validar Alerta|${dados}[ValidAlerta]|"

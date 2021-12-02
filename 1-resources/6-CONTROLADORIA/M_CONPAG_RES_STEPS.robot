@@ -48,7 +48,8 @@ Preenche Informacoes Aba Impostos "Detalhamento|${CodImpost}|" "Validar Alerta|$
     Click no Item                                     ${AbaParcelamento}
     Click no Item                                     ${BtnSalvar}
     # Validar Pop-Pup de Alerta e Clicar                ${AlertaMsgData}          ${BtnMsgAlerta}
-    Validar Informacao Item                           ${ValidAlertaSalvar}      ${MsgAlerta}
+    # Validar Informacao Item                           ${ValidAlertaSalvar}      ${MsgAlerta}
+    Validar Pop-Pup de Alerta e Clicar                ${AlertaSalvar}             ${BtnOkAlertaMsg}
     Click no Item                                     ${BtnOkAlertaMsg}
     Validar Item                                      ${ValidCodigo}
 
@@ -60,4 +61,4 @@ Preenche Acrescimo "Seleciona Acrescimo|${SelecAcresc}|" "Valor Acrescimo|${VlAc
     Preencher campo                                   ${CampoAcrescimo}         ${VlAcres}
     Send Keys    tab    
     Validar Item                                      ${ValiVlAcrescimo}
-    Validar Informacao Item                           ${ValidAcrescimo}         ${ValidVlAcresc}
+    # Validar Informacao Item                           ${ValiVlAcrescimo}         ${ValidVlAcresc}
