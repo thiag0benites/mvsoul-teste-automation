@@ -284,14 +284,8 @@ Preencher o Campo Input
     Sleep                                                      3
 
 Valida Mensagem
-    # [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    # Wait Until Element Is Visible    ${ElementoMsgRecebida}    120
-    # Sleep    3
-    # #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
-    # #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
-    # Element Should Contain    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
-    ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
-    Should Be Equal As Strings    ${MensagemEsperada}    ${msgObtida}
-    #Log To Console    *** Mensagem de alerta não foi apresentada!
+    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
+    Wait Until Element Is Visible    ${MensagemRecebida}    120
+    Sleep    3
+    ${MensagemRecebida}    Get Text    ${MensagemEsperada}
+    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
