@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/4-MATERIAIS/C_LISTAGEM_CONFERENCIA_STEPS.robot
+Resource            ../../1-resources/6-CONTROLADORIA/O_SPED_ECF_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,19 +23,19 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-#${suite}          c_listagem_conferencia
+#${suite}          o_gerdis_p321
  # Recebe dados do gerenciador
 #${dados}
 
 *** Test Case ***
-SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal          #SMF-10345 : Listagem
-# robot -v browser:chrome -t "SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal" -d ./5-results/SCR4MCLISTAGEMCONFERENCIA-001 "3-tests/4-MATERIAIS/C_LISTAGEM_CONFERENCIA.robot"
-# robot -v browser:firefox -t "SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal" -d ./5-results/SCR4MCLISTAGEMCONFERENCIA-001 "3-tests/4-MATERIAIS/C_LISTAGEM_CONFERENCIA.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10345"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Conferência>Listagem"@nprint @las
-    Consultar Lista dos Processos a Serem Validados
-    Validacao dos Processo |${dados}[Processo]||${dados}[MsgEsperada1]||${dados}[MsgEsperada2]|
-
+SCR6COSPEDECF-001:Fluxo Principal           
+# robot -v browser:chrome -t "SCR6COSPEDECF-001:Fluxo Principal" -d ./5-results/SCR6COSPEDECF-001 "3-tests/6-CONTROLADORIA/O_SPED_ECF.robot"
+# robot -v browser:firefox -t "SCR6COSPEDECF-001:Fluxo Principal" -d ./5-results/SCR6COSPEDECF-001 "3-tests/6-CONTROLADORIA/O_SPED_ECF.robot"
+    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COSPEDECF"
+    Acessar a tela "Controladoria>Fiscal>Geração>SPEDs>SPED ECF>Geração do SPED Contábil Fiscal"@nprint @las
+    Dados Paciente
+    Validacao de tela
+    
 
 
 
