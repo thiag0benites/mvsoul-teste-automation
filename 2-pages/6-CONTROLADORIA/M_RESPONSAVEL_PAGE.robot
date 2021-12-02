@@ -55,4 +55,4 @@ ${FecharAba}                                    xpath=//*[@id="react"]/div/div[1
 
 ### VARIADOS  ###
 ${SelectCidade}                                 xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[2]/div/div
-${ValidNacinalidade}                            xpath=//p[@class='notifications-item-text'][contains(text(), 'Registros gravados com sucesso')]
+${ValidNacinalidade}                            xpath=//p[@class='notifications-item-text']
