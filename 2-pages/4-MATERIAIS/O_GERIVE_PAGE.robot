@@ -11,3 +11,4 @@ Resource          ../Config.robot
 ${codigoContagem}               xpath=//div[@data-name='cdContagem']//input
 ${buttonConfirmar}              xpath=//button[@data-name='butCdEstoque']
 ${buttonSim}                    xpath=//li[@class='notification-buttons']//button[2]
+${notificacao}                  xpath=//p[@class="notifications-item-text"]

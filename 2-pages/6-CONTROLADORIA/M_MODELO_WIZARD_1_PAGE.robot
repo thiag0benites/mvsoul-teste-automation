@@ -8,6 +8,7 @@ Resource          ../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de M_MODELO_WIZARD_1
+${buttonAdiciona}                       xpath=//li[@id='tb-record-add']
 ${campoCodigo}                          xpath=//div[@class='slick-cell b0 f0 selected active editable']//input
 ${campoDescricao}                       xpath=//div[@class='slick-cell b1 f1 selected']
 ${campoDescricaoInput}                  xpath=//div[@class='slick-cell b1 f1 selected active editable']//input

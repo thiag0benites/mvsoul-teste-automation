@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/6-CONTROLADORIA/C_LOTE.robot
+Resource            ../../1-resources/6-CONTROLADORIA/C_LOTE_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão

@@ -229,7 +229,7 @@ Clicar no botao Salvar do menu
     Click Element     ${btnSalvar}
     Sleep             60
 
-Clicar no botão Adicionar
+Clicar no botao Adicionar
     Wait Until Element Is Visible       ${btnAdicionar}     120
     Click Element     ${btnAdicionar}
 

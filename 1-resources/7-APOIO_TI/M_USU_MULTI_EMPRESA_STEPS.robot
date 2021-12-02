@@ -21,3 +21,4 @@ Validar mensagem ao salvar |${mensagem}|
 
 Clicar no botao adicionar
     Click no Item  ${buttonAdicionar}
+    Sleep  2

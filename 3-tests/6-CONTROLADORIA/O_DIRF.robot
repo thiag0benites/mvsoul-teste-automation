@@ -13,14 +13,14 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/6-CONTROLADORIA/M_TIP_DET.robot
+Resource            ../../1-resources/6-CONTROLADORIA/O_DIRF_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-Test Teardown       Encerra sessao
+## Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados

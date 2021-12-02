@@ -10,7 +10,9 @@ Resource          ../../2-pages/6-CONTROLADORIA/C_LOTE_PAGE.robot
 
 *** Keywords ***
 Preencher o campo |${lote}|
-    Preencher Campo                             ${campoLote}                    ${lote}
+    Click no Item                               ${campoLote}
+    Sleep   2
+    Preencher Campo                             ${campoLoteInput}                    ${lote}
 
 Validar Resultado da Pesquisa da tela Consulta de Lancamento contabil |${dadoConsulta}|
     Validar Elemento Pelo Titulo            ${dadoConsulta} 
