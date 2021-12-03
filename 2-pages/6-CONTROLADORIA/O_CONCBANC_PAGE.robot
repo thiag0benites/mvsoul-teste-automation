@@ -37,3 +37,6 @@ ${SalConCor}       xpath=//*[@id="tb-record-save"]
 #Check Box
 
 ${CkMovCor}        xpath=//*[@id="grdMovConcor"]/div[4]/div[3]/div/div/div[1]/div/button
+
+# Msg de Notificação do Registro Salvo
+${MsgVerifi}       xpath=//p[@class="notifications-item-text"]

@@ -27,7 +27,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}          m_ped_exa_atend
+${suite}          O_CONCBANC
 # Recebe dados do gerenciador
 ${dados}
 
@@ -42,7 +42,7 @@ SCR6COCONCBANC001:Fluxo Principal
     Preencher valor Valor Minmo |${dados}[ValorMinimo]| e Valor Maximo |${dados}[ValorMaximo]| do campo <Intervalo Valor>
     Informar no campo <Empresa> o codigo da empresa Valor Empresa |${dados}[ValorEmpresa]|
     Seleciona no campo <Status> uma Opçao |${dados}[StatusConCor]|
-    Informar no campo <Nr do documento> o Numero de um doc a ser pesquisado |${dados}[VolaorDoc]|
+    Informar no campo <Nr do documento> o Numero de um doc a ser pesquisado |${dados}[ValorDoc]|
     Informar no campo <Conta Corrente> o Nr da Conta Corrente |${dados}[ContCorrente]|
     Clicar no Botao Pesquisar
     Selecionar os lancamentos que serao conciliados

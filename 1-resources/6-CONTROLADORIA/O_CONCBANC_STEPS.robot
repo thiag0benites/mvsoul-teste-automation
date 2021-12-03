@@ -48,5 +48,5 @@ Selecionar os lancamentos que serao conciliados
 
 Clicar no botao Salvar |${MsgEsperada}|
     Click no Item  ${SalConCor}
-    sleep  3
-    Validar Informacao Item    $element    ${MsgEsperada}
+    sleep  2
+    Valida Mensagem    ${MsgVerifi}    ${MsgEsperada}
