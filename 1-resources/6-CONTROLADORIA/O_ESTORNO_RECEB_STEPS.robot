@@ -42,9 +42,3 @@ Informar o "Nr de documento" Referente ao Recebimento |${NrDocumento}|
 Clicar em <CONFIRMAR>
     Clicar Botao se estiver Visivel           ${BtnConfirmar}
     Clicar Botao se estiver Visivel           ${BtnOkConfirmacao}
-
-
-
-
-
-
