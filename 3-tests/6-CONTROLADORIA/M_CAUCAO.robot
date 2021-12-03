@@ -39,4 +39,5 @@ SCR6CMCAUCAO001:Fluxo Principal
     Informe o Atendimento para o Recebimento Adiantado: Atendimento |100000234|
     Bloco Depósito Antecipado informe: Data Deposito|03/12/2021| Moeda |1| Valor Deposito |300|
     Bloco de Dados do Depósito Antecipado informe: Forma de Pagamento |Dinheiro|
+    
 
