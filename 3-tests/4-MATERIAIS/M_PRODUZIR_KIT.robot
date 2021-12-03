@@ -36,7 +36,3 @@ SCR4MMPRODUZIRKIT-001:Fluxo Principal          #SMF-3254 : Produzir Kit - Códig
     Informacoes para producao dos kits|${dados}[Estoque]||${dados}[KitASerProduzido]|
     Produtos do Kit |${dados}[Produto1]||${dados}[Lote1]||${dados}[QntReservada1]||${dados}[Produto2]||${dados}[Lote2]||${dados}[QntReservada2]|
     Impressao e Validacao do Teste
-
-
-
-
