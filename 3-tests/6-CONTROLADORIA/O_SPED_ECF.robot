@@ -4,11 +4,11 @@
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:         robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
@@ -33,6 +33,7 @@ SCR6COSPEDECF-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR6COSPEDECF-001:Fluxo Principal" -d ./5-results/SCR6COSPEDECF-001 "3-tests/6-CONTROLADORIA/O_SPED_ECF.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COSPEDECF-001"
     Acessar a tela "Controladoria>Fiscal>Geração>SPEDs>SPED ECF>Geração do SPED Contábil Fiscal"@nprint @las
+<<<<<<< HEAD
     Dados Paciente |${dados}[DataFinal]||${dados}[DataInicial]|
     Validacao de tela |${dados}[MensagemSucesso]|
     
@@ -40,3 +41,7 @@ SCR6COSPEDECF-001:Fluxo Principal
 
 
 
+=======
+    Dados Paciente
+    Validacao de tela
+>>>>>>> c9d1001ba1822b34153c87347e17b47fe9926930

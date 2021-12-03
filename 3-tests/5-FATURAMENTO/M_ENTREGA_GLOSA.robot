@@ -4,11 +4,11 @@
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:         robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
@@ -33,6 +33,6 @@ SCR5FMENTREGAGLOSA-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR5FMENTREGAGLOSA-001:Fluxo Principal" -d ./5-results/SCR5FMENTREGAGLOSA-001 "3-tests/5-FATURAMENTO/M_ENTREGA_GLOSA.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMENTREGAGLOSA"
     Acessar a tela "Faturamento>Auditoria e Controle de Recursos de Glosas>Lançamentos>Entrega de Recurso de Glosas"@nprint @las
-    Descrição da Fatura |${dados}[Remessa]||${dados}[DataPrevistaParaPagamento]|
+    Descricao da Fatura |${dados}[Remessa]||${dados}[DataPrevistaParaPagamento]|
     Validacao de tela |${dados}[Alert]|
 

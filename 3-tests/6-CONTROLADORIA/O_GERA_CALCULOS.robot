@@ -4,11 +4,11 @@
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:         robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
@@ -35,8 +35,3 @@ SCR6COGERACALCULOS-001:Fluxo Principal          #SMF-9586 : Calcular os Custos G
     Acessar a tela "Controladoria>Custos>Cálculos>Cálculos Geral Custos"@nprint @las
     Preecher Campo Competencia |${dados}[Competencia]|
     Calculo e Validacao de mensagem |${dados}[MsgEsperada]|
-    
-
-
-
-
