@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/5-FATURAMENTO/M_ENTREGA_GLOSA_STEPS.robot
+Resource            ../../1-resources/6-CONTROLADORIA/C_CC_PRESTADOR_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,16 +23,19 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_entrega_glosa
+${suite}          c_cc_prestador
  # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR5FMENTREGAGLOSA-001:Fluxo Principal           
-# robot -v browser:chrome -t "SCR5FMENTREGAGLOSA-001:Fluxo Principal" -d ./5-results/SCR5FMENTREGAGLOSA-001 "3-tests/5-FATURAMENTO/M_ENTREGA_GLOSA.robot"
-# robot -v browser:firefox -t "SCR5FMENTREGAGLOSA-001:Fluxo Principal" -d ./5-results/SCR5FMENTREGAGLOSA-001 "3-tests/5-FATURAMENTO/M_ENTREGA_GLOSA.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMENTREGAGLOSA"
-    Acessar a tela "Faturamento>Auditoria e Controle de Recursos de Glosas>Lançamentos>Entrega de Recurso de Glosas"@nprint @las
-    Descrição da Fatura |${dados}[Remessa]||${dados}[DataPrevistaParaPagamento]|
-    Validacao de tela |${dados}[Alert]|
+SCR6CCCCPRESTADOR-001:Fluxo Principal           
+# robot -v browser:chrome -t "SCR6CCCCPRESTADOR-001:Fluxo Principal" -d ./5-results/SCR6CCCCPRESTADOR-001 "3-tests/6-CONTROLADORIA/C_CC_PRESTADOR.robot"
+# robot -v browser:firefox -t "SCR6CCCCPRESTADOR-001:Fluxo Principal" -d ./5-results/SCR6CCCCPRESTADOR-001 "3-tests/6-CONTROLADORIA/C_CC_PRESTADOR.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CCCCPRESTADOR"
+    Acessar a tela "Controladoria>Repasse Médico>Consultas>Conta Corrente do Prestador"@nprint @las
+    Descrição do Prestador |${dados}[Prestador]||${dados}[DataInicial]||${dados}[DataFinal]|
+    
+    
+
+
 
