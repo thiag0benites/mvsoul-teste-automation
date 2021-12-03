@@ -38,4 +38,4 @@ SCR6COMTIPDET-001:Fluxo principal
     Preencher os inputs da tela |${dados}[fornecedor]|,|${dados}[contaContabil]|,|${dados}[contaCusto]|,|${dados}[contaContabilDespesa]|,|${dados}[tipoDocumento]|
     Preencher a tabela |${dados}[vlFaixa]|,|${dados}[vlPercentual]|,|${dados}[vlDeducao]|,|${dados}[vlDeducaoPendente]|
     Clicar no botao Salvar do menu
-    Valida cadastro realizado na tela
+    Valida cadastro realizado na tela |${dados}[mensagem]|
