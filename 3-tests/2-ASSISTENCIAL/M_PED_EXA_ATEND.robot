@@ -38,5 +38,4 @@ SCR2AMPEDEXAATEND001:Fluxo Principal
     Pesquise, selecione o paciente e clique no botao "Pedido" |${dados}[Paciente]|
     Preencha os Dados do Atendimento Peso |${dados}[Peso]| Altura |${dados}[Altura]| Convenio |${dados}[Convenio]| Plano |${dados}[Plano]| Prestador |${dados}[Prestador]| Setor |${dados}[Setor]| Tp Solicitacao |${dados}[Solicitacao]| Local de Coleta |${dados}[Coleta]| Data Coleta |${dados}[DtColeta]| Data Validade |${dados}[DtValidade]|
     Preencha os dados do exame a ser solicitado Exame Solicitado |${dados}[Exame]| Prestador Exame Solicitante |${dados}[PrestSolic]| Respostas |${dados}[Resp]|
-    Clique no botão "Conta Convenio"
-    
+    Clique no botao "Conta Convenio"

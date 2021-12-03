@@ -97,12 +97,8 @@ Preencha os dados do exame a ser solicitado Exame Solicitado |${VlExame}| Presta
     Click no Item     ${BtFilterResp} 
     Click no Item     ${BtOkResp}
     Click no Item     ${BalaoExaLiberado}
-Clique no botão "Conta Convenio"
+
+Clique no botao "Conta Convenio"
     Click no Item    ${BtContaConv}
     Sleep    2
     Click no Item    ${BtSalvaRegAmb}
- 
-    
-
-
-    
