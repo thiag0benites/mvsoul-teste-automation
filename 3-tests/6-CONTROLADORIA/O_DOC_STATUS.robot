@@ -21,7 +21,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/O_DOC_STATUS_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -38,6 +38,4 @@ SCR6CODOCSTATUS-001:Status de documentos
     Validar Acesso a Tela |${dados}[nomeTela]| 
     Preencher codigo e Validar |${dados}[codigo]|
     Preencher observacao e Validar |${dados}[observacao]|
-    Alterar data |${dados}[dtVencimento]| e validar mensagem |${dados}[mensagemSucesso]|
-    
-   
+    Alterar data |${dados}[dtVencimento]| e validar mensagem |${dados}[mensagemSucesso]| 

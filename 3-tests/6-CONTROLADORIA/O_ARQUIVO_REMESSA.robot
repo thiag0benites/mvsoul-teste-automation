@@ -21,7 +21,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/O_ARQUIVO_REMESSA_STEPS.ro
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -38,5 +38,3 @@ SCR6COARQUIVOREMESSA-001:Arquivo de Remessa
     Validar Acesso a Tela |${dados}[nomeTela]| 
     Preencher codigo e Validar |${dados}[codigo]|
     Processar e validar mensagem |${dados}[mensagemSucesso]|
-    
-   
