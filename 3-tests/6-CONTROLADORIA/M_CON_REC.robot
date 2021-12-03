@@ -40,13 +40,13 @@ SCR6MMCONREC-001:Fluxo Principal
     Acessa a Tela Pela Busca |M_CON_REC||Conta a Receber| @las
     Validar Acesso a Tela |Contas a Receber|
     
-    Preencher Processo , Data de Emissão, e Data de Lançamento |${dados}[Processo]| |${dados}[DtEmissao]| |${dados}[DtLancamento]|
+    Preencher Processo , Data de Emissao, e Data de Lancamento |${dados}[Processo]| |${dados}[DtEmissao]| |${dados}[DtLancamento]|
     
-    Preencher Tipo de Documento, Cliente, Número do Documento, Série e Conta Contabil |${dados}[TpDocumento]| |${dados}[Cliente]| |${dados}[NrDocumento]| |${dados}[Serie]| |${dados}[ContaContabil]|
+    Preencher Tipo de Documento, Cliente, Numero do Documento, Série e Conta Contabil |${dados}[TpDocumento]| |${dados}[Cliente]| |${dados}[NrDocumento]| |${dados}[Serie]| |${dados}[ContaContabil]|
   
     Informar Valor Bruto , Desconto e Acrescimo |${dados}[VlBruto]| |${dados}[Desconto]| |${dados}[VlDesconto]| |${dados}[Acrescimo]| |${dados}[VlAcrescimo]|
 
-    Informar Hist Padrão e Observação |${dados}[HistPadrao]| |${dados}[Observacao]|
+    Informar Hist Padrao e Observacao |${dados}[HistPadrao]| |${dados}[Observacao]|
 
     Informar Parcela |${dados}[Parcela]|
 

@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# Autor: Andréa Rodrigues
+# Autor: Alan Patriota
 # Decrição: Passos da tela de  Cadastro de Contas a Receber
 ##################################################################################################################################
 *** Settings ***
@@ -9,12 +9,12 @@ Resource          ../../2-pages/6-CONTROLADORIA/M_CON_REC_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Processo , Data de Emissão, e Data de Lançamento |${Processo}| |${DtEmissao}| |${DtLancamento}|
+Preencher Processo , Data de Emissao, e Data de Lancamento |${Processo}| |${DtEmissao}| |${DtLancamento}|
     Preencher Campo                     ${CampoProcesso}                     ${Processo}
     Preencher Campo                     ${CampoDtEmissao}                    ${DtEmissao} 
     Preencher Campo                     ${CampoDTLancamento}                 ${DtLancamento}
 
-Preencher Tipo de Documento, Cliente, Número do Documento, Série e Conta Contabil |${TpDocumento}| |${Cliente}| |${NrDocumento}| |${Serie}| |${ContaContabil}|
+Preencher Tipo de Documento, Cliente, Numero do Documento, Serie e Conta Contabil |${TpDocumento}| |${Cliente}| |${NrDocumento}| |${Serie}| |${ContaContabil}|
 
     Preencher Campo                     ${CampoTpDocumento}                   ${TpDocumento}
     Preencher Campo                     ${CampoCliente}                       ${Cliente}
@@ -32,7 +32,7 @@ Informar Valor Bruto , Desconto e Acrescimo |${VlBruto}| |${Desconto}| |${VlDesc
     Sleep   2
     Preencher Campo                     ${CampoVlAcrescimo}                 ${VlAcrescimo}    
 
-Informar Hist Padrão e Observação |${HistPadrao}| |${Observacao}|
+Informar Hist Padrao e Observacao |${HistPadrao}| |${Observacao}|
      
     Preencher Campo                     ${CampoHistPadrao}                  ${HistPadrao}
     Preencher Campo                     ${CampoObservacao}                  ${Observacao} 
