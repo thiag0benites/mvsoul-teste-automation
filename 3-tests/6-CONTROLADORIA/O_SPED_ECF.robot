@@ -23,18 +23,18 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-#${suite}          o_gerdis_p321
+${suite}          o_sped_ecf
  # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR6COSPEDECF-001:Fluxo Principal           
 # robot -v browser:chrome -t "SCR6COSPEDECF-001:Fluxo Principal" -d ./5-results/SCR6COSPEDECF-001 "3-tests/6-CONTROLADORIA/O_SPED_ECF.robot"
 # robot -v browser:firefox -t "SCR6COSPEDECF-001:Fluxo Principal" -d ./5-results/SCR6COSPEDECF-001 "3-tests/6-CONTROLADORIA/O_SPED_ECF.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COSPEDECF"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COSPEDECF-001"
     Acessar a tela "Controladoria>Fiscal>Geração>SPEDs>SPED ECF>Geração do SPED Contábil Fiscal"@nprint @las
-    Dados Paciente
-    Validacao de tela
+    Dados Paciente |${dados}[DataFinal]||${dados}[DataInicial]|
+    Validacao de tela |${dados}[MensagemSucesso]|
     
 
 

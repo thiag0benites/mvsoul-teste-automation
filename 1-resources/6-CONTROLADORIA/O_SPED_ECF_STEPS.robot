@@ -11,14 +11,14 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_SPED_ECF_PAG
 
 *** Keywords ***
 
-Dados Paciente
-    Preencher campo                           ${CampoDataFinal}        30/11/2021
-    Preencher campo                           ${CampoDataInicial}      01/11/2021
+Dados Paciente |${DataFinal}||${DataInicial}|
+    Preencher campo                           ${CampoDataFinal}        ${DataFinal}
+    Preencher campo                           ${CampoDataInicial}      ${DataInicial}
     Click no Item                             ${btnGerarSped}
 
 
-Validacao de tela
-    Valida Mensagem                           ${Alerta}    Arquivos SPED_ECF
+Validacao de tela |${MensagemSucesso}|
+    Valida Mensagem                           ${Alerta}    ${MensagemSucesso}
     Click no Item                             ${btnOK}
     
 
