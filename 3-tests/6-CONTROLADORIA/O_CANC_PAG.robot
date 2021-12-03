@@ -45,7 +45,6 @@ SCR6MOCANCPAG-001:Cancelamento de Cheque
     Selecionar Data |${dados}[Data]| 
     Confirmar e Excluir |${dados}[MsgConfirmaExc]| |${dados}[MensagemSucesso]|
 
-*** Test Case ***
 SCR6MOCANCPAG-002:Cancelamento de Bordero
 # robot -v browser:chrome -t "SCR6MOCANCPAG-002:Cancelamento de Bordero" -d ./5-results/SCR6MOCANCPAG-002 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
 # robot -v browser:firefox -t "SCR6MOCANCPAG-002:Cancelamento de Bordero" -d ./5-results/SCR6MOCANCPAG-002 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
