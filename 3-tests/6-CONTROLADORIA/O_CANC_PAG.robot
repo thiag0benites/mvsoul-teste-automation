@@ -59,5 +59,81 @@ SCR6MOCANCPAG-002:Cancelamento de Bordero
     Selecionar Data |${dados}[Data]| 
     Confirmar e Excluir |${dados}[MsgConfirmaExc]| |${dados}[MensagemSucesso]|  
 
+
+SCR6MOCANCPAG-004:Cancelamento de Debito
+# robot -v browser:chrome -t "SCR6MOCANCPAG-004:Cancelamento de Debito" -d ./5-results/SCR6MOCANCPAG-004 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+# robot -v browser:firefox -t "SCR6MOCANCPAG-004:Cancelamento de Debito" -d ./5-results/SCR6MOCANCPAG-004 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MOCANCPAG-004"
     
+    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Pagar>Cancelamentos>Pagamentos"@nprint @las
+    Acessa a Tela Pela Busca |O_CANC_PAG||Pagamentos| @las
+    Validar Acesso a Tela |Cancelamento de pagamentos|
+    
+    Selecionar Debito
+    Selecionar DataIni |${dados}[Data]| 
+    Selecionar Motivo |${dados}[Motivo]| 
+    Selecionar na Lista 
+    Excluir |${dados}[MensagemSucesso]|  
+
+SCR6MOCANCPAG-006:Cancelamento de TED
+# robot -v browser:chrome -t "SCR6MOCANCPAG-006:Cancelamento de TED" -d ./5-results/SCR6MOCANCPAG-006 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+# robot -v browser:firefox -t "SCR6MOCANCPAG-006:Cancelamento de TED" -d ./5-results/SCR6MOCANCPAG-006 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MOCANCPAG-006"
+    
+    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Pagar>Cancelamentos>Pagamentos"@nprint @las
+    Acessa a Tela Pela Busca |O_CANC_PAG||Pagamentos| @las
+    Validar Acesso a Tela |Cancelamento de pagamentos|
+    
+    Selecionar TED
+    Selecionar DataIni |${dados}[Data]| 
+    Selecionar Motivo |${dados}[Motivo]|
+    Selecionar BorderoTed |${dados}[Cheque]| 
+    Selecionar na Lista 
+    Excluir |${dados}[MensagemSucesso]|  
+
+SCR6MOCANCPAG-007:Cancelamento de Baixa Contabil
+# robot -v browser:chrome -t "SCR6MOCANCPAG-007:Cancelamento de Baixa Contabil" -d ./5-results/SCR6MOCANCPAG-007 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+# robot -v browser:firefox -t "SCR6MOCANCPAG-007:Cancelamento de Baixa Contabil" -d ./5-results/SCR6MOCANCPAG-007 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MOCANCPAG-007"
+    
+    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Pagar>Cancelamentos>Pagamentos"@nprint @las
+    Acessa a Tela Pela Busca |O_CANC_PAG||Pagamentos| @las
+    Validar Acesso a Tela |Cancelamento de pagamentos|
+    
+    Selecionar Baixa
+    Selecionar DataIni |${dados}[Data]| 
+    Selecionar Motivo |${dados}[Motivo]|
+    Selecionar na Lista 
+    Excluir |${dados}[MensagemSucesso]|
+
+SCR6MOCANCPAG-008:Cancelamento de Desconto
+# robot -v browser:chrome -t "SCR6MOCANCPAG-008:Cancelamento de Desconto" -d ./5-results/SCR6MOCANCPAG-008 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+# robot -v browser:firefox -t "SCR6MOCANCPAG-008:Cancelamento de Desconto" -d ./5-results/SCR6MOCANCPAG-008 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MOCANCPAG-008"
+    
+    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Pagar>Cancelamentos>Pagamentos"@nprint @las
+    Acessa a Tela Pela Busca |O_CANC_PAG||Pagamentos| @las
+    Validar Acesso a Tela |Cancelamento de pagamentos|
+    
+    Selecionar Desconto
+    Selecionar DataIni |${dados}[Data]| 
+    Selecionar Motivo |${dados}[Motivo]|
+    Selecionar na Lista 
+    Excluir |${dados}[MensagemSucesso]|   
+
+SCR6MOCANCPAG-010:Cancelamento de Dinheiro
+# robot -v browser:chrome -t "SCR6MOCANCPAG-010:Cancelamento de Dinheiro" -d ./5-results/SCR6MOCANCPAG-010 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+# robot -v browser:firefox -t "SCR6MOCANCPAG-010:Cancelamento de Dinheiro" -d ./5-results/SCR6MOCANCPAG-010 "3-tests/6-CONTROLADORIA/O_CANC_PAG.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MOCANCPAG-010"
+    
+    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Pagar>Cancelamentos>Pagamentos"@nprint @las
+    Acessa a Tela Pela Busca |O_CANC_PAG||Pagamentos| @las
+    Validar Acesso a Tela |Cancelamento de pagamentos|
+    
+    Selecionar Dinheiro
+    Selecionar DataIni |${dados}[Data]| 
+    Selecionar Motivo |${dados}[Motivo]|
+    Selecionar na Lista 
+    Excluir |${dados}[MensagemSucesso]|   
+  
   
