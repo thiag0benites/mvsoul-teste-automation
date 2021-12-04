@@ -6,7 +6,6 @@
 ### Configurações iniciais
 Resource    ../../Config.robot
 
-
 *** Variables ***
 ${BtnLimpar}                    xpath=//a[@title="Limpar"]
 ${BtnCodigo}                    xpath=//button[@class="ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon"]//span[@class="ui-button-icon ui-icon mv-basico-reticencias"]

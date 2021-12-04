@@ -10,79 +10,174 @@ Resource          ../../2-pages/6-CONTROLADORIA/M_CONTRATO_ADIANT_RECEB_PAGE.rob
 Resource          ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords ***
-Informar a empresa que sera responsavel pelo contrato de adiantamento
+Informar a empresa que sera responsavel pelo contrato de adiantamento |${FiltroEmpresa}|
     Click no Item                    ${BtnEmpresa}  
-    Preencher campo                  ${Filtro}                    5
+    Preencher campo                  ${Filtro}                    ${FiltroEmpresa}
     Click no Item                    ${BtnFiltro} 
     Click no Item                    ${BtnOk} 
 
-Selecionar o tipo de adiantamento que sera realizado Financeiro
+Selecionar o <tipo de adiantamento que sera realizado Financeiro> |${TipoAdiantamento}|, <tipo de contratante> |${TipoContratante}|, <contratante> |${SelecionarPessoa}|
+
+#Selecionar o tipo de adiantamento que sera realizado Financeiro
     #Preencher campo                  ${ComboxAdiantamento}                Financeiro  
-    Seleciona Item Combobox          ${ComboxAdiantamento}                Financeiro
+    Seleciona Item Combobox          ${ComboxAdiantamento}                ${TipoAdiantamento}
     Click no Item                    ${ComboboxContratante} 
 
-Selecionar o tipo de contratante
-    Seleciona Item Combobox           ${ComboboxContratante}               Paciente
+#Selecionar o tipo de contratante
+    Seleciona Item Combobox           ${ComboboxContratante}              ${TipoContratante}
 
-Selecionar o contratante
+#Selecionar o contratante
     Click no Item                      ${BtnContratante} 
-    Preencher campo                    ${Filtro}                            abadia
+    Preencher campo                    ${Filtro}                           ${SelecionarPessoa}
     Click no Item                      ${BtnOk} 
 
-Atribuir uma descricao ao contrato e tambem atribuir um numero de contrato
-    Preencher campo                    ${DescricaoContrato}                 Telefone
-    Preencher campo                    ${NumeroContrato}                     113
 
-Atribuir uma data de vencimento de pagamento do contrato
-    Preencher campo                    ${DiaVencimento}                       5
+Atribuir <uma descricao ao contrato e tambem atribuir um numero de contrato> |${CaracContrato}| |${NrContrato}|, <uma data de vencimento de pagamento do contrato> |${Vencimento}|, <da forma de pagamento> |${FormaPgto}| |${ValorContrato2}| |${Data}|
+#Atribuir uma descricao ao contrato e tambem atribuir um numero de contrato
+    Preencher campo                    ${DescricaoContrato}                 ${CaracContrato}
+    Preencher campo                    ${NumeroContrato}                    ${NrContrato}
 
-Atribuir da forma de pagamento
+#Atribuir uma data de vencimento de pagamento do contrato
+    Preencher campo                    ${DiaVencimento}                     ${Vencimento}
+
+#Atribuir da forma de pagamento
     Click no Item                       ${BtnPgto} 
-    Preencher campo                     ${Filtro}                              3
+    Preencher campo                     ${Filtro}                            ${FormaPgto}
     Click no Item                       ${BtnFiltro} 
     Click no Item                       ${BtnOk} 
-    Preencher campo                     ${ValorContrato}                        5
-    Preencher campo                     ${DataContrato}                         02/12/2021
+    Preencher campo                     ${ValorContrato}                     ${ValorContrato2}
+    Preencher campo                     ${DataContrato}                      ${Data}
 
-Clicar no icone de salvar do menu principal
+
+Clicar no <icone de salvar do menu principal> |${MsgVerificada}|, <botao Gerar Contas a Receber>
+#Clicar no icone de salvar do menu principal
     Click Elemento por titulo            Salvar
-    Valida Mensagem                      ${MsgValidacao}                  Registros gravados com sucesso
+    Valida Mensagem                      ${MsgValidacao}                      ${MsgVerificada}
 
-Clicar no botao Gerar Contas a Receber
+#Clicar no botao Gerar Contas a Receber
     Click no Item                        ${BtnGerar}  
 
-Cadastrar Conta contabil
+
+Cadastrar <Conta contabil> |${FiltroContabil}|, <Tipo de documento> |${TipoDoc}|, <moeda a ser utilizada> |${Moeda}|, <o setor a conta contabil a conta de custo e o valor do rateio> |${TipoConta}| |${ValorRateio2}|
+#Cadastrar Conta contabil
     Click no Item                        ${BtnContaContabil} 
-    Preencher campo                      ${Filtro}                              2
+    Preencher campo                      ${Filtro}                              ${FiltroContabil}
     Click no Item                        ${BtnFiltro} 
     Click no Item                        ${BtnOk} 
 
-Cadastrar Tipo de documento
+#Cadastrar Tipo de documento
     Click no Item                         ${BtnDoc}
-    Preencher campo                       ${Filtro}                              bol
+    Preencher campo                       ${Filtro}                              ${TipoDoc}
     Click no Item                         ${BtnFiltro} 
     Click no Item                         ${BtnOk} 
 
-Cadastrar moeda a ser utilizada
+#Cadastrar moeda a ser utilizada
     Click no Item                         ${BtnMoeda}
-    Preencher campo                       ${Filtro}                              1
+    Preencher campo                       ${Filtro}                              ${Moeda}
     Click no Item                         ${BtnFiltro} 
     Click no Item                         ${BtnOk} 
 
-Cadastrar o setor a conta contabil a conta de custo e o valor do rateio
+#Cadastrar o setor a conta contabil a conta de custo e o valor do rateio
     Click no Item                         ${LinhaSetor}
     Click no Item                         ${BtnCompatilha}     
     Click no Item                         ${FiltroSetor} 
     Click no Item                         ${BtnOk} 
     Click no Item                         ${LinhaConta}  
     Click no Item                         ${BtnCompatilha} 
-    Preencher campo                       ${Filtro}                              ener
+    Preencher campo                       ${Filtro}                              ${TipoConta}
     Click no Item                         ${BtnOk} 
     Click no Item                         ${LinhaRateio} 
-    Preencher campo                       ${ValorRateio}                          5
+    Preencher campo                       ${ValorRateio}                         ${ValorRateio2}
 
-Clicar no botao Concluir
+Clicar no botao Concluir |${MsgValidada}|
     Click no Item                         ${BtnConcluir}  
-    Valida Mensagem                       ${MsgUsuario}                            gerada com sucesso!
+    Valida Mensagem                       ${MsgUsuario}                           ${MsgValidada}
     Click no Item                         ${BtnOk2} 
     Sleep                                    3    
+
+
+
+###############################################################################################################
+
+Informar a empresa que sera responsavel pelo contrato de adiantamento |${FiltroEmpresa}|
+    Click no Item                    ${BtnEmpresa}  
+    Preencher campo                  ${Filtro}                    ${FiltroEmpresa}
+    Click no Item                    ${BtnFiltro} 
+    Click no Item                    ${BtnOk} 
+
+
+
+
+Selecionar o <tipo de adiantamento que sera realizado Financeiro> |${TipoAdiantamento}|, <tipo de contratante> |${TipoContratante}|, <contratante> |${SelecionarPessoa}|
+#Selecionar o tipo de adiantamento que sera realizado Financeiro 
+    Seleciona Item Combobox          ${ComboxAdiantamento}          ${TipoAdiantamento}
+    Click no Item                    ${ComboboxContratante}
+
+#Selecionar o tipo de contratante
+    Seleciona Item Combobox           ${ComboboxContratante}         ${TipoContratante}
+
+#Selecionar o contratante
+    Click no Item                      ${BtnContratante} 
+    Preencher campo                    ${Filtro}                      ${SelecionarPessoa}
+    Click no Item                      ${BtnOk} 
+
+Atribuir uma descricao ao contrato e tambem atribuir um numero de contrato |${CaracContrato}| |${NrContrato}|
+    Preencher campo                    ${DescricaoContrato}                 ${CaracContrato}
+    Preencher campo                    ${NumeroContrato}                    ${NrContrato}
+
+Selecionar o pacote que esta sendo contratado pelo paciente e atribuir forma de pagamento |${Pacote}|
+    Click no Item                      ${BtnPacote} 
+    Preencher campo                    ${Filtro}                           ${Pacote}
+    Click no Item                      ${BtnFiltro} 
+    Click no Item                      ${BtnOk} 
+    
+Atribuir uma data de vencimento de pagamento do contrato |${Vencimento}| |${Data}|
+    Preencher campo                    ${DiaVencimento}                    ${Vencimento}
+    Preencher campo                    ${DataContrato}                     ${Data}
+
+Clicar no icone de salvar do menu principal |${MsgVerificada}|
+    Click Elemento por titulo            Salvar
+    Valida Mensagem                      ${MsgValidacao}                    ${MsgVerificada}
+
+Clicar no botao Gerar Contas a Receber
+    Click no Item                        ${BtnGerar}
+
+Cadastrar <Conta contabil> |${FiltroContabil}|, <Tipo de documento> |${TipoDoc}|, <moeda a ser utilizada> |${Moeda}|, <o setor a conta contabil a conta de custo e o valor do rateio> |${TipoConta}| |${ValorRateio2}|
+    Click no Item                        ${BtnContaContabil} 
+    Preencher campo                      ${Filtro}                           ${FiltroContabil}
+    Click no Item                        ${BtnFiltro} 
+    Click no Item                        ${BtnOk} 
+
+#Cadastrar Tipo de documento |${TipoDoc}|
+    Click no Item                         ${BtnDoc}
+    Preencher campo                       ${Filtro}                           ${TipoDoc}
+    Click no Item                         ${BtnFiltro} 
+    Click no Item                         ${BtnOk} 
+
+#Cadastrar moeda a ser utilizada |${Moeda}|
+    Click no Item                         ${BtnMoeda}
+    Preencher campo                       ${Filtro}                              ${Moeda}
+    Click no Item                         ${BtnFiltro} 
+    Click no Item                         ${BtnOk} 
+
+#Cadastrar o setor a conta contabil a conta de custo e o valor do rateio |${TipoConta}| |${ValorRateio2}|
+    Click no Item                         ${LinhaSetor}
+    Click no Item                         ${BtnCompatilha}     
+    Click no Item                         ${FiltroSetor} 
+    Click no Item                         ${BtnOk} 
+    Click no Item                         ${LinhaConta}  
+    Click no Item                         ${BtnCompatilha} 
+    Preencher campo                       ${Filtro}                                 ${TipoConta}
+    Click no Item                         ${BtnOk} 
+    Click no Item                         ${LinhaRateio} 
+    Preencher campo                       ${ValorRateio}                            ${ValorRateio2}
+
+Clicar no botao Concluir |${MsgValidada}|
+    Click no Item                         ${BtnConcluir}  
+    Valida Mensagem                       ${MsgUsuario}                             ${MsgValidada}
+    Click no Item                         ${BtnOk2} 
+    Sleep                                    2  
+    
+
+
+
