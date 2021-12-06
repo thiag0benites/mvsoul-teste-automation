@@ -11,7 +11,8 @@ ${campoCodigo}              xpath=//input[@id="inp:cdConPag"]
 ${btnProrrogar}             xpath=//button[@id="CGM_TAB_1_PAGE_1_butProrrogar"]
 
 ${campoNovaDtVencimento}    xpath=//input[@id="inp:dtVencimentoNova"]
-${campoMotivo}              xpath=//input[@id="campoMotivo"]
+${campoMotivo}              xpath=//input[@id="inp:cdMotivoProrrogacao"]
+${campoMotivoProrrogacao}   xpath=//div[@id="dsMotivoProrrogacao"]
 
 ${btnProrrogar2}             xpath=//button[@id="btnProrrogar"]
 

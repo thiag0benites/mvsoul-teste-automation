@@ -16,15 +16,16 @@ Preencher codigo e Validar |${codigo}|
     Validar Elemento Pelo Titulo    ${codigo}
 
 Preencher novo vencimento e Validar |${novaDtVencimento}|
-    Click no Item    ${btnProrrogar} 
+    Click no Item    ${btnProrrogar}    
     Preencher campo    ${campoNovaDtVencimento}  ${novaDtVencimento} 
     Send keys  enter
     Validar Elemento Pelo Titulo    ${novaDtVencimento}
 
-Preencher motivo e Validar |${motivo}|
-    Preencher campo    ${campoMotivo}  ${motivo} 
+Preencher motivo|${motivo}| e Validar|${motivoProrrogacao}|
+    Preencher campo  ${campoMotivo}     ${motivo} 
     Send keys  enter
-    Validar Elemento Pelo Titulo    ${motivo}
+    Validar Informacao Item     ${campoMotivoProrrogacao}   ${motivoProrrogacao}
+    # Validar Elemento Pelo Titulo    ${motivoProrrogacao}
 
 Prorrogar e validar mensagem |${mensagemSucesso}|
     Clicar Botao e Validar Mensagem    ${btnProrrogar2}    ${MensagemToast}    ${mensagemSucesso}
@@ -34,3 +35,4 @@ Clicar Botao e Validar Mensagem
     [Arguments]    ${Botao}    ${MensagemRecebida}    ${MensagemEsperada}
     Click no Item    ${Botao}
     Valida Mensagem    ${MensagemRecebida}    ${MensagemEsperada}
+    Sleep    1
