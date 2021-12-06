@@ -17,4 +17,4 @@ Preencher os campos data inicial e data final |${dataInicial}|,|${dataFinal}|
     Press Keys         ${campoDataFinal}            ENTER
 
 Validar Resultado da Pesquisa realizada |${dado}|
-    Validar Elemento Pelo Titulo            ${dado}   
+    Validar Elemento Pelo Titulo            ${dado}
