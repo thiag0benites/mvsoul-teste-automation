@@ -9,6 +9,43 @@ Resource          ../../Config.robot
 *** Variable ***
 
 
+
+
+
+${CheckImportaMovTranCaixa}                 xpath=//button[@id="inp:snContabilizaTransfCaixa_btn"]
+${CheckContrLanPassHon}                     xpath=//button[@id="inp:snHonorarioPassivo_btn"]
+${CheckContrAntAbRec}                       xpath=//button[@id="inp:snContabilizaCaucaoConPag_btn"]
+
+${CheckImportaMvDepAnt}                     xpath=//button[@id="inp:snContabilizaCaucaoAtivoCx"]
+${CheckEntrDepPagAntec}                     xpath=//button[@id="inp:snContabilizaCaucaoAtivoCx_btn"]
+
+${CheckImpEmprEsto}                         xpath=//button[@id="inp:snContabilizaEmprestimos"]
+${CheckImpManEst}                           xpath=//button[@id="inp:snContabilizaManipulacao_btn"]
+
+${FiltroRelat}                              xpath=//div[@data-member="TP_FILTRO_PADRAO_REL"]/button
+
+${CheckCCEspCanForComp}                     xpath=//button[@id="inp:snCtCtbCancComp_btn"]
+${CheckCadClasContAut}                      xpath=//button[@id="inp:snCadastraClassificacao_btn"]
+${CheckUsConCadReg}                         xpath=//button[@id="inp:snUsuarioCadastraRegraFfcv"]
+
+${FiltValidLot}                             xpath=//div[@data-member="TP_VALIDA_INTEGRIDADE_LOT_FCCT"]/button
+
+${CheckPermiteLancAtivo}                     xpath=//button[@id="inp:snAtivoCpCliente"]
+${CheckPermitApropCenCus}                    xpath=//button[@id="inp:snLctoAtvPasvSetor_btn"]
+${ChekImpedMovSet}                           xpath=//button[@id="inp:snImpSetorNaoAceitaLanc_btn"]
+${CheckPermitCriac}                          xpath=//button[@id="inp:snPermitePrevContabilizavel_btn"]
+
+
+
+
+
+
+
+//div[@class="slick-cell b1 f1 selected"]
+
+
+
+
 ${CampoProcesso}                            xpath=//input[@id="inp:cdProcesso"]
 ${CampoDtEmissao}                           xpath=//input[@id="inp:dtEmissao"]
 ${CampoDTLancamento}                        xpath=//input[@id="inp:dtLancamento"]
