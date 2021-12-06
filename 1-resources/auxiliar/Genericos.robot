@@ -225,16 +225,9 @@ Conta Linhas Tabela
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
 
-Clicar no botao Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
-
 Clicar no botao Adicionar
     Wait Until Element Is Visible       ${btnAdicionar}     120
     Click Element     ${btnAdicionar}
-
-Clicar no botao Pesquisar
-    Click no Item               ${btnPesquisar}   
 
 Clicar no botao Executar 
     Click no Item            ${btnExecute} 

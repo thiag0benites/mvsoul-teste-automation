@@ -55,3 +55,7 @@ Preencher a tabela |${vlFaixa}|,|${vlPercentual}|,|${vlDeducao}|,|${vlDeducaoPen
 
 Valida cadastro realizado na tela |${mensagem}|
     Valida Mensagem        ${mensagemNotification}                ${mensagem}
+
+Clicar no botao Salvar do menu
+    Click Element     ${btnSalvar}
+    Sleep             60

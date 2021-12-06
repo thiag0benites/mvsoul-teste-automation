@@ -22,3 +22,7 @@ Validar mensagem ao salvar |${mensagem}|
 Clicar no botao adicionar
     Click no Item    ${buttonAdicionar}
     Sleep    2
+    
+Clicar no botao Salvar do menu
+    Click Element     ${btnSalvar}
+    Sleep             60
