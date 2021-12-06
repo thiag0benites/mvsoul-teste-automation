@@ -33,5 +33,8 @@ SCR6COMLAYOUTARQUIVO-001:Fluxo principal
 # robot -v browser:chrome -t "SCR6COMLAYOUTARQUIVO-001:Fluxo principal" -d ./5-results/M_LAYOUT_ARQUIVO "3-tests/6-CONTROLADORIA/M_LAYOUT_ARQUIVO.robot"
 # robot -v browser:firefox -t "SCR6COMLAYOUTARQUIVO-001:Fluxo principal" -d ./5-results/M_LAYOUT_ARQUIVO "3-tests/6-CONTROLADORIA/M_LAYOUT_ARQUIVO.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COMLAYOUTARQUIVO-001"
-    Acessar a tela "Controladoria>Intercâmbio Eletrônico de Arquivos>Arquivos>Bancos>Remessa>Arquivos de Pagamentos e Cobranças"@nprint @las
-    
+    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Tabelas>Layout de Arquivos"@nprint @las
+    Preencher os campos |${dados}[codigo]|,|${dados}[descricao]|,|${dados}[banco]|,|${dados}[versao]|
+    Marcar Checkbox da tela 
+    Clicar no botao Salvar do menu
+    Validar cadastro realizado do Layout |${dados}[mensagem]|
