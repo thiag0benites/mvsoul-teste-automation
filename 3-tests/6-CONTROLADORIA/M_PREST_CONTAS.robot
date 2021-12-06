@@ -32,7 +32,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/M_PREST_CONTAS_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown    Encerra sessao
+Test Teardown    Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -63,15 +63,9 @@ SMF-7318 : Prestar contas de <Fornecedor> com recebimento de dinheiro
     Efetuar Prestacao
     Preenche informacoes Para recebimento de Dinheiro "Tipo Documento|DIVERSOS|", "Numero Documento|1001|", "Conta Custo|MATERIAIS E MEDICAMENTOS|", "Caixa|TESTE|"
 
-
-
 SMF-7232 : Prestar contas de <Fornecedor> com Notas Fiscais
 # robot -v browser:chrome -t "SMF-7232 : Prestar contas de <Fornecedor> com Notas Fiscais" -d ./5-results/SMF-7232 "3-tests/6-CONTROLADORIA/M_PREST_CONTAS.robot"
 # robot -v browser:firefox -t "SMF-7232 : Prestar contas de <Fornecedor> com Notas Fiscais" -d ./5-results/SMF-7232 "3-tests/6-CONTROLADORIA/M_PREST_CONTAS.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Prestação de Contas>Fornecedor"@nprint @las
-
-
-
-
-
-
+    Pesquisar Atendimento
+    Seleciona CheckBox de Notas e Confirma

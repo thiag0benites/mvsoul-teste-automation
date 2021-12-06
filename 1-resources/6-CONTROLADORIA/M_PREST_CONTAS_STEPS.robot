@@ -43,6 +43,22 @@ Preenche informacoes Para recebimento de Dinheiro "Tipo Documento|${TipoDoc}|", 
     Validar Item                              ${ValidMsg}           
 
 
+Pesquisar Atendimento
+    Click no Item                             ${BtnPesquisar}     
+    Click no Item                             ${BtnExecConsulta}
+    Click no Item                             ${BtnSeguinte}
+    Click no Item                             ${BtnSeguinte}
+    Click no Item                             ${BtnNotasFornec}
+    Click no Item                             ${BtnSelecNotas}
+    Click no Item                             ${ChcBoxInativo}
+
+Seleciona CheckBox de Notas e Confirma
+    Click no Item                             ${ChcBoxNotas1}
+    Click no Item                             ${ChcBoxNotas2}
+    Click no Item                             ${ChcBoxNotas3}
+    Click no Item                             ${BtnConfirmar}
+    Validar Pop-Pup de Alerta e Clicar        ${ValidPrestConta}                 ${BtnOkAlerta}
+    Validar Pop-Pup de Alerta e Clicar        ${ValidAlertaImpressao}            ${BtnConfImpressao}
 
 Efetuar Prestacao
     Click no Item                             ${BtnEfetuarPrest}

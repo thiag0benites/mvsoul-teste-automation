@@ -16,6 +16,7 @@ ${CampoNroDoc}                                        xpath=//input[@id='inp:nrD
 
 ### BOTAO ###
 ${BtnExecConsulta}                                    xpath=//li[@id='tb-execute']
+${BtnPesquisar}                                       xpath=//li[@id='tb-search']
 ${BtnDadosDespesa}                                    xpath=//button[@id='btnDadosDespesa']
 ${BtnDtPrestacao}                                     xpath=//button[@class='ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon ui-state-default']
 ${BtnSetor}                                           xpath=//*[@id="cdSetor1"]/button
@@ -28,7 +29,18 @@ ${BtnTipoDocumento}                                   xpath=//*[@id="cdTpDocto"]
 ${BtnContaCusto}                                      xpath=//*[@id="cdConCus"]/button
 ${BtnCaixa}                                           xpath=//*[@id="cdCaixa"]/button
 ${BtnConfirmar}                                       xpath=//button[@id='btnConfirmar']
+${BtnSeguinte}                                        xpath=//li[@id='tb-record-next']
+${BtnNotasFornec}                                     xpath=//button[@id='btnNotaFornec']
+${BtnSelecNotas}                                      xpath=//button[@id='btnSelecNota']
+${ChcBoxInativo}                                      xpath=//button[@data-member='SN_BAIXAR']
+${ChcBoxNotas1}                                       xpath=//button[@data-row='8']
+${ChcBoxNotas2}                                       xpath=//button[@data-row='9']
+${ChcBoxNotas3}                                       xpath=//button[@data-row='10']
+${BtnOkAlerta}                                        xpath=//button[@class='btn btn-primary']
+${BtnConfImpressao}                                   xpath=//button[@class='btn btn-primary'][contains(text(),"Não")]
 
 ### DIVERSOS ###
 ${ValidBtInativo}                                     xpath=//a[@data-action='SEARCH'][@class='ui-state-disabled']
 ${ValidMsg}                                           xpath=//p[@class='notifications-item-text'][contains(text(),"Prestação de Contas Realizada com Sucesso. Gerou a Conta a Receber")]
+${ValidPrestConta}                                    xpath=//p[@class='notifications-item-text'][contains(text(),"Prestação realizada com sucesso!")]
+${ValidAlertaImpressao}                               xpath=//p[@class='notifications-item-text'][contains(text(),"Deseja imprimir relatório?")]
