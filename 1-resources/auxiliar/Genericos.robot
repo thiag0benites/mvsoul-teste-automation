@@ -233,7 +233,7 @@ Clicar no botao Adicionar
     Wait Until Element Is Visible       ${btnAdicionar}     120
     Click Element     ${btnAdicionar}
 
-Clicar no botão Pesquisar
+Clicar no botao Pesquisar
     Click no Item               ${btnPesquisar}   
 
 Clicar no botao Executar 
