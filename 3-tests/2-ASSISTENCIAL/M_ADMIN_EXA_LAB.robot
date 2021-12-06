@@ -40,5 +40,3 @@ SCR2AMADMINEXALAB-001:Fluxo Principal
     Consultar Atendimento |${dados}[Atendimento]|
     Clicar no Pedido
     Excluir pelo Motivo |${dados}[MensagemExclusao]| |${dados}[MensagemExclusaoConfirma]| |${dados}[Motivo]|
-
-

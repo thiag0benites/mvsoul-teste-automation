@@ -1,10 +1,10 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Passos da tela de  Cadastro de Contas a Receber
+# Decrição: Passos da tela de  Configuração do Sistema Contábil
 ##################################################################################################################################
 *** Settings ***
 #### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/6-CONTROLADORIA/M_CON_REC_PAGE.robot
+Resource          ../../2-pages/6-CONTROLADORIA/CONFIG_FCCT_PAGE.robot
 
 *** Variable ***
 

@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Elementos e metodos da página de  Cadastro de Contas a Receber
+# Decrição: Elementos e metodos da página de  Configuração do Sistema Contábil
 ###################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
