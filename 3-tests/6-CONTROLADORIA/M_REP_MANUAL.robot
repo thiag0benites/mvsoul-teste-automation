@@ -18,7 +18,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/M_REP_MANUAL_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+# Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -30,6 +30,7 @@ ${dados}
 SMF-6503 : Realizar o Lancamento Manual de Repasse Medico
 # robot -v browser:chrome -t "SMF-6503 : Realizar o Lancamento Manual de Repasse Medico" -d ./5-results/SMF-6503 "3-tests/6-CONTROLADORIA/M_REP_MANUAL.robot"
 # robot -v browser:firefox -t "SMF-6503 : Realizar o Lancamento Manual de Repasse Medico" -d ./5-results/SMF-6503 "3-tests/6-CONTROLADORIA/M_REP_MANUAL.robot"
+
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6503"
     Acessar a tela "Controladoria>Repasse Médico>Repasse>Lançamento Manual"@nprint @las
     Clicar no botao [Buscar]
