@@ -9,7 +9,7 @@ Resource          ../../2-pages/6-CONTROLADORIA/M_CON_REC_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Processo , Data de Emissao, e Data de Lancamento |${Processo}| |${DtEmissao}| |${DtLancamento}|
+Preencher Processo, Data de Emissao, e Data de Lancamento |${Processo}| |${DtEmissao}| |${DtLancamento}|
     Preencher Campo                     ${CampoProcesso}                     ${Processo}
     Preencher Campo                     ${CampoDtEmissao}                    ${DtEmissao} 
     Preencher Campo                     ${CampoDTLancamento}                 ${DtLancamento}
@@ -22,7 +22,7 @@ Preencher Tipo de Documento, Cliente, Numero do Documento, Serie e Conta Contabi
     Preencher Campo                     ${CampoSerie}                         ${Serie}
     Preencher Campo                     ${CampoContaContabil}                 ${ContaContabil}
 
-Informar Valor Bruto , Desconto e Acrescimo |${VlBruto}| |${Desconto}| |${VlDesconto}| |${Acrescimo}| |${VlAcrescimo}|
+Informar Valor Bruto, Desconto e Acrescimo |${VlBruto}| |${Desconto}| |${VlDesconto}| |${Acrescimo}| |${VlAcrescimo}|
     Preencher Campo                     ${CampoVlBruto}                     ${VlBruto}
     Preencher Campo                     ${CampoDesconto}                    ${Desconto}
     Click no Item                       ${CampoVlBruto}
