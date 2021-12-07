@@ -3,11 +3,11 @@
 # Decrição: Testes da tela M_USU_MULTI_EMPRESA
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/M_USU_MULTI_EMPRESA "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/M_USU_MULTI_EMPRESA "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
 # firefox: robot -v browser:firefox -d ./5-results/M_USU_MULTI_EMPRESA "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/M_USU_MULTI_EMPRESA "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/M_USU_MULTI_EMPRESA "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/M_USU_MULTI_EMPRESA "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
 #################################################################################################################################################################
 *** Settings ***

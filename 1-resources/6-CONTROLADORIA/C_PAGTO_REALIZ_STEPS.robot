@@ -2,7 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/6-CONTROLADORIA/C_PAGTO_REALIZ_PAGE.robot
 
@@ -18,4 +17,4 @@ Preencher os campos data inicial e data final |${dataInicial}|,|${dataFinal}|
     Press Keys         ${campoDataFinal}            ENTER
 
 Validar Resultado da Pesquisa realizada |${dado}|
-    Validar Elemento Pelo Titulo            ${dado}   
+    Validar Elemento Pelo Titulo            ${dado}
