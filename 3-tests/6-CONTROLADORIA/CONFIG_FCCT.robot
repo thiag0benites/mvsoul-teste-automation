@@ -3,11 +3,11 @@
 # Decrição: Teste da tela    Configuração do Sistema Contábil
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\CONFIG_FCCT.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\CONFIG_FCCT.robot"
 # firefox: robot -v browser:firefox -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\CONFIG_FCCT.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\CONFIG_FCCT.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\CONFIG_FCCT.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\CONFIG_FCCT.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -34,7 +34,6 @@ SCR6MCONFIGFCCT-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MCONFIGFCCT-001"
     #Acessar a tela "Controladoria>Contabilidade>Configuração>Contabilidade"@nprint @las
     Acessa a Tela Pela Busca |CONFIG_FCCT||Contabilidade| @las
-    
     Testar Botoes do Bloco Financeiro
     Testar Botoes do Bloco Caixa
     Testar Botoes do Bloco Estoque
@@ -51,7 +50,6 @@ SCR6MCONFIGFCCT-002:Contabilizacao de Glosas
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MCONFIGFCCT-002"
     #Acessar a tela "Controladoria>Contabilidade>Configuração>Contabilidade"@nprint @las
     Acessa a Tela Pela Busca |CONFIG_FCCT||Contabilidade| @las
-    
     Testar Bloco Principal
     Testar Bloco Eventos de Contabilizacao de Glosas
     Testar Bloco Sistema de Auditoria de Glosas
@@ -63,7 +61,6 @@ SCR6MCONFIGFCCT-003:Contabilizacao de Pacotes
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MCONFIGFCCT-003"
     #Acessar a tela "Controladoria>Contabilidade>Configuração>Contabilidade"@nprint @las
     Acessa a Tela Pela Busca |CONFIG_FCCT||Contabilidade| @las
-    
     Preencher Eventos de Contabilizacao |${dados}[ContCred]| |${dados}[ContCred]| |${dados}[ContCaixa]|
     Salvar Registro |${dados}[MsgSalvo]|
 
@@ -73,7 +70,6 @@ SCR6MCONFIGFCCT-004:Expiracao das Telas
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MCONFIGFCCT-004"
     #Acessar a tela "Controladoria>Contabilidade>Configuração>Contabilidade"@nprint @las
     Acessa a Tela Pela Busca |CONFIG_FCCT||Contabilidade| @las
-    
     Preencher Tempo de Expiracao |${dados}[Tela]| |${dados}[Tempo]|
     Salvar Registro |${dados}[MsgSalvo]|
 
@@ -83,6 +79,4 @@ SCR6MCONFIGFCCT-005:Historico
     #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MCONFIGFCCT-005"
     #Acessar a tela "Controladoria>Contabilidade>Configuração>Contabilidade"@nprint @las
     Acessa a Tela Pela Busca |CONFIG_FCCT||Contabilidade| @las
-    
     Consultar Historico de Alteracoes
-
