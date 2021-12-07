@@ -28,15 +28,9 @@ Selecionar no campo Conta Corrente a conta corrente que recebera o deposito
     Click no Item    ${DescricaoBanco}
     Click no Item    ${BtnOk}
 
-<<<<<<< HEAD
 Clicar no botao Efetuar Deposito |${MsgLida}|
     Click no Item                    ${BtnDeposito} 
     Valida Mensagem                  ${MsgValidacao}                    ${MsgLida}
-=======
-Clicar no botao Efetuar Deposito
-    Click no Item    ${BtnDeposito}
-    Valida Mensagem    ${MsgValidacao}    Depósito efetuado
->>>>>>> ac99832d014ca603a3daedbb5861a69f65e3aa6d
 
 Clicar no botao Limpar Deposito
     Click Elemento por titulo    Limpar
@@ -58,15 +52,9 @@ Selecionar no campo Lancamento o tipo de pagamento a efetuar
     Click no Item    ${DescricaoConta}
     Click no Item    ${BtnOk}
 
-<<<<<<< HEAD
 Informar o valor no campo valor |${Valor2}|
     Preencher campo                    ${Valor}                    ${Valor2}
     Click no Item                      ${Data}   
-=======
-#Informar o valor no campo valor
-    Preencher campo    ${Valor}    1
-    Click no Item    ${Data}
->>>>>>> ac99832d014ca603a3daedbb5861a69f65e3aa6d
 
 Selecionar no campo setor o setor para o qual sera alocado esta despesa
     Click no Item    ${BtnSetor}
@@ -78,19 +66,11 @@ Selecionar no campo Motivo de lancamento
     Click no Item    ${FiltroMotivo}
     Click no Item    ${BtnOk}
 
-<<<<<<< HEAD
 Clicar no botao Efetuar Pagamento |${MsgLida}|
     Click no Item                         ${BtnEfetuarPgto}  
     Click no Item                         ${BtnSim}   
     Valida Mensagem                       ${MsgMostrada}             ${MsgLida}
     Click no Item                         ${BtnOk2}  
-=======
-#Clicar no botao Efetuar Pagamento
-    Click no Item    ${BtnEfetuarPgto}
-    Click no Item    ${BtnSim}
-    Valida Mensagem    ${MsgMostrada}    Pagamento efetuado com sucesso
-    Click no Item    ${BtnOk2}
->>>>>>> ac99832d014ca603a3daedbb5861a69f65e3aa6d
 
 Clicar no botao Limpar Pagamento
     Click no Item    ${BtnLimpar}
