@@ -33,7 +33,7 @@ SCR6COTRACON-001:Fluxo Principal          # :
 # robot -v browser:firefox -t "SCR6COTRACON-001:Fluxo Principal" -d ./5-results/SCR6COTRACON-001 "3-tests/6-CONTROLADORIA/O_TRACON.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COTRACON-001"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Bancário>Movimentação>Transferências"@nprint @las
-    Preencher dados para transferencia |${dados}[NumDoc]||${dados}[Descricao]||${dados}[ValorMov]|
+    Preencher dados para transferencia |${dados}[NumDoc]||${dados}[Descricao]||${dados}[CodLanc]||${dados}[ValorMov]|
     Preencher conta de origem |${dados}[ContaCorrente]|
     Preencher empresa_conta destino |${dados}[Empresa]||${dados}[CCorrente]||${dados}[MsgEsperada]|
      

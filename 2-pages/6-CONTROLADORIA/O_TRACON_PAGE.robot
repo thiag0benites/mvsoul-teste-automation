@@ -19,7 +19,7 @@ ${CampoValorMov}                    xpath=//input[@id='inp:vlMoedaV']
 ${CampoContaCorrente}               xpath=//input[@id='inp:cdConCor']
 ${CampoEmpresa}                     xpath=//input[@id='inp:cdMultiEmpresaDestino']    
 ${CampoCCorrente}                   xpath=//div[@id='cdConCorTransferencia']/input
-
+${CampoCodLanc}                     xpath=//input[@id='inp:cdLanConcor']
 ### Botoes ###
 ${BtnCodLanc}                       xpath=//div[@id='cdLanConcor']/button
 ${BtnTipoTransf}                    xpath=//div[@id='tpTransferencia']
