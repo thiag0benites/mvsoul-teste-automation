@@ -8,7 +8,6 @@
 ### Pega massa de dados do Gerenciador
 
 Resource                            ../../2-pages/6-CONTROLADORIA/O_TRACON_PAGE.robot
-Resource    ../4-MATERIAIS/M_COTA_SETOR_STEPS.robot
 
 *** Keywords ***
 Preencher dados para transferencia |${NumDoc}||${Descricao}||${CodLanc}||${ValorMov}|
@@ -30,7 +29,5 @@ Preencher empresa_conta destino |${Empresa}||${CCorrente}||${MsgEsperada}|
     Send Keys                                 enter
 
     Click no Item                             ${btnSalvar}
-    Valida Mensagem                           ${Alerta}                                             ${MsgEsperada}
-    Click no Item                             ${btnOk}   
-
-    
+    Valida Mensagem                           ${Alerta}                ${MsgEsperada}
+    Click no Item                             ${btnOk}

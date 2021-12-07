@@ -11,49 +11,30 @@ Resource                            ../../2-pages/6-CONTROLADORIA/M_CONCOR_PAGE.
 
 *** Keywords ***
 Preencher campo Descricao
-    Click no Item                ${campoDescricao}
-    Preencher campo              ${campoDescricao}            BANCO ITAU SA
-        
-        
+    Clicar no Campo e Preencher Informacao    ${campoDescricao}        ${campoDescricao}             BANCO ITAU SA
 Preencher dados do cliente
-    Click no Item                ${BtnCodBanco}   
-    Click no Item                ${CampoFiltro}
-    Preencher campo              ${CampoFiltro}               ITAU
-    Click no Item                ${BtnFiltrar}
-    Click no Item                ${BtnOk}
-   
-    
-    Click no Item                ${CampoAgencia}
-    Preencher campo              ${CampoAgencia}              600
-    Click no Item                ${CampoDigitoAgencia}    
-    Preencher campo              ${CampoDigitoAgencia}        1
-  
-    Click no Item                ${CampoBairro}    
-    Preencher campo              ${CampoBairro}               CENTRO
-    
-    Click no Item                ${CampoNumConta}
-    Preencher campo              ${CampoNumConta}             5000
-    
-    Click no Item                ${CampoDigitoConta}
-    Preencher campo              ${CampoDigitoConta}          6
-    
-    Click no Item                ${BtnTipoContaCorrente}
-    Click no Item                ${CampoFiltro}
-    Preencher campo              ${CampoFiltro}               CONTA CORRENTE
-    Click no Item                ${BtnFiltrar}
-    Click no Item                ${BtnOk}
-    
-    Click no Item                ${BtnCodContab}
-    Click no Item                ${CampoFiltro}
-    Preencher campo              ${CampoFiltro}               itau
-    Click no Item                ${BtnOk}
-    
-    Click no Item                ${CampoGerente}
-    Preencher campo              ${CampoGerente}              DEUS DO CEU
-    Click no Item                ${AbaTransEntreEmpresas}
-    Sleep                        5        
-    #Click no Item                ${CampoEmpresa}
-    
-    #Click no Item                ${BtnListaEmpresas}
+    Click no Item                             ${BtnCodBanco}   
+    Clicar no Campo e Preencher Informacao    ${CampoFiltro}           ${CampoFiltro}                ITAU
+    Click no Item                             ${BtnFiltrar}
+    Click no Item                             ${BtnOk}
+    Clicar no Campo e Preencher Informacao    ${CampoAgencia}          ${CampoAgencia}               600 
+    Clicar no Campo e Preencher Informacao    ${CampoDigitoAgencia}    ${CampoDigitoAgencia}         1
+    Clicar no Campo e Preencher Informacao    ${CampoBairro}           ${CampoBairro}                CENTRO
+    Clicar no Campo e Preencher Informacao    ${CampoNumConta}         ${CampoNumConta}              5000   
+    Clicar no Campo e Preencher Informacao    ${CampoDigitoConta}      ${CampoDigitoConta}           6
+    Click no Item                             ${BtnTipoContaCorrente}
+    Clicar no Campo e Preencher Informacao    ${CampoFiltro}           ${CampoFiltro}                CONTA CORRENTE
+    Click no Item                             ${BtnFiltrar}
+    Click no Item                             ${BtnOk}
+    Click no Item                             ${BtnCodContab}
+    Clicar no Campo e Preencher Informacao    ${CampoFiltro}           ${CampoFiltro}                itau
+    Click no Item                             ${BtnOk}
+    Clicar no Campo e Preencher Informacao    ${CampoGerente}          ${CampoGerente}               DEUS DO CEU
+    Click no Item                             ${AbaTransEntreEmpresas}
+    Clicar no Campo e Preencher Informacao    ${CampoEmpresa}          ${CampoEmpresaEdit}           1
+    Send Keys                                 tab
+    Clicar no Campo e Preencher Informacao    ${CampoTipoTrans}        ${CampoTipoTrans}             Recebimentos
+    Send Keys                                 tab
+                
 
     

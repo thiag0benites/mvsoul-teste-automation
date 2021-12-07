@@ -25,9 +25,10 @@ ${DivBancoFiltrado}                 xpath=//div[@data-member="DS_TIP_CONTA_CORRE
 ${DivCodContab}                     xpath=//div[@data-member="DS_CONTA"][contains(text(),"BANCO  ITAU")]
 ${CampoGerente}                     xpath=//input[@id='inp:nmGerente']   
 ${AbaTransEntreEmpresas}            xpath=//a[@id='TAB_PAGE1_TAB_PAGE1_tab1']/..
-${CampoEmpresa}                     xpath=//div[@class='grid-canvas grid-canvas-top grid-canvas-left']
-
-
+${CampoEmpresa}                     xpath=//div[@data-member="CD_MULTI_EMPRESA"][@data-row="0"]/..
+${CampoEmpresaEdit}                 xpath=//div[@class='ui-buttoninput ui-widget ui-lovinput mode-edit']/input
+${CampoTipoTrans}                   xpath=//div[@class="ui-combobox ui-buttoninput ui-widget mode-edit"]/input
+${CampoCodReduzido}                
 
 ### Botoes ###
 ${BtnCodBanco}                      xpath=//div[@id='cdBanco']/button
