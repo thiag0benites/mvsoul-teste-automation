@@ -33,12 +33,12 @@ ${dados}
 SCR2AMENTREGAAMOSTRA-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMENTREGAAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMENTREGAAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_ENTREGA_AMOSTRA.robot"
 # robot -v browser:firefox -t "SCR2AMENTREGAAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMENTREGAAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_ENTREGA_AMOSTRA.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMENTREGAAMOSTRA-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMENTREGAAMOSTRA-001"
     Acessa a Tela Pela Busca |M_ENTREGA_AMOSTRA||Confirmação de Entrega de Amostra| @las
     #Acessar a tela "Diagnóstico e Terapia>Laboratório de Análises Clínicas>Atendimento>Confirmação de Entrega de Amostra"@nprint @las
-    Pesquisar Amostras
-    Pegar Codigo Amostra Nao Entregue
-    Sleep  5
+    Realizar Entrega Amostra |${dados}[CdAmostra]|
+    Validar Amostra Entregue |${dados}[MensagemSucesso]|
+
 
 
 
