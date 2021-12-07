@@ -4,20 +4,18 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/5-FATURAMENTO/M_RECEBE_GLOSA_PAGE.robot
+Resource          ../../2-pages/5-FATURAMENTO/M_RECEBE_GLOSA_PAGE.robot
 
 *** Variable ***
 
 *** Keywords ***
-
 Acessar "M_RECEBE_GLOSA"${printscreen} ${las}
     Unselect Frame
     # Pesquisa Escrita (Correção deve ser alinhada com o Thiago )
     Click Element    ${HomeXpathBtnPesquisa}
-    Preencher campo  ${HomeXpathBtnPesquisaInput}  M_RECEBE_GLOSA
+    Preencher campo    ${HomeXpathBtnPesquisaInput}    M_RECEBE_GLOSA
     Sleep    1
-    Click Element    ${ScreenRecebeGlosa} 
-
+    Click Element    ${ScreenRecebeGlosa}
     #### LAS Send Keys #####
     IF    "${las}" == "@las"
         # Sleep    1
@@ -35,22 +33,17 @@ Acessar "M_RECEBE_GLOSA"${printscreen} ${las}
     Sleep    60
 
 Preencher Lote e Validar |${lote}|
-    Preencher campo          ${campoLote}      ${lote}
+    Preencher campo    ${campoLote}    ${lote}
     Clicar no Botao Executar
-    Validar Elemento Pelo Titulo                 ${lote} 
-
+    Validar Elemento Pelo Titulo    ${lote}
 
 Alterar data |${dtRecebimento}| e validar mensagem |${mensagemSucesso}|
-    Preencher campo          ${campoDtRecebimento}      ${dtRecebimento}
-    Click no Item                      ${checkBoxRecTotal}
-    Clicar Botao e Validar Mensagem    ${btnSalvar}       ${MensagemToast}              ${mensagemSucesso} 
-    Click no Item                      ${btnOk}
+    Preencher campo    ${campoDtRecebimento}    ${dtRecebimento}
+    Click no Item    ${checkBoxRecTotal}
+    Clicar Botao e Validar Mensagem    ${btnSalvar}    ${MensagemToast}    ${mensagemSucesso}
+    Click no Item    ${btnOk}
 
 Clicar Botao e Validar Mensagem
-    [Arguments]                        ${Botao}                    ${MensagemRecebida}            ${MensagemEsperada}   
-    Click no Item                      ${Botao}
-    Valida Mensagem                    ${MensagemRecebida}         ${MensagemEsperada}
-    
-    
-
-
+    [Arguments]    ${Botao}    ${MensagemRecebida}    ${MensagemEsperada}
+    Click no Item    ${Botao}
+    Valida Mensagem    ${MensagemRecebida}    ${MensagemEsperada}

@@ -4,18 +4,12 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
-
+Resource          ../../Config.robot
 
 *** Variables ***
-${campoCodigo}                                          xpath=//div[@class="ui-widget-content slick-row even active"]//div[@class="slick-cell b0 f0 selected ui-fixed-width active editable"]//input[@row="0"]
-${campoObservacao}                                      xpath=//input[@id="inp:dsHistorico"]
-${campoDataVencimento}                                  xpath=//input[@id="inp:nvDtVencimento"]
-${btnAlteraData}                                        xpath=//button[@id="btnNovaData"]
-
-
-${MensagemToast}                                        xpath=//p[@class="notifications-item-text"] 
-${btnOk}                                                xpath=//li[@class="notification-buttons"]/button[text()="OK"] 
-
-
-
+${campoCodigo}    xpath=//div[@class="ui-widget-content slick-row even active"]//div[@class="slick-cell b0 f0 selected ui-fixed-width active editable"]//input[@row="0"]
+${campoObservacao}    xpath=//input[@id="inp:dsHistorico"]
+${campoDataVencimento}    xpath=//input[@id="inp:nvDtVencimento"]
+${btnAlteraData}    xpath=//button[@id="btnNovaData"]
+${MensagemToast}    xpath=//p[@class="notifications-item-text"]
+${btnOk}          xpath=//li[@class="notification-buttons"]/button[text()="OK"]
