@@ -13,24 +13,16 @@ Resource          ../../2-pages/6-CONTROLADORIA/CONFIG_FCCT_PAGE.robot
 Testar Botoes do Bloco Financeiro
     Wait Until Element Is Visible               ${CheckImportaMovTranCaixa}         200
     Click no Item                               ${AbaContabilidade} 
-
-    Click no Item                               ${CheckImportaMovTranCaixa}
     Click no Item                               ${CheckImportaMovTranCaixa}
     Click no Item                               ${CheckContrLanPassHon}
-    Click no Item                               ${CheckContrLanPassHon}
-    Click no Item                               ${CheckContrAntAbRec}
     Click no Item                               ${CheckContrAntAbRec}
 
 Testar Botoes do Bloco Caixa  
     Click no Item                               ${CheckImportaMvDepAnt}
-    Click no Item                               ${CheckImportaMvDepAnt}
-    Click no Item                               ${CheckEntrDepPagAntec}
     Click no Item                               ${CheckEntrDepPagAntec}
 
 Testar Botoes do Bloco Estoque  
     Click no Item                               ${CheckImpEmprEsto}
-    Click no Item                               ${CheckImpEmprEsto}
-    Click no Item                               ${CheckImpManEst}
     Click no Item                               ${CheckImpManEst}
 
 Selecionar Filtro Relatorio |${FiltroRelatorio}|
@@ -38,18 +30,12 @@ Selecionar Filtro Relatorio |${FiltroRelatorio}|
 
 Testar Botoes do Bloco Faturamento  
     Click no Item                               ${CheckCCEspCanForComp}
-    Click no Item                               ${CheckCCEspCanForComp}
     Click no Item                               ${CheckCadClasContAut}
-    Click no Item                               ${CheckCadClasContAut}
-    Click no Item                               ${CheckUsConCadReg}
     Click no Item                               ${CheckUsConCadReg}
 
 Testar Botoes do Bloco Contabilidade |${MensagemAlerta}|
     Click no Item                               ${CheckPermiteLancAtivo}
-    Click no Item                               ${CheckPermiteLancAtivo}
     Click no Item                               ${CheckPermitApropCenCus}
-    Click no Item                               ${CheckPermitApropCenCus}
-    Click no Item                               ${ChekImpedMovSet}
     Click no Item                               ${ChekImpedMovSet}
     Click no Item                               ${CheckPermitCriac}
     Valida Mensagem                             ${MsgAlertaMov}                 ${MensagemAlerta}
@@ -89,3 +75,39 @@ Alterar Campos Contabil do Faturamento |${CargaFamiliar}| |${RetencaoJudicial}| 
 Salvar Registro |${MsgSalvo}|
     Click Elemento por titulo           Salvar
     Valida Mensagem                     ${RegistroSalvo}                    ${MsgSalvo}
+
+
+Testar Bloco Principal
+    Wait Until Element Is Visible               ${CheckImportaMovTranCaixa}         200
+    Click no Item                               ${AbaGlosas}
+    Click no Item                               ${ContGlosas}
+
+
+Testar Bloco Eventos de Contabilizacao de Glosas
+    Click no Item                               ${ContPartGlosa}                   
+    Click no Item                               ${ContEventosRec}
+    Click no Item                               ${IndicaContraP}
+    Click no Item                               ${ContEventGl}
+
+Testar Bloco Sistema de Auditoria de Glosas
+    Click no Item                               ${RateiaGlosa}
+
+Preencher Eventos de Contabilizacao |${ContCred}| |${ContCred}| |${ContCaixa}|
+    Wait Until Element Is Visible               ${CheckImportaMovTranCaixa}         200
+    Click no Item                               ${AbaPacotes}
+    Preencher Campo                             ${CampoContaCre}            ${ContCred}
+    Preencher Campo                             ${CampoContaPag}            ${ContCred}
+    Preencher Campo                             ${CampoContaCaix}           ${ContCaixa}
+
+Preencher Tempo de Expiracao |${Tela}| |${Tempo}|
+    Wait Until Element Is Visible               ${CheckImportaMovTranCaixa}         200
+    Click no Item                               ${AbaExpTelas}
+    Selecionar Item Na Lista                    ${CampoTelaEx}              ${Tela}         ${Tela}
+    Click no Item                               ${CampoTempoDes}
+    Preencher Campo                             ${CampoTempo}               ${Tempo}
+
+Consultar Historico de Alteracoes
+    Wait Until Element Is Visible               ${CheckImportaMovTranCaixa}         200
+    Click no Item                               ${AbaHistorico}
+    Click no Item                               ${btnPesquisar}
+    Click no Item                               ${btnExecute}

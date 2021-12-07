@@ -10,6 +10,10 @@ Resource          ../../Config.robot
 
 
 ${AbaContabilidade}                         xpath=//a[@id="CANVAS_TITULO_CANVAS_TITULO_tab0"]
+${AbaGlosas}                                xpath=//a[@id="CANVAS_TITULO_CANVAS_TITULO_tab1"]
+${AbaPacotes}                               xpath=//a[@id="CANVAS_TITULO_CANVAS_TITULO_tab2"]
+${AbaExpTelas}                              xpath=//a[@id="CANVAS_TITULO_CANVAS_TITULO_tab3"]
+${AbaHistorico}                             xpath=//a[@id="CANVAS_TITULO_CANVAS_TITULO_tab4"]
 
 ${CheckImportaMovTranCaixa}                 xpath=//button[@id="inp:snContabilizaTransfCaixa_btn"]
 ${CheckContrLanPassHon}                     xpath=//button[@id="inp:snHonorarioPassivo_btn"]
@@ -78,5 +82,23 @@ ${CampoCusto}                               xpath=//div[@data-member="CD_ITEM_RE
 ${CampoConCusto}                            xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button
 ${CampoRateioDes}                           xpath=//div[@class="slick-cell b10 f10 slick-last-cell selected ui-fixed-width"]
 ${CampoRateio}                              xpath=//input[@class="editor-text mode-edit"]
-${RegistroSalvo}                            xpath=//p[@class="notifications-item-text"]                             
+${RegistroSalvo}                            xpath=//p[@class="notifications-item-text"] 
 
+${ContGlosas}                               xpath=//button[@id="inp:snContabilizaGlosa_btn"]
+${ContPartGlosa}                            xpath=//button[@id="inp:snContabilizaRecebGlosa_btn"]
+${ContEventosRec}                           xpath=//button[@id="inp:snContabilizaEntregaRecurso_btn"]
+${IndicaContraP}                            xpath=//button[@id="inp:snContabilizaRecebRecurso_btn"]
+${ContEventGl}                              xpath=//button[@id="inp:snContabilizaGlosaAceita_btn"]
+${RateiaGlosa}                              xpath=//button[@id="inp:snRateioGlosaAceitaCtRec_btn"]
+
+${CampoContaCre}                            xpath=//input[@id="inp:cdReduzidoAdiantReceb"]
+${CampoContaPag}                            xpath=//input[@id="inp:cdReduzidoAdiantRestitDeb"]
+${CampoContaCaix}                           xpath=//input[@id="inp:cdReduzidoAdiantRestitCred"]
+
+${CampoTelaEx}                              xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button
+${CampoTempo}                               xpath=//input[@class="editor-text mode-edit"]
+
+${CampoTempoDes}                            xpath=//div[@class="slick-cell b1 f1 slick-last-cell selected"]
+
+${btnPesquisar}                             xpath=//li[@id='toolbar']//li[@id='tb-search']//a
+${btnExecute}                               xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
