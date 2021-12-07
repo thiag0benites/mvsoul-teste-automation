@@ -9,54 +9,83 @@ Resource          ../../2-pages/6-CONTROLADORIA/CONFIG_FCCT_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Processo , Data de Emissao, e Data de Lancamento |${Processo}| |${DtEmissao}| |${DtLancamento}|
-    Preencher Campo                     ${CampoProcesso}                     ${Processo}
-    Preencher Campo                     ${CampoDtEmissao}                    ${DtEmissao} 
-    Preencher Campo                     ${CampoDTLancamento}                 ${DtLancamento}
 
-Preencher Tipo de Documento, Cliente, Numero do Documento, Serie e Conta Contabil |${TpDocumento}| |${Cliente}| |${NrDocumento}| |${Serie}| |${ContaContabil}|
+Testar Botoes do Bloco Financeiro
+    Wait Until Element Is Visible               ${CheckImportaMovTranCaixa}         200
+    Click no Item                               ${AbaContabilidade} 
 
-    Preencher Campo                     ${CampoTpDocumento}                   ${TpDocumento}
-    Preencher Campo                     ${CampoCliente}                       ${Cliente}
-    Preencher Campo                     ${CampoNrDocumento}                   ${NrDocumento}
-    Preencher Campo                     ${CampoSerie}                         ${Serie}
-    Preencher Campo                     ${CampoContaContabil}                 ${ContaContabil}
+    Click no Item                               ${CheckImportaMovTranCaixa}
+    Click no Item                               ${CheckImportaMovTranCaixa}
+    Click no Item                               ${CheckContrLanPassHon}
+    Click no Item                               ${CheckContrLanPassHon}
+    Click no Item                               ${CheckContrAntAbRec}
+    Click no Item                               ${CheckContrAntAbRec}
 
-Informar Valor Bruto , Desconto e Acrescimo |${VlBruto}| |${Desconto}| |${VlDesconto}| |${Acrescimo}| |${VlAcrescimo}|
-    Preencher Campo                     ${CampoVlBruto}                     ${VlBruto}
-    Preencher Campo                     ${CampoDesconto}                    ${Desconto}
-    Click no Item                       ${CampoVlBruto}
-    Preencher Campo                     ${CampoVlDesconto}                  ${VlDesconto}            
-    Preencher Campo                     ${CampoAcrescimo}                   ${Acrescimo}
-    Click no Item                       ${CampoVlBruto}
-    Sleep   2
-    Preencher Campo                     ${CampoVlAcrescimo}                 ${VlAcrescimo}    
+Testar Botoes do Bloco Caixa  
+    Click no Item                               ${CheckImportaMvDepAnt}
+    Click no Item                               ${CheckImportaMvDepAnt}
+    Click no Item                               ${CheckEntrDepPagAntec}
+    Click no Item                               ${CheckEntrDepPagAntec}
 
-Informar Hist Padrao e Observacao |${HistPadrao}| |${Observacao}|
-     
-    Preencher Campo                     ${CampoHistPadrao}                  ${HistPadrao}
-    Preencher Campo                     ${CampoObservacao}                  ${Observacao} 
+Testar Botoes do Bloco Estoque  
+    Click no Item                               ${CheckImpEmprEsto}
+    Click no Item                               ${CheckImpEmprEsto}
+    Click no Item                               ${CheckImpManEst}
+    Click no Item                               ${CheckImpManEst}
 
-Informar Parcela |${Parcela}|
-    Click no Item                       ${AbaParcelamento}
-    Click no Item                       ${CampoParcelaDes}
-    Sleep   1
-    Click no Item                       ${CampoParcelaDes}
-    Preencher Campo                     ${CampoParcela}                     ${Parcela}
+Selecionar Filtro Relatorio |${FiltroRelatorio}|
+    Preencher Campo                             ${FiltroRelat}                  ${FiltroRelatorio}
 
-Informar Detalhamento |${Detalhamento}|
-    Click no Item                       ${AbaDetalhamento}
-    Selecionar Item Na Lista            ${BotaoDetalhamento}                ${Detalhamento}             ${Detalhamento}
-    
-Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${Setor}| |${Contabil}| |${ConCusto}| |${Rateio}|
-    Click no Item                       ${AbaCompartilhamento} 
-    Selecionar Item Na Lista            ${BotaoSetor}                       ${Setor}             ${Setor}
-    Click no Item                       ${CampoCusto}
-    Selecionar Item Na Lista            ${CampoConCusto}                    ${ConCusto}          ${ConCusto}
-    Click no Item                       ${CampoRateioDes}   
-    Preencher Campo                     ${CampoRateio}                      ${Rateio}
+Testar Botoes do Bloco Faturamento  
+    Click no Item                               ${CheckCCEspCanForComp}
+    Click no Item                               ${CheckCCEspCanForComp}
+    Click no Item                               ${CheckCadClasContAut}
+    Click no Item                               ${CheckCadClasContAut}
+    Click no Item                               ${CheckUsConCadReg}
+    Click no Item                               ${CheckUsConCadReg}
 
-Salvar Registro |${MensagemRegistroSalvo}|
+Testar Botoes do Bloco Contabilidade |${MensagemAlerta}|
+    Click no Item                               ${CheckPermiteLancAtivo}
+    Click no Item                               ${CheckPermiteLancAtivo}
+    Click no Item                               ${CheckPermitApropCenCus}
+    Click no Item                               ${CheckPermitApropCenCus}
+    Click no Item                               ${ChekImpedMovSet}
+    Click no Item                               ${ChekImpedMovSet}
+    Click no Item                               ${CheckPermitCriac}
+    Valida Mensagem                             ${MsgAlertaMov}                 ${MensagemAlerta}
+    Click no Item                               ${BotaoOkAlert}
+
+Validar Lotes Integrados |${LotesIntegrados}|
+    Preencher Campo                             ${FiltValidLot}                 ${LotesIntegrados}
+
+Alterar Campos Contabil do Faturamento |${CargaFamiliar}| |${RetencaoJudicial}| |${TipoAtendimento}| |${OrigAtend}| |${TipoAcomodacao}| |${TipoContaEnvio}| |${GrupoProcedimento}| |${GrupoFaturamento}| |${Procedimento}| |${HorarioEspecial}| |${TipDesconto}| |${PlanoContas}| |${ItemPres}| 
+    Click no Item                               ${DivPrioridadeCarga}
+    Preencher Campo                             ${Prioridade}                   ${CargaFamiliar}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${RetencaoJudicial}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${TipoAtendimento}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${OrigAtend}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${TipoAcomodacao}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${TipoContaEnvio}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${GrupoProcedimento}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${GrupoFaturamento}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${Procedimento}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${HorarioEspecial}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${TipDesconto}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${PlanoContas}
+    Send Keys   Down
+    Preencher Campo                             ${Prioridade}                   ${ItemPres}
+
+Salvar Registro |${MsgSalvo}|
     Click Elemento por titulo           Salvar
-    Valida Mensagem                     ${RegistroSalvo}                    ${MensagemRegistroSalvo}
-
+    Valida Mensagem                     ${RegistroSalvo}                    ${MsgSalvo}

@@ -32,15 +32,17 @@ SCR6MCONFIGFCCT-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR6MCONFIGFCCT-001:Fluxo Principal" -d ./5-results/SCR6MCONFIGFCCT-001 "3-tests/6-CONTROLADORIA/CONFIG_FCCT.robot"
 # robot -v browser:firefox -t "SCR6MCONFIGFCCT-001:Fluxo Principal" -d ./5-results/SCR6MCONFIGFCCT-001 "3-tests/6-CONTROLADORIA/CONFIG_FCCT.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6MCONFIGFCCT-001"
-    #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar, Cta a Receber, Bancos)>Controle Financeiro>Contas a Receber>Cadastros>Conta a Receber"@nprint @las
-    Acessa a Tela Pela Busca |CONFIG_FCCT||Conta a Receber| @las
-    Validar Acesso a Tela |Contas a Receber|
+    #Acessar a tela "Controladoria>Contabilidade>Configuração>Contabilidade"@nprint @las
+    Acessa a Tela Pela Busca |CONFIG_FCCT||Contabilidade| @las
+    
+    Testar Botoes do Bloco Financeiro
+    Testar Botoes do Bloco Caixa
+    Testar Botoes do Bloco Estoque
+    Selecionar Filtro Relatorio |${dados}[FiltroRelatorio]|
+    Testar Botoes do Bloco Faturamento
+    Testar Botoes do Bloco Contabilidade |${dados}[MensagemAlerta]|
+    Validar Lotes Integrados |${dados}[LotesIntegrados]|
+    Alterar Campos Contabil do Faturamento |${dados}[CargaFamiliar]| |${dados}[RetencaoJudicial]| |${dados}[TipoAtendimento]| |${dados}[OrigAtend]| |${dados}[TipoAcomodacao]| |${dados}[TipoContaEnvio]| |${dados}[GrupoProcedimento]| |${dados}[GrupoFaturamento]| |${dados}[Procedimento]| |${dados}[HorarioEspecial]| |${dados}[TipDesconto]| |${dados}[PlanoContas]| |${dados}[ItemPres]|
+    Salvar Registro |${dados}[MsgSalvo]|
 
-    Preencher Processo , Data de Emissão, e Data de Lançamento |${dados}[Processo]| |${dados}[DtEmissao]| |${dados}[DtLancamento]|
-    Preencher Tipo de Documento, Cliente, Número do Documento, Série e Conta Contabil |${dados}[TpDocumento]| |${dados}[Cliente]| |${dados}[NrDocumento]| |${dados}[Serie]| |${dados}[ContaContabil]|
-    Informar Valor Bruto , Desconto e Acrescimo |${dados}[VlBruto]| |${dados}[Desconto]| |${dados}[VlDesconto]| |${dados}[Acrescimo]| |${dados}[VlAcrescimo]|
-    Informar Hist Padrão e Observação |${dados}[HistPadrao]| |${dados}[Observacao]|
-    Informar Parcela |${dados}[Parcela]|
-    Informar Detalhamento |${dados}[Detalhamento]|
-    Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${dados}[Setor]| |${dados}[Contabil]| |${dados}[ConCusto]| |${dados}[Rateio]|
-    Salvar Registro |${dados}[MensagemRegistroSalvo]|
+

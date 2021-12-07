@@ -9,39 +9,40 @@ Resource          ../../Config.robot
 *** Variable ***
 
 
-
-
+${AbaContabilidade}                         xpath=//a[@id="CANVAS_TITULO_CANVAS_TITULO_tab0"]
 
 ${CheckImportaMovTranCaixa}                 xpath=//button[@id="inp:snContabilizaTransfCaixa_btn"]
 ${CheckContrLanPassHon}                     xpath=//button[@id="inp:snHonorarioPassivo_btn"]
 ${CheckContrAntAbRec}                       xpath=//button[@id="inp:snContabilizaCaucaoConPag_btn"]
 
-${CheckImportaMvDepAnt}                     xpath=//button[@id="inp:snContabilizaCaucaoAtivoCx"]
+${CheckImportaMvDepAnt}                     xpath=//button[@id="inp:snContabilizaCaucao_btn"]
 ${CheckEntrDepPagAntec}                     xpath=//button[@id="inp:snContabilizaCaucaoAtivoCx_btn"]
 
-${CheckImpEmprEsto}                         xpath=//button[@id="inp:snContabilizaEmprestimos"]
+${CheckImpEmprEsto}                         xpath=//button[@id="inp:snContabilizaEmprestimos_btn"]
 ${CheckImpManEst}                           xpath=//button[@id="inp:snContabilizaManipulacao_btn"]
 
-${FiltroRelat}                              xpath=//div[@data-member="TP_FILTRO_PADRAO_REL"]/button
+${FiltroRelat}                              xpath=//input[@id="TAB_GERAL_tpFiltroPadraoRel_ac"]
 
 ${CheckCCEspCanForComp}                     xpath=//button[@id="inp:snCtCtbCancComp_btn"]
 ${CheckCadClasContAut}                      xpath=//button[@id="inp:snCadastraClassificacao_btn"]
-${CheckUsConCadReg}                         xpath=//button[@id="inp:snUsuarioCadastraRegraFfcv"]
+${CheckUsConCadReg}                         xpath=//button[@id="inp:snUsuarioCadastraRegraFfcv_btn"]
 
-${FiltValidLot}                             xpath=//div[@data-member="TP_VALIDA_INTEGRIDADE_LOT_FCCT"]/button
+${FiltValidLot}                             xpath=//input[@id="TAB_GERAL_tpValidaIntegridateLotFcct_ac"]
 
-${CheckPermiteLancAtivo}                     xpath=//button[@id="inp:snAtivoCpCliente"]
+${CheckPermiteLancAtivo}                     xpath=//button[@id="inp:snAtivoCpCliente_btn"]
 ${CheckPermitApropCenCus}                    xpath=//button[@id="inp:snLctoAtvPasvSetor_btn"]
 ${ChekImpedMovSet}                           xpath=//button[@id="inp:snImpSetorNaoAceitaLanc_btn"]
 ${CheckPermitCriac}                          xpath=//button[@id="inp:snPermitePrevContabilizavel_btn"]
 
+${MsgAlertaMov}                              xpath=//li[@class="notification-warning"]
+${BotaoOkAlert}                              xpath=//li[@class="notification-buttons"]/button[text()="OK"]
+
+${DivPrioridadeCarga}                        xpath=//div[@class="slick-cell b2 f2 slick-last-cell selected"]
+${Prioridade}                                xpath=//input[@class="editor-text mode-edit"]
+${DivRetencao}                               xpath=//div[@class="ui-widget-content slick-row odd"]/div[@class="slick-cell b2 f2 slick-last-cell"]
 
 
 
-
-
-
-//div[@class="slick-cell b1 f1 selected"]
 
 
 
