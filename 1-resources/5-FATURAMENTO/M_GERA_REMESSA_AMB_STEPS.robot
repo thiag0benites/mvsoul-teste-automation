@@ -7,7 +7,6 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource          ../../2-pages/5-FATURAMENTO/M_GERA_REMESSA_AMB_PAGE.robot
-Resource          ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords ***
 Preencher os campos <Convenio> |${FiltroConvenio}|, <Plano> <origem> |${FiltroOrigem}|, <periodos> |${DataInicio}| |${DataFinal2}| |${Atendimento}|
