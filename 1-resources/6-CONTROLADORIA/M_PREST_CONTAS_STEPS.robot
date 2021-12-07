@@ -44,8 +44,12 @@ Preenche informacoes Para recebimento de Dinheiro "Tipo Documento|${TipoDoc}|", 
 
 
 Pesquisar Atendimento
-    Click no Item                             ${BtnPesquisar}     
+    # Click no Item                             ${BtnPesquisar}     
     Click no Item                             ${BtnExecConsulta}
+    Click no Item                             ${BtnSeguinte}
+    Click no Item                             ${BtnSeguinte}
+    Click no Item                             ${BtnSeguinte}
+    Click no Item                             ${BtnSeguinte}
     Click no Item                             ${BtnSeguinte}
     Click no Item                             ${BtnSeguinte}
     Click no Item                             ${BtnNotasFornec}
@@ -54,9 +58,9 @@ Pesquisar Atendimento
 
 Seleciona CheckBox de Notas e Confirma
     Click no Item                             ${ChcBoxNotas1}
-    Click no Item                             ${ChcBoxNotas2}
-    Click no Item                             ${ChcBoxNotas3}
-    Click no Item                             ${BtnConfirmar}
+    # Click no Item                             ${ChcBoxNotas2}
+    # Click no Item                             ${ChcBoxNotas3}
+    Click no Item                             ${BtnConfirmaContas}
     Validar Pop-Pup de Alerta e Clicar        ${ValidPrestConta}                 ${BtnOkAlerta}
     Validar Pop-Pup de Alerta e Clicar        ${ValidAlertaImpressao}            ${BtnConfImpressao}
 

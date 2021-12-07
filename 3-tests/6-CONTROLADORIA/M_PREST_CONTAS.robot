@@ -32,7 +32,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/M_PREST_CONTAS_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown    Encerra sessao
+# Test Teardown    Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -45,7 +45,7 @@ SMF-7317 : Prestar contas de <Fornecedor> com Despesas
 # robot -v browser:chrome -t "SMF-7317 : Prestar contas de <Fornecedor> com Despesas" -d ./5-results/SMF-7317 "3-tests/6-CONTROLADORIA/M_PREST_CONTAS.robot"
 # robot -v browser:firefox -t "SMF-7317 : Prestar contas de <Fornecedor> com Despesas" -d ./5-results/SMF-7317 "3-tests/6-CONTROLADORIA/M_PREST_CONTAS.robot"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Prestação de Contas>Fornecedor"@nprint @las
-    Informar o codigo|89959| do adiantamento que estara sendo prestado contas
+    Informar o codigo|89964| do adiantamento que estara sendo prestado contas
     Inserir Data Prestacao |03/Dez/2021|    ### Preencher dd/Mmm/aaaa ###
     Informar ou selecionar no campo <setor> |AMBULATORIO HOBRA|
     Preencher Campo "Valor Prestacao|10000|", "Conta Contabil|ACORDO|", "Historico Padrao|HONORARIOS MEDICOS|"

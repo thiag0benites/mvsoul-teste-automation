@@ -33,11 +33,13 @@ ${BtnSeguinte}                                        xpath=//li[@id='tb-record-
 ${BtnNotasFornec}                                     xpath=//button[@id='btnNotaFornec']
 ${BtnSelecNotas}                                      xpath=//button[@id='btnSelecNota']
 ${ChcBoxInativo}                                      xpath=//button[@data-member='SN_BAIXAR']
-${ChcBoxNotas1}                                       xpath=//button[@data-row='8']
-${ChcBoxNotas2}                                       xpath=//button[@data-row='9']
-${ChcBoxNotas3}                                       xpath=//button[@data-row='10']
+${ChcBoxNotas1}                                       xpath=//button[@data-row='35']
+# ${ChcBoxNotas2}                                       xpath=//button[@data-row='33']
+# ${ChcBoxNotas3}                                       xpath=//button[@data-row='34']
 ${BtnOkAlerta}                                        xpath=//button[@class='btn btn-primary']
 ${BtnConfImpressao}                                   xpath=//button[@class='btn btn-primary'][contains(text(),"Não")]
+${BtnConfirmaContas}                                  xpath=//button[@id='btnConfirma']
+
 
 ### DIVERSOS ###
 ${ValidBtInativo}                                     xpath=//a[@data-action='SEARCH'][@class='ui-state-disabled']
