@@ -17,6 +17,7 @@ ${campoUnidadeDeInternacao}    xpath=//input[@id="inp:cdUnidInt"]
 ${campoLeito}                  xpath=//input[@id="inp:cdLeito"]
 ${campoPaciente}               xpath=//input[@id="inp:cdPaciente"]
 ${campoTrajeto}                xpath=//input[@id="inp:cdTrajeto"]
+${MensagemToast}               xpath=//p[@class="notifications-item-text"]  
 
 
 
