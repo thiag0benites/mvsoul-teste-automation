@@ -229,10 +229,6 @@ Clicar no botao Adicionar
     Wait Until Element Is Visible       ${btnAdicionar}     120
     Click Element     ${btnAdicionar}
 
-Clicar no botao Executar 
-    Click no Item            ${btnExecute} 
-    Sleep              30   
-
 Clicar no botão Não 
     Click no Item            ${btnNaoNotifications}
 

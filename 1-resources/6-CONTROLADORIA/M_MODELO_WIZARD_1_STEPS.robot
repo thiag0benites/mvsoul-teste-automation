@@ -16,3 +16,7 @@ Preencher os campos da tabela |${codigo}|,|${descricao}|
     Click no Item    ${campoDescricao}
     Sleep    1
     Preencher Campo    ${campoDescricaoInput}    ${descricao}
+
+Clicar no botao Salvar do menu
+    Click Element     ${btnSalvar}
+    Sleep             6

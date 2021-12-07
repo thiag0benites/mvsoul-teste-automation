@@ -9,12 +9,15 @@ Resource          ../../2-pages/1-ATENDIMENTO/EXCL_ATE_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Usuário deverá preencher os campos |${numAtend}|,|${motivo}|
+Usuario devera preencher os campos |${numAtend}|,|${motivo}|
     Preencher campo                  ${atendimento}              ${numAtend} 
-    Sleep                            2
+    Sleep                            1
+
     Click no Item                    ${CampoMotivo}
-    Sleep                            2
+    Sleep                            1
     Preencher campo                  ${CampoMotivo}              ${motivo} 
 
-Clicar no botão Excluir Atendimento
+Clicar no botao Excluir Atendimento
     Click no Item                   ${btnExcluirAtendimento}
+Clicar no botao Sim
+    Click no Item            ${btnSimNotifications}

@@ -37,6 +37,7 @@ SRC1AEXCLATE-001:Fluxo principal
 # robot -v browser:firefox -t "SRC1AEXCLATE-001:Fluxo principal" -d ./5-results/EXCL_ATE_SMF_10357 "3-tests/1-ATENDIMENTO/EXCL_ATE.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AEXCLATE-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Exclusão de Atendimento"@nprint @las
-    Usuário deverá preencher os campos |${dados}[numAtend]|,|${dados}[motivo]|
-    Clicar no botão Excluir Atendimento
-    Clicar no botão Sim
+    Usuario devera preencher os campos |${dados}[numAtend]|,|${dados}[motivo]|
+    Clicar no botao Excluir Atendimento
+    Clicar no botao Sim
+

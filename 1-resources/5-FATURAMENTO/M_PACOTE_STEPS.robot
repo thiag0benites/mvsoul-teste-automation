@@ -9,10 +9,13 @@ Resource                ../../2-pages/5-FATURAMENTO/M_PACOTE_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Clicar na aba Exceções
+Clicar no botao Pesquisar
+    Click no Item               ${btnPesquisar} 
+
+Clicar na aba Excecoes
     Click no Item                   ${abaExcecoes}
 
-Usuário deverá preencher os campos|${grupoProced}|,|${procedimento}|,|${setor}|,|${acomodacao}|
+Usuario devera preencher os campos|${grupoProced}|,|${procedimento}|,|${setor}|,|${acomodacao}|
     Preencher campo                  ${grupoProcedInput}                     ${grupoProced}
     Sleep                            2
 
@@ -22,14 +25,19 @@ Usuário deverá preencher os campos|${grupoProced}|,|${procedimento}|,|${setor}
     Preencher campo                  ${procedimentoInput}                    ${procedimento}
     Sleep                            2
 
-    Wait Until Element is Visible    ${setor}                                   60
-    Click no Item                    ${setor}
+    Wait Until Element is Visible    ${campoSetor}                                   60
+    Click no Item                    ${campoSetor}
     Sleep                            2
     Preencher campo                  ${setorInput}                           ${setor}
     Sleep                            2
 
-    Click no Item                    ${acomodacao}
+    Click no Item                    ${campoAcomodacao}
     Sleep                            2
     Preencher campo                  ${acomodacaoInput}                      ${acomodacao}
     Sleep                            2
 
+Validar cadastro realizado |${mensagem}|
+    Valida Mensagem  ${notification}    ${mensagem}
+    
+Clicar no botao Salvar
+    Click no Item               ${btnSalvar} 

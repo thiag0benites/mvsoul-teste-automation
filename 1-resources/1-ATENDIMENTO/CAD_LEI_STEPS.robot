@@ -7,7 +7,10 @@ Resource          ../../2-pages/1-ATENDIMENTO/CAD_LEI_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher o campo código de unidade da internacao |${codigo}|
+Clicar no botao Pesquisar
+    Click no Item               ${btnPesquisar}   
+    
+Preencher o campo codigo de unidade da internacao |${codigo}|
     Preencher campo                  ${inputCodigo}              ${codigo} 
 
 Preencher os campos da tabela |${leito}|,|${descResumida}|,|${enferm}|,|${acomod}|
@@ -32,7 +35,8 @@ Preencher os campos da tabela |${leito}|,|${descResumida}|,|${enferm}|,|${acomod
     Sleep      2
     Preencher campo                      ${campoAcomodInput}                    ${acomod}
 
-Validar mensagem de confirmação ao cadastrar o leito
-    Valida Mensagem         ${MensagemSalvar}               Fim da Consolidação para o Mês 11/2021 .
+Validar mensagem de confirmacao ao cadastrar o leito |${mensagem}|
+    Valida Mensagem         ${MensagemSalvar}               ${mensagem}
 
-
+Clicar no botao Salvar
+    Click no Item               ${btnSalvar}  

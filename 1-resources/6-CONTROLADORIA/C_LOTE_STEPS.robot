@@ -16,3 +16,7 @@ Preencher o campo |${lote}|
 
 Validar Resultado da Pesquisa da tela Consulta de Lancamento contabil |${dadoConsulta}|
     Validar Elemento Pelo Titulo            ${dadoConsulta} 
+
+Clicar no botao Executar 
+    Click no Item            ${btnExecute} 
+    Sleep              30   
