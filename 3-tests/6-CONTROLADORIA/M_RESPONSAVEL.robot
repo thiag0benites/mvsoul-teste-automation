@@ -35,7 +35,8 @@ SMF-8820 : Cadastrar Responsaveis
     Acessar a tela "Controladoria>Caixa>Tabelas>Responsáveis"@nprint @las
     Seleciona Pessoa Fisica ou Pessoa Juridica |${dados}[SelecionaPFouPJ]|    ### PREENCHER COM PF ou PJ ###
     Seleciona Cadastro Estrangeiro ou Resp Ativo |${dados}[CadEstrangeiroRespAtivo]|
-    Informar o Nome |${dados}[NomeCliente]| e a Nacionalidade |${dados}[Nacionalidade]| da Pessoa
+    Informar o Nome |${dados}[NomeCliente]| e a Nacionalidade |${dados}[Nacionalidade]| da Pessoa - Suite|${suite}| Linha Gerenciador|${dados}[id]|
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8820"
     Informar CPF|${dados}[NumeroCPF]| ou CNPJ|${dados}[NumeroCNPJ]|>|${dados}[CPFouCNPJ]| nos campos apresentados
     Preencher Inscricao Municipal |${dados}[InscricaoMunicip]| e Estadual |${dados}[InscricaoEstad]|
     Pesquisa CEP "Estado|${dados}[Estado]|" "Cidade|${dados}[Cidade]|" "Bairro|${dados}[Bairro]|" "Logradouro|${dados}[Logradouro]|" "Numero|${dados}[NumeroCasa]|" "Telefone|${dados}[Telefone]|"

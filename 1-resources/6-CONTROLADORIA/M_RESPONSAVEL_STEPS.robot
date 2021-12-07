@@ -26,11 +26,17 @@ Seleciona Cadastro Estrangeiro ou Resp Ativo |${Item}|
     ...    '${Item}' == 'Responsavel Ativo'
     ...    Click no Item    ${BtnRespAtivo}
 
-Informar o Nome |${Nome}| e a Nacionalidade |${Nacionalidade}| da Pessoa
+Informar o Nome |${Nome}| e a Nacionalidade |${Nacionalidade}| da Pessoa - Suite|${Suite}| Linha Gerenciador|${LinhaGerenc}|
     Preencher campo                           ${CampoNome}           ${Nome}
     Clicar no Campo e Preencher Informacao    ${BtnNacionalidade}    ${CampoFiltro}        %${Nacionalidade}
     Click no Item                             ${BtnFiltrar}
     Click no Item                             ${BtnOk}
+    ${PessoaFisica}      Criar pessoa fisica    masculino
+    ${PessoaJuridica}    Criar pessoa juridica
+    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "NumeroCPF", valor "${PessoaFisica.cpf}"
+    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "NumeroCNPJ", valor "${PessoaJuridica.cnpj}"
+
+
 Informar CPF|${NroCPF}| ou CNPJ|${NroCNPJ}|>|${CPF/CNPJ}| nos campos apresentados
     Run Keyword If
     ...    '${CPF/CNPJ}' == 'CPF'

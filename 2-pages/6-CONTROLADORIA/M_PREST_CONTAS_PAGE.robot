@@ -13,6 +13,7 @@ ${CampoDtPrestacao}                                   xpath=//input[@id='inp:dtP
 ${CampoFiltro}                                        xpath=//input[@id='#filterLov']
 ${CampoVlPrestacao}                                   xpath=//input[@id='inp:vlMoeda1']
 ${CampoNroDoc}                                        xpath=//input[@id='inp:nrDocumento']
+${CampoDtVencto}                                      xpath=//span[@class='slick-column-name'][contains(text(),"Dt Vencto.")]
 
 ### BOTAO ###
 ${BtnExecConsulta}                                    xpath=//li[@id='tb-execute']
@@ -33,12 +34,12 @@ ${BtnSeguinte}                                        xpath=//li[@id='tb-record-
 ${BtnNotasFornec}                                     xpath=//button[@id='btnNotaFornec']
 ${BtnSelecNotas}                                      xpath=//button[@id='btnSelecNota']
 ${ChcBoxInativo}                                      xpath=//button[@data-member='SN_BAIXAR']
-${ChcBoxNotas1}                                       xpath=//button[@data-row='35']
-# ${ChcBoxNotas2}                                       xpath=//button[@data-row='33']
-# ${ChcBoxNotas3}                                       xpath=//button[@data-row='34']
+${ChcBoxNotas1}                                       xpath=//button[@data-row='0']
+${ChcBoxNotas2}                                       xpath=//button[@data-row='1']
+${ChcBoxNotas3}                                       xpath=//button[@data-row='2']
 ${BtnOkAlerta}                                        xpath=//button[@class='btn btn-primary']
 ${BtnConfImpressao}                                   xpath=//button[@class='btn btn-primary'][contains(text(),"Não")]
-${BtnConfirmaContas}                                  xpath=//button[@id='btnConfirma']
+${BtnConfirmaContas}                                  xpath=//*[@id="btnConfirma"]
 
 
 ### DIVERSOS ###

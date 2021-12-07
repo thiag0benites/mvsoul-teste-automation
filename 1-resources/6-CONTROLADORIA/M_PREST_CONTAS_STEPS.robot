@@ -57,6 +57,8 @@ Pesquisar Atendimento
     Click no Item                             ${ChcBoxInativo}
 
 Seleciona CheckBox de Notas e Confirma
+    Click no Item                             ${CampoDtVencto} 
+    Click no Item                             ${CampoDtVencto} 
     Click no Item                             ${ChcBoxNotas1}
     # Click no Item                             ${ChcBoxNotas2}
     # Click no Item                             ${ChcBoxNotas3}

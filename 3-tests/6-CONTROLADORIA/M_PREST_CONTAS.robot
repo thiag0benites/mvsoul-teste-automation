@@ -32,7 +32,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/M_PREST_CONTAS_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown    Encerra sessao
+# Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -49,8 +49,8 @@ SMF-7317 : Prestar contas de <Fornecedor> com Despesas
     Inserir Data Prestacao |03/Dez/2021|    ### Preencher dd/Mmm/aaaa ###
     Informar ou selecionar no campo <setor> |AMBULATORIO HOBRA|
     Preencher Campo "Valor Prestacao|10000|", "Conta Contabil|ACORDO|", "Historico Padrao|HONORARIOS MEDICOS|"
-    Efetuar Prestacao
-    Validar Despesa
+    # Efetuar Prestacao
+    # Validar Despesa
 
 SMF-7318 : Prestar contas de <Fornecedor> com recebimento de dinheiro
 # robot -v browser:chrome -t "SMF-7318 : Prestar contas de <Fornecedor> com recebimento de dinheiro" -d ./5-results/SMF-7318 "3-tests/6-CONTROLADORIA/M_PREST_CONTAS.robot"
