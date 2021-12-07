@@ -21,7 +21,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/O_CANC_REC_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
