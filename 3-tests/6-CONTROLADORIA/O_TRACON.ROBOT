@@ -36,9 +36,3 @@ SCR6COTRACON-001:Fluxo Principal          # :
     Preencher dados para transferencia |${dados}[NumDoc]||${dados}[Descricao]||${dados}[CodLanc]||${dados}[ValorMov]|
     Preencher conta de origem |${dados}[ContaCorrente]|
     Preencher empresa_conta destino |${dados}[Empresa]||${dados}[CCorrente]||${dados}[MsgEsperada]|
-     
-    
-
-
-
-
