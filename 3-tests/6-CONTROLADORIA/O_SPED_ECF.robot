@@ -33,15 +33,5 @@ SCR6COSPEDECF-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR6COSPEDECF-001:Fluxo Principal" -d ./5-results/SCR6COSPEDECF-001 "3-tests/6-CONTROLADORIA/O_SPED_ECF.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COSPEDECF-001"
     Acessar a tela "Controladoria>Fiscal>Geração>SPEDs>SPED ECF>Geração do SPED Contábil Fiscal"@nprint @las
-<<<<<<< HEAD
     Dados Paciente |${dados}[DataFinal]||${dados}[DataInicial]|
     Validacao de tela |${dados}[MensagemSucesso]|
-    
-
-
-
-
-=======
-    Dados Paciente
-    Validacao de tela
->>>>>>> c9d1001ba1822b34153c87347e17b47fe9926930
