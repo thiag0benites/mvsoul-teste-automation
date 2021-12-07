@@ -38,8 +38,3 @@ SCR2AMENTREGAAMOSTRA-001:Fluxo Principal
     #Acessar a tela "Diagnóstico e Terapia>Laboratório de Análises Clínicas>Atendimento>Confirmação de Entrega de Amostra"@nprint @las
     Realizar Entrega Amostra |${dados}[CdAmostra]|
     Validar Amostra Entregue |${dados}[MensagemSucesso]|
-
-
-
-
-
