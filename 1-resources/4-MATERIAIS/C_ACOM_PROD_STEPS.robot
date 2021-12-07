@@ -5,7 +5,6 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/C_ACOM_PROD_PAGE.robot
-Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 
 *** Variable ***
 
