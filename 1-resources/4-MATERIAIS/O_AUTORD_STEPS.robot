@@ -9,13 +9,13 @@ Resource          ../../2-pages/4-MATERIAIS/O_AUTORD_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher o campo código |${codigo}|
+Preencher o campo codigo |${codigo}|
     Preencher Campo                         ${inputCodigo}                  ${codigo} 
 
-Clicar no botão Aprovada na Tabela
+Clicar no botao Aprovada na Tabela
     Click no Item  ${btnAprovadaTable}
     Sleep  15
 
-Clicar no botão confirmar Autorizacao
+Clicar no botao confirmar Autorizacao
     Click no Item  ${btnConfirmarAutorizacao}
     Sleep      90
