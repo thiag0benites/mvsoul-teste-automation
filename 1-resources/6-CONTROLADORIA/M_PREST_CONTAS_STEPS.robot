@@ -43,15 +43,10 @@ Preenche informacoes Para recebimento de Dinheiro "Tipo Documento|${TipoDoc}|", 
     Validar Item                              ${ValidMsg}           
 
 
-Pesquisar Atendimento
+Pesquisar Atendimento "|${Codigo}|"
+    Preencher campo                           ${CampoCodigo}         ${Codigo}
+    Click no Item                             ${BtnExecConsulta}    
     # Click no Item                             ${BtnPesquisar}     
-    Click no Item                             ${BtnExecConsulta}
-    Click no Item                             ${BtnSeguinte}
-    Click no Item                             ${BtnSeguinte}
-    Click no Item                             ${BtnSeguinte}
-    Click no Item                             ${BtnSeguinte}
-    Click no Item                             ${BtnSeguinte}
-    Click no Item                             ${BtnSeguinte}
     Click no Item                             ${BtnNotasFornec}
     Click no Item                             ${BtnSelecNotas}
     Click no Item                             ${ChcBoxInativo}

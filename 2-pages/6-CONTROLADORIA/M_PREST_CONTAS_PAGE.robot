@@ -34,7 +34,7 @@ ${BtnSeguinte}                                        xpath=//li[@id='tb-record-
 ${BtnNotasFornec}                                     xpath=//button[@id='btnNotaFornec']
 ${BtnSelecNotas}                                      xpath=//button[@id='btnSelecNota']
 ${ChcBoxInativo}                                      xpath=//button[@data-member='SN_BAIXAR']
-${ChcBoxNotas1}                                       xpath=//button[@data-row='0']
+${ChcBoxNotas1}                                       xpath=//button[@data-row='3']
 ${ChcBoxNotas2}                                       xpath=//button[@data-row='1']
 ${ChcBoxNotas3}                                       xpath=//button[@data-row='2']
 ${BtnOkAlerta}                                        xpath=//button[@class='btn btn-primary']

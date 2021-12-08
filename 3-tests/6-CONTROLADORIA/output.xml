@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.2 on win32)" generated="20211208 15:46:38.760" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\Danilo\.vscode\extensions\robocorp.robotframework-lsp-0.32.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Acessar a tela &quot;Controladoria&gt;Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)&gt;Controle Financeiro&gt;Contas a Pagar&gt;Prestação de Contas&gt;Fornecedor&quot;@nprint @las">
+<msg timestamp="20211208 15:46:40.064" level="FAIL">No keyword with name 'Acessar a tela "Controladoria&gt;Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)&gt;Controle Financeiro&gt;Contas a Pagar&gt;Prestação de Contas&gt;Fornecedor"@nprint @las' found.</msg>
+<status status="FAIL" starttime="20211208 15:46:40.064" endtime="20211208 15:46:40.065"/>
+</kw>
+<kw name="Pesquisar Atendimento &quot;|90040|&quot;">
+<status status="NOT RUN" starttime="20211208 15:46:40.067" endtime="20211208 15:46:40.067"/>
+</kw>
+<kw name="Seleciona CheckBox de Notas e Confirma">
+<status status="NOT RUN" starttime="20211208 15:46:40.068" endtime="20211208 15:46:40.068"/>
+</kw>
+<status status="PASS" starttime="20211208 15:46:38.794" endtime="20211208 15:46:41.016"/>
+</kw>
+<status status="PASS" starttime="20211208 15:46:38.794" endtime="20211208 15:46:41.016"/>
+</test>
+<status status="PASS" starttime="20211208 15:46:38.763" endtime="20211208 15:46:41.017"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
