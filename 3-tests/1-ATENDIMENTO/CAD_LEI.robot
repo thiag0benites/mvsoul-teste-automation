@@ -36,7 +36,7 @@ SCR1ACADLEI-001:Fluxo Principal
     Acessar a tela "Atendimento>Internação>Tabelas>Leitos"@nprint @las
     Clicar no botao Pesquisar
     Preencher o campo codigo de unidade da internacao |${dados}[codigo]|
-    Clicar no botao Executar 
+    Clicar no botao Executar
     Preencher os campos da tabela |${dados}[leito]|,|${dados}[descResumida]|,|${dados}[enferm]|,|${dados}[acomod]|
     Clicar no botao Salvar
     Validar mensagem de confirmacao ao cadastrar o leito |${dados}[mensagem]|

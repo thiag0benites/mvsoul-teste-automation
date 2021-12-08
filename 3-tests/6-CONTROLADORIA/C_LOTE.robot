@@ -13,18 +13,17 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/6-CONTROLADORIA/C_LOTE_STEPS.robot
-
+Resource          ../../1-resources/6-CONTROLADORIA/C_LOTE_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
-Test Setup          Nova sessao
-Test Teardown       Encerra sessao
+Test Setup        Nova sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            C_LOTE
+${suite}          C_LOTE
 # Recebe dados do gerenciador
 ${dados}
 
@@ -32,8 +31,8 @@ ${dados}
 SCR6COCLOTE-001:Fluxo principal
 # robot -v browser:chrome -t "SCR6COCLOTE-001:Fluxo principal" -d ./5-results/C_LOTE "3-tests/6-CONTROLADORIA/C_LOTE.robot"
 # robot -v browser:firefox -t "SCR6COCLOTE-001:Fluxo principal" -d ./5-results/C_LOTE "3-tests/6-CONTROLADORIA/C_LOTE.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COCLOTE-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COCLOTE-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Preencher o campo |${dados}[lote]|
-    Clicar no botao Executar 
+    Clicar no botao Executar
     Validar Resultado da Pesquisa da tela Consulta de Lancamento contabil |${dados}[dadoConsulta]|
