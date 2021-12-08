@@ -1,6 +1,6 @@
 #################################################################################################################################################################
 # Autor: Marcos Costa
-# Decrição: Importar os dados da tabela BRASINDICE para o sistema. 
+# Decrição: Importar os dados da tabela BRASINDICE para o sistema.
 # A importação corresponde a conversão que incidirá sobre uma determinada tabela para fins de faturamento.
 #################################################################################################################################################################
 # Execução Exemplo:
@@ -13,17 +13,13 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
-Resource            ../../1-resources/5-FATURAMENTO/M_BRASINDI_STEPS.robot
-
-
+Resource          ../../1-resources/5-FATURAMENTO/M_BRASINDI_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -40,7 +36,7 @@ SCR5FMBRASINDI001:Fluxo Principal
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Configurações>Preços do Brasíndice"@nprint @las
     Informar no Campo 'Tabela' a Tabela Criada para Inserir os dados da Tabela Brasindice - Tabela |${dados}[Tab]|
     Informar no Campo 'Procedimento' o Codigo do Procedimento da Tabela Brasindice - Cod. Procedimento |${dados}[ProFat]|
-    Informar no Campo 'Laboratorio' o Codigo do Laboratorio Desejado para a Importacao - Laboratorio |${dados}[Lab]|	
+    Informar no Campo 'Laboratorio' o Codigo do Laboratorio Desejado para a Importacao - Laboratorio |${dados}[Lab]|
     Informar no Campo 'Medicamento' o Codigo do Medicamento - Medicamento |${dados}[Med]|
     Informar no Campo 'Apresentacao' o Codigo de Identificacao do Medicamento - Apresentacao |${dados}[Apres]|
     Informar no Campo 'Qtd de Apres' a Quantidade de Divisao Aplicada ao Preco - Qtd de Apres |${dados}[Qtd]|
