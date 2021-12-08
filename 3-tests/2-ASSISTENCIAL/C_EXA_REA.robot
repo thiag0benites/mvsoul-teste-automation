@@ -3,8 +3,8 @@
 # Decrição: Teste da tela Consulta de Exames Realizados
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\M_ESPERA_COLETA.robot"
-# firefox: robot -v browser:firefox -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\M_ESPERA_COLETA.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_EXA_REA.robot"
+# firefox: robot -v browser:firefox -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_EXA_REA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:  robot -v browser:headlesschrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\C_EXA_REA.robot"
