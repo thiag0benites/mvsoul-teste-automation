@@ -31,6 +31,7 @@ Acessar "M_PED_EXA_ATEND"${printscreen} ${las}
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Sleep    60
+    Validar Acesso a Tela |Recepção Laboratorial - Externos|
 Clique no botao Paciente
     Click no Item    ${BtPaciente}
     sleep    2
@@ -77,7 +78,7 @@ Preencha os Dados do Atendimento Peso |${VlPeso}| Altura |${VlAltura}| Convenio 
     # Data da Coleta e Data de Validade da coleta
     Clicar no Campo e Preencher Informacao  ${DatColeta}  ${DatColeta}  ${VlDatCol}
     Clicar no Campo e Preencher Informacao  ${DatValidade}  ${DatValidade}  ${VlDatValidade}
-Preencha os dados do exame a ser solicitado Exame Solicitado |${VlExame}| Prestador Exame Solicitante |${VlPrestExaSol}| Respostas |${VlResposta}|
+Preencha os dados do exame a ser solicitado Exame Solicitado |${VlExame}| Prestador Exame Solicitante |${VlPrestExaSol}| Respostas |${VlResposta}| Msg |${MsgEsperada}|
     Click no Item    ${BtGrdExa} 
     Click no Item    ${BtExame}
     Clicar no Campo e Preencher Informacao    ${BtLovExa}    ${BtLovExa}    ${VlExame}
@@ -96,9 +97,14 @@ Preencha os dados do exame a ser solicitado Exame Solicitado |${VlExame}| Presta
     Click no Item     ${BtLovResp}      
     Click no Item     ${BtFilterResp} 
     Click no Item     ${BtOkResp}
-    Click no Item     ${BalaoExaLiberado}
+    Valida Mensagem    ${MgsVerif}    ${MsgEsperada}
+    Click no Item      ${BalaoExaLiberado}
 
-Clique no botao "Conta Convenio"
-    Click no Item    ${BtContaConv}
+Clique no botao "Conta Convenio" Msg Sair |${VlMsg}|
+    Click no Item      ${BtContaConv}
+    Sleep    3
+    Click no Item      ${BtSairRegAmb}
+    Valida Mensagem    ${MgsVerif}    ${VlMsg}
+    Click no Item      ${BtSairsim}
     Sleep    2
-    Click no Item    ${BtSalvaRegAmb}
+    

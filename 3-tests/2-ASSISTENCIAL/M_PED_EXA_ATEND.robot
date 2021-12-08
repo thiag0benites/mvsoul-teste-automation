@@ -18,7 +18,7 @@ Resource          ../../1-resources/2-ASSISTENCIAL/M_PED_EXA_ATEND_STEPS.robot
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown    Encerra sessao
+Test Teardown    Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -37,5 +37,5 @@ SCR2AMPEDEXAATEND001:Fluxo Principal
     Clique na aba Paciente > Recepcao
     Pesquise, selecione o paciente e clique no botao "Pedido" |${dados}[Paciente]|
     Preencha os Dados do Atendimento Peso |${dados}[Peso]| Altura |${dados}[Altura]| Convenio |${dados}[Convenio]| Plano |${dados}[Plano]| Prestador |${dados}[Prestador]| Setor |${dados}[Setor]| Tp Solicitacao |${dados}[Solicitacao]| Local de Coleta |${dados}[Coleta]| Data Coleta |${dados}[DtColeta]| Data Validade |${dados}[DtValidade]|
-    Preencha os dados do exame a ser solicitado Exame Solicitado |${dados}[Exame]| Prestador Exame Solicitante |${dados}[PrestSolic]| Respostas |${dados}[Resp]|
-    Clique no botao "Conta Convenio"
+    Preencha os dados do exame a ser solicitado Exame Solicitado |${dados}[Exame]| Prestador Exame Solicitante |${dados}[PrestSolic]| Respostas |${dados}[Resp]| Msg |${dados}[Verif]|
+    Clique no botao "Conta Convenio" Msg Sair |${dados}[VerifB]|

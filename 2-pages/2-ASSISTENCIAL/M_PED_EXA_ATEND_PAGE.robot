@@ -86,4 +86,6 @@ ${BalaoExaLiberado}   xpath=//*[@id="frames105"]
 
 # Conta Convenio
 ${BtContaConv}        xpath=//*[@id="btnContaConvenio"]
-${BtSalvaRegAmb}      xpath=//*[@id="tb-record-save"]/a
+${BtSairRegAmb}       xpath=//li[@id='tb-exit'][@class='toolbar-item']
+${MgsVerif}           xpath=//p[@class='notifications-item-text']
+${BtSairsim}          xpath=//*[@id="frames132"]
