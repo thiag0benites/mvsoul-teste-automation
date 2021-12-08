@@ -18,7 +18,7 @@ ${btnNao}                          xpath=//button[@class="btn btn-primary"][cont
 
 
 ### Diversos ###
-${Alerta}                          xpath=//p[@class="notifications-item-text"][contains(text(),"Recebimento realizado com sucesso!")]
+${Alerta}                          xpath=//div[@class="notifications-item-body"]/p
 
 
 
