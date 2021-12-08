@@ -36,14 +36,6 @@ Clicar no botao Limpar Deposito
     Click Elemento por titulo    Limpar
 #########################################################################################################################
 
-Informar o caixa que sera vizualizado operado 2
-    Click no Item    ${BtnCaixa}
-    Click no Item    ${DescricaoCaixa}
-    Click no Item    ${BtnOk}
-
-Clicar em Executar Pesquisa 2
-    Click Elemento por titulo    Executar Consulta
-
 Abrir a Aba APLICACAO DIRETA
     Click no Item    ${MenuAplicacaoDireta}
 

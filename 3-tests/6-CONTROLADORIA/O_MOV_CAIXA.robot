@@ -44,8 +44,8 @@ SMF-6478 : Lançamentos/Fechamento - Aplicação Direta - Despesa Direta
 # robot -v browser:firefox -t "SMF-6478 : Lançamentos/Fechamento - Aplicação Direta - Despesa Direta" -d ./5-results/SMF-6478 "3-tests/6-CONTROLADORIA/O_MOV_CAIXA.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6478"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Caixa>Caixa>Movimentação>Lançamentos/Fechamento"@nprint @las
-    Informar o caixa que sera vizualizado operado 2
-    Clicar em Executar Pesquisa 2
+    Informar o caixa que sera vizualizado operado
+    Clicar em Executar Pesquisa
     Abrir a Aba APLICACAO DIRETA
     Selecionar no campo Lancamento o tipo de pagamento a efetuar
     Informar o valor no campo valor |${dados}[Valor2]|
