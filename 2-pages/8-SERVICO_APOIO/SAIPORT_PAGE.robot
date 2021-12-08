@@ -16,7 +16,11 @@ ${CampoTransp}                      xpath=//input[@id="inp:cdTransportador"]
 ${CampoSolicitante}                 xpath=//input[@id="inp:dsSolicitante"]
 ${CampoMotivo}                      xpath=//input[@id="inp:dsMotivo"]
 
+${AbaItens}                         xpath=//a[@id="TAB_PAGE_TAB_PAGE_tab0"]
 ${DivMat}                           xpath=//div[@class="slick-cell b1 f1 selected ui-fixed-width"]
 ${CampoMatr}                        xpath=//input[@class="editor-text mode-edit"]
 
 ${BotaoImprimir}                    xpath=//button[@data-member="BTN_IMPR_PROT"]
+
+${SaidaRelatorio}                   xpath=//input[@title="Impressora"]
+${BotaoImprimirFim}                 xpath=//button[@data-member="BTN_IMPRIMIR"]

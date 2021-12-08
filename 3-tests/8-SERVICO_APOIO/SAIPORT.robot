@@ -40,6 +40,6 @@ SCR8SSAIPORT-001:Fluxo Principal
     Validar Acesso a Tela |Protocolos de Saída de Documentos|
 
     Preencher Campos do Protocolo |${dados}[PrestadorOri]| |${dados}[PrestadorDes]| |${dados}[Transp]| |${dados}[Solicitante]| |${dados}[Motivo]| 
-    Preencher Itens, Salvar e Imprimir |${dados}[Matricula]|
+    Preencher Itens, Salvar e Imprimir |${dados}[Matricula]| |${dados}[Tela]|
 
 

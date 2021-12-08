@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/8-SERVICO_APOIO/C_SOLICITACAO_OS_PAGE.robot
+Resource          ../../2-pages/8-SERVICO_APOIO/SAIPORT_PAGE.robot
 
 *** Variable ***
 
@@ -21,11 +21,20 @@ Preencher Campos do Protocolo |${PrestadorOri}| |${PrestadorDes}| |${Transp}| |$
     Preencher Campo                ${CampoSolicitante}            ${Solicitante}
     Preencher Campo                ${CampoMotivo}                 ${Motivo}
 
-Preencher Itens, Salvar e Imprimir |${Matricula}|
+Preencher Itens, Salvar e Imprimir |${Matricula}| |${Tela}|
+    Click no Item                  ${DivMat}
+    Click no Item                  ${AbaItens}
     Preencher Campo                ${CampoMatr}                   ${Matricula} 
     Click Elemento por titulo           Salvar
     Sleep   1
     Click no Item                  ${BotaoImprimir}
+    Sleep   1
+    Preencher Campo                ${SaidaRelatorio}              ${Tela}
+    Click no Item                  ${BotaoImprimirFim} 
+    Sleep   2
+    Switch Window                  NEW
+    Sleep   3
+    Capture Page Screenshot
 
 
 
