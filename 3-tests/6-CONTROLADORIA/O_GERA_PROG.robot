@@ -31,4 +31,22 @@ Test Teardown     Encerra sessao
 SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não
 # robot -v browser:chrome -t "SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não" -d ./5-results/SMF-7513 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
 # robot -v browser:firefox -t "SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não" -d ./5-results/SMF-7513 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
-    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Pagar>Lançamentos/Adiantamentos>Previsão>Cadastro"@nprint @las
+    Acessa a Tela Pela Busca |O_GERA_PROG||Cadastro| @las
+    Inserir no campo Descricao a descricao da previsao a ser cadastrada
+    Informar no campo dia o dia previsto de pagamento
+    Selecionar no campo Periodicidade
+    Selecionar no campo Vencto dia nao util
+    Inserir no campo Valor
+    Inserir no campo mes ano inic do inicio da previsao
+    Selecionar na lov do campo tipo documento
+    Selecionar na lov do campo Fornecedor
+    Indicar no campo tipo de programacao da previsao
+    Selecionar no campo Contabilizar
+    Selecionar no campo Tp Prev Contab
+    Verificar a informacao contida no campo Tipo de Vencimento
+    Selecionar no campo historico padrao  
+    Clicar no botao Previsao
+    Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
+    Selecionar no campo Conta de Custo a conta de custo
+    Informar no campo Valor Compartilhamento
+    Clicar no botao Gerar
