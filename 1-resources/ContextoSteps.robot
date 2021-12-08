@@ -223,6 +223,10 @@ Clicar Item e Selecionar da Lista
     Click no Item                   ${CampoClick}   
     Selecionar Item Na Lista        ${BotaoLov}        ${Item}         ${ItemLista}    
 
+Clicar Botao Salvar 
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         ${MensagemToast}               Registros gravados com sucesso
+
 Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     Unselect Frame
     Click Element                           ${BotaoBuscaTela}
