@@ -75,8 +75,8 @@ Validar Elemento Pelo Titulo
     Element Should Be Visible           ${elemento}
 
 Validar Acesso a Tela |${TituloEsperado}|
-    Wait Until Element Is Visible           xpath=//div[text()="${TituloEsperado}"]              250
-    Element Should Contain                  xpath=//div[text()="${TituloEsperado}"]              ${TituloEsperado}
+    Wait Until Element Is Visible           xpath=//div[contains(text(), "${TituloEsperado}")]              250
+    Element Should Contain                  xpath=//div[contains(text(), "${TituloEsperado}")]              ${TituloEsperado}
 
 Selecionar Item Na Lista         
     [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
