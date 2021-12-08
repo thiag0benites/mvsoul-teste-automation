@@ -22,20 +22,12 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-<<<<<<< HEAD
 ${suite}          o_mov_caixa
-=======
-#${suite}         m_lote_pagamento
->>>>>>> ac99832d014ca603a3daedbb5861a69f65e3aa6d
 # # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-<<<<<<< HEAD
 #SMF-6473 : Lançamentos/Fechamento - Efetuar Depósito de documentos do caixa 
-=======
-#SMF-6473 : Lançamentos/Fechamento - Efetuar Depósito de documentos do caixa
->>>>>>> ac99832d014ca603a3daedbb5861a69f65e3aa6d
 # robot -v browser:chrome -t "SMF-6473 : Lançamentos/Fechamento - Efetuar Depósito de documentos do caixa" -d ./5-results/SMF-6473 "3-tests/6-CONTROLADORIA/O_MOV_CAIXA.robot"
 # robot -v browser:firefox -t "SMF-6473 : Lançamentos/Fechamento - Efetuar Depósito de documentos do caixa" -d ./5-results/SMF-6473 "3-tests/6-CONTROLADORIA/O_MOV_CAIXA.robot"
     # Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Caixa>Caixa>Movimentação>Lançamentos/Fechamento"@nprint @las

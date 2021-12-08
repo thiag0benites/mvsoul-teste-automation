@@ -7,7 +7,7 @@
 Resource    ../../Config.robot
 
 *** Variables ***
-${CampoDescricao}                    xpath=//input[@id="inp:nmPrevisao"]   
+${CampoDescricao}                    xpath=//input[@id="inp:nmPrevisao"]    
 ${DiaPrevisto}                       xpath=//input[@id="inp:vlDiaVencimento"]
 ${CampoPeriocidade}                  xpath=//input[@id="tpPeriodicidade_ac"]
 ${CampoVencimento}                   xpath=//input[@id="tpVenctoNaoUtil_ac"]
@@ -24,6 +24,7 @@ ${ComboboxTipo}                      xpath=//input[@id="tpProgramacao_ac"]
 ${ItemContabilizar}                  xpath=//input[@id="snPrevisaoContabilizavel_ac"]
 
 ${PrevisaoContab}                    xpath=//input[@id="tpPrevisaoContabilizavel_ac"]
+
 ${ItemVencimento}                    xpath=//input[@id="tpVencimento1_ac"]
 ${BtnHistorico}                      xpath=//div[@id="cdHistoricoPadrao"]//span[@class="ui-button-icon ui-icon mv-basico-reticencias"]
 ${BtnPrevisao}                       xpath=//button[@id="butSair"]
@@ -42,4 +43,4 @@ ${LinhaCompartilha}                  xpath=//div[@id="grdInfRateio"]/div[4]/div[
 ${CampoCompartilha}                  xpath=//input[@class="editor-text mode-edit"]
 
 ${BtnGerar}                          xpath=//button[@id="butGerar"]  
-${MsgUsuario}                        xpath=//li[@class="notification-info"]
+${MsgUsuario}                        xpath=//li[@class="notification-info"] 

@@ -23,7 +23,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_centro_custo_comp
+#${suite}          o_gera_prog
 # # Recebe dados do gerenciador
 #${dados}
 
@@ -42,11 +42,35 @@ SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não
     Selecionar na lov do campo Fornecedor
     Indicar no campo tipo de programacao da previsao
     Selecionar no campo Contabilizar
-    Selecionar no campo Tp Prev Contab
+    #Selecionar no campo Tp Prev Contab
     Verificar a informacao contida no campo Tipo de Vencimento
-    Selecionar no campo historico padrao  
+    Selecionar no campo historico padrao   
     Clicar no botao Previsao
     Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
     Selecionar no campo Conta de Custo a conta de custo
     Informar no campo Valor Compartilhamento
     Clicar no botao Gerar
+
+
+SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim
+# robot -v browser:chrome -t "SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim" -d ./5-results/SMF-7512 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
+# robot -v browser:firefox -t "SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim" -d ./5-results/SMF-7512 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
+    Acessa a Tela Pela Busca |O_GERA_PROG||Cadastro| @las
+    2Inserir no campo Descricao a descricao da previsao a ser cadastrada
+    2Informar no campo dia o dia previsto de pagamento
+    2Selecionar no campo Periodicidade
+    2Selecionar no campo Vencto dia nao util
+    2Inserir no campo Valor
+    2Inserir no campo mes ano inic do inicio da previsao
+    2Selecionar na lov do campo tipo documento
+    2Selecionar na lov do campo Fornecedor
+    2Indicar no campo tipo de programacao da previsao
+    2Selecionar no campo Contabilizar
+    2Selecionar no campo Tp Prev Contab
+    2Verificar a informacao contida no campo Tipo de Vencimento
+    2Selecionar no campo historico padrao   
+    2Clicar no botao Previsao
+    2Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
+    2Selecionar no campo Conta de Custo a conta de custo
+    2Informar no campo Valor Compartilhamento
+    2Clicar no botao Gerar
