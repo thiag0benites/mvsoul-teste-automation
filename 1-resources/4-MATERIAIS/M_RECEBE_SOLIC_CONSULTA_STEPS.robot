@@ -7,18 +7,13 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 
-Resource                            ../../2-pages/6-CONTROLADORIA/C_CONDET_RES_PAGE.robot
+Resource                            ../../2-pages/4-MATERIAIS/M_RECEBE_SOLIC_CONSULTA_PAGE.robot
 
 *** Keywords ***
 
-Descrição do Documento |${Codigo}||${Titulo}|
-    Valida Mensagem                                ${Alerta}    Problema na Configuração do Sistema
-    Click no Item                                  ${BtnOK}   
-    Clicar no botão Pesquisar
-    Preencher campo                                ${CampoCodigo}        ${Codigo}
+Consultar Lista dos Processos a Serem Validados|${MsgEsperada}|
     Clicar no botão Executar
-    Validar Elemento Pelo Titulo                   ${Titulo}
-
-
-
-
+    Click no Item                                            ${btnConfirmar}
+    Valida Mensagem                                          ${Alerta}                        ${MsgEsperada}
+    Click no Item                                            ${btnNao}
+   

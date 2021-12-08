@@ -62,6 +62,8 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         # Sleep    1
         Send Keys    tab
         Send Keys    enter
+        
+        
     END
     #### End LAS Send Keys #####
     Seleciona frame    ${IdIframe}    180
