@@ -38,5 +38,5 @@ SCR6CMHISTORICOPRORROGACAO-001:Contas a Pagar
     Validar Acesso a Tela |${dados}[nomeTela]| 
     Preencher codigo e Validar |${dados}[codigo]|
     Preencher novo vencimento e Validar |${dados}[novaDtVencimento]|
-    Preencher motivo|${dados}[motivo]| e Validar|${dados}[nomeFornecedor]|
-    Processar e validar mensagem |${dados}[mensagemSucesso]|
+    Preencher motivo |${dados}[motivo]| e Validar |${dados}[nomeFornecedor]|
+    Prorrogar e validar mensagem |${dados}[mensagemSucesso]|

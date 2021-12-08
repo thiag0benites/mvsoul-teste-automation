@@ -21,18 +21,18 @@ Preencher novo vencimento e Validar |${novaDtVencimento}|
     Send keys  enter
     Validar Elemento Pelo Titulo    ${novaDtVencimento}
 
-Preencher motivo|${motivo}| e Validar|${motivoProrrogacao}|
-    Preencher campo  ${campoMotivo}     ${motivo} 
-    Send keys  enter
-    Validar Informacao Item     ${campoMotivoProrrogacao}   ${motivoProrrogacao}
-    # Validar Elemento Pelo Titulo    ${motivoProrrogacao}
+Preencher motivo |${motivo}| e Validar |${nomeFornecedor}|
+    Preencher campo  ${campoMotivo}     ${motivo}
+    Send keys  enter 
+    # Validar Elemento Pelo Titulo     ${motivo} 
+    Validar Informacao Item  ${campoNomeFornecedor}  ${nomeFornecedor}   
 
 Prorrogar e validar mensagem |${mensagemSucesso}|
     Clicar Botao e Validar Mensagem    ${btnProrrogar2}    ${MensagemToast}    ${mensagemSucesso}
     Click no Item    ${btnOk}
+    Sleep    1
 
 Clicar Botao e Validar Mensagem
     [Arguments]    ${Botao}    ${MensagemRecebida}    ${MensagemEsperada}
     Click no Item    ${Botao}
     Valida Mensagem    ${MensagemRecebida}    ${MensagemEsperada}
-    Sleep    1
