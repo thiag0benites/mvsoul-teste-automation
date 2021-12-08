@@ -9,6 +9,7 @@ Resource          ../../Config.robot
 *** Variable ***
 ### Elementos da Pagina de CAD_LEI
 ${inputCodigo}              xpath=//input[@id='inp:cdUnidInt']
+${btnExecute}               xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
 ${btnSalvar}                xpath=//li[@id='toolbar']//li[@id='tb-record-save']//a
 ${btnPesquisar}             xpath=//li[@id='toolbar']//li[@id='tb-search']//a
 ${campoLeito}               xpath=//div[@class='slick-cell b1 f1 selected']//div[@data-row='0']

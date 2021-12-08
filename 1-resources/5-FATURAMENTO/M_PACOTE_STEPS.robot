@@ -41,3 +41,7 @@ Validar cadastro realizado |${mensagem}|
     
 Clicar no botao Salvar
     Click no Item               ${btnSalvar} 
+
+Clicar no botao Executar 
+    Click no Item            ${btnExecute} 
+    Sleep              30   

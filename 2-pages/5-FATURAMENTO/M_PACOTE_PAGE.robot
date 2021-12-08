@@ -20,3 +20,5 @@ ${setorInput}                           xpath=//div[@id='EXCECOES_grdPacoteExcec
 ${campoAcomodacao}                      xpath=//div[@id='EXCECOES_grdPacoteExcecao']//div[@class='slick-cell b6 f6 selected ui-fixed-width']
 ${acomodacaoInput}                      xpath=//div[@id='EXCECOES_grdPacoteExcecao']//div[@class='slick-cell b6 f6 selected ui-fixed-width active editable']//input
 ${btnSalvar}                            xpath=//li[@id='toolbar']//li[@id='tb-record-save']//a
+${btnExecute}                           xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
+

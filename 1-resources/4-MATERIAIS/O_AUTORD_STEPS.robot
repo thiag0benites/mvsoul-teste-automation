@@ -19,3 +19,7 @@ Clicar no botao Aprovada na Tabela
 Clicar no botao confirmar Autorizacao
     Click no Item  ${btnConfirmarAutorizacao}
     Sleep      90
+    
+Clicar no botao Executar 
+    Click no Item            ${btnExecute} 
+    Sleep              30   

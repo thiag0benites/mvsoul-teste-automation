@@ -12,3 +12,4 @@ ${btnExcluirAtendimento}                        xpath=//button[@data-member='BTN
 ${atendimento}                                  xpath=//input[@id='inp:cdAtendimento']
 ${CampoMotivo}                                  xpath=//input[@id='inp:dspDsMotivo']
 ${btnSimNotifications}                          xpath=//li[@class='notification-buttons']//button[1]
+${btnExecute}                                   xpath=//li[@id='toolbar']//li[@id='tb-execute']//a

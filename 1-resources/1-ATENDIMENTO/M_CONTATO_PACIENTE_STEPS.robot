@@ -13,7 +13,11 @@ Clicar no botao Sim no modal de notificacao
     Click no Item               ${btnSimNotificacao}   
 
 Clicar no botao Contato
-    Click no Item               ${btnContato}   
+    Click no Item               ${btnContato} 
+      
+Clicar no botao Executar 
+    Click no Item            ${btnExecute} 
+    Sleep              30   
 
 Preencher os dados do contato do paciente |${ddd1}|,|${ddd2}|,|${telefone}|
     Click no Item    ${campoDdd1}

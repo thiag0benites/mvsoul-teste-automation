@@ -21,3 +21,4 @@ ${btnSalvar}                                xpath=//li[@id='toolbar']//li[@id='t
 ${btnPesquisar}                             xpath=//li[@id='toolbar']//li[@id='tb-search']//a
 ${btnExecute}                               xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
 ${modalNotificacao}                         xpath=//p[@class="notifications-item-text"]
+${btnExecute}                               xpath=//li[@id='toolbar']//li[@id='tb-execute']//a

@@ -8,7 +8,11 @@ Resource          ../../2-pages/1-ATENDIMENTO/CAD_LEI_PAGE.robot
 
 *** Keywords ***
 Clicar no botao Pesquisar
-    Click no Item               ${btnPesquisar}   
+    Click no Item               ${btnPesquisar}  
+
+Clicar no botao Executar 
+    Click no Item            ${btnExecute} 
+    Sleep              30   
     
 Preencher o campo codigo de unidade da internacao |${codigo}|
     Preencher campo                  ${inputCodigo}              ${codigo} 
