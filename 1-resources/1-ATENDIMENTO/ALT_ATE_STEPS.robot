@@ -15,7 +15,6 @@ Preencher Atendimento |${Atendimento}|
 Escolher Novo Tipo |${Origem}|
     Preencher Campo                         ${CampoOrigem}                  ${Origem}
 
-
 Confirmar Alteracao |${MensagemAlerta}| |${MensagemSucesso}| 
     Click no Item                           ${BotaoConfirmar}
     Valida Mensagem                         ${MensagemToast}                ${MensagemAlerta}
