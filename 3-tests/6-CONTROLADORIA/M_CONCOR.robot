@@ -23,18 +23,19 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-#${suite}         
+${suite}        m_concor_1
  # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR6CMCONCOR-001:Fluxo Principal          #SMF-9586 : Calcular os Custos Gerais 
 # robot -v browser:chrome -t "SCR6CMCONCOR-001:Fluxo Principal" -d ./5-results/SCR6CMCONCOR-001 "3-tests/6-CONTROLADORIA/M_CONCOR.robot"
 # robot -v browser:firefox -t "SCR6CMCONCOR-001:Fluxo Principal" -d ./5-results/SCR6CMCONCOR-001 "3-tests/6-CONTROLADORIA/M_CONCOR.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CMCONCOR-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CMCONCOR-001"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Tabelas>Contas Correntes"@nprint @las
-    Preencher campo Descricao
-    Preencher dados do cliente   
+    Preencher campo Descricao |${dados}[Descricao]|
+    Preencher dados do cliente |${dados}[CodBanco]||${dados}[Agencia]||${dados}[DigitoAgencia]||${dados}[Bairro]||${dados}[NumConta]||${dados}[DigitoConta]||${dados}[TipoCC]||${dados}[CodReduzido]||${dados}[Gerente]|
+    Preencher dados empresa |${dados}[Empresa]||${dados}[TipoTrans]||${dados}[CodReduz]||${dados}[MsgEsperada]|
     
 
 

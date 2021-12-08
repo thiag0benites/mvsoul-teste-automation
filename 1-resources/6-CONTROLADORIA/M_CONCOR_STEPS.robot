@@ -10,31 +10,33 @@
 Resource                            ../../2-pages/6-CONTROLADORIA/M_CONCOR_PAGE.robot
 
 *** Keywords ***
-Preencher campo Descricao
-    Clicar no Campo e Preencher Informacao    ${campoDescricao}        ${campoDescricao}             BANCO ITAU SA
-Preencher dados do cliente
-    Click no Item                             ${BtnCodBanco}   
-    Clicar no Campo e Preencher Informacao    ${CampoFiltro}           ${CampoFiltro}                ITAU
-    Click no Item                             ${BtnFiltrar}
-    Click no Item                             ${BtnOk}
-    Clicar no Campo e Preencher Informacao    ${CampoAgencia}          ${CampoAgencia}               600 
-    Clicar no Campo e Preencher Informacao    ${CampoDigitoAgencia}    ${CampoDigitoAgencia}         1
-    Clicar no Campo e Preencher Informacao    ${CampoBairro}           ${CampoBairro}                CENTRO
-    Clicar no Campo e Preencher Informacao    ${CampoNumConta}         ${CampoNumConta}              5000   
-    Clicar no Campo e Preencher Informacao    ${CampoDigitoConta}      ${CampoDigitoConta}           6
-    Click no Item                             ${BtnTipoContaCorrente}
-    Clicar no Campo e Preencher Informacao    ${CampoFiltro}           ${CampoFiltro}                CONTA CORRENTE
-    Click no Item                             ${BtnFiltrar}
-    Click no Item                             ${BtnOk}
-    Click no Item                             ${BtnCodContab}
-    Clicar no Campo e Preencher Informacao    ${CampoFiltro}           ${CampoFiltro}                itau
-    Click no Item                             ${BtnOk}
-    Clicar no Campo e Preencher Informacao    ${CampoGerente}          ${CampoGerente}               DEUS DO CEU
+Preencher campo Descricao |${Descricao}|
+    Clicar no Campo e Preencher Informacao    ${campoDescricao}            ${campoDescricao}             BANCO ITAU SA
+
+Preencher dados do cliente |${CodBanco}||${Agencia}||${DigitoAgencia}||${Bairro}||${NumConta}||${DigitoConta}||${TipoCC}||${CodReduzido}||${Gerente}|
+    
+    Clicar no Campo e Preencher Informacao    ${CampoCodBanco}             ${CampoCodBanco}              ${CodBanco}
+    Clicar no Campo e Preencher Informacao    ${CampoAgencia}              ${CampoAgencia}               ${Agencia} 
+    Clicar no Campo e Preencher Informacao    ${CampoDigitoAgencia}        ${CampoDigitoAgencia}         ${DigitoAgencia}
+    Clicar no Campo e Preencher Informacao    ${CampoBairro}               ${CampoBairro}                ${Bairro}
+    Clicar no Campo e Preencher Informacao    ${CampoNumConta}             ${CampoNumConta}              ${NumConta}
+    Clicar no Campo e Preencher Informacao    ${CampoDigitoConta}          ${CampoDigitoConta}           ${DigitoConta}
+    Clicar no Campo e Preencher Informacao    ${CampoTipoContaCorrente}    ${CampoTipoContaCorrente}     ${TipoCC}
+    
+    
+    
+    Clicar no Campo e Preencher Informacao    ${CampoCodReduzido}          ${CampoCodReduzido}           ${CodReduzido}
+    Clicar no Campo e Preencher Informacao    ${CampoGerente}              ${CampoGerente}               ${Gerente}
+
+Preencher dados empresa |${Empresa}||${TipoTrans}||${CodReduz}||${MsgEsperada}|
+    
     Click no Item                             ${AbaTransEntreEmpresas}
-    Clicar no Campo e Preencher Informacao    ${CampoEmpresa}          ${CampoEmpresaEdit}           1
+    Clicar no Campo e Preencher Informacao    ${CampoEmpresa}              ${CampoEmpresaEdit}           ${Empresa}
     Send Keys                                 tab
-    Clicar no Campo e Preencher Informacao    ${CampoTipoTrans}        ${CampoTipoTrans}             Recebimentos
+    Clicar no Campo e Preencher Informacao    ${CampoTipoTrans}            ${CampoTipoTrans}             ${TipoTrans}
     Send Keys                                 tab
-                
+    Clicar no Campo e Preencher Informacao    ${CampoCodReduz}             ${CampoCodReduz}              ${CodReduz}
+    Click no Item                             ${btnSalvar}
+    Valida Mensagem                           ${Alerta}                    ${MsgEsperada}
 
     
