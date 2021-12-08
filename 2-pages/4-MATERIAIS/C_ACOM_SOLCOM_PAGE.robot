@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Elementos e metodos da página de Acompanhamento de Solicitacoes de Compras
+# Decrição: Elementos e metodos da página  de Acompanhamento de Solicitacoes de Compras
 ###################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
