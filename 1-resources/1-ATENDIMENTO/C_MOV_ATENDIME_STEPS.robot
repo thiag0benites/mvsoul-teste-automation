@@ -10,15 +10,13 @@ Resource          ../../2-pages/1-ATENDIMENTO/C_MOV_ATENDIME_PAGE.robot
 
 *** Keywords ***
 Pesquisar Atendimentos
-    Send Keys   F8
-    Sleep   1
+    Send Keys    F8
+    Sleep    1
 
 Visualizar Dados da Movimentacao
-    Click no Item                   ${CampoDadosMov}
-    Sleep   2
+    Click no Item    ${CampoDadosMov}
+    Sleep    2
 
 Validar Pesquisa |${TipoMov}|
     Validar Elemento pelo Titulo    ${TipoMov}
-    Sleep   2
-
-
+    Sleep    2
