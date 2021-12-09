@@ -48,6 +48,7 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Log To Console    *** Visivel: ${classe}
         IF    '${classe}' == 'menu-node'
             Seleciona item no menu    ${itemMenu}
+            Sleep    5
         END
         Log To Console    *** Item ${itemMenu} selecionado no menu
         Log    *** Item ${itemMenu} selecionado no menu
