@@ -12,75 +12,59 @@ Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords ***
 
-Inserir no campo Descricao a descricao da previsao a ser cadastrada 
-    Preencher campo                    ${CampoDescricao}                    Receita300
+Inserir no campo Descricao a descricao da previsao a ser cadastrada |${Descricao2}|
+    Preencher campo                    ${CampoDescricao}                    ${Descricao2}
+Informar no campo dia o dia previsto de pagamento |${Dia}|
+     Preencher campo                    ${DiaPrevisto}                       ${Dia}     
+Selecionar no campo Periodicidade |${Periodo}|
+    Seleciona Item Combobox             ${CampoPeriocidade}                  ${Periodo}
 
- Informar no campo dia o dia previsto de pagamento
-     Preencher campo                    ${DiaPrevisto}                       10       
-
-Selecionar no campo Periodicidade
-    Seleciona Item Combobox             ${CampoPeriocidade}                  Mensal
-
-Selecionar no campo Vencto dia nao util
-    Seleciona Item Combobox             ${CampoVencimento}                   Não Controlar
-
-Inserir no campo Valor
-    Preencher campo                      ${CampoValor}                        1
-
-Inserir no campo mes ano inic do inicio da previsao
-    Preencher campo                      ${MesAnoInicio}                       02/2019
-    Preencher campo                      ${MesAnoFim}                          03/2020
-
-Selecionar na lov do campo tipo documento
+Selecionar no campo Vencto dia nao util |${Vencimento}|
+    Seleciona Item Combobox             ${CampoVencimento}                   ${Vencimento}
+Inserir no campo Valor |${Valor}|
+    Preencher campo                      ${CampoValor}                        ${Valor}
+Inserir no campo mes ano inic do inicio da previsao |${MesAnoInicial}| |${MesAnoFinal}|
+    Preencher campo                      ${MesAnoInicio}                       ${MesAnoInicial}
+    Preencher campo                      ${MesAnoFim}                          ${MesAnoFinal}
+Selecionar na lov do campo tipo documento |${TipoDoc}|
     Click no Item                        ${BtnDoc}   
-    Preencher campo                      ${CampoFiltroDoc}                      bol
+    Preencher campo                      ${CampoFiltroDoc}                      ${TipoDoc}
     Click no Item                        ${BtnFiltro}                           
     Click no Item                        ${BtnOk}
-
-Selecionar na lov do campo Fornecedor
+Selecionar na lov do campo Fornecedor |${Fornecedor}|
     Click no Item                        ${BtnFornecedor}   
-    Preencher campo                      ${CampoFiltroDoc}                      1000
+    Preencher campo                      ${CampoFiltroDoc}                      ${Fornecedor}
     Click no Item                        ${BtnFiltro}                           
     Click no Item                        ${BtnOk}
-
-Indicar no campo tipo de programacao da previsao
-    Seleciona Item Combobox              ${ComboboxTipo}                        Documento
-
-Selecionar no campo Contabilizar
-    Seleciona Item Combobox              ${ItemContabilizar}                     Não
-
-Selecionar no campo Tp Prev Contab
-    Seleciona Item Combobox              ${PrevisaoContab}                       Material
-
-Verificar a informacao contida no campo Tipo de Vencimento
-    Seleciona Item Combobox               ${ItemVencimento}                      Comprometido
-
-Selecionar no campo historico padrao  
+Indicar no campo tipo de programacao da previsao |${Programacao}|
+    Seleciona Item Combobox              ${ComboboxTipo}                        ${Programacao}
+Selecionar no campo Contabilizar |${Contabilizar}|
+    Seleciona Item Combobox              ${ItemContabilizar}                     ${Contabilizar}
+Selecionar no campo Tp Prev Contab |${PrevisaoConta}|
+    Seleciona Item Combobox              ${PrevisaoContab}                       ${PrevisaoConta}
+Verificar a informacao contida no campo Tipo de Vencimento |${TipoVencimento}|
+    Seleciona Item Combobox               ${ItemVencimento}                      ${TipoVencimento}
+Selecionar no campo historico padrao |${Historico}|
     Click no Item                         ${BtnHistorico}
-    Preencher campo                       ${CampoFiltroDoc}                      depo
+    Preencher campo                       ${CampoFiltroDoc}                      ${Historico}
     Click no Item                         ${BtnFiltro}                           
     Click no Item                         ${BtnOk}
-
 Clicar no botao Previsao
     Click no Item                         ${BtnPrevisao}
-
 Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
     Click no Item                         ${LinhaSetor}  
     Click no Item                         ${BtnSetor} 
     Click no Item                         ${LinhaSetor2}                        
     Click no Item                         ${BtnOk}
-
-Selecionar no campo Conta de Custo a conta de custo
+Selecionar no campo Conta de Custo a conta de custo |${ContaCusto}|
     Click no Item                          ${LinhaCusto} 
     Click no Item                          ${BtnCusto}
-    Preencher campo                        ${CampoFiltroDoc}                      agua
+    Preencher campo                        ${CampoFiltroDoc}                      ${ContaCusto}
     Click no Item                          ${BtnFiltro}                           
     Click no Item                          ${BtnOk} 
-
-Informar no campo Valor Compartilhamento
+Informar no campo Valor Compartilhamento |${ValorCompartilha}|
     Click no Item                          ${LinhaCompartilha}  
-    Preencher campo                        ${CampoCompartilha}                     1
-
+    Preencher campo                        ${CampoCompartilha}                     ${ValorCompartilha}
 Clicar no botao Gerar
     Click no Item                          ${BtnGerar} 
     Sleep                                    3   
@@ -89,53 +73,51 @@ Clicar no botao Gerar
                     
 
 #######################################################################################################################
+2Inserir no campo Descricao a descricao da previsao a ser cadastrada |${Descricao2}|
+    Preencher campo                    ${CampoDescricao}                    ${Descricao2}
 
-2Inserir no campo Descricao a descricao da previsao a ser cadastrada 
-    Preencher campo                    ${CampoDescricao}                    Receita300
+2Informar no campo dia o dia previsto de pagamento |${Dia}|
+     Preencher campo                    ${DiaPrevisto}                       ${Dia}     
 
- 2Informar no campo dia o dia previsto de pagamento
-     Preencher campo                    ${DiaPrevisto}                       10       
+2Selecionar no campo Periodicidade |${Periodo}|
+    Seleciona Item Combobox             ${CampoPeriocidade}                  ${Periodo}
 
-2Selecionar no campo Periodicidade
-    Seleciona Item Combobox             ${CampoPeriocidade}                  Mensal
+2Selecionar no campo Vencto dia nao util |${Vencimento}|
+    Seleciona Item Combobox             ${CampoVencimento}                   ${Vencimento}
 
-2Selecionar no campo Vencto dia nao util
-    Seleciona Item Combobox             ${CampoVencimento}                   Não Controlar
+2Inserir no campo Valor |${Valor}|
+    Preencher campo                      ${CampoValor}                        ${Valor}
 
-2Inserir no campo Valor
-    Preencher campo                      ${CampoValor}                        1
+2Inserir no campo mes ano inic do inicio da previsao |${MesAnoInicial}| |${MesAnoFinal}|
+    Preencher campo                      ${MesAnoInicio}                       ${MesAnoInicial}
+    Preencher campo                      ${MesAnoFim}                          ${MesAnoFinal}
 
-2Inserir no campo mes ano inic do inicio da previsao
-    Preencher campo                      ${MesAnoInicio}                       02/2019
-    Preencher campo                      ${MesAnoFim}                          03/2020
-
-2Selecionar na lov do campo tipo documento
+2Selecionar na lov do campo tipo documento |${TipoDoc}|
     Click no Item                        ${BtnDoc}   
-    Preencher campo                      ${CampoFiltroDoc}                      bol
+    Preencher campo                      ${CampoFiltroDoc}                      ${TipoDoc}
     Click no Item                        ${BtnFiltro}                           
     Click no Item                        ${BtnOk}
-
-2Selecionar na lov do campo Fornecedor
+2Selecionar na lov do campo Fornecedor |${Fornecedor}|
     Click no Item                        ${BtnFornecedor}   
-    Preencher campo                      ${CampoFiltroDoc}                      1000
+    Preencher campo                      ${CampoFiltroDoc}                      ${Fornecedor}
     Click no Item                        ${BtnFiltro}                           
     Click no Item                        ${BtnOk}
 
-2Indicar no campo tipo de programacao da previsao
-    Seleciona Item Combobox              ${ComboboxTipo}                        Documento
+2Indicar no campo tipo de programacao da previsao |${Programacao}|
+    Seleciona Item Combobox              ${ComboboxTipo}                        ${Programacao}
 
-2Selecionar no campo Contabilizar
-    Seleciona Item Combobox              ${ItemContabilizar}                     Sim
+2Selecionar no campo Contabilizar |${Contabilizar}|
+    Seleciona Item Combobox              ${ItemContabilizar}                     ${Contabilizar}
 
-2Selecionar no campo Tp Prev Contab
-    Seleciona Item Combobox              ${PrevisaoContab}                       Serviço
+2Selecionar no campo Tp Prev Contab |${PrevisaoConta}|
+    Seleciona Item Combobox              ${PrevisaoContab}                       ${PrevisaoConta}
 
-2Verificar a informacao contida no campo Tipo de Vencimento
-    Seleciona Item Combobox               ${ItemVencimento}                      Comprometido
+2Verificar a informacao contida no campo Tipo de Vencimento |${TipoVencimento}|
+    Seleciona Item Combobox               ${ItemVencimento}                      ${TipoVencimento}
 
-2Selecionar no campo historico padrao  
+2Selecionar no campo historico padrao |${Historico}|
     Click no Item                         ${BtnHistorico}
-    Preencher campo                       ${CampoFiltroDoc}                      depo
+    Preencher campo                       ${CampoFiltroDoc}                      ${Historico}
     Click no Item                         ${BtnFiltro}                           
     Click no Item                         ${BtnOk}
 
@@ -143,21 +125,21 @@ Clicar no botao Gerar
     Click no Item                         ${BtnPrevisao}
 
 2Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
-    Click no Item                         ${LinhaSetor} 
+    Click no Item                         ${LinhaSetor}  
     Click no Item                         ${BtnSetor} 
     Click no Item                         ${LinhaSetor2}                        
     Click no Item                         ${BtnOk}
 
-2Selecionar no campo Conta de Custo a conta de custo
+2Selecionar no campo Conta de Custo a conta de custo |${ContaCusto}|
     Click no Item                          ${LinhaCusto} 
     Click no Item                          ${BtnCusto}
-    Preencher campo                        ${CampoFiltroDoc}                      agua
+    Preencher campo                        ${CampoFiltroDoc}                      ${ContaCusto}
     Click no Item                          ${BtnFiltro}                           
     Click no Item                          ${BtnOk} 
 
-2Informar no campo Valor Compartilhamento
+2Informar no campo Valor Compartilhamento |${ValorCompartilha}|
     Click no Item                          ${LinhaCompartilha}  
-    Preencher campo                        ${CampoCompartilha}                     1
+    Preencher campo                        ${CampoCompartilha}                     ${ValorCompartilha}
 
 2Clicar no botao Gerar
     Click no Item                          ${BtnGerar} 
