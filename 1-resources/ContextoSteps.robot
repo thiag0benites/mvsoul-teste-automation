@@ -287,5 +287,5 @@ Valida Mensagem
     [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${MensagemRecebida}    120
     Sleep    3
-    ${MensagemRecebida}    Get Text    ${MensagemEsperada}
+    #${MensagemRecebida}    Get Text    ${MensagemEsperada}
     Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}

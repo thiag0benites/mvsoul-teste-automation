@@ -37,5 +37,5 @@ SMF-6540:Fluxo Principal
     Acessar |${dados}[tela]|@nprint @las
     Preencher os campos Usuario Origem|${dados}[usrOrigem]|, Usuario Destino|${dados}[usrDestino]|
     Clicar no botao [Copiar Usuario]
-    Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
+    Valida Mensagem     ${mensagemPop}     ${mensagemEsperada}
     Clicar no botao [OK]
