@@ -11,11 +11,19 @@ Clicar no botao Sim no modal de notificacao
     Click no Item    ${btnSimNotificacao}
 
 Clicar no botao Contato
+<<<<<<< HEAD
     Click no Item               ${btnContato} 
       
 Clicar no botao Executar 
     Click no Item            ${btnExecute} 
     Sleep              30   
+=======
+    Click no Item    ${btnContato}
+
+Clicar no botao Executar
+    Click no Item    ${btnExecute}
+    Sleep    30
+>>>>>>> a7bf120cf78b25887b3f413a2b9a10c806489a24
 
 Preencher os dados do contato do paciente |${ddd1}|,|${ddd2}|,|${telefone}|
     Click no Item    ${campoDdd1}

@@ -3,11 +3,11 @@
 # Decrição: Testes da tela M_CONFIG_USU_MAQUINA
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/M_CONTATO_PACIENTE "3-tests/1-ATENDIMENTO/M_CONTATO_PACIENTE.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/M_CONTATO_PACIENTE "3-tests/1-ATENDIMENTO/M_CONTATO_PACIENTE.robot"
 # firefox: robot -v browser:firefox -d ./5-results/M_CONTATO_PACIENTE "3-tests/1-ATENDIMENTO/M_CONTATO_PACIENTE.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/M_CONTATO_PACIENTE "3-tests/1-ATENDIMENTO/M_CONTATO_PACIENTE.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/M_CONTATO_PACIENTE "3-tests/1-ATENDIMENTO/M_CONTATO_PACIENTE.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/M_CONTATO_PACIENTE "3-tests/1-ATENDIMENTO/M_CONTATO_PACIENTE.robot"
 #################################################################################################################################################################
 *** Settings ***
