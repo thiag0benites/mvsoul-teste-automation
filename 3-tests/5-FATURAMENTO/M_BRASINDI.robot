@@ -1,6 +1,6 @@
 #################################################################################################################################################################
 # Autor: Marcos Costa
-# Decrição: Importar os dados da tabela BRASINDICE para o sistema. 
+# Decrição: Importar os dados da tabela BRASINDICE para o sistema.
 # A importação corresponde a conversão que incidirá sobre uma determinada tabela para fins de faturamento.
 #################################################################################################################################################################
 # Execução Exemplo:
@@ -13,17 +13,13 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-
-Resource            ../../1-resources/5-FATURAMENTO/M_BRASINDI_STEPS.robot
-
-
+Resource          ../../1-resources/5-FATURAMENTO/M_BRASINDI_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
-
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
