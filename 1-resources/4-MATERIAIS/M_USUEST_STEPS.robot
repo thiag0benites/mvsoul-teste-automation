@@ -8,17 +8,17 @@ Resource          ../../2-pages/4-MATERIAIS/M_USUEST_PAGE.robot
 
 *** Keywords ***
 Preencher os campos da tela |${usuario}|,|${estoque}|
-    Preencher campo                     ${campoUsuario}                ${usuario}
-    Click no Item                       ${campoEstoque}          
-    Preencher campo                     ${campoEstoqueInput}           ${estoque}
+    Preencher campo    ${campoUsuario}    ${usuario}
+    Click no Item    ${campoEstoque}
+    Preencher campo    ${campoEstoqueInput}    ${estoque}
 
 Marcar os checkbox
-    Click no Item  ${checkboxAbrir}
-    Click no Item  ${checkboxConferir}
-    Click no Item  ${checkboxValidar}
+    Click no Item    ${checkboxAbrir}
+    Click no Item    ${checkboxConferir}
+    Click no Item    ${checkboxValidar}
 
 Clicar no botao e salvar cadastro
-    Click no Item  ${btnSalvar}
+    Click no Item    ${btnSalvar}
 
 Validar o cadastro realizado |${mensagem}|
-    Valida Mensagem         ${MensagemSalvar}          ${mensagem}
+    Valida Mensagem    ${MensagemSalvar}    ${mensagem}

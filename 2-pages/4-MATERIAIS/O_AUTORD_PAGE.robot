@@ -7,7 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${inputCodigo}              xpath=//div[@class='slick-cell b0 f0 selected ui-fixed-width active editable']//input
-${btnAprovadaTable}         xpath=//div[@class='slick-cell b11 f11 slick-last-cell selected ui-label-position-default mode-edit']//button
-${btnConfirmarAutorizacao}  xpath=//button[@id='btnConfirma']
-${btnExecute}               xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
+${inputCodigo}    xpath=//div[@class='slick-cell b0 f0 selected ui-fixed-width active editable']//input
+${btnAprovadaTable}    xpath=//div[@class='slick-cell b11 f11 slick-last-cell selected ui-label-position-default mode-edit']//button
+${btnConfirmarAutorizacao}    xpath=//button[@id='btnConfirma']
+${btnExecute}     xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
