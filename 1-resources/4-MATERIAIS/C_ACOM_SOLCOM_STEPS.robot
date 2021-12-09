@@ -9,20 +9,19 @@ Resource          ../../2-pages/4-MATERIAIS/C_ACOM_SOLCOM_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Data Inicial |${DataIni}|
-    Preencher Campo                     ${CampoDataIni}                     ${DataIni} 
+Preencher Data Inicial
+    Preencher campo com data e hora     ${CampoDataIni}    %d/%m/%Y    00:00:00
 
 Pesquisar e Validar Pesquisa |${Estoque}|
     Click no Item                       ${BotaoPesquisar}
     Validar Elemento pelo Titulo        ${Estoque}
 
-Preencher campo com data e hora
-    Wait Until Element Is Visible    ${CampoDataIni}    120
-    [Arguments]    ${CampoDataIni}    ${formato}    ${incremento}    
-    ${CurrentDate}    Get Current Date    result_format=${formato}    increment=${incremento}
-    [Return]        ${CurrentDate}
-    Log To Console      ${CurrentDate}
-    Click Element    ${elemento}
-    Sleep    2
-    Input Text    ${elemento}    ${CurrentDate}
 
+
+  
+ Captura do codigo do aviso de cirurgia|${suite}|${id}|
+    Wait Until Element Is Visible    ${inputAvisoCirurgia}    30
+    Should Not Be Empty   ${inputAvisoCirurgia}
+    ${codAvisoCir}    Get Element Attribute    ${inputAvisoCirurgia}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "preAgCirAvisoCirurgia", valor "${codAvisoCir}"
+    Sleep    2   
