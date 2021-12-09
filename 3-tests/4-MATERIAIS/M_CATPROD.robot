@@ -1,13 +1,13 @@
 #################################################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Teste da tela  Catalogo dos Fornecedores
+# Decrição: Teste da tela Catalogo dos Fornecedores
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
 # firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -34,7 +34,5 @@ SCR4MMCATPROD-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMCATPROD-001"
     Acessar a tela "Materiais e Logística>Compras>Catálogo>Produto"@nprint @las
     Validar Acesso a Tela |Catálogo dos Fornecedores|
-
     Preencher Fornecedor, Produto, Unidade, Valor e Validade |${dados}[CdFornecedor]| |${dados}[CdProduto]| |${dados}[CdUnidade]| |${dados}[Valor]| |${dados}[DtValidade]|
-    
     Salvar Registro |${dados}[MsgSalva]|
