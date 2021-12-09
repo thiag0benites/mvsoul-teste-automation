@@ -31,11 +31,10 @@ ${dados}
 SCR4MCPRODATEND-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MCPRODATEND-001:Fluxo Principal" -d ./5-results/SCR4MCPRODATEND-001 "3-tests/4-MATERIAIS/C_PRODATEND.robot"
 # robot -v browser:firefox -t "SCR4MCPRODATEND-001:Fluxo Principal" -d ./5-results/SCR4MCPRODATEND-001 "3-tests/4-MATERIAIS/C_PRODATEND.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MCPRODATEND-001"
-    Acessar a tela pela busca |C_PRODATEND||Consumo do Atendimento| @las
-    #Acessar a tela "Materiais e Logística>Almoxarifado>Consultas>Consumos>Consumo do Atendimento"@nprint @las
-    Validar Acesso a Tela |Consumo do Atendimento|
-    Selecionar Paciente
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MCPRODATEND-001"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Consultas>Consumos>Consumo do Atendimento"@nprint @las
+    Validar Acesso a Tela |${dados}[NomeTela]|
+    Selecionar Paciente |${dados}[TelaConsultaPac]|
     Realizar Consulta de Consumo
-    Validar Consulta de Consumo
-    Sleep  5
+    Validar Consulta de Consumo |${dados}[Paciente]| |${dados}[UnidInternacao]| |${dados}[Setor]| |${dados}[Produto]|
+

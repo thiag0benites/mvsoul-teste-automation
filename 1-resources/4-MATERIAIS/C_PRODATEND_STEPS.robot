@@ -10,21 +10,22 @@ Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 *** Variable ***
 
 *** Keywords ***
-Selecionar Paciente
+Selecionar Paciente |${TelaConsultaPac}|
     Click no Item                    ${BotaoLovPaciente} 
-    Validar Acesso a Tela |Consulta Atendimentos|
+    Validar Acesso a Tela |${TelaConsultaPac}|
     Marcar Checkbox |${CbPacInternacao}|
     Click Elemento por titulo        Executar Consulta
+    Sleep  5
     Click no Item                    ${BotaoConfirmar}
 
 Realizar Consulta de Consumo
     Click Elemento por titulo        Executar Consulta
 
-Validar Consulta de Consumo
-    Validar Elemento Pelo Titulo     AADA TEIXEIRA PINTO MARTINS
-    Validar Elemento Pelo Titulo     AADBR UNIDADE INTERNAÇÃO
-    Validar Elemento Pelo Titulo     PRONTO SOCORRO
-    Validar Elemento Pelo Titulo     AAS 500MG COMP-ACIDO ACETILSALICILICO
+Validar Consulta de Consumo |${Paciente}| |${UnidInternacao}| |${Setor}| |${Produto}|
+    Validar Elemento Pelo Titulo     ${Paciente}
+    Validar Elemento Pelo Titulo     ${UnidInternacao}
+    Validar Elemento Pelo Titulo     ${Setor}
+    Validar Elemento Pelo Titulo     ${Produto}
     
     
 
