@@ -223,6 +223,10 @@ Clicar Item e Selecionar da Lista
     Click no Item                   ${CampoClick}   
     Selecionar Item Na Lista        ${BotaoLov}        ${Item}         ${ItemLista}    
 
+Clicar Botao Salvar |${MensagemEsperada}|
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         ${MensagemToast}               ${MensagemEsperada}
+
 Clicar Botao Salvar 
     Click Elemento por titulo               Salvar
     Valida Mensagem                         ${MensagemToast}               Registros gravados com sucesso

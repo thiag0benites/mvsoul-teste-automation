@@ -38,4 +38,4 @@ SCR4MMACOMPANHAMENTOORDCOM-001:Fluxo Principal
     Validar Dados Pesquisa |${dados}[Estoque]| |${dados}[Fornecedor]|
     Preencher Novo Contato |${dados}[DtContato]| |${dados}[HrContato]| |${dados}[NomeContato]| |${dados}[FoneContato]| |${dados}[EmailContato]|
     Preencher Historico Follow Up |${dados}[HistoricoFollowUp]|
-    Clicar Botao Salvar
+    Clicar Botao Salvar |${dados}[MesangemSucesso]|

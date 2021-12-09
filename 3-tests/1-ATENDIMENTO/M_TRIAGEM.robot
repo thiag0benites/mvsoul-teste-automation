@@ -38,6 +38,6 @@ SCR1AMTRIAGEM-001:Fluxo Principal
     Preencher Campos Admissao |${dados}[QueixaPrincipal]|
     Preencher Campos Doencas Cronicas e Alergias |${dados}[Diabetes]| |${dados}[Asma]|
     Preencher Campos Sinais Vitais |${dados}[PAInicial]| |${dados}[PAFinal]| |${dados}[Pulso]| |${dados}[Temperatura]|
-    Clicar Botao Salvar
+    Clicar Botao Salvar |${dados}[MesangemSucesso]|
     # Retornar massa de dados para status inicial do teste
     Excluir Dados de Triagem
