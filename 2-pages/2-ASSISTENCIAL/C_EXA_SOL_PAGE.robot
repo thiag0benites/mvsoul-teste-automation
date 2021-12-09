@@ -4,29 +4,12 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-
 ### Campos ###
-${CampoData}                      xpath=//input[@id="inp:dtPedido"]
-
-
-${DivAtendimento}                 xpath=//div[@data-member="CD_ATENDIMENTO"]
-${DivExame}                       xpath=//div[@data-member="CD_EXA_RX"]
-
-
-
+${CampoData}      xpath=//input[@id="inp:dtPedido"]
+${DivAtendimento}    xpath=//div[@data-member="CD_ATENDIMENTO"]
+${DivExame}       xpath=//div[@data-member="CD_EXA_RX"]
 ### Botoes ###
-
-
-
-
 ### Diversos ###
-
-
-
-
-
-
-

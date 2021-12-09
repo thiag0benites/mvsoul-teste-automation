@@ -4,18 +4,17 @@
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/SCR5FMGLOSAS-001 "3-tests\5 - FATURAMENTO\M_GLOSAS.robot"
-# firefox:         robot -v browser:firefox -d ./5-results/SCR5FMGLOSAS-001 "3-tests\5 - FATURAMENTO\M_GLOSAS.robot"
+# firefox:        robot -v browser:firefox -d ./5-results/SCR5FMGLOSAS-001 "3-tests\5 - FATURAMENTO\M_GLOSAS.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:         robot -v browser:headlesschrome -d ./5-results/SCR5FMGLOSAS-001 "3-tests\5 - FATURAMENTO\M_GLOSAS.robot"
-# firefox:         robot -v browser:headlessfirefox -d ./5-results/SCR5FMGLOSAS-001 "3-tests\5 - FATURAMENTO\M_GLOSAS.robot"
+# firefox:        robot -v browser:headlessfirefox -d ./5-results/SCR5FMGLOSAS-001 "3-tests\5 - FATURAMENTO\M_GLOSAS.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/2-ASSISTENCIAL/C_EXA_SOL_STEPS.robot
-
+Resource          ../../1-resources/2-ASSISTENCIAL/C_EXA_SOL_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
@@ -28,14 +27,9 @@ ${suite}          c_exa_sol
 ${dados}
 
 *** Test Case ***
-SCR2ACEXASOL-001:Fluxo Principal           
+SCR2ACEXASOL-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2ACEXASOL-001:Fluxo Principal" -d ./5-results/SCR2ACEXASOL-001 "3-tests/2-ASSISTENCIAL/C_EXA_SOL.robot"
 # robot -v browser:firefox -t "SCR2ACEXASOL-001:Fluxo Principal" -d ./5-results/SCR2ACEXASOL-001 "3-tests/2-ASSISTENCIAL/C_EXA_SOL.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2ACEXASOL-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2ACEXASOL-001"
     Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Consultas>Exames Solicitados"@nprint @las
     Consulta de Exames Solicitados |${dados}[Data]|
-    
-    
-
-
-
