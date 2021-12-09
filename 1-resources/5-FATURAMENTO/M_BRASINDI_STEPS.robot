@@ -12,7 +12,7 @@ Resource                            ../../2-pages/5-FATURAMENTO/M_BRASINDI_PAGE.
 
 *** Keywords ***
 
-Informar no Campo <Tabela> |${dados}[Tab]| <Procedimento> |${dados}[ProFat]| <Laboratorio> |${dados}[Lab]| <Medicamento> |${dados}[Med]| <Apresentacao> |${dados}[Apres]| <Qtd de Apres> |${dados}[Qtd]| <Cod. Tiss> |${dados}[Tiss]| <Cod. Tuss> |${dados}[Tuss]|
+Informar no Campo <Tabela> |${VlTabFat}| <Procedimento> |${VlProFat}| <Laboratorio> |${VlLab}| <Medicamento> |${VlMed}| <Apresentacao> |${VlApre}| <Qtd de Apres> |${VlQtd}| <Cod. Tiss> |${VlTiss}| <Cod. Tuss> |${VlTuss}|
     Validar Acesso a Tela |Configuração do Brasíndice|
     Click no Item    ${BtTabA}
     Click no Item    ${BtTabB}

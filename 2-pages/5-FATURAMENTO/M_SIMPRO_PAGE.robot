@@ -27,10 +27,10 @@ ${ProMedC}    xpath=//*[@id="#filterLov"]
 ${ProMedD}    xpath=//*[@id="btfilter"]
 ${ProMedE}    xpath=//*[@id="btok"]
 # Fator de Divisão
-${BtFatDivA}    xpath=//div[@class='ui-text'][@data-member='VL_FATOR_DIVISAO']
+${BtFatDivA}    xpath=//div[@class='slick-cell b6 f6 selected']
 ${BtFatDivB}    xpath=//input[@class='editor-text mode-edit']
 # Tipo de Valor
-${CpTipValorA}    xpath=//div[@class='ui-text'][@data-member='TP_CALCULO_VALOR']
+${CpTipValorA}    xpath=//div[@class='slick-cell b7 f7 selected']
 ${CpTipValorB}    xpath=//input[@class='ui-autocomplete-input ui-widget-content ui-buttoninput ui-corner-left'][@title='Unitário']
 # Tuss
 ${CpTussA}        xpath=//div[@class='slick-cell b8 f8 slick-last-cell selected']

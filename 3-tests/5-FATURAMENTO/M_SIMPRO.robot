@@ -21,27 +21,22 @@ Resource            ../../1-resources/5-FATURAMENTO/M_SIMPRO_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}          m_simpro
+${suite}          m_simpro
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 # SMF-5234
 SCR5FMSIMPRO001:Fluxo Principal
     # robot -v browser:chrome -t "SCR5FMSIMPRO001:Fluxo Principal" -d ./5-results/SCR5FMSIMPRO001 "3-tests/5-FATURAMENTO/M_SIMPRO.robot"
     # robot -v browser:firefox -t "SCR5FMSIMPRO001:Fluxo Principal" -d ./5-results/SCR5FMSIMPRO001 "3-tests/5-FATURAMENTO/M_SIMPRO.robot"
-    # ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMSIMPRO001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMSIMPRO001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Configurações>Preços do SIMPRO"@nprint @las
-    Informar no Campo 'Tabela' a Tabela Criada para Inserir os dados da Tabela SIMPRO - Tabela |SIMPRO - MEDICAMENTO - DF|	
-    Informa no Campo 'Procedimento' o Codigo do Procedimento da Tabela SIMPRO - Procedimento |AGUA DESTILADA 10ML AMP|	
-    Informa no Campo no campo 'Medicamento' o Codigo do Medicamento SIMPRO - Med |0000081111|	
-    Informar no campo 'Fator de Divisao' que sera cobrado para o procedimento - Valor Div |50|
-    Informar no campo 'Tipo do Valor' o tipo que sera cobrado o valor do procedimento - Tp Valor |Unitário| 
-    Informa no Campo no campo 'TUSS' o Codigo do Procedimento - Tuss |90167279|
-    Clicar no Botão 'SALVAR' |Registros gravados com sucesso (1 registros gravados).|
+    Informar no Campo <Tabela> |${dados}[Tab]| <Procedimento> |${dados}[ProFat]| <Med> |${dados}[Med]| <Valor Div> |${dados}[ValDiv]| <Tp Valor> |${dados}[TpValor]| <Tuss> |${dados}[Tuss]|
+    Clicar no Botão <SALVAR> |Registros gravados com sucesso (1 registros gravados).|
     
