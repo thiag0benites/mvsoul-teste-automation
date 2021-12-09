@@ -2,6 +2,9 @@
 # Autor: Marcio Nascimento
 # Decrição: Elementos e metodos da pagina
 ##################################################################################################################################
+*** Settings ***
+### Configurações iniciais
+Resource            ../../Config.robot
 
 *** Variable ***
 

@@ -21,8 +21,8 @@ ${PageIClassListMenu}    class=nav
 Realiza Login
     [Arguments]    ${usuario}    ${senha}    ${empresa}
     Wait Until Element Is Visible    ${PageIdTxtUsuario}    10    error=Erro ao efetuar o login
-    SeleniumLibrary.Input Text    ${PageIdTxtUsuario}    ${usuario}
-    SeleniumLibrary.Input Text    ${PageIdTxtSenha}    ${senha}
+    Input Text    ${PageIdTxtUsuario}    ${usuario}
+    Input Text    ${PageIdTxtSenha}    ${senha}
     Select From List By Label    ${PageIdSelectEmpresa}    ${empresa}
     # Capture Page Screenshot
     Click Button    ${PageIdBtnLogin}

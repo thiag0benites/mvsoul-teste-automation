@@ -5,25 +5,27 @@
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
-Resource          ../../1-resources/auxiliar/Genericos.robot
 
 *** Variable ***
 ### Elementos da Pagina de Pre-agendamento cirurgico
 ${inputDataHr}    id=inp:dtAvisoCirurgia
 ${inputDataHrSugerida}    id=inp:dtSugerida
 ${inputTempoPrev}    id=inp:vlTempoPrevisto
-${inputCodPacientePreAg}    xpath=(//input[@id='inp:cdPaciente'])[2]
 ${inputDataHrPrevIntern}    id=inp:dtPrevisaoInternacao
 ${inputTipoInternacao}    xpath=//input[@id='inp:cdTipoInternacao']
-${inputTipoInternacaoPreAg}    xpath=(//input[@id='inp:cdTipoInternacao'])[2]
-${inputSalaCirurgica}    xpath=//div[@id='frames77']/div[@id='aviCir_cdSalCir']/input[@id='inp:aviCir_cdSalCir']
-${inputMedicoAssociado}    xpath=//div[@id='frames78']/div[@id='cdPrestadorIndicacao']/input[@id='inp:cdPrestadorIndicacao']
-${btnAdicionarCirurgia}    xpath=//button[@data-member='BTN_NOVA_CIRURGIA']
-${inputCirurgia}    id=inp:cdCirurgia
-${inputConvenioCir}    xpath=(//*[@id='inp:cdConvenio'])[2]
-${inputCodPlano}     xpath=(//input[@id='inp:cdConPla'])[2]            
+${inputCentroCirurgico}    id=inp:cdCenCir
+${inputPreSalaCirur}    id=inp:aviCir_cdSalCir
+${inputMedicoAssociado}    id=inp:cdPrestadorIndicacao
+${inputCirurgia}    id=inp:cdCirurgia          
 ${inputPotencialCont}    id=inp:cdNaturezaCirurgia
 ${inputgrupoCirurgia}    id=inp:cdGrupoCirurgia
-${inputPrestCirurgiao}    xpath=(//input[@id="inp:cdPrestador"])[2]
 ${inputAtividadeMed}    id=inp:cdAtiMed
-
+${inputAvisoCirurgia}    xpath=//input[@id='inp:cdAvisoCirurgia']
+${inputCodPacientePreAg}    xpath=(//input[@id='inp:cdPaciente'])
+${inputCodPacientePreAgCir}    xpath=(//input[@id='inp:cdPaciente'])
+${inputTipoInternacaoPreAg}    xpath=(//input[@id='inp:cdTipoInternacao'])
+${inputConvenioCir}    xpath=(//*[@id='inp:cdConvenio'])
+${inputCodPlano}     xpath=(//input[@id='inp:cdConPla'])
+${inputPrestCirurgiao}    xpath=(//input[@id="inp:cdPrestador"])
+${inputDtPrevInter}    xpath=//input[@id='inp:dtPrevInter']
+${notifMsgSucesso}     xpath=//li[@class='notification-warning']  

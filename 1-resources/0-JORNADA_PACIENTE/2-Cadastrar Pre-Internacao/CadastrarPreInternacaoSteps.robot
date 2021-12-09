@@ -5,6 +5,8 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../../2-pages/0-JORNADA_PACIENTE/CadastrarPreInternacaoPage.robot
+Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
+Resource    ../4-Consultar Cadastro de Paciente/ConsultarCadastroDePacienteSteps.robot
 
 *** Variable ***
 
@@ -32,3 +34,4 @@ Preencher campos |${codPaciente}|,|${origem}|,|${codMedico}|,|${especialidade}|,
     Sleep    1
     Preencher campo    ${inputServico}    ${servico}
     Sleep    1
+

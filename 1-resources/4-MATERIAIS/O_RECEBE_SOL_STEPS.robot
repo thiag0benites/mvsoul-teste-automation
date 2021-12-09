@@ -12,5 +12,5 @@ Marcar o checkbox Recebe e clicar no botão para receber solicitações
     Click no Item          ${btnReceberSolicitacoes}
 
 Validar mensagem de confirmação
-    Valida Mensagem         ${MensagemSalvar}               Recebimento da solicitação foi concluída com sucesso!
+    Valida Mensagem         ${MensagemSalvar}               Registros gravados com sucesso (1 registros gravados).
 

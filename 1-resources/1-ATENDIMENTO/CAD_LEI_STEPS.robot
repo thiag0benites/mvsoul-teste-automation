@@ -2,8 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
-### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/1-ATENDIMENTO/CAD_LEI_PAGE.robot
 
 *** Variable ***
@@ -33,3 +31,8 @@ Preencher os campos da tabela |${leito}|,|${descResumida}|,|${enferm}|,|${acomod
     Click no Item                        ${campoAcomod}
     Sleep      2
     Preencher campo                      ${campoAcomodInput}                    ${acomod}
+
+Validar mensagem de confirmação ao cadastrar o leito
+    Valida Mensagem         ${MensagemSalvar}               Fim da Consolidação para o Mês 11/2021 .
+
+

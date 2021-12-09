@@ -5,68 +5,68 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/5-FATURAMENTO/M_CONVENIO_PAGE.robot
-Resource    ../4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
 Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
-Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
+
+
 
 *** Variable ***
 
 *** Keywords ***
-Cancelar Consulta
+Cancelar Consulta |${MensagemEsperada}|
     Click Elemento por titulo                    Cancelar
-    Valida Mensagem                              ${MensagemToast}             Consulta cancelada.
+    Valida Mensagem                              ${MensagemToast}             ${MensagemEsperada}
 
-Prencher Dados Cadastrais
-    Preencher Campo                              ${CampoDescricao}            CONVENIO TESTE AUTOMACAO
-    Selecionar Item Na Lista                     ${BotaoLovFormaApre}         MODELO PADRAO AMB            MODELO PADRAO AMB
-    Preencher Campo                              ${CampoRazaoSocial}          RAZAO SOCIAL TESTE
-    Preencher Campo                              ${CampoEmail}                email@teste.com
-    Preencher Campo                              ${CampoContato}              CONTATO TESTE
-    Preencher Campo                              ${CampoCargoContato}         DIRETOR
-    Preencher Campo                              ${CampoContatoRecurso}       CONTATO RECURSO
-    Selecionar Item Na Lista                     ${BotaoLovLogradouro}        ACESSO LOCAL                 ACESSO LOCAL
-    Preencher Campo                              ${CampoEndereco}             ENDERECO TESTE
-    Preencher Campo                              ${CampoNrEndereco}           100
-    Preencher Campo                              ${CampoBairro}               BAIRRO TESTE
-    Selecionar Item Na Lista                     ${BotaoLovCidade}            ABADIA                       ABADIA
-    Validar Elemento Pelo Titulo                 BA                   
-    Validar Elemento Pelo Titulo                 BRASIL                
-    Preencher Campo                              ${CampoCEP}                  50200000
-    Preencher Campo                              ${CampoFone}                 3333-4444
-    Preencher Campo                              ${CampoCNPJ}                 87074609000193
-    Preencher Campo                              ${CampoInscMunic}            49860750
-    Preencher Campo                              ${CampoInscEstad}            49860760
+Prencher Dados Cadastrais |${Descricao}| |${FormaApresentacao}| |${RazaoSocial}| |${Email}| |${Contato}| |${CargoContato}| |${ContatoRecurso}| |${Logradouro}| |${Endereco}| |${NrEndereco}| |${Bairro}| |${Cidade}| |${UF}| |${Pais}| |${CEP}| |${Fone}| |${CNPJ}| |${InscMunicipal}| |${InscEstadual}|
+    Preencher Campo                              ${CampoDescricao}            ${Descricao}
+    Selecionar Item Na Lista                     ${BotaoLovFormaApre}         ${FormaApresentacao}      ${FormaApresentacao}
+    Preencher Campo                              ${CampoRazaoSocial}          ${RazaoSocial}
+    Preencher Campo                              ${CampoEmail}                ${Email}
+    Preencher Campo                              ${CampoContato}              ${Contato}
+    Preencher Campo                              ${CampoCargoContato}         ${CargoContato}
+    Preencher Campo                              ${CampoContatoRecurso}       ${ContatoRecurso}
+    Selecionar Item Na Lista                     ${BotaoLovLogradouro}        ${Logradouro}             ${Logradouro}
+    Preencher Campo                              ${CampoEndereco}             ${Endereco}
+    Preencher Campo                              ${CampoNrEndereco}           ${NrEndereco}
+    Preencher Campo                              ${CampoBairro}               ${Bairro}
+    Selecionar Item Na Lista                     ${BotaoLovCidade}            ${Cidade}                 ${Cidade}
+    Validar Elemento Pelo Titulo                 ${UF}                   
+    Validar Elemento Pelo Titulo                 ${Pais}                
+    Preencher Campo                              ${CampoCEP}                  ${CEP}
+    Preencher Campo                              ${CampoFone}                 ${Fone}
+    Preencher Campo                              ${CampoCNPJ}                 ${CNPJ}
+    Preencher Campo                              ${CampoInscMunic}            ${InscMunicipal}
+    Preencher Campo                              ${CampoInscEstad}            ${InscEstadual}
 
-Preencher Dados do Faturamento
-    Preencher Campo                              ${CampoIR}                  12
-    Preencher Campo                              ${CampoISS}                 10
-    Preencher Campo                              ${CampoIdConvEstrang}       ESTRANGEIRO
-    Selecionar Item Na Lista                     ${BotaoLovModelMatric}      Calculo Unibanco                Calculo Unibanco
+Preencher Dados do Faturamento |${IR}| |${ISS}| |${ConvEstrangeiro}| |${ModeloMatricula}|
+    Preencher Campo                              ${CampoIR}                  ${IR}
+    Preencher Campo                              ${CampoISS}                 ${ISS}
+    Preencher Campo                              ${CampoIdConvEstrang}       ${ConvEstrangeiro}
+    Selecionar Item Na Lista                     ${BotaoLovModelMatric}      ${ModeloMatricula}         ${ModeloMatricula}
 
-Preencher Enderecos Adicionais
-    Preencher Campo                              ${CampoEndCorresp}          ENDERECO TESTE
-    Preencher Campo                              ${CampoBairroCorresp}       BAIRRO TESTE
-    Selecionar Item Na Lista                     ${BtLovCidadeCorresp}       RIO DE JANEIRO        RIO DE JANEIRO
-    Preencher Campo                              ${CampoUFCorresp}           RJ
-    Preencher Campo                              ${CampoCEPCorresp}          50200000
-    Preencher Campo                              ${CampoEndCobranca}         ENDERECO TESTE   
-    Preencher Campo                              ${CampoBairroCobranca}      BAIRRO TESTE     
-    Selecionar Item Na Lista                     ${BtLovCidadeCobranca}      JARDIM OLINDA                JARDIM OLINDA
-    Preencher Campo                              ${CampoUFCobranca}          PR
-    Preencher Campo                              ${CampoCEPCobranca}         50200000
+Preencher Enderecos Adicionais |${EndCorresponcia}| |${BairroCorresp}| |${CidadeCorresp}| |${UFCorresp}| |${CEPCorresp}| |${EndCobranca}| |${BairroCobran}| |${CidadeCobran}| |${UFCobran}| |${CEPCobran}|
+    Preencher Campo                              ${CampoEndCorresp}          ${EndCorresponcia}
+    Preencher Campo                              ${CampoBairroCorresp}       ${BairroCorresp}
+    Selecionar Item Na Lista                     ${BtLovCidadeCorresp}       ${CidadeCorresp}       ${CidadeCorresp} 
+    Preencher Campo                              ${CampoUFCorresp}           ${UFCorresp}
+    Preencher Campo                              ${CampoCEPCorresp}          ${CEPCorresp}
+    Preencher Campo                              ${CampoEndCobranca}         ${EndCobranca}   
+    Preencher Campo                              ${CampoBairroCobranca}      ${BairroCobran}     
+    Selecionar Item Na Lista                     ${BtLovCidadeCobranca}      ${CidadeCobran}         ${CidadeCobran}    
+    Preencher Campo                              ${CampoUFCobranca}          ${UFCobran}
+    Preencher Campo                              ${CampoCEPCobranca}         ${CEPCobran}
 
-Acessar Aba Complemento
+Acessar Aba Complemento |${AbaComplemento}|
     Send Keys    tab
-    Validar Acesso a Tela |Complemento|
+    Validar Acesso a Tela |${AbaComplemento}|
 
-Preencher Dados do Financeiro
-    Selecionar Item Na Lista                     ${BtLovFornecedor}          1000 MARCAS LTDA            1000 MARCAS LTDA
-    Preencher Campo                              ${CampoDiasPgto}            10
+Preencher Dados do Financeiro |${Fornecedor}| |${DiasPgto}|
+    Selecionar Item Na Lista                     ${BtLovFornecedor}          ${Fornecedor}           ${Fornecedor}
+    Preencher Campo                              ${CampoDiasPgto}            ${DiasPgto}
     Marcar Checkbox |${CbEmitirNF}|
-Preencher Controle de Retorno de Atendimentos
-    Preencher Campo                              ${CampoDiasAmb}             1                      
-    Preencher Campo                              ${CampoDiasExterno}         1                      
-    Preencher Campo                              ${CampoHorasUrgencia}       1      
+Preencher Controle de Retorno de Atendimentos |${DiasAmb}| |${DiasExterno}| |${HorasUrgencia}|
+    Preencher Campo                              ${CampoDiasAmb}             ${DiasAmb}                      
+    Preencher Campo                              ${CampoDiasExterno}         ${DiasExterno}                      
+    Preencher Campo                              ${CampoHorasUrgencia}       ${HorasUrgencia}     
 
 Marcar Checkbox Paciente Internado
     Marcar Checkbox |${CbPermiteAtdAmb}|
@@ -74,33 +74,42 @@ Marcar Checkbox Paciente Internado
     Marcar Checkbox |${CbPermiteAtdUrg}|
     Marcar Checkbox |${CbExigeLaudo}|
 
-Preencher Requisicao Medica 
-    Preencher Campo                              ${CampoValidMax}             5
-    Preencher Campo                              ${CampoRegANS}               123456789
+Preencher Requisicao Medica |${ValidMax}|
+    Preencher Campo                              ${CampoValidMax}             ${ValidMax}
 
-Preencher Faixa de Guias
-    Preencher Campo                              ${CampoQtdFimFaixa}           5
+Preencher Faixa de Guias |${QtdFimFaixa}| |${LimiteRemessa}|
+    Preencher Campo                              ${CampoQtdFimFaixa}          ${QtdFimFaixa}
     Marcar Checkbox |${CbConsignadoConta}|
     Marcar Checkbox |${CbGuiaPrestador}|
     Marcar Checkbox |${CbEmailNotificacao}|
-    Preencher Campo                              ${CampoLimiteRemessa}         5
+    Preencher Campo                              ${CampoLimiteRemessa}        ${LimiteRemessa}
     Marcar Checkbox |${CbFechaAmbSemImprimir}|
 
-Preencher Configuracao para Taxa de Acrescimo
-    Selecionar Item Na Lista                     ${BotaoLovProcedimento}       BIÓPSIA DE NERVO         BIÓPSIA DE NERVO
-    Preencher Campo                              ${CampoPercentual}            5        
-    Selecionar Item Na Lista                     ${BotaoLovMotAuditoria}       ACEITO DIFERENÇA DE VALOR    ACEITO DIFERENÇA DE VALOR
+Preencher Configuracao para Taxa de Acrescimo |${Procedimento}| |${Percentual}| |${MotAuditoria}|
+    Selecionar Item Na Lista                     ${BotaoLovProcedimento}       ${Procedimento}             ${Procedimento}   
+    Preencher Campo                              ${CampoPercentual}            ${Percentual}        
+    Selecionar Item Na Lista                     ${BotaoLovMotAuditoria}       ${MotAuditoria}             ${MotAuditoria} 
 
-Preencher Posicao do Codigo da Carteira
-    Preencher Campo                              ${CampoCdCarteiraCaracter}     5        
-    Preencher Campo                              ${CampoCdCarteiraQtd}          5        
-    Preencher Campo                              ${CampoCdCarteiraFinal}        5        
-    Preencher Campo                              ${CampoDtValidadeCaracter}     5        
-    Preencher Campo                              ${CampoDtValidadeQtd}          5        
-    Preencher Campo                              ${CampoDtValidadeFinal}        5        
+Preencher Posicao do Codigo da Carteira |${CdCarteiraCaracter}| |${CdCarteiraQtd}| |${CdCarteiraFinal}| |${DtValidadeCaracter}| |${DtValidadeQtd}| |${DtValidadeFinal}|
+    Preencher Campo                              ${CampoCdCarteiraCaracter}     ${CdCarteiraCaracter}       
+    Preencher Campo                              ${CampoCdCarteiraQtd}          ${CdCarteiraQtd}       
+    Preencher Campo                              ${CampoCdCarteiraFinal}        ${CdCarteiraFinal}      
+    Preencher Campo                              ${CampoDtValidadeCaracter}     ${DtValidadeCaracter}      
+    Preencher Campo                              ${CampoDtValidadeQtd}          ${DtValidadeQtd}    
+    Preencher Campo                              ${CampoDtValidadeFinal}        ${DtValidadeFinal}       
 
-Preencher Guia de OPME
-    Preencher Campo                              ${CampoNrDiasAutorizacao}      5
+Preencher Guia de OPME |${DiasAutorizacao}|
+    Preencher Campo                              ${CampoNrDiasAutorizacao}      ${DiasAutorizacao}
     Marcar Checkbox |${CbCriaAtdCir}|
     Marcar Checkbox |${CbObrigaPlano}|
     Marcar Checkbox |${CbImpedeFechamento}|
+
+Acessar aba Empresa |${AbaEmpresa}|
+    Click no Item                                 ${AbaEmpresa}
+    Validar Acesso a Tela |${AbaEmpresa}|
+
+Preencher Dados da Empresa |${CdEmpresa}| |${FormularioNF}| |${FormaApresentacaoEmp}|
+    Preencher Campo                               ${CampoCdEmpresa}              ${CdEmpresa}
+    Clicar Item e Selecionar da Lista             ${CampoFormularioNF}           ${BotaoLov}         ${FormularioNF}   ${FormularioNF}
+    Clicar Item e Selecionar da Lista             ${CampoFormaApresentacao}      ${BotaoLov}         ${FormaApresentacaoEmp}  ${FormaApresentacaoEmp}
+    
