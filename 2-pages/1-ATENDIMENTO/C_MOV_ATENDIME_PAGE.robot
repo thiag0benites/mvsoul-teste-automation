@@ -7,4 +7,4 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoDadosMov}                                 xpath=//button[@id="btnMovimentacao"]
+${CampoDadosMov}    xpath=//button[@id="btnMovimentacao"]
