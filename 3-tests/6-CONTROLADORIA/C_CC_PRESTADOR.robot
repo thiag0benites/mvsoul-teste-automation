@@ -34,8 +34,3 @@ SCR6CCCCPRESTADOR-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CCCCPRESTADOR"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Conta Corrente do Prestador"@nprint @las
     Descrição do Prestador |${dados}[Prestador]||${dados}[DataInicial]||${dados}[DataFinal]|
-    
-    
-
-
-
