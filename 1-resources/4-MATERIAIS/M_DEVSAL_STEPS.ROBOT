@@ -11,7 +11,7 @@ Resource                            ../../2-pages/6-CONTROLADORIA/M_CONCOR_PAGE.
 
 *** Keywords ***
 Preencher campo Descricao |${Descricao}|
-    Clicar no Campo e Preencher Informacao    ${campoDescricao}            ${campoDescricao}             ${Descricao}
+    Clicar no Campo e Preencher Informacao    ${campoDescricao}            ${campoDescricao}             BANCO ITAU SA
 
 Preencher dados do cliente |${CodBanco}||${Agencia}||${DigitoAgencia}||${Bairro}||${NumConta}||${DigitoConta}||${TipoCC}||${CodReduzido}||${Gerente}|
     
