@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource          ../Config.robot
+Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de CAD_LEI
@@ -17,3 +17,4 @@ ${campoEnferm}              xpath=//div[@class='slick-cell b3 f3 selected']
 ${campoEnfermInput}         xpath=//div[@class='slick-cell b3 f3 selected active editable']//input
 ${campoAcomod}              xpath=//div[@class='slick-cell b5 f5 selected']
 ${campoAcomodInput}         xpath=//div[@class='slick-cell b5 f5 selected active editable']//input
+${MensagemSalvar}           xpath=//p[@class="notifications-item-text"]

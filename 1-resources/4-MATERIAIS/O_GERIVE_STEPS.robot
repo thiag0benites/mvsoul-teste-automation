@@ -2,7 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/O_GERIVE_PAGE.robot
 
@@ -10,13 +9,11 @@ Resource          ../../2-pages/4-MATERIAIS/O_GERIVE_PAGE.robot
 
 *** Keywords ***
 Usuário deverá preencher o campo <Contagem>|${codContagem}|
-    Wait Until Element is Visible    ${codigoContagem}            120
     Preencher campo                  ${codigoContagem}           ${codContagem} 
 
 Clicar no botão Confirmar
-    Click Element     ${buttonConfirmar}
+    Click no Item    ${buttonConfirmar}
 
 Clicar no botão Sim no modal de notificacao
-    Wait Until Element is Visible    ${buttonSim}            30
-    Click Element     ${buttonSim}
+    Click no Item     ${buttonSim}
     Sleep             30

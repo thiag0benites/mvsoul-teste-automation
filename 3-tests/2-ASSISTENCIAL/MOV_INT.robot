@@ -38,10 +38,10 @@ SCR2AMOVINT-001:Fluxo Principal
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Secretaria>Transferência de Leito"@nprint @las
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Selecionar Paciente
-    Validar campos Preenchidos Apos Consulta
+    Selecionar Paciente |${dados}[Atendimento]|
+    Validar campos Preenchidos Apos Consulta |${dados}[CdPaciente]| |${dados}[Paciente]| |${dados}[Plano]| |${dados}[Origem]| |${dados}[Medico]|
     Selecionar Leito
-    Selecionar Motivo
-    Selecionar Tipo de Limpeza
+    Selecionar Motivo |${dados}[Motivo]|
+    Selecionar Tipo de Limpeza |${dados}[TpLimpeza]|
     Clicar Botao Salvar
 

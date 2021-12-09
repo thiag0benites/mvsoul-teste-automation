@@ -5,7 +5,6 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/1-ATENDIMENTO/M_ENTREGA_LAUDO_PAGE.robot
-Library    SeleniumLibrary
 
 *** Variable ***
 
