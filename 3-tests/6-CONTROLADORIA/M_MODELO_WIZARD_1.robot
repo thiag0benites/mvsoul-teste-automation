@@ -1,6 +1,6 @@
 #################################################################################################################################################################
 # Autor: Letícia Andrade
-# Decrição: Testes da tela C_LOTE
+# Decrição: Testes da tela M_MODELO_WIZARD
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:  robot -v browser:chrome -d ./5-results/M_MODELO_WIZARD_1 "3-tests/6-CONTROLADORIA/M_MODELO_WIZARD_1.robot"
