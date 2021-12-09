@@ -7,5 +7,5 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${Calendario}                                     xpath=//input[@id="inp:dtAtendimento"]
-${BotaoPesquisar}                                 xpath=//button[@id="btnPesquisar"]
+${Calendario}     xpath=//input[@id="inp:dtAtendimento"]
+${BotaoPesquisar}    xpath=//button[@id="btnPesquisar"]
