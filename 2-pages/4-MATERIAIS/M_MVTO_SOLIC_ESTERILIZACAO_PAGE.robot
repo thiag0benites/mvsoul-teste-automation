@@ -9,7 +9,7 @@ Resource    ../../Config.robot
 *** Variables ***
 
 ### Campos ###
-${CampoSetorDaEntrada}             xpath=//input[@id="inp:cdSetorResponsavelEntrada"]
+${CampoSetorResponsavelEntrega}    xpath=//input[@id="inp:cdSetorResponsavelEntrada"]
 ${CampoSetorDaEntrega}             xpath=//div[@data-member="CD_SETOR_ENTREGA"][@data-block="SOLICITACAO_CME"]/input
 ${CampoColaboradorDaEntrega}       xpath=//input[@id="inp:cdUsuarioEntrega"]
 ${CampoAvisoDeCirurgia}            xpath=//div[@data-member="CD_AVISO_CIRURGIA"][@data-block="SOLICITACAO_CME"]/input
@@ -20,7 +20,7 @@ ${DivComposicao}                   xpath=//div[@class="ui-text"][@data-member="C
 
 ### Botoes ###
 ${btnNovo}                         xpath=//button[@data-member="BTN_NOVO"]
-${btnNao}                          xpath=//button[@class="btn btn-primary"][contains(text(),"Não")]
+
 
 
 ### Diversos ###

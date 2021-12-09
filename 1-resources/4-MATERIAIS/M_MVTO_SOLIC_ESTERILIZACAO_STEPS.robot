@@ -11,21 +11,24 @@ Resource                            ../../2-pages/4-MATERIAIS/M_MVTO_SOLIC_ESTER
 
 *** Keywords ***
 
-Consultar Lista dos Processos a Serem Validados|${MsgEsperada}|
-    Click no Item                                            ${btnConfirmar}
-    Preencher campo                                          ${CampoSetorDaEntrada}                        678
+Listagem de Solicitações de Esterilização|${SetorResponsavelEntrega}||${SetorDaEntrega}||${ColaboradorDaEntrega}||${AvisoDeCirurgia}||${Composicao}||${MsgEsperada}|
+    Wait Until Element Is Visible                            ${btnNovo}                                    60
+    Click no Item                                            ${btnNovo}
+    Preencher campo                                          ${CampoSetorResponsavelEntrega}              ${SetorResponsavelEntrega}
     Send Keys                                                enter
-    Preencher campo                                          ${CampoSetorDaEntrega}                        632
+    Preencher campo                                          ${CampoSetorDaEntrega}                        ${SetorDaEntrega}
     Send Keys                                                enter
-    Clicar no Campo e Preencher Informacao                   ${CampoColaboradorDaEntrega}                  ${CampoColaboradorDaEntrega}            1145712
+    Clicar no Campo e Preencher Informacao                   ${CampoColaboradorDaEntrega}                  ${CampoColaboradorDaEntrega}            ${ColaboradorDaEntrega}
     Send Keys                                                enter
-    Preencher campo                                          ${CampoAvisoDeCirurgia}                       43025
+    Preencher campo                                          ${CampoAvisoDeCirurgia}                       ${AvisoDeCirurgia}
     Send Keys                                                enter
     Click no Item                                            ${DivComposicao}
-    Preencher campo                                          ${CampoComposicao}                            9
+    #Depois de cada teste precisamos mudar o valor do CAMPO COMPOSICAO 
+    Preencher campo                                          ${CampoComposicao}                            ${Composicao}
     Send Keys                                                enter
+    Sleep    3
     Clicar no botão Salvar do menu
-    Valida Mensagem                                          ${Alerta}                                     Registros gravados com sucesso
+    Valida Mensagem                                          ${Alerta}                                     ${MsgEsperada}
 
 
 
