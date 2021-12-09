@@ -34,5 +34,6 @@ SCR4MCACOMSOLCOM-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MCACOMSOLCOM-001"
     Acessar a tela "Materiais e Logística>Compras>Consultas>Acompanhamento de Compras>Acompanhamento de Solicitação de Compras"@nprint @las
     Validar Acesso a Tela |Acompanhamento de Solicitações de Compras|
-    Preencher Data Inicial
+    Preencher Data Inicial |${dados}[DataIni]|
+    Preencher Data Final
     Pesquisar e Validar Pesquisa |${dados}[Estoque]|
