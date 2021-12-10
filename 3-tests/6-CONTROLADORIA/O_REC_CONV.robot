@@ -33,6 +33,7 @@ SMF-5616 : Registrar Recebimento de Contas de Convênio pelo valor da nota fisca
 # robot -v browser:firefox -t "SMF-5616 : Registrar Recebimento de Contas de Convênio pelo valor da nota fiscal" -d ./5-results/SMF-5616 "3-tests/6-CONTROLADORIA/O_REC_CONV.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5616"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @las
+    Validar Acesso a Tela |Recebimento de Convênio|
     Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${dados}[CampoEmpresa]|
     Selecionar Convenio e Deixar o Sistema em Modo de Pesquisa |${dados}[CampoConvenio]| |${dados}[NrReferencia]|
     Alterar a Data do Recebimento |${dados}[DtRecebimento]|

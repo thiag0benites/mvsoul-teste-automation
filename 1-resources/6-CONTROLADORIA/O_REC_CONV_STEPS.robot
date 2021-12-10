@@ -10,11 +10,12 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_REC_CONV_PAG
 
 *** Keywords ***
 Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${CampoEmpresa}|
-    Clicar Botao se estiver Visivel                        ${btnEmpresa}
-    Clicar no Campo e Preencher Informacao                 ${campoFiltro}    ${campoFiltro}    ${CampoEmpresa}
-    Clicar Botao se estiver Visivel                        ${btnFiltrar}
-    Click no Item                                          ${empresaFiltrada}
-    Clicar Botao se estiver Visivel                        ${btnOk}
+    Wait Until Element Is Visible                           ${empresaValidada}    60
+    Element Should Be Visible                               ${empresaValidada}
+    #Clicar Botao se estiver Visivel                        ${btnEmpresa}
+    #Selecionar Item Na Lista                                ${btnEmpresa}   ${CampoEmpresa}    ${CampoEmpresa}
+    #Click no Item                                          ${empresaFiltrada}
+    #Clicar Botao se estiver Visivel                        ${btnOk}
 Selecionar Convenio e Deixar o Sistema em Modo de Pesquisa |${CampoConvenio}||${NrReferencia}|
     Clicar Botao se estiver Visivel                        ${btnConvenio}
     Clicar no Campo e Preencher Informacao                 ${campoFiltro}    ${campoFiltro}    ${CampoConvenio}
