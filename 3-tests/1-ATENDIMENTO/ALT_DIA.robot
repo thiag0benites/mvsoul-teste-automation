@@ -37,4 +37,3 @@ SCR1AALTDIA-001:Fluxo Principal
     Preencher Campo Data |${dados}[DataAtendimento]|
     Click Botao Pesquisar
     Validar Dados Pos Pesquisa |${dados}[NomePac]| |${dados}[MotAlta]| |${dados}[HrAlta]||${dados}[Procedimento]|
-    Sleep    5

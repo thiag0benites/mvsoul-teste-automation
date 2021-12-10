@@ -7,5 +7,5 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${Calendario}                 xpath=//input[@id="inp:dtAlta"]
-${BotaoConfirmar}             xpath=//i[@class="mv-basico-confirmar"]
+${Calendario}     xpath=//input[@id="inp:dtAlta"]
+${BotaoConfirmar}    xpath=//i[@class="mv-basico-confirmar"]
