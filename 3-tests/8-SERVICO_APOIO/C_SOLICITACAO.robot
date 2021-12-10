@@ -31,7 +31,8 @@ ${dados}
 SCR8SCSOLICITACAO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR8SCSOLICITACAO-001:Fluxo Principal" -d ./5-results/SCR8SCSOLICITACAO-001 "3-tests/8-SERVICO_APOIO/C_SOLICITACAO.robot"
 # robot -v browser:firefox -t "SCR8SCSOLICITACAO-001:Fluxo Principal" -d ./5-results/SCR8SCSOLICITACAO-001 "3-tests/8-SERVICO_APOIO/C_SOLICITACAO.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SCSOLICITACAO-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SCSOLICITACAO-001"
     Acessar a tela "Serviços de Apoio>Serviço Atendimento Cliente>Atendimento>Abertura de Chamados"@nprint @las
-    Validar Acesso a Tela |Abertura de Chamado|
- 
+    Validar Acesso a Tela |${dados}[NomeTela]|
+    Preencher Dados do Solicitante |${dados}[Origem]| |${dados}[Setor]| |${dados}[Nome]| |${dados}[Identidade]|
+    Preencher Descricao do Chamado |${dados}[TpChamado]| |${dados}[DescNvChamado]| |${dados}[MeioDoChamado]| |${dados}[HrContato]| |${dados}[Observacao]| |${dados}[TelaConsultaAtend]| |${dados}[Descricao]]|
