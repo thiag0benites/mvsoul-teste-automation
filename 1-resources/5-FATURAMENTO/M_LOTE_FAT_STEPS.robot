@@ -14,15 +14,15 @@ Resource                            ../../2-pages/5-FATURAMENTO/M_LOTE_FAT_PAGE.
 Informar no Campo <Convenio> |${VlConv}| <Desc. Fatura> |${VlDesc}| <Competencia> |${VlComp}|
     Validar Acesso a Tela |Faturas|
     Click no Item    ${BtConvA}
-    Click no Item    ${BConvB}
+    Click no Item    ${BtConvB}
     Clicar no Campo e Preencher Informacao    ${BtConvC}    ${BtConvC}    ${VlConv}
     Click no Item    ${BtConvD}
     Click no Item    ${BtConvE}    
     # Descrição
-    Clicar no Campo e Preencher Informacao    ${BtDescA}    ${BtDescA}    ${VlDesc} 
+    Clicar no Campo e Preencher Informacao    ${BtDescA}    ${BtDescB}    ${VlDesc} 
     # Competencia
     Clicar no Campo e Preencher Informacao    ${BtCompA}    ${BtCompB}    ${VlComp}
-Clicar no Botao <Salvar> |${MsgEsperada}|
+Clicar Salvar |${MsgEsperada}|
     Click no Item    ${BtSalvar}
     sleep    2
     Valida Mensagem    ${MgsVerif}    ${MsgEsperada}

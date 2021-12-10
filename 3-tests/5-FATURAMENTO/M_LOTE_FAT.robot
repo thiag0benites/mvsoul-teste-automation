@@ -22,7 +22,7 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-${suite}         m_lote_fat1
+${suite}         m_lot_fat
 # # Recebe dados do gerenciador
 ${dados}
 
@@ -34,4 +34,4 @@ SCR5FMLOTEFAT001:Fluxo Principal
     ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMLOTEFAT001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Lançamentos>Faturas e Remessas"@nprint @las
     Informar no Campo <Convenio> |${dados}[Conv]| <Desc. Fatura> |${dados}[DescFat]| <Competencia> |${dados}[Comp]|
-    Clicar no Botao <Salvar> |${dados}[Salvar]|
+    Clicar Salvar |${dados}[Salvar]|

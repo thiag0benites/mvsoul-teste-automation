@@ -19,7 +19,7 @@ ${BtDescA}    xpath=//div[@class='slick-cell b2 f2 selected ui-fixed-width']
 ${BtDescB}    xpath=//input[@class='editor-text mode-edit']
 #Competencia
 ${BtCompA}    xpath=//div[@class='slick-cell b3 f3 selected ui-fixed-width']
-${BtCompA}    xpath=//input[@class='ui-widget-content ui-buttoninput ui-corner-left']
+${BtCompB}    xpath=//input[@class='ui-widget-content ui-buttoninput ui-corner-left']
 # Salvar e Valida Msg de Registro Salvo
 ${BtSalvar}    xpath=//*[@id="tb-record-save"]/a/i
 ${MgsVerif}    xpath=//p[@class='notifications-item-text']
