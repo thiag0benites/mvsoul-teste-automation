@@ -10,7 +10,7 @@
 Resource                            ../../2-pages/4-MATERIAIS/M_DEVSAL_PAGE.robot
 
 *** Keywords ***
-Preencher devolucao de gasto de Sala
+Preencher devolucao de gasto de Sala |${AvisoCirurgia}||${MotivoDev}||${ProdutoEdit}||${QtdeRecebidaEdit}|
     
     Clicar no Campo e Preencher Informacao    ${campoAvisoCirurgia}            ${campoAvisoCirurgia}          ${AvisoCirurgia}
     Clicar no Campo e Preencher Informacao    ${CampoMotivoDev}                ${CampoMotivoDev}              ${MotivoDev}
