@@ -22,7 +22,7 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-${suite}         m_lote_fat
+${suite}         m_lote_fat1
 # # Recebe dados do gerenciador
 ${dados}
 
