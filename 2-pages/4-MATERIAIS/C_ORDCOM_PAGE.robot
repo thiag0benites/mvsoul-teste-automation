@@ -6,14 +6,6 @@
 ### Configurações iniciais
 Resource    ../../Config.robot
 
-
 *** Variables ***
-${BROWSER}    chrome
-${SLEEP}      3
-
-
-
-        
-
 ${inputCodigo}                        xpath=//input[@class='editor-text mode-search']
-
+${campoNomeDoFornecedor}              xpath=//div[@class='slick-cell b5 f5 selected']//div[@data-row='0']

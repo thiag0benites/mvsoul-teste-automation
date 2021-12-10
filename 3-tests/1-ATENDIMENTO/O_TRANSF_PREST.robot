@@ -13,17 +13,14 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/bd/BancoDados.robot
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/1-ATENDIMENTO/O_TRANSF_PREST_STEPS.robot
-Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -39,5 +36,4 @@ SRC1AOTRANSFPREST-001:Fluxo Principal
     Acessar a tela "Atendimento>Internação>Atendimento>Transferência de Médico"@nprint @las
     Preencher os campos |${dados}[numAtend]|,|${dados}[nomePrestadorDest]|,|${dados}[motivoTransferencia]|,|${dados}[servico]|
     Validar atendimento 
-    # Confirmar Transferencia de Prestador
-
+    Confirmar Transferencia de Prestador|${dados}[mensagem]|
