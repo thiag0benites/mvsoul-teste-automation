@@ -224,14 +224,3 @@ Conta Linhas Tabela
     @{Linhas}    Get WebElements    ${LocatorTabela}//tbody//tr
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
-
-Clicar no botao Adicionar
-    Wait Until Element Is Visible       ${btnAdicionar}     120
-    Click Element     ${btnAdicionar}
-
-Clicar no botão Não 
-    Click no Item            ${btnNaoNotifications}
-
-Clicar no botão Sim
-    Click no Item            ${btnSimNotifications}
-    

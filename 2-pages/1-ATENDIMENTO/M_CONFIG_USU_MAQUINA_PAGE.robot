@@ -8,7 +8,7 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina 
-${buttonAdicionar}                          xpath=//li[@id='tb-record-add']//a
+${btnAdicionar}                             xpath=//li[@id='toolbar']//li[@id='tb-record-add']//a
 ${mensagemNotificacao}                      xpath=//p[@class="notifications-item-text"]
 ${abaRelatorios}                            xpath=//li[2]//a[@id='TAB_CONFIG_TAB_CONFIG_tab1']
 ${btnSalvar}                                xpath=//li[@id='toolbar']//li[@id='tb-record-save']//a

@@ -9,10 +9,10 @@ Resource          ../../2-pages/1-ATENDIMENTO/M_CONFIG_USU_MAQUINA_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Clicar no botao adicionar
-    Click no Item    ${buttonAdicionar}
-    Sleep    2
-    
+Clicar no botao Adicionar
+    Wait Until Element Is Visible       ${btnAdicionar}     120
+    Click Element     ${btnAdicionar}
+
 Clicar na aba Relatorios
     Click no Item  ${abaRelatorios}
 
