@@ -10,16 +10,11 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_SOLIC_SANGUE_PAGE.robot
 
 *** Keywords ***
 Realizar Consulta de Solicicao do Banco de Sangue |${CdSolicitacao}|
-    Click Elemento por titulo                    Procurar
-    Preencher Campo                              ${CampoCdSolicitacao}                 ${CdSolicitacao}
-    Click Elemento por titulo                    Executar Consulta
+    Click Elemento por titulo    Procurar
+    Preencher Campo    ${CampoCdSolicitacao}    ${CdSolicitacao}
+    Click Elemento por titulo    Executar Consulta
 
-Validar Consulta Realizada |${Paciente}| |${MedicoSolicitante}| |${Exame}| 
-    Validar Elemento Pelo Titulo                 ${Paciente}
-    Validar Elemento Pelo Titulo                 ${MedicoSolicitante}
-    Validar Elemento Pelo Titulo                 ${Exame}
-
-
-
-
-
+Validar Consulta Realizada |${Paciente}| |${MedicoSolicitante}| |${Exame}|
+    Validar Elemento Pelo Titulo    ${Paciente}
+    Validar Elemento Pelo Titulo    ${MedicoSolicitante}
+    Validar Elemento Pelo Titulo    ${Exame}
