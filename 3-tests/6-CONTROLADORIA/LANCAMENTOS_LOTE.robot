@@ -18,7 +18,7 @@ Resource          ../../1-resources/6-CONTROLADORIA/LANCAMENTOS_LOTE_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -36,5 +36,5 @@ SMF-8723:Acesso a Abertura
     Preenche Descricao|${dados}[Descricao]|
     Inserir Data Final |${dados}[DataFinal]|   ## Preencher dd/Mmm/aaaa ## 
     Gravar Alteracoes
-    Preenche Lancamentos do Lote "Historico Padrao|${dados}[HistPadrao]|", "Descricao Comp Padrao|${dados}[DescCompPadrao]|", "Cod Reduzido Debt|${dados}[CodRedDebt]|", "Cod Reduzido Cred|${dados}[CodRedCred]|", Valor Moeda|${dados}[VlMoeda]|"
+    Preenche Lancamentos do Lote "Historico Padrao|${dados}[HistPadrao]|", "Descricao Comp Padrao|${dados}[DescCompPadrao]|", "Cod Reduzido Debt|${dados}[CodRedDebt]|", "Cod Reduzido Cred|${dados}[CodRedCred]|", Valor Moeda|${dados}[VlMoeda]|", "Data Lancamento|${dados}[DataFinal]|"
 
