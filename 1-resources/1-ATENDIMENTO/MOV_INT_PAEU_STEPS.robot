@@ -11,34 +11,33 @@ Resource                            ../../2-pages/1-ATENDIMENTO/MOV_INT_PAEU_PAG
 Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords *** 
-Selecionar tipo de atendimento
+Selecionar tipo de atendimento |${NomePaciente}|
     Click no Item                    ${BtnAtendimento} 
-    Preencher campo                  ${CampoAtendimento}                      tony
+    Preencher campo                  ${CampoAtendimento}                      ${NomePaciente}
     Click no Item                    ${BtnFiltro}     
     Click no Item                    ${BtnOk}   
     Click no Item                    ${BtnOk2}     
 
 Selecionar leito
     Click no Item                    ${BtnLeito} 
-    Preencher campo                  ${CampoAtendimento}                      leito
-    Click no Item                    ${BtnFiltro}     
+    Click no Item                    ${LinhaLeito}   
     Click no Item                    ${BtnOk}
 
-Escolher motivo da transferencia
+Escolher motivo da transferencia |${NomeTransferencia}|
     Click no Item                    ${BtnMotivo}  
-    Preencher campo                  ${CampoAtendimento}                      manu
+    Preencher campo                  ${CampoAtendimento}                      ${NomeTransferencia}
     Click no Item                    ${BtnFiltro}     
     Click no Item                    ${BtnOk} 
 
-Selecionar tipo de limpeza
+Selecionar tipo de limpeza |${NomeLimpeza}|
     Click no Item                    ${BtnLimpeza} 
-    Preencher campo                  ${CampoAtendimento}                      adm
+    Preencher campo                  ${CampoAtendimento}                      ${NomeLimpeza}
     Click no Item                    ${BtnFiltro}     
     Click no Item                    ${BtnOk}  
 
-Preencha o campo observacao
-    Preencher campo                   ${CampoObs}                             testes02
+Preencha o campo observacao |${NomeObs}|
+    Preencher campo                   ${CampoObs}                             ${NomeObs}
 
-Clique em salvar
+Clique em salvar |${MsgValidada}|
     Click Elemento por titulo         Salvar
-    Valida Mensagem                   ${MsgUsuario}                           Registros gravados com sucesso (1 registros gravados).         
+    Valida Mensagem                   ${MsgUsuario}                           ${MsgValidada}       

@@ -21,7 +21,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_CONTRATO_ADIANT_RECEB_ST
 Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
-*** Variable ***
+*** Variable *** 
 # # Suite registrada no gerenciador de dados
 ${suite}          m_contrato_adiant_receb
 # # Recebe dados do gerenciador

@@ -26,7 +26,7 @@ Selecionar o <tipo de adiantamento que sera realizado Financeiro> |${TipoAdianta
 #Selecionar o tipo de contratante
     Seleciona Item Combobox           ${ComboboxContratante}              ${TipoContratante}
 
-#Selecionar o contratante
+#Selecionar o contratante 
     Click no Item                      ${BtnContratante} 
     Preencher campo                    ${Filtro}                           ${SelecionarPessoa}
     Click no Item                      ${BtnOk} 

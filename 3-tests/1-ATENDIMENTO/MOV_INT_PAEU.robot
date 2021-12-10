@@ -23,18 +23,19 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_centro_custo_comp
+${suite}          mov_int_paeu
 # # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR1AMOVINTPAEU-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AMOVINTPAEU-001:Fluxo Principal" -d ./5-results/SCR1AMOVINTPAEU-001 "3-tests/1-ATENDIMENTO/MOV_INT_PAEU.robot"
 # robot -v browser:firefox -t "SCR1AMOVINTPAEU-001:Fluxo Principal" -d ./5-results/SCR1AMOVINTPAEU-001 "3-tests/1-ATENDIMENTO/MOV_INT_PAEU.robot"
-    Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Observação>Transferência de Leito>"@nprint @las
-    Selecionar tipo de atendimento
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMOVINTPAEU-001"
+    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
+    Selecionar tipo de atendimento |${dados}[NomePaciente]|
     Selecionar leito
-    Escolher motivo da transferencia
-    Selecionar tipo de limpeza
-    Preencha o campo observacao
-    Clique em salvar
+    Escolher motivo da transferencia |${dados}[NomeTransferencia]|
+    Selecionar tipo de limpeza |${dados}[NomeLimpeza]|
+    Preencha o campo observacao |${dados}[NomeObs]|
+    Clique em salvar |${dados}[MsgValidada]|
