@@ -51,10 +51,11 @@ ${BtnPediatraResp}               xpath=//*[@id="cdPrestador"]/button
 ${BtnLeito}                      xpath=//*[@id="cdLeito"]/button
 ${BtnServico}                    xpath=//*[@id="cdServico"]/button
 ${BtnSalvar}                     xpath=//li[@id='tb-record-save']  
-${BtnOkMensagem}                 xpath=//button[@class='btn btn-primary']                
+${BtnOkMensagem}                 xpath=//button[@class='btn btn-primary'] 
+${BtnOkRegCivil}                 xpath=//button[@id='btnRegCivilOk']             
 
 ### Diversos ###
 ${SelecionaAtendimento}          xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[1]/div
 ${SelecionaTipoParto}            xpath=//div[@class='ui-widget-content slick-row even']
 ${SelecionaLeito}                xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[2]
-${MensagemValidacao}             xpath=//p[@class='notifications-item-text'][contains(text(),'Registros gravados com sucesso (1 registros gravados).')]
+${MensagemValidacao}             xpath=//p[@class='notifications-item-text'][contains(text(),'Registros gravados com sucesso')]

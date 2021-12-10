@@ -13,10 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/bd/BancoDados.robot
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/1-ATENDIMENTO/CAD_LEI_STEPS.robot
-Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -27,7 +24,7 @@ Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            CAD_LEI
+${suite}            cad_lei
 # Recebe dados do gerenciador
 ${dados}
 
@@ -42,3 +39,4 @@ SMF-8593:Cadastro de Leitos
     Clicar no botão Executar 
     Preencher os campos da tabela |${dados}[leito]|,|${dados}[descResumida]|,|${dados}[enferm]|,|${dados}[acomod]|
     Clicar no botão Salvar do menu
+    Validar mensagem de confirmação

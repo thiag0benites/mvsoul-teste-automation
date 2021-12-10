@@ -36,7 +36,7 @@ SCR1AMRECEPCAOMANUTAGENDA-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMRECEPCAOMANUTAGENDA-001"
     Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Manutenção de Agendamentos"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Campos Para Consulta de Agenda
+    Preencher Campos Para Consulta de Agenda |${dados}[DtInicial]| |${dados}[DtFinal]| |${dados}[Agendamento]| |${dados}[Agenda]| |${dados}[Prestador]|
     Clicar Botao Executar Pesquisa
-    Validar Resultado da Pesquisa
+    Validar Resultado da Pesquisa |${dados}[CdAgenda]| |${dados}[CdPaciente1]| |${dados}[Paciente1]| |${dados}[ItemAgendamento]| |${dados}[CdPaciente2]| |${dados}[Paciente2]|
 
