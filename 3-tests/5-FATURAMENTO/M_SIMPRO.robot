@@ -35,4 +35,3 @@ SCR5FMSIMPRO001:Fluxo Principal
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Configurações>Preços do SIMPRO"@nprint @las
     Informar no Campo <Tabela> |${dados}[Tab]| <Procedimento> |${dados}[ProFat]| <Med> |${dados}[Med]| <Valor Div> |${dados}[ValDiv]| <Tp Valor> |${dados}[TpValor]| <Tuss> |${dados}[Tuss]|
     Clicar no Botao <SALVAR> |${dados}[Salvar]|
-    
