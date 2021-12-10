@@ -1,196 +1,74 @@
 ##################################################################################################################################
-# Autor: Rodrigo Torquato
+# Autor: Danilo Campanello
 # Decrição: Passos da tela Entrada dos Produtos
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/M_ENTRADA_NOVA_PAGE.robot
-Library    SeleniumLibrary
 
 *** Variable ***
 
 *** Keywords ***
-Selecionar Ordem de Compra Autorizada |${CodigoOC}|
-    Sleep    10
-    Click Element                        ${IconOrdCompra}
-    Wait Until Element Is Visible        ${PopUpLista}                   10
-    Click Element                        ${IconEvolucao}
-    Preencher campo                      ${CampoFiltro}                  ${CodigoOC}
-    Sleep    2
-    Clicar no Botao |Filtar|
-    Sleep    5
-    ${Codigo}=                            Get WebElement                 xpath://div[@title='${CodigoOC}']
-    Should Be Equal                      ${Codigo.text}                  ${CodigoOC}
-    Click Element                        ${Codigo}
-    Sleep    2
-    Clicar no Botao |OK|
+Informar "Tipo de Documento|${TipoDoc}|", "Estoque|${Estoque}|"    
+    Clicar no Campo e Preencher Informacao            ${BtnTipoDoc}            ${CampoFiltrar}            ${TipoDoc}
+    Click no Item                                     ${BtnFiltrar}
+    Click no Item                                     ${BtnOkFiltrar}
+    Clicar no Campo e Preencher Informacao            ${BtnEstoque}            ${CampoFiltrar}            ${Estoque}
+    Click no Item                                     ${BtnFiltrar}
+    Click no Item                                     ${BtnOkFiltrar}
 
-Selecionar Ultima Ordem de Compra da Lista
-    Click Element                        ${IconOrdCompra}
-    Wait Until Element Is Visible        ${PopUpLista}                 10
-    Click Element                        ${IconEvolucao}
-    Sleep    2
-    Click Element                        ${IconUltimaPg}
-    Sleep    2
-    Click Element                        ${PrimeiraLinha} 
-    Sleep    2
-    Clicar no Botao |OK|
+Preencher Campos: "Numero Documento|${NrDoc}|", "Serie|${Serie}|", "Fornecedor|${Fornec}|", Data Emissao|${data}|, "CFOP|${CFOP}|", "Valor Total Nota|${VlTtlNota}|"
+    Preencher campo                                   ${CampoNroDoc}           ${NrDoc}
+    Preencher campo                                   ${CampoSerie}            ${Serie}
+    Clicar no Campo e Preencher Informacao            ${BtnFornecedor}         ${CampoFiltrar}            ${Fornec}
+    Click no Item                                     ${BtnFiltrar}
+    Click no Item                                     ${BtnOkFiltrar}
+    Inserir Data Emissao|${data}|
+    Clicar no Campo e Preencher Informacao            ${BtnCFOP}               ${CampoFiltrar}            ${CFOP}
+    Click no Item                                     ${BtnFiltrar}
+    Click no Item                                     ${BtnOkFiltrar}
+    Preencher campo                                   ${CampoVlTotalNota}      ${VlTtlNota}
+    Click no Item                                     ${BtnProdutos}  
+         
 
-Selcionar Tipo de Documento |${TipoDoc}|
-    Sleep    2
-    Click Element                        ${IconTipodeDoc}
-    Wait Until Element Is Visible        ${PopUpTiposdeDoc}             10
-    Sleep    2
-    Preencher campo                      ${CampoFiltro}                 ${TipoDoc}
-    Sleep    2
-    Clicar no Botao |Filtar|
-    Sleep    5
-    ${Documento}=                        Get WebElement                 xpath://div[@title='${TipoDoc}']
-    Should Be Equal                      ${Documento.text}              ${TipoDoc}
-    Click Element                        ${Documento}
-    Sleep    2
-    Clicar no Botao |OK|
+Informar Campos "Produto|${Produto}|", "Quantidade Entrada|${QtdEntrada}|", "Valor Unitario|${VlUnitario}|"
+    Clicar no Campo e Preencher Informacao            ${BtnCodProduto}          ${CampoFiltrar}            ${Produto}  #TESTE
+    Click no Item                                     ${BtnFiltrar}
+    Click no Item                                     ${BtnOkFiltrar}
+    Preencher campo                                   ${CampoQtdEntrada}        ${QtdEntrada}  #1
+    Preencher campo                                   ${CampoVlUnitario}        ${VlUnitario}  #5
+    Validar Pop-Pup de Alerta e Clicar                ${MsgAlerta}              ${BtnSimAlerta}
+    Click no Item                                     ${BtnSair}
 
-Preencher Campo Nr Doc |${Numero}|
-    Click Element                        ${CampoNrDoc}  
-    Sleep    2
-    Preencher campo                      ${CampoNrDoc}                ${Numero}
-    Sleep    2
 
-Preencher Campo Serie |${valor}|
-    Click Element                        ${CampoSerie}  
-    Sleep    5
-    Preencher campo                      ${CampoSerie}                  ${valor}
-    Sleep    2   
 
-Preencher Campo Data Emissao |${Data}|
-    Click Element                        ${CampoDataEmissao} 
+Inserir Data Emissao|${data}|
     Sleep    2
-    Preencher campo                      ${CampoDataEmissao}            ${Data}
-    Sleep    2
+    ${dd}                          Get Substring        ${data}         0     2
+    ${ddPrimeriaPosicao}           Get Substring        ${dd}           0     1
 
-Selcionar CFOP |${cfop}|
-    Click Element                        ${IconCfop} 
-    Wait Until Element Is Visible        ${PopUpCod}                     10
-    Sleep    2
-    Preencher campo                      ${CampoFiltro}                 ${cfop}
-    Sleep    2
-    Clicar no Botao |Filtar|
-    Sleep    2
-    ${Descricao}=                        Get WebElement                 xpath://div[@title='${cfop}']
-    Should Be Equal                      ${Descricao.text}              ${cfop}
-    Click Element                        ${Descricao}
-    Clicar no Botao |OK|
+    IF    ${ddPrimeriaPosicao} == 0
+    ${dd}                          Get Substring        ${data}         1     2
+    END
 
+    ${MES}                         Get Substring        ${data}         3     6
+    ${aaaa}                        Get Substring        ${data}         7     12
     
-Clicar no Botao |${NomeBotao}|
-    IF  '${NomeBotao}' == 'OK'
-        Wait Until Element Is Visible       ${btnOK}                 10
-        Sleep                               2
-        Click Element                       ${btnOK} 
-    END
+    Click no Item                  ${CampoDtEmissao} 
+    Click no Item                  ${BtnDataEmissao}
+    # Click no Item                  ${SetaDoCalendario}
 
-    IF  '${NomeBotao}' == 'Filtar'
-        Wait Until Element Is Visible       ${btnFiltrar}                 10
-        Sleep                               2
-        Click Element                       ${btnFiltrar} 
-    END
+    ${anoInicio}=                  Get WebElement                       xpath://select[@class='ui-datepicker-year']//option[contains(text(),'${aaaa}')]
+    Should Be Equal                ${anoInicio.text}                    ${aaaa}
+    Click no Item                  ${anoInicio}
+    Sleep                                               1
+    ${mesInicio}=                  Get WebElement                       xpath://select[@class='ui-datepicker-month']//option[contains(text(),'${MES}')]
+    Should Be Equal                ${mesInicio.text}                    ${MES}
+    Click no Item                  ${mesInicio}
+    Sleep                                               1
+    ${diaInicio}=                  Get WebElement                       xpath://a[contains(text(),'${dd}')]
+    Should Be Equal                ${diaInicio.text}                    ${dd}
+    Click no Item                  ${diaInicio}
+    Sleep                                               1
 
-    IF  '${NomeBotao}' == 'Produtos'
-        Wait Until Element Is Visible       ${btnProdutos}                10
-        Sleep                               2
-        Click Element                       ${btnProdutos}
-    END
 
-    IF  '${NomeBotao}' == 'Cadastrar Lote'
-        Wait Until Element Is Visible       ${brnCadastrarLote}                10
-        Sleep                               2
-        Click Element                       ${brnCadastrarLote}
-    END
-
-    IF  '${NomeBotao}' == 'Digitacao de Produtos'
-        Wait Until Element Is Visible       ${btnDigitacaoProd}                10
-        Sleep                               2
-        Click Element                       ${btnDigitacaoProd} 
-    END
-
-    IF  '${NomeBotao}' == 'Sair'
-        Wait Until Element Is Visible       ${btnSair}                     10
-        Sleep                               2
-        Click Element                       ${btnSair}  
-    END
-
-    IF  '${NomeBotao}' == 'Duplicata'
-        Wait Until Element Is Visible       ${btnDuplicata}                10
-        Sleep                               2
-        Click Element                       ${btnDuplicata} 
-    END
-
-    IF  '${NomeBotao}' == 'Sim'
-        Wait Until Element Is Visible       ${btnSim}                10
-        Sleep                               2
-        Click Element                       ${btnSim}
-    END
-
-    IF  '${NomeBotao}' == 'Nao'
-        Wait Until Element Is Visible       ${btnNao}                  10
-        Sleep                               2
-        Click Element                       ${btnNao}  
-    END
-
-    IF  '${NomeBotao}' == 'Confirmar Duplicata'
-        Wait Until Element Is Visible       ${btnConfirmarDuplicata}                  10
-        Sleep                               2
-        Click Element                       ${btnConfirmarDuplicata}   
-    END
-
-    IF  '${NomeBotao}' == 'Concluir'
-        Wait Until Element Is Visible       ${btnConcluir}                             10
-        Sleep                               2
-        Click Element                       ${btnConcluir}  
-    END
-                                   
-                                   
-Cadastrar Lote |${Lote},${DataValidade}|
-    Wait Until Element Is Visible        ${brnCadastrarLote}                    20
-    ${Quant}=                         Get Element Attribute                  xpath://div[@data-member='QT_ENTRADA']     attribute=title
-    # Log    ${Quant.text}
-    # Log To Console        ${Quant.text}
-    Sleep                               5
-    Clicar no Botao |Cadastrar Lote|
-    Sleep                               5
-    Preencher campo                      ${Campo}               ${Lote}
-    Sleep                               5
-    Press Keys                            ${Campo}                TAB
-    Sleep                                2
-    Preencher campo                      ${Campo}               ${DataValidade}
-    Sleep                                5
-    Press Keys                            ${Campo}                TAB
-    Sleep                                2       
-    Preencher campo                      ${Campo}                ${Quant}
-    Sleep                               5
-    Clicar no Botao |Digitacao de Produtos|
-    Sleep    240
-    Clicar no Botao |Sair|
-    Sleep                             20
-
-Confirmar Duplicata
-    Sleep                               5
-    Clicar no Botao |Duplicata|
-    Sleep                               5
-    Clicar no Botao |Sim|
-    Sleep                               5
-    Clicar no Botao |Confirmar Duplicata|
-
-Concluir e Avaliar
-    Sleep                               5
-    Clicar no Botao |Concluir|
-    Sleep                               5
-    Clicar no Botao |Sim|
-    Sleep                               5
-    Clicar no Botao |Nao|
-
-                                  
-                               
-                            
-                          
