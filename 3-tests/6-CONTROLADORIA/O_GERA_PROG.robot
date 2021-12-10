@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 Resource            ../../1-resources/6-CONTROLADORIA/O_GERA_PROG_STEPS.robot
-Resource    ../../1-resources/0-JORNADA_PACIENTE/1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -29,10 +28,10 @@ ${suite}          o_gera_prog
 ${dados}
 
 *** Test Case ***
-SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não
+SCR6COGERAPROG-001 : Fluxo Principal
 # robot -v browser:chrome -t "SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não" -d ./5-results/SMF-7513 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
 # robot -v browser:firefox -t "SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não" -d ./5-results/SMF-7513 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-7513"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COGERAPROG-001"
     Acessa a Tela Pela Busca |O_GERA_PROG||Cadastro| @las
     Inserir no campo Descricao a descricao da previsao a ser cadastrada |${dados}[Descricao2]|
     Informar no campo dia o dia previsto de pagamento |${dados}[Dia]|
@@ -55,27 +54,27 @@ SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não
     Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
 
-SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim
+# SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim
 # robot -v browser:chrome -t "SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim" -d ./5-results/SMF-7512 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
 # robot -v browser:firefox -t "SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim" -d ./5-results/SMF-7512 "3-tests/6-CONTROLADORIA/O_GERA_PROG.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-7512"
-    Acessa a Tela Pela Busca |O_GERA_PROG||Cadastro| @las
-    2Inserir no campo Descricao a descricao da previsao a ser cadastrada |${dados}[Descricao2]|
-    2Informar no campo dia o dia previsto de pagamento |${dados}[Dia]|
-    2Selecionar no campo Periodicidade |${dados}[Periodo]|
-    2Selecionar no campo Vencto dia nao util |${dados}[Vencimento]|
-    2Inserir no campo Valor |${dados}[Valor]|
-    2Inserir no campo mes ano inic do inicio da previsao |${dados}[MesAnoInicial]| |${dados}[MesAnoFinal]|
-    2Selecionar na lov do campo tipo documento |${dados}[TipoDoc]|
-    2Selecionar na lov do campo Fornecedor |${dados}[Fornecedor]|
-    2Indicar no campo tipo de programacao da previsao |${dados}[Programacao]|
-    2Selecionar no campo Contabilizar |${dados}[Contabilizar]|
-    2Selecionar no campo Tp Prev Contab |${dados}[PrevisaoConta]|
-    2Verificar a informacao contida no campo Tipo de Vencimento |${dados}[TipoVencimento]|
-    2Selecionar no campo historico padrao |${dados}[Historico]|
-    2Clicar no botao Previsao
-    2Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
-    2Selecionar no campo Conta de Custo a conta de custo |${dados}[ContaCusto]|
-    2Informar no campo Valor Compartilhamento |${dados}[ValorCompartilha]|
-    2Clicar no botao Gerar
-    2Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
+    # ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-7512"
+    # Acessa a Tela Pela Busca |O_GERA_PROG||Cadastro| @las
+    # 2Inserir no campo Descricao a descricao da previsao a ser cadastrada |${dados}[Descricao2]|
+    # 2Informar no campo dia o dia previsto de pagamento |${dados}[Dia]|
+    # 2Selecionar no campo Periodicidade |${dados}[Periodo]|
+    # 2Selecionar no campo Vencto dia nao util |${dados}[Vencimento]|
+    # 2Inserir no campo Valor |${dados}[Valor]|
+    # 2Inserir no campo mes ano inic do inicio da previsao |${dados}[MesAnoInicial]| |${dados}[MesAnoFinal]|
+    # 2Selecionar na lov do campo tipo documento |${dados}[TipoDoc]|
+    # 2Selecionar na lov do campo Fornecedor |${dados}[Fornecedor]|
+    # 2Indicar no campo tipo de programacao da previsao |${dados}[Programacao]|
+    # 2Selecionar no campo Contabilizar |${dados}[Contabilizar]|
+    # 2Selecionar no campo Tp Prev Contab |${dados}[PrevisaoConta]|
+    # 2Verificar a informacao contida no campo Tipo de Vencimento |${dados}[TipoVencimento]|
+    # 2Selecionar no campo historico padrao |${dados}[Historico]|
+    # 2Clicar no botao Previsao
+    # 2Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
+    # 2Selecionar no campo Conta de Custo a conta de custo |${dados}[ContaCusto]|
+    # 2Informar no campo Valor Compartilhamento |${dados}[ValorCompartilha]|
+    # 2Clicar no botao Gerar
+    # 2Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
