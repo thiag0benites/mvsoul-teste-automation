@@ -7,36 +7,23 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 
-Resource                            ../../2-pages/6-CONTROLADORIA/M_CONCOR_PAGE.robot
+Resource                            ../../2-pages/4-MATERIAIS/M_DEVSAL_PAGE.robot
 
 *** Keywords ***
-Preencher campo Descricao |${Descricao}|
-    Clicar no Campo e Preencher Informacao    ${campoDescricao}            ${campoDescricao}             BANCO ITAU SA
-
-Preencher dados do cliente |${CodBanco}||${Agencia}||${DigitoAgencia}||${Bairro}||${NumConta}||${DigitoConta}||${TipoCC}||${CodReduzido}||${Gerente}|
+Preencher devolucao de gasto de Sala
     
-    Clicar no Campo e Preencher Informacao    ${CampoCodBanco}             ${CampoCodBanco}              ${CodBanco}
-    Clicar no Campo e Preencher Informacao    ${CampoAgencia}              ${CampoAgencia}               ${Agencia} 
-    Clicar no Campo e Preencher Informacao    ${CampoDigitoAgencia}        ${CampoDigitoAgencia}         ${DigitoAgencia}
-    Clicar no Campo e Preencher Informacao    ${CampoBairro}               ${CampoBairro}                ${Bairro}
-    Clicar no Campo e Preencher Informacao    ${CampoNumConta}             ${CampoNumConta}              ${NumConta}
-    Clicar no Campo e Preencher Informacao    ${CampoDigitoConta}          ${CampoDigitoConta}           ${DigitoConta}
-    Clicar no Campo e Preencher Informacao    ${CampoTipoContaCorrente}    ${CampoTipoContaCorrente}     ${TipoCC}
-    
-    
-    
-    Clicar no Campo e Preencher Informacao    ${CampoCodReduzido}          ${CampoCodReduzido}           ${CodReduzido}
-    Clicar no Campo e Preencher Informacao    ${CampoGerente}              ${CampoGerente}               ${Gerente}
-
-Preencher dados empresa |${Empresa}||${TipoTrans}||${CodReduz}||${MsgEsperada}|
-    
-    Click no Item                             ${AbaTransEntreEmpresas}
-    Clicar no Campo e Preencher Informacao    ${CampoEmpresa}              ${CampoEmpresaEdit}           ${Empresa}
+    Clicar no Campo e Preencher Informacao    ${campoAvisoCirurgia}            ${campoAvisoCirurgia}          ${AvisoCirurgia}
+    Clicar no Campo e Preencher Informacao    ${CampoMotivoDev}                ${CampoMotivoDev}              ${MotivoDev}
     Send Keys                                 tab
-    Clicar no Campo e Preencher Informacao    ${CampoTipoTrans}            ${CampoTipoTrans}             ${TipoTrans}
-    Send Keys                                 tab
-    Clicar no Campo e Preencher Informacao    ${CampoCodReduz}             ${CampoCodReduz}              ${CodReduz}
-    Click no Item                             ${btnSalvar}
-    Valida Mensagem                           ${Alerta}                    ${MsgEsperada}
+    Click no Item                             ${BtnCodBarras}    
+    Click no Item                             ${CampoProduto}
+    Click no Item                             ${BtnSimPopUp}
+    Click no Item                             ${BtnCodBarras}
+    Clicar no Campo e Preencher Informacao    ${CampoProdutoEdit}              ${CampoProdutoEdit}            ${ProdutoEdit}
+    Clicar no Campo e Preencher Informacao    ${CampoQtdeRecebida}             ${CampoQtdeRecebidaEdit}       ${QtdeRecebidaEdit}
+    Click no Item                             ${BtnConcluir}
+    Click no Item                             ${BtnOk}
+    Click no Item                             ${BtnConcluir}
 
-    
+          
+   

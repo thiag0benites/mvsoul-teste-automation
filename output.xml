@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.2 on win32)" generated="20211210 16:07:26.830" rpa="false" schemaversion="2">
+<suite id="s1" name="C CONSOLIDACAO" source="c:\FERNANDO\WATI\mvsoul-teste-automation\3-tests\4-MATERIAIS\C_CONSOLIDACAO.robot">
+<test id="s1-t1" name="SCR4MCCONSOLIDACAO-001:Fluxo Principal">
+<kw name="Nova sessao" library="Config" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>*** Teste no Sistema Operacional: ${so}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211210 16:07:30.408" level="INFO">*** Teste no Sistema Operacional: windows</msg>
+<status status="PASS" starttime="20211210 16:07:30.406" endtime="20211210 16:07:30.408"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Teste no Sistema Operacional: ${so}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211210 16:07:30.409" endtime="20211210 16:07:30.410"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211210 16:07:30.412" level="INFO">Opening browser 'chrome' to base url 'http://qadevelop.mv.com.br:83/soul-mv/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211210 16:08:14.031" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211210 16:08:13.899" endtime="20211210 16:08:14.032"/>
+</kw>
+<msg timestamp="20211210 16:08:14.044" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=96.0.4664.93)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00446903+2517251]
+	Ordinal0 [0x003DF8E1+2095329]
+	Ordinal0 [0x002E2848+1058888]
+	Ordinal0 [0x002DF431+1045553]
+	Ordinal0 [0x002D54D9+1004761]
+	Ordinal0 [0x002D60E0+1007840]
+	Ordinal0 [0x002D572A+1005354]
+	Ordinal0 [0x002D4DDA+1002970]
+	Ordinal0 [0x002D3F8D+999309]
+	Ordinal0 [0x002D4246+1000006]
+	Ordinal0 [0x002E3E1A+1064474]
+	Ordinal0 [0x0033616D+1401197]
+	Ordinal0 [0x003264D3+1336531]
+	Ordinal0 [0x00335BBF+1399743]
+	Ordinal0 [0x0032639B+1336219]
+	Ordinal0 [0x003027A7+1189799]
+	Ordinal0 [0x00303609+1193481]
+	GetHandleVerifier [0x005D5904+1577972]
+	GetHandleVerifier [0x00680B97+2279047]
+	GetHandleVerifier [0x004D6D09+534521]
+	GetHandleVerifier [0x004D5DB9+530601]
+	Ordinal0 [0x003E4FF9+2117625]
+	Ordinal0 [0x003E98A8+2136232]
+	Ordinal0 [0x003E99E2+2136546]
+	Ordinal0 [0x003F3541+2176321]
+	BaseThreadInitThunk [0x762CFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77D77A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77D77A6E+238]
+</msg>
+<status status="FAIL" starttime="20211210 16:07:30.411" endtime="20211210 16:08:14.045"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20211210 16:08:14.047" endtime="20211210 16:08:14.048"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qadevelop'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaDevelop}</arg>
+<arg>${dadosLoginSenhaQaDevelop}</arg>
+<arg>${dadosLoginEmpresaQaDevelop}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20211210 16:08:14.049" endtime="20211210 16:08:14.050"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qarelease'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaRelease}</arg>
+<arg>${dadosLoginSenhaQaRelease}</arg>
+<arg>${dadosLoginEmpresaQaRelease}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20211210 16:08:14.053" endtime="20211210 16:08:14.054"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qaautomacao'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaAutomacao}</arg>
+<arg>${dadosLoginSenhaQaAutomacao}</arg>
+<arg>${dadosLoginEmpresaQaAutomacao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20211210 16:08:14.056" endtime="20211210 16:08:14.056"/>
+</kw>
+<status status="FAIL" starttime="20211210 16:07:30.404" endtime="20211210 16:08:14.059"/>
+</kw>
+<kw name="Encerra sessao" library="Config" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211210 16:08:14.067" endtime="20211210 16:08:16.247"/>
+</kw>
+<status status="PASS" starttime="20211210 16:08:14.063" endtime="20211210 16:08:16.250"/>
+</kw>
+<kw name="Stop Recording Test" library="AutoRecorder">
+<arg>SCR4MCCONSOLIDACAO-001:Fluxo Principal</arg>
+<doc>There is no need to execute this keyword manually.
+Basically - alias for https://mihaiparvu.github.io/ScreenCapLibrary/ScreenCapLibrary.html#Stop%20Video%20Recording</doc>
+<msg timestamp="20211210 16:08:16.368" level="INFO" html="true">&lt;a href="recording_9.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_9.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211210 16:08:16.253" endtime="20211210 16:08:16.368"/>
+</kw>
+<status status="FAIL" starttime="20211210 16:07:28.268" endtime="20211210 16:08:16.251">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=96.0.4664.93)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00446903+2517251]
+	Ordinal0 [0x003DF8E1+2095329]
+	Ordinal0 [0x002E2848+1058888]
+	Ordinal0 [0x002DF431+1045553]
+	Ordinal0 [0x002D54D9+1004761]
+	Ordinal0 [0x002D60E0+1007840]
+	Ordinal0 [0x002D572A+1005354]
+	Ordinal0 [0x002D4DDA+1002970]
+	Ordinal0 [0x002D3F8D+999309]
+	Ordinal0 [0x002D4246+1000006]
+	Ordinal0 [0x002E3E1A+1064474]
+	Ordinal0 [0x0033616D+1401197]
+	Ordinal0 [0x003264D3+1336531]
+	Ordinal0 [0x00335BBF+1399743]
+	Ordinal0 [0x0032639B+1336219]
+	Ordinal0 [0x003027A7+1189799]
+	Ordinal0 [0x00303609+1193481]
+	GetHandleVerifier [0x005D5904+1577972]
+	GetHandleVerifier [0x00680B97+2279047]
+	GetHandleVerifier [0x004D6D09+534521]
+	GetHandleVerifier [0x004D5DB9+530601]
+	Ordinal0 [0x003E4FF9+2117625]
+	Ordinal0 [0x003E98A8+2136232]
+	Ordinal0 [0x003E99E2+2136546]
+	Ordinal0 [0x003F3541+2176321]
+	BaseThreadInitThunk [0x762CFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77D77A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77D77A6E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20211210 16:07:26.836" endtime="20211210 16:08:16.376"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="C CONSOLIDACAO">C CONSOLIDACAO</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
