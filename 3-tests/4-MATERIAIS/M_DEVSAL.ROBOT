@@ -35,9 +35,5 @@ SCR4MMDEVSAL-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MMDEVSAL-001:Fluxo Principal" -d ./5-results/SCR4MMDEVSAL-001 "3-tests/4-MATERIAIS/M_DEVSAL.robot"
 # robot -v browser:firefox -t "SCR4MMDEVSAL-001:Fluxo Principal" -d ./5-results/SCR4MMDEVSAL-001 "3-tests/4-MATERIAIS/M_DEVSAL.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMDEVSAL-001"
-    
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Devoluções>De Gasto de Sala"@nprint @las
     Preencher devolucao de gasto de Sala |${dados}[AvisoCirurgia]||${dados}[MotivoDev]||${dados}[ProdutoEdit]||${dados}[QtdeRecebidaEdit]|
-    
-    
-  
