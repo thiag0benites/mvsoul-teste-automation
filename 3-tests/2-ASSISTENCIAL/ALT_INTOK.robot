@@ -33,7 +33,7 @@ ${dados}
 SCR2AALTINTOK-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AALTINTOK-001:Fluxo Principal" -d ./5-results/SCR2AALTINTOK-001 "3-tests/2-ASSISTENCIAL/ALT_INTOK.robot"
 # robot -v browser:firefox -t "SCR2AALTINTOK-001:Fluxo Principal" -d ./5-results/SCR2AALTINTOK-001 "3-tests/2-ASSISTENCIAL/ALT_INTOK.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AALTINTOK-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AALTINTOK-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Alteração de Atendimento"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
     Consultar Atendimento
