@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Histórico das Movimentações da Pasta do Paciente
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\C_PAC_PRONT.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\C_PAC_PRONT.robot"
 # firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\C_PAC_PRONT.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\C_PAC_PRONT.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\C_PAC_PRONT.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\C_PAC_PRONT.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -37,4 +37,3 @@ SCR8SCPACPRONT-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Consultar Movimentacao Pasta Paciente |${dados}[Paciente]|
     Validar Consulta Movimentacao |${dados}[Destino1]| |${dados}[Destino2]|
-

@@ -38,7 +38,3 @@ SCR2ACSOLICSANGUE-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Realizar Consulta de Solicicao do Banco de Sangue |${dados}[CdSolicitacao]|
     Validar Consulta Realizada |${dados}[Paciente]| |${dados}[MedicoSolicitante]| |${dados}[Exame]|
-
-
-
-
