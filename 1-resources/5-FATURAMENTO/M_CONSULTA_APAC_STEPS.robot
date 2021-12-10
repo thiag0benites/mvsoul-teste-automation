@@ -1,18 +1,28 @@
 ##################################################################################################################################
-# Autor: Luiz Henrique Ramalho
-# Decrição: Elementos e metodos da pagina
+# Autor: Alan Patriota
+# Decrição: Teste da tela Consulta APAC
 ##################################################################################################################################
-
 *** Settings ***
-### Keywords personalizadas para os testes
-### Pega massa de dados do Gerenciador
+### Pages utilizadas na Suite de teste
+Resource          ../../2-pages/5-FATURAMENTO/M_CONSULTA_APAC_PAGE.robot
+Resource    ../2-ASSISTENCIAL/M_ESPERA_COLETA_STEPS.robot
 
-Resource                            ../../2-pages/5-FATURAMENTO/M_CONSULTA_APAC_PAGE.robot
+*** Variable ***
 
 *** Keywords ***
 
-Consultar Lista dos Processos a Serem Validados
-    Preencher campo                                         ${CampoDescricao}    ESTOQUE TESTE 
-    Click no Item                                           ${CampoTipo}
-    Preencher campo                                         ${btnTipo}           Distribuição 
-    Sleep    3
+Consultar por Prontuario |${Prontuario}|
+    Preencher Campo                ${CampoProntuario}        ${Prontuario}
+    Send Keys    TAB
+Consultar por APAC |${APAC}|
+    Preencher Campo                ${CampoAPAC}              ${APAC}
+    Send Keys    TAB
+Consultar por CPF |${CPF}|
+    Preencher Campo                ${CampoCPF}                ${CPF}
+    Send Keys    TAB
+
+
+Validar Consulta Pelos Resultados |${Sexo}| |${Tipo}| |${Endereco}|
+    Validar Elemento Pelo Titulo    ${Sexo}
+    Validar Elemento Pelo Titulo    ${Tipo}
+    Validar Elemento Pelo Titulo    ${Endereco}
