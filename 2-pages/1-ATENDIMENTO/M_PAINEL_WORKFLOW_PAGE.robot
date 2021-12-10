@@ -11,7 +11,7 @@ Resource    ../../Config.robot
 ### Campos ###
 
 ### Botoes ###
-${BtnDtPrevista}               xpath=//button[@id="rbDtPrevista_btn"]
+${BtnDtPrevista}               xpath=//button[@id="rbDtPrevista_btn"][@state="checked"]
 ${BtnPreAg}                    xpath=//div[@id="counterCOUNT_PA"]
 ${BtnRevisao}                  xpath=//div[@id="counterCOUNT_RE"]
 ${BtnCotacao}                  xpath=//div[@id="counterCOUNT_CO"]
