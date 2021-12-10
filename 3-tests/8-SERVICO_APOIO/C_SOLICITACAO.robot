@@ -36,3 +36,5 @@ SCR8SCSOLICITACAO-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Dados do Solicitante |${dados}[Origem]| |${dados}[Setor]| |${dados}[Nome]| |${dados}[Identidade]|
     Preencher Descricao do Chamado |${dados}[TpChamado]| |${dados}[DescNvChamado]| |${dados}[MeioDoChamado]| |${dados}[HrContato]| |${dados}[Observacao]| |${dados}[TelaConsultaAtend]| |${dados}[Descricao]]|
+    Clicar Botao Salvar |${dados}[MensagemSucesso]|
+    Sleep  5
