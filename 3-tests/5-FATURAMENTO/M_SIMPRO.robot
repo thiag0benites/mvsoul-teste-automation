@@ -38,5 +38,5 @@ SCR5FMSIMPRO001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMSIMPRO001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Configurações>Preços do SIMPRO"@nprint @las
     Informar no Campo <Tabela> |${dados}[Tab]| <Procedimento> |${dados}[ProFat]| <Med> |${dados}[Med]| <Valor Div> |${dados}[ValDiv]| <Tp Valor> |${dados}[TpValor]| <Tuss> |${dados}[Tuss]|
-    Clicar no Botão <SALVAR> |Registros gravados com sucesso (1 registros gravados).|
+    Clicar no Botao <SALVAR> |${dados}[Salvar]|
     

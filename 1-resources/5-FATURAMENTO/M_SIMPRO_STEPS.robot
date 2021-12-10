@@ -36,7 +36,7 @@ Informar no Campo <Tabela> |${VlTabFat}| <Procedimento> |${VlProced}| <Med> |${V
     Clicar no Campo e Preencher Informacao    ${CpTipValorA}    ${CpTipValorB}    ${VlValor}
 # Informa no Campo no campo <TUSS>
     Clicar no Campo e Preencher Informacao    ${CpTussA}    ${CpTussB}     ${VlrTuss}
-Clicar no Botão <SALVAR> |${MsgEsperada}|
+Clicar no Botao <SALVAR> |${MsgEsperada}|
     Click no Item    ${BtSalvar}
     sleep    2
     Valida Mensagem    ${MgsVerif}    ${MsgEsperada}
