@@ -13,6 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 Resource            ../../1-resources/6-CONTROLADORIA/O_GERA_PROG_STEPS.robot
+Resource    ../../1-resources/0-JORNADA_PACIENTE/1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -51,6 +52,7 @@ SMF-7513 : Cadastrar Previsão de Despesas escolhendo Contabilizar Não
     Selecionar no campo Conta de Custo a conta de custo |${dados}[ContaCusto]|
     Informar no campo Valor Compartilhamento |${dados}[ValorCompartilha]|
     Clicar no botao Gerar
+    Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
 
 SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim
@@ -76,3 +78,4 @@ SMF-7512 : Cadastrar Previsão de Despesas escolhendo Contabilizar Sim
     2Selecionar no campo Conta de Custo a conta de custo |${dados}[ContaCusto]|
     2Informar no campo Valor Compartilhamento |${dados}[ValorCompartilha]|
     2Clicar no botao Gerar
+    2Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|

@@ -65,12 +65,17 @@ Selecionar no campo Conta de Custo a conta de custo |${ContaCusto}|
 Informar no campo Valor Compartilhamento |${ValorCompartilha}|
     Click no Item                          ${LinhaCompartilha}  
     Preencher campo                        ${CampoCompartilha}                     ${ValorCompartilha}
+
 Clicar no botao Gerar
-    Click no Item                          ${BtnGerar} 
-    Sleep                                    3   
-    Get Text                               ${MsgUsuario}        
-    #Element Attribute Value Should Be      ${MsgUsuario}    |value|    expected     
-                    
+     Click no Item                          ${BtnGerar} 
+     Sleep                                    3    
+
+Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${MsgUsuario}
+    ${protocolo}    Get Text    ${MsgUsuario}    
+    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgEsperada", valor "${protocolo}"
+    Sleep    3
 
 #######################################################################################################################
 2Inserir no campo Descricao a descricao da previsao a ser cadastrada |${Descricao2}|
@@ -142,8 +147,34 @@ Clicar no botao Gerar
     Preencher campo                        ${CampoCompartilha}                     ${ValorCompartilha}
 
 2Clicar no botao Gerar
-    Click no Item                          ${BtnGerar} 
-    Sleep                                    3   
-    Get Text                               ${MsgUsuario}        
-    #Element Attribute Value Should Be      ${MsgUsuario}    |value|    expected     
+     Click no Item                          ${BtnGerar} 
+     Sleep                                    3   
+     #Valida Mensagem                        ${MsgUsuario}        Previsão nº 57483 Gerada com Sucesso !
+     #Get Text                               ${MsgUsuario}        
+#     #Element Attribute Value Should Be      ${MsgUsuario}    |value|    expected 
+
+
+# Clicar no botao [${nomeBtn}]|${MsgEsperada}|
+    
+#     IF    '${nomeBtn}' == 'Gerar'
+#         Wait Until Element Is Visible    ${BtnGerar}    60
+#         Sleep    1
+#         Click Element    ${BtnGerar}
+#         Wait Until Element Is Visible    ${MsgUsuario}    60
+#         Sleep    3
+#         ${msgObtida}    Get Text    ${MsgUsuario}
+#         IF    "${msgObtida}" != ""
+#             Should Be Equal As Strings    ${MsgEsperada}    ${msgObtida}
+#         ELSE
+#             Log To Console    *** Mensagem de alerta não foi apresentada!
+#         END   
+                                
+#     END
+
+2Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${MsgUsuario}
+    ${protocolo}    Get Text    ${MsgUsuario}    
+    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgEsperada", valor "${protocolo}"
+    Sleep    3
                     

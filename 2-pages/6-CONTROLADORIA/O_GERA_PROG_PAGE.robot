@@ -43,4 +43,4 @@ ${LinhaCompartilha}                  xpath=//div[@id="grdInfRateio"]/div[4]/div[
 ${CampoCompartilha}                  xpath=//input[@class="editor-text mode-edit"]
 
 ${BtnGerar}                          xpath=//button[@id="butGerar"]  
-${MsgUsuario}                        xpath=//li[@class="notification-info"] 
+${MsgUsuario}                        xpath=(//p[@class="notifications-item-text"])[2]

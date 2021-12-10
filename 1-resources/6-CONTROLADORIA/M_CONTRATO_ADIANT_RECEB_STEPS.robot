@@ -91,9 +91,17 @@ Cadastrar <Conta contabil> |${FiltroContabil}|, <Tipo de documento> |${TipoDoc}|
 
 Clicar no botao Concluir |${MsgValidada}|
     Click no Item                         ${BtnConcluir}  
-    Valida Mensagem                       ${MsgUsuario}                           ${MsgValidada}
-    Click no Item                         ${BtnOk2} 
+    #Valida Mensagem                       ${MsgUsuario}                           ${MsgValidada}
+    
     Sleep                                    3    
+
+Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${MsgUsuario}
+    ${protocolo}    Get Text    ${MsgUsuario}    
+    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgValidada", valor "${protocolo}"
+    Sleep    3
+    Click no Item                         ${BtnOk2} 
 
 
 
@@ -174,10 +182,15 @@ Atribuir uma data de vencimento de pagamento do contrato |${Vencimento}| |${Data
 
 2Clicar no botao Concluir |${MsgValidada}|
     Click no Item                         ${BtnConcluir}  
-    Valida Mensagem                       ${MsgUsuario}                             ${MsgValidada}
+    #Valida Mensagem                       ${MsgUsuario}                             ${MsgValidada}
     #Click no Item                         ${BtnOk2} 
     Sleep                                    2  
     
 
-
+2Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${MsgUsuario}
+    ${protocolo}    Get Text    ${MsgUsuario}    
+    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgValidada", valor "${protocolo}"
+    Sleep    3
 

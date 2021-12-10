@@ -39,6 +39,7 @@ SMF-5520 : Realizar Contrato de Adiantamento do tipo Financeiro
     Clicar no <icone de salvar do menu principal> |${dados}[MsgVerificada]|, <botao Gerar Contas a Receber>
     Cadastrar <Conta contabil> |${dados}[FiltroContabil]|, <Tipo de documento> |${dados}[TipoDoc]|, <moeda a ser utilizada> |${dados}[Moeda]|, <o setor a conta contabil a conta de custo e o valor do rateio> |${dados}[TipoConta]| |${dados}[ValorRateio2]|
     Clicar no botao Concluir |${dados}[MsgValidada]|
+    Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
 
 SMF-5519 : Realizar Contrato de Adiantamento do tipo Pacote
@@ -54,5 +55,6 @@ SMF-5519 : Realizar Contrato de Adiantamento do tipo Pacote
     2Clicar no <icone de salvar do menu principal> |${dados}[MsgVerificada]|, <botao Gerar Contas a Receber>
     2Cadastrar <Conta contabil> |${dados}[FiltroContabil]|, <Tipo de documento> |${dados}[TipoDoc]|, <moeda a ser utilizada> |${dados}[Moeda]|, <o setor a conta contabil a conta de custo e o valor do rateio> |${dados}[TipoConta]| |${dados}[ValorRateio2]|
     2Clicar no botao Concluir |${dados}[MsgValidada]|
+    2Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
    
