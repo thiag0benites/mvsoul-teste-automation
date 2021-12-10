@@ -10,12 +10,8 @@
 Resource                            ../../2-pages/4-MATERIAIS/C_CONSOLIDACAO_PAGE.robot
 
 *** Keywords ***
-Preencher parametros de pesquisa 
-  
-
-    Clicar no Campo e Preencher Informacao      ${CampoDataInicial}          ${CampoDataInicial}          01012021
-    Clicar no Campo e Preencher Informacao      ${CampoProduto}              ${CampoProduto}              7903
-    
+Preencher parametros de pesquisa |${DataInicial}||${Produto}|
+    Clicar no Campo e Preencher Informacao      ${CampoDataInicial}          ${CampoDataInicial}          ${DataInicial}
+    Clicar no Campo e Preencher Informacao      ${CampoProduto}              ${CampoProduto}              ${Produto}
     Click no Item                               ${BtnExePesq}
-    ${value}    Get Element Attribute           xpath=//fieldset[@id="frames4"]/div/div/div[@id="dsProduto"]/input    title
-  
+    Validar Elemento Pelo Titulo                ALMOXARIFADO
