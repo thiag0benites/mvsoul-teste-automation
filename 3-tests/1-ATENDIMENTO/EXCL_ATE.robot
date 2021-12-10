@@ -19,7 +19,7 @@ Resource          ../../1-resources/1-ATENDIMENTO/EXCL_ATE_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+#Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -36,3 +36,4 @@ SRC1AEXCLATE-001:Fluxo principal
     Usuario devera preencher os campos |${dados}[numAtend]|,|${dados}[motivo]|
     Clicar no botao Excluir Atendimento
     Clicar no botao Sim
+    Validar mensagem de confirmacao da exclusao do atendimento |${dados}[mensagem]|

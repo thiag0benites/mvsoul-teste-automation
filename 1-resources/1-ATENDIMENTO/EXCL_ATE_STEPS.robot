@@ -19,3 +19,6 @@ Clicar no botao Excluir Atendimento
 
 Clicar no botao Sim
     Click no Item    ${btnSimNotifications}
+
+Validar mensagem de confirmacao da exclusao do atendimento |${mensagem}|
+    Valida Mensagem    ${MensagemConfirmacao}    ${mensagem}
