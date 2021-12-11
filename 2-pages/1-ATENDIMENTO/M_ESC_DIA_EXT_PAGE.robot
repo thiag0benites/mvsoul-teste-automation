@@ -9,12 +9,18 @@ Resource    ../../Config.robot
 *** Variables ***
 
 ### Campos ###
-${CampoConvenio}                      xpath=//input[@id="inp:cdConvenio"]
+
+
+${CampoEspecialidade}                    xpath=//div[@data-member="CD_ESPECIALID"]/input
+${CampoData}                             xpath=//div[@data-member="VDATA_AGENDA"]/input[@id="inp:vdataAgenda"]
+${CampoPrestador}                        xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/input
+${CampoEmEdicao}                         xpath=//input[@class="editor-text mode-edit"]
+
+
+${DivPrestador}                          xpath=//div[@data-member="CD_PRESTADOR"][@data-row="0"]/..
 
 
 
-
-${DivEspecialidade}                    xpath=//div[@data-member="CD_ESPECIALID"]/input
 
 
 ### Botoes ###

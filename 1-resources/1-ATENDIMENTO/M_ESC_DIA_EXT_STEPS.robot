@@ -14,9 +14,19 @@ Resource                            ../../2-pages/1-ATENDIMENTO/M_ESC_DIA_EXT_PA
 
 *** Keywords ***
 
-Descricao do Procedimento     #|${Convenio}|
-    
-    
+Escalas de Plantao Parametros |${Especialidade}||${Prestador}||${Entrada}||${Saida}||${Observacao}|
+    Preencher campo                    ${CampoEspecialidade}                    ${Especialidade}
+    Send Keys                          enter
+    Click no Item                      ${DivPrestador} 
+    Preencher campo                    ${CampoPrestador}                        ${Prestador}
+    Send Keys                          enter
+    Preencher campo                    ${CampoEmEdicao}                         ${Entrada}
+    Send Keys                          enter
+    Preencher campo                    ${CampoEmEdicao}                         ${Saida}
+    Send Keys                          enter
+    Preencher campo                    ${CampoEmEdicao}                         ${Observacao}
+
+
 
 
 
