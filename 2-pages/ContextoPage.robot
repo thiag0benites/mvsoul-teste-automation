@@ -14,6 +14,7 @@ ${btnAdicionar}         xpath=//li[@id='toolbar']//li[@id='tb-record-add']//a
 ${btnSalvar}            xpath=//li[@id='toolbar']//li[@id='tb-record-save']//a
 ${btnPesquisar}         xpath=//li[@id='toolbar']//li[@id='tb-search']//a
 ${btnExecute}           xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
+${btnApagar}            xpath=//li[@id='toolbar']//li[@id="tb-record-remove"]//a
 ${btnNaoNotifications}  xpath=//li[@class='notification-buttons']//button[2]
 ${btnSimNotifications}  xpath=//li[@class='notification-buttons']//button[1]
 ${BotaoBuscaTela}       xpath=//*[@class='mv-basico-menu dp32']
