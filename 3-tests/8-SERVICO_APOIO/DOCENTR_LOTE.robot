@@ -1,6 +1,6 @@
 #################################################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Teste da tela Protocolos de Saída de Documentos
+# Decrição: Teste da tela Protocolos de Entrada de Documentos
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\DOCENTRLOTE.robot"
@@ -37,7 +37,7 @@ SCR8SDOCENTRLOTE-001:Fluxo Principal
     Validar Acesso a Tela |Entrada de Documentos no SAME|
 
 
-    Preencher Datas |${dados}[DataIni]|
+    Preencher Datas |${dados}[DataIni]| |${dados}[DataFim]|
     Preencher Tipo, Matricula e Pesquisar |${dados}[TipoAtend]| |${dados}[MatCad]|
-    Preencher Armario e dar Entrada |${dados}[Armario]| |${dados}[MsgSucesso]|
+    Dar Entrada |${dados}[MsgSucesso]| 
     Imprimir |${dados}[MsgImpressao]|

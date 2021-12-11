@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Elementos e metodos da página de Protocolos de Saída de Documentos
+# Decrição: Elementos e metodos da página de Protocolos de Entrada de Documentos
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
@@ -19,14 +19,12 @@ ${CampoMat}                         xpath=//input[@id="matCadastrada_ac"]
 
 ${BotaoPesquisar}                   xpath=//button[@id="btnPesquisar"]
 
-${CampoArmario}                     xpath=//input[@id="inp:cdArmarioSame"]
 ${BotaoEntrada}                     xpath=//button[@id="btnImprEtq"]
 
 ${BotaoOk}                          xpath=//li[@class="notification-buttons"]/button 
 ${BotaoSim}                          xpath=//li[@class="notification-buttons"]/button 
 ${BotaoImprimir}                    xpath=//button[@data-member="BTN_IMPR_PROT"]
 
-${SaidaRelatorio}                   xpath=//input[@title="Impressora"]
 ${BotaoImprimirFim}                 xpath=//button[@data-member="BTN_IMPRIMIR"]
 
 ${CampoMsgSucesso}                  xpath=//div[@class="notifications-item-body"]/p

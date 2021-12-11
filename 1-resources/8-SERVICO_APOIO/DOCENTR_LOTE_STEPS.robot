@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Passos da tela de Protocolos de Saída de Documentos
+# Decrição: Passos da tela de Protocolos de Entrada de Documentos
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
@@ -15,19 +15,15 @@ Preencher Same |${SAME}|
     Click no Item                  ${BotaoAcessar}
     Sleep   3
 
-Preencher Datas |${DataIni}|
+Preencher Datas |${DataIni}| |${DataFim}|
     Preencher Campo                     ${CampoDataIni}        ${DataIni}
-    Preencher campo com data e hora     ${CampoDataFim}     %d/%m/%Y     00:00:00 
-    Send Keys    TAB
-    ${DataFim}               Get Element Attribute    ${CampoDataFim}    title
-    Altera massa de dados da "DOCENTR_LOTE", linha "1", coluna "DataFim", valor "${DataFim}"
-
+    Preencher Campo                     ${CampoDataFim}        ${DataFim}
+#Datas Fixas retroativas
 Preencher Tipo, Matricula e Pesquisar |${TipoAtend}| |${MatCad}|
     Preencher Campo        ${CampoTipo}              ${TipoAtend}
     Preencher Campo        ${CampoMat}               ${MatCad}
     Click no Item                                    ${BotaoPesquisar}
-Preencher Armario e dar Entrada |${Armario}| |${MsgSucesso}|
-    Preencher Campo                ${CampoArmario}                ${Armario}
+Dar Entrada |${MsgSucesso}|
     Click no Item                  ${BotaoEntrada}
     Valida Mensagem                ${CampoMsgSucesso}             ${MsgSucesso}
     Click no Item                  ${BotaoOk}
@@ -37,7 +33,7 @@ Imprimir |${MsgImpressao}|
     Click no Item                  ${BotaoSim}            
     Sleep    5
     Click no Item                  ${BotaoImprimirFim} 
-    Sleep   2
+    Sleep   6
     Switch Window                  NEW
     Sleep   3
     Capture Page Screenshot
