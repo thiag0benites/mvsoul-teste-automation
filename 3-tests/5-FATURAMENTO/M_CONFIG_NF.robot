@@ -22,16 +22,16 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}         m_config_nf
+${suite}         m_config_nf
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 # SMF-5504
 SCR5FMCONFIGNF001:Fluxo Principal
     # robot -v browser:chrome -t "SCR5FMCONFIGNF001:Fluxo Principal" -d ./5-results/SCR5FMCONFIGNF001 "3-tests/5-FATURAMENTO/M_CONFIG_NF.robot"
     # robot -v browser:firefox -t "SCR5FMCONFIGNF001:Fluxo Principal" -d ./5-results/SCR5FMCONFIGNF001 "3-tests/5-FATURAMENTO/M_CONFIG_NF.robot"
-    # ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMCONFIGNF001"
+    ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMCONFIGNF001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Configurações>Configurações da Nota Fiscal"@nprint @las
-    # Informar no Campo <Convenio> |${dados}[Conv]| <Desc. Fatura> |${dados}[DescFat]| <Competencia> |${dados}[Comp]|
-    # Clicar Salvar |${dados}[Salvar]|
+    Marcar os Campos Checkbox com a parametrizacao desejada <Pais Padrao> |${dados}[Pais]| <URL Padrao> |${dados}[URL]| <Motivo Padrao> |${dados}[Mot]|
+    Clicar Salvar |${dados}[Salvar]|
