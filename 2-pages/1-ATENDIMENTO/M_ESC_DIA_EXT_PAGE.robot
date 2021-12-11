@@ -9,19 +9,26 @@ Resource    ../../Config.robot
 *** Variables ***
 
 ### Campos ###
- 
+${CampoConvenio}                      xpath=//input[@id="inp:cdConvenio"]
+
+
+
+
+${DivEspecialidade}                    xpath=//div[@data-member="CD_ESPECIALID"]/input
 
 
 ### Botoes ###
-${btnConfirmar}                    xpath=//button[@data-member="BTN_CONFIRMAR"]
-${btnNao}                          xpath=//button[@class="btn btn-primary"][contains(text(),"Não")]
-${btnExecutar}                     xpath=//a[@title="Executar Consulta"]
+${btnGerarSped}                       xpath=//button[@data-member="BTN_CONFIRMA"]
+${btnOK}                              xpath=//li[@class="notification-buttons"]/button
+
+
 
 
 ### Diversos ###
-${Alerta}                          xpath=//div[@class="notifications-item-body"]/p
 
 
+${Alerta}                             xpath=//p[@class="notifications-item-text"]
+${BuscaLinha}                         xpath=//div[contains(@class,"ItemVermelho")]/div
 
 
 

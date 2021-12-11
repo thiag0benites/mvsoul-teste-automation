@@ -12,7 +12,7 @@ Resource                            ../../2-pages/4-MATERIAIS/M_RECEBE_SOLIC_CON
 *** Keywords ***
 
 Consultar Lista dos Processos a Serem Validados|${MsgEsperada}|
-    Clicar no botão Executar
+    Click no Item                                            ${btnExecutar}
     Click no Item                                            ${btnConfirmar}
     Valida Mensagem                                          ${Alerta}                        ${MsgEsperada}
     Click no Item                                            ${btnNao}

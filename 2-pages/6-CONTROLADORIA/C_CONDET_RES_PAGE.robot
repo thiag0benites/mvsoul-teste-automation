@@ -15,6 +15,8 @@ ${CampoCodigo}                        xpath=//div[@data-member="CD_CON_PAG"]/inp
 
 ### Botoes ###
 ${BtnOK}                              xpath=//button[@class="btn btn-primary"]
+${BtnProcurar}                        xpath=//a[@title="Procurar"]
+${BtnExecutar}                        xpath=//a[@title="Executar Consulta"]
 
 
 

@@ -14,9 +14,9 @@ Resource                            ../../2-pages/5-FATURAMENTO/M_GLOSAS_PAGES.r
 
 *** Keywords ***
 
-Descrição do Procedimento |${Convenio}|
+Descricao do Procedimento |${Convenio}|
     Clicar no Campo e Preencher Informacao         ${CampoConvenio}    ${CampoConvenio}    ${Convenio}
-    Clicar no botão Executar
+    Click no Item                                  ${btnExecutar}
     
     Click no Item                                  ${DivProcedimento}
     
@@ -42,6 +42,7 @@ Buscar Linha |${MotivoAceite}||${MotivoGlosa}|
     Click no Item                                  //div[@data-member="CD_MOTIVO_GLOSA"][@data-row="${RecebeLinha}"]/..
     Preencher campo                                //input[@class="ui-widget-content ui-buttoninput ui-corner-left"][@row="${RecebeLinha}"]                            ${MotivoGlosa} 
     Send Keys                                      enter
+    
     
     
     

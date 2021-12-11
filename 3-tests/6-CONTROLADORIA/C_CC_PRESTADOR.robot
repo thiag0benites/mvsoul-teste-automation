@@ -33,4 +33,4 @@ SCR6CCCCPRESTADOR-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR6CCCCPRESTADOR-001:Fluxo Principal" -d ./5-results/SCR6CCCCPRESTADOR-001 "3-tests/6-CONTROLADORIA/C_CC_PRESTADOR.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CCCCPRESTADOR"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Conta Corrente do Prestador"@nprint @las
-    Descrição do Prestador |${dados}[Prestador]||${dados}[DataInicial]||${dados}[DataFinal]|
+    Descricao do Prestador |${dados}[Prestador]||${dados}[DataInicial]||${dados}[DataFinal]|

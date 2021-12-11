@@ -25,6 +25,7 @@ ${DivMotivoGlosa}                     xpath=//div[@data-member="CD_MOTIVO_GLOSA"
 ### Botoes ###
 ${btnGerarSped}                       xpath=//button[@data-member="BTN_CONFIRMA"]
 ${btnOK}                              xpath=//li[@class="notification-buttons"]/button
+${btnExecutar}                        xpath=//a[@title="Executar Consulta"]
 
 
 

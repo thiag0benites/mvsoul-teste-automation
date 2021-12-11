@@ -14,9 +14,9 @@ Resource                            ../../2-pages/6-CONTROLADORIA/C_CONDET_RES_P
 Descrição do Documento |${Codigo}||${Titulo}|
     Valida Mensagem                                ${Alerta}    Problema na Configuração do Sistema
     Click no Item                                  ${BtnOK}   
-    Clicar no botão Pesquisar
+    Click no Item                                  ${BtnProcurar}
     Preencher campo                                ${CampoCodigo}        ${Codigo}
-    Clicar no botão Executar
+    Click no Item                                  ${BtnExecutar} 
     Validar Elemento Pelo Titulo                   ${Titulo}
 
 

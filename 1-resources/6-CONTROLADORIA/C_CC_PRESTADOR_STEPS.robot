@@ -11,7 +11,7 @@ Resource                            ../../2-pages/6-CONTROLADORIA/C_CC_PRESTADOR
 
 *** Keywords ***
 
-Descrição do Prestador |${Prestador}||${DataInicial}||${DataFinal}|
+Descricao do Prestador |${Prestador}||${DataInicial}||${DataFinal}|
     Preencher campo                                ${CampoPrestador}        ${Prestador}
     Send Keys                                      enter
     Clicar no Campo e Preencher Informacao         ${CampoDataInicial}      ${CampoDataInicial}       ${DataInicial}

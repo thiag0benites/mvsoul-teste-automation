@@ -27,8 +27,8 @@ Listagem de Solicitações de Esterilização|${SetorResponsavelEntrega}||${Seto
     Preencher campo                                          ${CampoComposicao}                            ${Composicao}
     Send Keys                                                enter
     Sleep    3
-    Clicar no botão Salvar do menu
-    Valida Mensagem                                          ${Alerta}                                     ${MsgEsperada}
+    Clicar Botao Salvar |${MsgEsperada}|
+    
 
 
 
