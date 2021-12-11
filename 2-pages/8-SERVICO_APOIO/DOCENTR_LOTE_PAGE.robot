@@ -14,19 +14,20 @@ ${BotaoAcessar}                     xpath=//button[@id="ok"]
 
 ${CampoDataIni}                     xpath=//input[@id="inp:dtInicial"]
 ${CampoDataFim}                     xpath=//input[@id="inp:dtFinal"]
+${CampoTipo}                        xpath=//input[@id="tpAtendimento_ac"]
+${CampoMat}                         xpath=//input[@id="matCadastrada_ac"]
+
 ${BotaoPesquisar}                   xpath=//button[@id="btnPesquisar"]
 
-${CampoPrestOri}                    xpath=//input[@id="inp:cdPortador"]
-${CampoPrestDes}                    xpath=//input[@id="inp:cdPortadorDestino"]
-${CampoTransp}                      xpath=//input[@id="inp:cdTransportador"]
-${CampoSolicitante}                 xpath=//input[@id="inp:dsSolicitante"]
-${CampoMotivo}                      xpath=//input[@id="inp:dsMotivo"]
+${CampoArmario}                     xpath=//input[@id="inp:cdArmarioSame"]
+${BotaoEntrada}                     xpath=//button[@id="btnImprEtq"]
 
-${AbaItens}                         xpath=//a[@id="TAB_PAGE_TAB_PAGE_tab0"]
-${DivMat}                           xpath=//div[@class="slick-cell b1 f1 selected ui-fixed-width"]
-${CampoMatr}                        xpath=//input[@class="editor-text mode-edit"]
-
+${BotaoOk}                          xpath=//li[@class="notification-buttons"]/button 
+${BotaoSim}                          xpath=//li[@class="notification-buttons"]/button 
 ${BotaoImprimir}                    xpath=//button[@data-member="BTN_IMPR_PROT"]
 
 ${SaidaRelatorio}                   xpath=//input[@title="Impressora"]
 ${BotaoImprimirFim}                 xpath=//button[@data-member="BTN_IMPRIMIR"]
+
+${CampoMsgSucesso}                  xpath=//div[@class="notifications-item-body"]/p
+${CampoMsgImprimir}                 xpath=//p[@class="notifications-item-text"]

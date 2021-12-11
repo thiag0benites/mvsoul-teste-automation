@@ -4,42 +4,38 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/8-SERVICO_APOIO/SAIPORT_PAGE.robot
+Resource          ../../2-pages/8-SERVICO_APOIO/DOCENTR_LOTE_PAGE.robot
 
 *** Variable ***
 
 *** Keywords ***
 
-Preencher Same |${Same}|
-    Preencher Campo                ${CampoSame}                   ${Same}
+Preencher Same |${SAME}|
+    Preencher Campo                ${CampoSame}                   ${SAME}
     Click no Item                  ${BotaoAcessar}
     Sleep   3
 
-Preencher Data Inicial |${DataIni}|
+Preencher Datas |${DataIni}|
     Preencher Campo                     ${CampoDataIni}        ${DataIni}
-
-Preencher Data Final
     Preencher campo com data e hora     ${CampoDataFim}     %d/%m/%Y     00:00:00 
     Send Keys    TAB
     ${DataFim}               Get Element Attribute    ${CampoDataFim}    title
-    Altera massa de dados da "C_ACOM_SOLCOM", linha "1", coluna "DataFim", valor "${DataFim}"
+    Altera massa de dados da "DOCENTR_LOTE", linha "1", coluna "DataFim", valor "${DataFim}"
 
-Preencher Campos do Protocolo |${PrestadorOri}| |${PrestadorDes}| |${Transp}| |${Solicitante}| |${Motivo}|
-    Preencher Campo                ${CampoPrestOri}               ${PrestadorOri}
-    Preencher Campo                ${CampoPrestDes}               ${PrestadorDes}
-    Preencher Campo                ${CampoTransp}                 ${Transp}
-    Preencher Campo                ${CampoSolicitante}            ${Solicitante}
-    Preencher Campo                ${CampoMotivo}                 ${Motivo}
+Preencher Tipo, Matricula e Pesquisar |${TipoAtend}| |${MatCad}|
+    Preencher Campo        ${CampoTipo}              ${TipoAtend}
+    Preencher Campo        ${CampoMat}               ${MatCad}
+    Click no Item                                    ${BotaoPesquisar}
+Preencher Armario e dar Entrada |${Armario}| |${MsgSucesso}|
+    Preencher Campo                ${CampoArmario}                ${Armario}
+    Click no Item                  ${BotaoEntrada}
+    Valida Mensagem                ${CampoMsgSucesso}             ${MsgSucesso}
+    Click no Item                  ${BotaoOk}
 
-Preencher Itens, Salvar e Imprimir |${Matricula}| |${Tela}|
-    Click no Item                  ${DivMat}
-    Click no Item                  ${AbaItens}
-    Preencher Campo                ${CampoMatr}                   ${Matricula} 
-    Click Elemento por titulo           Salvar
-    Sleep   1
-    Click no Item                  ${BotaoImprimir}
-    Sleep   1
-    Preencher Campo                ${SaidaRelatorio}              ${Tela}
+Imprimir |${MsgImpressao}|
+    Valida Mensagem                ${CampoMsgImprimir}                           ${MsgImpressao}
+    Click no Item                  ${BotaoSim}            
+    Sleep    5
     Click no Item                  ${BotaoImprimirFim} 
     Sleep   2
     Switch Window                  NEW
@@ -47,9 +43,3 @@ Preencher Itens, Salvar e Imprimir |${Matricula}| |${Tela}|
     Capture Page Screenshot
 
 
-
-
-Validar Mensagem Solicitando Filtro |${MensagemEsperadaFiltro}|
-    Valida Mensagem                ${MensagemToast}            ${MensagemEsperadaFiltro}
-    Click no Item                  ${BotaoOk}
-    
