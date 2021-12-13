@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/6-CONTROLADORIA/M_TIP_DET.robot
+Resource            ../../1-resources/6-CONTROLADORIA/M_TIP_DET_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -34,4 +34,8 @@ SCR6COMTIPDET-001:Fluxo principal
 # robot -v browser:firefox -t "SCR6COMTIPDET-001:Fluxo principal" -d ./5-results/M_TIP_DET "3-tests/6-CONTROLADORIA/M_TIP_DET.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COMTIPDET-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    
+    Preencher os campos |${dados}[descricao]|,|${dados}[dias]|,|${dados}[valorMin]|,|${dados}[valorMax]|
+    Preencher os inputs da tela |${dados}[fornecedor]|,|${dados}[contaContabil]|,|${dados}[contaCusto]|,|${dados}[contaContabilDespesa]|,|${dados}[tipoDocumento]|
+    Preencher a tabela |${dados}[vlFaixa]|,|${dados}[vlPercentual]|,|${dados}[vlDeducao]|,|${dados}[vlDeducaoPendente]|
+    Clicar no botao Salvar do menu
+    Valida cadastro realizado na tela |${dados}[mensagem]|
