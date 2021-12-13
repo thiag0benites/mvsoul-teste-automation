@@ -5,14 +5,13 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/5-FATURAMENTO/C_NOTA_FISCAL_PAGE.robot
-Resource    ../2-ASSISTENCIAL/M_ESPERA_COLETA_STEPS.robot
 
 *** Variable ***
 
 *** Keywords ***
 Preencher Nota |${NotaFiscal}|
     Click Elemento por titulo    Procurar
-    Preencher Campo                ${CampoNota}                ${NotaFiscal}
+    Preencher Campo    ${CampoNota}    ${NotaFiscal}
     Send Keys    F8
     Sleep    1
 

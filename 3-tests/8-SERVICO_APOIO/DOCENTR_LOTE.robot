@@ -35,8 +35,6 @@ SCR8SDOCENTRLOTE-001:Fluxo Principal
     Acessar a tela "Serviços de Apoio>Serviço Arquivo Médico>SAME>Entrada de Documentos por Lote"@nprint @las
     Preencher Same |${dados}[SAME]|
     Validar Acesso a Tela |Entrada de Documentos no SAME|
-
-
     Preencher Datas |${dados}[DataIni]| |${dados}[DataFim]|
     Preencher Tipo, Matricula e Pesquisar |${dados}[TipoAtend]| |${dados}[MatCad]|
     Dar Entrada |${dados}[MsgSucesso]| 

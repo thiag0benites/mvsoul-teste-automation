@@ -35,7 +35,6 @@ SCR5FMCONSULTAAPAC-001:Fluxo Principal
     Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Consultas>Lançamento APAC" @las
     #Acessar a Tela Pela Busca |M_CONSULTA_APAC||Lançamento APAC| @las 
     Validar Acesso a Tela |Consulta APAC|
-    
     Consultar por Prontuario |${dados}[Prontuario]|
     Validar Consulta Pelos Resultados |${dados}[Sexo]| |${dados}[Tipo]| |${dados}[Endereco]|
 
@@ -46,7 +45,6 @@ SCR5FMCONSULTAAPAC-002:Consultando pela APAC
     Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Consultas>Lançamento APAC" @las
     #Acessar a Tela Pela Busca |M_CONSULTA_APAC||Lançamento APAC| @las 
     Validar Acesso a Tela |Consulta APAC|
-    
     Consultar por APAC |${dados}[APAC]|
     Validar Consulta Pelos Resultados |${dados}[Sexo]| |${dados}[Tipo]| |${dados}[Endereco]|
 
@@ -57,6 +55,5 @@ SCR5FMCONSULTAAPAC-003:Consultando pelo CPF
     Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Consultas>Lançamento APAC" @las
     #Acessar a Tela Pela Busca |M_CONSULTA_APAC||Lançamento APAC| @las 
     Validar Acesso a Tela |Consulta APAC|
-    
     Consultar por CPF |${dados}[CPF]|
     Validar Consulta Pelos Resultados |${dados}[Sexo]| |${dados}[Tipo]| |${dados}[Endereco]|

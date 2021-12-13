@@ -7,6 +7,5 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-
-${CampoSame}                        xpath=//input[@id="inp:cdSame"]
-${BotaoAcessar}                     xpath=//button[@id="ok"]
+${CampoSame}      xpath=//input[@id="inp:cdSame"]
+${BotaoAcessar}    xpath=//button[@id="ok"]

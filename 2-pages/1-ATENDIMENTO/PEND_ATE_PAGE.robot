@@ -7,8 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoAtendimento}                                 xpath=//input[@id="inp:cdAtendimento"]
-${CampoTipo}                                        xpath=//input[@id="inp:cdTipoPendencia"]
-${CampoObs}                                         xpath=//textarea[@id="inp:dsObs"]
-
-${MensagemToast}                                    xpath=//p[@class="notifications-item-text"]
+${CampoAtendimento}    xpath=//input[@id="inp:cdAtendimento"]
+${CampoTipo}      xpath=//input[@id="inp:cdTipoPendencia"]
+${CampoObs}       xpath=//textarea[@id="inp:dsObs"]
+${MensagemToast}    xpath=//p[@class="notifications-item-text"]

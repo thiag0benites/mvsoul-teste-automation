@@ -34,7 +34,6 @@ SCR1APENDATE-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1APENDATE-001"
     Acessa a Tela Pela Busca |pend_ate||Registro| @las
     Validar Acesso a Tela |Pendências|
-    
     Preencher Atendimento |${dados}[Atendimento]|
     Preencher Tipo e Obs |${dados}[Tipo]| |${dados}[Observacao]|
     Salvar e Validar |${dados}[MsgSalva]|
