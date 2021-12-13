@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/8-SERVICO_DE_APOIO/DEVDOCPRO_PAGE.robot
+Resource                ../../2-pages/8-SERVICOS_DE_APOIO/DEVDOCPRO_PAGE.robot
 
 *** Variable ***
 
@@ -15,9 +15,9 @@ Selecionar Same Geral
     Sleep       3
     click Element       ${same}
     Sleep       3
-    Click Element       ${bntOk}
+    Click Button       ${bntOk}
     Sleep       3
-    Click Element       ${btnAcessar}
+    Click Button       ${btnAcessar}
 
 Clicar no botao [Pesquisar]
     Wait Until Element Is Visible       ${btnConsultar}      180
