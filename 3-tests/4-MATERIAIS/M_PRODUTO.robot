@@ -10,7 +10,7 @@
 # chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
 #################################################################################################################################################################
-*** Settings ***
+*** Settings *** 
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 
@@ -37,9 +37,9 @@ SCR4MMPRODUTO-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUTO-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Tabelas>Classificação dos Produtos>Produtos"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Descricao e Tipo do Produto
-    Preencher Campos Obrigatorios do Produto
-    Validar Preenchimento dos Campos Obrigatorios
-    Preencher Campos Lote e Registro Anvisa
-    Selecionar Atividade do Produto
-    Salvar Registro
+    Preencher Descricao e Tipo do Produto |${dados}[Descricao]| |${dados}[DescResumida]| |${dados}[TpProduto]|
+    Preencher Campos Obrigatorios do Produto |${dados}[Unidade]| |${dados}[Especie]| |${dados}[Classe]| |${dados}[Subclasse]|
+    Validar Preenchimento dos Campos Obrigatorios |${dados}[Unidade]| |${dados}[Especie]| |${dados}[Classe]| |${dados}[Subclasse]|
+    Preencher Campos Lote e Registro Anvisa |${dados}[Lote]| |${dados}[RegAnvisa]|
+    Selecionar Atividade do Produto |${dados}[Atividade]| 
+    Salvar Registro |${dados}[MensagemProdMestre]| |${dados}[MensagemDuplicidade]| |${dados}[MensagemSalvar]|

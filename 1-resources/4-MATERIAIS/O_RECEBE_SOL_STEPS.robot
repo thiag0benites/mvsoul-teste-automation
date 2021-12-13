@@ -2,8 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
-### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/O_RECEBE_SOL_PAGE.robot
 
 *** Variable ***

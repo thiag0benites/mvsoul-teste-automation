@@ -1,10 +1,11 @@
 ##################################################################################################################################
-# Autor: Thiago Benites
-# Decrição: Elementos e metodos da página Informar equipamentos
+# Autor: Fernando Lima
+# Decrição: Elementos e metodos da página de Consulta de pacientes atendidos na Urgência/Emergência (Std)
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
-Resource          ../../1-resources/auxiliar/Genericos.robot
 
 *** Variable ***
+${Calendario}     xpath=//input[@id="inp:dtAtendimento"]
+${BotaoPesquisar}    xpath=//button[@id="btnPesquisar"]

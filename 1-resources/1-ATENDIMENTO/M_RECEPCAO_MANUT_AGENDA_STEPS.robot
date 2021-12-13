@@ -10,23 +10,23 @@ Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Campos Para Consulta de Agenda
-    Preencher Campo                         ${CampoDtInicial}                 09/07/2021
-    Preencher Campo                         ${CampoDtFinal}                   09/07/2021
-    Preencher Campo                         ${CampoAgendamento}               Paciente
-    Preencher Campo                         ${CampoAgenda}                    Todos
-    Selecionar Item Na Lista                ${BotaoLovPrestador}              GEISHA ABREU SOARES DE PINA                GEISHA ABREU SOARES DE PINA
+Preencher Campos Para Consulta de Agenda |${DtInicial}| |${DtFinal}| |${Agendamento}| |${Agenda}| |${Prestador}|
+    Preencher Campo                         ${CampoDtInicial}                 ${DtInicial}
+    Preencher Campo                         ${CampoDtFinal}                   ${DtFinal}
+    Preencher Campo                         ${CampoAgendamento}               ${Agendamento}
+    Preencher Campo                         ${CampoAgenda}                    ${Agenda}
+    Selecionar Item Na Lista                ${BotaoLovPrestador}              ${Prestador}                 ${Prestador}
     Marcar Checkbox |${CbHorarioAgendado}|
 
 Clicar Botao Executar Pesquisa
     Click no Item                           ${BotaoExecPesquisa}     
 
-Validar Resultado da Pesquisa
-    Validar Elemento Pelo Titulo            49369    
-    Validar Elemento Pelo Titulo            436549
-    Validar Elemento Pelo Titulo            MARIA JOSE
-    Validar Elemento Pelo Titulo            CONSULTA CLINICA GERAL
-    Validar Elemento Pelo Titulo            723855
-    Validar Elemento Pelo Titulo            ABDIEL DE CASTRO CABRAL
+Validar Resultado da Pesquisa |${CdAgenda}| |${CdPaciente1}| |${Paciente1}| |${ItemAgendamento}| |${CdPaciente2}| |${Paciente2}|
+    Validar Elemento Pelo Titulo            ${CdAgenda}    
+    Validar Elemento Pelo Titulo            ${CdPaciente1}
+    Validar Elemento Pelo Titulo            ${Paciente1}
+    Validar Elemento Pelo Titulo            ${ItemAgendamento}
+    Validar Elemento Pelo Titulo            ${CdPaciente2}
+    Validar Elemento Pelo Titulo            ${Paciente2}
     
 

@@ -37,8 +37,8 @@ SCR2AMUSUUNID-001:Fluxo Principal
     #Acessar a tela "Apoio a TI>Gestão de Usuários>Configurações de Acesso>Acessos Gerais>Usuário por Unidade de Internação e Setor"@nprint @las
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Selecionar Usuario
-    Selecionar Unidade de Internacao
+    Selecionar Usuario |${dados}[CdUsuario]| |${dados}[NomeUsuario]|
+    Selecionar Unidade de Internacao |${dados}[CdUnidInternacao]| |${dados}[NomeUnidInterncao]|
     Validar Checkbox de Solicitacao Marcado
     Validar Checkbox de Movimentacao Desmarcado
     Clicar Botao Salvar 

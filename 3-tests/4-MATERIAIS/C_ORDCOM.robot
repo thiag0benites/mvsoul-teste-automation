@@ -13,9 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
 Resource            ../../1-resources/4-MATERIAIS/C_ORDCOM_STEPS.robot
-Resource            ../../1-resources/auxiliar/Genericos.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,11 +21,11 @@ Resource            ../../1-resources/auxiliar/Genericos.robot
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessão
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            C_ORDCOM
+${suite}            c_ordcom
 # Recebe dados do gerenciador
 ${dados}
 
@@ -38,5 +36,6 @@ SCR4MCORDCOM-001:Consultar Ordem de Compra
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MCORDCOM-001"
     Acessar a tela "Materiais e Logística>Compras>Consultas>Ordem de Compra"@nprint @las
     Validar Acesso a Tela |Ordens de Compra|
-    Preencher Código |${dados}[codigo]|
-    Clicar no botão Executar
+    Preencher Codigo |${dados}[codigo]|
+    Clicar no botao Executar
+    Validar Ordem de Compra pelo fornecedor |${dados}[nomeDoFornecedor]|

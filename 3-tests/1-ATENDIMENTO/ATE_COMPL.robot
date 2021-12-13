@@ -14,7 +14,6 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot
-Resource            ../../1-resources/1-ATENDIMENTO/M_CANCELA_DIAGNOSTICO_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -37,9 +36,9 @@ SCR1AATECOMPL-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AATECOMPL-001"
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Confirmação"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Campo Atendimento
-    Validar Dados Apos Selecao do Atendimento
-    Preencher Campos Obrigatórios
-    Confirmar Diagnostico
+    Preencher Campo Atendimento |${dados}[NumAtendimento]|
+    Validar Dados Apos Selecao do Atendimento |${dados}[CdPaciente]| |${dados}[NomePaciente]| |${dados}[UnidInternacao]| |${dados}[Prestador]|
+    Preencher Campos Obrigatórios |${dados}[CID]| |${dados}[TpDoenca]| |${dados}[TempoDoenca]| |${dados}[DiasDoenca]| |${dados}[Resultado]| |${dados}[Descricao]|
+    Confirmar Diagnostico |${dados}[MensagemProcesso]| |${dados}[MensagemConfirmacao]|
     # Retornar massa de dados ao ponto incial do teste
     Cancelamento Diagnostico

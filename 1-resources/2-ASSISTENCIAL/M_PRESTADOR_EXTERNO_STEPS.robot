@@ -14,27 +14,27 @@ Clicar Botao Limpar
     Click no Item                      ${BotaoLimpar}
     Validar Elemento Pelo Titulo       Procurar
 
-Preencher Campos 
-    Preencher campo                    ${CampoNrConselho}                456789
-    Preencher campo                    ${CampoNomePrestador}             PRESTADOR TESTE AUTOMACAO
-    Preencher campo                    ${CampoCPF}                       35901722582
-    Selecionar Item Na Lista           ${BotaoLovConselho}               CRM                               CRM
-    Selecionar Item Na Lista           ${BotaoLovEspecialidade}          CLINICA GERAL                     CLINICA GERAL
-    Selecionar Item Na Lista           ${BotaoLovCBO}                    MEDICO EM GERAL (CLINICO GERAL)   MEDICO EM GERAL (CLINICO GERAL)
+Preencher Campos |${Conselho}| |${NomePrestador}| |${CPF}| |${NomeConselho}| |${Especialidade}| |${CBO}|
+    Preencher campo                    ${CampoNrConselho}                ${Conselho}
+    Preencher campo                    ${CampoNomePrestador}             ${NomePrestador}
+    Preencher campo                    ${CampoCPF}                       ${CPF}
+    Selecionar Item Na Lista           ${BotaoLovConselho}               ${NomeConselho}            ${NomeConselho}
+    Selecionar Item Na Lista           ${BotaoLovEspecialidade}          ${Especialidade}           ${Especialidade}          
+    Selecionar Item Na Lista           ${BotaoLovCBO}                    ${CBO}                     ${CBO}
 
-Validar Campos Preenchidos
-    Validar Elemento Pelo Titulo        456789
-    Validar Elemento Pelo Titulo        PRESTADOR TESTE AUTOMACAO
-    Validar Elemento Pelo Titulo        35901722582
-    Validar Elemento Pelo Titulo        CRM 
-    Validar Elemento Pelo Titulo        CLINICA GERAL     
+Validar Campos Preenchidos |${Conselho}| |${NomePrestador}| |${CPF}| |${NomeConselho}| |${Especialidade}| 
+    Validar Elemento Pelo Titulo        ${Conselho}
+    Validar Elemento Pelo Titulo        ${NomePrestador}
+    Validar Elemento Pelo Titulo        ${CPF}
+    Validar Elemento Pelo Titulo        ${NomeConselho}
+    Validar Elemento Pelo Titulo        ${Especialidade}    
 
 ### Keyword para retornar massa de dados para status inicial do teste ###
-Apagar Prestador Cadastrado
+Apagar Prestador Cadastrado |${Conselho}| |${NomePrestador}| |${CPF}| |${NomeConselho}| |${Especialidade}| 
     Click Elemento por titulo           Procurar    
-    Preencher campo                     ${CampoCPF}                       35901722582
+    Preencher campo                     ${CampoCPF}                       ${CPF}
     Click Elemento por titulo           Executar Consulta
-    Validar Campos Preenchidos
+    Validar Campos Preenchidos |${Conselho}| |${NomePrestador}| |${CPF}| |${NomeConselho}| |${Especialidade}| 
     Click Elemento por titulo           Apagar
     Clicar Botao Salvar
 
