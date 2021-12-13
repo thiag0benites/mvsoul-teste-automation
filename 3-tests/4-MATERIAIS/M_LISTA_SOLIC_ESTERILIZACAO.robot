@@ -34,4 +34,4 @@ SCR4MLISTASOLICESTERILIZACAO-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MLISTASOLICESTERILIZACAO-001"
     #Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Lista de Pedidos de Esterilização>"@nprint @las
     Acessa a Tela Pela Busca |M_LISTA_SOLIC_ESTERILIZACAO||Lista de Pedidos de Esterilização| @las
-    Preencher parametros de pesquisa |${dados}[Codigo]|
+    Preencher parametros de pesquisa |${dados}[Codigo]||${dados}[TituloValidacao]|
