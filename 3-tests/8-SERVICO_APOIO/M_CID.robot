@@ -41,4 +41,3 @@ SCR8SMCID-001:Fluxo Principal
     Preencher Bloco CID-0 |${dados}[CdCID]| |${dados}[MensagemSucesso]|
     # Retornar massa de dados para status inicial do teste
     Excluir CID Criado |${dados}[DescCID]| |${dados}[MensagemSucesso]|
-

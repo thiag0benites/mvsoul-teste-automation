@@ -40,4 +40,3 @@ SCR1AMMONSOLICTRANSF-001:Fluxo Principal
     Clicar Botao Detalhar |${dados}[TelaTransfPaciente]|
     Validar Dados da Transferencia |${dados}[Paciente]| |${dados}[UnidInterSolic]| |${dados}[MotivoTransf]|
     Clicar Botao Sair |${dados}[NomeTela]|
-
