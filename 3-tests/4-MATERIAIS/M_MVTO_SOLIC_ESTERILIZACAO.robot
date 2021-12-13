@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/4-MATERIAIS/M_PRODUZIR_KIT_STEPS.robot
+Resource            ../../1-resources/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,16 +23,21 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_produzir_kit
+${suite}          m_mvto_solic_esterilizacao
  # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR4MMPRODUZIRKIT-001:Fluxo Principal          #SMF-3254 : Produzir Kit - Código do Produto - com Impressão 
-# robot -v browser:chrome -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-# robot -v browser:firefox -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUZIRKIT"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Produção de Kits>Produzir Kits"@nprint @las
-    Informacoes para producao dos kits|${dados}[Estoque]||${dados}[KitASerProduzido]|
-    Produtos do Kit |${dados}[Produto1]||${dados}[Lote1]||${dados}[QntReservada1]||${dados}[Produto2]||${dados}[Lote2]||${dados}[QntReservada2]|
-    Impressao e Validacao do Teste
+SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal          #
+# robot -v browser:chrome -t "SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MMMVTOSOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO.robot"
+# robot -v browser:firefox -t "SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MMMVTOSOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMMVTOSOLICESTERILIZACAO-001"
+    Acessa a Tela Pela Busca |M_LISTA_SOLIC_ESTERILIZACAO||Lista de Pedidos de Esterilização| @las
+    #Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Lista de Pedidos de Esterilização" @nprint @las 
+    Listagem de Solicitações de Esterilização|${dados}[SetorResponsavelEntrega]||${dados}[SetorDaEntrega]||${dados}[ColaboradorDaEntrega]||${dados}[AvisoDeCirurgia]||${dados}[Composicao]||${dados}[MsgEsperada]|
+    
+
+
+
+
+

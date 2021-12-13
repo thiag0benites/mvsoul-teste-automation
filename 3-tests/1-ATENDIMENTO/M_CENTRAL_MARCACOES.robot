@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/4-MATERIAIS/M_PRODUZIR_KIT_STEPS.robot
+Resource            ../../1-resources/1-ATENDIMENTO/M_CENTRAL_MARCACOES_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,16 +23,21 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_produzir_kit
+#${suite}          o_gerdis_p321
  # Recebe dados do gerenciador
-${dados}
+#${dados}
 
 *** Test Case ***
-SCR4MMPRODUZIRKIT-001:Fluxo Principal          #SMF-3254 : Produzir Kit - Código do Produto - com Impressão 
-# robot -v browser:chrome -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-# robot -v browser:firefox -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUZIRKIT"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Produção de Kits>Produzir Kits"@nprint @las
-    Informacoes para producao dos kits|${dados}[Estoque]||${dados}[KitASerProduzido]|
-    Produtos do Kit |${dados}[Produto1]||${dados}[Lote1]||${dados}[QntReservada1]||${dados}[Produto2]||${dados}[Lote2]||${dados}[QntReservada2]|
-    Impressao e Validacao do Teste
+SCR1AMCENTRALMARCACOES-001:Fluxo Principal          #SMF-7902 : Realizar um agendamento pela Central de Marcações 
+# robot -v browser:chrome -t "SCR1AMCENTRALMARCACOES-001:Fluxo Principal" -d ./5-results/SCR1AMCENTRALMARCACOES-001 "3-tests/1-ATENDIMENTO/M_CENTRAL_MARCACOES.robot"
+# robot -v browser:firefox -t "SCR1AMCENTRALMARCACOES-001:Fluxo Principal" -d ./5-results/SCR1AMCENTRALMARCACOES-001 "3-tests/1-ATENDIMENTO/M_CENTRAL_MARCACOES.robot"
+    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FOGERDISP321"
+    Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Central de Marcações"@nprint @las
+    Dados Paciente
+    Itens a Agendar
+    Agendamento
+    
+
+
+
+

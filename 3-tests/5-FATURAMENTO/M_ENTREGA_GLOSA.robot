@@ -4,15 +4,15 @@
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:         robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# firefox:        robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/4-MATERIAIS/M_PRODUZIR_KIT_STEPS.robot
+Resource            ../../1-resources/5-FATURAMENTO/M_ENTREGA_GLOSA_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,16 +23,16 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_produzir_kit
+${suite}          m_entrega_glosa
  # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR4MMPRODUZIRKIT-001:Fluxo Principal          #SMF-3254 : Produzir Kit - Código do Produto - com Impressão 
-# robot -v browser:chrome -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-# robot -v browser:firefox -t "SCR4MMPRODUZIRKIT-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUZIRKIT-001 "3-tests/4-MATERIAIS/M_PRODUZIR_KIT.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUZIRKIT"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Produção de Kits>Produzir Kits"@nprint @las
-    Informacoes para producao dos kits|${dados}[Estoque]||${dados}[KitASerProduzido]|
-    Produtos do Kit |${dados}[Produto1]||${dados}[Lote1]||${dados}[QntReservada1]||${dados}[Produto2]||${dados}[Lote2]||${dados}[QntReservada2]|
-    Impressao e Validacao do Teste
+SCR5FMENTREGAGLOSA-001:Fluxo Principal           
+# robot -v browser:chrome -t "SCR5FMENTREGAGLOSA-001:Fluxo Principal" -d ./5-results/SCR5FMENTREGAGLOSA-001 "3-tests/5-FATURAMENTO/M_ENTREGA_GLOSA.robot"
+# robot -v browser:firefox -t "SCR5FMENTREGAGLOSA-001:Fluxo Principal" -d ./5-results/SCR5FMENTREGAGLOSA-001 "3-tests/5-FATURAMENTO/M_ENTREGA_GLOSA.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMENTREGAGLOSA"
+    Acessar a tela "Faturamento>Auditoria e Controle de Recursos de Glosas>Lançamentos>Entrega de Recurso de Glosas"@nprint @las
+    Descricao da Fatura |${dados}[Remessa]||${dados}[DataPrevistaParaPagamento]|
+    Validacao de tela |${dados}[Alert]|
+

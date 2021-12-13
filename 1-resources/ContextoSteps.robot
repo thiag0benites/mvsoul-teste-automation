@@ -57,6 +57,8 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Unselect Frame
         Send Keys    tab
         Send Keys    enter
+        
+        
     END
     Seleciona frame    ${IdIframe}    180
     Sleep    3
