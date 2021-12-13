@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/4-MATERIAIS/M_ENTRADA_NOVA_PAGE.robot
+Resource          ../../2-pages/4-MATERIAIS/M_ENTRADA_PAGE.robot
 
 *** Variable ***
 
@@ -13,9 +13,11 @@ Informar "Tipo de Documento|${TipoDoc}|", "Estoque|${Estoque}|"
     Clicar no Campo e Preencher Informacao            ${BtnTipoDoc}            ${CampoFiltrar}            ${TipoDoc}
     Click no Item                                     ${BtnFiltrar}
     Click no Item                                     ${BtnOkFiltrar}
-    Clicar no Campo e Preencher Informacao            ${BtnEstoque}            ${CampoFiltrar}            ${Estoque}
+    Preencher campo                                   ${CampoEstoque}          ${Estoque}
     Click no Item                                     ${BtnFiltrar}
     Click no Item                                     ${BtnOkFiltrar}
+    Click no Item                                     ${SelectEstoque}
+    Send Keys    tab
 
 Preencher Campos: "Numero Documento|${NrDoc}|", "Serie|${Serie}|", "Fornecedor|${Fornec}|", Data Emissao|${data}|, "CFOP|${CFOP}|", "Valor Total Nota|${VlTtlNota}|"
     Preencher campo                                   ${CampoNroDoc}           ${NrDoc}
@@ -32,7 +34,7 @@ Preencher Campos: "Numero Documento|${NrDoc}|", "Serie|${Serie}|", "Fornecedor|$
          
 
 Informar Campos "Produto|${Produto}|", "Quantidade Entrada|${QtdEntrada}|", "Valor Unitario|${VlUnitario}|"
-    Clicar no Campo e Preencher Informacao            ${BtnCodProduto}          ${CampoFiltrar}            ${Produto}  #TESTE
+    Clicar no Campo e Preencher Informacao            ${BtnCodProduto}          ${CampoFiltrar}            ${Produto}  #CANETA BISTURI
     Click no Item                                     ${BtnFiltrar}
     Click no Item                                     ${BtnOkFiltrar}
     Preencher campo                                   ${CampoQtdEntrada}        ${QtdEntrada}  #1
