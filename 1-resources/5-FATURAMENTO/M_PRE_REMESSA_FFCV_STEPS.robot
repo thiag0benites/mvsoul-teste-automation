@@ -7,8 +7,7 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 
-Resource                            ../../2-pages/1-ATENDIMENTO/M_CADASTRO_CIRURGIA_PAGE.robot
-*** Variables ***
+Resource                            ../../2-pages/5-FATURAMENTO/M_PRE_REMESSA_FFCV_PAGE.robot
                 
 
 *** Keywords ***
