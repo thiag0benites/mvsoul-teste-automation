@@ -318,7 +318,7 @@ Valida Mensagem
     Sleep    3
     #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
     #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
-    Element Should Contain    ${ElementoMsgRecebida}    ${MensagemEsperada}
+    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
     #[Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
     # Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
     # ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
@@ -354,3 +354,15 @@ Clicar no botao ${nomeBtn}
         Wait Until Element Is Visible    ${btnSimNotifications}    30
         Click Element    ${btnSimNotifications}
     END
+
+Marcar Checkbox |${CheckboxMar}|
+    Wait Until Element Is Visible               ${CheckboxMar}                      20
+    ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxMar}
+    Log To Console    *** ${StatusCheckbox}
+    Run Keyword If    ${StatusCheckbox} == False   Click Element    ${CheckboxMar}
+
+Desmarcar Checkbox |${CheckboxDes}|
+    Wait Until Element Is Visible               ${CheckboxDes}                      20
+    ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxDes}
+    Log To Console    *** ${StatusCheckbox}
+    Run Keyword If    ${StatusCheckbox} == False    Click Element    ${CheckboxDes}
