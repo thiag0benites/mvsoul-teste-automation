@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/8-SERVICO_DE_APOIO/DEVDOCPRO_PAGE.robot
+Resource                ../../2-pages/8-SERVICO_APOIO/DEVDOCPRO_PAGE.robot
 
 *** Variable ***
 
