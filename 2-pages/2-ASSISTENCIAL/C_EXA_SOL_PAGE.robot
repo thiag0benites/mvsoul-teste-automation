@@ -8,11 +8,9 @@ Resource          ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-${CampoData}                      xpath=//input[@id="inp:dtPedido"]
-${DivAtendimento}                 xpath=//div[@data-member="CD_ATENDIMENTO"]
-${DivExame}                       xpath=//div[@data-member="CD_EXA_RX"]
+${CampoData}      xpath=//input[@id="inp:dtPedido"]
+${DivAtendimento}    xpath=//div[@data-member="CD_ATENDIMENTO"]
+${DivExame}       xpath=//div[@data-member="CD_EXA_RX"]
 ### Botoes ###
-
-${BtnExecutar}                    xpath=//a[@title="Executar Consulta"]
-
+${BtnExecutar}    xpath=//a[@title="Executar Consulta"]
 ### Diversos ###

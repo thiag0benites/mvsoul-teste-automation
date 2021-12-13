@@ -34,5 +34,3 @@ SCR1AMESCDIAEXT-001:Fluxo Principal
     Acessar a tela "Atendimento>Urgência e Emergência>Tabelas>Escalas de Plantão"@nprint @las
     Escalas de Plantao Parametros |${dados}[Especialidade]||${dados}[Prestador]||${dados}[Entrada]||${dados}[Saida]||${dados}[Observacao]|
     Clicar Botao Salvar |${dados}[MensagemEsperada]|
-
-

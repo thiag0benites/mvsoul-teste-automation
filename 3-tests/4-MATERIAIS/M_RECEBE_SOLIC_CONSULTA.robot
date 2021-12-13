@@ -28,7 +28,6 @@ ${dados}
 
 *** Test Case ***
 SCR4MMECEBESOLICCONSULTA-001:Fluxo Principal
-    #
 # robot -v browser:chrome -t "SCR4MMECEBESOLICCONSULTA-001:Fluxo Principal" -d ./5-results/SCR4MMECEBESOLICCONSULTA-001 "3-tests/4-MATERIAIS/M_RECEBE_SOLIC_CONSULTA.robot"
 # robot -v browser:firefox -t "SCR4MMECEBESOLICCONSULTA-001:Fluxo Principal" -d ./5-results/SCR4MMECEBESOLICCONSULTA-001 "3-tests/4-MATERIAIS/M_RECEBE_SOLIC_CONSULTA.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMECEBESOLICCONSULTA-001"

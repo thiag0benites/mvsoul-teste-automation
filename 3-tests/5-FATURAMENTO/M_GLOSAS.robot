@@ -35,7 +35,3 @@ SCR5FMGLOSAS-001:Fluxo Principal
     Descricao do Procedimento |${dados}[Convenio]|
     Buscar Linha |${dados}[MotivoAceite]||${dados}[MotivoGlosa]|
     Clicar Botao Salvar |${dados}[MensagemEsperada]|
-
-
-
-

@@ -4,23 +4,14 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-
 ### Campos ###
-${CampoPrestador}                      xpath=//div[@id="cdPrestador"]/input
-${CampoDataInicial}                    xpath=//input[@id="inp:dtInicial"]
-${CampoDataFinal}                      xpath=//input[@id="inp:dtFinal"]
-
-
+${CampoPrestador}    xpath=//div[@id="cdPrestador"]/input
+${CampoDataInicial}    xpath=//input[@id="inp:dtInicial"]
+${CampoDataFinal}    xpath=//input[@id="inp:dtFinal"]
 ### Botoes ###
-
-${BtnConsultar}                        xpath=//button[@data-member="BTN_CONSULTA"]
-
-
+${BtnConsultar}    xpath=//button[@data-member="BTN_CONSULTA"]
 ### Diversos ###
-
-
-${Saldo}                               xpath=//div[@data-member="SUM_VL_SALDO"]/input
-
+${Saldo}          xpath=//div[@data-member="SUM_VL_SALDO"]/input

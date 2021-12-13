@@ -10,7 +10,7 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_EXA_SOL_PAGE.robot
 
 *** Keywords ***
 Consulta de Exames Solicitados |${Data}|
-    Preencher campo                              ${CampoData}                            ${Data}
-    Click no Item                                ${BtnExecutar}
-    Validar Item                                 ${DivAtendimento}
-    Validar Item                                 ${DivExame}
+    Preencher campo    ${CampoData}    ${Data}
+    Click no Item    ${BtnExecutar}
+    Validar Item    ${DivAtendimento}
+    Validar Item    ${DivExame}
