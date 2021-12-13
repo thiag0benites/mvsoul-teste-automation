@@ -1,4 +1,4 @@
-    #################################################################################################################################################################
+#################################################################################################################################################################
 # Autor: Fernando Carvalho
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
@@ -28,7 +28,7 @@ ${suite}    m_lista_solic_esterilizacao
 ${dados}
 
 *** Test Case ***
-SCR4MLISTASOLICESTERILIZACAO-001:Fluxo Principal          # : 
+SCR4MLISTASOLICESTERILIZACAO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR4MLISTASOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MLISTASOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_LISTA_SOLIC_ESTERILIZACAO.robot"
 # robot -v browser:firefox -t "SCR4MLISTASOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MLISTASOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_LISTA_SOLIC_ESTERILIZACAO.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MLISTASOLICESTERILIZACAO-001"

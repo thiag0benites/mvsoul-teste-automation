@@ -10,8 +10,7 @@ Resource          ../../2-pages/4-MATERIAIS/M_LISTA_SOLIC_ESTERILIZACAO_PAGE.rob
 
 *** Keywords ***
 Preencher parametros de pesquisa |${Codigo}|
-    
-    Clicar no Campo e Preencher Informacao    ${campoCod}       ${campoCod}     ${Codigo}
-    Click no Item                             ${btnPesquisar}
-    Click no Item                             ${btnOk}
-    Validar Elemento Pelo Titulo                                                43025
+    Clicar no Campo e Preencher Informacao    ${campoCod}    ${campoCod}    ${Codigo}
+    Click no Item    ${btnPesquisar}
+    Click no Item    ${btnOk}
+    Validar Elemento Pelo Titulo    43025
