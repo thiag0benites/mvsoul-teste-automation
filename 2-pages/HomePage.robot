@@ -8,6 +8,8 @@ Resource          ../Config.robot
 
 *** Variable ***
 ${HomeXpathBtnMenu}    xpath=//*[@class='mv-basico-menu dp32']
+${HomeXpathInputPesquisa}    xpath=//input[@id='menu-filter-1']
+
 
 *** Keywords ***
 ### Autor: Thiago Benites
@@ -27,5 +29,7 @@ Seleciona item no menu
     [Arguments]    ${xpathTituloItemMenu}
     ${titleItemMenu}    Set Variable    xpath=${xpathTituloItemMenu}
     Wait Until Element Is Visible    ${titleItemMenu}    5
+    # Realcar Elemento Execucao    ${titleItemMenu}
+    Sleep    0.5
     Click Javascript    ${titleItemMenu}
-    Sleep    1.5
+    Sleep    2

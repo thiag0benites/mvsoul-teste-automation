@@ -19,7 +19,7 @@ ${inputCodRemessa}      xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput
 
 #Buttons
 ${btnConcluir}          id=PAGE_REMESSA_btnConcluir3
-${btnOK}                //button[contains(text(),"OK")]
+${btnOK}                xpath=//button[@class='btn btn-primary']
 ${MensagemSucesso}      xpath=//div[@class="notifications-item"]
 
 # Labels 

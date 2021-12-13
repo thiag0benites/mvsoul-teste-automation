@@ -41,3 +41,4 @@ SCR2AALTINTOK-001:Fluxo Principal
     # Retornar massa de dados para status inicial
     Alterar Campo Servico |${dados}[RetornaServico]|
 
+

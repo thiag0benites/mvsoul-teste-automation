@@ -38,6 +38,6 @@ SCR1AMCANCELADIAGNOSTICO-001:Fluxo Principal
     Confirmacao Diagnostico               ####   Keyword para validar pré requisito do teste   ###
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Cancelamento"@nprint @no
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Preencher Atendimento
-    Validar Dados Apos Selecao do Atendimento
-    Confirmar Cancelamento de Diagnostico
+    Preencher Atendimento |${dados}[NumAtendimento]|
+    Validar Dados Apos Selecao do Atendimento |${dados}[CdPaciente]| |${dados}[NomePaciente]| |${dados}[UnidInternacao]| |${dados}[Prestador]|
+    Confirmar Cancelamento de Diagnostico |${dados}[MensagemRecebida]|

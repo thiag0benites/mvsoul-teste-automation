@@ -9,7 +9,6 @@ Resource          ../../Config.robot
 Resource          ../../2-pages/ContextoPage.robot
 Resource          ../../1-resources/ContextoSteps.robot
 
-
 *** Variable ***
 ${FILE}           ${CURDIR}\\6-files\\upload.txt
 ${cssOriginal}
@@ -34,7 +33,6 @@ Muda elemento Javascript
 
 Click Javascript
     [Arguments]    ${elemento}
-    Sleep    3
     ${elemento2}    Get WebElement    ${elemento}
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
@@ -61,12 +59,12 @@ Seleciona frame
     Wait Until Element Is Enabled    ${elementoFrame}    ${timeout}    O elemento Frame ${elementoFrame} não esta habilitado
     Select Frame    ${elementoFrame}
     Sleep    1
-
-    
+        
 Click Elemento por titulo
     [Arguments]    ${titulo}    ${timeout}=${60}
     ${elemento}    Set Variable    xpath=//*[contains(@title, '${titulo}')]
     Wait Until Element Is Visible    ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
+    Wait Until Element Is Enabled    ${elemento}    ${timeout}    O elemento ${elemento} não esta habilitado
     Sleep    3
     Click Element    ${elemento}
 
@@ -89,9 +87,7 @@ Selecionar Item Na Lista
     Click Elemento por titulo               ${ItemLista}
     Click no Item                           xpath=//button[@id="btok"]
 
-Clicar Botao Salvar 
-    Click Elemento por titulo               Salvar
-    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
+
 
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
@@ -107,7 +103,7 @@ Pega elemento filho por texto
     @{elementos}    Get WebElements    ${locatorElementos}
     Log List    ${elementos}
     FOR    ${elemento}    IN    @{elementos}
-        ${textoItemAtual}    SeleniumLibrary.Get Text    ${elemento}
+        ${textoItemAtual}    Get Text    ${elemento}
         ${localizouTexto}    Run Keyword And Ignore Error    Should Contain    ${textoItemAtual}    ${textoItem}
         Log To Console    *** Texto Procurado: ${textoItem}
         Log    *** Texto Procurado: ${textoItem}
@@ -207,7 +203,7 @@ Click elemento filho por texto
     [Arguments]    ${locatorElementos}    ${textoItem}
     @{elementos}    Get WebElements    ${locatorElementos}
     FOR    ${elemento}    IN    @{elementos}
-        ${textoItemAtual}    SeleniumLibrary.Get Text    ${elemento}
+        ${textoItemAtual}    Get Text    ${elemento}
         # ${localizouTexto}    Run Keyword And Ignore Error    Should Contain    ${textoItemAtual}    ${textoItem}
         Run Keyword If    ${localizouTexto} == ('PASS', None)    Click Element    ${elemento}
         Exit For Loop If    ${localizouTexto} == ('PASS', None)
@@ -219,27 +215,7 @@ Conta Linhas Tabela
     @{Linhas}    Get WebElements    ${LocatorTabela}//tbody//tr
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
-
-Clicar no botão Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
-
-Clicar no botão Adicionar
-    Click Element     ${btnAdicionar}
-
-Clicar no botão Pesquisar
-    Click no Item               ${btnPesquisar}   
-
-Clicar no botão Executar 
-    Click no Item            ${btnExecute} 
-    Sleep              30   
-
-Clicar no botão Não 
-    Click no Item            ${btnNaoNotifications}
-
-Clicar no botão Sim
-    Click no Item            ${btnSimNotifications}
-
+    
 Pegar data atual
     ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
     [Return]        ${CurrentDate}
@@ -255,5 +231,30 @@ Captura data e hora TESTE
     Input Text    ${elemento}    ${CurrentDate}   
     [Return]        ${CurrentDate} 
 
+Clicar no botao Salvar do menu
+    Click Element     ${btnSalvar}
+    Sleep             60
 
+Clicar no botão Adicionar
+    Wait Until Element Is Visible       ${btnAdicionar}     120
+    Click Element     ${btnAdicionar}
     
+Captura hora atual
+    ${CurrentTime}    Get Current Date    result_format=%H:%M
+    [Return]        ${CurrentTime}
+    Log To Console      ${CurrentTime}
+
+Captura data atual
+    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+
+Preencher campo com data e hora
+    Wait Until Element Is Visible    ${elemento}    120
+    [Arguments]    ${elemento}    ${formato}    ${incremento}    
+    ${CurrentDate}    Get Current Date    result_format=${formato}    increment=${incremento}
+    [Return]        ${CurrentDate}
+    Log To Console      ${CurrentDate}
+    Click Element    ${elemento}
+    Sleep    2
+    Input Text    ${elemento}    ${CurrentDate}

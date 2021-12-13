@@ -18,48 +18,41 @@ Validar Configuracao de Acesso a Tela
     Click Elemento por titulo               Salvar
     Click Elemento por titulo               Sair  
 
-Acessa a Tela Pela Busca
-    Unselect Frame
-    Click Element                           ${BotaoBuscaTela}
-    Preencher Campo                         ${CampoBuscaTela}                   ATEURG
-    Click Elemento por titulo               Atendimento
-    Seleciona frame                         ${IdIframe}                         180
-
 Clicar Botao Paciente
     Click no Item                           ${BotaoPaciente}
 
-Pesquisar Pelo Paciente
-    Preencher Campo                         ${CampoPaciente}                    ACACIA MARIA MAIA COSTA
+Pesquisar Pelo Paciente |${Paciente}| |${CdPaciente}|
+    Preencher Campo                         ${CampoPaciente}                    ${Paciente}
     Click Elemento por titulo               Executar Consulta 
-    Validar Elemento Pelo Titulo            505146
+    Validar Elemento Pelo Titulo            ${CdPaciente}
     Click no Item                           ${BotaoAtender}
 
-Preencher Campos Obrigatorios
-    Click no Item                           ${BotaoSimValidAtend}
-    Selecionar Item Na Lista                ${BotaoLovPrestador}                GEISHA ABREU SOARES DE PINA         GEISHA ABREU SOARES DE PINA
-    Selecionar Item Na Lista                ${BotaoLovOrigem}                   ORIGEM URGENCIA                     ORIGEM URGENCIA
-    Selecionar Item Na Lista                ${BotaoLovLocalProced}              DOMICILIO                           DOMICILIO
-    Selecionar Item Na Lista                ${BotaoLovDestino}                  CONSULTORIO MEDICO                  CONSULTORIO MEDICO
-    Selecionar Item Na Lista                ${BotaoLovTipoPaciente}             EMERGENCIA ADULTO                   EMERGENCIA ADULTO
-    Selecionar Item Na Lista                ${BotaoLovServico}                  CARDIOLOGIA CLINICA                 CARDIOLOGIA CLINICA
-    Preencher Campo                         ${CampoCID}                         R100
-    Selecionar Item Na Lista                ${BotaoLovProced}     BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)       BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)                
+Preencher Campos Obrigatorios |${Medico}| |${Origem}| |${LocalProc}| |${Destino}| |${TipoPaciente}| |${Servico}| |${CID}| |${Procedimento}|
+    #Click no Item                           ${BotaoSimValidAtend}    ### Usado para atendimento criado com menos de 24h
+    Selecionar Item Na Lista                ${BotaoLovPrestador}                ${Medico}             ${Medico}
+    Selecionar Item Na Lista                ${BotaoLovOrigem}                   ${Origem}             ${Origem}
+    Selecionar Item Na Lista                ${BotaoLovLocalProced}              ${LocalProc}          ${LocalProc}
+    Selecionar Item Na Lista                ${BotaoLovDestino}                  ${Destino}            ${Destino}
+    Selecionar Item Na Lista                ${BotaoLovTipoPaciente}             ${TipoPaciente}       ${TipoPaciente}
+    Selecionar Item Na Lista                ${BotaoLovServico}                  ${Servico}            ${Servico}
+    Preencher Campo                         ${CampoCID}                         ${CID}
+    Selecionar Item Na Lista                ${BotaoLovProced}                   ${Procedimento}       ${Procedimento}
 
 Clicar Botao Carteira
     Click no Item                           ${BotaoCarteira} 
 
-Validar Informacoes Carteira
-    Validar Elemento Pelo Titulo            999325208340007                       
-    Validar Elemento Pelo Titulo            30/10/2023 
+Validar Informacoes Carteira |${NumCarteira}| |${ValidadeCarteira}|
+    Validar Elemento Pelo Titulo            ${NumCarteira}                       
+    Validar Elemento Pelo Titulo            ${ValidadeCarteira} 
     Click no Item                           ${BotaoSelecionar} 
 
-Confirmar Atendimento  
+Confirmar Atendimento |${MensagemSucesso}|
     Click Elemento por titulo               Salvar
-    Click no Item                           ${BotaoSimValidAtend}
-    Click no Item                           ${BotaoSimValidAtend}
-    Click no Item                           ${BotaoSimValidAtend}
+    #Click no Item                           ${BotaoSimValidAtend}    ### Usado para atendimento criado com menos de 24h
+    #Click no Item                           ${BotaoSimValidAtend}
+    #Click no Item                           ${BotaoSimValidAtend}
     Click no Item                           ${BotaoOKConfAtend}
-    Valida Mensagem                         ${MensagemSucesso}                  Registro Salvo com Sucesso!
+    Valida Mensagem                         ${MensagemToast}                    ${MensagemSucesso}
 
 
 

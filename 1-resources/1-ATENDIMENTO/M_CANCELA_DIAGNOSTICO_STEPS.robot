@@ -15,20 +15,20 @@ Resource          ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 Confirmacao Diagnostico
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Confirmação"@nprint @las
     Validar Acesso a Tela |Diagnóstico do Atendimento|
-    Preencher Campo Atendimento
-    Validar Dados Apos Selecao do Atendimento
-    Preencher Campos Obrigatórios
-    Confirmar Diagnostico
+    Preencher Campo Atendimento |1000002161|
+    Validar Dados Apos Selecao do Atendimento |1308645| |MARIA RITA| |CLINICA MEDICA HOBRA| |GEISHA ABREU SOARES DE PINA|
+    Preencher Campos Obrigatórios |R100| |Aguda| |1| |Dias| |24| |Teste Descrição|
+    Confirmar Diagnostico |Processo concluído com sucesso !| |Registros gravados com sucesso|
     Click Elemento Por Titulo              Sair
 ###    ===========================================   ###
 
-Preencher Atendimento
-    Preencher Campo                         ${CampoAtendimento}             1000002161
+Preencher Atendimento |${Atendimento}|
+    Preencher Campo                         ${CampoAtendimento}             ${Atendimento}    
     Send Keys                               Enter
 
-Confirmar Cancelamento de Diagnostico
+Confirmar Cancelamento de Diagnostico |${MensagemRecebida}|
     Click no Item                           ${BotaoConfirmarDiag}                
     Click no Item                           ${BotaoConfSim} 
-    Valida Mensagem                         ${MensagemToast}                Operação realizada com sucesso!
+    Valida Mensagem                         ${MensagemToast}                ${MensagemRecebida}
 
 

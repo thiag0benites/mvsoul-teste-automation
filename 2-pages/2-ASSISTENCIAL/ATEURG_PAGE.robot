@@ -28,4 +28,4 @@ ${CampoNrCarteira}                                  xpath=//input[contains(@clas
 ${CampoValCarteira}                                 xpath=//div[@data-member="DT_VALIDADE"]/..
 ${CampoValCarteiraEditavel}                         xpath=//input[contains(@aria-labelledby, "Carteira_col4")][2]
 ${BotaoSelecionar}                                  xpath=//button[@id="btnSelecionar"]
-${MensagemSucesso}                                  xpath=//p[@class="notifications-item-text"]
+${MensagemToast}                                    xpath=//p[@class="notifications-item-text"]
