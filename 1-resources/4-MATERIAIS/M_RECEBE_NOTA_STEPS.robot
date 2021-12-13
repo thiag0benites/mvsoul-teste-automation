@@ -5,12 +5,11 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource                ../../2-pages/4-MATERIAIS/M_RECEBE_NOTA_PAGE.robot
-Resource                ../../1-resources/auxiliar/Genericos.robot
 
 *** Variable ***
 
 *** Keywords ***
-Selecionar a linha da Nota Fiscal que será tombada |${codNotaFiscal}|
+Selecionar a linha da Nota Fiscal que sera tombada |${codNotaFiscal}|
     Sleep    3
     ${Descricao}=               Get WebElement                 xpath=//div[@class='slick-cell b1 f1 ui-fixed-width']//div[contains(@title, '${codNotaFiscal}')] 
     Should Be Equal             ${Descricao.text}              ${codNotaFiscal}

@@ -10,12 +10,11 @@ Resource          ../../2-pages/1-ATENDIMENTO/M_MONITORAMENTO_PACIENTES_PAGE.rob
 
 *** Keywords ***
 Filtrar por Unidade de Atendimento |${UnidAtendimento}|
-    Wait Until Element Is Visible        ${CampoCdUnidAtendimento}     180   
-    Clicar Item e Selecionar da Lista    ${CampoCdUnidAtendimento}     ${BotaoLovCdUnidAtend}         ${UnidAtendimento}          ${UnidAtendimento}
-    Click no Item                        ${BotaoFiltrar}  
+    Wait Until Element Is Visible    ${CampoCdUnidAtendimento}    180
+    Clicar Item e Selecionar da Lista    ${CampoCdUnidAtendimento}    ${BotaoLovCdUnidAtend}    ${UnidAtendimento}    ${UnidAtendimento}
+    Click no Item    ${BotaoFiltrar}
 
 Validar Resultado do Filtro |${Paciente}| |${Atendimento}| |${Especialidade}|
-    Validar Elemento Pelo Titulo         ${Paciente}
-    Validar Elemento Pelo Titulo         ${Atendimento}
-    Validar Elemento Pelo Titulo         ${Especialidade}
-    
+    Validar Elemento Pelo Titulo    ${Paciente}
+    Validar Elemento Pelo Titulo    ${Atendimento}
+    Validar Elemento Pelo Titulo    ${Especialidade}

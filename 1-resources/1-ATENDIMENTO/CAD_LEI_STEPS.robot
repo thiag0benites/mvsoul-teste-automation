@@ -7,32 +7,35 @@ Resource          ../../2-pages/1-ATENDIMENTO/CAD_LEI_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher o campo código de unidade da internacao |${codigo}|
-    Preencher campo                  ${inputCodigo}              ${codigo} 
+Clicar no botao Pesquisar
+    Click no Item               ${btnPesquisar}  
+
+Clicar no botao Executar 
+    Click no Item            ${btnExecute} 
+    Sleep              30   
+    
+Preencher o campo codigo de unidade da internacao |${codigo}|
+    Preencher campo    ${inputCodigo}    ${codigo}
 
 Preencher os campos da tabela |${leito}|,|${descResumida}|,|${enferm}|,|${acomod}|
-    Wait Until Element Is Visible        ${campoLeito}                   120
-    Click Element                        ${campoLeito}
-    Sleep      2
+    Wait Until Element Is Visible    ${campoLeito}    120
+    Click Element    ${campoLeito}
+    Sleep    2
+    Click Element    ${btnAdicionar}
+    Sleep    2
+    Preencher campo    ${campoLeitoInput}    ${leito}
+    Sleep    2
+    Click no Item    ${campoDesc}
+    Preencher campo    ${campoDescInput}    ${descResumida}
+    Click no Item    ${campoEnferm}
+    Sleep    2
+    Preencher campo    ${campoEnfermInput}    ${enferm}
+    Click no Item    ${campoAcomod}
+    Sleep    2
+    Preencher campo    ${campoAcomodInput}    ${acomod}
 
-    Click Element                        ${btnAdicionar}
-    Sleep      2
+Validar mensagem de confirmacao ao cadastrar o leito |${mensagem}|
+    Valida Mensagem    ${MensagemSalvar}    ${mensagem}
 
-    Preencher campo                      ${campoLeitoInput}                     ${leito}
-    Sleep      2
-
-    Click no Item                        ${campoDesc}
-    Preencher campo                      ${campoDescInput}                      ${descResumida}
-    
-    Click no Item                        ${campoEnferm}
-    Sleep      2
-    Preencher campo                      ${campoEnfermInput}                    ${enferm}
-
-    Click no Item                        ${campoAcomod}
-    Sleep      2
-    Preencher campo                      ${campoAcomodInput}                    ${acomod}
-
-Validar mensagem de confirmação ao cadastrar o leito
-    Valida Mensagem         ${MensagemSalvar}               Fim da Consolidação para o Mês 11/2021 .
-
-
+Clicar no botao Salvar
+    Click no Item    ${btnSalvar}

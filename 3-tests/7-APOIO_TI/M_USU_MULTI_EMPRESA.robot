@@ -13,18 +13,17 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/7-APOIO_TI/M_USU_MULTI_EMPRESA_STEPS.robot
-
+Resource          ../../1-resources/7-APOIO_TI/M_USU_MULTI_EMPRESA_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
-Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Setup        Nova sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_USU_MULTI_EMPRESA
+${suite}          M_USU_MULTI_EMPRESA
 # Recebe dados do gerenciador
 ${dados}
 
@@ -32,9 +31,8 @@ ${dados}
 SCR7AMUSUMULTIEMPRESA-001:Fluxo principal
 # robot -v browser:chrome -t "SCR7AMUSUMULTIEMPRESA-001:Fluxo principal" -d ./5-results/SCR7AMUSUMULTIEMPRESA-001 "3-tests/7-APOIO_TI/M_USU_MULTI_EMPRESA.robot"
 # robot -v browser:firefox -t "SCR7AMUSUMULTIEMPRESA-001:Fluxo principal" -d ./5-results/SCR7AMUSUMULTIEMPRESA-001 "3-tests/7-APOIO_TI/CM_USU_MULTI_EMPRESA.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR7AMUSUMULTIEMPRESA-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR7AMUSUMULTIEMPRESA-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Preencher os campos |${dados}[empresa]|,|${dados}[usuario]|
     Clicar no botao Salvar do menu
     Validar mensagem ao salvar |${dados}[mensagem]|
-    

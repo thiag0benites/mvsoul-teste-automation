@@ -81,9 +81,3 @@ Selecionar CheckBox que deseja importar
 Valida aba do browser
     Switch Window  
     Sleep       8
-# Captura codigo|${suite}|${id}|
-#     Sleep    1
-#     Should Not Be Empty   ${cpCodigo}
-#     ${CodigoSolicitacao}    Get Element Attribute    ${cpCodigo}    title
-#     Altera massa de dados da "${suite}", linha "${id}", coluna "codigo", valor "${CodigoSolicitacao}"
-#     Sleep    3

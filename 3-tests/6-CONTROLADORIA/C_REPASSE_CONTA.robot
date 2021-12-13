@@ -35,11 +35,11 @@ Resource          ../../1-resources/6-CONTROLADORIA/C_REPASSE_CONTA_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+# Test Teardown    Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-${suite}        c_repasse_conta
+${suite}          c_repasse_conta
 # # Recebe dados do gerenciador
 ${dados}
 
@@ -47,21 +47,21 @@ ${dados}
 SMF-4900 : Consultar os repasses gerados por atendimento para os prestadores
 # robot -v browser:chrome -t "SMF-4900 : Consultar os repasses gerados por atendimento para os prestadores" -d ./5-results/SMF-4900 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
 # robot -v browser:firefox -t "SMF-4900 : Consultar os repasses gerados por atendimento para os prestadores" -d ./5-results/SMF-4900 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4900"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4900"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Repasse por Atendimento/Conta"@nprint @las
     Usuario devera informar o codigo do atendimento |${dados}[CodAtendimento]| no campo <Atendimento>
 
 SMF-4911 : Consultar os repasses gerados atraves nome do Paciente
 # robot -v browser:chrome -t "SMF-4911 : Consultar os repasses gerados atraves nome do Paciente" -d ./5-results/SMF-4911 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
 # robot -v browser:firefox -t "SMF-4911 : Consultar os repasses gerados atraves nome do Paciente" -d ./5-results/SMF-4911 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4911"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4911"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Repasse por Atendimento/Conta"@nprint @las
     Usuario devera informar nome do paciente |${dados}[NomePaciente]| no campo <Paciente>
 
 SMF-4914 : Consultar o valor do honorario do Atendimento dos repasses gerados por atendimento
 # robot -v browser:chrome -t "SMF-4914 : Consultar o valor do honorario do Atendimento dos repasses gerados por atendimento" -d ./5-results/SMF-4914 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
 # robot -v browser:firefox -t "SMF-4914 : Consultar o valor do honorario do Atendimento dos repasses gerados por atendimento" -d ./5-results/SMF-4914 "3-tests/6-CONTROLADORIA/C_REPASSE_CONTA.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4914"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4914"
     Acessar a tela "Controladoria>Repasse Médico>Consultas>Repasse por Atendimento/Conta"@nprint @las
     Usuario devera informar o codigo do atendimento |${dados}[CodAtendimento]| no campo <Atendimento>
     Usuario devera clicar no botao [Honor. do Atend]

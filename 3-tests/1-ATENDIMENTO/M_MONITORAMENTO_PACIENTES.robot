@@ -37,5 +37,3 @@ SCR1AMMONITORAMENTOPACIENTES-001:Fluxo Principal
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Acompanhamento de Urgências (SOS Emergência)"@nprint @las
     Filtrar por Unidade de Atendimento |${dados}[UnidAtendimento]|
     Validar Resultado do Filtro |${dados}[Paciente]| |${dados}[Atendimento]| |${dados}[Especialidade]|
-
-

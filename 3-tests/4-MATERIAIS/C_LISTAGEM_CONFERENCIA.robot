@@ -23,15 +23,15 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          c_listagem_conferencia
+#${suite}          c_listagem_conferencia
  # Recebe dados do gerenciador
-${dados}
+#${dados}
 
 *** Test Case ***
 SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal          #SMF-10345 : Listagem
 # robot -v browser:chrome -t "SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal" -d ./5-results/SCR4MCLISTAGEMCONFERENCIA-001 "3-tests/4-MATERIAIS/C_LISTAGEM_CONFERENCIA.robot"
 # robot -v browser:firefox -t "SCR4MCLISTAGEMCONFERENCIA-001:Fluxo Principal" -d ./5-results/SCR4MCLISTAGEMCONFERENCIA-001 "3-tests/4-MATERIAIS/C_LISTAGEM_CONFERENCIA.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10345"
+    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-10345"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Conferência>Listagem"@nprint @las
     Consultar Lista dos Processos a Serem Validados
     Validacao dos Processo |${dados}[Processo]||${dados}[MsgEsperada1]||${dados}[MsgEsperada2]|

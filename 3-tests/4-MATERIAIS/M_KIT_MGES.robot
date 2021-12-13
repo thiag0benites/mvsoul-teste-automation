@@ -35,18 +35,7 @@ SMF-4249 : Realizar cadastro de kit -tabela
 # robot -v browser:firefox -t "SMF-4249 : Realizar cadastro de kit -tabela" -d ./5-results/SMF-4249 "3-tests/4-MATERIAIS/M_KIT_MGES.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-4249 "
     Acessar a tela "Materiais e Logística>Almoxarifado>Tabelas>Kits"@nprint @las
-    Informar os dados nos campos
-    Informar os campos Material Medicam
-    Informar os campos Material Medicamento
-    Informar os campos Equipamentos
-    Informar os campos Sangue derivados
-    Informar os campos Procedimentos
-    Informar os campos Observacao |${dados}[MsgObs]|
-    Informar os campos da caixa cirurgica
-    Informar os campos Rouparia |${dados}[MsgRouparia]|
-    Informar os campos Exame laboratorial 
-    Informar os campos Exame de imagem
-    Informar o campo Empresa
-    Informar o campo Subgrupos
-    Informar o campo Cirurgias
+    Informar os dados nos campos |${dados}[ItemSimilar]| |${dados}[TipoProducao]| |${dados}[CampoAtivo]|
+    Informar os campos <Material Medicam> |${dados}[MaterialMedicam]|, <Material Medicamento> |${dados}[MaterialMedicamento]|, <Equipamentos> |${dados}[Equipamentos]|, <Sangue derivados> |${dados}[SangueDerivados]|, <Procedimentos> |${dados}[Procedimentos]|, <Observacao> |${dados}[MsgObs]|, <caixa cirurgica> |${dados}[CaixaCirurgica]|, <Rouparia> |${dados}[MsgRouparia]|, <Exame laboratorial> |${dados}[ExameLaboratorial]|, <Exame de imagem> |${dados}[ExameImagem]|
+    Informar o campo <Empresa>, <Subgrupos>, <Cirurgias>
     Clicar no disquete |${dados}[MsgEsperada]|

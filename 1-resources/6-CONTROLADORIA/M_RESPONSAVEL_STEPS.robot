@@ -26,11 +26,17 @@ Seleciona Cadastro Estrangeiro ou Resp Ativo |${Item}|
     ...    '${Item}' == 'Responsavel Ativo'
     ...    Click no Item    ${BtnRespAtivo}
 
-Informar o Nome |${Nome}| e a Nacionalidade |${Nacionalidade}| da Pessoa
+Informar o Nome |${Nome}| e a Nacionalidade |${Nacionalidade}| da Pessoa - Suite|${Suite}| Linha Gerenciador|${LinhaGerenc}|
     Preencher campo                           ${CampoNome}           ${Nome}
     Clicar no Campo e Preencher Informacao    ${BtnNacionalidade}    ${CampoFiltro}        %${Nacionalidade}
     Click no Item                             ${BtnFiltrar}
     Click no Item                             ${BtnOk}
+    ${PessoaFisica}      Criar pessoa fisica    masculino
+    ${PessoaJuridica}    Criar pessoa juridica
+    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "NumeroCPF", valor "${PessoaFisica.cpf}"
+    Altera massa de dados da "${Suite}", linha "${LinhaGerenc}", coluna "NumeroCNPJ", valor "${PessoaJuridica.cnpj}"
+
+
 Informar CPF|${NroCPF}| ou CNPJ|${NroCNPJ}|>|${CPF/CNPJ}| nos campos apresentados
     Run Keyword If
     ...    '${CPF/CNPJ}' == 'CPF'
@@ -46,34 +52,33 @@ Preencher Inscricao Municipal |${IncMunic}| e Estadual |${InsEstad}|
     Clicar no Campo e Preencher Informacao    ${CampoInscEstadual}     ${CampoInscEstadual}     ${InsEstad}
 
 
-Pesquisa CEP |${DadosCep}|
-    ${PesquisaCep}    Split String             ${DadosCep}
+Pesquisa CEP "Estado|${UF}|" "Cidade|${Cidade}|" "Bairro|${Bairro}|" "Logradouro|${Rua}|" "Numero|${NumeroCasa}|" "Telefone|${Telefone}|"
     Click no Item                              ${BtnCEP}
-    Clicar no Campo e Preencher Informacao     ${BtnUF}              ${CampoFiltro}        ${DadosCep}[0]
+    Clicar no Campo e Preencher Informacao     ${BtnUF}                ${CampoFiltro}        ${UF}      
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${BtnOk}
-    Clicar no Campo e Preencher Informacao     ${BtnLocalidade}      ${CampoFiltro}        ${DadosCep}[1]
+    Clicar no Campo e Preencher Informacao     ${BtnLocalidade}        ${CampoFiltro}        ${Cidade}       
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${SelectCidade}                
     Click no Item                              ${BtnOk}
-    Clicar no Campo e Preencher Informacao     ${BtnBairro}          ${CampoFiltro}        ${DadosCep}[2]
+    Clicar no Campo e Preencher Informacao     ${BtnBairro}            ${CampoFiltro}        ${Bairro}       
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${BtnOk}
-    Clicar no Campo e Preencher Informacao     ${BtnLogradouro}      ${CampoProcurar}      ${DadosCep}[3]
+    Clicar no Campo e Preencher Informacao     ${BtnLogradouro}        ${CampoProcurar}      ${Rua} 
     Click no Item                              ${BtnProcurar}
     Click no Item                              ${BtnConfirmaLogradouro}
     Click no Item                              ${BtnConfirmar}
-    Preencher campo                            ${CampoNumero}                              ${DadosCep}[4]
-    Preencher campo                            ${CampoTelefone}                            ${DadosCep}[5]
+    Preencher campo                            ${CampoNumero}          ${NumeroCasa}         
+    Preencher campo                            ${CampoTelefone}        ${Telefone}           
 
-Informar os dados bancarios do responsavel
-    Clicar no Campo e Preencher Informacao     ${BtnBanco}           ${CampoFiltro}        ITAU
+Informar os dados bancarios do responsavel "Banco|${Banco}|" "Agencia|${Agencia}|e Digito|${DigitoAg}|" "Conta Corrente|${ContaCorr}| e Digito|${DgtCC}|"
+    Clicar no Campo e Preencher Informacao     ${BtnBanco}             ${CampoFiltro}        ${Banco}        
     Click no Item                              ${BtnFiltrar}
     Click no Item                              ${BtnOk}
-    Preencher campo                            ${CampoAgencia}                              0001
-    Preencher campo                            ${CampoAgenciaDigito}                        2
-    Preencher campo                            ${CampoContaCorrente}                        12345
-    Preencher campo                            ${CampoContaCorDigito}                       6
+    Preencher campo                            ${CampoAgencia}                              ${Agencia} 
+    Preencher campo                            ${CampoAgenciaDigito}                        ${DigitoAg} 
+    Preencher campo                            ${CampoContaCorrente}                        ${ContaCorr} 
+    Preencher campo                            ${CampoContaCorDigito}                       ${DgtCC} 
 
 Clicar no botao <Cadastro de Nacionalidade> Cod Pais|${CodPais}|> Descricao Nacional|${DescNac}|
     Click no Item                              ${BtnCadastroNac}
@@ -87,9 +92,9 @@ Clicar no botao <Cadastro de Nacionalidade> Cod Pais|${CodPais}|> Descricao Nac
     Send Keys    tab        
     Click no Item                              ${FecharAba}    
 
-Clicar no botao<Salvar>
+Clicar no botao<Salvar> "Nacionalidade |${ValidNac}|"
     Click no Item                              ${BtnSalvar}
-    Validar Item                               ${ValidNacinalidade}
+    Validar Informacao Item                    ${ValidNacinalidade}        ${ValidNac}
     
     
 

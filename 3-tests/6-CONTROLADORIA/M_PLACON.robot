@@ -38,5 +38,5 @@ SMF-8287 : Cadastrar Conta de Movimentação ( M_PLACON)
     Clicar Descricao da Conta |${dados}[MsgCampoConta2]|
     Clicar no campo Natureza |${dados}[BtnNatureza2]|
     Clicar no campo Grupo da Conta 
-    Indicar no campo Exporta ANS 
+    Indicar no campo Exporta ANS
     Clicar no botao Salvar |${dados}[MsgVerificada]|

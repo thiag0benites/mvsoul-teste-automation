@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Passos da tela de  Configuração do Sistema Contábil
+# Decrição: Passos da tela de    Configuração do Sistema Contábil
 ##################################################################################################################################
 *** Settings ***
 #### Pages utilizadas na Suite de teste
@@ -9,54 +9,102 @@ Resource          ../../2-pages/6-CONTROLADORIA/CONFIG_FCCT_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Processo , Data de Emissao, e Data de Lancamento |${Processo}| |${DtEmissao}| |${DtLancamento}|
-    Preencher Campo                     ${CampoProcesso}                     ${Processo}
-    Preencher Campo                     ${CampoDtEmissao}                    ${DtEmissao} 
-    Preencher Campo                     ${CampoDTLancamento}                 ${DtLancamento}
+Testar Botoes do Bloco Financeiro
+    Wait Until Element Is Visible    ${CheckImportaMovTranCaixa}    200
+    Click no Item    ${AbaContabilidade}
+    Click no Item    ${CheckImportaMovTranCaixa}
+    Click no Item    ${CheckContrLanPassHon}
+    Click no Item    ${CheckContrAntAbRec}
 
-Preencher Tipo de Documento, Cliente, Numero do Documento, Serie e Conta Contabil |${TpDocumento}| |${Cliente}| |${NrDocumento}| |${Serie}| |${ContaContabil}|
+Testar Botoes do Bloco Caixa
+    Click no Item    ${CheckImportaMvDepAnt}
+    Click no Item    ${CheckEntrDepPagAntec}
 
-    Preencher Campo                     ${CampoTpDocumento}                   ${TpDocumento}
-    Preencher Campo                     ${CampoCliente}                       ${Cliente}
-    Preencher Campo                     ${CampoNrDocumento}                   ${NrDocumento}
-    Preencher Campo                     ${CampoSerie}                         ${Serie}
-    Preencher Campo                     ${CampoContaContabil}                 ${ContaContabil}
+Testar Botoes do Bloco Estoque
+    Click no Item    ${CheckImpEmprEsto}
+    Click no Item    ${CheckImpManEst}
 
-Informar Valor Bruto , Desconto e Acrescimo |${VlBruto}| |${Desconto}| |${VlDesconto}| |${Acrescimo}| |${VlAcrescimo}|
-    Preencher Campo                     ${CampoVlBruto}                     ${VlBruto}
-    Preencher Campo                     ${CampoDesconto}                    ${Desconto}
-    Click no Item                       ${CampoVlBruto}
-    Preencher Campo                     ${CampoVlDesconto}                  ${VlDesconto}            
-    Preencher Campo                     ${CampoAcrescimo}                   ${Acrescimo}
-    Click no Item                       ${CampoVlBruto}
-    Sleep   2
-    Preencher Campo                     ${CampoVlAcrescimo}                 ${VlAcrescimo}    
+Selecionar Filtro Relatorio |${FiltroRelatorio}|
+    Preencher Campo    ${FiltroRelat}    ${FiltroRelatorio}
 
-Informar Hist Padrao e Observacao |${HistPadrao}| |${Observacao}|
-     
-    Preencher Campo                     ${CampoHistPadrao}                  ${HistPadrao}
-    Preencher Campo                     ${CampoObservacao}                  ${Observacao} 
+Testar Botoes do Bloco Faturamento
+    Click no Item    ${CheckCCEspCanForComp}
+    Click no Item    ${CheckCadClasContAut}
+    Click no Item    ${CheckUsConCadReg}
 
-Informar Parcela |${Parcela}|
-    Click no Item                       ${AbaParcelamento}
-    Click no Item                       ${CampoParcelaDes}
-    Sleep   1
-    Click no Item                       ${CampoParcelaDes}
-    Preencher Campo                     ${CampoParcela}                     ${Parcela}
+Testar Botoes do Bloco Contabilidade |${MensagemAlerta}|
+    Click no Item    ${CheckPermiteLancAtivo}
+    Click no Item    ${CheckPermitApropCenCus}
+    Click no Item    ${ChekImpedMovSet}
+    Click no Item    ${CheckPermitCriac}
+    Valida Mensagem    ${MsgAlertaMov}    ${MensagemAlerta}
+    Click no Item    ${BotaoOkAlert}
 
-Informar Detalhamento |${Detalhamento}|
-    Click no Item                       ${AbaDetalhamento}
-    Selecionar Item Na Lista            ${BotaoDetalhamento}                ${Detalhamento}             ${Detalhamento}
-    
-Informar Compartilhamento (Setor, ConContabil, ConCusto e Rateio) |${Setor}| |${Contabil}| |${ConCusto}| |${Rateio}|
-    Click no Item                       ${AbaCompartilhamento} 
-    Selecionar Item Na Lista            ${BotaoSetor}                       ${Setor}             ${Setor}
-    Click no Item                       ${CampoCusto}
-    Selecionar Item Na Lista            ${CampoConCusto}                    ${ConCusto}          ${ConCusto}
-    Click no Item                       ${CampoRateioDes}   
-    Preencher Campo                     ${CampoRateio}                      ${Rateio}
+Validar Lotes Integrados |${LotesIntegrados}|
+    Preencher Campo    ${FiltValidLot}    ${LotesIntegrados}
 
-Salvar Registro |${MensagemRegistroSalvo}|
-    Click Elemento por titulo           Salvar
-    Valida Mensagem                     ${RegistroSalvo}                    ${MensagemRegistroSalvo}
+Alterar Campos Contabil do Faturamento |${CargaFamiliar}| |${RetencaoJudicial}| |${TipoAtendimento}| |${OrigAtend}| |${TipoAcomodacao}| |${TipoContaEnvio}| |${GrupoProcedimento}| |${GrupoFaturamento}| |${Procedimento}| |${HorarioEspecial}| |${TipDesconto}| |${PlanoContas}| |${ItemPres}|
+    Click no Item    ${DivPrioridadeCarga}
+    Preencher Campo    ${Prioridade}    ${CargaFamiliar}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${RetencaoJudicial}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${TipoAtendimento}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${OrigAtend}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${TipoAcomodacao}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${TipoContaEnvio}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${GrupoProcedimento}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${GrupoFaturamento}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${Procedimento}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${HorarioEspecial}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${TipDesconto}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${PlanoContas}
+    Send Keys    Down
+    Preencher Campo    ${Prioridade}    ${ItemPres}
 
+Salvar Registro |${MsgSalvo}|
+    Click Elemento por titulo    Salvar
+    Valida Mensagem    ${RegistroSalvo}    ${MsgSalvo}
+
+Testar Bloco Principal
+    Wait Until Element Is Visible    ${CheckImportaMovTranCaixa}    200
+    Click no Item    ${AbaGlosas}
+    Click no Item    ${ContGlosas}
+
+Testar Bloco Eventos de Contabilizacao de Glosas
+    Click no Item    ${ContPartGlosa}
+    Click no Item    ${ContEventosRec}
+    Click no Item    ${IndicaContraP}
+    Click no Item    ${ContEventGl}
+
+Testar Bloco Sistema de Auditoria de Glosas
+    Click no Item    ${RateiaGlosa}
+
+Preencher Eventos de Contabilizacao |${ContCred}| |${ContCred}| |${ContCaixa}|
+    Wait Until Element Is Visible    ${CheckImportaMovTranCaixa}    200
+    Click no Item    ${AbaPacotes}
+    Preencher Campo    ${CampoContaCre}    ${ContCred}
+    Preencher Campo    ${CampoContaPag}    ${ContCred}
+    Preencher Campo    ${CampoContaCaix}    ${ContCaixa}
+
+Preencher Tempo de Expiracao |${Tela}| |${Tempo}|
+    Wait Until Element Is Visible    ${CheckImportaMovTranCaixa}    200
+    Click no Item    ${AbaExpTelas}
+    Selecionar Item Na Lista    ${CampoTelaEx}    ${Tela}    ${Tela}
+    Click no Item    ${CampoTempoDes}
+    Preencher Campo    ${CampoTempo}    ${Tempo}
+
+Consultar Historico de Alteracoes
+    Wait Until Element Is Visible    ${CheckImportaMovTranCaixa}    200
+    Click no Item    ${AbaHistorico}
+    Click no Item    ${btnPesquisar}
+    Click no Item    ${btnExecute}

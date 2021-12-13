@@ -40,4 +40,3 @@ SCR6CMPRESTREP-001:Fluxo Principal
     #Retornar massa de dados para status inicial do teste
     Alterar Campo Aba Geral |${dados}[RepPrestadorAltera]|
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
-

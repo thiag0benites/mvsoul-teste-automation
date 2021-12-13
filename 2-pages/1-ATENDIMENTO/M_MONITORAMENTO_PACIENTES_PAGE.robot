@@ -7,6 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoCdUnidAtendimento}                            xpath=//div[@data-member="FILTRO_CD_UNID_INT"]/..
-${BotaoLovCdUnidAtend}                               xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button
-${BotaoFiltrar}                                      xpath=//button[@id="executarFiltro"] 
+${CampoCdUnidAtendimento}    xpath=//div[@data-member="FILTRO_CD_UNID_INT"]/..
+${BotaoLovCdUnidAtend}    xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/button
+${BotaoFiltrar}    xpath=//button[@id="executarFiltro"]

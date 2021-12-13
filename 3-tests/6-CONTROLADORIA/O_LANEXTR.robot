@@ -3,7 +3,7 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-resultsO_LANEXTR_STEPS "3-tests\6-CONTROLADORIA\O_LANEXTR.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/O_LANEXTR_STEPS "3-tests\6-CONTROLADORIA\O_LANEXTR.robot"
 # chrome:         robot -v browser:firefox -d ./5-results/O_LANEXTR_STEPS "3-tests\6-CONTROLADORIA\O_LANEXTR.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)

@@ -23,7 +23,6 @@ Test Setup          Nova sessao
 Test Teardown       Encerra sessao
 
 *** Variable ***    
-
 # Suite registrada no gerenciador de dados
 ${suite}            m_solic_sangue
 # Recebe dados do gerenciador
@@ -41,8 +40,3 @@ SCR2AMSOLICSANGUE-001:Fluxo Principal
     Validar Preenchimento dos Campos |${dados}[Paciente]| |${dados}[Origem]| |${dados}[Prestador]|
     Selecionar Exame |${dados}[Exame]|
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
-
-
-
-
-
