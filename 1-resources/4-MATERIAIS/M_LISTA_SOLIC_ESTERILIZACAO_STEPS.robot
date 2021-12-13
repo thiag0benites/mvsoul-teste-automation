@@ -13,4 +13,5 @@ Preencher parametros de pesquisa |${Codigo}|
     Clicar no Campo e Preencher Informacao    ${campoCod}    ${campoCod}    ${Codigo}
     Click no Item    ${btnPesquisar}
     Click no Item    ${btnOk}
-    Validar Elemento Pelo Titulo    43025
+    Validar Elemento Pelo Titulo    ${TituloValidacao}
+    #Validar Elemento Pelo Titulo    43025
