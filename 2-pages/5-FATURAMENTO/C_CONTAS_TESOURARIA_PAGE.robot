@@ -1,10 +1,12 @@
 ##################################################################################################################################
 # Autor: Andréa Rodrigues
-# Decrição: Elementos e metodos da página de Consulta de Movimentações
+# Decrição: Elementos e metodos da página de Conta do Paciente
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoConsultar}    xpath=//button[@id="btnConsultar"]
+${CampoCdAtendimento}                        xpath=//input[@id="inp:cdAtendimento"]
+
+

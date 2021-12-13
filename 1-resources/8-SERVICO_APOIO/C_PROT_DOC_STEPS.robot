@@ -10,7 +10,7 @@ Resource          ../../2-pages/8-SERVICO_APOIO/C_PROT_DOC_PAGE.robot
 
 *** Keywords ***
 Consultar Movimentacoes
-    Click no Item                ${BotaoConsultar}
+    Click no Item    ${BotaoConsultar}
 
 Validar Consulta de Movimentacoes |${Setor}| |${CdAtendimento}| |${Paciente}|
     Validar Elemento Pelo Titulo    ${Setor}

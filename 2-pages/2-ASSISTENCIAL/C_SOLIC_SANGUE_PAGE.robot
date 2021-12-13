@@ -1,10 +1,10 @@
 ##################################################################################################################################
 # Autor: Andréa Rodrigues
-# Decrição: Elementos e metodos da página de Consulta de Movimentações
+# Decrição: Elementos e metodos da página de Consulta de Solicitações de Banco de Sangue
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoConsultar}    xpath=//button[@id="btnConsultar"]
+${CampoCdSolicitacao}    xpath=//input[@class="editor-text mode-search"]

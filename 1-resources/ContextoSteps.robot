@@ -52,7 +52,7 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     END
     IF    "${las}" == "@las"
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    60
+        Wait Until Element Is Visible    ${classLasDisplay}    120
         Unselect Frame
         Send Keys    tab
         Send Keys    enter
@@ -68,7 +68,7 @@ Acessar a tela pela busca |${tela}||${nomeItem}|${printscreen} ${las}
     Click Elemento por titulo               ${nomeItem}                   
     IF    "${las}" == "@las"
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    60
+        Wait Until Element Is Visible    ${classLasDisplay}    180
         Unselect Frame
         Send Keys    tab
         Send Keys    enter
@@ -222,6 +222,10 @@ Clicar Item e Selecionar da Lista
     [Arguments]    ${CampoClick}          ${BotaoLov}        ${Item}           ${ItemLista}          
     Click no Item                   ${CampoClick}   
     Selecionar Item Na Lista        ${BotaoLov}        ${Item}         ${ItemLista}    
+
+Clicar Botao Salvar |${MensagemEsperada}|
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         ${MensagemToast}               ${MensagemEsperada}
 
 Clicar Botao Salvar 
     Click Elemento por titulo               Salvar
