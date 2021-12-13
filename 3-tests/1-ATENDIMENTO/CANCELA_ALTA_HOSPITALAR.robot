@@ -14,7 +14,6 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/1-ATENDIMENTO/CANCELA_ALTA_HOSPITALAR_STEPS.robot
-# Resource            ../../Config.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessao
@@ -22,7 +21,7 @@ Resource            ../../1-resources/1-ATENDIMENTO/CANCELA_ALTA_HOSPITALAR_STEP
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -41,7 +40,7 @@ SCR1ACANCELAALTAHOSPITALAR-001:Realizar Cancelamento de Alta Hospitalar
     Validar Preenchimento |${dados}[nomePaciente]|  
     Cancelar Altar e validar mensagem |${dados}[mensagemSucesso]|
 
-SCR1ACANCELAALTAHOSPITALAR-002:Realizar Cancelamento de Alta Médica
+SCR1ACANCELAALTAHOSPITALAR-002:Realizar Cancelamento de Alta Medica
 # robot -v browser:chrome -t "SCR1ACANCELAALTAHOSPITALAR-002:Realizar Cancelamento de Alta Médica" -d ./5-results/SCR1ACANCELAALTAHOSPITALAR-002 "3-tests/1-ATENDIMENTO/CANCELA_ALTA_HOSPITALAR.robot"
 # robot -v browser:firefox -t "SCR1ACANCELAALTAHOSPITALAR-002:Realizar Cancelamento de Alta Médica" -d ./5-results/SCR1ACANCELAALTAHOSPITALAR-002 "3-tests/1-ATENDIMENTO/CANCELA_ALTA_HOSPITALAR.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1ACANCELAALTAHOSPITALAR-002"

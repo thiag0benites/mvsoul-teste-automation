@@ -340,9 +340,9 @@ Clicar no botao ${nomeBtn}
         Wait Until Element Is Visible    ${btnExecute}    30
         Click Element    ${btnExecute}
     
-    ELSE IF    '${nomeBtn}' == 'Pesquisar'
-        Wait Until Element Is Visible    ${abaManutencao}    30
-        Click Element    ${abaManutencao}
+    ELSE IF    '${nomeBtn}' == 'Apagar'
+        Wait Until Element Is Visible    ${btnApagar}    30
+        Click Element    ${btnApagar}
     
     ELSE IF    '${nomeBtn}' == 'Nao'
         Wait Until Element Is Visible    ${btnNaoNotifications}    30

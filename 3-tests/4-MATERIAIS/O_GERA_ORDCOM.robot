@@ -30,7 +30,7 @@ ${suite}            O_GERA_ORDCOM
 ${dados}
 
 *** Test Case ***
-SRC4OGERAORDCOM-001:Gerar Ordem de Compra
+SRC4OGERAORDCOM-001:Fluxo Principal
 # robot -v browser:chrome -t "SRC4OGERAORDCOM-001:Gerar Ordem de Compra" -d ./5-results/SRC4OGERAORDCOM "3-tests/4-MATERIAIS/O_GERA_ORDCOM.robot"
 # robot -v browser:firefox -t "SRC4OGERAORDCOM-001:Gerar Ordem de Compra" -d ./5-results/SRC4OGERAORDCOM "3-tests/4-MATERIAIS/O_GERA_ORDCOM.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC4OGERAORDCOM-001"
