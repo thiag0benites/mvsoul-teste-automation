@@ -7,7 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${btnExecute}                     xpath=//li[@id='toolbar']//li[@id='tb-execute']//a
+${btnExecute}                     xpath=//nav[5]/div/div[1]/ul/li/ul/li[2]
 ${btnImprimir}                    xpath=//button[@data-member='BTN_GERAR_RELATORIO']
 ${btnImprimirEtiquetas}           xpath=//button[@id='TAB_PRESTADOR_btnPrtLista']
 ${abaComplemento}                 xpath=//li//a[@id='TAB_CANVAS_TAB_CANVAS_tab1']
