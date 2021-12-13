@@ -231,14 +231,6 @@ Captura data e hora TESTE
     Input Text    ${elemento}    ${CurrentDate}   
     [Return]        ${CurrentDate} 
 
-Clicar no botao Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
-
-Clicar no botão Adicionar
-    Wait Until Element Is Visible       ${btnAdicionar}     120
-    Click Element     ${btnAdicionar}
-    
 Captura hora atual
     ${CurrentTime}    Get Current Date    result_format=%H:%M
     [Return]        ${CurrentTime}
