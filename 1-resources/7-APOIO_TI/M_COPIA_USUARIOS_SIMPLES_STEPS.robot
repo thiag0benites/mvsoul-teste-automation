@@ -44,16 +44,12 @@ Preencher os campos Usuario Origem|${usrOrigem}|, Usuario Destino|${usrDestino}|
 Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Copiar Usuario'
         Wait Until Element Is Visible    ${btnCopia}    30
-        Sleep    1
+        Sleep    4
         Click Element    ${btnCopia}
     ELSE IF    '${nomeBtn}' == 'OK'
         Wait Until Element Is Visible    ${btnOk}    30
-        Sleep    1
+        Sleep    4
         Click Element    ${btnOk}
-    ELSE IF    '${nomeBtn}' == 'OK2'
-        Wait Until Element Is Visible    ${btnOk2}    30
-        Sleep    1
-        Click Element    ${btnOk2}
     END
 
 

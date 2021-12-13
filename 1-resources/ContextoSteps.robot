@@ -302,8 +302,8 @@ Preencher o Campo Input
     Sleep                                                      3
     
 Valida Mensagem
-    [Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    Wait Until Element Is Visible    ${ElementoMsgRecebida}    120
+    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
+    Wait Until Element Is Visible    ${MensagemRecebida}    120
     Sleep    3
     #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
     #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
