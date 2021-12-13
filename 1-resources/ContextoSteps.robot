@@ -318,7 +318,7 @@ Valida Mensagem
     Sleep    3
     #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
     #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
-    Element Should Contain    ${ElementoMsgRecebida}    ${MensagemEsperada}
+    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
     #[Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
     # Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
     # ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
