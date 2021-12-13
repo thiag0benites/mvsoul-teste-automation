@@ -231,6 +231,15 @@ Clicar Botao Salvar
     Click Elemento por titulo               Salvar
     Valida Mensagem                         ${MensagemToast}               Registros gravados com sucesso
 
+Selecionar Item Na Lista         
+    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
+    Click no Item                           ${BotaoLov}    
+    Click no Item                           ${CampoFiltro}                 
+    Preencher Campo                         ${CampoFiltro}              %${Item}
+    Click no Item                           ${BotaoFiltrar}                  
+    Click Elemento por titulo               ${ItemLista}
+    Click no Item                           ${BotaoOKFiltrar}
+
 Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     Unselect Frame
     Click Element                           ${BotaoBuscaTela}

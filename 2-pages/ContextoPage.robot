@@ -19,4 +19,7 @@ ${btnSimNotifications}  xpath=//li[@class='notification-buttons']//button[1]
 ${BotaoBuscaTela}       xpath=//*[@class='mv-basico-menu dp32']
 ${CampoBuscaTela}       xpath=//input[@placeholder="Search"]
 ${MensagemToast}        xpath=//p[@class="notifications-item-text"]
+${CampoFiltro}          xpath=xpath=//input[@name="filterLov"] 
+${BotaoFiltrar}         xpath=xpath=//button[@id="btfilter"]
+${BotaoOKFiltrar}       xpath=xpath=//button[@id="btok"]
 *** Keywords ***
