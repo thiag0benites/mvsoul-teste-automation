@@ -10,11 +10,11 @@ Resource          ../2-pages/ContextoPage.robot
 *** Variable ***
 
 *** Keywords ***
-Selecionar Origem             
-    Selecionar Item Na Lista                    ${BotaoLov}                   CHAMADO DOMICILIAR                   CHAMADO DOMICILIAR
+Selecionar Origem |${Origem}|            
+    Selecionar Item Na Lista                    ${BotaoLov}                   ${Origem}                   ${Origem}
 
 ### Keyword para retornar massa de dados ao status inicial do teste ###
-Excluir Origem
-    Click Elemento por titulo                   CHAMADO DOMICILIAR 
+Excluir Origem |${Origem}|
+    Click Elemento por titulo                   ${Origem}
     Click Elemento por titulo                   Apagar
     Clicar Botao Salvar

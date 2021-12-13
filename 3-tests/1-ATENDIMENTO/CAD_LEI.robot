@@ -13,10 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/bd/BancoDados.robot
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/1-ATENDIMENTO/CAD_LEI_STEPS.robot
-Resource            ../../1-resources/dados/DadosTeste.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -27,18 +24,19 @@ Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            CAD_LEI
+${suite}            cad_lei
 # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SMF-8593:Cadastro de Leitos
-# robot -v browser:chrome -t "SMF-8593:Cadastro de Leitos" -d ./5-results/SMF-8593 "3-tests/1-ATENDIMENTO/CAD_LEI.robot"
-# robot -v browser:firefox -t "SMF-8593:Cadastro de Leitos" -d ./5-results/SMF-8593 "3-tests/1-ATENDIMENTO/CAD_LEI.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8593"
+SCR1ACADLEI-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR1ACADLEI-001:Fluxo Principal" -d ./5-results/CAD_LEI "3-tests/1-ATENDIMENTO/CAD_LEI.robot"
+# robot -v browser:firefox -t "SCR1ACADLEI-001:Fluxo Principal" -d ./5-results/CAD_LEI "3-tests/1-ATENDIMENTO/CAD_LEI.robot"
+    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1ACADLEI-001"
     Acessar a tela "Atendimento>Internação>Tabelas>Leitos"@nprint @las
-    Clicar no botão Pesquisar
-    Preencher o campo código de unidade da internacao |${dados}[codigo]|
-    Clicar no botão Executar 
+    Clicar no botao Pesquisar
+    Preencher o campo codigo de unidade da internacao |${dados}[codigo]|
+    Clicar no botao Executar
     Preencher os campos da tabela |${dados}[leito]|,|${dados}[descResumida]|,|${dados}[enferm]|,|${dados}[acomod]|
-    Clicar no botão Salvar do menu
+    Clicar no botao Salvar
+    Validar mensagem de confirmacao ao cadastrar o leito |${dados}[mensagem]|

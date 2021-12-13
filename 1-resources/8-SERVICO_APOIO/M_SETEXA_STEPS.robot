@@ -10,16 +10,16 @@ Resource    ../4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Campos Obrigatorios
-    Preencher Campo                     ${CampoNome}                 TESTE AUTOMACAO
-    Selecionar Item Na Lista            ${BotaoLovTpStExame}         ANATOMIA                            ANATOMIA
-    Preencher Campo                     ${CampoNrAtual}              555
-    Selecionar Item Na Lista            ${BotaoLovCentroCusto}       ALMOXARIFADO                        ALMOXARIFADO
-    Selecionar Item Na Lista            ${BotaoLovPrestador}         GEISHA ABREU SOARES DE PINA         GEISHA ABREU SOARES DE PINA
+Preencher Campos Obrigatorios |${Nome}| |${TpStExame}| |${NrAtual}| |${CentroCusto}| |${Prestador}|
+    Preencher Campo                     ${CampoNome}                 ${Nome}
+    Selecionar Item Na Lista            ${BotaoLovTpStExame}         ${TpStExame}                        ${TpStExame}
+    Preencher Campo                     ${CampoNrAtual}              ${NrAtual}
+    Selecionar Item Na Lista            ${BotaoLovCentroCusto}       ${CentroCusto}                      ${CentroCusto}
+    Selecionar Item Na Lista            ${BotaoLovPrestador}         ${Prestador}                        ${Prestador}
 
-Validar Preenchimento dos Campos
-    Validar Elemento Pelo Titulo        TESTE AUTOMACAO
-    Validar Elemento Pelo Titulo        ANATOMIA
-    Validar Elemento Pelo Titulo        555
-    Validar Elemento Pelo Titulo        ALMOXARIFADO
-    Validar Elemento Pelo Titulo        GEISHA ABREU SOARES DE PINA
+Validar Preenchimento dos Campos |${Nome}| |${TpStExame}| |${NrAtual}| |${CentroCusto}| |${Prestador}|
+    Validar Elemento Pelo Titulo        ${Nome}
+    Validar Elemento Pelo Titulo        ${TpStExame}
+    Validar Elemento Pelo Titulo        ${NrAtual}
+    Validar Elemento Pelo Titulo        ${CentroCusto}
+    Validar Elemento Pelo Titulo        ${Prestador}

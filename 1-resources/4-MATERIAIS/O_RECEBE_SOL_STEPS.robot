@@ -2,8 +2,6 @@
 # Autor: Letícia Andrade
 ##################################################################################################################################
 *** Settings ***
-Resource          ../../2-pages/ContextoPage.robot
-### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/O_RECEBE_SOL_PAGE.robot
 
 *** Variable ***
@@ -14,5 +12,5 @@ Marcar o checkbox Recebe e clicar no botão para receber solicitações
     Click no Item          ${btnReceberSolicitacoes}
 
 Validar mensagem de confirmação
-    Valida Mensagem         ${MensagemSalvar}               Recebimento da solicitação foi concluída com sucesso!
+    Valida Mensagem         ${MensagemSalvar}               Registros gravados com sucesso (1 registros gravados).
 

@@ -38,8 +38,8 @@ SCR2AMPRESTADOREXTERNO-001:Fluxo Principal
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Validar Acesso a Tela |${dados}[NomeTela]|
     Clicar Botao Limpar
-    Preencher Campos 
-    Validar Campos Preenchidos
+    Preencher Campos |${dados}[Conselho]| |${dados}[NomePrestador]| |${dados}[CPF]| |${dados}[NomeConselho]| |${dados}[Especialidade]| |${dados}[CBO]|
+    Validar Campos Preenchidos |${dados}[Conselho]| |${dados}[NomePrestador]| |${dados}[CPF]| |${dados}[NomeConselho]| |${dados}[Especialidade]|
     Clicar Botao Salvar
     # Retornar massa de dados para status inicial do teste
-    Apagar Prestador Cadastrado
+    Apagar Prestador Cadastrado |${dados}[Conselho]| |${dados}[NomePrestador]| |${dados}[CPF]| |${dados}[NomeConselho]| |${dados}[Especialidade]|

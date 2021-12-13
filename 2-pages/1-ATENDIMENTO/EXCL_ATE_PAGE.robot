@@ -4,10 +4,13 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource          ../Config.robot
+Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de EXCL_ATE
-${btnExcluirAtendimento}                        xpath=//button[@data-member='BTN_EXCLUI']
-${atendimento}                                  xpath=//input[@id='inp:cdAtendimento']
-${motivo}                                       xpath=//input[@id='inp:dspDsMotivo']
+${MensagemConfirmacao}    xpath=//p[@class="notifications-item-text"]
+${btnExcluirAtendimento}    xpath=//button[@data-member='BTN_EXCLUI']
+${atendimento}    xpath=//input[@id='inp:cdAtendimento']
+${CampoMotivo}    xpath=//input[@id='inp:dspDsMotivo']
+${btnSimNotifications}    xpath=//li[@class='notification-buttons']//button[1]
+${btnExecute}     xpath=//li[@id='toolbar']//li[@id='tb-execute']//a

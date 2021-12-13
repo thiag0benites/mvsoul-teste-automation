@@ -10,15 +10,15 @@ Resource          ../2-pages/ContextoPage.robot
 *** Variable ***
 
 *** Keywords ***
-Selecionar Usuario
-    Preencher Campo                             ${CampoEditavel}                    GPINA
+Selecionar Usuario |${CdUsuario}| |${NomeUsuario}|
+    Preencher Campo                             ${CampoEditavel}                    ${CdUsuario}
     Send Keys                                   Enter
-    Validar Elemento Pelo Titulo                GEISHA ABREU SOARES DE PINA
+    Validar Elemento Pelo Titulo                ${NomeUsuario}
 
-Selecionar Unidade de Internacao
-    Preencher Campo                             ${CampoEditavel}                    174
+Selecionar Unidade de Internacao |${CdUnidInternacao}| |${NomeUnidInterncao}|
+    Preencher Campo                             ${CampoEditavel}                    ${CdUnidInternacao}
     Send Keys                                   Enter
-    Validar Elemento Pelo Titulo                AADBR UNIDADE INTERNAÇÃO
+    Validar Elemento Pelo Titulo                ${NomeUnidInterncao}
 
 Validar Checkbox de Solicitacao Marcado
     Marcar Checkbox |${CbProdutoSetor}|
@@ -38,7 +38,7 @@ Marcar Checkbox |${CheckboxSol}|
     Wait Until Element Is Visible               ${CheckboxSol}                      20
     ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxSol}
     Log To Console    *** ${StatusCheckbox}
-    Run Keyword If    ${StatusCheckbox} == True   Click Element    ${CheckboxSol}
+    Run Keyword If    ${StatusCheckbox} == False   Click Element    ${CheckboxSol}
 
 Desmarcar Checkbox |${CheckboxMov}|
     Wait Until Element Is Visible               ${CheckboxMov}                      20
