@@ -10,28 +10,28 @@ Resource    ../8-SERVICO_APOIO/DEVDOCPRO_STEPS.robot
 *** Variable ***
 
 *** Keywords ***
-Preencher Dados do Orcamento
-    Selecionar Item Na Lista            ${BotaoLovAtendimento}    SUZANA CARLA BARROS NOGUEIRA DE PINHO        SUZANA CARLA BARROS NOGUEIRA DE PINHO
-    Preencher Campo                     ${CampoDtInicial}         12/12/2021
-    Preencher Campo                     ${CampoDtFinal}           12/12/2023
+Preencher Dados do Orcamento |${Paciente}| |${DtInicial}| |${DtFinal}|
+    Selecionar Item Na Lista            ${BotaoLovAtendimento}    ${Paciente}          ${Paciente}
+    Preencher Campo                     ${CampoDtInicial}         ${DtInicial}
+    Preencher Campo                     ${CampoDtFinal}           ${DtFinal}
 
-Preencher Campos Aba Procedimento
+Preencher Campos Aba Procedimento |${Procedimento}|
     Click no Item                       ${AbaProcedimento} 
-    Selecionar Item Na Lista            ${BotaoLovEdit}           BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)        BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)
+    Selecionar Item Na Lista            ${BotaoLovEdit}           ${Procedimento}      ${Procedimento}
     Send Keys                           tab   
-    Validar Elemento Pelo Titulo        BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)      
+    Validar Elemento Pelo Titulo        ${Procedimento}  
 
-Preencher Campos Aba Custos
+Preencher Campos Aba Custos |${Custo}| |${Unidade}| |${ValorUnitario}| |${Quantidade}|
     Click no Item                             ${AbaCusto} 
-    Selecionar Item Na Lista                  ${BotaoLovEdit}          CUSTO 04        CUSTO 04
-    Clicar no Campo e Preencher Informacao    ${CampoUnidade}          ${CampoEdit}    1
-    Clicar no Campo e Preencher Informacao    ${CampoValorUnitario}    ${CampoEdit}    10
-    Clicar no Campo e Preencher Informacao    ${CampoQuantidade}       ${CampoEdit}    1
+    Selecionar Item Na Lista                  ${BotaoLovEdit}          ${Custo}        ${Custo}
+    Clicar no Campo e Preencher Informacao    ${CampoUnidade}          ${CampoEdit}    ${Unidade}
+    Clicar no Campo e Preencher Informacao    ${CampoValorUnitario}    ${CampoEdit}    ${ValorUnitario}
+    Clicar no Campo e Preencher Informacao    ${CampoQuantidade}       ${CampoEdit}    ${Quantidade}
     Send Keys                                 tab
 
-Validar Informacao Aba Impostos
+Validar Informacao Aba Impostos |${Imposto}|
     Click no Item                             ${AbaImposto}
-    Selecionar Item Na Lista                  ${BotaoLovEdit}          ISS 3,87% LC 128/08 SIMPLES        ISS 3,87% LC 128/08 SIMPLES
+    Selecionar Item Na Lista                  ${BotaoLovEdit}          ${Imposto}      ${Imposto}
 
 Salvar Orcamento
     Click Elemento por titulo                 Salvar
