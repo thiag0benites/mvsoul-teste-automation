@@ -5,20 +5,23 @@
 *** Settings ***
 #### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/4-MATERIAIS/M_CANCSOL_PAGE.robot
+Resource    ../8-SERVICO_APOIO/M_SAI_SETOR_STEPS.robot
 
 *** Variable ***
 
 *** Keywords ***
-Preencher Data Inicial |${DataIni}|
-    Preencher Campo    ${CampoDataIni}    ${DataIni}
+Preencher Solicitacao e Pesquisar |${Solic}|
+    Preencher Campo          ${CampoSolic}       ${Solic}
+    Click Elemento por titulo    Executar Consulta
 
-Preencher Data Final
-    Preencher campo com data e hora    ${CampoDataFim}    %d/%m/%Y    00:00:00
-    Send Keys    TAB
-    ${DataFim}    Get Element Attribute    ${CampoDataFim}    title
-    Altera massa de dados da "M_CANCSOL", linha "1", coluna "DataFim", valor "${DataFim}"
+Cancelar Solicitacao e Justificar |${Motivo}| |${Justificativa}|
+    Click no Item            ${CheckCancelar} 
+    Click no Item            ${BotaoCancelar}
+    Preencher Campo          ${MotivoCanc}                ${Motivo}
+    Preencher Campo          ${JustificativaCanc}         ${Justificativa}
+    Click no Item            ${BotaoConfirmar}
 
-Pesquisar e Validar Pesquisa |${Estoque}|
-    Click no Item    ${BotaoPesquisar}
-    Validar Elemento pelo Titulo    ${Estoque}
+Valida Sucesso |${MsgSucesso}|
+    Valida Mensagem            ${MensagemSucesso}          ${MsgSucesso}
+    Click no Item              ${BotaoOk}
 

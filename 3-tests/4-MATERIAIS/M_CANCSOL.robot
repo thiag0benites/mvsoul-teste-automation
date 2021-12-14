@@ -33,7 +33,8 @@ SCR4MMCANCSOL-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR4MMCANCSOL-001:Fluxo Principal" -d ./5-results/SCR4MMCANCSOL-001 "3-tests/4-MATERIAIS/M_CANCSOL.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMCANCSOL-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Cancelamento de Solicitação"@nprint @las
-    Validar Acesso a Tela |Acompanhamento de Solicitações de Compras|
-    Preencher Data Inicial |${dados}[DataIni]|
-    Preencher Data Final
-    Pesquisar e Validar Pesquisa |${dados}[Estoque]|
+    Validar Acesso a Tela |Cancelamento de Solicitações|
+
+    Preencher Solicitacao e Pesquisar |${dados}[Solic]|
+    Cancelar Solicitacao e Justificar |${dados}[Motivo]| |${dados}[Justificativa]|
+    Valida Sucesso |${dados}[MsgSucesso]|
