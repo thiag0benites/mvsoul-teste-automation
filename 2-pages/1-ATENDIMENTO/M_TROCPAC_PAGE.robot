@@ -16,3 +16,4 @@ ${BtnSimAlerta}                                               xpath=//button[@cl
 ${BtnOkAlerta}                                                xpath=//button[@class='btn btn-primary'][contains(text(),'OK')]
 ### VARIADOS ###
 ${MsgUsuario}                                                 xpath=//p[@class='notifications-item-text']
+
