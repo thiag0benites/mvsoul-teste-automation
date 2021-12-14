@@ -39,5 +39,3 @@ SCR4MMAJUSTACUSTOMEDIO-001:Fluxo Principal
     Gerar Valor Custo Medio |${dados}[MsgConfirmaRefProduto]| |${dados}[NovoCustoMedio]| |${dados}[MsgValorGerado]| |${dados}[MsgSucesso]|
     # Retornar massa de dados para status inicial do teste
     Gerar Valor Custo Medio |${dados}[MsgConfirmaRefProduto]| |${dados}[NovoCustoMedioAltera]| |${dados}[MsgValorGerado]| |${dados}[MsgSucesso]|
-
-
