@@ -14,17 +14,16 @@ Preencher codigo e Validar |${codigo}|
     Clicar no botao Executar
     Validar Elemento Pelo Titulo    ${codigo}
 
-Preencher motivo do Cancelamento e Validar |${motivoCancelamento}| 
+Preencher motivo do Cancelamento e Validar |${motivoCancelamento}|
     Click no Item    ${btnCancelar}
-    Preencher campo  ${campoMotivoCancelamento}     ${motivoCancelamento} 
-    Send keys  enter  
-    Validar Elemento Pelo Titulo   ${motivoCancelamento}
+    Preencher campo    ${campoMotivoCancelamento}    ${motivoCancelamento}
+    Send keys    enter
+    Validar Elemento Pelo Titulo    ${motivoCancelamento}
 
 Confirmar e validar mensagem |${mensagemSucesso}|
     Click no Item    ${btnConfirmar}
     Click no Item    ${btnSim}
-    Wait Until Element Is Visible    ${mensagemApresentada}     120
-    Element Should Contain   ${mensagemApresentada}   ${mensagemSucesso}
+    Wait Until Element Is Visible    ${mensagemApresentada}    120
+    Element Should Contain    ${mensagemApresentada}    ${mensagemSucesso}
     Click no Item    ${btnOk}
     Sleep    1
-

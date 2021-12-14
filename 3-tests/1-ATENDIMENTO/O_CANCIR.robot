@@ -21,7 +21,7 @@ Resource            ../../1-resources/1-ATENDIMENTO/O_CANCIR_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados

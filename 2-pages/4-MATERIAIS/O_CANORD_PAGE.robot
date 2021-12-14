@@ -4,15 +4,13 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-${campoCodigo}                  xpath=//div[@class="slick-cell b0 f0 selected active editable"]//input
-${btnCancelar}                  xpath=//button[@id="btnCancelar"]
-${campoMotivoCancelamento}      xpath=//input[@id="inp:dsCdMotCancel"]
-
-${btnConfirmar}                 xpath=//button[@id="btnConfirmaCanc"]
-
-${mensagemApresentada}          xpath=//li[@class="notification-info"]//p[@class="notifications-item-text"]
-${btnOk}                        xpath=//button[text()="OK"]
-${btnSim}                       xpath=//button[text()="Sim"]
+${campoCodigo}    xpath=//div[@class="slick-cell b0 f0 selected active editable"]//input
+${btnCancelar}    xpath=//button[@id="btnCancelar"]
+${campoMotivoCancelamento}    xpath=//input[@id="inp:dsCdMotCancel"]
+${btnConfirmar}    xpath=//button[@id="btnConfirmaCanc"]
+${mensagemApresentada}    xpath=//li[@class="notification-info"]//p[@class="notifications-item-text"]
+${btnOk}          xpath=//button[text()="OK"]
+${btnSim}         xpath=//button[text()="Sim"]
