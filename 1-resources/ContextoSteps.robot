@@ -238,7 +238,7 @@ Selecionar Item Na Lista
     Click no Item                           ${BotaoLov}    
     Click no Item                           ${CampoFiltro}                 
     Preencher Campo                         ${CampoFiltro}              %${Item}
-    Click no Item                           ${BotaoFiltrar}                  
+    Click no Item                           ${BotaoFiltrar}   
     Click Elemento por titulo               ${ItemLista}
     Click no Item                           ${BotaoOKFiltrar}
 

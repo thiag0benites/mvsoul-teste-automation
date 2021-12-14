@@ -247,4 +247,4 @@ Preencher campo com data e hora
     Log To Console      ${CurrentDate}
     Click Element    ${elemento}
     Sleep    2
-    Input Text    ${elemento}    ${CurrentDate}
+    Preencher Campo    ${elemento}    ${CurrentDate}

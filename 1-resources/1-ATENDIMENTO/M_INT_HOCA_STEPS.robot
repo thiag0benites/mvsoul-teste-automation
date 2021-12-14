@@ -41,7 +41,7 @@ Preencher Dados Aba Conclusao |${Area}| |${MedicoIndicacao}| |${Enfermeira}| |${
 Preencher Data Atual e Preencher Gerenciador
     [Arguments]                             ${CampoDataAtual}                ${ColunaGerenciador}
     Preencher campo com data e hora         ${CampoDataAtual}                %d/%m/%y                         00:00:00
-    #Send Keys                               tab
+    Send Keys                               tab
     ${RecebeData}              Get Element Attribute    ${CampoDataAtual}    title
     Altera massa de dados da "m_int_hoca", linha "1", coluna "${ColunaGerenciador}", valor "${RecebeData}"
 
