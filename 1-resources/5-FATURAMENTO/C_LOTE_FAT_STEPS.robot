@@ -19,6 +19,7 @@ Preencher os campos da tabela |${convenio}|,|${descricao}|,|${competencia}|
     Sleep    1
 
     Click no Item      ${campoCompetenciaLoteFat}
+    Sleep    1
     Preencher campo    ${campoCompetenciaLoteFatInput}      ${competencia}
     Sleep    1
 
@@ -30,5 +31,5 @@ Preencher a data de abertura na tabela |${dataAbertura}|
 Clicar no botao Salvar da tela de faturas e remessas
     Click no Item    ${btnSalvarLoteFat}
 
-Validar mensagem ao salvar |${mensagem}|
-    Valida Mensagem    ${MensagemSalvarLoteFat}    ${mensagem}
+Validar Mensagem |${mensagem}|
+    Valida Mensagem         ${ElementoMsgRecebida}           ${mensagem}

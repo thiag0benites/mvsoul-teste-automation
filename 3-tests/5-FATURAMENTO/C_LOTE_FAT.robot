@@ -37,4 +37,4 @@ SCR5FCLOTEFAT-001:Fluxo principal
     Preencher os campos da tabela |${dados}[convenio]|,|${dados}[descricao]|,|${dados}[competencia]|
     Preencher a data de abertura na tabela |${dados}[dataAbertura]|
     Clicar no botao Salvar do menu
-    Validar mensagem ao salvar |${dados}[mensagem]|
+    Validar Mensagem |${dados}[mensagem]|
