@@ -33,4 +33,5 @@ SCR1MTROCPAC-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR1MTROCPAC-001:Fluxo Principal" -d ./5-results/SCR1MTROCPAC-001 "3-tests/1-ATENDIMENTO/M_TROCPAC.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1MTROCPAC-001"
     Acessar a tela "Atendimento>Internação Domiciliar (Home Care)>Tabelas>Transferência de Dados de Paciente"@print @las
-    Preencher Paciente de Origem|${dados}[PacienteOrigem]| e Destino|${dados}[PacienteDestino]|
+    Preencher Paciente de Origem|${dados}[PacienteOrigem]|, Destino|${dados}[PacienteDestino]| e Validar Informacoes |${dados}[MsgUsuConf]|, |${dados}[MsgExcPac]|, |${dados}[MsgConTrans]|
+    

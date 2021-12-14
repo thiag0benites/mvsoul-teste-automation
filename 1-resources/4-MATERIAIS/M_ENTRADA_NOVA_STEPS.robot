@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/4-MATERIAIS/M_ENTRADA_PAGE.robot
+Resource          ../../2-pages/4-MATERIAIS/M_ENTRADA_NOVA_PAGE.robot
 
 *** Variable ***
 

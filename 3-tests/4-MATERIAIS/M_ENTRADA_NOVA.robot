@@ -15,7 +15,7 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/ContextoSteps.robot
 Resource            ../../1-resources/auxiliar/Genericos.robot
-Resource            ../../1-resources/4-MATERIAIS/M_ENTRADA_STEPS.robot
+Resource            ../../1-resources/4-MATERIAIS/M_ENTRADA_NOVA_STEPS.robot
 
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -33,8 +33,8 @@ ${dados}
 
 *** Test Case ***
 SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC 
-# robot -v browser:chrome -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/SMF-794 "3-tests/4-MATERIAIS/M_ENTRADA.robot"
-# robot -v browser:firefox -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/SMF-794 "3-tests/4-MATERIAIS/M_ENTRADA.robot"
+# robot -v browser:chrome -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/SMF-794 "3-tests/4-MATERIAIS/M_ENTRADA_NOVA.robot"
+# robot -v browser:firefox -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/SMF-794 "3-tests/4-MATERIAIS/M_ENTRADA_NOVA.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-794"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @las
     Informar "Tipo de Documento|${dados}[TipoDocumento]|", "Estoque|${dados}[Estoque]|"
