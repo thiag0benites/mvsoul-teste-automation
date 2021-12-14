@@ -49,3 +49,13 @@ SMF-5619 : Registrar Recebimento de Contas de Convênio pelo valor a receber da 
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5619"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
     Validar Acesso a Tela |Recebimento de Convênio|
+    Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${dados}[CampoEmpresa]|
+    Selecionar Convenio e Por o Sistema em Modo de Busca |${dados}[CampoConvenio]|
+    Alterar a Data do Recebimento |${dados}[DtRecebimento]|
+    Informar o Numero do Documento |${dados}[NrDocumento]|
+    Informar a Conta Corrente em Que o Valor da Nota Fiscal Sera Creditado |${dados}[ContaCorrente]|
+    Selecionar a Aba Contas x Itens da Nota Fiscal
+    Informar no Campo (Receb.) o Valor a Ser Recebido |${dados}[VlReceb]|
+    Atualizar Tela
+    Clicar em (Efetuar Recebimento)
+    Clicar em 'Sim' Para Efetuar Recebimento e em 'OK' Para Validar Mensagem

@@ -189,15 +189,9 @@ Clicar em Estoque
     Sleep
 
 Clicar Botao se estiver Visivel
-<<<<<<< HEAD
-    [Arguments]             ${Botao}                        
-    ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}    120          
-    Run Keyword If          '${Status}' == 'True'               Click no Item                        ${Botao}
-=======
     [Arguments]    ${Botao}
     ${Status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${Botao}
     Run Keyword If    '${Status}' == 'True'    Click no Item    ${Botao}
->>>>>>> feature/danilo
 
 Click no Item
     [Arguments]    ${elemento}

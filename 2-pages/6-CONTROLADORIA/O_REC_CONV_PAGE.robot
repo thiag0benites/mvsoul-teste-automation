@@ -25,10 +25,13 @@ ${btnExecutarConsulta}           xpath=//li[@id="tb-execute"]/a/i
 ${btnContaCorrente}              xpath=//div[@id="PAGE_RECEBIMENTO_cdConCor"]/button
 ${btnContasItensNF}              xpath=//a[@id="CV_PAGE_CV_PAGE_tab2"]
 ${btnEfetuarReceb}               xpath=//button[@id="btnConfirma"]
+${btnSim}                        xpath=//button[@class='btn btn-primary'][text()="Sim"]
+${btnOk}                         xpath=//button[@class='btn btn-primary'][text()="OK"]
 
 ### Diversos ###
 ${empresaValidada}               xpath=//span[contains(@title, "5 - HOSPITAL MV - MATRIZ")]
 ${convenioFiltrado}              xpath=//div[@data-member='DSP_NM_CONVENIO']
 ${contaCorrenteFiltrada}         xpath=//div[@title='ITAU HOBRA - 5']
 ${clickReceb}                    xpath=//*[@data-member='VL_RECEBIMENTO']/..
+${clickVlGlosa}                  xpath=//div[@data-member='VL_GLOSA']//..
 

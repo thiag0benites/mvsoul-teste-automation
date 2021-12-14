@@ -12,10 +12,6 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_REC_CONV_PAG
 Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${CampoEmpresa}|
     Wait Until Element Is Visible                          ${empresaValidada}
     Element Should Be Visible                              ${empresaValidada}
-    #Clicar Botao se estiver Visivel                        ${btnEmpresa}
-    #Selecionar Item Na Lista                                ${btnEmpresa}   ${CampoEmpresa}    ${CampoEmpresa}
-    #Click no Item                                          ${empresaFiltrada}
-    #Clicar Botao se estiver Visivel                        ${btnOk}
 Selecionar Convenio e Colocar o Sistema em Modo de Pesquisa |${CampoConvenio}| |${NrReferencia}|
     Clicar Botao se estiver Visivel                        ${btnConvenio}
     Clicar no Campo e Preencher Informacao                 ${campoFiltro}    ${campoFiltro}    ${CampoConvenio}
@@ -41,3 +37,14 @@ Informar no Campo (Receb.) o Valor a Ser Recebido |${VlReceb}|
     Clicar no Campo e Preencher Informacao                 ${clickReceb}    ${campoReceb}    ${VlReceb}
 Clicar em (Efetuar Recebimento)
     Clicar Botao se estiver Visivel                        ${btnEfetuarReceb}
+Selecionar Convenio e Por o Sistema em Modo de Busca |${CampoConvenio}|
+    Wait Until Element Is Visible                          ${btnConvenio}    20
+    Selecionar Item Na Lista                               ${btnConvenio}    ${CampoConvenio}    ${CampoConvenio}
+    Clicar Botao se estiver Visivel                        ${btnExecutarConsulta}
+Atualizar Tela
+    Send Keys    tab
+    Sleep        20
+Clicar em 'Sim' Para Efetuar Recebimento e em 'OK' Para Validar Mensagem
+    Clicar Botao se estiver Visivel                        ${btnSim}
+    Clicar Botao se estiver Visivel                        ${btnOk}
+    
