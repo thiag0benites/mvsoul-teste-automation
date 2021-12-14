@@ -7,14 +7,11 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoSolic}                xpath=//input[@class="editor-text mode-search"]
-${CheckCancelar}             xpath=//button[@data-member="CHK_CANCELAR"]
-${BotaoCancelar}             xpath=//button[@data-member="BTN_CANCELA_SOLICITACAO"]
-
-${MotivoCanc}                xpath=//input[@id="inp:cdMotivoCancelamento"]
-${JustificativaCanc}         xpath=//textarea[@id="inp:dsJustificativaCancelamento"]
-${BotaoConfirmar}            xpath=//button[@data-member="BTN_CANCELAR_SOLICITACAO"]
-
-${MensagemSucesso}           xpath=//p[@class="notifications-item-text"]
-${BotaoOk}                   xpath=//button[@class="btn btn-primary"]
-
+${CampoSolic}     xpath=//input[@class="editor-text mode-search"]
+${CheckCancelar}    xpath=//button[@data-member="CHK_CANCELAR"]
+${BotaoCancelar}    xpath=//button[@data-member="BTN_CANCELA_SOLICITACAO"]
+${MotivoCanc}     xpath=//input[@id="inp:cdMotivoCancelamento"]
+${JustificativaCanc}    xpath=//textarea[@id="inp:dsJustificativaCancelamento"]
+${BotaoConfirmar}    xpath=//button[@data-member="BTN_CANCELAR_SOLICITACAO"]
+${MensagemSucesso}    xpath=//p[@class="notifications-item-text"]
+${BotaoOk}        xpath=//button[@class="btn btn-primary"]

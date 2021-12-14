@@ -35,6 +35,5 @@ SCR8SMDOCPAC-001:Fluxo Principal
     Acessar a tela "Serviços de Apoio>Serviço Arquivo Médico>Pacientes>Manutenção de Documentos"@nprint @las
     Preencher Same |${dados}[SAME]|
     Validar Acesso a Tela |Matricula no Same|
-    
     Preencher Matricula e Pesquisar |${dados}[Matricula]|
     Imprimir e validar Relatorio

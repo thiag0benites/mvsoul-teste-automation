@@ -34,7 +34,6 @@ SCR4MMCANCSOL-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMCANCSOL-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Solicitações>Cancelamento de Solicitação"@nprint @las
     Validar Acesso a Tela |Cancelamento de Solicitações|
-
     Preencher Solicitacao e Pesquisar |${dados}[Solic]|
     Cancelar Solicitacao e Justificar |${dados}[Motivo]| |${dados}[Justificativa]|
     Valida Sucesso |${dados}[MsgSucesso]|
