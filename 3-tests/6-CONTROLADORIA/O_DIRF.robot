@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/6-CONTROLADORIA/M_TIP_DET.robot
+Resource            ../../1-resources/6-CONTROLADORIA/O_DIRF_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -34,4 +34,7 @@ SCR6COODIRF-001:Fluxo principal
 # robot -v browser:firefox -t "SCR6COODIRF-001:Fluxo principal" -d ./5-results/O_DIRF "3-tests/6-CONTROLADORIA/O_DIRF.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6COODIRF-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
+    Preencher os campos da tela de geracao de DIRF |${dados}[ano]|,|${dados}[cpf]|,|${dados}[nome]|,|${dados}[cpf2]|,|${dados}[email]|,|${dados}[ddd]|,|${dados}[telefone]|
+    Clicar no botao gerar 
+    Validar mensagem de sucesso |${dados}[mensagem]|
     

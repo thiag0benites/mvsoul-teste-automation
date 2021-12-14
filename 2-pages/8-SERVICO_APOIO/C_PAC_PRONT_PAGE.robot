@@ -7,7 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoLovSAME}                                    xpath=//div[@id="cdSame"]/button
-${BotaoAcessar}                                    xpath=//button[@id="ok"]
-${BotaoLovAtendimento}                             xpath=//div[@id="cdAtendimento"]/button
-${BotaoConsultar}                                  xpath=//button[@id="btnExc"]  
+${BotaoLovSAME}    xpath=//div[@id="cdSame"]/button
+${BotaoAcessar}    xpath=//button[@id="ok"]
+${BotaoLovAtendimento}    xpath=//div[@id="cdAtendimento"]/button
+${BotaoConsultar}    xpath=//button[@id="btnExc"]

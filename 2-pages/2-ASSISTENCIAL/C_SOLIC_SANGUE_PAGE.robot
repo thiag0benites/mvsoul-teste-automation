@@ -7,4 +7,4 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoCdSolicitacao}                            xpath=//input[@class="editor-text mode-search"]
+${CampoCdSolicitacao}    xpath=//input[@class="editor-text mode-search"]

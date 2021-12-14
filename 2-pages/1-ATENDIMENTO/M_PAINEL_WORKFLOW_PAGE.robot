@@ -4,22 +4,19 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-
 ### Campos ###
-
 ### Botoes ###
-${BtnDtPrevista}               xpath=//button[@id="rbDtPrevista_btn"][@state="checked"]
-${BtnPreAg}                    xpath=//div[@id="counterCOUNT_PA"]
-${BtnRevisao}                  xpath=//div[@id="counterCOUNT_RE"]
-${BtnCotacao}                  xpath=//div[@id="counterCOUNT_CO"]
-${BtnAguardCotacao}            xpath=//div[@id="counterCOUNT_AC"]
-${BtnSolicGuia}                xpath=//div[@id="counterCOUNT_SG"]
-${BtnAguardGuia}               xpath=//div[@id="counterCOUNT_RA"]
-${BtnConfirmacao}              xpath=//div[@id="counterCOUNT_CP"]
-${BtnAguardRealizacao}         xpath=//div[@id="counterCOUNT_AR"]
-${BtnTodos}                    xpath=//div[@id="counterCOUNT_TOTAL"]
-
+${BtnDtPrevista}    xpath=//button[@id="rbDtPrevista_btn"][@state="checked"]
+${BtnPreAg}       xpath=//div[@id="counterCOUNT_PA"]
+${BtnRevisao}     xpath=//div[@id="counterCOUNT_RE"]
+${BtnCotacao}     xpath=//div[@id="counterCOUNT_CO"]
+${BtnAguardCotacao}    xpath=//div[@id="counterCOUNT_AC"]
+${BtnSolicGuia}    xpath=//div[@id="counterCOUNT_SG"]
+${BtnAguardGuia}    xpath=//div[@id="counterCOUNT_RA"]
+${BtnConfirmacao}    xpath=//div[@id="counterCOUNT_CP"]
+${BtnAguardRealizacao}    xpath=//div[@id="counterCOUNT_AR"]
+${BtnTodos}       xpath=//div[@id="counterCOUNT_TOTAL"]
 ### Diversos ###

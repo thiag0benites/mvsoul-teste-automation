@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Consumo do Atendimento
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\C_PRODATEND.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\C_PRODATEND.robot"
 # firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\C_PRODATEND.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\C_PRODATEND.robot"
+# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\C_PRODATEND.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\C_PRODATEND.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -37,4 +37,3 @@ SCR4MCPRODATEND-001:Fluxo Principal
     Selecionar Paciente |${dados}[TelaConsultaPac]|
     Realizar Consulta de Consumo
     Validar Consulta de Consumo |${dados}[Paciente]| |${dados}[UnidInternacao]| |${dados}[Setor]| |${dados}[Produto]|
-

@@ -38,6 +38,3 @@ SCR5FCCONTASTESOURARIA-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Pesquisar Conta pelo Atendimento |${dados}[CdAtendimento]|
     Validar Campos Apos Consulta |${dados}[Paciente]| |${dados}[Prestador]| |${dados}[Convenio]| |${dados}[TipoConta]| |${dados}[GrupoProcedimento]|
-
-    
-  

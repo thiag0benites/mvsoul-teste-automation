@@ -68,4 +68,3 @@ def send_keys(key):
     Works on Windows/Mac/Linux
     """
     pyautogui.press(key)
-    time.sleep(1)
