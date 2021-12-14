@@ -15,11 +15,10 @@ Preencher Same |${SAME}|
     Sleep    3
 
 Preencher Paciente |${Paciente}|
-    Preencher Campo            ${CampoPaciente}            ${Paciente}
-    Click no Item              ${BotaoExecutar}
+    Preencher Campo    ${CampoPaciente}    ${Paciente}
+    Click no Item    ${BotaoExecutar}
 
 Validar Consultas |${DescSame}| |${Armario}| |${TipOrigem}|
-    Validar Elemento Pelo Titulo        ${DescSame}
-    Validar Elemento Pelo Titulo        ${Armario}
-    Validar Elemento Pelo Titulo        ${TipOrigem}
-
+    Validar Elemento Pelo Titulo    ${DescSame}
+    Validar Elemento Pelo Titulo    ${Armario}
+    Validar Elemento Pelo Titulo    ${TipOrigem}

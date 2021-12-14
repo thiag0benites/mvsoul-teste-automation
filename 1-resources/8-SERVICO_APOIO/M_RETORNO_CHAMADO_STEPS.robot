@@ -5,15 +5,14 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/8-SERVICO_APOIO/M_RETORNO_CHAMADO_PAGE.robot
-Resource    ../6-CONTROLADORIA/O_REC_STEPS.robot
 
 *** Variable ***
 
 *** Keywords ***
 Clicar na Aba Parecer e Preencher resposta |${Resposta}|
-    Click no Item                ${AbaParecer} 
-    Preencher Campo              ${CampoResposta}            ${Resposta}     
+    Click no Item    ${AbaParecer}
+    Preencher Campo    ${CampoResposta}    ${Resposta}
 
 Marcar como Respondido e Validar |${MsgSalva}|
-    Click no Item                ${BotaoRespondido}
-    Valida Mensagem              ${Mensagem}                   ${MsgSalva}
+    Click no Item    ${BotaoRespondido}
+    Valida Mensagem    ${Mensagem}    ${MsgSalva}

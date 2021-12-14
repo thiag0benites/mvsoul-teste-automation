@@ -34,6 +34,5 @@ SCR8SMRETORNOCHAMADO-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMRETORNOCHAMADO-001"
     Acessar a tela "Serviços de Apoio>Serviço Atendimento Cliente>Atendimento>Resposta de Solicitação de Parecer" @las
     Validar Acesso a Tela |Retorno de Chamados|
-    
     Clicar na Aba Parecer e Preencher resposta |${dados}[Resposta]|
     Marcar como Respondido e Validar |${dados}[MsgSalva]|

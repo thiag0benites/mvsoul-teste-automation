@@ -35,6 +35,5 @@ SCR8SRASTREARPASTAPAC-001:Fluxo Principal
     Acessar a tela "Serviços de Apoio>Serviço Arquivo Médico>Consultas>Pastas do Paciente"@nprint @las
     Preencher Same |${dados}[SAME]|
     Validar Acesso a Tela |Histórico das Pastas do Paciente|
-    
     Preencher Paciente |${dados}[Paciente]|
     Validar Consultas |${dados}[DescSame]| |${dados}[Armario]| |${dados}[TipOrigem]|

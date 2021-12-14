@@ -34,7 +34,6 @@ SCR8SMCONFIRMASOL-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMCONFIRMASOL-001"
     Acessar a tela "Diagnostico e Terapia>Banco de Sangue>Atendimentos>Confirmação de Solicitações"@nprint @las
     Validar Acesso a Tela |Confirmação de Solicitações|
-    
     Preencher Solicitacao |${dados}[Solicitacao]|
     Preencher Quantidade e Confirmar |${dados}[QtAtendida]|
     Valida Confirmacao
