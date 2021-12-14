@@ -34,5 +34,4 @@ SCR1AMCADASTROCIRURGIA-001:Fluxo Principal
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Cadastro da Cirurgia"@nprint @las
     Cadastro da Cirurgia|${dados}[TempoUltilizacao]||${dados}[Atendimento]||${dados}[TipoSanguineo]||${dados}[DataEntrada]||${dados}[DataSaida]||${dados}[DataEntradaAnestesia]||${dados}[DataSaidaAnestesia]||${dados}[DataEntradaCirurgia]||${dados}[DataSaidaCirurgia]||${dados}[DataEntradaLimpeza]||${dados}[DataSaidaLimpeza]||${dados}[ASA]||${dados}[CentroCirurgico]||${dados}[SalaCirurgica]||${dados}[EquipeMedica]||${dados}[CIDPre]||${dados}[CIDPos]|
     Cirurgia|${dados}[SubGrupoCirurgia]||${dados}[GrupoDeCirurgias]||${dados}[Cirurgia]||${dados}[PotencialDeContaminacao]||${dados}[Lateralidade]||${dados}[PrestadorCirurgiao]||${dados}[AtividadeMedica]|
-    Validacao dos Dados 
-
+    Validacao dos Dados
