@@ -10,22 +10,26 @@ Resource    ../6-CONTROLADORIA/M_PREST_CONTAS_STEPS.robot
 *** Variable ***
 
 *** Keywords ***
-Escolha o motivo da solicitacao
+Escolha o motivo da solicitacao |${Configuracao}| |${Motivo}|
+    Preencher Campo                  ${CampoMenu}                      ${Configuracao}
+    Click no Item                    ${BtnAcessar} 
     Click no Item                    ${BtnMotivo}    
-    Preencher Campo                  ${CampoMotivo}                    1
+    Preencher Campo                  ${CampoMotivo}                    ${Motivo}
     Click no Item                    ${BtnFiltro} 
     Click no Item                    ${BtnOk}  
 
-Escolha o destino da solicitacao
-    Preencher Campo                  ${CampoSolicitacao}                111
+Escolha o destino da solicitacao |${Solicitacao}|
+    Preencher Campo                  ${CampoSolicitacao}                ${Solicitacao}
 
-Escolha a origem da solicitacao
-    Preencher Campo                  ${CampoOrigem}                     1
+Escolha a origem da solicitacao |${Origem}|
+    Preencher Campo                  ${CampoOrigem}                     ${Origem}
 
-Preencha o atendimento     
-    Preencher Campo                  ${CampoPaciente}                   631909    
-    Preencher Campo                  ${CampoAtendimento}                1000001747
+Preencha o atendimento |${Paciente}| |${Atendimento}|
+    Preencher Campo                  ${CampoPaciente}                   ${Paciente}  
+    Preencher Campo                  ${CampoAtendimento}                ${Atendimento}
+    Send Keys                           enter
     Click no Item                    ${BtnSim} 
 
-Clicar em Salvar
+Clicar em Salvar |${MsgVerificada}|
     Click Elemento por titulo        Salvar
+    Validar Informacao Item          ${MsgLida}                        ${MsgVerificada}   

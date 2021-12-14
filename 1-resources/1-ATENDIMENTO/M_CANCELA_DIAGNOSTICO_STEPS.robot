@@ -29,6 +29,6 @@ Preencher Atendimento |${Atendimento}|
 Confirmar Cancelamento de Diagnostico |${MensagemRecebida}|
     Click no Item                           ${BotaoConfirmarDiag}                
     Click no Item                           ${BotaoConfSim} 
-    Valida Mensagem                         ${MensagemToast}                ${MensagemRecebida}
+    Valida Mensagem                         ${MensagemToast}                ${MensagemRecebida} 
 
 

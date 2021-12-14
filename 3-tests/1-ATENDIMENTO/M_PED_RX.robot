@@ -14,13 +14,15 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/1-ATENDIMENTO/M_PED_RX_STEPS.robot
+Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
+Resource            ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot 
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-Test Teardown       Encerra sessao
+#Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -34,6 +36,7 @@ SRC1AMPEDRX-001:Fluxo principal
 # robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
     #Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedidos de Exames Imagem"@nprint @las
+    Confirmacao Diagnostico1               ####   Keyword para validar pré requisito do teste   ###
     Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @las
     Preencher atendimento |${dados}[Atendimento]|
     Escolha o medico solicitante |${dados}[Medico]|
