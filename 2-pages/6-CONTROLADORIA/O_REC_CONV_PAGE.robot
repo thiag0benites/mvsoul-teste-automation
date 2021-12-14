@@ -11,8 +11,8 @@ Resource    ../../Config.robot
 ### Campos ###
 ${campoFiltro}                   xpath=//input[@id="#filterLov"]
 ${campoNrDocumento}              xpath=//input[@id="inp:nrDocumento"]
-${campoDtRecebimento}            xpath=//input[@id="inp:dtRecebimento"]
-${campoReceb}                    xpath=//*[@id='#frames431']
+${campoDtRecebimento}            xpath=//input[@id="inp:dtRecebimento"][@name='dtRecebimento']
+${campoReceb}                    xpath=//input[@class='editor-text mode-edit']
 ${campoNrRef}                    xpath=//input[@id="inp:nrIdNotaFiscal"]
 
 
@@ -30,5 +30,5 @@ ${btnEfetuarReceb}               xpath=//button[@id="btnConfirma"]
 ${empresaValidada}               xpath=//span[contains(@title, "5 - HOSPITAL MV - MATRIZ")]
 ${convenioFiltrado}              xpath=//div[@data-member='DSP_NM_CONVENIO']
 ${contaCorrenteFiltrada}         xpath=//div[@title='ITAU HOBRA - 5']
-${clickReceb}                    xpath=//div[@aria-labelledby='slickgrid_551070PAGE_CONTA_NOTA_FISCAL_grdContas_col6_lbl']//div[@data-rowid='MORPHIS.FOUNDATIONS.1ca95e92-f0cc-484b-8257-5fa4b71031fd']
+${clickReceb}                    xpath=//*[@data-member='VL_RECEBIMENTO']/..
 

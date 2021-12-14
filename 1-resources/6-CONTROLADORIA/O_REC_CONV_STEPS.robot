@@ -10,13 +10,13 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_REC_CONV_PAG
 
 *** Keywords ***
 Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${CampoEmpresa}|
-    Wait Until Element Is Visible                           ${empresaValidada}    60
-    Element Should Be Visible                               ${empresaValidada}
+    Wait Until Element Is Visible                          ${empresaValidada}
+    Element Should Be Visible                              ${empresaValidada}
     #Clicar Botao se estiver Visivel                        ${btnEmpresa}
     #Selecionar Item Na Lista                                ${btnEmpresa}   ${CampoEmpresa}    ${CampoEmpresa}
     #Click no Item                                          ${empresaFiltrada}
     #Clicar Botao se estiver Visivel                        ${btnOk}
-Selecionar Convenio e Deixar o Sistema em Modo de Pesquisa |${CampoConvenio}||${NrReferencia}|
+Selecionar Convenio e Colocar o Sistema em Modo de Pesquisa |${CampoConvenio}| |${NrReferencia}|
     Clicar Botao se estiver Visivel                        ${btnConvenio}
     Clicar no Campo e Preencher Informacao                 ${campoFiltro}    ${campoFiltro}    ${CampoConvenio}
     Clicar Botao se estiver Visivel                        ${btnFiltrar}
@@ -25,6 +25,7 @@ Selecionar Convenio e Deixar o Sistema em Modo de Pesquisa |${CampoConvenio}||${
     Clicar no Campo e Preencher Informacao                 ${campoNrRef}    ${campoNrRef}    ${NrReferencia}
     Clicar Botao se estiver Visivel                        ${btnExecutarConsulta}
 Alterar a Data do Recebimento |${DtRecebimento}|
+    Wait Until Element Is Visible                          ${campoDtRecebimento}
     Clicar no Campo e Preencher Informacao                 ${campoDtRecebimento}    ${campoDtRecebimento}    ${DtRecebimento}
 Informar o Numero do Documento |${NrDocumento}|
     Clicar no Campo e Preencher Informacao                 ${campoNrDocumento}    ${campoNrDocumento}    ${NrDocumento}
