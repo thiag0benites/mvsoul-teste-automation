@@ -38,5 +38,3 @@ SCR1AMINTHOCA-001:Fluxo Principal
     Preencher Informacoes do Atendimento do Paciente |${dados}[Paciente]| |${dados}[Origem]| |${dados}[Hora]| |${dados}[Medico]| |${dados}[HoraOpe]| |${dados}[Convenio]| |${dados}[Plano]| |${dados}[Procedimento]| |${dados}[CID]| |${dados}[TpInternacao]| |${dados}[TpAcomodacao]| |${dados}[Servico]|
     Preencher Dados Aba Conclusao |${dados}[Area]| |${dados}[MedicoIndicacao]| |${dados}[Enfermeira]| |${dados}[RespFinanceiro]|
     Salvar Internacao |${dados}[MensagemSucesso]|
-
-
