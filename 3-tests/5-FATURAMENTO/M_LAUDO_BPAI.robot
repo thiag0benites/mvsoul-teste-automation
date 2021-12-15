@@ -32,8 +32,8 @@ SCR5FMLAUDOBPAI-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR5FMLAUDOBPAI-001:Fluxo Principal" -d ./5-results/SCR5FMLAUDOBPAI-001 "3-tests/5-FATURAMENTO/M_LAUDO_BPAI.robot"
     #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMLAUDOBPAI-001"
     Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Lançamentos>BPA>Laudo BPA-I"@nprint @nao
-    Consulta de Contas AIH|${dados}[Prontuario]| 
-    
+    Identificacao do Paciente
+    Procedimentos Solicitados
 
 
 

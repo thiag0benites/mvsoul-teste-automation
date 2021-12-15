@@ -11,7 +11,7 @@ Resource                            ../../2-pages/5-FATURAMENTO/M_LAUDO_BPAI_PAG
 
 *** Keywords ***
 
-Consulta de Contas AIH|${Prontuario}|
+Identificacao do Paciente
     Wait Until Element Is Visible                         ${CampoCompetencia}                         180
     Preencher campo                                       ${CampoCompetencia}                         10/2017
     Send Keys                                             enter
@@ -31,12 +31,14 @@ Consulta de Contas AIH|${Prontuario}|
     Preencher campo                                       ${CampoPrestadorPrestadorResponsavel}       750
     Send Keys                                             enter
     Preencher campo                                       ${CampoEstabelecimento}                     1
-    Send Keys                                             enter    
+    Send Keys                                             enter 
+
+Procedimentos Solicitados       
     Preencher campo                                       ${CampoProcedimento}                        0206010052
     Send Keys                                             enter
     Preencher campo                                       ${CampoCid10}                               A011
     Click no Item                                         ${DivQuantidade}
     Preencher campo                                       ${CampoQuantidade}                          1
 
-
+Justificativa do Procedimento Solicitado
 

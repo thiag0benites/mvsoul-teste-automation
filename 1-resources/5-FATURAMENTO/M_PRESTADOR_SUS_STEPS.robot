@@ -12,13 +12,12 @@ Resource                            ../../2-pages/5-FATURAMENTO/M_PRESTADOR_SUS_
 
 *** Keywords ***
 
-Consulta de Contas AIH|${Prontuario}|
+Consulta de Contas AIH|${Prontuario}||${Paciente}|
     Wait Until Element Is Visible                         ${CampoProntuario}                         180
     Preencher campo                                       ${CampoProntuario}                         ${Prontuario}
     Click no Item                                         ${btnPesquisar}
-    Wait Until Element Is Visible                         ${NomePaciente}                            20
+    Validar Elemento Pelo Titulo                          ${Paciente}
     Click no Item                                         ${btnImprimir} 
-    Wait Until Element Is Visible                         ${btnSair}                                 20
     Click no Item                                         ${btnSair} 
 
 

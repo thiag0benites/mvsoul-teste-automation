@@ -31,8 +31,8 @@ SCR5FMPRESTADORSUS-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR5FMPRESTADORSUS-001:Fluxo Principal" -d ./5-results/SCR5FMPRESTADORSUS-001 "3-tests/5-FATURAMENTO/M_PRESTADOR_SUS.robot"
 # robot -v browser:firefox -t "SCR5FMPRESTADORSUS-001:Fluxo Principal" -d ./5-results/SCR5FMPRESTADORSUS-001 "3-tests/5-FATURAMENTO/M_PRESTADOR_SUS.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMPRESTADORSUS-001"
-    Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Lançamentos>BPA>Laudo BPA-I"@nprint @nao
-    Consulta de Contas AIH|${dados}[Prontuario]| 
+    Acessar a tela "Faturamento>Faturamento de Internação SUS (AIH)>Consultas>Contas"@nprint @nao
+    Consulta de Contas AIH|${dados}[Prontuario]||${dados}[Paciente]| 
     
 
 

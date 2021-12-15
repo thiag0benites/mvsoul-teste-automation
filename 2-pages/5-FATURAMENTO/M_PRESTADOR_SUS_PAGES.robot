@@ -22,7 +22,7 @@ ${DivDataEntrega}                        xpath=//div[@data-member="DT_ENTREGA_DA
 
 ### Botoes ###
 ${btnPesquisar}                          xpath=//button[@data-member="BT_ABRE_PESQUISA"]
-${btnImprimir}                           xpath=//button[@data-member="BTN_IMPRIME"][contains(text(),"Imprimir")]
+${btnImprimir}                           xpath=//button[@id="btnImprime"]
 ${btnSair}                               xpath=//button[@data-member="BTN_SAIR"]
 
 
@@ -34,7 +34,7 @@ ${btnSair}                               xpath=//button[@data-member="BTN_SAIR"]
 
 
 ${Alerta}                                xpath=//p[@class="notifications-item-text"]
-${NomePaciente}                          xpath=//input[@id="inp:nmPaciente"][@title="EMILLY DOS SANTOS MOTTA"]
+
 
 
 
