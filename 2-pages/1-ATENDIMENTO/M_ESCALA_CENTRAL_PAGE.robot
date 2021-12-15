@@ -17,9 +17,9 @@ ${ComboboxDinamica}                 xpath=//div[@id="snAgendaDinamica"]/input
 ${CampoSetor}                       xpath=//input[@id="inp:cdSetor"]
 
 ### Botoes ###
-${BtnOk}                                xpath=//li[@class='notification-buttons']/button
-${BtnSalvar}                            xpath=//li[@id='tb-record-save']
-${BtnComboBoxDinamica}                  xapth=//div[@id="snAgendaDinamica"]
+${BtnOk}                            xpath=//li[@class='notification-buttons']/button
+${BtnSalvar}                        xpath=//li[@id='tb-record-save']
+${BtnComboBoxDinamica}              xapth=//div[@id="snAgendaDinamica"]
 
 ### Diversos ###
-${Alerta}                        xpath=//div[@class="notifications-item-body notification-item-no-title"]/p                
+${Alerta}                           xpath=//div[@class="notifications-item-body notification-item-no-title"]/p                
