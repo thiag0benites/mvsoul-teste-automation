@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource          ../../1-resources/1-ATENDIMENTO/M_ABERTURA_CIRURGIA_STEPS.robot
+Resource          ../../1-resources/1-ATENDIMENTO/M_GRU_IT_CHE_AVI_CIR_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
@@ -22,17 +22,17 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_laudo_bpai
+${suite}          m_gru_it_che_avi_cir
  # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR1AMABERTURACIRURGIA-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR1AMABERTURACIRURGIA-001:Fluxo Principal" -d ./5-results/SCR1AMABERTURACIRURGIA-001 "3-tests/1-ATENDIMENTO/M_ABERTURA_CIRURGIA.robot"
-# robot -v browser:firefox -t "SCR1AMABERTURACIRURGIA-001:Fluxo Principal" -d ./5-results/SCR1AMABERTURACIRURGIA-001 "3-tests/1-ATENDIMENTO/M_ABERTURA_CIRURGIA.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMABERTURACIRURGIA-001"
-    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Lançamentos>Abertura de Cirurgia"@nprint @nao
-    
+SCR1AMGRUITCHEAVICIR-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR1AMGRUITCHEAVICIR-001:Fluxo Principal" -d ./5-results/SCR1AMGRUITCHEAVICIR-001 "3-tests/1-ATENDIMENTO/M_GRU_IT_CHE_AVI_CIR.robot"
+# robot -v browser:firefox -t "SCR1AMGRUITCHEAVICIR-001:Fluxo Principal" -d ./5-results/SCR1AMGRUITCHEAVICIR-001 "3-tests/1-ATENDIMENTO/M_GRU_IT_CHE_AVI_CIR.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMGRUITCHEAVICIR-001"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Lançamentos>Conferencia de Itens de Checagem"@nprint @nao
+    Conferencia de Itens de Checagem|${dados}[MsgEsperada]|
 
 
 
