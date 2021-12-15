@@ -34,8 +34,7 @@ SCR1AMCIRURGIA-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMCIRURGIA-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Tabelas>Cirurgia"@nprint @las
     Validar Acesso a Tela |Cirurgia|
-    
     Preencher Descricao, Porte e Subgrupo |${dados}[Descricao]| |${dados}[Porte]| |${dados}[Subgrupo]|
     Preencher Procedimentos e via de Acesso |${dados}[Procedimento]| |${dados}[ProcedimentoSIH]| |${dados}[ProcedimentoSIA]| |${dados}[Via]|
     Preencher Orientacao e Preparo |${dados}[Orientacao]| |${dados}[Preparo]|
-    Salvar e Validar |${dados}[MsgSalva]| 
+    Salvar e Validar |${dados}[MsgSalva]|
