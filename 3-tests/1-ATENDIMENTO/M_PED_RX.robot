@@ -15,7 +15,7 @@
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/1-ATENDIMENTO/M_PED_RX_STEPS.robot
 Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
-Resource            ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot 
+ 
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -31,7 +31,7 @@ ${suite}            m_ped_rx
 ${dados}
 
 *** Test Case ***
-SRC1AMPEDRX-001:Fluxo principal
+SRC1AMPEDRX-001:Fluxo principal 
 # robot -v browser:chrome -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 # robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"

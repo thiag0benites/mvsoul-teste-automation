@@ -31,7 +31,7 @@ Preencher Campos Obrigatórios |${CID}| |${TpDoenca}| |${TempoDoenca}| |${DiasDo
 
 Confirmar Diagnostico |${MensagemRecebidaProcesso}| |${MensagemRecebidaConfirmacao}| 
     Click no Item                           ${BotaoConfirmarDiag}
-    Valida Mensagem                         ${MensagemToast}                ${MensagemRecebidaProcesso}
+    Validar Informacao Item                 ${MensagemToast}                ${MensagemRecebidaProcesso}
     Click no Item                           ${BotaoOk} 
     Valida Mensagem                         ${MensagemToast}                ${MensagemRecebidaConfirmacao}            
     Click Elemento Por Titulo               Sair      

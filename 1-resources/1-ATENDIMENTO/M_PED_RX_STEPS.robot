@@ -13,11 +13,11 @@ Resource          ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords ***
 ####   Keyword para validar pré requisito do teste   ###
-Confirmacao Diagnostico1
+Confirmacao Diagnostico1 
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Confirmação"@nprint @las
     Validar Acesso a Tela |Diagnóstico do Atendimento|
-    Preencher Campo Atendimento |1000002161|
-    Validar Dados Apos Selecao do Atendimento |1308645| |MARIA RITA| |CLINICA MEDICA HOBRA| |GEISHA ABREU SOARES DE PINA|
+    Preencher Campo Atendimento |1000002163|
+    Validar Dados Apos Selecao do Atendimento |1297010| |TESTE OAGENDA ADBR| |CLINICA MEDICA HOBRA| |PARTICULAR BRASILIA|
     Preencher Campos Obrigatórios |R100| |Aguda| |1| |Dias| |24| |Teste Descrição|
     Confirmar Diagnostico |Processo concluído com sucesso !| |Registros gravados com sucesso|
     Click Elemento Por Titulo              Sair
