@@ -38,7 +38,3 @@ SCR2AMTROPLA-001:Fluxo Principal
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Enfermagem>Ocorrência do Plantão"@nprint @las
     Preencher Dados da Ocorrencia |${dados}[UnidInternacao]| |${dados}[DtInicial]| |${dados}[DtFinal]| |${dados}[Leito]| |${dados}[Ocorrencia]| |${dados}[Descricao]|
     Imprimir Relatorio Ocorrencia de Plantao
-
-
-
-

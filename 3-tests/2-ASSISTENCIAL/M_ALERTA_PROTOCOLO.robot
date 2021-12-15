@@ -41,8 +41,3 @@ SCR2AMALERTAPROTOCOLO-001:Fluxo Principal
     Salvar Protocolo
     # Retornar massa de dados para status inicial do teste
     Alterar Dados Cadastrados |${dados}[DescricaoAltera]| |${dados}[SiglaAltera]|
-    
-    
-
-
-

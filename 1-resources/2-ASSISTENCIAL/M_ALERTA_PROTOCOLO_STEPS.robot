@@ -5,14 +5,14 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/2-ASSISTENCIAL/M_ALERTA_PROTOCOLO_PAGE.robot
-Resource    M_USUUNID_STEPS.robot
+Resource          M_USUUNID_STEPS.robot
 
 *** Variable ***
 
 *** Keywords ***
 Preencher Dados Protocolo |${Descricao}| |${MensagemAlerta}| |${EtapaProtocolo}| |${Ordem}|
-    Wait Until Element Is Visible    ${CampoDescricao}       180
-    Preencher Campo            ${CampoDescricao}             ${Descricao}
+    Wait Until Element Is Visible    ${CampoDescricao}    180
+    Preencher Campo    ${CampoDescricao}    ${Descricao}
     Marcar Checkbox |${CbFinalizarAfericao}|
     Marcar Checkbox |${CbFinalizarDocumento}|
     Marcar Checkbox |${CbHistoricoEnfermagem}|
@@ -21,26 +21,26 @@ Preencher Dados Protocolo |${Descricao}| |${MensagemAlerta}| |${EtapaProtocolo}|
     Marcar Checkbox |${CbAvaliacaoScore}|
     Marcar Checkbox |${CbTransferirLeito}|
     Marcar Checkbox |${CbPrescricao}|
-    Preencher campo Alerta                   ${CampoMensagemAlerta}         ${MensagemAlerta}
-    Clicar Item e Selecionar da Lista         ${CampoEtapaProtocolo}    ${BotaoLovEdit}     ${EtapaProtocolo}      ${EtapaProtocolo}
-    Clicar no Campo e Preencher Informacao    ${CampoOrdem}     ${CampoOrdemEdit}     ${Ordem}
+    Preencher campo Alerta    ${CampoMensagemAlerta}    ${MensagemAlerta}
+    Clicar Item e Selecionar da Lista    ${CampoEtapaProtocolo}    ${BotaoLovEdit}    ${EtapaProtocolo}    ${EtapaProtocolo}
+    Clicar no Campo e Preencher Informacao    ${CampoOrdem}    ${CampoOrdemEdit}    ${Ordem}
 
 Preencher Dados Alerta |${Sigla}| |${Criticidade}| |${CriterioEvento}| |${TpEntrada}| |${Documento}|
     Marcar Checkbox |${CbHabilitaVisualizacao}|
-    Preencher Campo            ${CampoSigla}                ${Sigla}
-    Click no Item              ${BotaoCor} 
-    Click no Item              ${CorVermelho} 
-    Selecionar Item Na Lista   ${BotaoLovCriticidade}       ${Criticidade}          ${Criticidade}
-    Selecionar Item Na Lista   ${BotaoLovCriterioEvento}    ${CriterioEvento}       ${CriterioEvento}
-    Preencher Campo            ${CampoTpEntrada}            ${TpEntrada}
+    Preencher Campo    ${CampoSigla}    ${Sigla}
+    Click no Item    ${BotaoCor}
+    Click no Item    ${CorVermelho}
+    Selecionar Item Na Lista    ${BotaoLovCriticidade}    ${Criticidade}    ${Criticidade}
+    Selecionar Item Na Lista    ${BotaoLovCriterioEvento}    ${CriterioEvento}    ${CriterioEvento}
+    Preencher Campo    ${CampoTpEntrada}    ${TpEntrada}
     Send Keys    tab
-    Selecionar Item Na Lista   ${BotaoLovDocumento}         ${Documento}            ${Documento}
+    Selecionar Item Na Lista    ${BotaoLovDocumento}    ${Documento}    ${Documento}
 
 Salvar Protocolo
-    Click no Item                    ${CampoDescricao} 
-    Click Elemento por titulo        Salvar
-    Wait Until Element Is Visible    ${CampoCdProtocolo}        20
-    ${RecebeCdProtocolo}             Get Element Attribute      ${CampoCdProtocolo}    title
+    Click no Item    ${CampoDescricao}
+    Click Elemento por titulo    Salvar
+    Wait Until Element Is Visible    ${CampoCdProtocolo}    20
+    ${RecebeCdProtocolo}    Get Element Attribute    ${CampoCdProtocolo}    title
     Altera massa de dados da "m_alerta_protocolo", linha "1", coluna "CdProtocolo", valor "${RecebeCdProtocolo}"
 
 Preencher campo Alerta
@@ -69,12 +69,10 @@ Preencher campo Alerta
             END
         END
     END
-
 ### Keyword para retornar massa de dados para stataus inicial do teste ###
+
 Alterar Dados Cadastrados |${Descricao}| |${Sigla}|
-    Preencher Campo              ${CampoDescricao}             ${Descricao}
-    Preencher Campo              ${CampoSigla}                 ${Sigla}
+    Preencher Campo    ${CampoDescricao}    ${Descricao}
+    Preencher Campo    ${CampoSigla}    ${Sigla}
     Click Elemento por titulo    Salvar
-    Wait Until Element Is Visible    ${MensagemToast}          20  
-
-
+    Wait Until Element Is Visible    ${MensagemToast}    20
