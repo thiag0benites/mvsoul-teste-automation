@@ -34,10 +34,3 @@ SCR5FMPREREMESSAFFCV-001:Fluxo Principal
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Lançamentos>Conta Ambulatorial>Pre Remessa"@nprint @nao
     Controle de Pre-Remessa Ambulatorial|${dados}[Convenio]||${dados}[Agrupamento]||${dados}[DataFechamento]||${dados}[DataEntrega]|
     Validacao dos dados e queima da massa|${dados}[MsgEsperada1]||${dados}[ValorStatus]||${dados}[MsgEsperada2]|
-
-
-
-
-
-
-
