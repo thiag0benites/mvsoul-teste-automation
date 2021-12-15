@@ -13,5 +13,5 @@ Preencher parametros de pesquisa |${Codigo}||${TituloValidacao}|
     Clicar no Campo e Preencher Informacao    ${campoCod}        ${campoCod}    ${Codigo}
     Click no Item                             ${btnPesquisar}
     Click no Item                             ${btnOk}
-    Validar Elemento Pelo Titulo              ${TituloValidacao}
+    Should Not Be Empty                       ${CampoColoaborador}        
 

@@ -14,6 +14,6 @@ ${campoCod}                     xpath=//input[@id="inp:cdSolicitacaoCme"]
 ### Botoes ###
 ${btnPesquisar}                 xpath=//button[@id="btnPesquisar"]
 ${btnOk}                        xpath=//li[@class='notification-buttons']/button
-${TituloValidacao}              43025
+${CampoColoaborador}            xpath=//div[@class="ui-text ui-state-readonly"][@data-member="CD_USUARIO_ENTRADA"]
 
 ### Diversos ###
