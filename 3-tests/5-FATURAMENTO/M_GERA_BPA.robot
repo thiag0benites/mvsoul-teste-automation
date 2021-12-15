@@ -1,6 +1,6 @@
 #################################################################################################################################################################
 # Autor: Marcos Costa
-# Descrição: Configurar e centralizar as parametrizações do processo da nota fiscal.
+# Descrição: Realizar a Exportação Aba Remessa BPA
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -t "SCR5FMGERABPAF001:Fluxo Principal" -d ./5-results/SCR5FMGERABPAF001 "3-tests/5-FATURAMENTO/M_GERA_BPA.robot"
@@ -22,16 +22,15 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}         m_gera_bpa
+${suite}         m_gera_bpa
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 # Video - SMF-10373
 SCR5FMGERABPAF001:Fluxo Principal
     # robot -v browser:chrome -t "SCR5FMGERABPAF001:Fluxo Principal" -d ./5-results/SCR5FMGERABPAF001 "3-tests/5-FATURAMENTO/M_GERA_BPA.robot"
     # robot -v browser:firefox -t "SCR5FMGERABPAF001:Fluxo Principal" -d ./5-results/SCR5FMGERABPAF001 "3-tests/5-FATURAMENTO/M_GERA_BPA.robot"
-    # ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMGERABPAF001"
+    ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMGERABPAF001"
     Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Faturamento>Exportação BPA(Nova)"@nprint @las
-    Validar Checkbox de Solicitacao Marcado 
-    Clicar Salvar |${dados}[Salvar]|
+    Informa na Tela Exportacao Producao BPA <Competencia> |${dados}[Comp]| <Remessa> |${dados}[Rem]| <Tp Consi> |${dados}[TpCons]| Msg1 |${dados}[MsgConsis]| Msg2 |${dados}[MsgFechar]|
