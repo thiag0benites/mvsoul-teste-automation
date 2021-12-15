@@ -34,4 +34,3 @@ SCR1MTROCPAC-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1MTROCPAC-001"
     Acessar a tela "Atendimento>Internação Domiciliar (Home Care)>Tabelas>Transferência de Dados de Paciente"@print @las
     Preencher Paciente de Origem|${dados}[PacienteOrigem]|, Destino|${dados}[PacienteDestino]| e Validar Informacoes |${dados}[MsgUsuConf]|, |${dados}[MsgExcPac]|, |${dados}[MsgConTrans]|
-    
