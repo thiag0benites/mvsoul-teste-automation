@@ -14,4 +14,3 @@ Preencher parametros de pesquisa |${Codigo}||${TituloValidacao}|
     Click no Item                             ${btnPesquisar}
     Click no Item                             ${btnOk}
     Validar Elemento Pelo Titulo              ${TituloValidacao}
-

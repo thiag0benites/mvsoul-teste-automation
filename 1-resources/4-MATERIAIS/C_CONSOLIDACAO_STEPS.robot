@@ -12,7 +12,5 @@ Resource          ../../2-pages/4-MATERIAIS/C_CONSOLIDACAO_PAGE.robot
 Preencher parametros de pesquisa |${DataInicial}||${Produto}|
     Clicar no Campo e Preencher Informacao    ${CampoDataInicial}    ${CampoDataInicial}    ${DataInicial}
     Clicar no Campo e Preencher Informacao    ${CampoProduto}    ${CampoProduto}    ${Produto}
-    Click no Item                             ${BtnExePesq}
-    Should not be EMPTY                       ${CampoDescricao}
-    
-  
+    Click no Item    ${BtnExePesq}
+    Should not be EMPTY    ${CampoDescricao}
