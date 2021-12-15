@@ -25,15 +25,15 @@ Test Teardown       Encerra sessao
 *** Variable ***    
 
 # Suite registrada no gerenciador de dados
-#${suite}            
+${suite}          m_escala_central  
 # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR1AMLESCALACENTRAL-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AMLESCALACENTRAL-001:Fluxo Principal" -d ./5-results/SCR1AMLESCALACENTRAL-001 "3-tests/1-ATENDIMENTO/M_ESCALA_CENTRAL.robot"
 # robot -v browser:firefox -t "SCR1AMLESCALACENTRAL-001:Fluxo Principal" -d ./5-results/SCR1AMLESCALACENTRAL-001 "3-tests/1-ATENDIMENTO/M_ESCALA_CENTRAL.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMLESCALACENTRAL-001"
-     Acessar a tela "Atendimento>Central de Agendamento>Tabelas>Cadastro de Escalas"@nprint @nao
-     Cadastro de Escalas
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMLESCALACENTRAL-001"
+    Acessar a tela "Atendimento>Central de Agendamento>Tabelas>Cadastro de Escalas"@nprint @nao
+    Cadastro de Escalas |${dados}[Prestador]||${dados}[HoraInicial]||${dados}[HoraFinal]||${dados}[DiaSemana]||${dados}[Dinamica]||${dados}[Setor]||${dados}[MsgEsperada]|
     

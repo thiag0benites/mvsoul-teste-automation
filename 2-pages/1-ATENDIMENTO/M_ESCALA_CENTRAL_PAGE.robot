@@ -32,5 +32,4 @@ ${BtnComboBoxDinamica}                  xapth=//div[@id="snAgendaDinamica"]
 
 
 ### Diversos ###
-${Alerta}                        xpath=//div[@class="notifications-item-body notification-item-no-title"]/p      
-$                
+${Alerta}                        xpath=//div[@class="notifications-item-body notification-item-no-title"]/p                
