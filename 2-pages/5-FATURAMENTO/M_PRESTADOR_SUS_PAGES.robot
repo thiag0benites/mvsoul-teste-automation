@@ -11,14 +11,8 @@ Resource    ../../Config.robot
 ### Campos ###
 
 
-${CampoEmEdicao}                         xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/input
-${CampoDataFechamentoEntrega}          xpath=//input[@class="ui-widget-content ui-buttoninput ui-corner-left"][@row="0"]
-${CampoStatus}                           xpath=//div[@data-member="DS_STATUS"][@data-row="0"][@title="ABERTA"]
+${CampoProntuario}                       xpath=//input[@id="inp:idPaciente"]
 
-
-
-
-${DivDataFechamento}                     xpath=//div[@data-member="DT_FECHAMENTO"]/..
 ${DivDataEntrega}                        xpath=//div[@data-member="DT_ENTREGA_DA_FATURA"][@data-row="0"]/..
 
 
@@ -27,9 +21,9 @@ ${DivDataEntrega}                        xpath=//div[@data-member="DT_ENTREGA_DA
 
 
 ### Botoes ###
-${btnAdicionar}                          xpath=//a[@title="Adicionar"]
-${btnSalvar}                             xpath=//a[@title="Salvar"]
-${btnApagar}                             xpath=//a[@title="Apagar"]
+${btnPesquisar}                          xpath=//button[@data-member="BT_ABRE_PESQUISA"]
+${btnImprimir}                           xpath=//button[@data-member="BTN_IMPRIME"][contains(text(),"Imprimir")]
+${btnSair}                               xpath=//button[@data-member="BTN_SAIR"]
 
 
 
@@ -40,7 +34,7 @@ ${btnApagar}                             xpath=//a[@title="Apagar"]
 
 
 ${Alerta}                                xpath=//p[@class="notifications-item-text"]
-${AlertaDeletaLinha}                     xpath=//p[@class="notifications-item-text"][contains(text(),"Nenhum registro foi recuperado")]
+${NomePaciente}                          xpath=//input[@id="inp:nmPaciente"][@title="EMILLY DOS SANTOS MOTTA"]
 
 
 
