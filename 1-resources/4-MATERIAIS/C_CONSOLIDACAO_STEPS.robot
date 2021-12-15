@@ -13,4 +13,6 @@ Preencher parametros de pesquisa |${DataInicial}||${Produto}|
     Clicar no Campo e Preencher Informacao    ${CampoDataInicial}    ${CampoDataInicial}    ${DataInicial}
     Clicar no Campo e Preencher Informacao    ${CampoProduto}    ${CampoProduto}    ${Produto}
     Click no Item                             ${BtnExePesq}
-    Validar Elemento Pelo Titulo              ALMOXARIFADO
+    Should not be EMPTY                       ${CampoDescricao}
+    
+  

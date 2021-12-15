@@ -14,11 +14,15 @@ ${campoEstabSolocitante}           xpath=//input[@id="inp:cdEstabelecimento"]
 ${campoC.A}                        xpath=//input[@id="inp:cdCaraterAtendimento"]
 ${campoEspecialidade}              xpath=//input[@id="inp:cdEspecSus"]
 ${campoMedResp}                    xpath=//input[@id="inp:cdPrestador"]
-${campoCID}                        xpath=//input[@id="inp:cdCidSecundario"]
+${campoCidPrincipal}               xpath=//input[@id="inp:cdCidPrincipal"]
+${campoCIDSecundario}              xpath=//input[@id="inp:cdCidSecundario"]
 ${campoCIDAssoc}                   xpath=//input[@id="inp:cdCidCausasAssociadas"]
 ${campoSintomas}                   xpath=//textarea[@id="inp:dsSinaisSintClinicos"]
 ${campoJustfIntern}                xpath=//textarea[@id="inp:dsCondJustInternacao"]
 ${campoProvasDiag}                 xpath=//textarea[@id="inp:dsResultProvDiag"]
+${campoNomePaciente}               xpath=//div[@data-member="NM_PACIENTE"]/span
+
+
 
 
 
@@ -28,10 +32,11 @@ ${BtnOk}                                xpath=//li[@class='notification-buttons'
 ${BtnSalvar}                            xpath=//li[@id='tb-record-save']
 ${BtnImprimeLaudo}                      xpath=//button[@id="butImprime"]
 ${BtnImprimir}                          xpath=//button[@data-member="BTN_IMPRIMIR"]
+${BtnSair}                              xpath=//button[@data-member="BTN_SAIR"]
 
 
 
 
 
 ### Diversos ###
-${Alerta}                        xpath=//div[@class="notifications-item-body notification-item-no-title"]/p                              
+${Alerta}                        xpath=//div[@class="notifications-item-body notification-item-no-title"]/p                      

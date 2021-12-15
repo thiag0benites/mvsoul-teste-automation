@@ -15,4 +15,5 @@ ${BtnOk}               xpath=//li[@class='notification-buttons']/button
 ${BtnProduto}          xpath=//div[@data-member="CD_PRODUTO"]/button
 ${BtnSimPopUp}         xpath=//li[@class="notification-buttons"]/button[contains(text(),"Sim")]
 ${BtnExePesq}          xpath=//li[@id="tb-execute"]/a[@data-action="EXECUTE_QUERY"]
+${CampoDescricao}      xpath=//div[@id="dsProduto"]/input
 ### Diversos ###
