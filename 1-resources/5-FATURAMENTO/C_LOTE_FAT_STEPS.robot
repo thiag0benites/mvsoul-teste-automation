@@ -10,17 +10,15 @@ Resource          ../../2-pages/5-FATURAMENTO/C_LOTE_FAT_PAGE.robot
 
 *** Keywords ***
 Preencher os campos da tabela |${convenio}|,|${descricao}|,|${competencia}|
-    Click no Item      ${campoConvenioLoteFatInput}
-    Preencher campo    ${campoConvenioLoteFatInput}         ${convenio}
+    Click no Item    ${campoConvenioLoteFatInput}
+    Preencher campo    ${campoConvenioLoteFatInput}    ${convenio}
     Sleep    1
-    
-    Click no Item      ${campoDescricaoLoteFat}
-    Preencher campo    ${campoDescricaoLoteFatInput}        ${descricao}
+    Click no Item    ${campoDescricaoLoteFat}
+    Preencher campo    ${campoDescricaoLoteFatInput}    ${descricao}
     Sleep    1
-
-    Click no Item      ${campoCompetenciaLoteFat}
+    Click no Item    ${campoCompetenciaLoteFat}
     Sleep    1
-    Preencher campo    ${campoCompetenciaLoteFatInput}      ${competencia}
+    Preencher campo    ${campoCompetenciaLoteFatInput}    ${competencia}
     Sleep    1
 
 Preencher a data de abertura na tabela |${dataAbertura}|
@@ -32,4 +30,4 @@ Clicar no botao Salvar da tela de faturas e remessas
     Click no Item    ${btnSalvarLoteFat}
 
 Validar Mensagem |${mensagem}|
-    Valida Mensagem         ${ElementoMsgRecebida}           ${mensagem}
+    Valida Mensagem    ${ElementoMsgRecebida}    ${mensagem}

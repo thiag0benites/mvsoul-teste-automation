@@ -20,7 +20,7 @@ Resource            ../../1-resources/5-FATURAMENTO/M_PROC_SUS_CONSULTA_STEPS.ro
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
