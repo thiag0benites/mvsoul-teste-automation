@@ -45,5 +45,3 @@ SCR6CMEMPFIN-001:Fluxo Principal
     Preencher Dados Aba Livro ISS DF |${dados}[NomeTecnico]|
     Acessar Aba Substituicao
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
-    Sleep  5
-
