@@ -33,11 +33,3 @@ SCR5FMPRESTADORSUS-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMPRESTADORSUS-001"
     Acessar a tela "Faturamento>Faturamento de Internação SUS (AIH)>Consultas>Contas"@nprint @nao
     Consulta de Contas AIH|${dados}[Prontuario]||${dados}[Paciente]| 
-    
-
-
-
-
-
-
-

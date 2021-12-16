@@ -18,6 +18,3 @@ Descricao do Documento |${MsgEsperada}||${Codigo}||${Titulo}|
     Preencher campo                                ${CampoCodigo}        ${Codigo}
     Click no Item                                  ${BtnExecutar} 
     Validar Elemento Pelo Titulo                   ${Titulo}
-
-
-

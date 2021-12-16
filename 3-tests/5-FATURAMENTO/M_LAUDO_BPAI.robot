@@ -35,10 +35,3 @@ SCR5FMLAUDOBPAI-001:Fluxo Principal
     Identificacao do Paciente|${dados}[Competencia]||${dados}[Atendimento]||${dados}[MensagemEsperada1]||${dados}[DataEmissao]||${dados}[DataRealizacao]||${dados}[Autorizador]||${dados}[PrestadorSolicitante]||${dados}[PrestadorResponsavel]||${dados}[Estabelecimento]|
     Procedimentos Solicitados|${dados}[Procedimento]||${dados}[Cid10]||${dados}[Quantidade]|
     Justificativa do Procedimento Solicitado|${dados}[JustiDoProcedimento]||${dados}[ResumoAnamnese]||${dados}[MensagemEsperada2]|
-
-
-
-
-
-
-

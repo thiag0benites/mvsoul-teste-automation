@@ -4,33 +4,12 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-
 ### Campos ###
-
-
-
-
-
 ### Botoes ###
-${btnPesquisar}                          xpath=//button[@id="btnPesquisar"]
-${CheckBoxChecado}                       xpath=//button[@title="Checado"]
-
-
-
-
-
-
-
-
+${btnPesquisar}    xpath=//button[@id="btnPesquisar"]
+${CheckBoxChecado}    xpath=//button[@title="Checado"]
 ### Diversos ###
-
-
-${Alerta}                                xpath=//p[@class="notifications-item-text"]
-
-
-
-
-
+${Alerta}         xpath=//p[@class="notifications-item-text"]

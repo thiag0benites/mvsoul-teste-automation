@@ -33,10 +33,3 @@ SCR1AMGRUITCHEAVICIR-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMGRUITCHEAVICIR-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Lançamentos>Conferencia de Itens de Checagem"@nprint @nao
     Conferencia de Itens de Checagem|${dados}[MsgEsperada]|
-
-
-
-
-
-
-
