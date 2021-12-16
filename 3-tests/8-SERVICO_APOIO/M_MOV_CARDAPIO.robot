@@ -20,7 +20,7 @@ Resource            ../../1-resources/5-FATURAMENTO/M_REMESSAS_SUS_P321_STEPS.ro
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -34,4 +34,3 @@ SCR5FMREMESSASSUSP321-001:Fluxo principal
 # robot -v browser:firefox -t "SCR5FMREMESSASSUSP321-001:Fluxo principal" -d ./5-results/M_REMESSAS_SUS_P321 "3-tests/5-FATURAMENTO/M_REMESSAS_SUS_P321.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMREMESSASSUSP321-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-   
