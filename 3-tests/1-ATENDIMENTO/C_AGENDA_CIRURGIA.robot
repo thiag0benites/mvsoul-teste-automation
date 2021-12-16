@@ -46,7 +46,3 @@ SCR1ACAGENDACIRURGIA-001:Fluxo Principal
     Acessar Aba |FiltrarPediatria| ||
     Acessar Aba |FiltrarUTI| ||
     Acessar Aba |Observacao| ||
-
-
-
-

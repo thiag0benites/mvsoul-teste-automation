@@ -38,9 +38,3 @@ SCR1AMCONSULTAPACAGENDA-001:Fluxo Principal
     Pesquisar Paciente |${dados}[CdPaciente]|
     Validar Dados Paciente |${dados}[Paciente]| |${dados}[MaePaciente]| |${dados}[NascimentoPaciente]|
     Validar Detalhes |${dados}[Endereco]| |${dados}[Bairro]| |${dados}[Cidade]| |${dados}[Telefone]| |${dados}[Celular]|
-
-
-    
-
-
-

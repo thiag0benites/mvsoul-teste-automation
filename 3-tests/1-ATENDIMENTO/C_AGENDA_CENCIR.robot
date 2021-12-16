@@ -42,5 +42,3 @@ SCR1ACAGENDACENCIR-001:Fluxo Principal
     Validar Aba Cirurgia |${dados}[Cirurgia]|
     Validar Aba Equipamentos |${dados}[Equipamento1]| |${dados}[Equipamento2]|
     Validar Aba Tipo de Anestesia |${dados}[Anestesia]|
-
-
