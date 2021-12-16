@@ -42,15 +42,15 @@ SCR6COGERAPROG-001 : Fluxo Principal
     Selecionar na lov do campo tipo documento |${dados}[TipoDoc]|
     Selecionar na lov do campo Fornecedor |${dados}[Fornecedor]|
     Indicar no campo tipo de programacao da previsao |${dados}[Programacao]|
-    Selecionar no campo Contabilizar |${dados}[Contabilizar]|
-    Selecionar no campo Tp Prev Contab |${dados}[PrevisaoConta]|
-    Verificar a informacao contida no campo Tipo de Vencimento |${dados}[TipoVencimento]|
+    Selecionar no campo Contabilizar |${dados}[Contabilizar]| |${dados}[PrevisaoConta]| |${dados}[TipoVencimento]|
+    #Selecionar no campo Tp Prev Contab |${dados}[PrevisaoConta]|
+    #Verificar a informacao contida no campo Tipo de Vencimento |${dados}[TipoVencimento]|
     Selecionar no campo historico padrao |${dados}[Historico]|
-    Clicar no botao Previsao
+    Selecionar o botao Previsao
     Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
     Selecionar no campo Conta de Custo a conta de custo |${dados}[ContaCusto]|
     Informar no campo Valor Compartilhamento |${dados}[ValorCompartilha]|
-    Clicar no botao Gerar
+    Aperte no botao Gerar
     Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
 

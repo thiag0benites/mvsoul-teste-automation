@@ -42,29 +42,18 @@ Indicar no campo tipo de programacao da previsao |${Programacao}|
     Seleciona Item Combobox              ${ComboboxTipo}                        ${Programacao}
 
     
-Selecionar no campo Contabilizar |${Contabilizar}|
+Selecionar no campo Contabilizar |${Contabilizar}| |${PrevisaoConta}| |${TipoVencimento}|
     Seleciona Item Combobox              ${ItemContabilizar}                    ${Contabilizar}
 
-${Contabilizar} =  ${Sim}
-${Contabilizar} =  ${Não}
-    
   
-    # FOR    ${i}    IN RANGE    ${Contabilizar}  
-    #     ${random}=    Evaluate    random.randint(0, 10)
-    #     IF  ${Contabilizar} == ${Não} 
-    #     Pass Execution  "${Contabilizar} == ${Não}" 
-        
-    #     #Click no Item    ${TipoVencimento} 
-    #     #Seleciona Item Combobox  ${ItemVencimento} ${TipoVencimento}
-    #     Log To Console     ${TipoVencimento} 
-    #     ELSE IF    ${Contabilizar} == ${Sim}
-    #     Pass Execution  "${Contabilizar} == ${Sim}"
-    #     Log To Console    ${PrevisaoConta} 
-    #     END
-    # END
-
-    Run Keyword If  "${Contabilizar} == ${Não}"   log to console   \${TipoVencimento} 
-    Run Keyword If  '"${Contabilizar} == ${Sim}"  log to console  \${PrevisaoConta} 
+        IF  '${Contabilizar}' == 'Não'
+            Verificar a informacao contida no campo Tipo de Vencimento |${TipoVencimento}|
+                
+        ELSE IF    '${Contabilizar}' == 'Sim'
+            Selecionar no campo Tp Prev Contab |${PrevisaoConta}|
+            Verificar a informacao contida no campo Tipo de Vencimento |${TipoVencimento}|
+        END
+    
 Selecionar no campo Tp Prev Contab |${PrevisaoConta}|
     Seleciona Item Combobox              ${PrevisaoContab}                       ${PrevisaoConta}
 
@@ -75,7 +64,9 @@ Selecionar no campo historico padrao |${Historico}|
     Preencher campo                       ${CampoFiltroDoc}                      ${Historico}
     Click no Item                         ${BtnFiltro}                           
     Click no Item                         ${BtnOk}
-Clicar no botao Previsao
+    Sleep                                     3
+    
+Selecionar o botao Previsao
     Click no Item                         ${BtnPrevisao}
 Informar no bloco Compartilhamento das contas no campo Setor de Producao atraves da lov ou digitando o setor
     Click no Item                         ${LinhaSetor}  
@@ -92,7 +83,7 @@ Informar no campo Valor Compartilhamento |${ValorCompartilha}|
     Click no Item                          ${LinhaCompartilha}  
     Preencher campo                        ${CampoCompartilha}                     ${ValorCompartilha}
 
-Clicar no botao Gerar
+Aperte no botao Gerar
      Click no Item                          ${BtnGerar} 
      Sleep                                    3    
 
