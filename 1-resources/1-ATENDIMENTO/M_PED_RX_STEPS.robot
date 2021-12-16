@@ -6,22 +6,33 @@
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/1-ATENDIMENTO/M_PED_RX_PAGE.robot
 Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
-Resource          ../../2-pages/1-ATENDIMENTO/ATE_COMPL_PAGE.robot
-Resource          ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot
+
+
 
 *** Variable ***
 
 *** Keywords ***
 ####   Keyword para validar pré requisito do teste   ###
-Confirmacao Diagnostico1 
-    Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Confirmação"@nprint @las
-    Validar Acesso a Tela |Diagnóstico do Atendimento|
-    Preencher Campo Atendimento |1000002163|
-    Validar Dados Apos Selecao do Atendimento |1297010| |TESTE OAGENDA ADBR| |CLINICA MEDICA HOBRA| |PARTICULAR BRASILIA|
-    Preencher Campos Obrigatórios |R100| |Aguda| |1| |Dias| |24| |Teste Descrição|
-    Confirmar Diagnostico |Processo concluído com sucesso !| |Registros gravados com sucesso|
-    Click Elemento Por Titulo              Sair
-###    ===========================================   ###
+Criacao de atendimento
+    Validar Configuracao de Acesso a Tela           ## Keyword para configurar parâmetro de acesso a tela principal ##
+    Acessa a Tela Pela Busca |ATEURG||Atendimento| @no @las
+    #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
+    Validar Acesso a Tela |Atendimento de Urgência/Emergência|
+    Clicar Botao Paciente   
+    Pesquisar Pelo Paciente |ACACIA MARIA MAIA COSTA| |505146|
+    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |ORIGEM URGENCIA| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
+    Clicar Botao Carteira 
+    Validar Informacoes Carteira |999325208340007| |30/10/2023|
+    Confirmar Atendimento |Registro Salvo com Sucesso!|
+    
+    
+Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${MensagemSucesso}
+    ${protocolo}    Get Text    ${MensagemSucesso}    
+    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgValidada", valor "${protocolo}"
+    Sleep    3
+
 Preencher atendimento |${Atendimento}|
     Preencher Campo    ${CampoAtendimento}    ${Atendimento}
 

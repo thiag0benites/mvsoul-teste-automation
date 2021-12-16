@@ -40,4 +40,4 @@ SCR1AMCANCELADIAGNOSTICO-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Atendimento |${dados}[NumAtendimento]|
     Validar Dados Apos Selecao do Atendimento |${dados}[CdPaciente]| |${dados}[NomePaciente]| |${dados}[UnidInternacao]| |${dados}[Prestador]|
-    Confirmar Cancelamento de Diagnostico |${dados}[MensagemRecebida]|
+    Confirmar Cancelamento de Diagnostico |${dados}[MensagemRecebida]| 

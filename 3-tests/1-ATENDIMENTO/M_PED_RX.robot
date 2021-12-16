@@ -36,10 +36,11 @@ SRC1AMPEDRX-001:Fluxo principal
 # robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
     #Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedidos de Exames Imagem"@nprint @las
-    Confirmacao Diagnostico1               ####   Keyword para validar pré requisito do teste   ###
+    Criacao de atendimento              ####   Keyword para validar pré requisito do teste   ###
+    Captura do protocolo da previsao de pagamentos|${suite}|${id}|
     Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @las
-    Preencher atendimento |${dados}[Atendimento]|
-    Escolha o medico solicitante |${dados}[Medico]|
-    Digite a data da coleta |${dados}[Data]|
-    Escolha <o setor executante> |${dados}[Setor]|, <o setor solicitante> |${dados}[Solicitante]|, <o tecnico> |${dados}[Tecnico]|, <o exame> |${dados}[Exame]|
-    Clicar em Salvar
+    # Preencher atendimento |${dados}[Atendimento]|
+    # Escolha o medico solicitante |${dados}[Medico]|
+    # Digite a data da coleta |${dados}[Data]|
+    # Escolha <o setor executante> |${dados}[Setor]|, <o setor solicitante> |${dados}[Solicitante]|, <o tecnico> |${dados}[Tecnico]|, <o exame> |${dados}[Exame]|
+    # Clicar em Salvar

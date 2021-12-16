@@ -41,20 +41,30 @@ Selecionar na lov do campo Fornecedor |${Fornecedor}|
 Indicar no campo tipo de programacao da previsao |${Programacao}|
     Seleciona Item Combobox              ${ComboboxTipo}                        ${Programacao}
 
-    ${Contabilizar} =  ${Sim}
-    ${Contabilizar} =  ${Não}
+    
 Selecionar no campo Contabilizar |${Contabilizar}|
     Seleciona Item Combobox              ${ItemContabilizar}                    ${Contabilizar}
+
+${Contabilizar} =  ${Sim}
+${Contabilizar} =  ${Não}
     
   
-  FOR    ${i}    IN RANGE    ${Contabilizar}  
-        ${random}=    Evaluate    random.randint(0, 10)
-        IF  ${Contabilizar} == ${Não} 
-        Pass Execution  "${TipoVencimento}"
-        ELSE IF    ${Contabilizar} == ${Sim}
-        Pass Execution  "${Contabilizar}"
-        END
-    END
+    # FOR    ${i}    IN RANGE    ${Contabilizar}  
+    #     ${random}=    Evaluate    random.randint(0, 10)
+    #     IF  ${Contabilizar} == ${Não} 
+    #     Pass Execution  "${Contabilizar} == ${Não}" 
+        
+    #     #Click no Item    ${TipoVencimento} 
+    #     #Seleciona Item Combobox  ${ItemVencimento} ${TipoVencimento}
+    #     Log To Console     ${TipoVencimento} 
+    #     ELSE IF    ${Contabilizar} == ${Sim}
+    #     Pass Execution  "${Contabilizar} == ${Sim}"
+    #     Log To Console    ${PrevisaoConta} 
+    #     END
+    # END
+
+    Run Keyword If  "${Contabilizar} == ${Não}"   log to console   \${TipoVencimento} 
+    Run Keyword If  '"${Contabilizar} == ${Sim}"  log to console  \${PrevisaoConta} 
 Selecionar no campo Tp Prev Contab |${PrevisaoConta}|
     Seleciona Item Combobox              ${PrevisaoContab}                       ${PrevisaoConta}
 

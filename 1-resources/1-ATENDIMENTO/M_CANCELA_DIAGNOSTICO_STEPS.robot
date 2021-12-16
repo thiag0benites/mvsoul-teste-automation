@@ -12,7 +12,7 @@ Resource          ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Keywords ***
 ####   Keyword para validar pré requisito do teste   ###
-Confirmacao Diagnostico
+Confirmacao Diagnostico 
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Diagnóstico do Atendimento>Confirmação"@nprint @las
     Validar Acesso a Tela |Diagnóstico do Atendimento|
     Preencher Campo Atendimento |1000002161|
