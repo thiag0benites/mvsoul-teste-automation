@@ -35,6 +35,5 @@ SCR1AMREGISTROCONTATO-001:Fluxo Principal
     Acessa a Tela Pela Busca |M_RECEPCAO_TURMA||Recepção de Turmas| @las
     Incluir Novo Registro Apontando a Tela do Teste |${dados}[Turma]|
     Validar Acesso a Tela |Registro de Contatos|
-    
     Adicionar Novo Contato |${dados}[Assunto]| |${dados}[Detalhamento]|
     Salvar e Validar |${dados}[MsgSalva]|

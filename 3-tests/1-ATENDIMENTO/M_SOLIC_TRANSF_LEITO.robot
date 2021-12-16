@@ -35,7 +35,5 @@ SCR1AMSOLICTRANSFLEITO-001:Fluxo Principal
     Acessa a Tela Pela Busca |M_MON_SOLIC_TRANSF||Solicitação de Transferência| @las
     Incluir Nova Solicitacao Apontando a Tela do Teste
     Validar Acesso a Tela |Solicitação de Transferência de Paciente|
-
     Preencher Atendimento, Acomodacao e Motivo |${dados}[Atendimento]| |${dados}[Acomodacao]| |${dados}[Motivo]|
     Confirmar e Validar |${dados}[MsgSalva]|
-
