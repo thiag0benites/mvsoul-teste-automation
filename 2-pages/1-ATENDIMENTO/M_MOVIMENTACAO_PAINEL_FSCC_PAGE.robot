@@ -7,6 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${DtInicio}                         xpath=//input[@name="dtInicio"]
-${DtFim}                            xpath=//input[@name="dtFim"]
-
+${DtIni}                                      xpath=//input[@id="inp:dtInicio"]
+${DtF}                                        xpath=//input[@id="inp:dtFim"]
+${BtnPesquisar}                               xpath=//button[@id="btnPesquisar"]

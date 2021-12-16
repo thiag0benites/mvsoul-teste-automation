@@ -29,12 +29,12 @@ ${dados}
 
 *** Test Case ***
 SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal" -d ./5-results/SCR1AMMOVIMENTACAOPAINELFSCC-001 "3-tests/1-ATENDIMENTO/C_ESCALAS.robot"
-# robot -v browser:firefox -t "SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal" -d ./5-results/SCR1AMMOVIMENTACAOPAINELFSCC-001 "3-tests/1-ATENDIMENTO/C_ESCALAS.robot"
+# robot -v browser:chrome -t "SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal" -d ./5-results/SCR1AMMOVIMENTACAOPAINELFSCC-001 "3-tests/1-ATENDIMENTO/M_MOVIMENTACAO_PAINEL_FSCC.robot"
+# robot -v browser:firefox -t "SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal" -d ./5-results/SCR1AMMOVIMENTACAOPAINELFSCC-001 "3-tests/1-ATENDIMENTO/M_MOVIMENTACAO_PAINEL_FSCC.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMMOVIMENTACAOPAINELFSCC-001"
     Acessa a Tela Pela Busca |M_MOVIMENTACAO_PAINEL_FSCC||Movimentação Painel Centro Cirúrgico| @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Entrada de Datas |${dados}[DtInicio]| |${dados}[DtInicio]| 
-    Validar Dados Pos Pesquisa |${dados}[NomePresEscala]| |${dados}[DiaSemana]| |${dados}[NomeRecurso]|
-    Clicar Aba Itens Agendamento
-    Validadar Dados Aba Itens Agendamento|${dados}[ItenAgendamento]| |${dados}[ItenAgendamento2]| |${dados}[ItenAgendamentoNumero]|
+    Entrada de Datas |${dados}[DtInicio]| |${dados}[DtFim]|
+    Click Botao Pesquisar
+    Validar Dados Pos Pesquisa |${dados}[Aviso]| |${dados}[Sala]| |${dados}[Cirurgiao]| |${dados}[CodCirurgia]| |${dados}[Cirurgia]|
+    
