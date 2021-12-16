@@ -34,7 +34,7 @@ SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMMOVIMENTACAOPAINELFSCC-001"
     Acessa a Tela Pela Busca |M_MOVIMENTACAO_PAINEL_FSCC||Movimentação Painel Centro Cirúrgico| @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Entrada de Datas 
+    Entrada de Datas |${dados}[DtInicio]| |${dados}[DtInicio]| 
     Validar Dados Pos Pesquisa |${dados}[NomePresEscala]| |${dados}[DiaSemana]| |${dados}[NomeRecurso]|
     Clicar Aba Itens Agendamento
     Validadar Dados Aba Itens Agendamento|${dados}[ItenAgendamento]| |${dados}[ItenAgendamento2]| |${dados}[ItenAgendamentoNumero]|

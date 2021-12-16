@@ -1,14 +1,14 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Elementos e metodos da página Confirmação de Coleta nos Setores e Postos
+# Decrição: Elementos e metodos da página de Histórico de Agendamentos
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
-*** Variable ***
-${BotaoProcurar}                               xpath=///input[@id="inp:cdColetaMaterial"]
-${CampoCod}                                    xpath=//input[@name="cdColetaMaterial"]
-${BotaoConfirmar}                              xpath=//i[@class="mv-basico-confirmar"]
+*** Variable *** 
+${DtIni}                                    xpath=//input[@id="inp:dtInicioAgenda"]
+${DtF}                                      xpath=//input[@id="inp:dtFimAgenda"]
+${BtnPesquisar}                             xpath=//button[@id="btnPesquisaParametros"]
 
 
