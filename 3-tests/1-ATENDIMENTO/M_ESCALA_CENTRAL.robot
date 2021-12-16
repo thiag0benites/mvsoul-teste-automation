@@ -36,4 +36,3 @@ SCR1AMLESCALACENTRAL-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMLESCALACENTRAL-001"
     Acessar a tela "Atendimento>Central de Agendamento>Tabelas>Cadastro de Escalas"@nprint @nao
     Cadastro de Escalas |${dados}[Prestador]||${dados}[HoraInicial]||${dados}[HoraFinal]||${dados}[DiaSemana]||${dados}[Dinamica]||${dados}[Setor]||${dados}[MsgEsperada]|
-    
