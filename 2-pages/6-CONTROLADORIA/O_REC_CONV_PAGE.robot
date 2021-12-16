@@ -34,4 +34,6 @@ ${convenioFiltrado}              xpath=//div[@data-member='DSP_NM_CONVENIO']
 ${contaCorrenteFiltrada}         xpath=//div[@title='ITAU HOBRA - 5']
 ${clickReceb}                    xpath=//*[@data-member='VL_RECEBIMENTO']/..
 ${clickVlGlosa}                  xpath=//div[@data-member='VL_GLOSA']//..
+${validacaoVlAcrescimo}          xpath=//div[@data-member='VL_ACRESCIMO'][@title='0,00']
+${validacaoNrRef}                xpath=//input[@id='inp:nrIdNotaFiscal'][@title='0000002462']
 

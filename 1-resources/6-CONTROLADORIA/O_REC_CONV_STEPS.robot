@@ -20,9 +20,10 @@ Selecionar Convenio e Colocar o Sistema em Modo de Pesquisa |${CampoConvenio}| |
     Clicar Botao se estiver Visivel                        ${btnOk}
     Clicar no Campo e Preencher Informacao                 ${campoNrRef}    ${campoNrRef}    ${NrReferencia}
     Clicar Botao se estiver Visivel                        ${btnExecutarConsulta}
+    Wait Until Element Is Visible                          ${validacaoNrRef}    60
 Alterar a Data do Recebimento |${DtRecebimento}|
-    Wait Until Element Is Visible                          ${campoDtRecebimento}
-    Clicar no Campo e Preencher Informacao                 ${campoDtRecebimento}    ${campoDtRecebimento}    ${DtRecebimento}
+    Wait Until Element Is Visible                          ${campoDtRecebimento}    60
+    Preencher campo com data e hora                        ${campoDtRecebimento}    %d/%m/%y    00:00:00
 Informar o Numero do Documento |${NrDocumento}|
     Clicar no Campo e Preencher Informacao                 ${campoNrDocumento}    ${campoNrDocumento}    ${NrDocumento}
 Informar a Conta Corrente em Que o Valor da Nota Fiscal Sera Creditado |${ContaCorrente}|
@@ -40,10 +41,11 @@ Clicar em (Efetuar Recebimento)
 Selecionar Convenio e Por o Sistema em Modo de Busca |${CampoConvenio}|
     Wait Until Element Is Visible                          ${btnConvenio}    20
     Selecionar Item Na Lista                               ${btnConvenio}    ${CampoConvenio}    ${CampoConvenio}
+    Wait Until Element Is Visible                          ${btnExecutarConsulta}    60
     Clicar Botao se estiver Visivel                        ${btnExecutarConsulta}
 Atualizar Tela
     Send Keys    tab
-    Sleep        20
+    Wait Until Element Is Visible    ${validacaoVlAcrescimo}    60
 Clicar em 'Sim' Para Efetuar Recebimento e em 'OK' Para Validar Mensagem
     Clicar Botao se estiver Visivel                        ${btnSim}
     Clicar Botao se estiver Visivel                        ${btnOk}
