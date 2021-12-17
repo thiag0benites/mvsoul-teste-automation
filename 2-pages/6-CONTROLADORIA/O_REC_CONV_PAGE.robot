@@ -27,6 +27,8 @@ ${btnContasItensNF}              xpath=//a[@id="CV_PAGE_CV_PAGE_tab2"]
 ${btnEfetuarReceb}               xpath=//button[@id="btnConfirma"]
 ${btnSim}                        xpath=//button[@class='btn btn-primary'][text()="Sim"]
 ${btnOk}                         xpath=//button[@class='btn btn-primary'][text()="OK"]
+${btnDifRateioEAcresc}           xpath=//button[@id="inp:snLancaDifAcrescimo_btn"]
+${btnGlosaNReceb}                xpath=//button[@id="inp:snGlosa_btn"]
 
 ### Diversos ###
 ${empresaValidada}               xpath=//span[contains(@title, "5 - HOSPITAL MV - MATRIZ")]
@@ -36,4 +38,6 @@ ${clickReceb}                    xpath=//*[@data-member='VL_RECEBIMENTO']/..
 ${clickVlGlosa}                  xpath=//div[@data-member='VL_GLOSA']//..
 ${validacaoVlAcrescimo}          xpath=//div[@data-member='VL_ACRESCIMO'][@title='0,00']
 ${validacaoNrRef}                xpath=//input[@id='inp:nrIdNotaFiscal'][@title='0000002462']
+${validarNRef}                   xpath=//input[@id="inp:nrIdNotaFiscal"]
+${validaVlNota}                  xpath=//input[@id="inp:vlTotalNota"]
 

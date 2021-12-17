@@ -21,10 +21,15 @@ Selecionar Convenio e Colocar o Sistema em Modo de Pesquisa |${CampoConvenio}| |
     Clicar no Campo e Preencher Informacao                 ${campoNrRef}    ${campoNrRef}    ${NrReferencia}
     Clicar Botao se estiver Visivel                        ${btnExecutarConsulta}
     Wait Until Element Is Visible                          ${validacaoNrRef}    60
+Consultar nota fiscal pelo numero
+    Element Should Be Visible                              ${validarNRef}
+Consultar nota fiscal pelo valor da nota
+    Element Should Be Visible                              ${validaVlNota}
 Alterar a Data do Recebimento |${DtRecebimento}|
     Wait Until Element Is Visible                          ${campoDtRecebimento}    60
     Preencher campo com data e hora                        ${campoDtRecebimento}    %d/%m/%y    00:00:00
 Informar o Numero do Documento |${NrDocumento}|
+    Wait Until Element Is Visible                          ${campoNrDocumento}    60
     Clicar no Campo e Preencher Informacao                 ${campoNrDocumento}    ${campoNrDocumento}    ${NrDocumento}
 Informar a Conta Corrente em Que o Valor da Nota Fiscal Sera Creditado |${ContaCorrente}|
     Clicar Botao se estiver Visivel                        ${btnContaCorrente}
@@ -49,4 +54,7 @@ Atualizar Tela
 Clicar em 'Sim' Para Efetuar Recebimento e em 'OK' Para Validar Mensagem
     Clicar Botao se estiver Visivel                        ${btnSim}
     Clicar Botao se estiver Visivel                        ${btnOk}
-    
+Marcar o Checkbox 'Dif. Rateio e Acrescimo'
+    Clicar Botao se estiver Visivel                        ${btnDifRateioEAcresc}
+Marcar o Checkbox 'Glosa Nao Recebidos'
+    Clicar Botao se estiver Visivel                        ${btnGlosaNReceb}
