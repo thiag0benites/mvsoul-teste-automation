@@ -16,6 +16,11 @@ ${CampoObs}                    xpath=//textarea[@id="inp:dsObservacao"]
 ${CampoAmostra}                xpath=//input[@id="inp:cdAmostra"]
 
 
+
+
+
+
+
 ### Botoes ###
 ${BtnOk}                      xpath=//li[@class='notification-buttons']/button
 ${BtnFecharRemessa}           xpath=//button[@id="btnFecharAmostra"]
