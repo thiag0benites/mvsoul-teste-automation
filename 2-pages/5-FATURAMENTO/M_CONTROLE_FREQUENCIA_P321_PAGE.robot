@@ -29,10 +29,7 @@ ${btnSalvar}                      xpath=//li[@id='toolbar']//li[@id='tb-record-s
 ${BtnImprimirFichaControle}       xpath=//button[@data-member="BTN_IMPRIMIR"]
 #Clicar no botão imprimir
 ${BtnImprimir}                    xpath=//div[@id="CV_PADRAO_PARAMETER"]/fieldset/div/button[@data-member="BTN_IMPRIMIR"]
-${BtnSair}                        xpath=//button[@data-action="btnSair_click"]
-
-${DivJan}                         xpath=//div[@class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable"]/div
-
+${BtnSair}                        xpath=//button[@data-member="BTN_SAIR"]
 #Fechar aba com PDF
 #CLicar no botão sair
 #Validação
