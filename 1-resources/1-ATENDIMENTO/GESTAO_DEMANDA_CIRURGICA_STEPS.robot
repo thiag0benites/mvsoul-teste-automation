@@ -10,15 +10,15 @@ Resource          ../../2-pages/1-ATENDIMENTO/GESTAO_DEMANDA_CIRURGICA_PAGE.robo
 
 *** Keywords ***
 Aperte o batão Pesquisa na tela principal
-    Click no Item                    ${BtnPesquisa}   
+    Click no Item    ${BtnPesquisa}
 
 Escolha uma linha
-    Click no Item                    ${LinhaPaciente}
-    Click no Item                    ${BtnAprovar} 
-    Click no Item                    ${Linha2}   
-    Click no Item                    ${BtnSim} 
-    Click no Item                    ${BtnSim} 
+    Click no Item    ${LinhaPaciente}
+    Click no Item    ${BtnAprovar}
+    Click no Item    ${Linha2}
+    Click no Item    ${BtnSim}
+    Click no Item    ${BtnSim}
 
 Mensagem validada |${MsgVerificada}|
-    Validar Informacao Item          ${MsgUsuario}                 ${MsgVerificada}
-    Click no Item                    ${BtnOk} 
+    Validar Informacao Item    ${MsgUsuario}    ${MsgVerificada}
+    Click no Item    ${BtnOk}
