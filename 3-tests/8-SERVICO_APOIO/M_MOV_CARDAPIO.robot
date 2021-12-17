@@ -29,7 +29,6 @@ ${suite}            M_MOV_CARDAPIO
 ${dados}
 
 *** Test Case *** 
-<<<<<<< HEAD
 SCR5FMMOVCARDAPIO-001:Fluxo principal
 # robot -v browser:chrome -t "SCR5FMMOVCARDAPIO-001:Fluxo principal" -d ./5-results/M_MOV_CARDAPIO "3-tests/8-SERVICO_APOIO/M_MOV_CARDAPIO.robot"
 # robot -v browser:firefox -t "SCR5FMMOVCARDAPIO-001:Fluxo principal" -d ./5-results/M_MOV_CARDAPIO "3-tests/8-SERVICO_APOIO/M_MOV_CARDAPIO.robot"
@@ -39,10 +38,3 @@ SCR5FMMOVCARDAPIO-001:Fluxo principal
     Preencher a tabela do cardapio |${dados}[opcao]|,|${dados}[prato]|,|${dados}[qtdCardapio]|
     Salvar cadastro do cardapio 
     Validar cadastro na tela |${dados}[MsgEsperada]|
-=======
-SCR5FMREMESSASSUSP321-001:Fluxo principal
-# robot -v browser:chrome -t "SCR5FMREMESSASSUSP321-001:Fluxo principal" -d ./5-results/M_REMESSAS_SUS_P321 "3-tests/5-FATURAMENTO/M_REMESSAS_SUS_P321.robot"
-# robot -v browser:firefox -t "SCR5FMREMESSASSUSP321-001:Fluxo principal" -d ./5-results/M_REMESSAS_SUS_P321 "3-tests/5-FATURAMENTO/M_REMESSAS_SUS_P321.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMREMESSASSUSP321-001"
-    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
->>>>>>> 7ee73c2714b000f8f5b171c6fa8f5923db350165
