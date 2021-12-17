@@ -10,11 +10,8 @@ Resource          ../../2-pages/1-ATENDIMENTO/M_RECEPCAO_AGENDA_PAGE.robot
 
 *** Keywords ***
 Parametros de pesquisa recepção do paciente |${Paciente}|
-    
-    Clicar no Campo e Preencher Informacao    ${CampoPaciente}     ${CampoPaciente}     ${Paciente}
-    Click no Item                             ${BtnExePesq}
-    Click no Item                             ${Checkbox} 
-    Click no Item                             ${BtnDetalhes}
-    Should Not Be Empty                       ${CampoAgenda}
-
- 
+    Clicar no Campo e Preencher Informacao    ${CampoPaciente}    ${CampoPaciente}    ${Paciente}
+    Click no Item    ${BtnExePesq}
+    Click no Item    ${Checkbox}
+    Click no Item    ${BtnDetalhes}
+    Should Not Be Empty    ${CampoAgenda}
