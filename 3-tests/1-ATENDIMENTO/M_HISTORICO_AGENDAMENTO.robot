@@ -37,4 +37,3 @@ SCR1AMHISTORICOAGENDAMENTO-001:Fluxo Principal
     Entrada de Datas |${dados}[DtInicio]| |${dados}[DtFim]| 
     Click Botao Pesquisar
     Validar Dados Pos Pesquisa |${dados}[Movimenta]| |${dados}[Paciente]| |${dados}[UserResponsavel]| |${dados}[DataHora]|
-    

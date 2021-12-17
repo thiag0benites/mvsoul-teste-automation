@@ -10,15 +10,14 @@ Resource          ../../2-pages/1-ATENDIMENTO/M_HISTORICO_AGENDAMENTO_PAGE.robot
 
 *** Keywords ***
 Entrada de Datas |${DtInicio}| |${DtFim}|
-    Preencher campo                        ${DtIni}       ${DtInicio}
-    Preencher campo                        ${DtF}         ${DtFim} 
+    Preencher campo    ${DtIni}    ${DtInicio}
+    Preencher campo    ${DtF}    ${DtFim}
+
 Click Botao Pesquisar
-    Click no Item                    ${BtnPesquisar}
-        
+    Click no Item    ${BtnPesquisar}
+
 Validar Dados Pos Pesquisa |${Movimenta}| |${Paciente}| |${UserResponsavel}| |${DataHora}|
-    Validar Elemento Pelo Titulo     ${Movimenta}
-    Validar Elemento Pelo Titulo     ${Paciente}
-    Validar Elemento Pelo Titulo     ${UserResponsavel}
-    Validar Elemento Pelo Titulo     ${DataHora}
-
-
+    Validar Elemento Pelo Titulo    ${Movimenta}
+    Validar Elemento Pelo Titulo    ${Paciente}
+    Validar Elemento Pelo Titulo    ${UserResponsavel}
+    Validar Elemento Pelo Titulo    ${DataHora}

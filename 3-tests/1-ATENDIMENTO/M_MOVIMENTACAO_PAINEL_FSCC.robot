@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Movimentação Painel Centro Cirúrgico
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_MOVIMENTACAO_PAINEL_FSCC.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_MOVIMENTACAO_PAINEL_FSCC.robot"
 # firefox: robot -v browser:firefox -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_MOVIMENTACAO_PAINEL_FSCC.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_MOVIMENTACAO_PAINEL_FSCC.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_MOVIMENTACAO_PAINEL_FSCC.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_MOVIMENTACAO_PAINEL_FSCC.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -37,4 +37,3 @@ SCR1AMMOVIMENTACAOPAINELFSCC-001:Fluxo Principal
     Entrada de Datas |${dados}[DtInicio]| |${dados}[DtFim]|
     Click Botao Pesquisar
     Validar Dados Pos Pesquisa |${dados}[Aviso]| |${dados}[Sala]| |${dados}[Cirurgiao]| |${dados}[CodCirurgia]| |${dados}[Cirurgia]|
-    
