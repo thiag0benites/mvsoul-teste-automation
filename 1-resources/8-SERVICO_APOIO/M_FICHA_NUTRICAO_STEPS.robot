@@ -10,7 +10,7 @@ Resource          ../../2-pages/8-SERVICO_APOIO/M_FICHA_NUTRICAO_PAGE.robot
 
 *** Keywords ***
 Pesquisar Atendimento |${Atendimento}|
-    Preencher Campo              ${CampoAtendimento}        ${Atendimento}
+    Preencher Campo    ${CampoAtendimento}    ${Atendimento}
     Click Elemento por titulo    Executar Consulta
 
 Validar Consulta Realizada |${Paciente}| |${UnidInternacao}| |${TpDieta}|
@@ -19,12 +19,10 @@ Validar Consulta Realizada |${Paciente}| |${UnidInternacao}| |${TpDieta}|
     Validar Elemento Pelo Titulo    ${TpDieta}
 
 Adicionar Observacoes |${TpRefeicao}| |${Observacao}|
-    Clicar Item e Selecionar da Lista         ${CampoTpRefeicao}    ${BotaoLovEdit}       ${TpRefeicao}       ${TpRefeicao}
-    Clicar no Campo e Preencher Informacao    ${CampoObservacao}    ${CampoEdit}          ${Observacao}
-    
+    Clicar Item e Selecionar da Lista    ${CampoTpRefeicao}    ${BotaoLovEdit}    ${TpRefeicao}    ${TpRefeicao}
+    Clicar no Campo e Preencher Informacao    ${CampoObservacao}    ${CampoEdit}    ${Observacao}
 ### Keyword para retornar massa de dados para status inicial do teste ###
+
 Excluir Observacao
-    Click no Item                ${CampoTpRefeicao} 
+    Click no Item    ${CampoTpRefeicao}
     Click Elemento por titulo    Apagar
-
-

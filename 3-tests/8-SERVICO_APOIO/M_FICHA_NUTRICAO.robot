@@ -41,4 +41,3 @@ SCR8SMFICHANUTRICAO-001:Fluxo Principal
     # Retornar massa de dados para status inicial
     Excluir Observacao
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
-  
