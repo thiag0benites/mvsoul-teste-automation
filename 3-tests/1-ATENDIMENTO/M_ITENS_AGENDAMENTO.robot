@@ -14,6 +14,7 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource          ../../1-resources/1-ATENDIMENTO/M_ITENS_AGENDAMENTO_STEPS.robot
+Resource    ../../1-resources/2-ASSISTENCIAL/M_EXALAB_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup      Nova sessao
 #Suite Teardown    Encerra sessao
@@ -32,8 +33,12 @@ SCR1AMITENSAGENDAMENTO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AMITENSAGENDAMENTO-001:Fluxo Principal" -d ./5-results/SCR1AMITENSAGENDAMENTO-001 "3-tests/1-ATENDIMENTO/M_ITENS_AGENDAMENTO.robot"
 # robot -v browser:firefox -t "SCR1AMITENSAGENDAMENTO-001:Fluxo Principal" -d ./5-results/SCR1AMITENSAGENDAMENTO-001 "3-tests/1-ATENDIMENTO/M_ITENS_AGENDAMENTO.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMITENSAGENDAMENTO-001"
-    Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Alteração do Tipo de Atendimento"@nprint @las
-    Validar Acesso a Tela |Alteração do Tipo|
-    Preencher Atendimento |${dados}[Atendimento]|
-    Escolher Novo Tipo |${dados}[Origem]|
-    Confirmar Alteracao |${dados}[MensagemAlerta]| |${dados}[MensagemSucesso]|
+    Acessar a tela "Atendimento>Central de Agendamento>Tabelas>Itens de Agendamento"@nprint @las
+    Validar Acesso a Tela |Cadastro de Itens de Agendamento|
+
+    Preencher Informacoes do Item |${dados}[Descricao]| |${dados}[Mnemonico]| |${dados}[Exame]| |${dados}[Tempo]| |${dados}[Obs]|
+    Preencher Recurso |${dados}[Recurso]|
+    Preencher Prestador |${dados}[Prestador]|
+    Preencher Equipamento |${dados}[Equipamento]|
+    Preencher Item |${dados}[Item]|
+    Clicar Botao Salvar |${dados}[MsgSalva]|
