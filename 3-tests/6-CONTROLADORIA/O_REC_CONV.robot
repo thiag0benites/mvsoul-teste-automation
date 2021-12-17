@@ -59,7 +59,6 @@ SMF-5619 : Registrar Recebimento de Contas de Convênio pelo valor a receber da 
     Atualizar Tela
     Clicar em (Efetuar Recebimento)
     Clicar em 'Sim' Para Efetuar Recebimento e em 'OK' Para Validar Mensagem
-
 SMF-5620 : Registrar Recebimento de Contas de Convênio pelo valor a conciliar da nota fiscal
     # robot -v browser:chrome -t "SMF-5620 : Registrar Recebimento de Contas de Convênio pelo valor a conciliar da nota fiscal" -d ./5-results/SMF-5620 "3-tests/6-CONTROLADORIA/O_REC_CONV.robot"
     # robot -v browser:firefox -t "SMF-5620 : Registrar Recebimento de Contas de Convênio pelo valor a conciliar da nota fiscal" -d ./5-results/SMF-5620 "3-tests/6-CONTROLADORIA/O_REC_CONV.robot"
@@ -73,3 +72,11 @@ SMF-5620 : Registrar Recebimento de Contas de Convênio pelo valor a conciliar d
     Informar a Conta Corrente em Que o Valor da Nota Fiscal Sera Creditado |${dados}[ContaCorrente]|
     Clicar em (Efetuar Recebimento)
     Clicar em 'Sim' Para Efetuar Recebimento e em 'OK' Para Validar Mensagem
+SMF-5622 : Registrar Recebimento de Contas de Convênio com Acréscimo
+    # robot -v browser:chrome -t "SMF-5622 : Registrar Recebimento de Contas de Convênio com Acréscimo" -d ./5-results/SMF-5622 "3-tests/6-CONTROLADORIA/O_REC_CONV.robot"
+    # robot -v browser:firefox -t "SMF-5622 : Registrar Recebimento de Contas de Convênio com Acréscimo" -d ./5-results/SMF-5622 "3-tests/6-CONTROLADORIA/O_REC_CONV.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5622"
+    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
+    Validar Acesso a Tela |Recebimento de Convênio|
+    Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${dados}[CampoEmpresa]|
+    Selecionar Convenio e Por o Sistema em Modo de Busca |${dados}[CampoConvenio]|
