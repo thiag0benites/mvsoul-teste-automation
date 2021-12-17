@@ -8,14 +8,9 @@ Library           Collections
 Library           AutoRecorder
 Library           SeleniumLibrary    #timeout=10
 ### Interagir com elemento por imagem
-<<<<<<< HEAD
-# Library           SikuliLibrary
-# Library           ImageHorizonLibrary    ${CURDIR}/4-images
-=======
 #Library           SikuliLibrary
-Library           ImageHorizonLibrary    ${CURDIR}/4-images
->>>>>>> feature/flavio
-### Trabalha com stings
+#Library           ImageHorizonLibrary    ${CURDIR}/4-images
+### Trabalha com strings
 Library           String
 Library           DateTime
 ### Banco de dados
