@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Refeição com Status Aberto
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_STATUS.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_STATUS.robot"
 # firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_STATUS.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_STATUS.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_STATUS.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_STATUS.robot"
 #################################################################################################################################################################
 *** Settings ***

@@ -39,5 +39,3 @@ SCR1ACCONSULTACEPECT-001:Fluxo Principal
     Realizar Pesquisa por |Logradouro| |${dados}[Logradouro]| |${dados}[Cidade]| |${dados}[CEP]|
     Realizar Pesquisa por |Cidade| |${dados}[Logradouro]| |${dados}[Cidade]| |${dados}[CEP]|
     Realizar Pesquisa por |CEP| |${dados}[Logradouro]| |${dados}[Cidade]| |${dados}[CEP]|
-    Sleep  5
-

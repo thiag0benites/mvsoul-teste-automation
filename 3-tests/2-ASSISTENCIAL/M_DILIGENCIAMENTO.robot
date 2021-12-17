@@ -39,6 +39,3 @@ SCR2AMDILIGENCIAMENTO-001:Fluxo Principal
     Pesquisar Diligenciamento |${dados}[DtInicial]| |${dados}[DtFinal]|
     Validar Resultado da Pesquisa |${dados}[Paciente]| |${dados}[Diligenciamento]| |${dados}[Exame]|
     Imprimir Relatorio
-
-
-

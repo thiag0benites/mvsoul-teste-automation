@@ -42,4 +42,3 @@ SCR5FMREGRASUBSTITUICAOPROCED-001:Fluxo Principal
     # Retornar massa de dados para status inicial
     Excluir Regra de Substituicao
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
-
