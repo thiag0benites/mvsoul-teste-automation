@@ -21,7 +21,7 @@ Resource            ../../1-resources/8-SERVICO_APOIO/M_SOLICITACAO_SAME_STEPS.r
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -39,5 +39,5 @@ SCR8SMSOLICITACAOSAME-001:Fluxo Principal
     Escolha o motivo da solicitacao |${dados}[Configuracao]| |${dados}[Motivo]|
     Escolha o destino da solicitacao |${dados}[Solicitacao]|
     Escolha a origem da solicitacao |${dados}[Origem]|
-    Preencha o atendimento |${dados}[Paciente]| |${dados}[Atendimento]|
+    Preencha o atendimento |${dados}[Atendimento]|
     Clicar em Salvar |${dados}[MsgVerificada]|

@@ -21,7 +21,7 @@ Resource            ../../1-resources/8-SERVICO_APOIO/M_SAIDA_PRO_SETOR_STEPS.ro
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-Test Teardown       Encerra sessao
+#Test Teardown       Encerra sessao
 
 *** Variable ***    
 

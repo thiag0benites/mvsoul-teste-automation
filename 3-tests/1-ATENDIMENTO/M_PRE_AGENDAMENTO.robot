@@ -19,7 +19,7 @@ Resource            ../../1-resources/1-ATENDIMENTO/M_PRE_AGENDAMENTO_STEPS.robo
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-#Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -40,4 +40,4 @@ SCR1AMPREAGENDAMENTO-001:Fluxo Principal
     Escolha o medico associado |${dados}[Medico]|
     Pressione o botao adicionar cirurgia
     Preencha as caracteristicas da cirurgia |${dados}[Caracteristica]|
-    Captura do codigo registrado |${suite}|${dados}[id]|
+    

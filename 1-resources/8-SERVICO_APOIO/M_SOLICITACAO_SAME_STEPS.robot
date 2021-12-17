@@ -24,8 +24,8 @@ Escolha o destino da solicitacao |${Solicitacao}|
 Escolha a origem da solicitacao |${Origem}|
     Preencher Campo                  ${CampoOrigem}                     ${Origem}
 
-Preencha o atendimento |${Paciente}| |${Atendimento}|
-    Preencher Campo                  ${CampoPaciente}                   ${Paciente}  
+Preencha o atendimento |${Atendimento}|
+      
     Preencher Campo                  ${CampoAtendimento}                ${Atendimento}
     Send Keys                           enter
     Click no Item                    ${BtnSim} 

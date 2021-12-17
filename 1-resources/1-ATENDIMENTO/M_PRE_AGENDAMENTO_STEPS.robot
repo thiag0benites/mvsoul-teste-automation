@@ -15,9 +15,14 @@ Preencha os campos obrigatorios |${DataA}| |${DataB}| |${Hora}| |${DataC}| |${Pa
     Preencher Campo                    ${CampoTempo}               ${Hora}
     Preencher Campo                    ${Data3}                    ${DataC}
     Preencher Campo                    ${CampoPaciente}            ${Paciente}
+    
 
 Escolha o centro cirurgico |${Centro}|
     Click no Item                      ${BtnCentroCirurgico} 
+    Click no Item                      ${BtnOk2} 
+    Click no Item                      ${BtnCentroCirurgico}
+    #Click no Item                      ${BtnNotificacao}  
+    #Click no Item                      ${BtnCentroCirurgico}
     Preencher Campo                    ${CampoFiltro}               ${Centro}
     Click no Item                      ${BtnFiltro}   
     Click no Item                      ${BtnOk} 
@@ -27,7 +32,7 @@ Selecione o tipo de acomodacao
     Click no Item                      ${BtnOk}  
 
 Selecione a sala cirurgica
-    Click no Item                      ${BtnCentroCirurgico} 
+    Click no Item                      ${BtnSalaCirurgica}  
     Click no Item                      ${BtnOk} 
 
 Escolha o medico associado |${Medico}|
@@ -58,11 +63,10 @@ Preencha as caracteristicas da cirurgia |${Caracteristica}|
     Click no Item                       ${BtnAtividade}  
     Click no Item                       ${BtnOk}
     Click Elemento por titulo           Salvar
-    Click no Item                       ${BtnRetornar}    
+    Click no Item                       ${BtnRetornar} 
+    #Wait Until Element Is Visible       ${DataA}
+    Should Not Be Empty                 ${MsgUsuario}
+    #Page Should Contain                 ${DataA}
+    
+    
 
-Captura do codigo registrado |${suite}|${id}|
-    Sleep    1
-    Should Not Be Empty   ${MsgUsuario}
-    ${protocolo}    Get Text    ${MsgUsuario}    
-    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgEsperada", valor "${protocolo}"
-    Sleep    3

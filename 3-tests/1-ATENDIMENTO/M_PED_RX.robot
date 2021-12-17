@@ -37,8 +37,8 @@ SRC1AMPEDRX-001:Fluxo principal
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
     #Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedidos de Exames Imagem"@nprint @las
     Criacao de atendimento              ####   Keyword para validar pré requisito do teste   ###
-    Captura do protocolo da previsao de pagamentos|${suite}|${id}|
-    Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @las
+    #Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    #Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @las
     # Preencher atendimento |${dados}[Atendimento]|
     # Escolha o medico solicitante |${dados}[Medico]|
     # Digite a data da coleta |${dados}[Data]|
