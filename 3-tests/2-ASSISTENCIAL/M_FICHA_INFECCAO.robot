@@ -3,8 +3,8 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:    robot -v browser:chrome -d ./5-results/SCR6CMCONCOR-001 "3-tests\2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
-# firefox:   robot -v browser:firefox -d ./5-results/SCR6CMCONCOR-001 "3-tests\2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
+# chrome:    robot -v browser:chrome -d ./5-results/M_FICHA_INFECCAO-001 "3-tests\2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
+# firefox:   robot -v browser:firefox -d ./5-results/M_FICHA_INFECCAO-001 "3-tests\2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:    robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
