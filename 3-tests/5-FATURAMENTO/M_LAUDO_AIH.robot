@@ -41,5 +41,3 @@ SCR5FMLAUDOAIH-001:Fluxo Principal
     Preencher Dados do Laudo |${dados}[DtEmissao]| |${dados}[EstSolicitante]| |${dados}[CaraterAtend]| |${dados}[Especialidade]| |${dados}[Prestador]| |${dados}[CIDSecundario]| |${dados}[CIDAssociado]| |${dados}[PrincipaisSinais]| |${dados}[JustInternacao]| |${dados}[ResultProvaDiag]| |${dados}[DiagInicial]|
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
     Imprimir Laudo
-
- 

@@ -41,9 +41,3 @@ SCR1AMCIRURGIAAVISO-001:Fluxo Principal
     Salvar Dados Cirurgia |${dados}[MsgGravarAlteracoes]|
     # Retornar massa de dados para status inicial do teste
     Excluir Cirurgia Cadastrada |${dados}[MensagemSucesso]|
-
-
-
-
-
-
