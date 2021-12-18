@@ -23,15 +23,16 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-#${suite}          m_agenda_scma
+${suite}          m_agenda_scma
 # # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR1AMAGENDASCMA-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR1AMAGENDASCMA-001:Fluxo Principal" -d ./5-results/SCR1AMAGENDASCMA-001 "3-tests/1-ATENDIMENTO/M_AGENDA_SCMA.robot"
 # robot -v browser:firefox -t "SCR1AMAGENDASCMA-001:Fluxo Principal" -d ./5-results/SCR1AMAGENDASCMA-001 "3-tests/1-ATENDIMENTO/M_AGENDA_SCMA.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMAGENDASCMA-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMAGENDASCMA-001"
     Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Agendamento"@nprint @las
-    Aperte o botao pesquisa na tela principal
-    Selecione o atendimento
+    Cadastre o agendamento |${dados}[Item]| |${dados}[Paciente]|
+    Salve o agendamento
+    Exclusão do agendamento |${dados}[MsgValidada]|  #para nao perder a massa de teste

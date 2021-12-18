@@ -8,9 +8,40 @@
 ### Pega massa de dados do Gerenciador
 Resource          ../../2-pages/1-ATENDIMENTO/M_AGENDA_SCMA_PAGE.robot
 
-*** Keywords ***
-Aperte o botao pesquisa na tela principal
-    Preencher Campo                  ${CampoItem}                    2
-    Click no Item                    ${BtnPesquisar}
 
-Selecione o atendimento
+*** Keywords ***
+Cadastre o agendamento |${Item}| |${Paciente}|
+    #Double Click Element             ${DiaEscolhido}
+    Click no Item                    ${DiaEscolhido}
+    Click no Item                    ${DiaEscolhido}
+    Sleep                            3
+    Preencher Campo                  ${CampoItem}                    ${Item}
+    Send Keys   enter
+    Wait Until Element Is Visible    ${MsgValidada}  
+    Click no Item                    ${BtnPesquisar}
+    Sleep                            3
+    Preencher Campo                  ${CampoPaciente}                ${Paciente}
+    Send Keys   enter
+    
+    
+     
+
+Salve o agendamento
+    Click no Item                    ${BtnAgendamento} 
+    Click no Item                    ${BtnS} 
+    Should Not Be Empty              ${MsgValidada}  
+
+Exclusão do agendamento |${MsgValidada}|
+#para nao perder a massa de teste
+    Click no Item                    ${BtnAgendamento}  
+    Click no Item                    ${BtnLimpar} 
+    Click no Item                    ${BtnSim}   
+    Validar Informacao Item          ${MsgExclusao}                  ${MsgValidada}    
+     
+
+
+    
+    
+    
+    
+
