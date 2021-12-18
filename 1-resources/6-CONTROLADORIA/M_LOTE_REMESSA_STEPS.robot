@@ -19,7 +19,7 @@ Criar Lote de Remessa |${Descricao}| |${Processo}| |${Bordero}| |${MsgDtPagament
     Click no Item    ${CampoDescricao}
     Valida Mensagem    ${MensagemToast}    ${MsgDtPagamento}
     Click no Item    ${BotaoOK}
-    ${RecebeData}    Get Element Attribute    ${CampoDtPagamento}    tittle
+    ${RecebeData}    Get Element Attribute    ${CampoDtPagamento}    title
     Altera massa de dados da "m_lote_remessa", linha "1", coluna "DtPagamento", valor "${RecebeData}"
 
 Salvar Lote Remessa |${MsgDtPagamento}| |${MensagemSucesso}|
@@ -41,8 +41,8 @@ Associar Contas a Pagar |${MsgValidaDtPagamento}| |${CtPagar}|
     Valida Mensagem    ${MensagemToast}    ${MsgValidaDtPagamento}
     Click no Item    ${BotaoSim}
     Wait Until Element Is Visible    xpath=//div[contains(@aria-labelledby, "grdLoteRemItconPag_col1_lbl")]/div[@title="${CtPagar}"]    20
-### Keyword para retornar massa de dados para status inicial do teste ###
 
+### Keyword para retornar massa de dados para status inicial do teste ###
 Excluir Lote Remessa |${CtPagar}|
     Marcar Checkbox |${CbContaPagarLote}|
     Click no Item    ${BotaoRemover}
