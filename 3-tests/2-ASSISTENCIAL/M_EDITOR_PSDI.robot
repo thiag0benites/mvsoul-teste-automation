@@ -35,8 +35,3 @@ SCR2AMEDITORPSDI-001:Fluxo Principal
     Versao
     Campos do Exame|${dados}[Ordem]||${dados}[DescricaoDoItem]||${dados}[Mnemonico]||${dados}[MsgEsperada]|
     Limpar a Massa pra reutilizar|${dados}[MsgEsperada2]|
-
-
-
-
-
