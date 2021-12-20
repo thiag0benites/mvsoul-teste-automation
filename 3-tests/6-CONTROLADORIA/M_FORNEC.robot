@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Cadastro do Fornecedor/Cliente
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_FORNEC.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_FORNEC.robot"
 # firefox: robot -v browser:firefox -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_FORNEC.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_FORNEC.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_FORNEC.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_FORNEC.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -41,7 +41,3 @@ SCR6CMFORNEC-001:Fluxo Principal
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
     # Retornar massa de dados para status inicial do teste
     Excluir Fornecedor Cadastrado |${dados}[MsgExcluir]| |${dados}[MensagemSucesso]|
-
-    
-
-

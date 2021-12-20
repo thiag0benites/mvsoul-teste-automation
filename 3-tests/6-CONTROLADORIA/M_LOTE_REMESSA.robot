@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Lotes de Remessa
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_LOTE_REMESSA.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_LOTE_REMESSA.robot"
 # firefox: robot -v browser:firefox -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_LOTE_REMESSA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_LOTE_REMESSA.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_LOTE_REMESSA.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/6-CONTROLADORIA "3-tests\6-CONTROLADORIA\M_LOTE_REMESSA.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -34,10 +34,9 @@ SCR6CMLOTEREMESSA-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CMLOTEREMESSA-001"
     Acessar a tela "Controladoria>Intercâmbio Eletrônico de Arquivos>Arquivos>Bancos>Lotes de Remessa"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Criar Lote de Remessa |${dados}[Descricao]| |${dados}[Processo]| |${dados}[Bordero]| |${dados}[MsgDtPagamento]| 
+    Criar Lote de Remessa |${dados}[Descricao]| |${dados}[Processo]| |${dados}[Bordero]| |${dados}[MsgDtPagamento]|
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
     Preencher Bloco Selecionar Contas a Pagar |${dados}[MsgConsulta]| |${dados}[Fornecedor]| |${dados}[CNPJ]|
     Associar Contas a Pagar |${dados}[MsgValidaDtPagamento]| |${dados}[CtPagar]|
     # Retornar massa de dados para status inicial do teste
     Excluir Lote Remessa |${dados}[CtPagar]|
-   

@@ -5,7 +5,6 @@
 *** Settings ***
 #### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/6-CONTROLADORIA/M_LOTE_REMESSA_PAGE.robot
-Resource          ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
 
 *** Variable ***
 
@@ -41,8 +40,8 @@ Associar Contas a Pagar |${MsgValidaDtPagamento}| |${CtPagar}|
     Valida Mensagem    ${MensagemToast}    ${MsgValidaDtPagamento}
     Click no Item    ${BotaoSim}
     Wait Until Element Is Visible    xpath=//div[contains(@aria-labelledby, "grdLoteRemItconPag_col1_lbl")]/div[@title="${CtPagar}"]    20
-
 ### Keyword para retornar massa de dados para status inicial do teste ###
+
 Excluir Lote Remessa |${CtPagar}|
     Marcar Checkbox |${CbContaPagarLote}|
     Click no Item    ${BotaoRemover}
