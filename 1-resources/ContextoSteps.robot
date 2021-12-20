@@ -57,8 +57,6 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Unselect Frame
         Send Keys    tab
         Send Keys    enter
-        
-        
     END
     Seleciona frame    ${IdIframe}    180
     Sleep    3
@@ -348,3 +346,6 @@ Clicar no botao ${nomeBtn}
         Wait Until Element Is Visible    ${btnSimNotifications}    30
         Click Element    ${btnSimNotifications}
     END
+
+Captura dos logs da tela
+    
