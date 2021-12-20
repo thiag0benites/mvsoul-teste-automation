@@ -10,19 +10,26 @@ Resource          ../../2-pages/5-FATURAMENTO/M_TISS_CONFIGURACAO_PAGE.robot
 
 *** Keywords ***   
 Executar pesquisa 
+    Sleep     4
     Click no Item       ${btnExecutar}
 
 Clicar em ok 
+    Sleep       1
     Click no Item       ${btnOk}
 
 Clicar em detalhamento
     Click no Item       ${btnDetalhamento}
 
-Preencher servico e detalhamento do servico |${servico}|,|${detalhamento}|
-    Preencher campo    ${campoServico}          ${servico}
-    Preencher campo    ${campoDetalhamento}     ${detalhamento}
+Preencher servico e detalhamento do servico 
+    Click no Item  ${buttonSelect}
+    Click no Item  ${campoServico}           
+    Click no Item  ${campoConvenio}
+
+Clicar no proximo registro
+    Click no Item       ${btnSeguinte}
 
 Pesquisar os campos preenchidos 
+    Sleep    1
     Click no Item       ${btnPesquisar}
 
 Preencher o campo Preencher e valor fixo |${valorPreencher}|,|${valorFixo}|
@@ -34,3 +41,6 @@ Salvar modificacoes
 
 Validar mensagem ao salvar |${MsgEsperada}|
     Valida Mensagem    ${ElementoMsgRecebida}    ${MsgEsperada}
+
+Minimizar notificacao
+    Click no Item    ${minimizeNotification}

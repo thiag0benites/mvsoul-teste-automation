@@ -34,10 +34,13 @@ SCR5FMTISSCONFIGURACAO-001:Fluxo principal
 # robot -v browser:firefox -t "SCR5FMTISSCONFIGURACAO-001:Fluxo principal" -d ./5-results/M_TISS_CONFIGURACAO "3-tests/5-FATURAMENTO/M_TISS_CONFIGURACAO.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMTISSCONFIGURACAO-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
+    Minimizar notificacao
     Executar pesquisa 
     Clicar em ok 
+    Clicar no proximo registro 
+    Clicar em ok 
     Clicar em detalhamento
-    Preencher servico e detalhamento do servico |${dados}[servico]|,|${dados}[detalhamento]|
+    Preencher servico e detalhamento do servico 
     Pesquisar os campos preenchidos 
     Preencher o campo Preencher e valor fixo |${dados}[valorPreencher]|,|${dados}[valorFixo]|
     Salvar modificacoes
