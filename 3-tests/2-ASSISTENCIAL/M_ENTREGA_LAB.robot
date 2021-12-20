@@ -40,4 +40,4 @@ SCR2AMENTREGALAB-001:Fluxo Principal
     Gerar protocolo
     Preencher os campos para a geracao do protocolo |${dados}[tipoResponsavel]|,|${dados}[nomeResponsavel]|,|${dados}[dataRegistro]|,|${dados}[observacao]|,|${dados}[orgaoEmissor]|,|${dados}[cpf]|,|${dados}[usuarioResponsavel]|
     Clicar em 6-Confirmar
-    Verificar se o sistema gerou o protocolo
+    Captura numero do protocolo |${suite}|${dados}[id]|

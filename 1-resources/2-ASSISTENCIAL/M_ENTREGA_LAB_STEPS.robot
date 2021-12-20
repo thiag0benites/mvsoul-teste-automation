@@ -44,3 +44,9 @@ Verificar se o sistema gerou o protocolo
 
 Voltar para a tela
     Click no Item    ${btnVoltar}
+
+Captura numero do protocolo |${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty    ${campoProtocolo}
+    ${protocolo}    Get Element Attribute    ${campoProtocolo}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "outputProtocolo", valor "${protocolo}"
