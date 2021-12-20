@@ -40,7 +40,7 @@ SCR1AMCADAGENDACENTRAL-001:Fluxo Principal
     Validar Agenda |${dados}[Prestador]| |${dados}[UnidInternacao]| |${dados}[Setor]|
     Cadastrar Item de Agendamento |${dados}[ItemAgendamento]|
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
-    # Retornar massa de dados para status inicial
+    # Retornar massa de dados para status inicial #
     Excluir Item Agendamento
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
 
