@@ -34,8 +34,9 @@ SCR5FMINCLUSAOEXCLUSAOPROIBICAO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR5FMINCLUSAOEXCLUSAOPROIBICAO-001:Fluxo Principal" -d ./5-results/SCR5FMINCLUSAOEXCLUSAOPROIBICAO-001 "3-tests/5-FATURAMENTO/M_INCLUSAO_EXCLUSAO_PROIBICAO.robot"
 # robot -v browser:firefox -t "SCR5FMINCLUSAOEXCLUSAOPROIBICAO-001:Fluxo Principal" -d ./5-results/SCR5FMINCLUSAOEXCLUSAOPROIBICAO-001 "3-tests/5-FATURAMENTO/M_INCLUSAO_EXCLUSAO_PROIBICAO.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMINCLUSAOEXCLUSAOPROIBICAO-001"
-    Acessar a tela pela busca |M_GUIAS||Central de Guias| @las
+    Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Personalizados>Proibições de Grupo ou Procedimentos" @las
+    #Acessar a tela pela busca |M_INCLUSAO_EXCLUSAO_PROIBICAO||Central de Guias| @las
  
-    Acessar Tela pelo Botao |${dados}[Atend]|
-    Adicionar nova Guia |${dados}[Obs]|
-    Clicar Botao Salvar |${dados}[MsgSalva]|
+    Selecionar Procedimento, Convenio, Plano e Setores |${dados}[Procedimento]| |${dados}[Convenio]|
+    Preencher Vigencia Automaticamente
+    Incluir e Validar |${dados}[Justificativa]| |${dados}[MsgSalva]|
