@@ -9,14 +9,12 @@ Resource          ../../2-pages/8-SERVICO_APOIO/DOCENTR_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-
 Acessar |${tela}|${printscreen} ${las}
     Unselect Frame
     Click Element    ${HomeXpathBtnPesquisa}
-    Preencher campo  ${HomeXpathBtnPesquisaInput}       ${tela}
+    Preencher campo    ${HomeXpathBtnPesquisaInput}    ${tela}
     Sleep    1
-    Click Element    ${ScreenEntradaDeDocumentos} 
-
+    Click Element    ${ScreenEntradaDeDocumentos}
     #### LAS Send Keys #####
     IF    "${las}" == "@las"
         # Sleep    1
@@ -35,37 +33,34 @@ Acessar |${tela}|${printscreen} ${las}
 
 Preencher SAME e Validar |${same}|
     Preencher campo    ${campoSame}    ${same}
-    Send Keys  enter
+    Send Keys    enter
     Validar Elemento Pelo Titulo    ${same}
     Click no Item    ${btnAcessar}
 
 Preencher Data Entrada |${dataEntrada}|, Atendimento |${atendimento}|, observacao |${observacao}| e validar
     Preencher campo    ${campoDataEntrada}    ${dataEntrada}
-    Send Keys  enter
+    Send Keys    enter
     Validar Elemento Pelo Titulo    ${dataEntrada}
-
     Preencher campo    ${campoAtendimento}    ${atendimento}
-    Send Keys  enter
+    Send Keys    enter
     Validar Elemento Pelo Titulo    ${atendimento}
-
     Preencher campo    ${campoObservacao}    ${observacao}
-    Send Keys  enter
+    Send Keys    enter
     Validar Elemento Pelo Titulo    ${observacao}
 
 Preencher Armario |${armario}|, Tipo de Documentos |${tipoDocumento}| e validar
     Preencher campo    ${campoArmario}    ${armario}
-    Send Keys  enter
+    Send Keys    enter
     Validar Elemento Pelo Titulo    ${armario}
-
     Preencher campo    ${campoTipoDocumento}    ${tipoDocumento}
-    Send Keys  enter
+    Send Keys    enter
     Validar Elemento Pelo Titulo    ${tipoDocumento}
 
 Imprimir e validar mensagem |${mensagemSucesso}|
     Click no Item    ${btnImprimir}
     Click no Item    ${checkbox}
     Click no Item    ${btnSair}
-    Wait Until Element Is Visible    ${mensagemApresentada}     120
-    Element Should Contain   ${mensagemApresentada}   ${mensagemSucesso}
+    Wait Until Element Is Visible    ${mensagemApresentada}    120
+    Element Should Contain    ${mensagemApresentada}    ${mensagemSucesso}
     Click no Item    ${btnOk}
-    Sleep  1
+    Sleep    1
