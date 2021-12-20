@@ -36,7 +36,3 @@ SCR1AMAGENDAMENTOONCOLOGICO-001:Fluxo Principal
     Novo Tratamento|${dados}[Paciente]||${dados}[Convenio]||${dados}[Plano]||${dados}[SubPlano]|
     Novo Tratamento Tela 2|${dados}[ItemDeAgendamento]||${dados}[Protocolo]||${dados}[CicloInicial]||${dados}[SessaoInicial]||${dados}[Data]||${dados}[Observacao]|
     Validacao|${dados}[Data]|
-
-
-
-
