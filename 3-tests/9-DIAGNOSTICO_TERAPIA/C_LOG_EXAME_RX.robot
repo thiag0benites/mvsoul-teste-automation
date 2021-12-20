@@ -20,7 +20,7 @@ Resource    ../../1-resources/9-DIAGNOSTICO_TERAPIA/C_LOG_EXAME_RX_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
