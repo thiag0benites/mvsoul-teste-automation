@@ -35,8 +35,3 @@ SCR1AMKITAVISO-001:Fluxo Principal
     Conferencia de Itens de Checagem|${dados}[CodigoAvisoCirurgia]|
     Aba Kits Cirurgia|${dados}[Codigo]||${dados}[Quantidade]||${dados}[MsgEsperada1]|
     Apagar a massa pra reutilizacao da massa|${dados}[MsgEsperada2]||${dados}[MsgEsperada3]|
-
-
-
-
-
