@@ -22,7 +22,7 @@ Test Setup        Nova sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}         M_CONFIG_LISTA_PACIENTE
+# ${suite}         m_config_lista_paciente
 # # Recebe dados do gerenciador
 # ${dados}
 
@@ -32,5 +32,5 @@ SCR2AMCONFIGLISTAPACIENTEA001:Fluxo Principal
     # robot -v browser:chrome -t "SCR2AMCONFIGLISTAPACIENTEA001:Fluxo Principal" -d ./5-results/SCR2AMCONFIGLISTAPACIENTEA001 "3-tests/2-ASSISTENCIAL/M_CONFIG_LISTA_PACIENTE.robot"
     # robot -v browser:firefox -t "SCR2AMCONFIGLISTAPACIENTEA001:Fluxo Principal" -d ./5-results/SCR2AMCONFIGLISTAPACIENTEA001 "3-tests/2-ASSISTENCIAL/M_CONFIG_LISTA_PACIENTE.robot"
     # ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGLISTAPACIENTEA001"
-    Acessa a Tela Pela Busca |M_CONFIG_LISTA_PACIENTE||Protocolo| @las
-    # Informa na Tela Protocolo <Desc> |${dados}[Descri]| <Dias> |${dados}[Dias]| <Ciclo> |${dados}[Ciclo]| <Dt Inicio> |${dados}[DtInicio]| <Dt Valid> |${dados}[DtValid]| <Ativo> |${dados}[Ativo]| <IdadeInicial> |${dados}[IdadeInicial]| <IdadeFinal> |${dados}[IdadeFinal]| <Salvar> |${dados}[Salvar]| <DocPadrao> |${dados}[DocPadrao]| <QtDias> |${dados}[QtDias]|
+    Acessa a Tela Pela Busca |M_CONFIG_LISTA_PACIENTE||Lista de Paciente| @las
+    Informa na Tela Lista de Paciente <Empresa> |5| <TpInternacao> |Internação| <TpPrestador> |Médico| <Person> |Marcos WATI| <Ordem> |2| <Segundo> |60| <MSG> |Registros gravados com sucesso.|
