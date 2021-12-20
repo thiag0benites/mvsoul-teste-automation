@@ -22,15 +22,15 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-#${suite}          
+${suite}    m_cad_obs          
  # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR1AMCADOBS-001:Fluxo Principal
     #SMF-9586 : Calcular os Custos Gerais
 # robot -v browser:chrome -t "SCR1AMCADOBS-001:Fluxo Principal" -d ./5-results/SCR1AMCADOBS-001 "3-tests/1-ATENDIMENTO/M_CAD_OBS.robot"
 # robot -v browser:firefox -t "SCR1AMCADOBS-001:Fluxo Principal" -d ./5-results/SCR1AMCADOBS-001 "3-tests/1-ATENDIMENTO/M_CAD_OBS.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMCADOBS-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMCADOBS-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Avisos do Paciente da Cirurgia"@nprint @nao
-    Avisos do paciente da cirurgia
+    Avisos do paciente da cirurgia |${dados}[Equipe]||${dados}[Sala]||${dados}[Data]||${dados}[Obs]||${dados}[Tempo]|

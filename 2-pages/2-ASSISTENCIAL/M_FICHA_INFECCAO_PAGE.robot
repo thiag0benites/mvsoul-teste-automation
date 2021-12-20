@@ -8,23 +8,22 @@ Resource          ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-${CampoData}                   xpath=//input[@id="inp:dtEnvio"]
-${CampoHora}                   xpath=//input[@id="inp:hrEnvio"]
-${CampoPostoColeta}            xpath=//input[@id="inp:cdPostoColeta"]
-${CampoSetorExecutante}        xpath=//input[@id="inp:cdSetExa"]
-${CampoObs}                    xpath=//textarea[@id="inp:dsObservacao"]
-${CampoAmostra}                xpath=//input[@id="inp:cdAmostra"]
-
-
-
-
+${CampoAtendimento}          xpath=//input[@id="inp:cdAtendimento"]
+${CampoCID}                  xpath=//input[@id="//input[@id="inp:regInf_cdCid"]"]
+${CampoDataReg}              xpath=//input[@id="inp:dtRegInf"]
 
 
 
 ### Botoes ###
 ${BtnOk}                      xpath=//li[@class='notification-buttons']/button
-${BtnFecharRemessa}           xpath=//button[@id="btnFecharAmostra"]
 ${BtnSimPopUp}                xpath=//li[@class="notification-buttons"]/button[contains(text(),"Sim")]
 ${MensagemRecebida}           xpath=//div[@class="notifications-item-body"]/p
+
+
+${BtnPesquisar}               xpath=//button[@id="CV_TAB_ATENDIME_paciente_btnPesquisar"]
+${AbaInfecCol}                xpath=//div[@id="TABPAGES_TABPAGES"]//li[@class="ui-tabs-tab ui-corner-top ui-state-default"]
+
+
+
 
 

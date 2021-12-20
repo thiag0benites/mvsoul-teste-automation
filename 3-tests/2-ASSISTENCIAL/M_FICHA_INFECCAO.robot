@@ -31,4 +31,6 @@ SCR2AMFICHAINFECCAO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMFICHAINFECCAO-001:Fluxo Principal" -d ./5-results/SCR2AMFICHAINFECCAO-001 "3-tests/2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
 # robot -v browser:firefox -t "SCR2AMFICHAINFECCAO-001:Fluxo Principal" -d ./5-results/SCR2AMFICHAINFECCAO-001 "3-tests/2-ASSISTENCIAL/M_FICHA_INFECCAO.robot"
     #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMFICHAINFECCAO-001"
+    Acessar a tela "Clínica e Assistencial>Controle de Infecção Hospitalar>Atendimento>Registro de Infecção/Colonização"@nprint @nao
+
     
