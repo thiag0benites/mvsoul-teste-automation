@@ -36,4 +36,3 @@ SCR1ACAGENDAMENTOS-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Entrada Dados e Pesquisa |${dados}[DtInicial]| |${dados}[DtFinal]|
     Validar Dados Pos Pesquisa |${dados}[Agenda]| |${dados}[DataHoraAgenda]| |${dados}[ItemAgendamento]| |${dados}[PrestadorMed]| |${dados}[NomePac]|
-    
