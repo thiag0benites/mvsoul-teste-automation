@@ -25,4 +25,8 @@ ${MensagemToast}        xpath=//p[@class="notifications-item-text"]
 ${CampoFiltro}          xpath=//input[@name="filterLov"] 
 ${BotaoFiltrar}         xpath=//button[@id="btfilter"]
 ${BotaoOKFiltrar}       xpath=//button[@id="btok"]
+${BotaoSim}             xpath=//li[@class="notification-buttons"]/button[text()="Sim"]
+${BotaoSim}             xpath=//li[@class="notification-buttons"]/button[text()="Não"]
+${BotaoOK}              xpath=//li[@class="notification-buttons"]/button[text()="OK"]
+
 *** Keywords ***
