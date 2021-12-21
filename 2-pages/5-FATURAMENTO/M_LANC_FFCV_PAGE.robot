@@ -11,34 +11,20 @@ Resource    ../../Config.robot
 ### Campos ###
 
 
-${CampoConta}                            xpath=//input[@id="inp:cdRegAmb"]
-${CampoConvenio}                         xpath=//input[@id="inp:cdConvenio"]
-${CampoPlano}                            xpath=//input[@id="inp:cdPlano"]
-${CampoSubPlano}                         xpath=//input[@id="inp:cdSubPlano"]
-
-
-
-
-
-${InputDataAgenda}                       xpath=//input[@id="inp:dtAgenda"]
-${CampoInputLove}                        xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/input
-
-
-
-
 
 ### Botoes ###
 ${BtnIncluirItem}                        xpath=//button[@id="btnIncluiItem"]
 ${BtnSalvar}                             xpath=//a[@title="Salvar"]
 ${BtnExecutarConsulta}                   xpath=//a[@title="Executar Consulta"]
 ${BtnAdicionar}                          xpath=//a[@title="Adicionar"]
+${BtnSair}                               xpath=//a[@title="Sair"]
 
 
 
 ### Diversos ###
 
 
-${Alerta}                                xpath=//p[@class="notifications-item-text"]
+${Alerta}                                xpath=//p[@class="notifications-item-text"][contains(text(),"Registros gravados com sucesso")]
 
 
 

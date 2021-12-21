@@ -22,23 +22,18 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_agendamento_oncologico
+${suite}          m_lanc_ffcv
  # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR5FMLANCFFCV-001:Criacao da massa de dados
-# robot -v browser:chrome -t "SCR5FMLANCFFCV-001:Criacao da massa de dados" -d ./5-results/SCR5FMLANCFFCV-001 "3-tests/5-FATURAMENTO/M_LANC_FFCV.robot"
-# robot -v browser:firefox -t "SCR5FMLANCFFCV-001:Criacao da massa de dados" -d ./5-results/SCR5FMLANCFFCV-001 "3-tests/5-FATURAMENTO/M_LANC_FFCV.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMLANCFFCV-001"
+SCR5FMLANCFFCV-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR5FMLANCFFCV-001:Fluxo Principal" -d ./5-results/SCR5FMLANCFFCV-001 "3-tests/5-FATURAMENTO/M_LANC_FFCV.robot"
+# robot -v browser:firefox -t "SCR5FMLANCFFCV-001:Fluxo Principal" -d ./5-results/SCR5FMLANCFFCV-001 "3-tests/5-FATURAMENTO/M_LANC_FFCV.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMLANCFFCV-001"
     Acessar a tela "Faturamento>Auditoria e Controle de Recursos de Glosas>Lançamentos>Auditoria Conta Ambulatorial"@nprint @nao
 
-SCR5FMLANCFFCV-002:Fluxo Principal
-# robot -v browser:chrome -t "SCR5FMLANCFFCV-002:Fluxo Principal" -d ./5-results/SCR5FMLANCFFCV-002 "3-tests/5-FATURAMENTO/M_LANC_FFCV.robot"
-# robot -v browser:firefox -t "SCR5FMLANCFFCV-002:Fluxo Principal" -d ./5-results/SCR5FMLANCFFCV-002 "3-tests/5-FATURAMENTO/M_LANC_FFCV.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMLANCFFCV-002"
-    Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Lançamentos>Contas"@nprint @nao
-    
+
 
 
 
