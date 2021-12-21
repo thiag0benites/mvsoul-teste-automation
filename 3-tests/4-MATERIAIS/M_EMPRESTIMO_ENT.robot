@@ -41,4 +41,3 @@ SCR4MMEMPRESTIMOENT-001:Fluxo Principal
     Preencher Dados do Produto |${dados}[Produto]| |${dados}[Quantidade]| |${dados}[Unidade]|
     Preencher Lote |${dados}[Lote]| |${dados}[Quantidade]| |${dados}[MensagemValor]|
     Concluir Entrada |${dados}[MsgEmprestimoSucesso]| |${dados}[MensagemSucesso]|
-

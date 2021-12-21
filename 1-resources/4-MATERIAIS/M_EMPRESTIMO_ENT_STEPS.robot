@@ -21,11 +21,11 @@ Preencher Dados do Produto |${Produto}| |${Quantidade}| |${Unidade}|
     Clicar Item e Selecionar da Lista    ${CampoProduto}    ${BotaoLovProduto}    ${Produto}    ${Produto}
     Validar Elemento Pelo Titulo    ${Unidade}
     Send Keys    tab
-    Sleep  1
+    Sleep    1
     Send Keys    tab
     Preencher Campo    ${CampoEdit}    ${Quantidade}
     Send Keys    tab
-    Sleep  1
+    Sleep    1
     Send Keys    tab
 
 Preencher Lote |${Lote}| |${Quantidade}| |${MensagemValor}|
@@ -41,4 +41,3 @@ Concluir Entrada |${MsgEmprestimoSucesso}| |${MensagemSucesso}|
     Valida Mensagem    ${MensagemToast}    ${MsgEmprestimoSucesso}
     Click no Item    ${BotaoOk}
     Valida Mensagem    ${MensagemToast}    ${MensagemSucesso}
-
