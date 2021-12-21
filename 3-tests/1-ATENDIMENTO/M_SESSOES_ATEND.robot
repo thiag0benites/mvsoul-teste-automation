@@ -19,7 +19,7 @@ Resource          ../../1-resources/1-ATENDIMENTO/M_SESSOES_ATEND_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown    Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -38,5 +38,5 @@ SCR2AMSESSOESATEND-001:Fluxo Principal
     Executar pesquisa de sessoes
     Clicar em Ok
     Preencher os campos da tabela |${dados}[data]|,|${dados}[hora]|,|${dados}[quantidade]|
-    Salvar alteracoes realizadas 
+    Salvar alteracoes realizadas
     Validar mensagem ao salvar alteracoes |${dados}[MsgEsperada]|
