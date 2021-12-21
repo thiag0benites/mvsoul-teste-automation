@@ -35,4 +35,4 @@ SCR1AMAGENDASCMA-001:Fluxo Principal
     Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Agendamento"@nprint @las
     Cadastre o agendamento |${dados}[Item]| |${dados}[Paciente]|
     Salve o agendamento
-    Exclusão do agendamento |${dados}[MsgValidada]|  #para nao perder a massa de teste
+    Exclusao do agendamento |${dados}[MsgValidada]|  #para nao perder a massa de teste
