@@ -31,12 +31,13 @@ ${dados}
 
 *** Test Case ***
 SCR2AMREGISTRAMOVAMOSTRA-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR2AMREGISTRAMOVAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMREGISTRAMOVAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_REGISTRA_MOV_AMOSTRA.robot" #
+# robot -v browser:chrome -t "SCR2AMREGISTRAMOVAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMREGISTRAMOVAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_REGISTRA_MOV_AMOSTRA.robot" 
 # robot -v browser:firefox -t "SCR2AMREGISTRAMOVAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMREGISTRAMOVAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_REGISTRA_MOV_AMOSTRA.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMREGISTRAMOVAMOSTRA-001"
     Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Coleta>Registro de Passagem de Amostra"@nprint @las
     Selecionar Amostra |${dados}[Bancada]| |${dados}[Amostra]|
     Validar Passagem de Amostra |${dados}[MsgRegistroAnterior]| |${dados}[MsgConfirmaPassagem]| |${dados}[ValidaPassagemAmostra]|
+    
 
 
 
