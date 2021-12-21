@@ -18,19 +18,19 @@ Resource          ../../1-resources/2-ASSISTENCIAL/M_CONFIG_LISTA_PACIENTE_STEPS
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-# ${suite}         m_config_lista_paciente
+${suite}         m_config_lista_paciente
 # # Recebe dados do gerenciador
-# ${dados}
+${dados}
 
 *** Test Case ***
 # 
 SCR2AMCONFIGLISTAPACIENTEA001:Fluxo Principal
     # robot -v browser:chrome -t "SCR2AMCONFIGLISTAPACIENTEA001:Fluxo Principal" -d ./5-results/SCR2AMCONFIGLISTAPACIENTEA001 "3-tests/2-ASSISTENCIAL/M_CONFIG_LISTA_PACIENTE.robot"
     # robot -v browser:firefox -t "SCR2AMCONFIGLISTAPACIENTEA001:Fluxo Principal" -d ./5-results/SCR2AMCONFIGLISTAPACIENTEA001 "3-tests/2-ASSISTENCIAL/M_CONFIG_LISTA_PACIENTE.robot"
-    # ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGLISTAPACIENTEA001"
+    ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGLISTAPACIENTEA001"
     Acessa a Tela Pela Busca |M_CONFIG_LISTA_PACIENTE||Lista de Paciente| @las
-    Informa na Tela Lista de Paciente <Empresa> |5| <TpInternacao> |Internação| <TpPrestador> |Médico| <Person> |Marcos WATI| <Ordem> |2| <Segundo> |60| <MSG> |Registros gravados com sucesso.|
+    Informa na Tela Lista de Paciente <Empresa> |${dados}[Empre]| <TpInternacao> |${dados}[Inter]| <TpPrestador> |${dados}[Pres]| <Person> |${dados}[Pers]| <Ordem> |${dados}[Ord]| <Segundo> |${dados}[Seg]| <MSG> |${dados}[Salvar]|

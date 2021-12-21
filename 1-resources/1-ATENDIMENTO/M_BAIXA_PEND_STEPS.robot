@@ -16,9 +16,9 @@ Informa na Tela Pendencias por Atendimentos <Atendimento> |${VlAtend}| <Paciente
     Clicar no Campo e Preencher Informacao    ${CpAtend}    ${CpAtend}     ${VlAtend}
     Clicar no Campo e Preencher Informacao    ${CpPacie}    ${CpPacie}     ${VlPaci}
     Click no Item    ${CpPesq}
-    Clicar no Campo e Preencher Informacao    ${CpObser}    ${CpObser}    ${VlObs}
+    Clicar no Campo e Preencher Informacao    ${CpObser}    ${CpObser}     ${VlObs}
     # Salvar e Validar
-    Click no Item    ${BtSalvar}
+    Click no Item     ${BtSalvar}
     sleep    2
-    Valida Mensagem    ${MgsVerif}    ${MsgEsperada}
+    Valida Mensagem     ${MgsVerif}     ${MsgEsperada}
 

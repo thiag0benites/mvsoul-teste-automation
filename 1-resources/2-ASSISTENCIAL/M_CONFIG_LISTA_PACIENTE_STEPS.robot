@@ -11,7 +11,7 @@ Resource                    ../../2-pages/2-ASSISTENCIAL/M_CONFIG_LISTA_PACIENTE
 
 *** Keywords ***
 
-Informa na Tela Lista de Paciente <Empresa> |${VlEmp}| <TpInternacao> |${VlTpAten}| <TpPrestador> |${VlTpPres}| <Person> |${VlPerson}| <Ordem> |${VlOrd}| <Segundo> |${VlSeg}| <MSG> ${MsgEsperada}
+Informa na Tela Lista de Paciente <Empresa> |${VlEmp}| <TpInternacao> |${VlTpAten}| <TpPrestador> |${VlTpPres}| <Person> |${VlPerson}| <Ordem> |${VlOrd}| <Segundo> |${VlSeg}| <MSG> |${MsgEsperada}|
     Validar Acesso a Tela |Lista de Paciente|
     # Empresa
     Click no Item      ${BtPesq}

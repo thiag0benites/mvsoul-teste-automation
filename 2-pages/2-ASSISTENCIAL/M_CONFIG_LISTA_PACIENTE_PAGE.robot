@@ -24,7 +24,7 @@ ${CpTpPresB}      xpath=//*[@id="undefined_ac"]
 # Executa Pesquisa
 ${BtExec}         xpath=//*[@id="tb-execute"]/a/i
 # Exibir
-${ChExib}         xpath=//*[@id="grdListaCenario"]/div[4]/div[3]/div/div[2]/div[1]/div/button/span[1]
+${ChExib}         xpath=//*[@id="grdListaCenario"]/div[4]/div[3]/div/div[2]/div[1]/div
 # Personalisada
 ${CpPersA}        xpath=//*[@id="grdListaCenario"]/div[4]/div[3]/div/div[2]/div[3]
 ${CpPersB}        xpath=//input[@class='editor-text mode-edit']
