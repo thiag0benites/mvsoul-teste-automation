@@ -29,9 +29,16 @@ ${dados}
 
 *** Test Case ***
 SCR2AMAUDITPRESC-001 : Fluxo Principal
-    # robot -v browser:chrome -t "SCR2AMAUDITPRESC-001 : Fluxo Principal"3-tests/2-ASSISTENCIAL/M_AUDIT_PRESC.robot"
+    # robot -v browser:chrome -t "SCR2AMAUDITPRESC-001 : Fluxo Principal" -d ./5-results/SCR2AMAUDITPRESC-001 "3-tests/2-ASSISTENCIAL/M_AUDIT_PRESC.robot"
     # robot -v browser:firefox -t "SCR2AMAUDITPRESC-001 : Fluxo Principal"3-tests/2-ASSISTENCIAL/M_AUDIT_PRESC.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMAUDITPRESC-001"
-    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
-    Validar Acesso a Tela |Recebimento de Convênio|
+    #Acessar a tela "Clínica e Assistencial>Controle de Infecção Hospitalar>Atendimento>Auditoria de Prescrições>Internação e Urgência"@nprint @nao
+    Acessa a Tela Pela Busca |M_AUDIT_PRESC||Internação e Urgência| @nao
+    Alterar Data Inicial |${dados}[DtInicial]|
+    Pesquisar Todos Principios Ativos
+    Selecionar Produto Para Auditar
+    Adicionar Registro |${dados}[Descricao]| |${dados}[ReavaliarEm]| |${dados}[PendenteDe]|
+    Preencher Regras da Auditoria do Produto |${dados}[NrDias]| |${dados}[TpAcao]| |${dados}[Mensagem]|
+    Salvar Registro
+    
     
