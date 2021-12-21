@@ -13,24 +13,14 @@ Resource          ../2-pages/ContextoPage.robot
 Navegar entre as abas do painel operacional de pendencias
     Click no Item    ${abaColetaSetor}
     Sleep    1
-    Validar Acesso a Tela |${dados}[aba1]|
 
     Click no Item    ${abaAmostras}
     Sleep    1
-    Validar Acesso a Tela |${dados}[aba2]|
 
     Click no Item    ${abaResultados}
     Sleep    1
-    Validar Acesso a Tela |${dados}[aba3]|
 
-    Click no Item    ${abaRevisao}
-    Sleep    1
-    Validar Acesso a Tela |${dados}[aba4]|
-
-    Click no Item    ${abaLiberacaoParcial}
-    Sleep    1
-    Validar Acesso a Tela |${dados}[aba5]|
-
-    Click no Item    ${abaLiberacao}
-    Sleep    1
-    Validar Acesso a Tela |${dados}[aba6]|
+Validar resultados do painel de operacoes |${codAtend1}|,|${codAtend2}|,|${codAtend3}|
+    Validar Elemento Pelo Titulo    ${codAtend1}
+    Validar Elemento Pelo Titulo    ${codAtend2}
+    Validar Elemento Pelo Titulo    ${codAtend3}

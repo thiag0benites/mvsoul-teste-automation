@@ -36,7 +36,7 @@ SCR2AMWORKFLOWPENDENCIASPSSD-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMWORKFLOWPENDENCIASPSSD-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    #Navegar entre as abas do painel operacional de pendencias 
-
+    Navegar entre as abas do painel operacional de pendencias
+    Validar resultados do painel de operacoes |${dados}[codAtend1]|,|${dados}[codAtend2]|,|${dados}[codAtend3]|
 
     
