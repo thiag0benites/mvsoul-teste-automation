@@ -14,5 +14,10 @@ ${campoDtPreAtend}                          xpath=//input[@id="inp:dtPreAtendime
 ### Botoes ###
 ${btnSenhaAtend}                            xpath=//button[@id="atendidos_btn"]
 ${btnExecConsulta}                          xpath=//button[@id="btnExecutar"]
+${btnImprimir}                              xpath=//button[@id="btnImprimir"]
+${btnCheckboxRelatorio}                     xpath=//div[@id="grdRepoAte"]//div[@data-member='DSP_SN_MARCADO']/button[@data-rowid='AAAcD0AAUAAABunAAB']
+${btnExecutar}                              xpath=//button[@id="chamaRelatorio"]
+${btnEnviar}                                xpath=//td[@class='stiJsViewerClearAllStyles'][text()='Enviar']
+
 ### Diversos ###
 

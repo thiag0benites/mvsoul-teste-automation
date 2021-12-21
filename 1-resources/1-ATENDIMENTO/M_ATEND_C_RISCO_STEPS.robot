@@ -15,3 +15,9 @@ Alterar Data de Pre-Atendimento |${DtPreAtend}|
 Pesquisar Atraves do Tipo de Senha Que Esta Sendo Chamado
     Clicar Botao se estiver Visivel                          ${btnSenhaAtend}
     Clicar Botao se estiver Visivel                          ${btnExecConsulta}
+Imprimir Relatorio de Atendimento
+    Clicar Botao se estiver Visivel                          ${btnImprimir}
+    Click no Item                                            ${btnCheckboxRelatorio}
+    Clicar Botao se estiver Visivel                          ${btnExecutar}
+    Switch Window
+    Click no Item                                            ${btnEnviar}
