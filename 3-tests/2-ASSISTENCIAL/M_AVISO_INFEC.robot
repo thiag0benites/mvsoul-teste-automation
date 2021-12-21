@@ -43,6 +43,3 @@ SCR2AMAVISOINFEC-001:Fluxo Principal
     Validar Aba Antimicrobianos |${dados}[Prescricao]| |${dados}[Antimicrobiano]| |${dados}[Frequencia]|
     Validar Aba Proc. Invasivos |${dados}[Horario]| |${dados}[Procedimento]| |${dados}[Topografia]|
     Validar Aba Cirurgias |${dados}[HrInicio]| |${dados}[HrFim]| |${dados}[ProcedimentoCir]| |${dados}[PrestadorCir]|
-
-
-

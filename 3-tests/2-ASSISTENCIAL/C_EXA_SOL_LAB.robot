@@ -38,5 +38,3 @@ SCR2ACEXASOLLAB-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Pesquisar Solicitacao de Exames |${dados}[Data]|
     Validar Consulta Realizada |${dados}[SetorSolic]| |${dados}[Prestador]| |${dados}[Paciente]| |${dados}[Exame1]| |${dados}[Exame2]| |${dados}[Pedido1]| |${dados}[Pedido2]|
-
-

@@ -7,4 +7,4 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoData}                xpath=//input[@id="inp:dtPedido"]
+${CampoData}      xpath=//input[@id="inp:dtPedido"]

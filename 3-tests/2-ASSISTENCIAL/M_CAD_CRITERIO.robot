@@ -44,6 +44,3 @@ SCR2AMCADCRITERIO-001:Fluxo Principal
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
     # Retornar massa de dados para status inicial do teste 
     Excluir Criterio Cadastrado |${dados}[Descricao]| |${dados}[MensagemNenhumRegistro]|
-
-
-

@@ -28,8 +28,8 @@ Preencher Codigos Relacionados |${CdRelacionado1}| |${CdRelacionado2}|
 
 Preencher Formula |${Formula}|
     Preencher Campo    ${CampoFormula}    ${Formula}
-
 ### Keyword para retornar massa de dados para status inicial do teste ###
+
 Excluir Criterio Cadastrado |${Descricao}| |${MensagemNenhumRegistro}|
     Click no Item    ${CampoDescricao}
     Click Elemento por titulo    Apagar
@@ -38,4 +38,3 @@ Excluir Criterio Cadastrado |${Descricao}| |${MensagemNenhumRegistro}|
     Preencher Campo    ${CampoDescricao}    ${Descricao}
     Click Elemento por titulo    Executar Consulta
     Valida Mensagem    ${MensagemToast}    ${MensagemNenhumRegistro}
-    

@@ -10,8 +10,8 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_EXA_SOL_LAB_PAGE.robot
 
 *** Keywords ***
 Pesquisar Solicitacao de Exames |${Data}|
-    Preencher Campo                ${CampoData}          ${Data}
-    Click Elemento por titulo      Executar Consulta
+    Preencher Campo    ${CampoData}    ${Data}
+    Click Elemento por titulo    Executar Consulta
 
 Validar Consulta Realizada |${SetorSolic}| |${Prestador}| |${Paciente}| |${Exame1}| |${Exame2}| |${Pedido1}| |${Pedido2}|
     Validar Elemento Pelo Titulo    ${SetorSolic}
