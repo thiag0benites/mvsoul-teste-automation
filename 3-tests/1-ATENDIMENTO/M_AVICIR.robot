@@ -37,6 +37,3 @@ SRC1MAVICIR-001:Fluxo Principal
     Preenche Aviso Cirurgia "Data Prev Internacao|${dados}[DataPrevInter]|", "Tempo Prev|${dados}[TempoPrev]|", "Atendimento|${dados}[Atendimento]|", "Centro Cirurgico|${dados}[CentroCir]|", "Sala Cirurgica|${dados}[SalaCir]|"
     Preenche Cirurgia A Serem Realizadas "Codigo Cirurgia|${dados}[CodCir]|", "Observacao|${dados}[Observação]|"
     Preenche Prestadores Cirurgia "Codigo|${dados}[Codigo]|", "Atividade Medica|${dados}[AtvMedica]|", "Mensagem Alerta|${dados}[MsgAlerta]|"
-
-
-    
