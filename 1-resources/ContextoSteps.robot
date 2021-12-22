@@ -39,7 +39,7 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
     Click Element    ${HomeXpathBtnMenu}
     @{listaItensMenu}    Converte string em lista    ${caminhoSelecaoMenu}    >
     @{listaXpathItensMenu}    Criar Lista Itens Menu Xpath com Index    @{listaItensMenu}
-    FOR    ${itemMenu}    IN    @{listaXpathItensMenu} 
+    FOR    ${itemMenu}    IN    @{listaXpathItensMenu}
         ${visivel}    Elemento Visivel    xpath=${itemMenu}
         Log To Console    *** Visivel: ${visivel}
         ${classe}    Get Element Attribute    xpath=${itemMenu}/ancestor::li[1]    class
@@ -57,8 +57,6 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
         Unselect Frame
         Send Keys    tab
         Send Keys    enter
-        
-        
     END
     Seleciona frame    ${IdIframe}    180
     Sleep    3
@@ -66,9 +64,9 @@ Acessar a tela "${caminhoSelecaoMenu}"${printscreen} ${las}
 
 Acessar a tela pela busca |${tela}||${nomeItem}|${printscreen} ${las}
     Unselect Frame
-    Click Element                           ${HomeXpathBtnMenu}
-    Preencher Campo                         ${HomeXpathInputPesquisa}       ${tela}
-    Click Elemento por titulo               ${nomeItem}                   
+    Click Element    ${HomeXpathBtnMenu}
+    Preencher Campo    ${HomeXpathInputPesquisa}    ${tela}
+    Click Elemento por titulo    ${nomeItem}
     IF    "${las}" == "@las"
         Seleciona frame    ${IdIframe}    180
         Wait Until Element Is Visible    ${classLasDisplay}    180
@@ -76,7 +74,7 @@ Acessar a tela pela busca |${tela}||${nomeItem}|${printscreen} ${las}
         Send Keys    tab
         Send Keys    enter
     END
-    Seleciona frame                         ${IdIframe}                         180
+    Seleciona frame    ${IdIframe}    180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
 
@@ -221,26 +219,26 @@ Clicar no Campo e Preencher Informacao
     Preencher Campo    ${CampoEditavel}    ${DadoInserido}
 
 Clicar Item e Selecionar da Lista
-    [Arguments]    ${CampoClick}          ${BotaoLov}        ${Item}           ${ItemLista}          
-    Click no Item                   ${CampoClick}   
-    Selecionar Item Na Lista        ${BotaoLov}        ${Item}         ${ItemLista}    
+    [Arguments]    ${CampoClick}    ${BotaoLov}    ${Item}    ${ItemLista}
+    Click no Item    ${CampoClick}
+    Selecionar Item Na Lista    ${BotaoLov}    ${Item}    ${ItemLista}
 
 Clicar Botao Salvar |${MensagemEsperada}|
-    Click Elemento por titulo               Salvar
-    Valida Mensagem                         ${MensagemToast}               ${MensagemEsperada}
+    Click Elemento por titulo    Salvar
+    Valida Mensagem    ${MensagemToast}    ${MensagemEsperada}
 
-Clicar Botao Salvar 
-    Click Elemento por titulo               Salvar
-    Valida Mensagem                         ${MensagemToast}               Registros gravados com sucesso
+Clicar Botao Salvar
+    Click Elemento por titulo    Salvar
+    Valida Mensagem    ${MensagemToast}    Registros gravados com sucesso
 
-Selecionar Item Na Lista         
-    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
-    Click no Item                           ${BotaoLov}    
-    Click no Item                           ${CampoFiltro}                 
-    Preencher Campo                         ${CampoFiltro}              %${Item}
-    Click no Item                           ${BotaoFiltrar}   
-    Click Elemento por titulo               ${ItemLista}
-    Click no Item                           ${BotaoOKFiltrar}
+Selecionar Item Na Lista
+    [Arguments]    ${BotaoLov}    ${Item}    ${ItemLista}
+    Click no Item    ${BotaoLov}
+    Click no Item    ${CampoFiltro}
+    Preencher Campo    ${CampoFiltro}    %${Item}
+    Click no Item    ${BotaoFiltrar}
+    Click Elemento por titulo    ${ItemLista}
+    Click no Item    ${BotaoOKFiltrar}
 
 Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     Unselect Frame
@@ -307,20 +305,20 @@ Preencher Input inativo
     SeleniumLibrary.Input Text    ${input}    ${text}
 
 Preencher o Campo Input
-    [Arguments]         ${ClickInput}    ${input}              ${text}
-    Wait Until Element Is Visible        ${ClickInput}         120
-    Click Element                        ${ClickInput}
-    Sleep                                                      3
-    Wait Until Element Is Visible        ${input}              120
-    Input Text                           ${input}              ${text}
-    Sleep                                                      3
-    
+    [Arguments]    ${ClickInput}    ${input}    ${text}
+    Wait Until Element Is Visible    ${ClickInput}    120
+    Click Element    ${ClickInput}
+    Sleep    3
+    Wait Until Element Is Visible    ${input}    120
+    Input Text    ${input}    ${text}
+    Sleep    3
+
 Valida Mensagem
     [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${MensagemRecebida}    120
     Sleep    3
     #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
-    #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
+    #Should Be Equal As Strings    ${ElementoMsgRecebida}    ${MensagemEsperada}
     Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
     #[Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
     # Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
@@ -332,27 +330,21 @@ Clicar no botao ${nomeBtn}
     IF    '${nomeBtn}' == 'Salvar do menu'
         Wait Until Element Is Visible    ${btnSalvar}    60
         Click Element    ${btnSalvar}
-    
     ELSE IF    '${nomeBtn}' == 'Adicionar'
         Wait Until Element Is Visible    ${btnAdicionar}    30
         Click Element    ${btnAdicionar}
-    
     ELSE IF    '${nomeBtn}' == 'Pesquisar'
         Wait Until Element Is Visible    ${btnPesquisar}    30
         Click Element    ${btnPesquisar}
-    
     ELSE IF    '${nomeBtn}' == 'Executar'
         Wait Until Element Is Visible    ${btnExecute}    30
         Click Element    ${btnExecute}
-    
     ELSE IF    '${nomeBtn}' == 'Apagar'
         Wait Until Element Is Visible    ${btnApagar}    30
         Click Element    ${btnApagar}
-    
     ELSE IF    '${nomeBtn}' == 'Nao'
         Wait Until Element Is Visible    ${btnNaoNotifications}    30
         Click Element    ${btnNaoNotifications}
-    
     ELSE IF    '${nomeBtn}' == 'Sim'
         Wait Until Element Is Visible    ${btnSimNotifications}    30
         Click Element    ${btnSimNotifications}

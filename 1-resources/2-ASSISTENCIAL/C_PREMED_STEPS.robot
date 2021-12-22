@@ -11,7 +11,7 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_PREMED_PAGE.robot
 *** Keywords ***
 Consulta Prescricoes Medicas |${Paciente}|
     Selecionar Item Na Lista    ${BotaoLovAtendimento}    ${Paciente}    ${Paciente}
-    Wait Until Element Is Visible    xpath=//div[@id="dspNmPaciente"]/span[@title="${Paciente}"]      60
+    Wait Until Element Is Visible    xpath=//div[@id="dspNmPaciente"]/span[@title="${Paciente}"]    60
     Click Elemento por titulo    Executar Consulta
 
 Validar Consulta Realizada |${Medico}| |${UnidInternacao}| |${Data}| |${Tipo}| |${Esquema}| |${ItemPrescricao}|
