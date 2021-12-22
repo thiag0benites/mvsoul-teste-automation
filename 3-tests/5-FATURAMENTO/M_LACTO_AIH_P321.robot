@@ -36,9 +36,10 @@ SCR5FMLACTOIAHP321-001:Fluxo principal
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Pesquisar pelo codigo do atendimento 
     Executar a pesquisa
+    Validar Resultado da Pesquisa |${dados}[dadosPesquisa]|
     Ir para a aba Conta AIH 
     Adicionar novo registro na tabela 
-    Preencher os campos da tabela  
+    Preencher os campos da tabela |${dados}[nr]|,|${dados}[remessa]|,|${dados}[internacao]|,|${dados}[alta]|,|${dados}[procedimento]|,|${dados}[especialidade]|,|${dados}[motivo]|,|${dados}[ca]|,|${dados}[laudo]|
     Salvar os dados inseridos 
     Validar mensagem |${dados}[MsgEsperada]|
     Ver Itens da Conta 
