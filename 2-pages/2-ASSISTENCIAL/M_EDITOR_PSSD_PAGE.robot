@@ -7,8 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-
-${BotaoGravar}                              xpath=//button[@data-member="BTN_GRAVAR"]
-
-${Editor}                                   xpath=//div[@id="formEditor"]
-${DivAnte}                                 xpath=//div[@id="dspCarregando"]
+${BotaoGravar}    xpath=//button[@data-member="BTN_GRAVAR"]
+${Editor}         xpath=//div[@id="formEditor"]
+${DivAnte}        xpath=//div[@id="dspCarregando"]
