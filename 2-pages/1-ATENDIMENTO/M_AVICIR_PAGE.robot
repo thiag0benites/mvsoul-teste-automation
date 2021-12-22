@@ -24,7 +24,7 @@ ${BtnCodCir}                                                 xpath=//*[@id="grdC
 ${ChBoxPrincipal}                                            xpath=//button[@class='ui-button ui-widget ui-state-default ui-button-icon-only ui-label-position-default mode-edit']
 ${BtnPrestadores}                                            xpath=//button[@id='butPrestador']
 ${BtnCodigo}                                                 xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
-${BtnAtvMedica}                                              xpath=ui-button ui-widget ui-corner-right ui-button-icon
+${BtnAtvMedica}                                              xpath=//*[@id="grdPreAvi"]/div[4]/div[3]/div/div/div[4]/div/button
 ${BtnSalvar}                                                 xpath=//li[@id='tb-record-save']       
 ### Variados ###
 ${MsgAlerta}                                                 xpath=//p[@class='notifications-item-text']
