@@ -28,5 +28,6 @@ ${BotaoOKFiltrar}       xpath=//button[@id="btok"]
 ${BotaoSim}             xpath=//li[@class="notification-buttons"]/button[text()="Sim"]
 ${BotaoSim}             xpath=//li[@class="notification-buttons"]/button[text()="Não"]
 ${BotaoOK}              xpath=//li[@class="notification-buttons"]/button[text()="OK"]
+${MensagemToast2}       xpath=//div[@class="notifications-item-body"]/p
 
 *** Keywords ***
