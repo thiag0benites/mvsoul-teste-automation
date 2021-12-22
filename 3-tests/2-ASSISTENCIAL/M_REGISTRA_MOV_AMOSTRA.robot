@@ -37,8 +37,3 @@ SCR2AMREGISTRAMOVAMOSTRA-001:Fluxo Principal
     Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Coleta>Registro de Passagem de Amostra"@nprint @las
     Selecionar Amostra |${dados}[Bancada]| |${dados}[Amostra]|
     Validar Passagem de Amostra |${dados}[MsgRegistroAnterior]| |${dados}[MsgConfirmaPassagem]| |${dados}[ValidaPassagemAmostra]|
-    
-
-
-
-
