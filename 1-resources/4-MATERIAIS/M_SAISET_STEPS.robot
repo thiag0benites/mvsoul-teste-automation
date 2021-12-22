@@ -4,24 +4,25 @@
 ##################################################################################################################################
 *** Settings ***
 #### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/4-MATERIAIS/C_ACOM_SOLCOM_PAGE.robot
+Resource          ../../2-pages/4-MATERIAIS/M_SAISET_PAGE.robot
 Resource    ../8-SERVICO_APOIO/M_SAI_SETOR_STEPS.robot
 
 *** Variable ***
 
 *** Keywords ***
-Preencher Data Inicial |${DataIni}|
-    Preencher Campo    ${CampoDataIni}    ${DataIni}
 
-Preencher Data Final
-    Preencher campo com data e hora    ${CampoDataFim}    %d/%m/%Y    00:00:00
-    Send Keys    TAB
-    ${DataFim}    Get Element Attribute    ${CampoDataFim}    title
-    Altera massa de dados da "C_ACOM_SOLCOM", linha "1", coluna "DataFim", valor "${DataFim}"
 
-Validar Saida
+Preencher Estoque e Unidade |${Estoque}| |${Unidade}|
+    Preencher Campo                ${CampoEstoque}                ${Estoque}
+    Preencher Campo                ${CampoUnidade}                ${Unidade}
+
+Preencher Produto e Quantidade |${Produto}| |${Quantidade}|
+    Clicar no Campo e Preencher Informacao    ${DivProduto}        ${CampoProduto}        ${Produto}
+    Clicar no Campo e Preencher Informacao    ${DivQuantidade}     ${CampoQuantidade}     ${Quantidade}
+
+Validar Saida |${Mensagem}|
     Click no Item                   ${BotaoConcluir}
-    Valida Mensagem                 ${Mensagem}        Movimentação Salva com Sucesso
+    Valida Mensagem                 ${MensagemEsperada}        ${Mensagem}
     Click no Item                   ${BtnOk}
 
     
