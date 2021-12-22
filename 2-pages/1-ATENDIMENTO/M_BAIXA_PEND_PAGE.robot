@@ -4,16 +4,14 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
 # Pesquisar
-${CpAtend}         xpath=//input[@name="cdAtendimento"]
-${CpPacie}         xpath=//input[@name="cdPaciente"]
-${CpPesq}          xpath=//i[@class='mv-basico-confirmar']
-${CpObser}          xpath=//textarea[@name="dsObsBaixa"]
-
+${CpAtend}        xpath=//input[@name="cdAtendimento"]
+${CpPacie}        xpath=//input[@name="cdPaciente"]
+${CpPesq}         xpath=//i[@class='mv-basico-confirmar']
+${CpObser}        xpath=//textarea[@name="dsObsBaixa"]
 # Salvar e Valida Msg de Registro Salvo
-${BtSalvar}    xpath=//*[@id="tb-record-save"]/a/i
-${MgsVerif}    xpath=//p[@class='notifications-item-text']
-
+${BtSalvar}       xpath=//*[@id="tb-record-save"]/a/i
+${MgsVerif}       xpath=//p[@class='notifications-item-text']
