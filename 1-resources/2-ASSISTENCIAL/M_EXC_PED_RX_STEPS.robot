@@ -10,10 +10,10 @@ Resource          ../../2-pages/2-ASSISTENCIAL/M_EXC_PED_RX_PAGE.robot
 
 *** Keywords ***
 Preencher Dados do Pedido |${Pedido}| |${Paciente}| |${Motivo}|
-    Preencher Campo    ${CampoPedido}     ${Pedido}
+    Preencher Campo    ${CampoPedido}    ${Pedido}
     Send Keys    tab
     Validar Elemento Pelo Titulo    ${Paciente}
-    Preencher Campo    ${CampoMotivo}     ${Motivo}
+    Preencher Campo    ${CampoMotivo}    ${Motivo}
 
 Excluir Pedido |${MensagemConfirmaExclusao}| |${MensagemExclusaoSucesso}|
     Click no Item    ${BotaoExcluirPedido}
@@ -21,6 +21,3 @@ Excluir Pedido |${MensagemConfirmaExclusao}| |${MensagemExclusaoSucesso}|
     Click no Item    ${BotaoSim}
     Valida Mensagem    ${MensagemToast2}    ${MensagemExclusaoSucesso}
     Click no Item    ${BotaoOK}
-
-
-
