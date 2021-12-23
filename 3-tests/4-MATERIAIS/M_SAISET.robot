@@ -1,6 +1,6 @@
 #################################################################################################################################################################
 # Autor: Alan Patriota
-# Decrição: Teste da tela  de Cancelamento de Solicitacao
+# Decrição: Teste da tela    de Cancelamento de Solicitacao
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\4-MATERIAIS\M_PRODUTO.robot"
@@ -34,8 +34,6 @@ SCR4MMSAISET-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMSAISET-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Saída de Produtos>De Setores"@nprint @las
     Validar Acesso a Tela |Saída de Produtos para Setor|
-    
     Preencher Estoque e Unidade |${dados}[Estoque]| |${dados}[Unidade]|
     Preencher Produto e Quantidade |${dados}[Produto]| |${dados}[Quantidade]|
     Validar Saida |${dados}[Mensagem]|
-
