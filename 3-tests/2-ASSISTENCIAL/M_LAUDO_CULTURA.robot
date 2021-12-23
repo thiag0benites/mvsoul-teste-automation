@@ -20,7 +20,7 @@ Resource            ../../1-resources/2-ASSISTENCIAL/M_LAUDO_CULTURA_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -36,6 +36,8 @@ SCR2AMLAUDOCULTURA-001:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMLAUDOCULTURA-001"
     #Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Atendimento>Gerenciamento de Exames"@nprint @las
     Acessa a Tela Pela Busca |M_ADMIN_EXA_LAB||Gerenciamento de Exames| @las
-    Selecione o exame |${dados}[Exame1]|
-    Preencha o laudo cultura |${dados}[Tipo]| |${dados}[Campo]|
+    Selecione o exame |${dados}[Exame1]| |${dados}[NumeroPedido]|
+    #Preencha o laudo cultura |${dados}[Tipo]| |${dados}[Obs]|
+    #Preencha os detalhes da medicacao |${dados}[Campo]|
     Acione gravar laudo |${dados}[MsgVereficada]|
+    Captura da mensagem |${suite}|${dados}[id]|
