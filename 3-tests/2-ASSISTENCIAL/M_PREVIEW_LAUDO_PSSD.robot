@@ -22,14 +22,15 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-#${suite}          
+${suite}          m_preview_laudo_pssd
  # Recebe dados do gerenciador
-#${dados}
+${dados}
 
 *** Test Case ***
 SCR2AMPREVIEWLAUDOPSSD-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMPREVIEWLAUDOPSSD-001:Fluxo Principal" -d ./5-results/SCR2AMPREVIEWLAUDOPSSD-001 "3-tests/2-ASSISTENCIAL/M_PREVIEW_LAUDO_PSSD.robot"
 # robot -v browser:firefox -t "SCR2AMPREVIEWLAUDOPSSD-001:Fluxo Principal" -d ./5-results/SCR2AMPREVIEWLAUDOPSSD-001 "3-tests/2-ASSISTENCIAL/M_PREVIEW_LAUDO_PSSD.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPREVIEWLAUDOPSSD-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPREVIEWLAUDOPSSD-001"
     #Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Atendimento>Gerenciamento de Exames"@nprint @nao
     Acessa a Tela Pela Busca |M_ADMIN_EXA_LAB||Gerenciamento de Exames| @nao
+    Gerenciamento de exames |${dados}[Pedido]||${dados}[Frame]|
