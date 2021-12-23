@@ -29,8 +29,8 @@ ${dados}
 
 *** Test Case ***
 SCR2AMCONFIGPAGU-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR2AMCONFIGPAGU-001:Fluxo Principal" -d ./5-results/SCR2AMENTREGALAB-001 "3-tests/2-ASSISTENCIAL/M_CONFIG_PAGU.robot"
-# robot -v browser:firefox -t "SCR2AMCONFIGPAGU-001:Fluxo Principal" -d ./5-results/SCR2AMENTREGALAB-001 "3-tests/2-ASSISTENCIAL/M_CONFIG_PAGU.robot"
+# robot -v browser:chrome -t "SCR2AMCONFIGPAGU-001:Fluxo Principal" -d ./5-results/M_CONFIG_PAGU "3-tests/2-ASSISTENCIAL/M_CONFIG_PAGU.robot"
+# robot -v browser:firefox -t "SCR2AMCONFIGPAGU-001:Fluxo Principal" -d ./5-results/M_CONFIG_PAGU "3-tests/2-ASSISTENCIAL/M_CONFIG_PAGU.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGPAGU-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Ir para a Aba Geral 
