@@ -19,6 +19,7 @@ Preencha os dados <Menu> |${Menu}|, <Portador> |${Portador}|, <Transportador> |$
     Preencher Campo                    ${CampoSolicitante}             ${Solicitante}
     Preencher Campo                    ${CampoMotivo}                  ${Motivo}
     Preencher Campo                    ${CampoAtendimento}             ${Atendimento}
+    Send Keys  enter
     Click no Item                      ${BtnConfirma}  
     Click no Item                      ${BtnSim}   
     Validar Informacao Item            ${MsgLida}                      ${MsgVerificada}
