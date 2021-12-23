@@ -19,7 +19,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_CONTRATO_ADIANT_RECEB_ST
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+#Test Teardown     Encerra sessao
 
 *** Variable *** 
 # # Suite registrada no gerenciador de dados
@@ -38,7 +38,7 @@ SMF-5520 : Realizar Contrato de Adiantamento do tipo Financeiro
     Atribuir <uma descricao ao contrato e tambem atribuir um numero de contrato> |${dados}[CaracContrato]| |${dados}[NrContrato]|, <uma data de vencimento de pagamento do contrato> |${dados}[Vencimento]|, <da forma de pagamento> |${dados}[FormaPgto]| |${dados}[ValorContrato2]| |${dados}[Data]|
     Clicar no <icone de salvar do menu principal> |${dados}[MsgVerificada]|, <botao Gerar Contas a Receber>
     Cadastrar <Conta contabil> |${dados}[FiltroContabil]|, <Tipo de documento> |${dados}[TipoDoc]|, <moeda a ser utilizada> |${dados}[Moeda]|, <o setor a conta contabil a conta de custo e o valor do rateio> |${dados}[TipoConta]| |${dados}[ValorRateio2]|
-    Clicar no botao Concluir |${dados}[MsgValidada]|
+    Clicar em Concluir |${dados}[MsgValidada]|
     Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
 
@@ -54,7 +54,7 @@ SMF-5519 : Realizar Contrato de Adiantamento do tipo Pacote
     Atribuir uma data de vencimento de pagamento do contrato |${dados}[Vencimento]| |${dados}[Data]|
     2Clicar no <icone de salvar do menu principal> |${dados}[MsgVerificada]|, <botao Gerar Contas a Receber>
     2Cadastrar <Conta contabil> |${dados}[FiltroContabil]|, <Tipo de documento> |${dados}[TipoDoc]|, <moeda a ser utilizada> |${dados}[Moeda]|, <o setor a conta contabil a conta de custo e o valor do rateio> |${dados}[TipoConta]| |${dados}[ValorRateio2]|
-    2Clicar no botao Concluir |${dados}[MsgValidada]|
+    2Clicar em Concluir |${dados}[MsgValidada]|
     2Captura do protocolo da previsao de pagamentos|${suite}|${dados}[id]|
 
    

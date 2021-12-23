@@ -11,11 +11,14 @@ Resource    ../6-CONTROLADORIA/M_PREST_CONTAS_STEPS.robot
 *** Variable ***
 
 *** Keywords ***
-Preencha os dados <Menu>, <Portador>, <Transportador>, <Solicitante>, <Motivo>
-    Preencher Campo                    ${CampoMenu}                    1
+Preencha os dados <Menu> |${Menu}|, <Portador> |${Portador}|, <Transportador> |${Transportador}|, <Solicitante> |${Solicitante}|, <Motivo> |${Motivo}| |${Atendimento}| |${MsgVerificada}|
+    Preencher Campo                    ${CampoMenu}                    ${Menu}
     Click no Item                      ${BtnAcessar}  
-    Preencher Campo                    ${CampoPortador}                1    
-    Preencher Campo                    ${CampoTransportador}           20
-    Preencher Campo                    ${CampoSolicitante}             Gael Ribeiro
-    Preencher Campo                    ${CampoMotivo}                  teste
-    #Preencher Campo                    ${CampoAtendimento}             1000002038
+    Preencher Campo                    ${CampoPortador}                ${Portador}    
+    Preencher Campo                    ${CampoTransportador}           ${Transportador}
+    Preencher Campo                    ${CampoSolicitante}             ${Solicitante}
+    Preencher Campo                    ${CampoMotivo}                  ${Motivo}
+    Preencher Campo                    ${CampoAtendimento}             ${Atendimento}
+    Click no Item                      ${BtnConfirma}  
+    Click no Item                      ${BtnSim}   
+    Validar Informacao Item            ${MsgLida}                      ${MsgVerificada}

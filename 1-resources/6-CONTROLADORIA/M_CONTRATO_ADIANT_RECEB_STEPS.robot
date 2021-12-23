@@ -52,7 +52,7 @@ Atribuir <uma descricao ao contrato e tambem atribuir um numero de contrato> |${
 Clicar no <icone de salvar do menu principal> |${MsgVerificada}|, <botao Gerar Contas a Receber>
 #Clicar no icone de salvar do menu principal
     Click Elemento por titulo            Salvar
-    Valida Mensagem                      ${MsgValidacao}                      ${MsgVerificada}
+    Validar Informacao Item              ${MsgValidacao}                      ${MsgVerificada}
 
 #Clicar no botao Gerar Contas a Receber
     Click no Item                        ${BtnGerar}  
@@ -89,7 +89,7 @@ Cadastrar <Conta contabil> |${FiltroContabil}|, <Tipo de documento> |${TipoDoc}|
     Click no Item                         ${LinhaRateio} 
     Preencher campo                       ${ValorRateio}                         ${ValorRateio2}
 
-Clicar no botao Concluir |${MsgValidada}|
+Clicar em Concluir |${MsgValidada}|
     Click no Item                         ${BtnConcluir}  
     #Valida Mensagem                       ${MsgUsuario}                           ${MsgValidada}
     
@@ -145,26 +145,26 @@ Atribuir uma data de vencimento de pagamento do contrato |${Vencimento}| |${Data
 
 2Clicar no <icone de salvar do menu principal> |${MsgVerificada}|, <botao Gerar Contas a Receber>
     Click Elemento por titulo            Salvar
-    Valida Mensagem                      ${MsgValidacao}                    ${MsgVerificada}
+    Validar Informacao Item             ${MsgValidacao}                    ${MsgVerificada}
 
 #Clicar no botao Gerar Contas a Receber
     Click no Item                        ${BtnGerar}
 
 2Cadastrar <Conta contabil> |${FiltroContabil}|, <Tipo de documento> |${TipoDoc}|, <moeda a ser utilizada> |${Moeda}|, <o setor a conta contabil a conta de custo e o valor do rateio> |${TipoConta}| |${ValorRateio2}|
     Click no Item                        ${BtnContaContabil} 
-    Preencher campo                      ${Filtro}                           ${FiltroContabil}
+    Preencher campo                      ${Filtro}                               ${FiltroContabil}
     Click no Item                        ${BtnFiltro} 
     Click no Item                        ${BtnOk} 
 
 #Cadastrar Tipo de documento |${TipoDoc}|
     Click no Item                         ${BtnDoc}
-    Preencher campo                       ${Filtro}                           ${TipoDoc}
+    Preencher campo                       ${Filtro}                               ${TipoDoc}
     Click no Item                         ${BtnFiltro} 
     Click no Item                         ${BtnOk} 
 
 #Cadastrar moeda a ser utilizada |${Moeda}|
     Click no Item                         ${BtnMoeda}
-    Preencher campo                       ${Filtro}                              ${Moeda}
+    Preencher campo                       ${Filtro}                               ${Moeda}
     Click no Item                         ${BtnFiltro} 
     Click no Item                         ${BtnOk} 
 
@@ -180,7 +180,7 @@ Atribuir uma data de vencimento de pagamento do contrato |${Vencimento}| |${Data
     Click no Item                         ${LinhaRateio} 
     Preencher campo                       ${ValorRateio}                            ${ValorRateio2}
 
-2Clicar no botao Concluir |${MsgValidada}|
+2Clicar em Concluir |${MsgValidada}|
     Click no Item                         ${BtnConcluir}  
     #Valida Mensagem                       ${MsgUsuario}                             ${MsgValidada}
     #Click no Item                         ${BtnOk2} 
