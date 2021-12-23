@@ -7,6 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoPedido}                xpath=//input[@id="inp:dspCdPedRx"]
-${CampoMotivo}                xpath=//input[@id="inp:dspDsMotivo"]
-${BotaoExcluirPedido}         xpath=//button[@id="btnExcluirPedido"]
+${CampoPedido}    xpath=//input[@id="inp:dspCdPedRx"]
+${CampoMotivo}    xpath=//input[@id="inp:dspDsMotivo"]
+${BotaoExcluirPedido}    xpath=//button[@id="btnExcluirPedido"]

@@ -7,8 +7,8 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoSetor}            xpath=//input[@id="cdSetor_ac"]
-${CampoProcesso}         xpath=//input[@id="tipoPac_ac"]
-${CampoAtendimento}      xpath=//input[@id="inp:cdAtendimento"]
-${BotaoPesquisar}        xpath=//button[@id="btnPesquisa"]
-${BotaoLimpar}           xpath=//a[@title="Limpar"]     
+${CampoSetor}     xpath=//input[@id="cdSetor_ac"]
+${CampoProcesso}    xpath=//input[@id="tipoPac_ac"]
+${CampoAtendimento}    xpath=//input[@id="inp:cdAtendimento"]
+${BotaoPesquisar}    xpath=//button[@id="btnPesquisa"]
+${BotaoLimpar}    xpath=//a[@title="Limpar"]

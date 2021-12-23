@@ -7,4 +7,4 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaoLovAtendimento}        xpath=//div[@id="cdAtendimento"]/button
+${BotaoLovAtendimento}    xpath=//div[@id="cdAtendimento"]/button
