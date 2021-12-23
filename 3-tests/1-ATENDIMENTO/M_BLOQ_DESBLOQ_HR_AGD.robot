@@ -34,7 +34,6 @@ SCR1AMBLOQDESBLOQHRAGD-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMBLOQDESBLOQHRAGD-001"
     Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Manutenção de Escalas/Agendas>Bloqueio/Desbloqueio de Horários"@nprint @las
     Validar Acesso a Tela |Bloqueio e Desbloqueio de Horários|
-
     Preencher Agenda, Faixa e Motivo |${dados}[Agenda]| |${dados}[Inicio]| |${dados}[Fim]| |${dados}[Motivo]|
     Confirmar e Validar |${dados}[Mensagem]|
 
@@ -44,7 +43,6 @@ SCR1AMBLOQDESBLOQHRAGD-002:Desbloquear
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMBLOQDESBLOQHRAGD-001"
     Acessar a tela "Atendimento>Central de Agendamento>Agendamentos>Manutenção de Escalas/Agendas>Bloqueio/Desbloqueio de Horários"@nprint @las
     Validar Acesso a Tela |Bloqueio e Desbloqueio de Horários|
-
     Desbloquear |${dados}[Opcao]|
     Preencher Agenda, Faixa e Motivo |${dados}[Agenda]| |${dados}[Inicio]| |${dados}[Fim]| |${dados}[Motivo]|
     Confirmar e Validar |${dados}[Mensagem]|

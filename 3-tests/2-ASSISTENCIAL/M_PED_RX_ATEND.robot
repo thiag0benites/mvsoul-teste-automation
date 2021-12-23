@@ -35,7 +35,6 @@ SCR2AMPEDRXATEND-001:Fluxo Principal
     #Acessar a tela "Diagnóstico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedido de Exame Rápido"@nprint @las
     Acessa a Tela Pela Busca |M_PED_RX_ATEND||Pedido de Exame Rápido| @las
     Validar Acesso a Tela |Pedidos de Exames|
-
     Preencher Atendimento, Medico e Setores |${dados}[Atend]| |${dados}[Med]| |${dados}[SetSol]| |${dados}[SetEx]|
     Preencher Data de Solicitacao, Autorizacao e dtValidade
     Preencher Exame, Salvar e Validar |${dados}[Exame]| |${dados}[Mensagem]|
