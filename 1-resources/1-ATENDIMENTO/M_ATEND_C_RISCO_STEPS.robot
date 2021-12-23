@@ -6,18 +6,20 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource                            ../../2-pages/1-ATENDIMENTO/M_ATEND_C_RISCO_PAGE.robot
+Resource          ../../2-pages/1-ATENDIMENTO/M_ATEND_C_RISCO_PAGE.robot
 
 *** Keywords ***
 Alterar Data de Pre-Atendimento |${DtPreAtend}|
-    Clicar no Campo e Preencher Informacao                    ${campoDtPreAtend}    ${campoDtPreAtend}    ${DtPreAtend}
-    Send Keys                                                 enter
+    Clicar no Campo e Preencher Informacao    ${campoDtPreAtend}    ${campoDtPreAtend}    ${DtPreAtend}
+    Send Keys    enter
+
 Pesquisar Atraves do Tipo de Senha Que Esta Sendo Chamado
-    Clicar Botao se estiver Visivel                          ${btnSenhaAtend}
-    Clicar Botao se estiver Visivel                          ${btnExecConsulta}
+    Clicar Botao se estiver Visivel    ${btnSenhaAtend}
+    Clicar Botao se estiver Visivel    ${btnExecConsulta}
+
 Imprimir Relatorio de Atendimento
-    Clicar Botao se estiver Visivel                          ${btnImprimir}
-    Click no Item                                            ${btnCheckboxRelatorio}
-    Clicar Botao se estiver Visivel                          ${btnExecutar}
+    Clicar Botao se estiver Visivel    ${btnImprimir}
+    Click no Item    ${btnCheckboxRelatorio}
+    Clicar Botao se estiver Visivel    ${btnExecutar}
     Switch Window
-    Click no Item                                            ${btnEnviar}
+    Click no Item    ${btnEnviar}
