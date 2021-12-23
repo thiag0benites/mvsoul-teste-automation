@@ -8,6 +8,5 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de CONS_ATE
-${BtnPesquisar}                                      xpath=//i[@class="mv-basico-confirmar"]
-${BtnNot}                                            xpath=//span[@class="notification-counter"]
-
+${BtnPesquisar}    xpath=//i[@class="mv-basico-confirmar"]
+${BtnNot}         xpath=//span[@class="notification-counter"]

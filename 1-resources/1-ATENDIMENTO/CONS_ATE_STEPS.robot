@@ -10,8 +10,9 @@ Resource          ../../2-pages/1-ATENDIMENTO/CONS_ATE_PAGE.robot
 
 *** Keywords ***
 Clicar Botao Pesquisar e Insere dados
-    Click Element                                ${BtnNot} 
-    Click Element                                ${BtnPesquisar} 
+    Click Element    ${BtnNot}
+    Click Element    ${BtnPesquisar}
+
 Validar Dados Pesquisa Atendimento |${PacNumero}| |${PacNome}| |${PacNas}| |${PacMae}| |${NumAtende}| |${Localizacao}|
     Validar Elemento Pelo Titulo    ${PacNumero}
     Validar Elemento Pelo Titulo    ${PacNome}
