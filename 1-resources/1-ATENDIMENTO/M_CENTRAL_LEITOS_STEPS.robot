@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Andréa Rodrigues
-# Decrição: Passos da tela de Gerenciamento Centralizado de  Leitos
+# Decrição: Passos da tela de Gerenciamento Centralizado de    Leitos
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
@@ -25,4 +25,3 @@ Preencher Campos de Parametros de Pesquisa |${Situacao}| |${DtInicial}| |${DtFin
     Preencher Campo    ${CampoSituacaoAtual}    ${Situacao}
     Preencher Campo    ${CampoDtInicial}    ${DtInicial}
     Preencher Campo    ${CampoDtFinal}    ${DtFinal}
-    
