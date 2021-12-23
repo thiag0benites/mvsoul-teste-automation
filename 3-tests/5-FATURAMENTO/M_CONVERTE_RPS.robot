@@ -35,5 +35,7 @@ SCR5FMCONVERTERPS-001:Fluxo Principal
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Lançamentos>Conta Ambulatorial>Conta do Atendimento"@nprint @las
     Validar Acesso a Tela |${dados}[nomeTela]|
     Preencher e validar atendimento |${dados}[atendimento]| e clicar no botao recebe 
-    # Imprimir nota Fiscal 
-    # Atualizar e validar mensagem |${dados}[mensagemSucesso]|
+    Imprimir nota Fiscal 
+    Atualizar e validar mensagem |${dados}[mensagemSucesso]|
+
+    

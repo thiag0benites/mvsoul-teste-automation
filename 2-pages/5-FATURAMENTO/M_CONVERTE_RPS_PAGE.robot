@@ -18,7 +18,7 @@ ${btnAtualizar}             xpath=//button[@id="btnAtualizar"]
 ${btnSair}                  xpath=//button[@id="btnSair"]
 ${btnOk}                    xpath=//li[@class="notification-buttons"]/button[text()="OK"] 
 
-${mensagemApresentada}    xpath=//p[@class="notifications-item-text"]
+${mensagemValidacao}    xpath=/html/body/nav[5]/div/div[2]/ul/li[1]/ul/li[2]/div/div[2]/p
 
 
 

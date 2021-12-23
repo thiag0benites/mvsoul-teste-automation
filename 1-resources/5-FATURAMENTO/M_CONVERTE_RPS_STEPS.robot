@@ -35,8 +35,8 @@ Atualizar e validar mensagem |${mensagemSucesso}|
     Click no Item                    ${btnSair}
     
 
-    Wait Until Element Is Visible    ${mensagemApresentada}    120
-    Element Should Contain           ${mensagemApresentada}    ${mensagemSucesso}
+    Wait Until Element Is Visible    ${mensagemValidacao}    120
+    Element Should Contain           ${mensagemValidacao}    ${mensagemSucesso}
     Sleep                            1
 
 
