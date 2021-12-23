@@ -22,7 +22,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}         m_rastrear_amostra
+${suite}          m_rastrear_amostra
  # Recebe dados do gerenciador
 ${dados}
 
@@ -34,5 +34,3 @@ SCR2AMRASTREARAMOSTRA-001:Fluxo Principal
     Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Coleta>Rastreamento de Amostras>Rastreamento de Amostras por Bancada"@nprint @nao
     Consulta de Exames Solicitados|${dados}[Bancada]||${dados}[DataInicial]|
     Validacao do Campo|${dados}[CampoAValidar]|
-
-
