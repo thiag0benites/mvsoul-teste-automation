@@ -7,15 +7,30 @@
 Resource          ../../Config.robot
 
 *** Variables ***
-# Consultar o Atendimento
+# SetorEnvio
+${CpSetorEnvioA}    xpath=//*[@id="inp:cdSetor"]
+${CpSetorEnvioB}    xpath=//*[@id="cdSetor"]/button/span[1]
+${CpSetorEnvioC}    xpath=//*[@id="#filterLov"]
+${CpSetorEnvioD}    xpath=//*[@id="btfilter"]
+${CpSetorEnvioE}    xpath=//*[@id="btok"]
+# SetorDestino
+${CpSetorDestinoA}    xpath=//*[@id="inp:cdSetorDestino"]
+${CpSetorDestinoB}    xpath=//*[@id="cdSetorDestino"]/button/span[1]
+${CpSetorDestinoC}    xpath=//*[@id="#filterLov"]
+${CpSetorDestinoD}    xpath=//*[@id="btfilter"]
+${CpSetorDestinoE}    xpath=//*[@id="btok"]
 
-# Prestador
-# ${CpPresA}        xpath=//div[@class='slick-cell b2 f2 selected ui-fixed-width']
-# ${CpPresB}        xpath=//*[@id="grdItpedRx"]/div[4]/div[3]/div/div/div[3]/div/button/span[1]
-# ${CpPresC}        xpath=//*[@id="#filterLov"]
-# ${CpPresD}        xpath=//*[@id="btfilter"]
-# ${CpPresE}        xpath=//*[@id="btok"]
-# # Salvar
-# ${ChReali}        xpath=//button[@class='ui-button ui-widget ui-state-default ui-button-icon-only ui-label-position-default ui-fixed-width mode-edit']
+${BtSalvar}        
+
+# Selecionar Documentos
+${BtDocA}                xpath=//*[@id="btnPesquisar"]
+${CpDocPeriIni}          xpath=//*[@id="inp:dtInicio"]
+${CpDocPeriFin}          xpath=//*[@id="inp:dtFim"]
+${BtPesq}
+
+
+
+
 # # Verificar Msg
+# ${BtSalvar}
 # ${MgsVerif}       xpath=//p[@class='notifications-item-text']

@@ -11,7 +11,7 @@ Resource          ../../2-pages/8-SERVICO_APOIO/M_PROT_ENVIO.PAGE.robot
 *** Keywords ***
 # Informa na Tela de Confirmação <Pacien> |${VlPacien}| <Nome> |${VlNome}| <Prest> |${VlPres}| <Salvar> |${MsgEsperada}|
 #     Validar Acesso a Tela |Confirmação de Exames Realizados|
-#     Click no Item    ${CpNotifi}
+     Click no Item    ${CpNotifi}
 #     Click no Item    ${CpAtendA1}
 #     Click no Item    ${CpAtendB2}
 #     Validar Acesso a Tela |Consulta Atendimentos|
