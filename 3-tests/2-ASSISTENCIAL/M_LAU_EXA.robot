@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource          ../../1-resources/2-ASSISTENCIAL/M_RASTREAR_AMOSTRA_STEPS.robot
+Resource          ../../1-resources/2-ASSISTENCIAL/M_LAU_EXA_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
@@ -27,12 +27,11 @@ ${suite}         m_rastrear_amostra
 ${dados}
 
 *** Test Case ***
-SCR2AMRASTREARAMOSTRA-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR2AMRASTREARAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMRASTREARAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_RASTREAR_AMOSTRA.robot"
-# robot -v browser:firefox -t "SCR2AMRASTREARAMOSTRA-001:Fluxo Principal" -d ./5-results/SCR2AMRASTREARAMOSTRA-001 "3-tests/2-ASSISTENCIAL/M_RASTREAR_AMOSTRA.robot"
-    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMRASTREARAMOSTRA-001"
-    Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Coleta>Rastreamento de Amostras>Rastreamento de Amostras por Bancada"@nprint @nao
-    Consulta de Exames Solicitados
-    Validacao do Campo
+SCR2AMLAUEXA-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR2AMLAUEXA-001:Fluxo Principal" -d ./5-results/SCR2AMLAUEXA-001 "3-tests/2-ASSISTENCIAL/M_LAU_EXA.robot"
+# robot -v browser:firefox -t "SCR2AMLAUEXA-001:Fluxo Principal" -d ./5-results/SCR2AMLAUEXA-001 "3-tests/2-ASSISTENCIAL/M_LAU_EXA.robot"
+    #${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMLAUEXA-001"
+    Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Laudos"@nprint @nao
+    
 
 
