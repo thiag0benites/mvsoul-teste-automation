@@ -1,0 +1,41 @@
+#################################################################################################################################################################
+# Autor: Alan Patriota
+# Decrição: Teste da tela Consulta de Itens Prescritos
+#################################################################################################################################################################
+# Execução Exemplo:
+# chrome:         robot -v browser:chrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\M_PED_RX_ATEND.robot"
+# firefox: robot -v browser:firefox -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\M_PED_RX_ATEND.robot"
+#################################################################################################################################################################
+# Execução modo headless (invisível)
+# chrome:         robot -v browser:headlesschrome -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\M_PED_RX_ATENDrobot"
+# firefox: robot -v browser:headlessfirefox -d ./5-results/2-ASSISTENCIAL "3-tests\2-ASSISTENCIAL\M_PED_RX_ATEND.robot"
+#################################################################################################################################################################
+*** Settings ***
+### Keywords personalizadas para os testes
+### Pega massa de dados do Gerenciador
+Resource          ../../1-resources/2-ASSISTENCIAL/M_PED_RX_ATEND_STEPS.robot
+### Inicia/fecha sessão do navegador por suite de teste
+#Suite Setup      Nova sessao
+#Suite Teardown    Encerra sessao
+### Inicia/fecha sessão do navegador por cenario de teste
+Test Setup        Nova sessao
+Test Teardown     Encerra sessao
+
+*** Variable ***
+# Suite registrada no gerenciador de dados
+${suite}          M_PED_RX_ATEND
+# Recebe dados do gerenciador
+${dados}
+
+*** Test Case ***
+SCR2AMPEDRXATEND-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR2AMPEDRXATEND-001:Fluxo Principal" -d ./5-results/SCR2AMPEDRXATEND-001 "3-tests/2-ASSISTENCIAL/M_PED_RX_ATEND.robot"
+# robot -v browser:firefox -t "SCR2AMPEDRXATEND-001:Fluxo Principal" -d ./5-results/SCR2AMPEDRXATEND-001 "3-tests/2-ASSISTENCIAL/M_PED_RX_ATEND.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPEDRXATEND-001"
+    #Acessar a tela "Diagnóstico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedido de Exame Rápido"@nprint @las
+    Acessa a Tela Pela Busca |M_PED_RX_ATEND||Pedido de Exame Rápido| @las
+    Validar Acesso a Tela |Pedidos de Exames|
+
+    Preencher Atendimento, Medico e Setores |${dados}[Atend]| |${dados}[Med]| |${dados}[SetSol]| |${dados}[SetEx]|
+    Preencher Data de Solicitacao, Autorizacao e dtValidade
+    Preencher Exame, Salvar e Validar |${dados}[Exame]| |${dados}[Mensagem]|
