@@ -9,10 +9,9 @@ Resource          ../../2-pages/8-SERVICO_APOIO/C_MOV_CARDAPIO_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-
 Clicar no botao[${nomeBtn}]
     IF    '${nomeBtn}' == 'Pesquisar'
-        Wait Until Element Is Visible    ${btnPesquisar}        180
+        Wait Until Element Is Visible    ${btnPesquisar}    180
         Sleep    4
         Click Element    ${btnPesquisar}
     ELSE IF    '${nomeBtn}' == 'Executar'
@@ -27,23 +26,23 @@ Clicar no botao[${nomeBtn}]
         Wait Until Element Is Visible    ${btnImprimir}    30
         Sleep    2
         Click Element    ${btnImprimir}
-        Sleep       6
+        Sleep    6
     END
 
 Preencher campo Solicitacao|${solicitacao}|
-    Sleep       3
-    Preencher campo         ${cpSolicitacao}       ${solicitacao} 
+    Sleep    3
+    Preencher campo    ${cpSolicitacao}    ${solicitacao}
 
 Captura codigo Atendimento|${suite}|${id}|
     Sleep    1
-    Should Not Be Empty   ${cpAtendimento}
+    Should Not Be Empty    ${cpAtendimento}
     ${codAtend}    Get Element Attribute    ${cpAtendimento}    title
     Altera massa de dados da "${suite}", linha "${id}", coluna "codAtendimento", valor "${codAtend}"
     Sleep    3
 
 Captura Nome Paciente|${suite}|${id}|
     Sleep    1
-    Should Not Be Empty   ${cpPaciente}
+    Should Not Be Empty    ${cpPaciente}
     ${nome}    Get Element Attribute    ${cpPaciente}    title
     Altera massa de dados da "${suite}", linha "${id}", coluna "nomePaciente", valor "${nome}"
     Sleep    3
