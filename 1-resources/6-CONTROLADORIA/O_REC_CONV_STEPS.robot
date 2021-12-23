@@ -16,7 +16,7 @@ Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${CampoE
     #Selecionar Item Na Lista                                ${btnEmpresa}   ${CampoEmpresa}    ${CampoEmpresa}
     #Click no Item                                          ${empresaFiltrada}
     #Clicar Botao se estiver Visivel                        ${btnOk}
-Selecionar Convenio e Deixar o Sistema em Modo de Pesquisa |${CampoConvenio}||${NrReferencia}|
+Selecionar Convenio e Deixar o Sistema em Modo de Pesquisa |${CampoConvenio}| |${NrReferencia}|
     Clicar Botao se estiver Visivel                        ${btnConvenio}
     Clicar no Campo e Preencher Informacao                 ${campoFiltro}    ${campoFiltro}    ${CampoConvenio}
     Clicar Botao se estiver Visivel                        ${btnFiltrar}

@@ -11,37 +11,40 @@ Resource                            ../../2-pages/4-MATERIAIS/M_PRODUCAO_MGES_PA
 
 *** Keywords ***
 
-Campos Obrigatorios a serem preenchidos e Salvar
+Informacoes Gerais de Entrada de Produtos|${Estoque}||${Produto}||${Unidade1}|
     Wait Until Element Is Visible                            ${CampoEstoque}                       180
-    Preencher campo                                          ${CampoEstoque}                       66
+    Preencher campo                                          ${CampoEstoque}                       ${Estoque}
     Send Keys                                                enter
     Click no Item                                            ${DivProduto}
-    Preencher campo                                          ${CampoEmEdicao}                      17075
+    Preencher campo                                          ${CampoEmEdicao}                      ${Produto}
     Send Keys                                                enter
-    Preencher campo                                          ${CampoEmEdicao}                      AMPOLA
+    Preencher campo                                          ${CampoEmEdicao}                      ${Unidade1}
     Send Keys                                                enter
     
-Aba Itens de Composicao    
-    Click no Item                                            ${BtnItensDeComposicao}
-    Click no Item                                            ${DivProduto}
-    Preencher campo                                          ${CampoEmEdicao}                      1
+Aba Itens de Composicao|${CodProduto}||${Unidade2}||${Quantidade}|    
+    Click no Item                                            ${DivCodProduto}
+    Preencher campo                                          ${CampoEmEdicao}                      ${CodProduto}
     Send Keys                                                enter
-    Preencher campo                                          ${CampoEmEdicao}                      FA C/250MG
+    Preencher campo                                          ${CampoEmEdicao}                      ${Unidade2}
     Send Keys                                                enter
-    Preencher campo                                          ${CampoQuantidade}                    1
-    Send Keys                                                enter
+    Preencher campo                                          ${CampoQuantidade}                    ${Quantidade}
 
-Aba Lote principal
+Aba Lote principal|${Serie}|
     Click no Item                                            ${BtnLotePrincipal}    
     Wait Until Element Is Visible                            ${DivSerie}                           20
     Click no Item                                            ${DivSerie}
-    Preencher campo                                          ${CampoSerie}                         1478547
+    Preencher campo                                          ${CampoSerie}                         ${Serie}
     Click no Item                                            ${DivDataValidade}
     Preencher campo com data e hora                          ${CampoDataValidade}                  %d/%m/%Y %H:%M    24:00:00
     Click no Item                                            ${BtnConcluir}
 
-Validacao de Mensagem
-    Valida Mensagem                                          ${Alerta}                             Atenção: Depois que for salvo não vai ser possivel realizar alteração. Deseja Gravar ?
+Validacao de Mensagem|${MsgEsperada1}||${MsgEsperada2}|
+    Valida Mensagem                                          ${Alerta}                             ${MsgEsperada1}
     Click no Item                                            ${BtnSim}
-    Valida Mensagem                                          ${Alerta}                             Movimentação Salva com Sucesso!
-    Click no Item    $elemento
+    Valida Mensagem                                          ${Alerta}                             ${MsgEsperada2}
+    Click no Item                                            ${BtnOK}
+
+
+
+
+

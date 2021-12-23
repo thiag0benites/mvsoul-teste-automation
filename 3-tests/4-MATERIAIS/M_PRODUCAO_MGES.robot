@@ -26,20 +26,21 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-${suite}          fat_consultas_conta_paciente
+${suite}         m_producao_mges
 # # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
 
-SCR4MMPRODUCAOMGES-001:Fluxo Principal          #SMF-1897 : Cadastrar as Classificações dos Produtos 
+SCR4MMPRODUCAOMGES-001:Fluxo Principal           
 # robot -v browser:chrome -t "SCR4MMPRODUCAOMGES-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUCAOMGES-001 "3-tests/4-MATERIAIS/M_PRODUCAO_MGES.robot"
 # robot -v browser:firefox -t "SCR4MMPRODUCAOMGES-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUCAOMGES-001 "3-tests/4-MATERIAIS/M_PRODUCAO_MGES.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUCAOMGES-001"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Produção"@nprint @las
-    Campos Obrigatorios a serem preenchidos e Salvar
-    Preencher Abas de Prescricao e Faturamento e Salvar
-
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUCAOMGES-001"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Produção"@nprint @nao
+    Informacoes Gerais de Entrada de Produtos|${dados}[Estoque]||${dados}[Produto]||${dados}[Unidade1]|
+    Aba Itens de Composicao|${dados}[CodProduto]||${dados}[Unidade2]||${dados}[Quantidade]|
+    Aba Lote principal|${dados}[Serie]|
+    Validacao de Mensagem|${dados}[MsgEsperada1]||${dados}[MsgEsperada2]|
 
 
 
