@@ -32,9 +32,10 @@ SCR2AMPAGUOBJETO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMPAGUOBJETO-001:Fluxo Principal" -d ./5-results/SCR2AMPAGUOBJETO-001 "3-tests/2-ASSISTENCIAL/M_PAGU_OBJETO.robot"
 # robot -v browser:firefox -t "SCR2AMPAGUOBJETO-001:Fluxo Principal" -d ./5-results/SCR2AMPAGUOBJETO-001 "3-tests/2-ASSISTENCIAL/M_PAGU_OBJETO.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPAGUOBJETO-001"
-    Acessar a tela "Serviços de Apoio>Nutrição e Dietética>Consultas>Prescrições Médicas>Itens Prescritos"@nprint @las
-    #Acessa a Tela Pela Busca |M_PAGU_OBJETO||Gerenciamento de Exames| @las
-    Validar Acesso a Tela |Consulta de Itens Prescritos|
-    Consultar Prescricao |${dados}[Prescricao]|
-    Validar Pesquisa |${dados}[Paciente]|
-    Imprimir e Validar
+    #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Configuração>Tabelas>Tipos de Objetos de Prontuário"@nprint @las
+    Acessa a Tela Pela Busca |M_PAGU_OBJETO||Tipos de Objetos de Prontuário| @las
+        
+    Localizar Objeto Pai
+    Abrir Edicao e Adicionar Campo
+    Validar Edicao e Salvar |${dados}[Resultado]|
+    Sair e Voltar pra Validar |${dados}[Resultado]|
