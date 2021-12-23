@@ -34,5 +34,3 @@ SCR2AMCONFEXARXA001:Fluxo Principal
     ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFEXARXA001"
     Acessa a Tela Pela Busca |O_CONF_EXA_RX||Confirmação de Exames Realizados| @las
     Informa na Tela de Confirmação <Pacien> |${dados}[Pacien]| <Nome> |${dados}[Nome]| <Prest> |${dados}[Prest]| <Salvar> |${dados}[Salvar]|
-
-|

@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
 # Pesquisar
@@ -32,9 +32,9 @@ ${CpPersB}        xpath=//input[@class='editor-text mode-edit']
 ${CpOrdA}         xpath=//*[@id="grdListaCenario"]/div[4]/div[3]/div/div[2]/div[4]
 ${CpOrdB}         xpath=//input[@class='editor-text mode-edit']
 # Filtro Padrão
-${ChMPac}        xpath=//*[@id="inp:snMeusPacientes_btn"]
-${ChMSet}        xpath=//*[@id="inp:snSetor_btn"]
-${CpSegI}        xpath=//*[@id="inp:nrSegundosIntervaloInt"]
+${ChMPac}         xpath=//*[@id="inp:snMeusPacientes_btn"]
+${ChMSet}         xpath=//*[@id="inp:snSetor_btn"]
+${CpSegI}         xpath=//*[@id="inp:nrSegundosIntervaloInt"]
 # Salvar e Valida Msg de Registro Salvo
-${BtSalvar}    xpath=//*[@id="tb-record-save"]/a/i
-${MgsVerif}    xpath=//p[@class='notifications-item-text']
+${BtSalvar}       xpath=//*[@id="tb-record-save"]/a/i
+${MgsVerif}       xpath=//p[@class='notifications-item-text']

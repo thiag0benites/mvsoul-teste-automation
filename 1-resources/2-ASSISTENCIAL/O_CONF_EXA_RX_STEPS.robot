@@ -32,4 +32,3 @@ Informa na Tela de Confirmação <Pacien> |${VlPacien}| <Nome> |${VlNome}| <Pres
     #Confirmar Checkbox
     Marcar Checkbox |${ChReali}|
     Valida Mensagem    ${MgsVerif}    ${MsgEsperada}
-#    
