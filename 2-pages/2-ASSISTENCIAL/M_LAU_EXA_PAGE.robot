@@ -9,7 +9,7 @@ Resource          ../../Config.robot
 *** Variables ***
 ### Campos ###
 ${CampoData}                  xpath=//input[@id="inp:dtPedido1"]
-${ItemComboBox}                   xpath=//input[@id="tpSituacaoExame_ac"]
+${ItemComboBox}               xpath=//input[@id="tpSituacaoExame_ac"]
 ${CampoMedico}                xpath=//input[@id="inp:cdPrestador"]
 ${TextArea}                   xpath=//div[@id="cke_editor-editor-diagn-editor-psdi"]
 ${TextAreaEdit}               xpath=//body[@contenteditable="true"]/p
