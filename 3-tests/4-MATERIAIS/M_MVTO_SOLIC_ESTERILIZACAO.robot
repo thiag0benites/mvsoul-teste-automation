@@ -34,10 +34,4 @@ SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal          #
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMMVTOSOLICESTERILIZACAO-001"
     Acessa a Tela Pela Busca |M_LISTA_SOLIC_ESTERILIZACAO||Lista de Pedidos de Esterilização| @las
     #Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Lista de Pedidos de Esterilização" @nprint @las 
-    Listagem de Solicitações de Esterilização|${dados}[SetorResponsavelEntrega]||${dados}[SetorDaEntrega]||${dados}[ColaboradorDaEntrega]||${dados}[AvisoDeCirurgia]||${dados}[Composicao]||${dados}[MsgEsperada]|
-    
-
-
-
-
-
+    Listagem de Solicitacoes de Esterilizacao|${dados}[SetorResponsavelEntrega]||${dados}[SetorDaEntrega]||${dados}[ColaboradorDaEntrega]||${dados}[AvisoDeCirurgia]||${dados}[Composicao]||${dados}[MsgEsperada]|
