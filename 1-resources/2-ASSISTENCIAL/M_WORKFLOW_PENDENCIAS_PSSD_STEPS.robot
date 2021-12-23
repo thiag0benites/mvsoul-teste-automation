@@ -5,7 +5,6 @@
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../2-pages/2-ASSISTENCIAL/M_WORKFLOW_PENDENCIAS_PSSD_PAGE.robot
-Resource          ../2-pages/ContextoPage.robot
 
 *** Variable ***
 
@@ -13,10 +12,8 @@ Resource          ../2-pages/ContextoPage.robot
 Navegar entre as abas do painel operacional de pendencias
     Click no Item    ${abaColetaSetor}
     Sleep    1
-
     Click no Item    ${abaAmostras}
     Sleep    1
-
     Click no Item    ${abaResultados}
     Sleep    1
 
