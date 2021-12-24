@@ -69,7 +69,7 @@ Acessar a tela pela busca |${tela}||${nomeItem}|${printscreen} ${las}
     Click Elemento por titulo    ${nomeItem}
     IF    "${las}" == "@las"
         Seleciona frame    ${IdIframe}    180
-        Wait Until Element Is Visible    ${classLasDisplay}    180
+        Wait Until Element Is Visible    ${classLasDisplay}    60
         Unselect Frame
         Send Keys    tab
         Send Keys    enter
