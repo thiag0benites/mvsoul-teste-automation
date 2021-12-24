@@ -9,7 +9,7 @@ Library           AutoRecorder
 Library           SeleniumLibrary    #timeout=10
 ### Interagir com elemento por imagem
 #Library           SikuliLibrary
-Library           ImageHorizonLibrary    ${CURDIR}/4-images
+# Library           ImageHorizonLibrary    ${CURDIR}/4-images
 ### Trabalha com stings
 Library           String
 Library           DateTime

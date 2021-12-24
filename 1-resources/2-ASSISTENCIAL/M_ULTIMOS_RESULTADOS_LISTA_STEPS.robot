@@ -18,10 +18,8 @@ Acessar Tela M_LIBERA_EXAME_LAB |${NomeTelaLiberacao}|
     Click no Item    ${BotaoRevisar}
     Validar Acesso a Tela |${NomeTelaLiberacao}|
 
-Validar Tela M_ULTIMOS_RESULTADOS_LISTA |${Paciente}| |${Exame}| |${Laboratorio}| 
+Validar Tela M_ULTIMOS_RESULTADOS_LISTA |${Paciente}| |${Exame}| |${Laboratorio}|
     Click no Item    ${BotaoUltimosResultados}
     Wait Until Element Is Visible    xpath=//input[@id="inp:nmPaciente"][@title="${Paciente}"]    20
     Wait Until Element Is Visible    xpath=//div[@data-member="NM_EXAME"][@title="${Exame}"]    20
     Wait Until Element Is Visible    xpath=//div[@data-member="NM_SET_EXA"][@title="${Laboratorio}"]    20
-
- 
