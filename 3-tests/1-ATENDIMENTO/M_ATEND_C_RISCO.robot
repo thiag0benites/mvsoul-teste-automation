@@ -36,5 +36,3 @@ SMF-10546 : Confirmar o paciente sem cadastro pós classificação de risco
     Validar Acesso a Tela |Consulta de Pacientes Triados - Classificação de Risco|
     Alterar Data de Pre-Atendimento |${dados}[DtPreAtend]|
     Pesquisar Atraves do Tipo de Senha Que Esta Sendo Chamado
-
-    
