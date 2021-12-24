@@ -189,15 +189,9 @@ Clicar em Estoque
     Sleep
 
 Clicar Botao se estiver Visivel
-<<<<<<< HEAD
     [Arguments]             ${Botao}                        
     ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}    120          
     Run Keyword If          '${Status}' == 'True'               Click no Item                        ${Botao}
-=======
-    [Arguments]    ${Botao}
-    ${Status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${Botao}
-    Run Keyword If    '${Status}' == 'True'    Click no Item    ${Botao}
->>>>>>> feature/danilo
 
 Click no Item
     [Arguments]    ${elemento}
@@ -316,9 +310,15 @@ Valida Mensagem
     [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${MensagemRecebida}    120
     Sleep    3
+<<<<<<< HEAD
     #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
     #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
     Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
+=======
+    ${MensagemRecebida}         Get Text     ${MensagemRecebida}
+    Should Be Equal As Strings    ${MensagemRecebida}   ${MensagemEsperada}
+    #Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
+>>>>>>> feature/amanda
     #[Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
     # Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
     # ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
