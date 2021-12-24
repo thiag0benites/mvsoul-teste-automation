@@ -15,4 +15,8 @@ ${CampoProd}                      xpath=//input[@id="inp:cdProduto"]
 
 ${CampoMensagem}                  xpath=//p[@class="notifications-item-text"][text()="Registros gravados com sucesso (1 registros gravados)."]
 
+//i[@class="mv-basico-alerta]
+
+${MensagemToast}
+
 

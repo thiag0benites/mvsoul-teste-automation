@@ -20,4 +20,6 @@ Preencher Estoque e Produto |${Estoque}| |${Produto}|
     Preencher Campo        ${CampoProd}       ${Produto}
 Salvar e Validar |${MensagemEsperada}|
     Click Elemento por titulo               Salvar
-    Valida Mensagem                         ${CampoMensagem}               ${MensagemEsperada}
+    Wait Until Element Is Visible         xpath=//*[text()='${MensagemEsperada}']    250
+    Sleep    3
+    
