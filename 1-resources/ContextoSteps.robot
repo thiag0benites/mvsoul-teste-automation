@@ -343,3 +343,6 @@ Clicar no botao ${nomeBtn}
         Wait Until Element Is Visible    ${btnSimNotifications}    30
         Click Element    ${btnSimNotifications}
     END
+
+Captura dos logs da tela
+    
