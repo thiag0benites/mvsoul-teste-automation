@@ -19,16 +19,16 @@ Preencha no campo descricao/ codigo hierarquico e Selecione no campo centro de c
     Click no Item                      ${CampoCentroCusto}
     Click no Item                      ${BtnOk} 
 
-Selecionar no campo Grupo de Centros de Custo 
+Selecionar no campo Grupo de Centros de Custo
     Click no Item                      ${BtnGrupoCusto}
     Click no Item                      ${CampoGrupoCusto}
     Click no Item                      ${BtnOk}     
 
-Selecionar no campo Calcula Evento  
+Selecionar no campo Calcula Evento
     Click no Item                      ${BtnCalculaEvento}
     Click no Item                      ${CampoSelecionadoCalculaEvento}
 
- Selecionar no campo Aceita Lancamento 
+ Selecionar no campo Aceita Lancamento
      Click no Item                      ${BtnCalculaEvento}
      Click no Item                      ${CampoSelecionadoAceitaLancamento}
 
