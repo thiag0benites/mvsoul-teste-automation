@@ -29,6 +29,7 @@ ${btnSim}                        xpath=//button[@class='btn btn-primary'][text()
 ${btnOk}                         xpath=//button[@class='btn btn-primary'][text()="OK"]
 ${btnDifRateioEAcresc}           xpath=//button[@id="inp:snLancaDifAcrescimo_btn"]
 ${btnGlosaNReceb}                xpath=//button[@id="inp:snGlosa_btn"]
+${btnVlImpRetidoDisable}         xpath=//*[@id="PAGE_RECEBIMENTO_btnImposto"][@disabled='disabled']
 
 ### Diversos ###
 ${empresaValidada}               xpath=//span[contains(@title, "5 - HOSPITAL MV - MATRIZ")]

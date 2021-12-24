@@ -10,9 +10,13 @@ Resource                            ../../2-pages/2-ASSISTENCIAL/M_AUDIT_PRESC_P
 
 *** Keywords ***
 Alterar Data Inicial |${DtInicial}|
-#tentar validar pela data xpath=//*[@id="dtInicio"]/button
-    Sleep    3
-    Preencher Campo                                         ${campoDtInicial}    ${DtInicial}
+    Click no Item                                              ${btnDtInicio}
+    Sleep    10
+    Click no Item                                              ${selecionaAno}
+    Click no Item                                              ${ano2020}
+    Click no Item                                              ${selecionaDia}
+    #Sleep    3
+    #Preencher Campo                                         ${campoDtInicial}    ${DtInicial}
     #Send Keys                                              enter
 Pesquisar Todos Principios Ativos
     Clicar Botao se estiver Visivel                        ${btnTipoAntimic}
