@@ -33,4 +33,4 @@ SCR8SMPROTENVIOS001:Fluxo Principal
     # robot -v browser:firefox -t "SCR8SMPROTENVIOS001:Fluxo Principal" -d ./5-results/SCR8SMPROTENVIOS001 "3-tests/8-SERVICO_APOIO/M_PROT_ENVIO.robot"
     # ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMPROTENVIOS001"
     Acessa a Tela Pela Busca |M_PROT_ENVIO||Envio de Documentos| @las
-    # Informa na Tela de Confirmação <Pacien> |${dados}[Pacien]| <Nome> |${dados}[Nome]| <Prest> |${dados}[Prest]| <Salvar> |${dados}[Salvar]|
+    Informa na Tela de Envio Doc <SetorOri> |FATURAMENTO| <SetorDest> |AMBULATORIO HOBRA| <PerInicial> |01/12/2021| <PerFinal> |24/12/2021| <DocImportar> |PRONTUARIOXXXXXXXXXXXXX| <Salvar> |${MsgEsperada}|
