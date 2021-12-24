@@ -37,7 +37,5 @@ SCR2AMLAUDOCULTURA-001:Fluxo Principal
     #Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Atendimento>Gerenciamento de Exames"@nprint @las
     Acessa a Tela Pela Busca |M_ADMIN_EXA_LAB||Gerenciamento de Exames| @las
     Selecione o exame |${dados}[Exame1]| |${dados}[NumeroPedido]|
-    #Preencha o laudo cultura |${dados}[Tipo]| |${dados}[Obs]|
-    #Preencha os detalhes da medicacao |${dados}[Campo]|
     Acione gravar laudo |${dados}[MsgVereficada]|
     Captura da mensagem |${suite}|${dados}[id]|
