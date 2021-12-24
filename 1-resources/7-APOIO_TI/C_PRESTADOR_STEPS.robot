@@ -9,8 +9,10 @@ Resource          ../../2-pages/7-APOIO_TI/C_PRESTADOR_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-Clicar no botao executar
+Clicar no botao Executar
+    Sleep    1
     Click no Item    ${btnExecute}
+    Sleep    2
 
 Navegar entre as abas do cadastro do prestador
     Click no Item    ${abaComplemento}

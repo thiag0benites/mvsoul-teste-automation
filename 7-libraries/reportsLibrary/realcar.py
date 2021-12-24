@@ -72,3 +72,15 @@ def realcar_elemento_relatorio(localizador):
 
     original_style = ele.get_attribute('style')
     driver.execute_script("arguments[0].setAttribute('style', arguments[1]);", ele, "border: 3px solid red;")
+    
+def realcar_elemento_log(localizador):
+    seleniumlib = BuiltIn().get_library_instance('SeleniumLibrary')
+    driver = seleniumlib.driver
+
+    if localizador.find("xpath") != -1:
+        localizador = localizador.replace("xpath=", "")
+        ele = driver.find_element_by_xpath(localizador)
+    
+    original_style = ele.get_attribute('style')
+    driver.execute_script("arguments[0].setAttribute('style', arguments[1]);", ele, "border: 3px solid red;")
+    

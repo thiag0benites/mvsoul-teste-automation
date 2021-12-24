@@ -58,14 +58,13 @@ SCR0JSMK-001:Jornada do Paciente
 ### Registros gravados com sucesso (2 registros gravados).
 #SMF-9620:Cadastrar o paciente
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
-    Acessar a tela "Atendimento>Internação>Atendimento>Cadastro de Paciente"@nprint @las
+    Acessar a tela "Atendimento>Internação>Atendimento>Cadastro de Paciente"@nprint @nlas
     Informar os campos que foram configurados como obrigatorios na tela@print
     Clicar no botao [Salvar]|${dados}[cadPacMsgEsperada]|
     Captura codigo do Paciente Cadastrado|${suite}|${dados}[id]|
 #SMF-9619:Realizar um pré-agendamento cirúrgico
    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Pré-Agendamento Cirúrgico>Pré-Agendamento Cirurgico"@nprint @nlas
-    #Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgDtHr]|,|${dados}[preAgDtHrSugerida]|,|${dados}[preAgTempoPrev]|,|${dados}[preAgDtHrPrevInter]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|@nprint
     Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${dados}[preAgTempoPrev]|,|${dados}[cadPacOutputCodPaciente]|,|${dados}[preAgTipoInternacao]|,|${dados}[preAgCentroCirurgico]|,|${dados}[preAgSalaCirurgica]|@nprint
     Preencher os campos da cirurgia |${dados}[grupoCirurgia]|,|${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|@nprint
     Clicar no botao [Sim]|${dados}[preAgCirurMsgEsperada]|
@@ -87,7 +86,7 @@ SCR0JSMK-001:Jornada do Paciente
     #Pesquisar pre-internacao existente pelo codigo do paciente |${dados}[cadPacOutputCodPaciente]|
     Clicar no botao [Sim]|${dados}[intPacMsgEsperada]|
     Clicar no botao [OK Tela]||
-    Preencher campos da tela internacao do paciente |${dados}[preIntOrigem]|,|${dados}[preIntCodServico]|,|${dados}[preIntAcompanhante]|,|${dados}[intPacCodLeito]|,|${dados}[intPacCodCobertura]|@nprint
+    Preencher campos da tela internacao do paciente |${dados}[preIntOrigem]|,|${dados}[preIntAcompanhante]|,|${dados}[intPacCodLeito]|,|${dados}[preIntCodServico]|,|${dados}[intPacCodCobertura]|,|${dados}[preIntCodEspecialidade]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
     Captura codigo do Atendimento Cadastrado|${suite}|${dados}[id]|
     Clicar no botao [Sair]||
@@ -106,30 +105,37 @@ SCR0JSMK-001:Jornada do Paciente
     #Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|,|${dados}[preAgCirurMsgEsperada]|@nprint
     #Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
     #Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
-SMF-9624:Transferência de Paciente para Centro Cirúrgico e Rpa / SMF-9638:Confirmar a cirurgia realizada 
+#SMF-9624:Transferência de Paciente para Centro Cirúrgico e Rpa / SMF-9638:Confirmar a cirurgia realizada 
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     #Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Transferência de Paciente>Transferência para Centro Cirúrgico"@nprint @nlas
-    Acessar a tela pela busca |Transferência para Centro Cirúrgico||Transferência para Centro Cirúrgico|@nprint @las
+    Acessar a tela pela busca |Transferência para Centro Cirúrgico||Transferência para Centro Cirúrgico|@nprint @nlas
     Pesquisar o paciente pelo codigo de atendimento |${dados}[cadPacOutputCodAtendimento]|
     Preencher os campos do registro de transferencias |${dados}[preIntMsgEsperada]|
-    # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
-    # Informar o codigo de aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
-    Preencher os campos com as datas da cirurgia
-
-    # Selecionar o local de transferência pós cirurgia
-    # 
-    # Clicar no Tab para pular os campos abaixo:
-    # Informar a hora atual no campo "Rec pós anestésica hora" e clicar no botão <Salvar>    
-#SMF-9638:Confirmar a cirurgia realizada
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
+    Informar o codigo de aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
+    Preencher os campos com as datas da cirurgia e transferir paciente para Centro Cirúrgico |${dados}[preAgCirurMsgEsperada]|,|${dados}[confCirTipoAnestesia]|,|${dados}[transfPacCentroCirurgicoRpa]|
+    #Retornar a tela "Transferência de Paciente para Centro Cirúrgico" |${dados}[transfPacCentroCirurgicoRpa]|
+    Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+    Clicar no botao [Sair]||
+# SMF-9638:Confirmar a cirurgia realizada
     # ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     # Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
     # Informar o codigo de aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
-    # Preencher os campos com as datas da cirurgia
-    # confCirurMsgAviso - Informação: O(s) tempo(s) previsto(s) da(s) cirurgia(s) diverge(m) do(s) tempo(s) realizado(s)
-    # Clicar no botao [Confirmar]|${dados}[confCirurMsgAviso]|
-    # confCirurMsgConfCirurgia - A Confirmação da Cirurgia foi realizada com sucesso !
-    #Valida confirmacao de cirurgia |${dados}[confCirurMsgConfCirurgia]|
-
+    # Preencher os campos com as datas da cirurgia e transferir paciente para Centro Cirúrgico |${dados}[preAgCirurMsgEsperada]|,|${dados}[confCirTipoAnestesia]|,|${dados}[transfPacCentroCirurgicoRpa]|
+    # Retornar a tela "Transferência de Paciente para Centro Cirúrgico" |${dados}[transfPacCentroCirurgicoRpa]|
+    # Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
+    # Sleep    2
+    # Clicar no botao [Sair]||
+#SMF-9635:Registrar a descricao cirurgica
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
+    Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
+    Informar o codigo do aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
+    Descrever os detalhamentos da descricao cirurgica
+    # Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
+    # Clicar no botao [NovaDescricao]||
+    # Descrever a cirurgia
+    # Clicar no botao [Salvar]||
+    # Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
 
 
 # #SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo Particular
@@ -163,8 +169,6 @@ SMF-9624:Transferência de Paciente para Centro Cirúrgico e Rpa / SMF-9638:Conf
 #     Preencher os campos do aviso de cirurgia |${dados}[codCirurgia]|,|${dados}[preIntCodConvenio]|,|${dados}[preIntCodPlano]|,|${dados}[potencialContaminacao]|,|${dados}[grupoCirurgia]|,|${dados}[preIntCodMedico]|,|${dados}[atividadeMedica]|,|${dados}[preAgCirurMsgEsperada]|@nprint
 #     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
 #     Captura do codigo do aviso de cirurgia|${suite}|${dados}[id]|
-
-
 
 
 #     #Selecionar o check box de um relatório na lista e clicar no botão <Imprimir marcados>
@@ -234,15 +238,7 @@ SMF-9624:Transferência de Paciente para Centro Cirúrgico e Rpa / SMF-9638:Conf
 #     Clicar no botao [Retornar]||
 # # SMF-???:Digitar gasto de sala sem salvar (????)
 # # SMF-9635:Registrar a descrição cirúrgica (Amanda in progress)
-# # SMF-9635:Registrar a descricao cirurgica
-#     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
-#     Informar o codigo do aviso de cirurgia |111|
-#     Clicar no botao [Executar]||
-#     Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
-#     Clicar no botao [NovaDescricao]||
-#     Descrever a cirurgia
-#     Clicar no botao [Salvar]||
-#     Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
+# 
 # SMF-9638:Confirmar a cirurgia realizada
 #     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Confirmação da Cirurgia"@nprint @nlas
 #     Informar o codigo do aviso de cirurgia |111|

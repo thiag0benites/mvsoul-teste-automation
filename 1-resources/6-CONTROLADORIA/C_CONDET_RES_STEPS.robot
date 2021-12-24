@@ -11,14 +11,10 @@ Resource                            ../../2-pages/6-CONTROLADORIA/C_CONDET_RES_P
 
 *** Keywords ***
 
-Descrição do Documento |${Codigo}||${Titulo}|
-    Valida Mensagem                                ${Alerta}    Problema na Configuração do Sistema
+Descricao do Documento |${MsgEsperada}||${Codigo}||${Titulo}|
+    Valida Mensagem                                ${Alerta}    ${MsgEsperada}
     Click no Item                                  ${BtnOK}   
     Click no Item                                  ${BtnProcurar}
     Preencher campo                                ${CampoCodigo}        ${Codigo}
     Click no Item                                  ${BtnExecutar} 
     Validar Elemento Pelo Titulo                   ${Titulo}
-
-
-
-
