@@ -352,3 +352,14 @@ Captura dos logs da tela
     Wait Until Element Is Visible        ${input}              120
     Input Text                           ${input}              ${text}
     Sleep                                                      3
+Marcar Checkbox |${CheckboxMar}|
+    Wait Until Element Is Visible               ${CheckboxMar}                      20
+    ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxMar}
+    Log To Console    *** ${StatusCheckbox}
+    Run Keyword If    ${StatusCheckbox} == False   Click Element    ${CheckboxMar}
+
+Desmarcar Checkbox |${CheckboxDes}|
+    Wait Until Element Is Visible               ${CheckboxDes}                      20
+    ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxDes}
+    Log To Console    *** ${StatusCheckbox}
+    Run Keyword If    ${StatusCheckbox} == False    Click Element    ${CheckboxDes}
