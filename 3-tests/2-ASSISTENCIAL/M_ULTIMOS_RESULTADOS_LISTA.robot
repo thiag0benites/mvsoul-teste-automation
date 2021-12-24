@@ -38,5 +38,3 @@ SCR2AMULTIMOSRESULTADOSLISTA-001:Fluxo Principal
     Pesquisar Exames Realizados |${dados}[Pedido]| |${dados}[Paciente]|
     Acessar Tela M_LIBERA_EXAME_LAB |${dados}[NomeTelaLiberacao]|
     Validar Tela M_ULTIMOS_RESULTADOS_LISTA |${dados}[Paciente]| |${dados}[Exame]| |${dados}[Laboratorio]|
-
-
