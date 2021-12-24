@@ -317,25 +317,8 @@ Valida Mensagem
     [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${MensagemRecebida}    120
     Sleep    3
-<<<<<<< HEAD
-    #${ElementoMsgRecebida}    Get Element Text    ${ElementoMsgRecebida}
-<<<<<<< HEAD
-    #Should Be Equal As Strings    ${ElementoMsgRecebida}   ${MensagemEsperada}
-    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
-=======
     ${MensagemRecebida}         Get Text     ${MensagemRecebida}
     Should Be Equal As Strings    ${MensagemRecebida}   ${MensagemEsperada}
-    #Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
->>>>>>> feature/amanda
-=======
-    #Should Be Equal As Strings    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
->>>>>>> feature/andrea
-    #[Arguments]    ${ElementoMsgRecebida}    ${MensagemEsperada}
-    # Wait Until Element Is Visible    ${ElementoMsgRecebida}    30
-    # ${msgObtida}    Get Element Text    ${ElementoMsgRecebida}
-    # Should Be Equal As Strings    ${MensagemEsperada}    ${msgObtida}
-    # #Log To Console    *** Mensagem de alerta não foi apresentada!
 
 Clicar no botao ${nomeBtn}
     IF    '${nomeBtn}' == 'Salvar do menu'

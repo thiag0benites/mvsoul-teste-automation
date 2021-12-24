@@ -8,9 +8,13 @@ Resource          ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-${campoCod}       xpath=//input[@id="inp:cdSolicitacaoCme"]
+${CampoEquipe}    xpath=//input[@id="inp:cdEquipeMedica"]
+${CampoSala}      xpath=//input[@id="inp:cdSalCir"]
+${CampoData}      xpath=//input[@id="inp:vdataAgenda"]
+${CampoObs}       xpath=//textarea[@id="inp:dsObsAviso"]
 ### Botoes ###
-${btnPesquisar}    xpath=//button[@id="btnPesquisar"]
-${btnOk}          xpath=//li[@class='notification-buttons']/button
-${CampoColoaborador}    xpath=//div[@class="ui-text ui-state-readonly"][@data-member="CD_USUARIO_ENTRADA"]
+${BtnObs}         xpath=//button[@id="btnObs"]
+${BtnSair}        xpath=//button[@id="btnFechar"]
+${BtnSalvar}      xpath=//li[@id="tb-record-save"]
 ### Diversos ###
+${Style}          xpath=//div[@style="background: rgb(255, 0, 0);"]

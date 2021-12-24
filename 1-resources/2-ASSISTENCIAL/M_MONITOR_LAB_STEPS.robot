@@ -6,11 +6,12 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource          ../../2-pages/4-MATERIAIS/M_LISTA_SOLIC_ESTERILIZACAO_PAGE.robot
+Resource          ../../2-pages/2-ASSISTENCIAL/M_MONITOR_LAB_PAGE.robot
 
 *** Keywords ***
-Preencher parametros de pesquisa |${Codigo}||${TituloValidacao}|
-    Clicar no Campo e Preencher Informacao    ${campoCod}    ${campoCod}    ${Codigo}
-    Click no Item    ${btnPesquisar}
-    Click no Item    ${btnOk}
-    Should Not Be Empty    ${CampoColoaborador}
+Gerenciamento de exames |${DataEntrega}|
+    Clicar no Campo e Preencher Informacao    ${CampoDataEntrega}    ${CampoDataEntrega}    ${DataEntrega}
+    Click no Item    ${BtnExecConsulta}
+    Click no Item    ${BtnSelecionar}
+    Sleep    5
+    Should Not Be Empty    ${CampoAtendimento}
