@@ -7,9 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-
-${CampoPaciente}                  xpath=//input[@id="inp:cdPaciente"]
-${CampoSame}                      xpath=//input[@id="inp:nrSame"]
-${BotaoConsultar}                 xpath=//button[@id="btnConsultar"]
-${BotaoPDF}                       xpath=//button[@data-member="BTN_VISUALIZAR_PDF"]
-
+${CampoPaciente}    xpath=//input[@id="inp:cdPaciente"]
+${CampoSame}      xpath=//input[@id="inp:nrSame"]
+${BotaoConsultar}    xpath=//button[@id="btnConsultar"]
+${BotaoPDF}       xpath=//button[@data-member="BTN_VISUALIZAR_PDF"]

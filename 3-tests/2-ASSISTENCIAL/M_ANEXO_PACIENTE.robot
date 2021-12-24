@@ -34,7 +34,6 @@ SCR2AMANEXOPACIENTE-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMANEXOPACIENTE-001"
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Secretaria>Cadastro de Documento Externo(Anexo)"@nprint @las
     Acessa a Tela Pela Busca |M_ANEXO_PACIENTE||Cadastro de Documento Externo(Anexo)| @las
-
     Acessar Paciente e Matricula |${dados}[Paciente]| |${dados}[Matricula]|
     Consultar, Validar e Exibir PDF |${dados}[Objeto]|
-    Registrar Exibicao PDF    
+    Registrar Exibicao PDF

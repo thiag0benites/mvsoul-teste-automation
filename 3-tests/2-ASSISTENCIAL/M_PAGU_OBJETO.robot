@@ -34,7 +34,6 @@ SCR2AMPAGUOBJETO-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPAGUOBJETO-001"
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Configuração>Tabelas>Tipos de Objetos de Prontuário"@nprint @las
     Acessa a Tela Pela Busca |M_PAGU_OBJETO||Tipos de Objetos de Prontuário| @las
-        
     Localizar Objeto Pai
     Abrir Edicao e Adicionar Campo
     Validar Edicao e Salvar |${dados}[Resultado]|
