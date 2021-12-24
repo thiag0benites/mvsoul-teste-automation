@@ -9,15 +9,15 @@ Resource          ../../2-pages/2-ASSISTENCIAL/M_TIPPRE_PAGE.robot
 *** Variable ***
 
 *** Keywords ***
-
 Preencher Descricao e Esquema |${Descricao}| |${Esquema}|
-    Preencher Campo        ${CampoDesc}        ${Descricao}
-    Preencher Campo        ${CampoEsq}         ${Esquema}
+    Preencher Campo    ${CampoDesc}    ${Descricao}
+    Preencher Campo    ${CampoEsq}    ${Esquema}
     Send Keys    TAB
 
 Preencher Estoque e Produto |${Estoque}| |${Produto}|
-    Preencher Campo        ${CampoEst}        ${Estoque}
-    Preencher Campo        ${CampoProd}       ${Produto}
+    Preencher Campo    ${CampoEst}    ${Estoque}
+    Preencher Campo    ${CampoProd}    ${Produto}
+
 Salvar e Validar |${MensagemEsperada}|
-    Click Elemento por titulo               Salvar
-    Valida Mensagem                         ${CampoMensagem}               ${MensagemEsperada}
+    Click Elemento por titulo    Salvar
+    Valida Mensagem    ${CampoMensagem}    ${MensagemEsperada}

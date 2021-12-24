@@ -7,9 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-
-${ObjetoPaiAferic}                xpath=//div[text()='AFERIC']
-${BotaoEdicao}                    xpath=//button[@data-member="BTN_EDITAR_EXIBICAO"][@data-row="0"]
-
-${BotaoCid}                       xpath=//button[@id="btnDsCidatendime"]
-${BotaoSalvar}                    xpath=//button[@id="btnSalvar"]
+${ObjetoPaiAferic}    xpath=//div[text()='AFERIC']
+${BotaoEdicao}    xpath=//button[@data-member="BTN_EDITAR_EXIBICAO"][@data-row="0"]
+${BotaoCid}       xpath=//button[@id="btnDsCidatendime"]
+${BotaoSalvar}    xpath=//button[@id="btnSalvar"]

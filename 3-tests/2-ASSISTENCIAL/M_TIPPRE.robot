@@ -34,8 +34,6 @@ SCR2AMTIPPRE-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMTIPPRE-001"
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Tabelas>Tabelas Globais>Itens para Prescrever"@nprint @las
     Acessa a Tela Pela Busca |M_TIPPRE||Itens para Prescrever| @las
-
     Preencher Descricao e Esquema |${dados}[Descricao]| |${dados}[Esquema]|
     Preencher Estoque e Produto |${dados}[Estoque]| |${dados}[Produto]|
     Salvar e Validar |${dados}[MensagemEsperada]|
-
