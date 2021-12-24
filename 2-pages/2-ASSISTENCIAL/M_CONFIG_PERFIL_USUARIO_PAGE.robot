@@ -9,8 +9,7 @@ Resource    ../../Config.robot
 *** Variables ***
 
 ### Campos ###
-${CampoEstoque}                            xpath=//input[@id="inp:cdEstoque"]
-
+${CampoEmpresa}                            xpath=//input[@id="inp:cdMultiEmpresa"]
 ${CampoEmEdicao}                           xpath=//div[@class="ui-buttoninput ui-widget ui-lovinput mode-edit"]/input
 ${CampoQuantidade}                         xpath=//input[@class="editor-text mode-edit"]
 ${CampoSerie}                              xpath=//input[@class="editor-text mode-edit"]
@@ -26,9 +25,9 @@ ${DivDataValidade}                         xpath=//div[@data-member="DT_VALIDADE
 
 
 ### Botoes ###
-${BtnItensDeComposicao}                    xpath=//a[@id="ITENS_PRODUCAO_ITENS_PRODUCAO_tab1"]
+${BtnAdicionar}                            xpath=//a[@title="Adicionar"]
 ${BtnLotePrincipal}                        xpath=//a[@id="ITENS_PRODUCAO_ITENS_PRODUCAO_tab0"]
-${BtnConcluir}                             xpath=//button[@id="btnConcluir"]
+${BtnConcluir}                             xpath=//button[@id="Adicionar"]
 ${BtnSim}                                  xpath=//button[@class="btn btn-primary"][contains(text(),"Sim")]
 ${BtnOK}                                   xpath=//button[@class="btn btn-primary"][contains(text(),"OK")]
 
