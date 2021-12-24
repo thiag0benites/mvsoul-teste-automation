@@ -8,10 +8,16 @@ Resource          ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-${CampoCodigo}    xpath=//div[@data-member="CD_CON_PAG"]/input
+${CampoBancada}                   xpath=//input[@id="inp:cdBancada"]
+${CampoDataInicial}               xpath=//input[@id="inp:dtInicial"]
+
+
+
 ### Botoes ###
-${BtnOK}          xpath=//button[@class="btn btn-primary"]
-${BtnProcurar}    xpath=//a[@title="Procurar"]
-${BtnExecutar}    xpath=//a[@title="Executar Consulta"]
+${AbaEstatisticas}                xpath=//a[@id="CNV_PESQUISA_CNV_PESQUISA_tab1"]
+${BotaoPesquisa}                  xpath=//button[@id="btPesquisar"]
+
+
 ### Diversos ###
-${Alerta}         xpath=//p[@class="notifications-item-text"]
+
+${CampoAValidar}                  xpath=//input[@value="09/12/2021 Quinta-feira"]

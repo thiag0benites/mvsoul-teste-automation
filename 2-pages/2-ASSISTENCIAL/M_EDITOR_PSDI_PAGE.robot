@@ -8,10 +8,16 @@ Resource          ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-${CampoCodigo}    xpath=//div[@data-member="CD_CON_PAG"]/input
+${CampoEmEdicao}    xpath=//input[@class="editor-text mode-edit"]
+${CampoMensagemDeAviso}    xpath=//input[@id="inp:dsMensagemAviso"]
+${DivOrdem2}      xpath=//div[@title="2"]
+${DivOrdem3}      xpath=//div[@title="3"]/..
 ### Botoes ###
-${BtnOK}          xpath=//button[@class="btn btn-primary"]
-${BtnProcurar}    xpath=//a[@title="Procurar"]
+${BtnPesquisar}    xpath=//a[@title="Procurar"]
 ${BtnExecutar}    xpath=//a[@title="Executar Consulta"]
+${BtnFormatar}    xpath=//button[@id="btnFormatar"]
+${BtnAdicionar}    xpath=//a[@title="Adicionar"]
+${BtnSalvar}      xpath=//a[@title="Salvar"]
+${BtnApagar}      xpath=//a[@title="Apagar"]
 ### Diversos ###
 ${Alerta}         xpath=//p[@class="notifications-item-text"]

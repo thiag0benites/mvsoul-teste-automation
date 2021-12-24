@@ -8,10 +8,11 @@ Resource          ../../Config.robot
 
 *** Variables ***
 ### Campos ###
-${CampoCodigo}    xpath=//div[@data-member="CD_CON_PAG"]/input
+${CampoProntuario}    xpath=//input[@id="inp:idPaciente"]
+${DivDataEntrega}    xpath=//div[@data-member="DT_ENTREGA_DA_FATURA"][@data-row="0"]/..
 ### Botoes ###
-${BtnOK}          xpath=//button[@class="btn btn-primary"]
-${BtnProcurar}    xpath=//a[@title="Procurar"]
-${BtnExecutar}    xpath=//a[@title="Executar Consulta"]
+${btnPesquisar}    xpath=//button[@data-member="BT_ABRE_PESQUISA"]
+${btnImprimir}    xpath=//button[@id="btnImprime"]
+${btnSair}        xpath=//button[@data-member="BTN_SAIR"]
 ### Diversos ###
 ${Alerta}         xpath=//p[@class="notifications-item-text"]

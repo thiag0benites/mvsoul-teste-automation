@@ -12,7 +12,7 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource          ../../1-resources/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO_STEPS.robot
+Resource          ../../1-resources/4-MATERIAIS/M_PRODUCAO_MGES_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
@@ -21,17 +21,18 @@ Test Setup        Nova sessao
 Test Teardown     Encerra sessao
 
 *** Variable ***
- # Suite registrada no gerenciador de dados
-${suite}          m_mvto_solic_esterilizacao
- # Recebe dados do gerenciador
+# # Suite registrada no gerenciador de dados
+${suite}          m_producao_mges
+# # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal
-    #
-# robot -v browser:chrome -t "SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MMMVTOSOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO.robot"
-# robot -v browser:firefox -t "SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MMMVTOSOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO.robot"
-    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMMVTOSOLICESTERILIZACAO-001"
-    Acessa a Tela Pela Busca |M_LISTA_SOLIC_ESTERILIZACAO||Lista de Pedidos de Esterilização| @las
-    #Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Lista de Pedidos de Esterilização" @nprint @las
-    Listagem de Solicitacoes de Esterilizacao|${dados}[SetorResponsavelEntrega]||${dados}[SetorDaEntrega]||${dados}[ColaboradorDaEntrega]||${dados}[AvisoDeCirurgia]||${dados}[Composicao]||${dados}[MsgEsperada]|
+SCR4MMPRODUCAOMGES-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR4MMPRODUCAOMGES-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUCAOMGES-001 "3-tests/4-MATERIAIS/M_PRODUCAO_MGES.robot"
+# robot -v browser:firefox -t "SCR4MMPRODUCAOMGES-001:Fluxo Principal" -d ./5-results/SCR4MMPRODUCAOMGES-001 "3-tests/4-MATERIAIS/M_PRODUCAO_MGES.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMPRODUCAOMGES-001"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Produção"@nprint @nao
+    Informacoes Gerais de Entrada de Produtos|${dados}[Estoque]||${dados}[Produto]||${dados}[Unidade1]|
+    Aba Itens de Composicao|${dados}[CodProduto]||${dados}[Unidade2]||${dados}[Quantidade]|
+    Aba Lote principal|${dados}[Serie]|
+    Validacao de Mensagem|${dados}[MsgEsperada1]||${dados}[MsgEsperada2]|
