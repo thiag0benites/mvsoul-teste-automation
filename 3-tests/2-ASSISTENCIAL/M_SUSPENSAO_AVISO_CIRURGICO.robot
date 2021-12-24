@@ -19,7 +19,7 @@ Resource          ../../1-resources/2-ASSISTENCIAL/M_SUSPENSAO_AVISO_CIRURGICO_S
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-#Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -35,9 +35,9 @@ SCR2AMSUSPENSAOAVISOCIRURGICO-001:Fluxo Principal
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
     Acessar o Aguardando realizacao
     Preencher o campo Aviso da cirurgia |${dados}[numAviso]|
-    Suspender o aviso cirurgico 
+    Suspender o aviso cirurgico
     Preencher os campos Motivo e observacao para realizar a suspensao |${dados}[motivo]|,|${dados}[observacao]|
-    Clicar em confirmar suspensao 
-    Clicar em cancelar 
-    Clicar em confirmar suspensao 
+    Clicar em confirmar suspensao
+    Clicar em cancelar
+    Clicar em confirmar suspensao
     Validar mensagem de cancelamento da suspensao |${dados}[MsgEsperada]|
