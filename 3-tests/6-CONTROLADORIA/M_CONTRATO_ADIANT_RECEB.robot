@@ -35,9 +35,7 @@ SMF-5520 : Realizar Contrato de Adiantamento do tipo Financeiro
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Caixa>Caixa>Manutenção de Contrato de Adiantamento"@nprint @las
     Informar a empresa que sera responsavel pelo contrato de adiantamento |${dados}[FiltroEmpresa]|
     Selecionar o <tipo de adiantamento que sera realizado Financeiro> |${dados}[TipoAdiantamento]|, <tipo de contratante> |${dados}[TipoContratante]|, <contratante> |${dados}[SelecionarPessoa]|
-    
     Atribuir <uma descricao ao contrato e tambem atribuir um numero de contrato> |${dados}[CaracContrato]| |${dados}[NrContrato]|, <uma data de vencimento de pagamento do contrato> |${dados}[Vencimento]|, <da forma de pagamento> |${dados}[FormaPgto]| |${dados}[ValorContrato2]| |${dados}[Data]|
-    
     Clicar no <icone de salvar do menu principal> |${dados}[MsgVerificada]|, <botao Gerar Contas a Receber>
     Cadastrar <Conta contabil> |${dados}[FiltroContabil]|, <Tipo de documento> |${dados}[TipoDoc]|, <moeda a ser utilizada> |${dados}[Moeda]|, <o setor a conta contabil a conta de custo e o valor do rateio> |${dados}[TipoConta]| |${dados}[ValorRateio2]|
     Clicar em Concluir |${dados}[MsgValidada]|
@@ -51,12 +49,9 @@ SMF-5519 : Realizar Contrato de Adiantamento do tipo Pacote
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Caixa>Caixa>Manutenção de Contrato de Adiantamento"@nprint @las
     Informar a empresa que sera responsavel pelo contrato de adiantamento |${dados}[FiltroEmpresa]|
     Selecionar o <tipo de adiantamento que sera realizado Financeiro> |${dados}[TipoAdiantamento]|, <tipo de contratante> |${dados}[TipoContratante]|, <contratante> |${dados}[SelecionarPessoa]|
-    
     Atribuir uma descricao ao contrato e tambem atribuir um numero de contrato |${dados}[CaracContrato]| |${dados}[NrContrato]|
-    
     Selecionar o pacote que esta sendo contratado pelo paciente e atribuir forma de pagamento |${dados}[Pacote]|
     Atribuir uma data de vencimento de pagamento do contrato |${dados}[Vencimento]| |${dados}[Data]|
-    
     Clicar no <icone de salvar do menu principal> |${dados}[MsgVerificada]|, <botao Gerar Contas a Receber>
     Cadastrar <Conta contabil> |${dados}[FiltroContabil]|, <Tipo de documento> |${dados}[TipoDoc]|, <moeda a ser utilizada> |${dados}[Moeda]|, <o setor a conta contabil a conta de custo e o valor do rateio> |${dados}[TipoConta]| |${dados}[ValorRateio2]|
     Clicar em Concluir |${dados}[MsgValidada]|
