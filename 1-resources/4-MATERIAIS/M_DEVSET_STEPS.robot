@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Amanda Nascimento
-# Decrição: Passos da tela M_DEVFOR - Devolução de produtos para fornecedores
+# Decrição: Passos da tela M_DEVSET - Devolução de produtos para fornecedores
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
@@ -19,7 +19,7 @@ Preencher os campos Estoque|${estoque}|, Setor|${setor}|, Motivo de Devolucao|${
     Sleep      3
     
 
-Clicar no botao [${nomeBtn}]
+Clicar no botao[${nomeBtn}]
     IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnsalvar}    30
         Sleep    1
@@ -34,9 +34,15 @@ Clicar no botao [${nomeBtn}]
 Preencher o campo Produto|${produto}|, Qtde. Recebida.|${quantidade}|
     Click Element       ${elemProduto}
     Preencher Campo        ${cpProduto}       ${produto} 
-    #Press Keys      ${inpProduto}       ENTER
+    Press Keys      ${cpProduto}       ENTER
     Sleep      3
     Click Element       ${elemQtdade}
     Preencher Campo        ${cpQtdade}       ${quantidade} 
     Sleep      3
     
+Captura codigo|${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${cpCodigo}
+    ${codDev}    Get Element Attribute    ${cpCodigo}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "codigo", valor "${codDev}"
+    Sleep    3

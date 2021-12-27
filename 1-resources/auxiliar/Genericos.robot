@@ -31,6 +31,12 @@ Muda elemento Javascript
     Execute Javascript    arguments[0].class() = 'notification-item';    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
 
+Valida Mensagem
+    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
+    Wait Until Element Is Visible    ${MensagemRecebida}    120
+    Sleep    3
+    Element Should Contain    ${MensagemRecebida}    ${MensagemEsperada}
+
 Click Javascript
     [Arguments]    ${elemento}
     ${elemento2}    Get WebElement    ${elemento}
@@ -87,7 +93,9 @@ Selecionar Item Na Lista
     Click Elemento por titulo               ${ItemLista}
     Click no Item                           xpath=//button[@id="btok"]
 
-
+Clicar Botao Salvar 
+    Click Elemento por titulo               Salvar
+    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
 
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
@@ -215,11 +223,6 @@ Conta Linhas Tabela
     @{Linhas}    Get WebElements    ${LocatorTabela}//tbody//tr
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
-    
-Pegar data atual
-    ${CurrentDate}    Get Current Date    result_format=%d/%m/%Y
-    [Return]        ${CurrentDate}
-    Log To Console      ${CurrentDate}
 
 Captura data e hora TESTE
     [Arguments]    ${elemento}
@@ -231,12 +234,11 @@ Captura data e hora TESTE
     Input Text    ${elemento}    ${CurrentDate}   
     [Return]        ${CurrentDate} 
 
-Clicar no botao Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
+# Clicar no botao Salvar do menu
+#     Click Element     ${btnSalvar}
+#     Sleep             60
 
 Clicar no botão Adicionar
-    Wait Until Element Is Visible       ${btnAdicionar}     120
     Click Element     ${btnAdicionar}
     
 Captura hora atual
@@ -257,4 +259,4 @@ Preencher campo com data e hora
     Log To Console      ${CurrentDate}
     Click Element    ${elemento}
     Sleep    2
-    Input Text    ${elemento}    ${CurrentDate}
+    Preencher Campo    ${elemento}    ${CurrentDate}

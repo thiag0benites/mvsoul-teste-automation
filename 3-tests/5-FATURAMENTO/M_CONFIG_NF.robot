@@ -18,7 +18,7 @@ Resource          ../../1-resources/5-FATURAMENTO/M_CONFIG_NF_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
@@ -33,5 +33,5 @@ SCR5FMCONFIGNF001:Fluxo Principal
     # robot -v browser:firefox -t "SCR5FMCONFIGNF001:Fluxo Principal" -d ./5-results/SCR5FMCONFIGNF001 "3-tests/5-FATURAMENTO/M_CONFIG_NF.robot"
     ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMCONFIGNF001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Configurações>Configurações da Nota Fiscal"@nprint @las
-    Marcar os Campos Checkbox com a parametrizacao desejada <Pais Padrao> |${dados}[Pais]| <URL Padrao> |${dados}[URL]| <Motivo Padrao> |${dados}[Mot]|
+    Validar Checkbox de Solicitacao Marcado <Pais Padrao> |${dados}[Pais]| <URL Padrao> |${dados}[URL]| <Motivo Padrao> |${dados}[Mot]|
     Clicar Salvar |${dados}[Salvar]|

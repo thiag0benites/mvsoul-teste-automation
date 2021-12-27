@@ -4,8 +4,8 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-${inputCodigo}                        xpath=//input[@class='editor-text mode-search']
-${campoNomeDoFornecedor}              xpath=//div[@class='slick-cell b5 f5 selected']//div[@data-row='0']
+${inputCodigo}    xpath=//input[@class='editor-text mode-search']
+${campoNomeDoFornecedor}    xpath=//div[@class='slick-cell b5 f5 selected']//div[@data-row='0']
