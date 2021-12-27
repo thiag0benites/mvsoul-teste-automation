@@ -10,6 +10,7 @@ Resource          ../../Config.robot
 ### Campos ###
 ${CampoDataEntrega}           xpath=//input[@id="inp:dtEntrega"]
 ${CampoAtendimento}           xpath=//div[@data-member="CD_ATENDIMENTO"][@data-row="0"]
+${CampoExame}                 xpath=//div[@data-member="PCE"][@data-row="1"]
 ### Botoes ###
 ${BtnExecConsulta}            xpath=//button[@id="btnExecutaConsulta"]
 ${BtnSelecionar}              xpath=//button[@id="btnSelecionar"]
