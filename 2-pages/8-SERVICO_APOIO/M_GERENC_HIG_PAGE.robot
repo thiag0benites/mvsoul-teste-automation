@@ -7,8 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-
-${LovUnid}            xpath=//div[@id="cdUnidInt"]/button
-${BotaoCancelar}      xpath=//button[@id="btclose"]
-
-${CampoUnid}          xpath=//input[@id="inp:cdUnidInt"]
+${LovUnid}        xpath=//div[@id="cdUnidInt"]/button
+${BotaoCancelar}    xpath=//button[@id="btclose"]
+${CampoUnid}      xpath=//input[@id="inp:cdUnidInt"]

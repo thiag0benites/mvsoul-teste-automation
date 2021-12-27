@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Gerenciamento de Higienizações de Leitos
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_GERENC_HIG.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_GERENC_HIG.robot"
 # firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_GERENC_HIG.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_GERENC_HIG.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_GERENC_HIG.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_GERENC_HIG.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -35,6 +35,5 @@ SCR8SMGERENCHIG-001:Fluxo Principal
     #Acessar a tela "Serviços de Apoio>Higienização>Atendimento>Gerenciamento de Higienizações de Leitos"@nprint @las
     Acessar a tela pela busca |M_GERENC_HIG||Gerenciamento de Higienizações de Leitos| @las
     Validar Acesso a Tela |Gerenciamento de Higienizações de Leitos|
-
     Testar Lov das Unidades
     Consultar e Validar todas as Unidades |${dados}[Unidades]| |${dados}[Apartamento]| |${dados}[Enfermaria]| |${dados}[Leito]|
