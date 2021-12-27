@@ -36,8 +36,3 @@ SRC1CONSULTORIOPAEU-001:Fluxo Principal
     Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Consultório"@print @las
     Acesso Diagnostico
     Preenche Diagnostico Informacoes "HDA|${dados}[Informacoes]|", "Exame Fisico|${dados}[Informacoes]|", "Tratamento|${dados}[Informacoes]|", "Diagnostico|${dados}[Informacoes]|", "Validacao|${dados}[Validacao]|"
-
-
-
-
-
