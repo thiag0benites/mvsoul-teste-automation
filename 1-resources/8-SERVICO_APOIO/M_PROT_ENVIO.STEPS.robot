@@ -28,15 +28,17 @@ Informa na Tela de Envio Doc <SetorOri> |${VlStOri}| <SetorDest> |${VlStDest}| <
     Clicar no Campo e Preencher Informacao    ${CpDocPeriIni}    ${CpDocPeriIni}    ${VlPerInic}
     Clicar no Campo e Preencher Informacao    ${CpDocPeriFin}    ${CpDocPeriFin}    ${VlPerFinal}
     Click no Item    ${BtPesq}
+    Sleep    3
     # Checkbox e Importar com Anexo
-    Marcar Checkbox |${BtImporA}|
+    Wait Until Element Is Visible               ${BtImporA}                      120
+    Click no Item    ${BtImporA}
     Click no Item    ${CpImportA}
     Click no Item    ${CpImportB}
     Clicar no Campo e Preencher Informacao    ${CpImportC}    ${CpImportC}    ${VlDocImpor}
     Click no Item    ${CpImportD}
     Click no Item    ${CpImportE}
     # Botão Importar
-    Click no Item    ${BtImporA}
+    Click no Item    ${BtImporAB}
     # Salvar e Valida MSG
     Click no Item    ${BtSalvar}
     Valida Mensagem    ${MgsVerif}    ${MsgEsperada}

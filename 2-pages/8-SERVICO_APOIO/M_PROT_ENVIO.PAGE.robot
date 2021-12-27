@@ -25,7 +25,7 @@ ${CpDocPeriIni}          xpath=//*[@id="inp:dtInicio"]
 ${CpDocPeriFin}          xpath=//*[@id="inp:dtFim"]
 ${BtPesq}                xpath=//*[@id="btnPesquisa"]
 # Importar
-${BtImporA}               xpath=//button[@class='ui-button ui-widget ui-state-default ui-button-icon-only ui-label-position-default ui-fixed-width mode-edit']
+${BtImporA}               xpath=//*[@id="grdSelecaoDoc"]/div[4]/div[3]/div/div[1]/div[8]/div/button
 # Importar com Metodo
 ${CpImportA}             xpath=//*[@id="inp:cdDocumentoProt"]
 ${CpImportB}             xpath=//*[@id="cdDocumentoProt"]/button/span[1]
@@ -33,7 +33,7 @@ ${CpImportC}             xpath=//*[@id="#filterLov"]
 ${CpImportD}             xpath=//*[@id="btfilter"]
 ${CpImportE}             xpath=//*[@id="btok"]
 # Importação para a Pagina Pai
-${BtImporA}              xpath=//*[@id="btnImportar"]
+${BtImporAB}              xpath=//*[@id="btnImportar"]
 # Verificar Msg e Salvar
 ${BtSalvar}              xpath=//*[@id="tb-record-save"]/a/i
 ${MgsVerif}              xpath=//p[@class='notifications-item-text']
