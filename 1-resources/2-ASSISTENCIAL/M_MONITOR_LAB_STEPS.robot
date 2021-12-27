@@ -7,7 +7,6 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource          ../../2-pages/2-ASSISTENCIAL/M_MONITOR_LAB_PAGE.robot
-Library    XML
 
 *** Keywords ***
 Gerenciamento de exames |${DataEntrega}|
