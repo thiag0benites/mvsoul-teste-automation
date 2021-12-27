@@ -8,6 +8,5 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de Consulta de Cadastro de Paciente
-${selectCodAvisoCirurgia}    xpath=(//div[@class='slick-cell b0 f0 selected ui-fixed-width'])[2]
+${divCodAvisoCirurgia}    xpath=(//div[@class='slick-cell b0 f0 selected ui-fixed-width'])[2]
 ${inputCodAvisoCirurgia}    xpath=//input[@class='editor-text mode-search']
-      

@@ -11,8 +11,8 @@ Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 
 *** Keywords ***
 Pesquisar paciente pelo aviso de cirurgia |${AvisoCirurgia}|${print}
-    Wait Until Element Is Visible    ${selectCodAvisoCirurgia}    120
-    Press Keys   ${selectCodAvisoCirurgia}   ENTER
+    Wait Until Element Is Visible    ${divCodAvisoCirurgia}    120
+    Press Keys   ${divCodAvisoCirurgia}   ENTER
     Preencher campo    ${inputCodAvisoCirurgia}    ${AvisoCirurgia}
     Sleep    1
     Clicar no botao [Executar]||

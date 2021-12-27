@@ -33,5 +33,5 @@ SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR4MMMVTOSOLICESTERILIZACAO-001:Fluxo Principal" -d ./5-results/SCR4MMMVTOSOLICESTERILIZACAO-001 "3-tests/4-MATERIAIS/M_MVTO_SOLIC_ESTERILIZACAO.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMMVTOSOLICESTERILIZACAO-001"
     Acessa a Tela Pela Busca |M_LISTA_SOLIC_ESTERILIZACAO||Lista de Pedidos de Esterilização| @las
-    #Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Lista de Pedidos de Esterilização" @nprint @las
+    #Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Lista de Pedidos de Esterilização" @nprint @las 
     Listagem de Solicitacoes de Esterilizacao|${dados}[SetorResponsavelEntrega]||${dados}[SetorDaEntrega]||${dados}[ColaboradorDaEntrega]||${dados}[AvisoDeCirurgia]||${dados}[Composicao]||${dados}[MsgEsperada]|
