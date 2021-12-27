@@ -35,6 +35,7 @@ Validar Checkbox de Movimentacao Desmarcado
     Desmarcar Checkbox |${CbMovEmpresa}|
 
 Marcar Checkbox |${CheckboxSol}|
+    Sleep  2
     Wait Until Element Is Visible               ${CheckboxSol}                      20
     ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxSol}
     Log To Console    *** ${StatusCheckbox}

@@ -1,11 +1,10 @@
 ##################################################################################################################################
-# Autor: Denner Ricardo
+# Autor: Amanda Nascimento
 # Decrição: Elementos e metodos da tela de M_TRAPRO
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
-
+Resource          ../../Config.robot
 
 *** Variables ***
 ${BROWSER}    chrome

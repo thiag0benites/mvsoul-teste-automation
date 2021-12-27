@@ -22,7 +22,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}          m_esc_dia_ext
+${suite}          m_cadastro_cirurgia
  # Recebe dados do gerenciador
 ${dados}
 
@@ -32,7 +32,6 @@ SCR1AMCADASTROCIRURGIA-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR1AMCADASTROCIRURGIA-001:Fluxo Principal" -d ./5-results/SCR1AMCADASTROCIRURGIA-001 "3-tests/1-ATENDIMENTO/M_CADASTRO_CIRURGIA.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AMCADASTROCIRURGIA-001"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Cadastro da Cirurgia"@nprint @las
-    Escalas de Plantao Parametros |${dados}[Especialidade]||${dados}[Prestador]||${dados}[Entrada]||${dados}[Saida]||${dados}[Observacao]|
-    Clicar Botao Salvar |${dados}[MensagemEsperada]|
-
-
+    Cadastro da Cirurgia|${dados}[TempoUltilizacao]||${dados}[Atendimento]||${dados}[TipoSanguineo]||${dados}[DataEntrada]||${dados}[DataSaida]||${dados}[DataEntradaAnestesia]||${dados}[DataSaidaAnestesia]||${dados}[DataEntradaCirurgia]||${dados}[DataSaidaCirurgia]||${dados}[DataEntradaLimpeza]||${dados}[DataSaidaLimpeza]||${dados}[ASA]||${dados}[CentroCirurgico]||${dados}[SalaCirurgica]||${dados}[EquipeMedica]||${dados}[CIDPre]||${dados}[CIDPos]|
+    Cirurgia|${dados}[SubGrupoCirurgia]||${dados}[GrupoDeCirurgias]||${dados}[Cirurgia]||${dados}[PotencialDeContaminacao]||${dados}[Lateralidade]||${dados}[PrestadorCirurgiao]||${dados}[AtividadeMedica]|
+    Validacao dos Dados

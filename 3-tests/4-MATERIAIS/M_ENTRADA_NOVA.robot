@@ -35,9 +35,10 @@ ${dados}
 SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC 
 # robot -v browser:chrome -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/SMF-794 "3-tests/4-MATERIAIS/M_ENTRADA_NOVA.robot"
 # robot -v browser:firefox -t "SMF-794:Realizar entrada de produtos normais controle de lote e validade e sem OC" -d ./5-results/SMF-794 "3-tests/4-MATERIAIS/M_ENTRADA_NOVA.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-794"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Entradas>Entrada de Produtos"@nprint @las
-    Informar "Tipo de Documento|NOTA FISCAL|", "Estoque|CONSIGNADOS|"
-    Preencher Campos: "Numero Documento|102030|", "Serie|01|", "Fornecedor|1000 MARCAS|", Data Emissao|10/Dez/2021|, "CFOP|TESTE|", "Valor Total Nota|20000|"
+    Informar "Tipo de Documento|${dados}[TipoDocumento]|", "Estoque|${dados}[Estoque]|"
+    Preencher Campos: "Numero Documento|${dados}[NumeroDocumento]|", "Serie|${dados}[Serie]|", "Fornecedor|${dados}[Fornecedor]|", Data Emissao|${dados}[DataEmissao]|, "CFOP|${dados}[CFOP]|", "Valor Total Nota|${dados}[ValorNota]|"
     
 
     
