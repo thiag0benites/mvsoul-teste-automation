@@ -3,8 +3,8 @@
 # Decrição: Testes da tela M_USUARIO
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/M_REGRA "3-tests/8-SERVICO_DE_APOIO/DEVDOCPRO.robot"
-# firefox: robot -v browser:firefox -d ./5-results/M_REGRA "3-tests/8-SERVICO_DE_APOIO/DEVDOCPRO.robot"
+# chrome:  robot -v browser:chrome -d ./5-results/M_USUARIO "3-tests/7-APOIO_TI/M_USUARIO.robot"
+# firefox: robot -v browser:firefox -d ./5-results/M_USUARIO "3-tests/7-APOIO_TI/M_USUARIO.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
 # chrome:  robot -v browser:headlesschrome -d ./5-results/M_USUARIO "3-tests/7-APOIO_TI/M_USUARIO.robot"
@@ -35,9 +35,8 @@ SMF-6586:Fluxo Principal
 # robot -v browser:firefox -t "SMF-6586:Fluxo Principal" -d ./5-results/SMF-6586 "3-tests/7-APOIO_TI/M_USUARIO.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-6586"
     Acessar a tela "Apoio a TI>Gestão de Usuários>Autorização>Usuários"@nprint @las
-    Preencher os campos Identificacao|${dados}[identificacao]|, Nome Completo|${dados}[nomeCompleto]|, CPF|${dados}[cpf]|, Email|${dados}[email]|, DDD|${dados}[ddd]|, Celular|${dados}[celular]|, Matricula|${dados}[matricula]|, Cracha|${dados}[cracha]|, Data Nascimento|${dados}[dtNasc]|
-    Selecionar Profissao
-    Selecionar checkbox [Todos]
-    Selecionar Papel principal
-    Clicar no botao [Reconciliar]
-    Valida Mensagem         ${mensagemPop}          ${msgEsperada}
+    Preencher os campos Identificacao|${dados}[identificacao]|, Nome Completo|${dados}[nomeCompleto]|, Email|${dados}[email]|, DDD|${dados}[ddd]|, Celular|${dados}[celular]|, Matricula|${dados}[matricula]|, Cracha|${dados}[cracha]|, Data Nascimento|${dados}[dtNasc]|, Observaca|${dados}[observacao]|, |${suite}|${dados}[id]|
+    Selecionar Profissao|${dados}[profissao]|
+    Selecionar Papel principal|${dados}[papel]|
+    Clicar no botao[Reconciliar]
+    Clicar no botao[OK]
