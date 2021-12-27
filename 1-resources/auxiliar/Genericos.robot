@@ -84,15 +84,6 @@ Validar Acesso a Tela |${TituloEsperado}|
     Wait Until Element Is Visible           xpath=//div[contains(text(), "${TituloEsperado}")]              250
     Element Should Contain                  xpath=//div[contains(text(), "${TituloEsperado}")]              ${TituloEsperado}
 
-Selecionar Item Na Lista         
-    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
-    Click no Item                           ${BotaoLov}    
-    Click no Item                           xpath=//input[@name="filterLov"]                  
-    Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
-    Click no Item                           xpath=//button[@id="btfilter"]                  
-    Click Elemento por titulo               ${ItemLista}
-    Click no Item                           xpath=//button[@id="btok"]
-
 Clicar Botao Salvar 
     Click Elemento por titulo               Salvar
     Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
