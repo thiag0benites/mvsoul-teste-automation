@@ -39,5 +39,5 @@ SCR2AMSUSPENSAOAVISOCIRURGICO-001:Fluxo Principal
     Preencher os campos Motivo e observacao para realizar a suspensao |${dados}[motivo]|,|${dados}[observacao]|
     Clicar em confirmar suspensao 
     Clicar em cancelar 
-    Clicar em confirmar suspensao 
+    Suspender o aviso cirurgico 
     Validar mensagem de cancelamento da suspensao |${dados}[MsgEsperada]|

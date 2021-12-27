@@ -29,7 +29,7 @@ Preencher os campos Motivo e observacao para realizar a suspensao |${motivo}|,|$
     Sleep         1
 
 Clicar em cancelar 
-    Click no Item                          ${buttonSuspender}
+    Click no Item                          ${buttonCancelar}
 
 Clicar em confirmar suspensao 
     Click no Item                          ${buttonConfirmar}
