@@ -41,7 +41,7 @@ SCR5FMCONSISTEREMESSABPA-001:Fluxo Principal
     Acessar Tela M_CONSISTE_REMESSA_BPA |${dados}[NomeTelaRemessa]| 
     Validar Criticas Exibidas da Remessa |${dados}[Critica1]| |${dados}[Critica2]|
     Imprimir Relatorio
-    Sleep  5
+
 
 
  
