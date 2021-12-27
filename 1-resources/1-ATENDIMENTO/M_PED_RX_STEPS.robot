@@ -26,7 +26,7 @@ Criacao de atendimento
     Confirmar Atendimento |Registro Salvo com Sucesso!|
     
     
-Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+Captura do protocolo da previsao de pagamentos |${suite}|${id}|
     Sleep    1
     Should Not Be Empty   ${MensagemSucesso}
     ${protocolo}    Get Text    ${MensagemSucesso}    
