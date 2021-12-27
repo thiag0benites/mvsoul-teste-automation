@@ -24,6 +24,7 @@ ${BtnTipoPrestador}                        xpath=//div[@id="PADRAO_cdTipPresta"]
 ${BtnPortaEntrada}                         xpath=//div[@id="PADRAO_dsPortaEntrada"]/button
 ${BtnSistema}                              xpath=//div[@id="PADRAO_cdSistema"]/button
 ${BtnFiltrar}                              xpath=//button[@id="btfilter"]
+${BtnCopiarPerfil}                         xpath=//button[@id="btnCopia"]
 
 
 ### Diversos ###

@@ -8,25 +8,24 @@
 ### Pega massa de dados do Gerenciador
 
 Resource                            ../../2-pages/2-ASSISTENCIAL/M_CONFIG_PERFIL_USUARIO_PAGE.robot
-Resource    ../5-FATURAMENTO/M_VAL_PLACON_STEPS.robot
+
 
 *** Keywords ***
 
-Area Perfil
-    Wait Until Element Is Visible                            ${CampoEmpresa}                       180
+Area Perfil|${Perfil}|
+    Wait Until Element Is Visible                            ${BtnCopiarPerfil}                    180
     Click no Item                                            ${BtnAdicionar}
-    Preencher campo                                          ${CampoPerfil}                        TESTE
+    Preencher campo                                          ${CampoPerfil}                        ${Perfil}
 
 
-Dados Perfil Usuario
-    Wait Until Element Is Visible                            ${CampoEmpresa}                       20
-    Clicar Item e Selecionar da Lista                        ${BtnEmpresa}            ${BtnFiltrar}        5                                         5 - HOSPITAL MV - MATRIZ  - TESTES WATI 
-    Clicar Item e Selecionar da Lista                        ${BtnSetor}              ${BtnFiltrar}        170                                       170
-    Clicar Item e Selecionar da Lista                        ${BtnEspecialidade}      ${BtnFiltrar}        ASSISTENTE SOCIAL                         ASSISTENTE SOCIAL
-    Clicar Item e Selecionar da Lista                        ${BtnTipoPrestador}      ${BtnFiltrar}        ASSISTENTE SOCIAL                         ASSISTENTE SOCIAL
-    Clicar Item e Selecionar da Lista                        ${BtnPortaEntrada}       ${BtnFiltrar}        Lista de Pacientes                        Lista de Pacientes
-    Clicar Item e Selecionar da Lista                        ${BtnSistema}            ${BtnFiltrar}        PRONTUARIO ELETRONICO DO PACIENTE         PRONTUARIO ELETRONICO DO PACIENTE
-
+Dados Perfil Usuario|${Empresa}||${Setor}||${Especialidade}||${TipoPrestador}||${PortaEntrada}||${Sistema}||${PesquisaEmpresa}|
+    Wait Until Element Is Visible                            ${BtnEmpresa}            20
+    Clicar Item e Selecionar da Lista                        ${BtnEmpresa}            ${BtnFiltrar}        ${PesquisaEmpresa}                        ${Empresa}
+    Clicar Item e Selecionar da Lista                        ${BtnSetor}              ${BtnFiltrar}        ${Setor}                                  ${Setor}
+    Clicar Item e Selecionar da Lista                        ${BtnEspecialidade}      ${BtnFiltrar}        ${Especialidade}                          ${Especialidade}
+    Clicar Item e Selecionar da Lista                        ${BtnTipoPrestador}      ${BtnFiltrar}        ${TipoPrestador}                          ${TipoPrestador}
+    Clicar Item e Selecionar da Lista                        ${BtnPortaEntrada}       ${BtnFiltrar}        ${PortaEntrada}                           ${PortaEntrada}
+    Clicar Item e Selecionar da Lista                        ${BtnSistema}            ${BtnFiltrar}        ${Sistema}                                ${Sistema}
 
 
 Salvar e Validar mensagem|${MsgEsperada}|

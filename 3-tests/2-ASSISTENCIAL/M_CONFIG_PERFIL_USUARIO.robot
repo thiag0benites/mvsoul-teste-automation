@@ -26,7 +26,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # # Suite registrada no gerenciador de dados
-${suite}         m_producao_mges
+${suite}         m_config_perfil_usuario
 # # Recebe dados do gerenciador
 ${dados}
 
@@ -35,11 +35,12 @@ ${dados}
 SCR2AMCONFIGPERFILUSUARIO-001:Fluxo Principal           
 # robot -v browser:chrome -t "SCR2AMCONFIGPERFILUSUARIO-001:Fluxo Principal" -d ./5-results/SCR2AMCONFIGPERFILUSUARIO-001 "3-tests/2-ASSISTENCIAL/M_CONFIG_PERFIL_USUARIO.robot"
 # robot -v browser:firefox -t "SCR2AMCONFIGPERFILUSUARIO-001:Fluxo Principal" -d ./5-results/SCR2AMCONFIGPERFILUSUARIO-001 "3-tests/2-ASSISTENCIAL/M_CONFIG_PERFIL_USUARIO.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGPERFILUSUARIO-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGPERFILUSUARIO-001"
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Configuração>Tabelas>PEP>Perfil do usuário"@nprint @nao
     Acessar a tela pela busca |M_CONFIG_PERFIL_USUARIO||Perfil do usuário|@nprint @nao
-    Area Perfil
-    Dados Perfil Usuario
+    Area Perfil|${dados}[Perfil]|
+    Dados Perfil Usuario|${dados}[Empresa]||${dados}[Setor]||${dados}[Especialidade]||${dados}[TipoPrestador]||${dados}[PortaEntrada]||${dados}[Sistema]||${dados}[PesquisaEmpresa]|
+    Salvar e Validar mensagem|${dados}[MsgEsperada]|
 
 
 
