@@ -17,17 +17,16 @@ ${inputEstoqueOrigem}                id=inp:cdEstoque
 ${campoEstoqueDestino}               id=cdEstoqueDestino
 ${inputEstoqueDestino}               id=inp:cdEstoqueDestino
 
-${CampoProduto}                      xpath=//div[@class="slick-cell b1 f1 selected"]//div[@data-row='0']
-${inputProduto}                      xpath=
-
-${CampoLote}                         xpath=//div[@class='slick-cell b3 f3 selected']//div[@data-row='0']
-${inputLote}                         xpath=
-
-${CampoQtdTransferencia}             xpath=//div[@class='slick-cell b7 f7 selected']//div[@data-row='0']
-${inputQtdTransferencia}             xpath=
+${CampoProduto}                      xpath=//div[@class="slick-cell b1 f1 selected"]
+${inputProduto}                      xpath=//div[@class="slick-cell b1 f1 selected active editable"]//input[@row='0']
 
 
-${btnSim}                            xpath=//button[@data-member='BTN_PRODUTOS']
+
+${CampoQtdTransferencia}             xpath=//div[@class='slick-cell b6 f6 selected']
+${inputQtdTransferencia}             xpath=//div[@class="slick-cell b6 f6 selected active editable"]//input[@row='0']
+
+
 ${btnOk}                             xpath=//button[@class='btn btn-primary']
-
+${btnConcluir}                       xpath=//button[@id="btnConcluir"]
+${mensagemAlert}                     xpath=//div[@class="notifications-item-body notification-item-no-title"]
 
