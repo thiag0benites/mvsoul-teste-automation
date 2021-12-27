@@ -19,7 +19,7 @@ Resource          ../../1-resources/2-ASSISTENCIAL/M_CONFIG_PAGU_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown    Encerra sessao
+Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -33,14 +33,14 @@ SCR2AMCONFIGPAGU-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR2AMCONFIGPAGU-001:Fluxo Principal" -d ./5-results/M_CONFIG_PAGU "3-tests/2-ASSISTENCIAL/M_CONFIG_PAGU.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMCONFIGPAGU-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Ir para a Aba Geral 
-    Ir para a Aba Setor 
+    Ir para a Aba Geral
+    Ir para a Aba Setor
     Visualizar a Prescricao de enfermagem na Aba Setor
-    Visualizar Avaliacao na Aba Setor 
-    Visualizar Balanco Hidrico na Aba Setor 
-    Ir para a Aba Prescricao Medica 
+    Visualizar Avaliacao na Aba Setor
+    Visualizar Balanco Hidrico na Aba Setor
+    Ir para a Aba Prescricao Medica
     Ir para a Diagnostico
     Ir para a Aba Parecer
-    Ir para a aba Aprazamento e checagem 
-    Ir para a aba Portal 
+    Ir para a aba Aprazamento e checagem
+    Ir para a aba Portal
     Ir para a aba Empresas externas
