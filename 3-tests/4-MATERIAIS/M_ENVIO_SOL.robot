@@ -39,5 +39,3 @@ SCR4MMENVIOSOL-001:Fluxo Principal
     Realizar Envio de Cotacao |${dados}[Fornecedor]| |${dados}[TpComunicacao]| |${dados}[MensagemSucesso]| |${dados}[MsgConfFornecSolic]| |${dados}[MsgConfirma]|
     # Retornar massa de dados ao status inicial do teste
     Excluir Envio |${dados}[MsgValidaExcluir]| |${dados}[MensagemSucesso]|
-
-

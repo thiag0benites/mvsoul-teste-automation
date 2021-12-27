@@ -31,8 +31,8 @@ Realizar Envio de Cotacao |${Fornecedor}| |${TpComunicacao}| |${MensagemSucesso}
     Click no Item    ${BotaoOK}
     Click no Item    ${BotaoSair}
     Wait Until Element Is Visible    xpath=//div[@data-member="DSP_NM_FANTASIA"][@title="${Fornecedor}"]/..    20
-    
 ### Keyword para retornar massa de dados para status inicial do teste ###
+
 Excluir Envio |${MsgValidaExcluir}| |${MensagemSucesso}|
     Excluir Fornecedor |${MsgValidaExcluir}| |${MensagemSucesso}|
     Click no Item    ${AbaNovos}
