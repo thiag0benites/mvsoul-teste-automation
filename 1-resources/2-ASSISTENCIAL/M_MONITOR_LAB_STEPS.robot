@@ -18,6 +18,3 @@ Gerenciamento de exames |${DataEntrega}|
     Sleep    5
     ${NumAtendimento}    Get Element Attribute    ${CampoAtendimento}     title
     Altera massa de dados da "m_monitor_lab", linha "1", coluna "Atendimento", valor "${NumAtendimento}"
-                                      
-  
-   
