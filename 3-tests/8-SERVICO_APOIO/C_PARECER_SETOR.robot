@@ -33,5 +33,3 @@ SCR8SCPARECERSETOR-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SCPARECERSETOR-001"
     Acessar a tela "Serviços de Apoio>Serviço Atendimento Cliente>Atendimento>Abertura de Chamados"@nprint @nao
     Abertura de Chamados |${dados}[Origem]||${dados}[Setor]||${dados}[NomePaciente]||${dados}[TipoChamado]||${dados}[NivelChamado]||${dados}[MeioChamado]||${dados}[Paciente]||${dados}[DescResu]||${dados}[CodigoSetores]||${dados}[Codigo2]||${dados}[CodigoMotivos]||${dados}[UsuarioMotivos]||${dados}[CodDest]||${dados}[MsgSucesso]|
-    
-    
