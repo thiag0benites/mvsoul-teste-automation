@@ -18,19 +18,22 @@ ${CpSetorDestinoA}    xpath=//*[@id="inp:cdSetorDestino"]
 ${CpSetorDestinoB}    xpath=//*[@id="cdSetorDestino"]/button/span[1]
 ${CpSetorDestinoC}    xpath=//*[@id="#filterLov"]
 ${CpSetorDestinoD}    xpath=//*[@id="btfilter"]
-${CpSetorDestinoE}    xpath=//*[@id="btok"]
-
-${BtSalvar}        
-
+${CpSetorDestinoE}    xpath=//*[@id="btok"]     
 # Selecionar Documentos
 ${BtDocA}                xpath=//*[@id="btnPesquisar"]
 ${CpDocPeriIni}          xpath=//*[@id="inp:dtInicio"]
 ${CpDocPeriFin}          xpath=//*[@id="inp:dtFim"]
-${BtPesq}
-
-
-
-
-# # Verificar Msg
-# ${BtSalvar}
-# ${MgsVerif}       xpath=//p[@class='notifications-item-text']
+${BtPesq}                xpath=//*[@id="btnPesquisa"]
+# Importar
+${BtImporA}               xpath=//*[@id="grdSelecaoDoc"]/div[4]/div[3]/div/div[1]/div[8]/div/button
+# Importar com Metodo
+${CpImportA}             xpath=//*[@id="inp:cdDocumentoProt"]
+${CpImportB}             xpath=//*[@id="cdDocumentoProt"]/button/span[1]
+${CpImportC}             xpath=//*[@id="#filterLov"]
+${CpImportD}             xpath=//*[@id="btfilter"]
+${CpImportE}             xpath=//*[@id="btok"]
+# Importação para a Pagina Pai
+${BtImporAB}              xpath=//*[@id="btnImportar"]
+# Verificar Msg e Salvar
+${BtSalvar}              xpath=//*[@id="tb-record-save"]/a/i
+${MgsVerif}              xpath=//p[@class='notifications-item-text']
