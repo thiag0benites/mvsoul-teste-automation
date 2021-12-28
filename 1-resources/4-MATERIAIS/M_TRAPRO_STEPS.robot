@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# Autor: Amanda Nascimento
+# Autor: Denner Ricardo
 # Decrição: Passo a Passo para tela de M_TRAPRO.
 ##################################################################################################################################
 *** Settings ***
@@ -67,10 +67,4 @@ Concluir e Validar Codigo de Aprovacao |${mensagemSucesso}|
     Element Should Contain              ${mensagemAlert}    ${mensagemSucesso}
 
 
-Captura codigo|${suite}|${id}|
-    Wait Until Element Is Visible    ${btnNao}    120
-    Click Element    ${btnNao}
-    Sleep    3
-    Should Not Be Empty    ${cpCodigo}
-    ${codigo}    Get Element Attribute    ${cpCodigo}    title
-    Altera massa de dados da "${suite}", linha "${id}", coluna "codigo", valor "${codigo}"
+
