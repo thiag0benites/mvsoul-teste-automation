@@ -10,8 +10,8 @@ Resource          ../../2-pages/1-ATENDIMENTO/M_AGENDAMENTO_SIMPLIFICADO_PAGE.ro
 
 *** Keywords ***
 Entrada Dados e Pesquisa |${CodPrestador}|
-    Preencher campo                            ${BtnPrestador}            ${CodPrestador}
-    Click no Item                              ${BtnPesq}
+    Preencher campo    ${BtnPrestador}    ${CodPrestador}
+    Click no Item    ${BtnPesq}
 
 Validar Dados Pos Pesquisa |${DescServ}| |${DrecItemAgenda}| |${Incio}| |${PrestadorMed}| |${DescRec}|
     Validar Elemento Pelo Titulo    ${DescServ}

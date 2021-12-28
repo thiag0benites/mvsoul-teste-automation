@@ -6,6 +6,6 @@
 ### Configurações iniciais
 Resource          ../../Config.robot
 
-*** Variable ***    
-${BtnPrestador}                        xpath=//input[@name="pPrestador"]
-${BtnPesq}                             xpath=//button[@title="Pesquisar"]
+*** Variable ***
+${BtnPrestador}    xpath=//input[@name="pPrestador"]
+${BtnPesq}        xpath=//button[@title="Pesquisar"]
