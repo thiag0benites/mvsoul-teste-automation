@@ -20,7 +20,7 @@ Criacao de atendimento
     Validar Acesso a Tela |Atendimento de Urgência/Emergência|
     Clicar Botao Paciente   
     Pesquisar Pelo Paciente |ACACIA MARIA MAIA COSTA| |505146|
-    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |ORIGEM URGENCIA| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
+    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |CLINICA MEDICA HOBRA| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
     Clicar Botao Carteira 
     Validar Informacoes Carteira |999325208340007| |30/10/2023|
     Confirmar Atendimento |Registro Salvo com Sucesso!|
