@@ -27,12 +27,19 @@ Parametros de Atendimento
     Send Keys    enter
     
     #Marcar checkbox INFECÇÃO
+    Click no Item    ${CheckBoxInfec}
     #Preencher campo SITIO PRINCIPAL: BJ
+    Clicar no Campo e Preencher Informacao    ${CampoSitioPrincipal}    ${CampoSitioPrincipal}    BJ
     #Preencher campo TOPOGRAFIA: 80
+    Clicar no Campo e Preencher Informacao    ${CampoTopologia}         ${CampoTopologia}         80
     #Preencher campo PROCEDIMENTO INVASIVO: 368
+    Clicar no Campo e Preencher Informacao    ${CampoProcedInvasivo}    ${CampoProcedInvasivo}    368
     #Preencher Localização : Unidade de Internação
+    Clicar no Campo e Preencher Informacao    ${ComboBoxLocalização}    ${ComboBoxLocalização}    Unidade de Internação
     #Preencher campo LEITO: 1769
+    Clicar no Campo e Preencher Informacao    ${CampoLeito}             ${CampoLeito}             1769
     #Preencher TEXTAREA OBSERVAÇÕES: TESTES
+    Clicar no Campo e Preencher Informacao    ${TextArea}    ${TextArea}    $DadoInserido
     #Clicar no botão salvar
     #Validar sucesso
 
