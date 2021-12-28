@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource          ../../1-resources/4-MATERIAIS/M_TRAPRO_STEPS.robot
+Resource          ../../1-resources/4-MATERIAIS/M_TRAPRO_EMPRESA_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
@@ -38,4 +38,3 @@ SCR4MMTRAPRO-001:Transferir Produto Entre Estoques
     Preencher Estoque Destino |${dados}[estoqueDestino]|
     Preencher Produto |${dados}[produto]| e Qtd de transferencia |${dados}[qtdTransferencia]|
     Concluir e Validar Codigo de Aprovacao |${dados}[mensagemSucesso]|
-   
