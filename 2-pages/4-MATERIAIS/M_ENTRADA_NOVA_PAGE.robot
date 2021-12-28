@@ -15,6 +15,7 @@ ${CampoDtEmissao}                                    xpath=//input[@id='inp:dtEm
 ${CampoVlTotalNota}                                  xpath=//input[@id='inp:entPro_vlTotal']
 ${CampoQtdEntrada}                                   xpath=//*[@id="grdItentPro"]/div[4]/div[3]/div/div/div[4]
 ${CampoVlUnitario}                                   xpath=//*[@id="grdItentPro"]/div[4]/div[3]/div/div/div[6]
+${CampoEstoque}                                      xpath=//input[@id='inp:entPro_cdEstoque']
 ### BOTAO ###
 ${BtnTipoDoc}                                        xpath=//*[@id="entPro_cdTipDoc"]/button
 ${BtnFiltrar}                                        xpath=//button[@id='btfilter']
@@ -29,5 +30,6 @@ ${BtnSimAlerta}                                      xpath=//button[@class='btn 
 ${BtnSair}                                           xpath=//button[@id='btnSairItentPro']
 ### VARIADOS ###
 ${MsgAlerta}                                         xpath=//p[@class='notifications-item-text']
+${SelectEstoque}                                     xpath=//*[@id="grdLov"]/div[4]/div[3]/div/div[4]/div
 
 

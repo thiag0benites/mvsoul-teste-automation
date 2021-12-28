@@ -13,7 +13,6 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/4-MATERIAIS/O_CANORD_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
@@ -21,7 +20,7 @@ Resource            ../../1-resources/4-MATERIAIS/O_CANORD_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -35,10 +34,7 @@ SRC4OCANORD-001:Rateio - Ordem de Compra
 # robot -v browser:firefox -t "SRC4OCANORD-001:Rateio - Ordem de Compra" -d ./5-results/SRC4OCANORD "3-tests/4-MATERIAIS/O_CANORD.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC4OCANORD-001"
     Acessar a tela "Materiais e Logística>Compras>Compras>Ordem de Compra>Cancelamento"@nprint @las
-    Pesquisar por uma ordem de compras |${dados}[codigo]| 
-    Clicar no botão Executar
-    Validar Ordem de Compra 
-    Clicar no Botao |Produtos| 
-    Clicar no Botao |Cancelar Qtde. Pendente|
-    Valida Mensagem        ${mensagemCancelarQntPendente}         Solicitação de compras não aprovada!
-    Clicar no Botao |OK|
+    Validar Acesso a Tela |${dados}[nomeTela]| 
+    Preencher codigo e Validar |${dados}[codigo]|
+    Preencher motivo do Cancelamento e Validar |${dados}[motivoCancelamento]| 
+    Confirmar e validar mensagem |${dados}[mensagemSucesso]|
