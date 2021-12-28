@@ -18,6 +18,8 @@ ${CampoExame}                                              xpath=//div[@class='s
 ${MedSolic}                                                xpath=//input[@id='inp:cdPrestador']
 ${Setor}                                                   xpath=//input[@id='inp:cdSetor']
 ${DtPedido}                                                xpath=//input[@id='inp:dtPedido']
+${CampoPaciente}                                           xpath=//input[@id='inp:cdPaciente']
+${CampoSetorSolic}                                         xpath=//input[@id='inp:cdSetor']
 ### Botoes ###
 ${BtnMedicoSolic}                                          xpath=//*[@id="cdPrestador"]/button
 ${BtnFiltrar}                                              xpath=//button[@id='btfilter']

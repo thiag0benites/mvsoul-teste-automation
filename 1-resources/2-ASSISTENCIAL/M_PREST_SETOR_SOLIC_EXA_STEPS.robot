@@ -12,15 +12,15 @@ Resource    ../../2-pages/2-ASSISTENCIAL/M_PREST_SETOR_SOLIC_EXA_PAGE.robot
 
 *** Keywords ***
 Preenche Informacoes "Atendimento|${Atend}|", "Data Pedido|${data}|"
-    Preencher campo                                    ${CampoAtendimento}            ${Atend}
+    Preencher campo                                    ${CampoPaciente}            ${Atend}
     Inserir Data Do Pedido |${data}|
     # Clicar Item e Selecionar da Lista                  ${BtnMedicoSolic}              ${CampoFiltrar}        ${MedSolic}
     # Click no Item                                      ${BtnFiltrar}
     # Click no Item                                      ${BtnOkFiltrar}
     Click no Item                                      ${BtnSetorPrest}
+    Click no Item                                      ${BtnExterno}   
 
 Acesso Lancamento Exame "Numero Conselho|${NroCons}|", "Nome Prestador|${NomePrest}|", "Conselho|${Conselho}|", "Especialidade|${Espec}|"
-    Click no Item                                      ${BtnExterno}   
     Preencher campo                                    ${CampoNroConselho}            ${NroCons}
     Preencher campo                                    ${CampoNomePrest}              ${NomePrest}
     Clicar no Campo e Preencher Informacao             ${BtnConselho}                 ${CampoFiltrar}        ${Conselho}
@@ -33,6 +33,8 @@ Acesso Lancamento Exame "Numero Conselho|${NroCons}|", "Nome Prestador|${NomePre
 
 
 Preenche Lancamento Exame por Prestador "Setor Solicitante|${SetSolic}|", "Exame|${Exame}|"
+    Send Keys    tab
+    Send Keys    tab
     Clicar no Campo e Preencher Informacao             ${BtnSetorSolic}               ${CampoFiltrar}        ${SetSolic}
     Click no Item                                      ${BtnFiltrar}
     Click no Item                                      ${BtnOkFiltrar}
