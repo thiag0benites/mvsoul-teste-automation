@@ -22,7 +22,7 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}         m_prot_envio
+${suite}          m_prot_envio
 # Recebe dados do gerenciador
 ${dados}
 
@@ -31,6 +31,6 @@ ${dados}
 SCR8SMPROTENVIOS001:Fluxo Principal
     # robot -v browser:chrome -t "SCR8SMPROTENVIOS001:Fluxo Principal" -d ./5-results/SCR8SMPROTENVIOS001 "3-tests/8-SERVICO_APOIO/M_PROT_ENVIO.robot"
     # robot -v browser:firefox -t "SCR8SMPROTENVIOS001:Fluxo Principal" -d ./5-results/SCR8SMPROTENVIOS001 "3-tests/8-SERVICO_APOIO/M_PROT_ENVIO.robot"
-    ${dados}  Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMPROTENVIOS001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR8SMPROTENVIOS001"
     Acessa a Tela Pela Busca |M_PROT_ENVIO||Envio de Documentos| @las
     Informa na Tela de Envio Doc <SetorOri> |${dados}[SetorOri]| <SetorDest> |${dados}[SetorDest]| <PerInicial> |${dados}[PerInicial]| <PerFinal> |${dados}[PerFinal]| <DocImportar> |${dados}[DocImportar]| <Salvar> |${dados}[Salvar]|

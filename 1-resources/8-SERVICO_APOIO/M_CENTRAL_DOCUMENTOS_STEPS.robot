@@ -17,7 +17,7 @@ Informar na Tela de Central de Doc <SetorTra> |${VlSetorTra}| <Protocolo> |${VlP
     Click no Item    ${CpSetorTraD}
     # Atualizar
     Click no Item    ${BtAtualiza}
-    # Novo Protocolo   
+    # Novo Protocolo
     Click no Item    ${BtNovoProto}
     Validar Acesso a Tela |Envio de Documentos|
     Click no Item    ${BtPesquisaA}
