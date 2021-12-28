@@ -1,6 +1,6 @@
 ##################################################################################################################################
 # Autor: Amanda Nascimento
-# Decrição: Passos da tela M_COTA_SETOR 
+# Decrição: Passos da tela M_COTA_SETOR
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
@@ -12,10 +12,9 @@ Resource          ../../2-pages/2-ASSISTENCIAL/C_RES_EXA_PSSD_PAGE.robot
 Acessar |${tela}|${printscreen} ${las}
     Unselect Frame
     Click Element    ${HomeXpathBtnPesquisa}
-    Preencher campo  ${HomeXpathBtnPesquisaInput}       ${tela}
+    Preencher campo    ${HomeXpathBtnPesquisaInput}    ${tela}
     Sleep    1
-    Click Element    ${ScreenBaixaProdutos} 
-
+    Click Element    ${ScreenBaixaProdutos}
     #### LAS Send Keys #####
     IF    "${las}" == "@las"
         # Sleep    1
@@ -32,19 +31,17 @@ Acessar |${tela}|${printscreen} ${las}
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
     Sleep    60
 
-
-Preencher o campo Amostra|${amostra}|    
+Preencher o campo Amostra|${amostra}|
     Wait Until Element Is Visible    ${cpAmostra}    240
-    Preencher Campo        ${cpAmostra}       ${amostra} 
-    Press Keys          ${cpAmostra}        ENTER
-    Sleep       15
-    
+    Preencher Campo    ${cpAmostra}    ${amostra}
+    Press Keys    ${cpAmostra}    ENTER
+    Sleep    15
 
 Selecionar checbox [Impresso]
-    Wait Until Element Is Visible       ${CheckImpresso}        120
-    Click Element        ${CheckImpresso}
-    Sleep       3    
-    
+    Wait Until Element Is Visible    ${CheckImpresso}    120
+    Click Element    ${CheckImpresso}
+    Sleep    3
+
 Clicar no botao[${nomeBtn}]
     IF    '${nomeBtn}' == 'Imprimir'
         Wait Until Element Is Visible    ${btnImprimir}    30
@@ -53,6 +50,6 @@ Clicar no botao[${nomeBtn}]
     END
 
 Valida aba Browser
-    Sleep       6
+    Sleep    6
     Switch Window
-    Sleep       3
+    Sleep    3
