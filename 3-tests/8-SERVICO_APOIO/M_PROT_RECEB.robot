@@ -3,11 +3,11 @@
 # Decrição: Teste da tela Gerenciamento de Higienizações de Leitos
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_PROT_RECEB.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_PROT_RECEB.robot"
 # firefox: robot -v browser:firefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_PROT_RECEB.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_PROT_RECEB.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_PROT_RECEB.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/4-MATERIAIS "3-tests\8-SERVICO_APOIO\M_PROT_RECEB.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -35,7 +35,6 @@ SCR8SMPROTRECEB-001:Fluxo Principal
     #Acessar a tela "Serviços de Apoio>Movimentação de Documentos>Manutenção>Protocolação de Documentos>Baixa de Documentos"@nprint @las
     Acessar a tela pela busca |M_PROT_RECEB||Baixa de Documentos| @las
     Validar Acesso a Tela |Baixa de Documentos|
-
     Selecionar Protocolo |${dados}[Protocolo]|
     Marcar Recebimento
     Salvar e Validar |${dados}[MensagemEsperada]|

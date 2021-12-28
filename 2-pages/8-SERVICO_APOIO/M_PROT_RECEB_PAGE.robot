@@ -7,8 +7,6 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-
-
-${CampoProtocolo}          xpath=//input[@id="inp:cdProtocoloDoc"]
-${BotaoOK}                 xpath=//button[@class="btn btn-primary"]
-${CheckRecebe}             xpath=//button[@data-member="SN_RECEBIMENTO"]
+${CampoProtocolo}    xpath=//input[@id="inp:cdProtocoloDoc"]
+${BotaoOK}        xpath=//button[@class="btn btn-primary"]
+${CheckRecebe}    xpath=//button[@data-member="SN_RECEBIMENTO"]
