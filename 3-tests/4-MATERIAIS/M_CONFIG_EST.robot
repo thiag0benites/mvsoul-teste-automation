@@ -1,5 +1,6 @@
 #################################################################################################################################################################
-# Autor: Danilo Campanello
+# Autor: Andréa Rodrigues
+# Decrição: Teste da tela Produtos do Estoque
 #################################################################################################################################################################
 # Execução Exemplo:
 # chrome:         robot -v browser:chrome -d ./5-results/M_CONFIG_EST "3-tests\4-MATERIAIS\M_CONFIG_EST.robot"
@@ -13,6 +14,7 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource          ../../1-resources/4-MATERIAIS/M_CONFIG_EST_STEPS.robot
+
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup      Nova sessao
 #Suite Teardown    Encerra sessao
@@ -27,10 +29,18 @@ ${suite}        m_config_est
 ${dados}
 
 *** Test Case ***
-SMF-3020:Configurar Funcionamento do Estoque
-# robot -v browser:chrome -t "SMF-3020:Configurar Funcionamento do Estoque" -d ./5-results/SMF-3020 "3-tests/4-MATERIAIS/M_CONFIG_EST.robot"
-# robot -v browser:firefox -t "SMF-3020:Configurar Funcionamento do Estoque" -d ./5-results/SMF-3020 "3-tests/4-MATERIAIS/M_CONFIG_EST.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-3020"
-    Acessar a tela pela busca |${dados}[AcessoTela1]||${dados}[AcessoTela2]|@nprint @nlas
-    Preencher "Inflacao Mensal de Formacao de OC|${dados}[FormacaoOC]|", "Valor Inflacao|${dados}[VlInflacao]|", "Validar Alteracao|${dados}[ValidAlteracao]|"
-    Preencher "Manutencao Lote Compras|Manutenção do Estoque (Lote de Compras em dias)|", "Qtd De Lotes Em Dias |${dados}[QtdXA]|, |${dados}[QtdZA]|, |${dados}[QtdXC]|, |${dados}[QtdZC]|", "Validar Alteracao|${dados}[ValidAlteracao]|"
+SCR4MMCONFIGEST-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR4MMCONFIGEST-001:Fluxo Principal" -d ./5-results/SCR4MMCONFIGEST-001 "3-tests/4-MATERIAIS/M_CONFIG_EST.robot"
+# robot -v browser:firefox -t "SCR4MMCONFIGEST-001:Fluxo Principal" -d ./5-results/SCR4MMCONFIGEST-001 "3-tests/4-MATERIAIS/M_CONFIG_EST.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMCONFIGEST-001"
+    #Acessar a tela "Materiais e Logística>Almoxarifado>Configurações>Funcionamento"@nprint @las
+    Acessar a tela pela busca |M_CONFIG_EST||Funcionamento|@nprint @las
+    Validar Acesso a Tela |${dados}[NomeTela]|
+    Alterar Parametro de Situacao do Usuario |${dados}[Parametro1]| |${dados}[Parametro2]|
+    Acessar Opcao de Configuracao |Parâmetros de Movimentação de Produtos| |${dados}[Parametro1]| |${dados}[Parametro2]|
+    Acessar Opcao de Configuracao |Configuração de Kit| |${dados}[Parametro1]| |${dados}[Parametro2]|
+    Salvar Alteracoes Realizadas |${dados}[MensagemSucesso]|
+    # Retornar massa de dados ao status inicial do teste
+    Alterar Parametro de Situacao do Usuario |${dados}[Parametro1]| |${dados}[Parametro2]|
+    Salvar Alteracoes Realizadas |${dados}[MensagemSucesso]|
+    Sleep  5
