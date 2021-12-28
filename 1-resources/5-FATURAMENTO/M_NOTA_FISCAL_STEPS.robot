@@ -19,27 +19,21 @@ Preencha o Atendimento |${Atendimento}|
 
 Clique em imprimir     
     Click no Item                    ${BtnImprimir}
-    # Click no Item                    ${BtnNovaNota} 
-    # Preencher Campo                  ${CampoEmail}                 PREFEITURA@LONDRINA.ORG.GOV
-    Click no Item                    ${BtnNotaFiscal}  
+    Click no Item                    ${BtnImprimir2}    
+    
         
-      
 Verificacao da Conversão de RPS em NFe
     Click no Item                    ${BtnAtualizar}
     Click no Item                    ${BtnSair}
-    #Validar Informacao Item          ${MsgUsuario}                   Registros gravados com sucesso
+    Wait Until Element Is Visible    ${BtnSim} 
     Click no Item                    ${BtnSim} 
     Click no Item                    ${BtnSair2}
-    Click Elemento por titulo        Sair    
+     
 
 Cancelar nota fiscal |${MsgLida}|
-    Click no Item                    ${Notificacao} 
-    Click no Item                    ${BtnRecebe} 
-    Click no Item                    ${BtnImprimir}
-    Click no Item                    ${BtnNovaNota} 
     Click no Item                    ${BtnCancelar} 
-    Preencher Campo                  ${DataCancel}                    28/12/2021
     Click no Item                    ${BtnMotivo}
     Click no Item                    ${LinhaMotivo}
-    Click no Item                    ${BtnOk}  
+    Click no Item                    ${BtnOk}
+    Click no Item                    ${BtnOk2}
     Validar Informacao Item          ${MsgUsuario2}                   ${MsgLida}                     
