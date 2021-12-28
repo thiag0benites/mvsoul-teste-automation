@@ -32,9 +32,10 @@ SCR2AMDOCUMENTOANEXOPEDIDO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMDOCUMENTOANEXOPEDIDO-001:Fluxo Principal" -d ./5-results/SCR2AMDOCUMENTOANEXOPEDIDO-001 "3-tests/2-ASSISTENCIAL/M_DOCUMENTO_ANEXO_PEDIDO.robot"
 # robot -v browser:firefox -t "SCR2AMDOCUMENTOANEXOPEDIDO-001:Fluxo Principal" -d ./5-results/SCR2AMDOCUMENTOANEXOPEDIDO-001 "3-tests/2-ASSISTENCIAL/M_DOCUMENTO_ANEXO_PEDIDO.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMDOCUMENTOANEXOPEDIDO-001"
-    Acessar a tela "Diagnostico e Terapia> Laboratório de Analises Clinicas>Atendimento >Pedidos de Exames Laboratórias"@nprint @las
-    #Acessa a Tela Pela Busca |M_PEDEXA||Pedidos de Exames Laboratrório| @las
+    #Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Atendimento>Pedidos de Exames Laboratório"@nprint @las
+    Acessa a Tela Pela Busca |M_PEDEXA||Pedidos de Exames Laboratório| @las
     Validar Acesso a Tela |Pedidos de Exames|
 
-    Preencher Pedido e acessar a Pagina |${dados}[Pedido]|
-    
+    Preencher Pedido e acessar a Pagina |${dados}[Pedido]|   
+    Anexar Documento e Validar |${dados}[Tipo]| |${dados}[Stat]| |${dados}[Descr]| |${dados}[MensagemSucesso]|
+    Visualizar Documento
