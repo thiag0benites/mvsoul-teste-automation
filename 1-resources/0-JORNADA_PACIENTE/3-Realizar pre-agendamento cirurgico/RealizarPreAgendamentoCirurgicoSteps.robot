@@ -14,9 +14,9 @@ Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
 Preencher campos da tela de pre-agendamento e adicionar a Cirurgia |${tempoPrev}|,|${codPacPreAgCir}|,|${tipoInternacao}|,|${centroCirurgico}|,|${salaCirurgica}|${print}
     Preencher campo com data e hora    ${inputDataHr}    %d/%m/%Y %H:%M    0
     Preencher campo com data e hora    ${inputDataHrSugerida}   %d/%m/%Y %H:%M    04:00:00
-    Preencher campo com data e hora    ${inputDataHrPrevIntern}    %d/%m/%Y %H:%M    0
     Preencher campo    ${inputTempoPrev}    ${tempoPrev}
     Sleep    1
+    Preencher campo com data e hora    ${inputDataHrPrevIntern}    %d/%m/%Y %H:%M    03:00:00
     Preencher campo    ${inputCodPacientePreAgCir}    ${codPacPreAgCir}
     Press Keys    ${inputCodPacientePreAgCir}    ENTER
     Sleep    1
@@ -62,9 +62,8 @@ Captura do codigo do aviso de cirurgia|${suite}|${id}|
     Sleep    2
 
 Preencher os campos e reservar sala de cirurgia |${CirurMsgEsperada}|
-    Wait Until Element Is Visible    ${inputDtPrevInter}    30
-    Click Element    ${inputDtPrevInter}  
-    Send Keys    enter  
+    Wait Until Element Is Visible    ${divDtPrevInter}    30
+    Press Keys    ${divDtPrevInter}    ENTER       
     Sleep    1
     Clicar no botao [1-Agendar]||
     Sleep    2

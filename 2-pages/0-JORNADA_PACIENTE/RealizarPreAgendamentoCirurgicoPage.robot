@@ -27,5 +27,7 @@ ${inputTipoInternacaoPreAg}    xpath=(//input[@id='inp:cdTipoInternacao'])
 ${inputConvenioCir}    xpath=(//*[@id='inp:cdConvenio'])
 ${inputCodPlano}     xpath=(//input[@id='inp:cdConPla'])
 ${inputPrestCirurgiao}    xpath=(//input[@id="inp:cdPrestador"])
-${inputDtPrevInter}    xpath=//input[@id='inp:dtPrevInter']
-${notifMsgSucesso}     xpath=//li[@class='notification-warning']  
+${divDtPrevInter}    xpath=//div[@data-name='dtPrevInter']
+#${divDtPrevInter}    xpath=(//div[@class='roundedSquare HoraLivre '])[24]
+${notifMsgSucesso}     xpath=//li[@class='notification-warning']
+#${divDtHrPrevInter}    xpath=//div[@data-member='DT_PREV_INTER']

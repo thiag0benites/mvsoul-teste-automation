@@ -17,7 +17,7 @@ Preencher os campos |${empresa}|,|${usuario}|
     Preencher Campo    ${campoUsuarioInput}    ${usuario}
 
 Validar mensagem ao salvar |${mensagem}|
-    Valida Mensagem    ${notificacao}    ${mensagem}
+    Valida Mensagem         ${notificacao}             ${mensagem}
 
 Clicar no botao adicionar
     Click no Item    ${buttonAdicionar}
