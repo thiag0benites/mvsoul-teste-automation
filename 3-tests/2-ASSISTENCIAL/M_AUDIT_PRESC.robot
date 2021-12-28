@@ -40,5 +40,3 @@ SCR2AMAUDITPRESC-001 : Fluxo Principal
     Adicionar Registro |${dados}[Descricao]| |${dados}[ReavaliarEm]| |${dados}[PendenteDe]|
     Preencher Regras da Auditoria do Produto |${dados}[NrDias]| |${dados}[TpAcao]| |${dados}[Mensagem]|
     Salvar Registro
-    
-    
