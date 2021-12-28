@@ -17,21 +17,21 @@ Preencher Dados da Movimentacao |${SetorCME}| |${ColabRetirante}| |${Colaborador
     Selecionar Item Na Lista    ${BotaoLovLocalidade}    ${Localidade}    ${Localidade}
 
 Selecionar Composicao |${CdComposicao}|
-    Clicar no Campo e Preencher Informacao    ${CampoCdComposicao}    ${CampoEdit}    ${CdComposicao}    
+    Clicar no Campo e Preencher Informacao    ${CampoCdComposicao}    ${CampoEdit}    ${CdComposicao}
     Send Keys    tab
     Click no Item    ${CbConfirmarSaida}
 
 Validar Saida de Arsenal |${MensagemSucesso}|
     Clicar Botao Salvar |${MensagemSucesso}|
     Click no Item    ${BotaoOK}
-    
-### Keyword para retornar massa de dados para status inicial do teste ### 
+### Keyword para retornar massa de dados para status inicial do teste ###
+
 Liberar Entrada de Arsenal |${SetorCME}| |${Colaborador}| |${CdComposicao}| |${MensagemEntrada}|
     Click Elemento por titulo    Sair
     Acessar a tela "Serviços de Apoio>Central de Materiais Esterilizados>Movimentações>Arsenal>Entrada"@nprint @nao
     Selecionar Item Na Lista    ${BotaoLovSetorCME}    ${SetorCME}    ${SetorCME}
     Selecionar Item Na Lista    ${BotaoLovColaborador}    ${Colaborador}    ${Colaborador}
-    Clicar no Campo e Preencher Informacao    ${CampoCdComposicao}    ${CampoEdit}    ${CdComposicao}    
+    Clicar no Campo e Preencher Informacao    ${CampoCdComposicao}    ${CampoEdit}    ${CdComposicao}
     Send Keys    tab
     Click no Item    ${CbConfirmarEntrada}
     Clicar Botao Salvar |${MensagemEntrada}|

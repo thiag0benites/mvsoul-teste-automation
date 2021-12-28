@@ -37,6 +37,5 @@ SCR4MMMVTOARSENALSAI-001:Fluxo Principal
     Preencher Dados da Movimentacao |${dados}[SetorCME]| |${dados}[ColabRetirante]| |${dados}[Colaborador]| |${dados}[Setor]| |${dados}[Localidade]|
     Selecionar Composicao |${dados}[CdComposicao]|
     Validar Saida de Arsenal |${dados}[MensagemSucesso]|
-    # Retornar massa de dados para status inicial do teste 
+    # Retornar massa de dados para status inicial do teste
     Liberar Entrada de Arsenal |${dados}[SetorCME]| |${dados}[Colaborador]| |${dados}[CdComposicao]| |${dados}[MensagemEntrada]|
-

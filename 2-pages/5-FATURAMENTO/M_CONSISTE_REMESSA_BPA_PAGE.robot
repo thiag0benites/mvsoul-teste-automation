@@ -7,9 +7,9 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${BotaLovCompetencia}            xpath=//div[@id="competencia"]/button
-${BotaoLovRemessa}               xpath=//div[@id="PG_FECHAR_cdRemessa"]/button
-${BotaoConsistir}                xpath=//button[@id="PG_FECHAR_btConsistir"] 
-${BotaoVisualizarCriticas}       xpath=//button[@id="PG_FECHAR_btVisualizar"] 
-${BotaoImprimir}                 xpath=//button[@id="btImprimir"]
-${BotaoConfirmaImprimir}         xpath=//button[@data-action="btnImprimir_click"]
+${BotaLovCompetencia}    xpath=//div[@id="competencia"]/button
+${BotaoLovRemessa}    xpath=//div[@id="PG_FECHAR_cdRemessa"]/button
+${BotaoConsistir}    xpath=//button[@id="PG_FECHAR_btConsistir"]
+${BotaoVisualizarCriticas}    xpath=//button[@id="PG_FECHAR_btVisualizar"]
+${BotaoImprimir}    xpath=//button[@id="btImprimir"]
+${BotaoConfirmaImprimir}    xpath=//button[@data-action="btnImprimir_click"]
