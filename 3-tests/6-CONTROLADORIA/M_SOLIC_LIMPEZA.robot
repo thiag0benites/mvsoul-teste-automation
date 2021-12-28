@@ -15,7 +15,6 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/6-CONTROLADORIA/M_SOLIC_LIMPEZA_STEPS.robot
-# Resource            ../../Config.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessao
@@ -23,7 +22,7 @@ Resource            ../../1-resources/6-CONTROLADORIA/M_SOLIC_LIMPEZA_STEPS.robo
 
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-# Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -41,5 +40,5 @@ SCR6CMSOLICLIMPEZA-001:Configurar Centros de Serviço Compartilhados
     Clicar no botao Adicionar 
     Preencher Configuracoes |${dados}[vigencia]|, |${dados}[centroRegra]|, |${dados}[centroOrigem]|, |${dados}[empresaDestino]|, |${dados}[centroDestino]|, |${dados}[descConta]|
     Validar Campos |${dados}[vigencia]|, |${dados}[centroRegra]|, |${dados}[centroOrigem]|, |${dados}[empresaDestino]|, |${dados}[centroDestino]|, |${dados}[descConta]|
-    Exportar e validar mensagem |${dados}[mensagemSucesso]|
+    Salvar e validar mensagem |${dados}[mensagemSucesso]|
    
