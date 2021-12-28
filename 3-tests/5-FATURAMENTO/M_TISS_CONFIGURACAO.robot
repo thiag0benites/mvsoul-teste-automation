@@ -40,7 +40,7 @@ SCR5FMTISSCONFIGURACAO-001:Fluxo principal
     Clicar no proximo registro 
     Clicar em ok 
     Clicar em detalhamento
-    Preencher servico e detalhamento do servico 
+    Preencher servico e detalhamento do servico |${dados}[servico]|,|${dados}[detalhamento]|
     Pesquisar os campos preenchidos 
     Preencher o campo Preencher e valor fixo |${dados}[valorPreencher]|,|${dados}[valorFixo]|
     Salvar modificacoes
