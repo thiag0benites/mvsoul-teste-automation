@@ -43,4 +43,3 @@ SCR4MMCONFIGEST-001:Fluxo Principal
     # Retornar massa de dados ao status inicial do teste
     Alterar Parametro de Situacao do Usuario |${dados}[Parametro1]| |${dados}[Parametro2]|
     Salvar Alteracoes Realizadas |${dados}[MensagemSucesso]|
-    Sleep  5
