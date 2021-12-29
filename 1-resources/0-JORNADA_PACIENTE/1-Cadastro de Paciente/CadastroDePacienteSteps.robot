@@ -6,6 +6,7 @@
 ### Pages utilizadas na Suite de teste
 Resource          ../../../2-pages/0-JORNADA_PACIENTE/CadastroDePacientePage.robot
 
+
 *** Variable ***
 
 *** Keywords ***
@@ -16,6 +17,12 @@ Informar os campos que foram configurados como obrigatorios na tela${print}
     Preencher campo    ${inputNomePaciente}    ${pessoaFisica.nome}
     Preencher campo    ${inputNomeDaMae}    ${pessoaFisica.nomeMae}
     Preencher campo    ${inputDataNascimento}    ${pessoaFisica.dataNascimento}
+    ${dtHrAtual}    Get Current Date
+    ${subTime}     Subtract Time From Date    ${dtHrAtual}    1day
+    ${dtHrCadastro}    Convert Date    ${subTime}    result_format=%d/%m/%Y %H:%M
+    Preencher campo    ${inputDataCadastro}    ${dtHrCadastro}
+    #Preencher campo com data e hora    ${inputDataCadastro}    %d/%m/%Y %H:%M    0
+    Sleep    2
     Seleciona Item Combobox    ${selectSexo}    Feminino
     Sleep    2
     Seleciona Item Combobox    ${selectCor}    Sem informação
@@ -45,7 +52,7 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnSalvar}
         Wait Until Element Is Visible    ${notificacaoGravarRegistro}    60
-        Sleep    1
+        Sleep    3
         ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
         IF    "${msgObtida}" != ""
             Should Be Equal As Strings    ${cadPacMsgEsperada}    ${msgObtida}
@@ -66,20 +73,26 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
 
     ELSE IF    '${nomeBtn}' == 'Sim'
-        Wait Until Element Is Visible    ${btnSim}    30
-        Sleep    5
-        ${visivel}    Elemento Visivel    ${btnSim}
-        IF    ${visivel}
-            Sleep    1
-            Click Element    ${btnSim}
-            Sleep    1 
-        END
         # Wait Until Element Is Visible    ${btnSim}    30
-        # Sleep    1
-        # Click Element    ${btnSim}
-        # Sleep    1 
+        # Sleep    5
+        # ${visivel}    Elemento Visivel    ${btnSim}
+        # IF    ${visivel}
+        #     Sleep    1
+        #     Click Element    ${btnSim}
+        #     Sleep    1 
+        # END
+        Wait Until Element Is Visible    ${btnSim}    30
+        Sleep    1
+        Click Element    ${btnSim}
+        Sleep    1
 
-     ELSE IF    '${nomeBtn}' == 'Não'
+    ELSE IF    '${nomeBtn}' == 'Salvar Tela'
+        Wait Until Element Is Visible    ${btnSalvarTela}    30
+        Sleep    1
+        Click Element    ${btnSalvarTela}
+        Sleep    1          
+
+    ELSE IF    '${nomeBtn}' == 'Não'
         Wait Until Element Is Visible    ${btnNao}    30
         Sleep    1
         Click Element    ${btnNao}
@@ -138,11 +151,13 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnAdicionarCirurgia}   
         Sleep    1
+
     ELSE IF    '${nomeBtn}' == 'Pesquisar'
         Wait Until Element Is Visible    ${btnPesquisar}    30
         Sleep    1
         Click Element    ${btnPesquisar}   
         Sleep    1
+
     ELSE IF    '${nomeBtn}' == 'Pesquisar Paciente'
         Wait Until Element Is Visible    ${btnPesquisarPaciente}    30
         Sleep    1
@@ -184,6 +199,60 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnReticencias}
         Sleep    1
+     
+    ELSE IF    '${nomeBtn}' == 'Tipo de Anestesia'
+        Wait Until Element Is Visible    ${btnTipoAnestesia}    30
+        Sleep    1
+        Click Element    ${btnTipoAnestesia}
+        Sleep    1
+        
+    ELSE IF    '${nomeBtn}' == 'Confirmar'
+        Wait Until Element Is Visible    ${btnConfirmaCir}    30
+        Sleep    1
+        Click Element    ${btnConfirmaCir}
+        Sleep    1
+
+    ELSE IF    '${nomeBtn}' == 'Filtrar'
+        Wait Until Element Is Visible    ${btnFiltrar}    30
+        Sleep    1
+        Click Element    ${btnFiltrar}
+        Sleep    2
+
+    ELSE IF    '${nomeBtn}' == 'Filtrar'
+        Wait Until Element Is Visible    ${btnFiltrar}    30
+        Sleep    1
+        Click Element    ${btnFiltrar}
+        Sleep    2
+
+    ELSE IF    '${nomeBtn}' == '1-Nova Descrição'
+        Wait Until Element Is Visible    ${btnNovaDescricao}    30
+        Sleep    1
+        Click Element    ${btnNovaDescricao}
+        Sleep    1
+
+    ELSE IF    '${nomeBtn}' == 'Meus Textos'
+        Wait Until Element Is Visible    ${btnMeusTextos}    30
+        Sleep    1
+        Click Element    ${btnMeusTextos}
+        Sleep    1
+
+    ELSE IF    '${nomeBtn}' == 'Cancelar'
+        Wait Until Element Is Visible    ${btnCancelar}    30
+        Sleep    1
+        Click Element    ${btnCancelar}
+        Sleep    1
+
+    # ELSE IF    '${nomeBtn}' == 'Detalhamento'
+    #     Wait Until Element Is Visible    ${btnDetalhamento}    30
+    #     Sleep    1
+    #     Click Element    ${btnDetalhamento}
+    #     Sleep    1
+
+    ELSE IF    '${nomeBtn}' == 'Detalhamento'
+        ${elemento}    Set Variable    ${btnDescrCir}
+        Wait Until Element Is Visible    ${elemento}    30
+        Click Element    ${elemento}
+        Sleep    1                                                                                      
     END
 
 Captura codigo do Paciente Cadastrado|${suite}|${id}|

@@ -1,5 +1,5 @@
 #################################################################################################################################################################
-# Autor: Letícia Andrade
+# Autor: Flavio Silva
 # Decrição: Testes da tela M_PED_RX
 #################################################################################################################################################################
 # Execução Exemplo:
@@ -13,10 +13,9 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/bd/BancoDados.robot
-Resource            ../../1-resources/ContextoSteps.robot 
 Resource            ../../1-resources/1-ATENDIMENTO/M_PED_RX_STEPS.robot
-Resource            ../../1-resources/dados/DadosTeste.robot
+Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
+ 
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -27,15 +26,21 @@ Test Setup          Nova sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            M_PED_RX
+${suite}            m_ped_rx
 # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SRC1AMPEDRX-001:Fluxo principal
-# robot -v browser:chrome -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1ACONATE-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
-# robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1ACONATE-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
+SRC1AMPEDRX-001:Fluxo principal 
+# robot -v browser:chrome -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
+# robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
-    Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Preencher os campos da tela de pedidos de exames |${dados}[setorExecutante]|,|${dados}[atendimento]|,|${dados}[medico]|,|${dados}[data]|,|${dados}[tecnico]|,|${dados}[setor]|,|${dados}[exame]|
-    Clicar no botao Salvar 
+    #Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedidos de Exames Imagem"@nprint @las
+    Criacao de atendimento              ####   Keyword para validar pré requisito do teste   ###
+    #Captura do protocolo da previsao de pagamentos|${suite}|${id}|
+    #Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @las
+    # Preencher atendimento |${dados}[Atendimento]|
+    # Escolha o medico solicitante |${dados}[Medico]|
+    # Digite a data da coleta |${dados}[Data]|
+    # Escolha <o setor executante> |${dados}[Setor]|, <o setor solicitante> |${dados}[Solicitante]|, <o tecnico> |${dados}[Tecnico]|, <o exame> |${dados}[Exame]|
+    # Clicar em Salvar

@@ -12,8 +12,9 @@ ${CurrentDate}
 *** Keywords ***
 
 Preencher o campos Estoque|${estoque}|, Atendimento|${atendimento}|
-    Wait Until Element Is Visible    ${btnSimNotific}    120
-    Click Button        ${btnSimNotific}
+    # Wait Until Element Is Visible    ${btnSimNotific}    120
+    # Click Button        ${btnSimNotific}
+    Wait Until Element Is Visible    ${cpEstoque}    120
     Click Element       ${cpEstoque}
     Preencher Campo        ${cpEstoque}       ${estoque} 
     Sleep      3
@@ -22,10 +23,10 @@ Preencher o campos Estoque|${estoque}|, Atendimento|${atendimento}|
     Sleep      3
     Press Keys    ${cpAtendimento}    ENTER
          
-Clicar no botao [${nomeBtn}]
-    IF    '${nomeBtn}' == 'Digitar Cód. do prod.'
-        Wait Until Element Is Visible    ${btnbtnCodProdutoSim}    60
-        Click Button    ${btnCodProduto}
+Clicar no botao[${nomeBtn}]
+    IF    '${nomeBtn}' == 'Concluir'
+        Wait Until Element Is Visible    ${btnConcluir}    60
+        Click Button    ${btnConcluir}
         Sleep    3
     ELSE IF    '${nomeBtn}' == 'Salvar'
         Wait Until Element Is Visible    ${btnSalvar}    30
@@ -34,10 +35,15 @@ Clicar no botao [${nomeBtn}]
         Sleep    6
     END
 
-Preencher o campo Produto|${dados}[produto]|, QtdDisponivel|${dados}[qtdDisponivel]|
-    Click Element       ${}
-    Preencher Campo        ${}       ${}
-    Press Keys    ${}    ENTER
+Preencher o campo Produto|${produto}|, QtdDisponivel|${qtdDisponivel}|
+    Click Element       ${elemCodProduto}
+    Preencher Campo        ${cpProduto}       ${produto}
+    Press Keys    ${cpProduto}    ENTER
+    Sleep       3
+    Click Element       ${elemQtd}
+    Preencher Campo        ${cpQtd}       ${qtdDisponivel}
+    Press Keys    ${cpQtd}    ENTER
+    
 
 
         

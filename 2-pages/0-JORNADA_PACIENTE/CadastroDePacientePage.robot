@@ -20,6 +20,7 @@ ${inputCodPaciente}             xpath=//input[@id='inp:cdPaciente']
 ${msgWarning}                   class=notification-warning
 ${msgWargingBtnSim}             xpath=//ul[@class='dropdown-menu workspace-notifications-menu']/li[@class='notification-buttons']/button[contains(text(),'Sim')]
 ${numeroEndereco}               id=inp:nrEndereco
+${inputDataCadastro}            id=inp:dtCadastroManual
 
 #Buttons
 ${btnSim}                       xpath=//ul[@class='dropdown-menu workspace-notifications-menu']//li[@class='notification-buttons']/button[contains(text(),'Sim')]
@@ -33,6 +34,7 @@ ${btnConfirmaNome}              id=pacientes_btnOk
 ${btnInternar}                  xpath=//*[@*='Botão de acesso à Tela de Atendimento do Paciente']
 ${btnAgendar}                   xpath=//button[@data-member='BTN_AGENDAR']
 ${btnConfirmar}                 xpath=//button[@id='aSimples_btnConfirmar']
+${btnConfirmaCir}               xpath=//button[@data-member='BUT_CONFIRMAR']
 ${btnPrintInt}                  xpath=//button[@data-member='BTN_5']
 ${btnAdicionarCirurgia}         xpath=//button[@data-member='BTN_NOVA_CIRURGIA']
 ${btnPesquisarPaciente}         xpath=//button[@data-member='BTN_PACIENTE']
@@ -42,6 +44,14 @@ ${btnSairTela}                  xpath=//button[@data-member='BTN_SAIR']
 ${btnReservaSala}               xpath=//button[@data-member='BTN_RESERVA_SALA']
 ${btnAvisoCirurgia}             xpath=//button[@data-member='BTN_AVI_CIR']
 ${btnReticencias}               xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']//span[@class='ui-button-icon ui-icon mv-basico-reticencias']
+${btnTipoAnestesia}             xpath=//button[@data-member='BUT_TIPO_ANESTESIA']
+${btnFiltrar}                   xpath=//button[@id='btfilter']
+${btnNovaDescricao}             xpath=//button[@data-member='BTN_NOVA_DESCRICAO']
+${btnMeusTextos}                xpath=//button[@data-member='BTN_CARREGAR_DESCRICAO_PADRAO']
+${btnSalvarTela}                xpath=//button[@data-member='BTN_SALVAR']
+${btnCancelar}                  xpath=//button[@data-member='BTN_CANCELAR']
+${btnDetalhamento}              xpath=//button[@data-member='BTN_DETALHAMENTO']
+#${btnDescrCir}                  xpath=//*[contains(@id, 'btn${btnDescrCir}')]               
 
 #Selectors
 ${selectSexo}                   xpath=//*[@id="tpSexo_ac"]

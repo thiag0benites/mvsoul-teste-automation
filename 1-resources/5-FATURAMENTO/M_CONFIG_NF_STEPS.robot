@@ -6,26 +6,35 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-
-Resource                            ../../2-pages/5-FATURAMENTO/M_CONFIG_NF_PAGE.robot
-Resource    ../2-ASSISTENCIAL/M_USUUNID_STEPS.robot
+Resource          ../../2-pages/5-FATURAMENTO/M_CONFIG_NF_PAGE.robot
 
 *** Keywords ***
-
-Marcar os Campos Checkbox com a parametrizacao desejada <Pais Padrao> |${VlPais}| <URL Padrao> |${VlURL}| <Motivo Padrao> |${VlMot}|
+Validar Checkbox de Solicitacao Marcado <Pais Padrao> |${VlPais}| <URL Padrao> |${VlURL}| <Motivo Padrao> |${VlMot}|
     Validar Acesso a Tela |Configurações da Nota Fiscal|
-    Click no Item    ${Checkbox1}
-    Click no Item    ${Checkbox2}
-    Click no Item    ${Checkbox3}
-    Click no Item    ${Checkbox4}
-    Click no Item    ${Checkbox5}
-    Click no Item    ${Checkbox6}
-    Click no Item    ${Checkbox7}
-    Click no Item    ${Checkbox8}
-    Click no Item    ${Checkbox9}
-    Click no Item    ${Checkbox10}
-    Click no Item    ${Checkbox11}
-    Click no Item    ${Checkbox12}
+    Marcar Checkbox |${Checkbox1}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox2}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox3}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox4}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox5}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox6}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox7}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox8}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox9}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox10}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox11}|
+    Sleep    2
+    Marcar Checkbox |${Checkbox12}|
+    Sleep    3
     # Pais
     Click no Item    ${BtPaisA}
     Click no Item    ${BtPaisB}
@@ -33,16 +42,22 @@ Marcar os Campos Checkbox com a parametrizacao desejada <Pais Padrao> |${VlPais}
     Click no Item    ${BtPaisD}
     Click no Item    ${BtPaisE}
     # URL Padrao
-    Clicar no Campo e Preencher Informacao    ${CpUrlA}    ${CpUrlA}     ${VlURL}
+    Clicar no Campo e Preencher Informacao    ${CpUrlA}    ${CpUrlA}    ${VlURL}
     # Motivo
-    Clicar no Campo e Preencher Informacao    ${CpMoti}    ${CpMoti}     ${VlMot}
+    Clicar no Campo e Preencher Informacao    ${CpMoti}    ${CpMoti}    ${VlMot}
+    Wait Until Element Is Visible    ${CptabA}
     Click no Item    ${CptabA}
+    Sleep    2
+    Wait Until Element Is Visible    ${CptabB}
     Click no Item    ${CptabB}
+    Wait Until Element Is Visible    ${CptabC}
     Click no Item    ${CptabC}
+    Wait Until Element Is Visible    ${CptabD}
     Click no Item    ${CptabD}
+    Wait Until Element Is Visible    ${CptabE}
     Click no Item    ${CptabE}
-    Validar Checkbox de Movimentacao Desmarcado
+
 Clicar Salvar |${MsgEsperada}|
     Click no Item    ${BtSalvar}
-    sleep    2
+    sleep    3
     Valida Mensagem    ${MgsVerif}    ${MsgEsperada}

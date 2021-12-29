@@ -28,13 +28,11 @@ ${suite}          M_RECEBE_NOTA
 ${dados}
 
 *** Test Case ***
-SCR4MM_RECEBE_NOTA-001:Fluxo Principal
+SCR4MM_RECEBE_NOTA-001:Importar as Notas Fiscais de compras de bens patrimoniais
 # robot -v browser:chrome -t "SCR4MM_RECEBE_NOTA-001:Importar as Notas Fiscais de compras de bens patrimoniais" -d ./5-results/SCR4MM_RECEBE_NOTA-001 "3-tests/4-MATERIAIS/M_RECEBE_NOTA.robot"
 # robot -v browser:firefox -t "SCR4MM_RECEBE_NOTA-001:Importar as Notas Fiscais de compras de bens patrimoniais" -d ./5-results/SCR4MM_RECEBE_NOTA-001 "3-tests/4-MATERIAIS/M_RECEBE_NOTA.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MM_RECEBE_NOTA-001"
     Acessar a tela "Materiais e Logística>Patrimônio>Gerenciamento>Recebimento de Produtos para Tombamento"@nprint @las
     Selecionar a linha da Nota Fiscal que sera tombada |${dados}[codNotaFiscal]|
-    Clicar no botao [Realizar Tombamento]
     Preencher Dados do bem |${dados}[descricaoPlaqueta]|,|${dados}[numeroSerie]|,|${dados}[modelo]|,|${dados}[tipoAquisicao]|,|${dados}[classificacao]|,|${dados}[subClassificacao]|,|${dados}[centroCusto]|,|${dados}[localidade]|,|${dados}[anos]|,|${dados}[dias]|,|${dados}[vencimentoGarantia]|@nprint
-    Clicar no botao [Salvar]
-    Valida Mensagem    ${mensagemNotification}    Cadastro de Bens realizado com sucesso!
+    Validar mensagem |${dados}[mensagemSucesso]|
