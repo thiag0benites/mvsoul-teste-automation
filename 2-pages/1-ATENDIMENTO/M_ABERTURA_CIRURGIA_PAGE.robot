@@ -4,18 +4,10 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-
-${AvisoCirurgia}                                    xpath=//input[@name="cdAvisoCirurgia"]
-${Atendimento}                                      xpath=//input[@name="cdAtendimento"]
-${BtnConfirmar}                                     xpath=//button[@id="butConfirmar"]
-${BtnMenUsuario}                                    xpath=//button[@id="frames45"]
-
-
-
-
-
-
-
+${AvisoCirurgia}    xpath=//input[@name="cdAvisoCirurgia"]
+${Atendimento}    xpath=//input[@name="cdAtendimento"]
+${BtnConfirmar}    xpath=//button[@id="butConfirmar"]
+${BtnMenUsuario}    xpath=//button[@id="frames45"]

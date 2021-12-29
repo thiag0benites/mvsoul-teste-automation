@@ -1,13 +1,13 @@
 #################################################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Teste da tela Consulta de  Abertura de Cirurgia
+# Decrição: Teste da tela Consulta de    Abertura de Cirurgia
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_ABERTURA_CIRURGIA.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_ABERTURA_CIRURGIA.robot"
 # firefox: robot -v browser:firefox -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_ABERTURA_CIRURGIA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_ABERTURA_CIRURGIA.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_ABERTURA_CIRURGIA.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/1-ATENDIMENTO "3-tests\1-ATENDIMENTO\M_ABERTURA_CIRURGIA.robot"
 #################################################################################################################################################################
 *** Settings ***
@@ -35,13 +35,3 @@ SCR1AMABERTURACIRURGIA-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Campos Aviso |${dados}[Aviso4]| |${dados}[AtendAviso4]|
     Validar Mensagem |${dados}[MsgRetorno]|
-    Sleep    10
-
-    
-
-
-
-
-
-
-
