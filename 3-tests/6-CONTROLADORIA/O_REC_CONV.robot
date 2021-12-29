@@ -50,7 +50,7 @@ SMF-5619 : Registrar Recebimento de Contas de Convênio pelo valor a receber da 
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-5619"
     #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
     Acessa a Tela Pela Busca |O_REC_CONV||Recebimentos de Convênio| @nao
-    Validar Acesso a Tela |Recebimento de Convênio|
+    #Validar Acesso a Tela |Recebimento de Convênio|
     Selecionar a Empresa que Recebera o Recurso Atraves do Campo 'Empresa' |${dados}[CampoEmpresa]|
     Selecionar Convenio e Colocar o Sistema em Modo de Pesquisa |${dados}[CampoConvenio]| |${dados}[NrReferencia]| 
     Alterar a Data do Recebimento |${dados}[DtRecebimento]|

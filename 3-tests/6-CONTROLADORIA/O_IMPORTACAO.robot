@@ -33,8 +33,19 @@ SMF-8560 : Geral - Importar Plano Contábil
 # robot -v browser:firefox -t "SMF-8560 : Geral - Importar Plano Contábil" -d ./5-results/SMF-8560 "3-tests/6-CONTROLADORIA/O_IMPORTACAO.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8560"
     #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
-    Acessa a Tela Pela Busca |O_IMPORTACAO| |Geral| @nao
+    Acessa a Tela Pela Busca |O_IMPORTACAO||Geral| @nao
     Validar Acesso a Tela |Informações para a importação|
+    Selecionar no Campo [Tipo de Importacao] |${dados}[TipoDeImportacao_2]|
+    Selecionar no Campo [Plano Contabil] o Plano Contabil |${dados}[PlanoContabil]|
+    Marcar o Check Box "Agrupar Lancamentos Por Cod. Reduzido?" |${dados}[TipoDeImportacao]|
+    Marcar o Check Box "Utilizar Sequencial do Plano de Contas?" |${dados}[TipoDeImportacao_2]|
+    Marcar o Check Box "Gerar Contas Com o Mesmo Cod Reduzido do Plano"
+    Marcar o Check Box "Unico Cod. de Movimento?" |${dados}[TipoDeImportacao]|
+    Marcar o Check Box "Considerar Data de Referencia Como Data de Lancamento?"
+    #Selecionar Atraves do Botão <Procurar Arquivos> o Arquivo a Ser Importado
+    Marcar o Check Box "Importar Somente se Nao Houver Divergencias de Debitos e Creditos"
+    Clicar no Botao <Importar> Para Iniciar o Processo de Importacao
+
 SMF-8561 : Geral - Importar Geral
     # robot -v browser:chrome -t "SMF-8561 : Geral - Importar Geral " -d ./5-results/SMF-8561 "3-tests/6-CONTROLADORIA/O_IMPORTACAO.robot"
     # robot -v browser:firefox -t "SMF-8561 : Geral - Importar Geral " -d ./5-results/SMF-8561 "3-tests/6-CONTROLADORIA/O_IMPORTACAO.robot"
