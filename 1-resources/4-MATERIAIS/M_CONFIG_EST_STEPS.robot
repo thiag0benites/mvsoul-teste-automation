@@ -27,7 +27,6 @@ Acessar Opcao de Configuracao |${Opcao}| |${Parametro1}| |${Parametro2}|
         IF    '${PegaValor}' == 'Não'
             Preencher Campo    ${CampoCadProdMestre}    ${Parametro1}
         END
-
     ELSE IF    '${Opcao}' == 'Parâmetros de Movimentação de Produtos'
         Preencher Campo    ${ListaParametro}    ${Opcao}
         Send Keys    tab
@@ -42,4 +41,3 @@ Salvar Alteracoes Realizadas |${MensagemSucesso}|
     Click Elemento por titulo    Salvar
     ContextoSteps.Valida Mensagem    ${MensagemToast2}    ${MensagemSucesso}
     Click no Item    ${BotaoOK}
-
