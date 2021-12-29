@@ -29,7 +29,8 @@ ${BtnExterno}                                              xpath=//button[@id='b
 ${BtnConselho}                                             xpath=//*[@id="cdConselho"]/button
 ${BtnEspecialidade}                                        xpath=//*[@id="cdEspecialid"]/button
 ${BtnSelecionar}                                           xpath=//button[@id='btnSelecionar']
-${BtnSetorSolic}                                           xpath=//*[@id="cdSetor"]/button
+# ${BtnSetorSolic}                                           xpath=//*[@id="cdSetor"]/button
+${BtnSetorSolic}                                           xpath=(//button[@class="ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon"]//span[@class='ui-button-icon ui-icon mv-basico-reticencias'])[12]
 ${BtnExame}                                                xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
 ${FinalizarLancamento}                                     xpath=//button[@id='btnFinalizar']
 ${BtnDtPedido}                                             xpath=//*[@id="dtPedido"]/button

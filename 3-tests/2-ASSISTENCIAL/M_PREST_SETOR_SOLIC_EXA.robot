@@ -37,5 +37,6 @@ SCR1MPRESTSETORSOLICEXA-001:Fluxo Principal
     Preenche Informacoes "Atendimento|${dados}[Atendimento]|", "Data Pedido|${dados}[DtPedido]|"
     Acesso Lancamento Exame "Numero Conselho|${dados}[NroConselho]|", "Nome Prestador|${dados}[Prestador]|", "Conselho|${dados}[Conselho]|", "Especialidade|${dados}[Especialidade]|"
     Acesso Lancamento Exame "Numero Conselho|${dados}[NroConselho1]|", "Nome Prestador|${dados}[Prestador]|", "Conselho|${dados}[Conselho]|", "Especialidade|${dados}[Especialidade]|"
+    # Btn BtnExterno
     Preenche Lancamento Exame por Prestador "Setor Solicitante|${dados}[SetorSolic]|", "Exame|${dados}[Exame]|"
 

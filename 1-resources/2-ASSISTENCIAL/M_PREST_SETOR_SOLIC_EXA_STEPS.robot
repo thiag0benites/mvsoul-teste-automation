@@ -33,8 +33,8 @@ Acesso Lancamento Exame "Numero Conselho|${NroCons}|", "Nome Prestador|${NomePre
 
 
 Preenche Lancamento Exame por Prestador "Setor Solicitante|${SetSolic}|", "Exame|${Exame}|"
-    Send Keys    tab
-    Send Keys    tab
+    Unselect Frame
+    Wait Until Element Is Visible    ${BtnSetorSolic}    120
     Clicar no Campo e Preencher Informacao             ${BtnSetorSolic}               ${CampoFiltrar}        ${SetSolic}
     Click no Item                                      ${BtnFiltrar}
     Click no Item                                      ${BtnOkFiltrar}
@@ -44,6 +44,8 @@ Preenche Lancamento Exame por Prestador "Setor Solicitante|${SetSolic}|", "Exame
     Click no Item                                      ${BtnOkFiltrar}
     Click no Item                                      ${FinalizarLancamento}
     
+Btn BtnExterno
+    Click no Item    ${BtnExterno}
 
 Inserir Data Do Pedido |${data}|
     ## DATA DO DIA
