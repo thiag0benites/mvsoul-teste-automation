@@ -38,9 +38,6 @@ SCR5FMLACTOIAHP321-001:Fluxo principal
     Executar a pesquisa
     Validar Resultado da Pesquisa |${dados}[dadosPesquisa]|
     Ir para a aba Conta AIH 
-    Adicionar novo registro na tabela 
-    Preencher os campos da tabela |${dados}[nr]|,|${dados}[remessa]|,|${dados}[internacao]|,|${dados}[alta]|,|${dados}[procedimento]|,|${dados}[especialidade]|,|${dados}[motivo]|,|${dados}[ca]|,|${dados}[laudo]|
-    Salvar os dados inseridos 
-    Validar mensagem |${dados}[MsgEsperada]|
+    Validar registros da tabela |${dados}[valueTable]|
     Ver Itens da Conta 
     Ver criticas da conta

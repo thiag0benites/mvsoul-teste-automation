@@ -8,6 +8,7 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de M_LACTO_AIH_P321
+${gridAIH}                              xpath=//div[@id='REG_FAT_grdRegFat']
 ${botaoOk}                              xpath=//nav[5]/div/div[2]/ul/li[1]/ul/li[2]/button
 ${campoProntuario}                      xpath=//input[@id='inp:atendime_idPaciente']
 ${ElementoMsgRecebida}                  xpath=//p[@class='notifications-item-text']
