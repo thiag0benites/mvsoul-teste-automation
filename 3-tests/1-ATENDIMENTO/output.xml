@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211229 09:30:43.774" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\luiz-\.vscode\extensions\robocorp.robotframework-lsp-0.35.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Seleciona massa de dados na suite &quot;${suite}&quot; do caso de teste &quot;SCR1AALT_PAC-001&quot;">
+<var>${dados}</var>
+<msg timestamp="20211229 09:30:44.334" level="FAIL">No keyword with name 'Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AALT_PAC-001"' found.</msg>
+<status status="FAIL" starttime="20211229 09:30:44.334" endtime="20211229 09:30:44.334"/>
+</kw>
+<kw name="Acessar a tela &quot;Atendimento&gt;Internação&gt;Atendimento&gt;Alta&gt;Efetivação&gt;Alta Hospitalar&quot;@nprint @nao">
+<status status="NOT RUN" starttime="20211229 09:30:44.335" endtime="20211229 09:30:44.335"/>
+</kw>
+<kw name="Campos Obrigatorios a serem preenchidos e Salvar|${dados}[Atendimento]||${dados}[MotivoDaAlta]||${dados}[TipoDeLimpeza]||${dados}[ObservacaoDaAlta]||${dados}[CIDPrincipal]||${dados}[Mensagem1]|">
+<status status="NOT RUN" starttime="20211229 09:30:44.335" endtime="20211229 09:30:44.336"/>
+</kw>
+<kw name="Comprovante da Alta Hospitalar do Paciente|${dados}[Mensagem2]||${dados}[Mensagem3]|">
+<status status="NOT RUN" starttime="20211229 09:30:44.336" endtime="20211229 09:30:44.336"/>
+</kw>
+<status status="PASS" starttime="20211229 09:30:43.790" endtime="20211229 09:30:46.738"/>
+</kw>
+<status status="PASS" starttime="20211229 09:30:43.790" endtime="20211229 09:30:46.739"/>
+</test>
+<status status="PASS" starttime="20211229 09:30:43.775" endtime="20211229 09:30:46.739"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

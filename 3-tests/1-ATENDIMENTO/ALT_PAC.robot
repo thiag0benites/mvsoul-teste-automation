@@ -3,12 +3,12 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:         robot -v browser:chrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:firefox -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/SCR1AALT_PAC "3-tests\1 - ATENDIMENTO/ALT_PAC.robot"
+# firefox:        robot -v browser:firefox -d ./5-results/SCR1AALT_PAC "3-tests\1 - ATENDIMENTO/ALT_PAC.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:         robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
-# firefox:         robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\2 - ASSISTENCIAL\C_LISTAGEM_CONFERENCIA.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/SCR1AALT_PAC_RPA"3-tests\1 - ATENDIMENTO/ALT_PAC.robot"
+# firefox:        robot -v browser:headlessfirefox -d ./5-results/SCR1AALT_PAC_RPA "3-tests\1 - ATENDIMENTO/ALT_PAC.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
@@ -35,11 +35,17 @@ ${dados}
 SCR1AALT_PAC-001:Fluxo Principal          #SMF-8286 : Realizar Alta Hospitalar Preenchendo Todos os Campos da Tela 
 # robot -v browser:chrome -t "SCR1AALT_PAC-001:Fluxo Principal" -d ./5-results/SCR1AALT_PAC-001 "3-tests/1-ATENDIMENTO/ALT_PAC.robot"
 # robot -v browser:firefox -t "SCR1AALT_PAC-001:Fluxo Principal" -d ./5-results/SCR1AALT_PAC-001 "3-tests/1-ATENDIMENTO/ALT_PAC.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AALT_PAC"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AALT_PAC-001"
     Acessar a tela "Atendimento>Internação>Atendimento>Alta>Efetivação>Alta Hospitalar"@nprint @nao
-    Campos Obrigatorios a serem preenchidos e Salvar |${dados}[Atendimento]||${dados}[MotivoDaAlta]||${dados}[TipoDeLimpeza]||${dados}[ObservacaoDaAlta]||${dados}[CIDPrincipal]||${dados}[Mensagem1]|
-    Comprovante da Alta Hospitalar do Paciente |${dados}[SaidaDoRelatorio]||${dados}[Mensagem2]|
+    Campos Obrigatorios a serem preenchidos e Salvar|${dados}[Atendimento]||${dados}[MotivoDaAlta]||${dados}[TipoDeLimpeza]||${dados}[ObservacaoDaAlta]||${dados}[CIDPrincipal]||${dados}[Mensagem1]|
+    Comprovante da Alta Hospitalar do Paciente|${dados}[Mensagem2]||${dados}[Mensagem3]|
 
 
 
-
+SCR1AALT_PAC-002:Cancelamento da Alta          #SMF-8286 : Realizar Alta Hospitalar Preenchendo Todos os Campos da Tela 
+# robot -v browser:chrome -t "SCR1AALT_PAC-002:Cancelamento da Alta" -d ./5-results/SCR1AALT_PAC-002 "3-tests/1-ATENDIMENTO/ALT_PAC.robot"
+# robot -v browser:firefox -t "SCR1AALT_PAC-002:Cancelamento da Alta" -d ./5-results/SCR1AALT_PAC-002 "3-tests/1-ATENDIMENTO/ALT_PAC.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AALT_PAC-002"
+    Acessar a tela "Atendimento>Internação>Atendimento>Alta>Cancelamento>Alta Hospitalar"@nprint @nao
+    Cancelamento de Alta Hospitalar|${dados}[Atendimento]|
+    Validacao do Cancelamento da Alta Hospitalar|${dados}[Mensagem1]||${dados}[Mensagem2]||${dados}[Mensagem3]|
