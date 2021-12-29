@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# Autor: Andréa Rodrigues
+# Autor: Alan Patriota
 # Decrição: Passos da tela de    Acompanhamento de Solicitacoes de Compras
 ##################################################################################################################################
 *** Settings ***
@@ -22,9 +22,3 @@ Pesquisar e Validar Pesquisa |${Estoque}|
     Click no Item    ${BotaoPesquisar}
     Validar Elemento pelo Titulo    ${Estoque}
 
- Captura do codigo do aviso de cirurgia|${suite}|${id}|
-    Wait Until Element Is Visible    ${inputAvisoCirurgia}    30
-    Should Not Be Empty    ${inputAvisoCirurgia}
-    ${codAvisoCir}    Get Element Attribute    ${inputAvisoCirurgia}    title
-    Altera massa de dados da "${suite}", linha "${id}", coluna "preAgCirAvisoCirurgia", valor "${codAvisoCir}"
-    Sleep    2

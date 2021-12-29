@@ -14,5 +14,7 @@ ${inputDtFimCirurgia}            id=inp:dtFimCirurgia
 ${inputCidPreCirurgia}           id=inp:cdCid
 ${inputCidPosCirurgia}           id=inp:cdCidFinal
 ${inputDescCirurgia}             id=inp:dspDsCirurgia
+${textoPadrao}                   xpath=//div[@data-member='DS_CIRURGIA_TEXTO_PADRAO']                                              
+
 
 

@@ -20,7 +20,7 @@ Resource            ../../1-resources/4-MATERIAIS/M_DEVSET_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -37,6 +37,5 @@ SMF-7630:Fluxo Principal
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Devoluções>De Setores"@nprint @las
     Preencher os campos Estoque|${dados}[estoque]|, Setor|${dados}[setor]|, Motivo de Devolucao|${dados}[motDevolucao]|
     Preencher o campo Produto|${dados}[produto]|, Qtde. Recebida.|${dados}[quantidade]|
-    Clicar no botao [Salvar]
-    Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
-    Clicar no botao [Sim]
+    Clicar no botao[Salvar]
+    Captura codigo|${suite}|${dados}[id]|
