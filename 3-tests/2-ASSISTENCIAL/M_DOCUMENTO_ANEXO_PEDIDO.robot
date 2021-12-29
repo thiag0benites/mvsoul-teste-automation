@@ -35,7 +35,6 @@ SCR2AMDOCUMENTOANEXOPEDIDO-001:Fluxo Principal
     #Acessar a tela "Diagnostico e Terapia>Laboratorio de Analises Clinicas>Atendimento>Pedidos de Exames Laboratório"@nprint @las
     Acessa a Tela Pela Busca |M_PEDEXA||Pedidos de Exames Laboratório| @las
     Validar Acesso a Tela |Pedidos de Exames|
-
-    Preencher Pedido e acessar a Pagina |${dados}[Pedido]|   
+    Preencher Pedido e acessar a Pagina |${dados}[Pedido]|
     Anexar Documento e Validar |${dados}[Tipo]| |${dados}[Stat]| |${dados}[Descr]| |${dados}[MensagemSucesso]|
     Visualizar Documento
