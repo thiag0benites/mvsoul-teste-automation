@@ -36,9 +36,9 @@ SCR1AALT_PAC-001:Fluxo Principal          #SMF-8286 : Realizar Alta Hospitalar P
 # robot -v browser:chrome -t "SCR1AALT_PAC-001:Fluxo Principal" -d ./5-results/SCR1AALT_PAC-001 "3-tests/1-ATENDIMENTO/ALT_PAC.robot"
 # robot -v browser:firefox -t "SCR1AALT_PAC-001:Fluxo Principal" -d ./5-results/SCR1AALT_PAC-001 "3-tests/1-ATENDIMENTO/ALT_PAC.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1AALT_PAC"
-    Acessar a tela "Atendimento>Internação>Atendimento>Alta>Efetivação>Alta Hospitalar"@nprint @las
-    Campos Obrigatorios a serem preenchidos e Salvar |${dados}[Paciente]||${dados}[Motivo_Da_Alta]||${dados}[Tipo_De_Limpeza]||${dados}[Procedimento_Da_Alta]||${dados}[Procedimento_CIH]||${dados}[Observacao_Da_Alta]||${dados}[CID_Principal]||${dados}[Mensagem1]|
-    Comprovante da Alta Hospitalar do Paciente |${dados}[Saida_Do_Relatorio]||${dados}[Mensagem2]|
+    Acessar a tela "Atendimento>Internação>Atendimento>Alta>Efetivação>Alta Hospitalar"@nprint @nao
+    Campos Obrigatorios a serem preenchidos e Salvar |${dados}[Atendimento]||${dados}[MotivoDaAlta]||${dados}[TipoDeLimpeza]||${dados}[ObservacaoDaAlta]||${dados}[CIDPrincipal]||${dados}[Mensagem1]|
+    Comprovante da Alta Hospitalar do Paciente |${dados}[SaidaDoRelatorio]||${dados}[Mensagem2]|
 
 
 

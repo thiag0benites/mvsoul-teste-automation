@@ -11,27 +11,26 @@ Resource                            ../../2-pages/1-ATENDIMENTO/ALT_PAC_PAGE.rob
 
 *** Keywords ***
 
-Campos Obrigatorios a serem preenchidos e Salvar |${Paciente}||${Motivo_Da_Alta}||${Tipo_De_Limpeza}||${Procedimento_Da_Alta}||${Procedimento_CIH}||${Observacao_Da_Alta}||${CID_Principal}||${Mensagem1}|
-    Selecionar Item Na Lista                                ${BtnAtendimento}          ${Paciente}   ${Paciente}
-    Clicar no botão Executar
-    Selecionar Item Na Lista                                ${BtnMotivoDaAlta}         ${Motivo_Da_Alta}                                  ${Motivo_Da_Alta}
-    Selecionar Item Na Lista                                ${BtnTipoDeLimpeza}        ${Tipo_De_Limpeza}                                 ${Tipo_De_Limpeza}
-    Selecionar Item Na Lista                                ${BtnProcedimentoDaAlta}   ${Procedimento_Da_Alta}                            ${Procedimento_Da_Alta}
-    Selecionar Item Na Lista                                ${BtnProcedimentoCIH}      ${Procedimento_CIH}                                ${Procedimento_CIH}
-    Preencher campo                                         ${CampoObservacaoDaAlta}   ${Observacao_Da_Alta}
-    Click no Item                                           ${BtnCIDAtendimento}
-    Selecionar Item Na Lista                                ${BtnCIDPrincipal}         ${CID_Principal}                                   ${CID_Principal}
-    Click no Item                                           ${BtnConfirmarAlta}
+Campos Obrigatorios a serem preenchidos e Salvar |${Atendimento}||${MotivoDaAlta}||${TipoDeLimpeza}||${ObservacaoDaAlta}||${CIDPrincipal}||${Mensagem1}|
+    Wait Until Element Is Visible                           ${BtnConfirmarAlta}        180
+    Preencher campo                                         ${CampoAtendimento}        ${Atendimento}             #478375
+    Click Elemento por titulo                               Executar Consulta
+    Preencher campo                                         ${CampoMotivaDaAlta}        ${MotivoDaAlta}
+    Send Keys                                               enter
+     Preencher campo                                         ${CampoTipoDeLimpeza}      ${TipoDeLimpeza}
+    Send Keys                                               enter
+    Click no Item                                           ${BtnObervacao}
+    Preencher campo                                         ${CampoObservacaoDaAlta}   ${ObservacaoDaAlta}
+    Click no Item                                           ${BtnCID}
+    Selecionar Item Na Lista                                ${BtnCIDPrincipal}         ${CIDPrincipal}                 ${CIDPrincipal}
+    Click no Item                                           ${BtnConfirmarAlta}    
     Validar Informacao Item                                 ${Alerta}                  ${Mensagem1} 
-    Clicar no botão Sim
+    Click no Item                                           ${BtnSim}
     
-Comprovante da Alta Hospitalar do Paciente |${Saida_Do_Relatorio}||${Mensagem2}|   
-    Seleciona Item Combobox                                 ${BtnSaidaDoRelatorio}     ${Saida_Do_Relatorio}                            
-    Click no Item                                           ${BtnImprimir}
-    Send Keys                                               ctrl+tab
-    Sleep                                                   5
+Comprovante da Alta Hospitalar do Paciente|${Mensagem2}||${Mensagem3}|   
+    #Seleciona Item Combobox                                 ${BtnSaidaDoRelatorio}     ${SaidaDoRelatorio}                            
     Click no Item                                           ${BtnSair}
-    #Click no Item                                           ${BtnSair}
-    Validar Informacao Item                                 ${Alerta}                  ${Mensagem2}
+    Validar Informacao Item                                 ${Alerta}                   ${Mensagem3}
+    Validar Informacao Item                                 ${Alerta2}                  ${Mensagem2}
     Click no Item                                           ${BtnOK}
  
