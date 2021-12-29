@@ -20,7 +20,7 @@ Resource            ../../1-resources/4-MATERIAIS/M_SAIPAC_STEPS.robot
 #Suite Teardown    Encerra sessao
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Teardown       Encerra sessao
 
 *** Variable ***    
 
@@ -36,8 +36,9 @@ SMF-3025:Fluxo Principal
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-3025"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Saída de Produtos>De Pacientes"@nprint @las
     Preencher o campos Estoque|${dados}[estoque]|, Atendimento|${dados}[atendimento]|
-    Preencher o campo Produto|${dados}[produto]|, QtdDisponivel|${dados}[qtdDisponivel]|
+    Preencher o campo Produto|${dados}[produto]|
+    Clicar no botao[Ok]
+    Preencher o campo QtdDisponivel|${dados}[qtdDisponivel]|
     Clicar no botao[Concluir]
-    Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
-    Clicar no botao[Salvar]
-    
+    Genericos.Valida Mensagem     ${mensagemPop}     ${dados}[msgEsperada]
+    Captura codigo|${suite}|${dados}[id]| 

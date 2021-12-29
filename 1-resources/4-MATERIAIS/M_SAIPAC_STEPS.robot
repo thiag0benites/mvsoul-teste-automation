@@ -12,8 +12,6 @@ ${CurrentDate}
 *** Keywords ***
 
 Preencher o campos Estoque|${estoque}|, Atendimento|${atendimento}|
-    # Wait Until Element Is Visible    ${btnSimNotific}    120
-    # Click Button        ${btnSimNotific}
     Wait Until Element Is Visible    ${cpEstoque}    120
     Click Element       ${cpEstoque}
     Preencher Campo        ${cpEstoque}       ${estoque} 
@@ -26,24 +24,32 @@ Preencher o campos Estoque|${estoque}|, Atendimento|${atendimento}|
 Clicar no botao[${nomeBtn}]
     IF    '${nomeBtn}' == 'Concluir'
         Wait Until Element Is Visible    ${btnConcluir}    60
-        Click Button    ${btnConcluir}
+        Click Element    ${btnConcluir}
         Sleep    3
-    ELSE IF    '${nomeBtn}' == 'Salvar'
-        Wait Until Element Is Visible    ${btnSalvar}    30
+        Click Element  ${btnOk2}
+        Sleep       3
+    ELSE IF    '${nomeBtn}' == 'Ok'
+        Wait Until Element Is Visible    ${btnOk}    30
         Sleep    1
-        Click Element    ${btnSalvar}
+        Click Element    ${btnOk}
         Sleep    6
     END
 
-Preencher o campo Produto|${produto}|, QtdDisponivel|${qtdDisponivel}|
-    Click Element       ${elemCodProduto}
+Preencher o campo Produto|${produto}|
+    Sleep       3 
+    Double Click Element       ${elemCodProduto}
     Preencher Campo        ${cpProduto}       ${produto}
     Press Keys    ${cpProduto}    ENTER
     Sleep       3
-    Click Element       ${elemQtd}
-    Preencher Campo        ${cpQtd}       ${qtdDisponivel}
-    Press Keys    ${cpQtd}    ENTER
     
-
-
-        
+Preencher o campo QtdDisponivel|${qtdDisponivel}|
+    Click Element       ${cpQtd}
+    Preencher Campo        ${inpQtd}       ${qtdDisponivel}
+    # Press Keys    ${inpQtd}    ENTER
+    
+Captura codigo|${suite}|${id}| 
+    Sleep    3
+    Should Not Be Empty   ${cpCodigo}
+    ${codigo}    Get Element Attribute    ${cpCodigo}    title
+    Altera massa de dados da "${suite}", linha "${id}", coluna "codigo", valor "${codigo}"
+    Sleep    3

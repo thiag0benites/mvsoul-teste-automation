@@ -30,7 +30,7 @@ Muda elemento Javascript
     ${elemento2}    Get WebElement    ${ContaAtendimentoContadorNotificação}
     Execute Javascript    arguments[0].class() = 'notification-item';    ARGUMENTS    ${elemento2}
     Capture Page Screenshot
-
+    
 Valida Mensagem
     [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
     Wait Until Element Is Visible    ${MensagemRecebida}    120
