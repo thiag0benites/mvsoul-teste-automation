@@ -12,11 +12,14 @@ Resource    ../../2-pages/2-ASSISTENCIAL/M_PREST_SETOR_SOLIC_EXA_PAGE.robot
 
 *** Keywords ***
 Preenche Informacoes "Atendimento|${Atend}|", "Data Pedido|${data}|"
-    Preencher campo                                    ${CampoPaciente}            ${Atend}
+    Preencher campo                                    ${CampoAtendimento}         ${Atend}
     Inserir Data Do Pedido |${data}|
-    # Clicar Item e Selecionar da Lista                  ${BtnMedicoSolic}              ${CampoFiltrar}        ${MedSolic}
-    # Click no Item                                      ${BtnFiltrar}
-    # Click no Item                                      ${BtnOkFiltrar}
+    Press Keys                                         ${MedSolic}                 DELETE
+    Press Keys                                         ${MedSolic}                 DELETE
+    Press Keys                                         ${Setor}                    DELETE
+    Press Keys                                         ${Setor}                    DELETE
+    Click no Item                                      ${CampoSetorText}        
+    Sleep    3
     Click no Item                                      ${BtnSetorPrest}
     Click no Item                                      ${BtnExterno}   
 
@@ -33,8 +36,6 @@ Acesso Lancamento Exame "Numero Conselho|${NroCons}|", "Nome Prestador|${NomePre
 
 
 Preenche Lancamento Exame por Prestador "Setor Solicitante|${SetSolic}|", "Exame|${Exame}|"
-    Unselect Frame
-    Wait Until Element Is Visible    ${BtnSetorSolic}    120
     Clicar no Campo e Preencher Informacao             ${BtnSetorSolic}               ${CampoFiltrar}        ${SetSolic}
     Click no Item                                      ${BtnFiltrar}
     Click no Item                                      ${BtnOkFiltrar}
@@ -44,8 +45,10 @@ Preenche Lancamento Exame por Prestador "Setor Solicitante|${SetSolic}|", "Exame
     Click no Item                                      ${BtnOkFiltrar}
     Click no Item                                      ${FinalizarLancamento}
     
-Btn BtnExterno
-    Click no Item    ${BtnExterno}
+Salvar Alteracoes e "Validar|${Valid}|"
+    Click no Item                                      ${BtnSalvar}
+    Validar Informacao Item                            ${MsgValid}                    ${Valid}
+
 
 Inserir Data Do Pedido |${data}|
     ## DATA DO DIA

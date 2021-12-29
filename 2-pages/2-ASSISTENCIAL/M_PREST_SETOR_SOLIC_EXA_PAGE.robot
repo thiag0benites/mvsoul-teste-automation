@@ -19,7 +19,12 @@ ${MedSolic}                                                xpath=//input[@id='in
 ${Setor}                                                   xpath=//input[@id='inp:cdSetor']
 ${DtPedido}                                                xpath=//input[@id='inp:dtPedido']
 ${CampoPaciente}                                           xpath=//input[@id='inp:cdPaciente']
-${CampoSetorSolic}                                         xpath=//input[@id='inp:cdSetor']
+${CampoSetorSolic}                                         xpath=(//*[@id="inp:cdSetor"])[2]
+${CampoCRMExame}                                           xpath=(//input[@id='inp:nrCrm'])[2]
+${CampoPrestador}                                          xpath=(//input[@id='inp:cdPrestador'])[2]
+${CampoSetorText}                                          xpath=//*[@id="inp:nmSetor"]
+
+
 ### Botoes ###
 ${BtnMedicoSolic}                                          xpath=//*[@id="cdPrestador"]/button
 ${BtnFiltrar}                                              xpath=//button[@id='btfilter']
@@ -29,11 +34,12 @@ ${BtnExterno}                                              xpath=//button[@id='b
 ${BtnConselho}                                             xpath=//*[@id="cdConselho"]/button
 ${BtnEspecialidade}                                        xpath=//*[@id="cdEspecialid"]/button
 ${BtnSelecionar}                                           xpath=//button[@id='btnSelecionar']
-# ${BtnSetorSolic}                                           xpath=//*[@id="cdSetor"]/button
-${BtnSetorSolic}                                           xpath=(//button[@class="ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon"]//span[@class='ui-button-icon ui-icon mv-basico-reticencias'])[12]
+${BtnSetorSolic}                                           xpath=(//*[@id="cdSetor"]/button)[2]
 ${BtnExame}                                                xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']
 ${FinalizarLancamento}                                     xpath=//button[@id='btnFinalizar']
 ${BtnDtPedido}                                             xpath=//*[@id="dtPedido"]/button
+${BtnSalvar}                                               xpath=//*[@id="tb-record-save"]
 
 ### Variados ###
+${MsgValid}                                                xpath=//p[@class='notifications-item-text']
 

@@ -19,7 +19,7 @@ Resource            ../../1-resources//2-ASSISTENCIAL/M_PREST_SETOR_SOLIC_EXA_ST
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-# Test Teardown     Encerra sessao
+Test Teardown     Encerra sessao
 
 
 *** Variable ***
@@ -34,9 +34,8 @@ SCR1MPRESTSETORSOLICEXA-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR1MPRESTSETORSOLICEXA-001:Fluxo Principal" -d ./5-results/SCR1MPRESTSETORSOLICEXA-001 "3-tests/2-ASSISTENCIAL/M_PREST_SETOR_SOLIC_EXA.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR1MPRESTSETORSOLICEXA-001"
     Acessar a tela pela busca |${dados}[AcessoTela1]||${dados}[AcessoTela2]|@print @las
-    Preenche Informacoes "Atendimento|${dados}[Atendimento]|", "Data Pedido|${dados}[DtPedido]|"
+    Preenche Informacoes "Atendimento|${dados}[Prestador]|", "Data Pedido|${dados}[DtPedido]|"
     Acesso Lancamento Exame "Numero Conselho|${dados}[NroConselho]|", "Nome Prestador|${dados}[Prestador]|", "Conselho|${dados}[Conselho]|", "Especialidade|${dados}[Especialidade]|"
     Acesso Lancamento Exame "Numero Conselho|${dados}[NroConselho1]|", "Nome Prestador|${dados}[Prestador]|", "Conselho|${dados}[Conselho]|", "Especialidade|${dados}[Especialidade]|"
-    # Btn BtnExterno
     Preenche Lancamento Exame por Prestador "Setor Solicitante|${dados}[SetorSolic]|", "Exame|${dados}[Exame]|"
-
+    Salvar Alteracoes e "Validar|${dados}[MsgValid]|"
