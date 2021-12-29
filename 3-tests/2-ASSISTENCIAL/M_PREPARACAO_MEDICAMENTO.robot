@@ -33,10 +33,12 @@ ${dados}
 SCR2AMPREPARACAOMEDICAMENTO-001:Fluxo Principal
 # robot -v browser:chrome -t "SCR2AMPREPARACAOMEDICAMENTO-001:Fluxo Principal" -d ./5-results/SCR2AMPREPARACAOMEDICAMENTO-001 "3-tests/2-ASSISTENCIAL/M_PREPARACAO_MEDICAMENTO.robot"
 # robot -v browser:firefox -t "SCR2AMPREPARACAOMEDICAMENTO-001:Fluxo Principal" -d ./5-results/SCR2AMPREPARACAOMEDICAMENTO-001 "3-tests/2-ASSISTENCIAL/M_PREPARACAO_MEDICAMENTO.robot"
-    #${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPREPARACAOMEDICAMENTO-001"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMPREPARACAOMEDICAMENTO-001"
     #Acessar a tela "Clínica e Assistencial>Gerenciamento de Unidades>Enfermagem>Preparação de medicamentos>Preparação de medicamentos"@nprint @las
     Acessa a Tela Pela Busca |M_PREPARACAO_MEDICAMENTO||Preparação de medicamentos| @las
 
-    Acessar e Preencher Informacoes
+    Acessar e Preencher Informacoes |${dados}[Solic]| |${dados}[DataIni]| |${dados}[DataFim]|
+    Escolher na Lista e Preparar
+    Consultar Concluidos e Validar |${dados}[StatConc]| |${dados}[Presc]|
     
 

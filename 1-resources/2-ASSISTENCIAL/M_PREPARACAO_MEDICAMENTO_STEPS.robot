@@ -10,27 +10,22 @@ Resource          ../../2-pages/2-ASSISTENCIAL/M_PREPARACAO_MEDICAMENTO_PAGE.rob
 
 *** Keywords ***
 
-Acessar e Preencher Informacoes
-    Wait Until Element Is Visible            ${CampoPac}    250
-    Preencher Campo                          ${CampoSolic}    2304472
-    Preencher Campo                          ${CampoDataIni}    18/09/2021
-    Preencher Campo                          ${CampoDataFim}    20/09/2021
+Acessar e Preencher Informacoes |${Solic}| |${DataIni}| |${DataFim}|
+    Wait Until Element Is Visible            ${CampoPac}                250
+    Preencher Campo                          ${CampoSolic}              ${Solic}
+    Preencher Campo                          ${CampoDataIni}            ${DataIni}
+    Preencher Campo                          ${CampoDataFim}            ${DataFim}
+    #######DataIni e DataFim são datas fixas #########
     Click no Item                            ${BotaoConsultar}
-Consultar Prescricao |${Prescricao}|
-    Click Elemento por titulo               Procurar
-    Sleep    1
-    Clicar no Campo e Preencher Informacao    ${DivPresc}     ${CampoPresc}    ${Prescricao}
-    Click Elemento por titulo               Executar Consulta 
 
-Validar Pesquisa |${Paciente}|
-    Validar Elemento Pelo Titulo            ${Paciente}
-    Sleep    3
+Escolher na Lista e Preparar
+    Click no Item                            ${BotaoPreparar}
+    Click no Item                            ${BotaoConfirmar}
 
-Imprimir e Validar
-    Click no Item        ${BotaoImprimir}
+Consultar Concluidos e Validar |${StatConc}| |${Presc}|
+
+    Click no Item                            ${CheckConcluido}
+    Click no Item                            ${BotaoConsultar}
+    Validar Elemento Pelo Titulo             ${StatConc}
+    Validar Elemento Pelo Titulo             ${Presc}
     Sleep    2
-    Click no Item    ${BotaoImprimirFim}
-    Sleep    6
-    Switch Window    NEW
-    Sleep    1
-    Capture Page Screenshot
