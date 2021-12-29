@@ -13,13 +13,24 @@ Resource          ../../1-resources/ContextoSteps.robot
 Preencher Campo e Consultar |${NPedido}|
     Preencher campo                                          ${Pedido}                 ${NPedido}
     Click no Item                                            ${BtnConsulta}
-    Click no Item                                            ${BotaoOK} 
 
 Selecionar Amostra e Salvar |${DataAtual}|
-    Click no Item                                            ${MarcarCaixa}
-    Preencher campo                                          ${CampoData}              ${DataAtual}
-    Click no Item                                            ${BtnSalvar}                
+    Click no Item                                            ${BtnSelecionar}
+    #Marcar Checkbox |${BtnSelecionar}|
+    #Preencher campo                                          ${CampoData}              ${DataAtual}
+    Click no Item                                            ${BtnSalvar} 
 
-Marcar Ckeckboxxx    
-    Marcar Checkbox |${MarcarCaixa}|
+Validar Mensagem |${MsgSucesso}|
+    ContextoSteps.Valida Mensagem                            ${Msg}                   ${MsgSucesso}
+    Click no Item                                            ${BotaoNao}     
+
+Reaproveitamento de Massa
+    Click no Item                                            ${BtnSelecionar}
+    Click no Item                                            ${BtnErroOp}
+
+
+      
+
+
+
 

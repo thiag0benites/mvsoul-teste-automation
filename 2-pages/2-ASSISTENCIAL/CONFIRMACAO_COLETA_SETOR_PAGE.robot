@@ -12,7 +12,11 @@ ${Pedido}                                                        xpath=//input[@
 ${BtnConsulta}                                                   xpath=//i[@class="mv-basico-confirmar"]
 ${MarcarCaixa}                                                   xpath=(//button[@title="Confirmada"])[5]
 ${BtnSalvar}                                                     xpath=//i[@class="mv-basico-salvar"]
-${CampoData}                                                     xpath=(//input[@name="dtColeta1"])[2]
+${CampoData}                                                     xpath=//input[@id="inp:dtColeta1"]
+${BtnSelecionar}                                                 xpath=//button[@data-action="snColetaSetor_change"]
+${BtnErroOp}                                                     xpath=//li[@class="notification-buttons"]/button[text()="Erro Operacional"]
+${Msg}                                                           xpath=//div[@class="notifications-item"]
+
 
 
             

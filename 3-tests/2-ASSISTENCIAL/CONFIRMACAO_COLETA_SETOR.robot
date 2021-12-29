@@ -38,5 +38,7 @@ SCR2ACONFIRMACAOCOLETASETOR-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Campo e Consultar |${dados}[NPedido]|
     Selecionar Amostra e Salvar |${dados}[DataAtual]| 
-    Sleep    5
+    Validar Mensagem |${dados}[MsgSucesso]|
+    Reaproveitamento de Massa   
+    
     
