@@ -34,7 +34,7 @@ SCR5FMLACTOIAHP321-001:Fluxo principal
 # robot -v browser:firefox -t "SCR5FMLACTOIAHP321-001:Fluxo principal" -d ./5-results/M_LACTO_AIH_P321 "3-tests/5-FATURAMENTO/M_LACTO_AIH_P321.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMLACTOIAHP321-001"
     Acessa a Tela Pela Busca |${dados}[NomeModulo]||${dados}[TituloTela]| @las
-    Pesquisar pelo codigo do atendimento 
+    Pesquisar pelo codigo do atendimento |${dados}[numProntuario]|
     Executar a pesquisa
     Validar Resultado da Pesquisa |${dados}[dadosPesquisa]|
     Ir para a aba Conta AIH 

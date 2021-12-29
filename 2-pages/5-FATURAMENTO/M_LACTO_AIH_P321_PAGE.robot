@@ -8,8 +8,10 @@ Resource          ../../Config.robot
 
 *** Variable ***
 ### Elementos da Pagina de M_LACTO_AIH_P321
+${botaoOk}                              xpath=//nav[5]/div/div[2]/ul/li[1]/ul/li[2]/button
+${campoProntuario}                      xpath=//input[@id='inp:atendime_idPaciente']
 ${ElementoMsgRecebida}                  xpath=//p[@class='notifications-item-text']
-${btnPesquisar}                         xpath=//nav[5]/div/div[1]/ul/li/ul/li[1]
+${btnPesquisaCodAtend}                  xpath=//nav[5]/div/div[1]/ul/li/ul/li[1]
 ${campoCodAtend}                        xpath=//div[2]/div/div[3]/div/div/form/div/div/div[2]/div/fieldset[1]/div/div[1]/input
 ${btnExecutar}                          xpath=//nav[5]/div/div[1]/ul/li/ul/li[2]
 ${campoPaciente}                        xpath=//div[2]/div/div[3]/div/div/form/div/div/div[2]/div/fieldset[1]/div/div[6]/span
@@ -19,7 +21,7 @@ ${abaCriticas}                          xpath=//li//a[@id='LANCTO_AIH_LANCTO_AIH
 ${btnSalvar}                            xpath=//li[@id='toolbar']//li[@id='tb-record-save']
 ${campoNrAIH}                           xpath=//div[@class='slick-cell b1 f1 selected active editable']//input
 ${campoRemessa}                         xpath=//div[@class='slick-cell b4 f4 selected ui-fixed-width']
-${campoRemessaInput}                    xpath=//div[@class='slick-cell b4 f4 selected ui-fixed-width active editable']//input
+${campoRemessaInput}                    xpath=//div[2]/div/div[2]/div/div/form/div/div/div[3]/div/fieldset[3]/div/fieldset/div/div/div[4]/div[3]/div/div[2]/div[5]/div/input
 ${campoInternacao}                      xpath=//div[@class='slick-cell b6 f6 selected ui-fixed-width']
 ${campoInternacaoInput}                 xpath=//div[2]/div/div[2]/div/div/form/div/div/div[3]/div/fieldset[3]/div/fieldset/div/div/div[4]/div[3]/div/div[2]/div[7]/div/input[2]
 ${campoAlta}                            xpath=//div[@class='slick-cell b7 f7 selected ui-fixed-width']
