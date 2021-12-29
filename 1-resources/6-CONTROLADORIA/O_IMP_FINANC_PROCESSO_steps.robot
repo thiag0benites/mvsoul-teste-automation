@@ -20,3 +20,4 @@ Validar Pop-Pup e campos preenchidos referente ao retorno da pesquisa
     Validar Pop-Pup de Alerta e Clicar            ${MensagemAlert}                       ${Btn_OK}
     Validar Item                                  ${Campo_QntdeRegistros}
     Validar Item                                  ${Campo_MensagemProcesso}
+    Sleep     1
