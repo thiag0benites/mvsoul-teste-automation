@@ -24,10 +24,12 @@ Criacao de atendimento
     Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |ORIGEM| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
     Clicar Botao Carteira 
     Validar Informacoes Carteira |999325208340007| |30/10/2023|
+    Click Elemento por titulo    Salvar
     Click no Item    ${BtnSim}
     Click no Item    ${BtnSim}
     Click no Item    ${BtnSim}
     Confirmar Atendimento |Registro Salvo com Sucesso!|
+    
     
     
 Captura do numero de atendimento |${suite}|${id}|
@@ -38,9 +40,12 @@ Captura do numero de atendimento |${suite}|${id}|
     Sleep    3
 
 Preencher atendimento |${Atendimento}|
-    Preencher Campo    ${CampoAtendimento}    ${Atendimento}
+    Preencher Campo    ${CampoAtendimento2}     ${Atendimento}
+    
 
 Escolha o medico solicitante |${Medico}|
+    Click no Item    ${BtnMedico}
+    Click no Item      ${BtnOk2} 
     Click no Item    ${BtnMedico}
     Preencher Campo    ${FiltroMedico}    ${Medico}
     Click no Item    ${BtnFiltro}
@@ -72,8 +77,15 @@ Escolha <o setor executante> |${Setor}|, <o setor solicitante> |${Solicitante}|,
     Click no Item    ${BtnFiltro}
     Click no Item    ${LinhaDescricao}
     Click no Item    ${BtnOk}
-    Click no Item    ${BtnOk2}
+    
 
 Clicar em Salvar
     Click Elemento por titulo    Salvar
     Sleep    2
+
+Captura do numero de pedido |${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${CampoPedido} 
+    ${protocolo}    Get Element Attribute    ${CampoPedido}     title       
+    Altera massa de dados da "${suite}", linha "${id}", coluna "NumeroPedido", valor "${protocolo}"
+    Sleep    3
