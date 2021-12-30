@@ -40,5 +40,3 @@ SCR4MMMVTOESTERILIZACAO-001:Fluxo Principal
     Iniciar Esterilizacao |${dados}[MsgIniciarEsterilizacao]|
     Finalizar Testes |${dados}[TesteFisico]| |${dados}[TesteBiologico]| |${dados}[TesteQuimico]| |${dados}[LoteBiologico]| |${dados}[ObsBiologico]| |${dados}[LoteQuimico]| |${dados}[ObsQuimico]| |${dados}[MsgFinalizarTestes]| |${dados}[MsgImprimirEtiqueta]| |${dados}[NaoConforme]|
     Disponibilizar Para Arsenal |${dados}[MsgDispArsenal]| |${dados}[MsgConsulta]|
-
-

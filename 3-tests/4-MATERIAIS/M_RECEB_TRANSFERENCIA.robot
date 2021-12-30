@@ -34,7 +34,5 @@ SCR4MMRECEBTRANSFERENCIA-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMRECEBTRANSFERENCIA-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Conf. Transferência entre Estoques"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
-    Selecionar Transferencia 
+    Selecionar Transferencia
     Confirmar Transferencia |${dados}[MsgImprimir]| |${dados}[MensagemSucesso]|
-
-
