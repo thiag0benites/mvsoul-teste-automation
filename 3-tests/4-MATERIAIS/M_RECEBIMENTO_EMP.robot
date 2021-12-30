@@ -34,8 +34,6 @@ SCR4MMRECEBIMENTOEMP-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMRECEBIMENTOEMP-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Movimentação Entre Empresas>Recebimento de Transferência Entre Empresas"@nprint @las
     Validar Acesso a Tela |Recebimento de transferência entre empresas|
-
     Selecionar Recebimento |${dados}[Estoque]|
-    Preencher Data 
+    Preencher Data
     Selecionar Movimentacao e Confirmar |${dados}[Movimentacao]| |${dados}[EstDest]| |${dados}[MensagemSucesso]|
-
