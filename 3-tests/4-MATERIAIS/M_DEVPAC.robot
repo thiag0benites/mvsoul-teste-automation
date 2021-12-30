@@ -30,10 +30,10 @@ ${suite}             m_devpac
 ${dados}
 
 *** Test Case ***
-SCR4MDEVPAC-001:Fluxo principal
-# robot -v browser:chrome -t "SCR4MDEVPAC-001:Fluxo principal" -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-# robot -v browser:firefox -t "SCR4MDEVPAC-001:Fluxo principal" -d ./5-results/SCR4MDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MDEVPAC-001"
+SCR4MMDEVPAC-001:Fluxo principal
+# robot -v browser:chrome -t "SCR4MMDEVPAC-001:Fluxo principal" -d ./5-results/SCR4MMDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+# robot -v browser:firefox -t "SCR4MMDEVPAC-001:Fluxo principal" -d ./5-results/SCR4MMDEVPAC-001 "3-tests/4-MATERIAIS/M_DEVPAC.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MMDEVPAC-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Movimentações>Devoluções>De Pacientes"@nprint @las
     Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Dados da Devolucao |${dados}[Estoque]| |${dados}[Atendimento]| |${dados}[Motivo]|
