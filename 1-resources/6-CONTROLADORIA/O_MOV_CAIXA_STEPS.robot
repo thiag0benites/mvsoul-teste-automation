@@ -39,7 +39,7 @@ Clicar no botao Limpar Deposito
 Abrir a Aba APLICACAO DIRETA
     Click no Item    ${MenuAplicacaoDireta}
 
-Selecionar no campo Lancamento o tipo de pagamento a efetuar
+Selecionar no campo Lancamento o tipo de pagamento a efetuar
     Click no Item    ${BtnLancamento}
     Click no Item    ${DescricaoConta}
     Click no Item    ${BtnOk}

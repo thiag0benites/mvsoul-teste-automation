@@ -7,7 +7,7 @@
 Resource          ../../Config.robot
 
 *** Variable ***
-${CampoAtendimento}    xpath=//input[@id="inp:cdAtendimento"]
+${CampoAtendimento}    xpath=//input[@id="inp:cdAtendimento"] 
 ${BtnMedico}      xpath=(//button[@class="ui-button ui-widget ui-buttoninput ui-corner-right ui-button-icon"])[2]
 ${FiltroMedico}    xpath=//input[@id="#filterLov"]
 ${BtnFiltro}      xpath=//button[@id="btfilter"]
@@ -20,3 +20,5 @@ ${LinhaExame}     xpath=//div[@id="CV_TAB_EXAMES_grdItpedRx1"]/div[4]/div[3]/div
 ${BtnExame}       xpath=(//span[@class="ui-button-icon ui-icon mv-basico-reticencias"])[6]
 ${LinhaDescricao}    xpath=//div[@title="RX ABDOME AGUDO"]
 ${BtnOk2}         xpath=//button[@class="btn btn-primary"]
+${BtnSim}         xpath=//button[@class="btn btn-primary"][1]
+

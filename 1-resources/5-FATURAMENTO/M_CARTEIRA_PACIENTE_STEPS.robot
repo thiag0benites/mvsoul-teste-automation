@@ -18,7 +18,6 @@ Criacao da carteira paciente |${Nome}| |${Medico}| |${Carteira}| |${Validade}| |
     Preencher Campo    ${CampoFiltro}    ${Medico}
     Click no Item    ${BtnFiltro}
     Sleep    20
-    #Wait Until Element Is Visible    ${BtnOk2}
     Click no Item    ${BtnOk2}
     Click no Item    ${BtnOrigem}
     Click no Item    ${BtnOk2}
@@ -42,5 +41,4 @@ Criacao da carteira paciente |${Nome}| |${Medico}| |${Carteira}| |${Validade}| |
     Click no Item    ${BtnOk2}
     Click no Item    ${BtnSelecionar}
     Validar Informacao Item    ${MsgRegistrada}    ${MsgLida}
-    #Should Not Be Empty    ${ValidaCarteira}
     Page Should Contain    Carteira

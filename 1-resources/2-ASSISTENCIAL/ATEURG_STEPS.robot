@@ -29,14 +29,14 @@ Pesquisar Pelo Paciente |${Paciente}| |${CdPaciente}|
 
 Preencher Campos Obrigatorios |${Medico}| |${Origem}| |${LocalProc}| |${Destino}| |${TipoPaciente}| |${Servico}| |${CID}| |${Procedimento}|
     #Click no Item                           ${BotaoSimValidAtend}    ### Usado para atendimento criado com menos de 24h
-    Selecionar Item Na Lista                ${BotaoLovPrestador}                ${Medico}             ${Medico}
-    Selecionar Item Na Lista                ${BotaoLovOrigem}                   ${Origem}             ${Origem}
-    Selecionar Item Na Lista                ${BotaoLovLocalProced}              ${LocalProc}          ${LocalProc}
-    Selecionar Item Na Lista                ${BotaoLovDestino}                  ${Destino}            ${Destino}
-    Selecionar Item Na Lista                ${BotaoLovTipoPaciente}             ${TipoPaciente}       ${TipoPaciente}
-    Selecionar Item Na Lista                ${BotaoLovServico}                  ${Servico}            ${Servico}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovPrestador}                ${Medico}             ${Medico}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovOrigem}                   ${Origem}             ${Origem}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovLocalProced}              ${LocalProc}          ${LocalProc}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovDestino}                  ${Destino}            ${Destino}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovTipoPaciente}             ${TipoPaciente}       ${TipoPaciente}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovServico}                  ${Servico}            ${Servico}
     Preencher Campo                         ${CampoCID}                         ${CID}
-    Selecionar Item Na Lista                ${BotaoLovProced}                   ${Procedimento}       ${Procedimento}
+    ContextoSteps.Selecionar Item Na Lista                ${BotaoLovProced}                   ${Procedimento}       ${Procedimento}
 
 Clicar Botao Carteira
     Click no Item                           ${BotaoCarteira} 

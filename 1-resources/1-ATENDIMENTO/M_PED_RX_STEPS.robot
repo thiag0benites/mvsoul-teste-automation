@@ -19,18 +19,22 @@ Criacao de atendimento
     #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
     Validar Acesso a Tela |Atendimento de Urgência/Emergência|
     Clicar Botao Paciente   
-    Pesquisar Pelo Paciente |ACACIA MARIA MAIA COSTA| |505146|
-    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |CLINICA MEDICA HOBRA| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
+    Pesquisar Pelo Paciente |ACACIA MARIA MAIA COSTA| |505146| 
+    Click no Item    ${BtnSim}
+    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |ORIGEM| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
     Clicar Botao Carteira 
     Validar Informacoes Carteira |999325208340007| |30/10/2023|
+    Click no Item    ${BtnSim}
+    Click no Item    ${BtnSim}
+    Click no Item    ${BtnSim}
     Confirmar Atendimento |Registro Salvo com Sucesso!|
     
     
-Captura do protocolo da previsao de pagamentos |${suite}|${id}|
+Captura do numero de atendimento |${suite}|${id}|
     Sleep    1
-    Should Not Be Empty   ${MensagemSucesso}
-    ${protocolo}    Get Text    ${MensagemSucesso}    
-    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgValidada", valor "${protocolo}"
+    Should Not Be Empty   ${CampoAtendimento}
+    ${protocolo}    Get Element Attribute    ${CampoAtendimento}    title       
+    Altera massa de dados da "${suite}", linha "${id}", coluna "Atendimento", valor "${protocolo}"
     Sleep    3
 
 Preencher atendimento |${Atendimento}|
