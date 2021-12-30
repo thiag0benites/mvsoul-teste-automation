@@ -14,7 +14,7 @@
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
 Resource            ../../1-resources/1-ATENDIMENTO/M_CANCELA_DIAGNOSTICO_STEPS.robot
-Resource            ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot
+Resource            ../../1-resources/1-ATENDIMENTO/ATE_COMPL_STEPS.robot 
 
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup       Nova sessao
@@ -40,4 +40,4 @@ SCR1AMCANCELADIAGNOSTICO-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Preencher Atendimento |${dados}[NumAtendimento]|
     Validar Dados Apos Selecao do Atendimento |${dados}[CdPaciente]| |${dados}[NomePaciente]| |${dados}[UnidInternacao]| |${dados}[Prestador]|
-    Confirmar Cancelamento de Diagnostico |${dados}[MensagemRecebida]|
+    Confirmar Cancelamento de Diagnostico |${dados}[MensagemRecebida]| 
