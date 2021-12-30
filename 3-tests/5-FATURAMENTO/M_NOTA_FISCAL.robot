@@ -33,7 +33,7 @@ SCR5FMNOTAFISCAL-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR5FMNOTAFISCAL-001:Fluxo Principal" -d ./5-results/SCR5FMNOTAFISCAL-001 "3-tests/5-FATURAMENTO/M_NOTA_FISCAL.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FMNOTAFISCAL-001"
     Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Lançamentos>Conta Ambulatorial>Conta do Atendimento"@nprint @las
-    Preencha o Atendimento |${dados}[Atendimento]|  
-    Clique em imprimir     
+    Preencha o Atendimento |${dados}[Atendimento]|
+    Clique em imprimir
     Verificacao da Conversão de RPS em NFe
     Cancelar nota fiscal |${dados}[MsgLida]|
