@@ -10,7 +10,7 @@ Resource          ../../2-pages/4-MATERIAIS/R_SOLICITACAO_PENDENTES_PAGE.robot
 
 *** Keywords ***
 
-Preencher Estoque e Produto |${Estoque}|
+Preencher Estoque |${Estoque}|
     Wait Until Element Is Visible      ${CampoEstoque}        250
     Preencher Campo                    ${CampoEstoque}        ${Estoque}
 Preencher Intervalo Fixo |${DataIni}| |${DataFim}|

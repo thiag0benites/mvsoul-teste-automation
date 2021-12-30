@@ -34,6 +34,6 @@ SCR4MRSOLICITACAOPENDENTES-001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MRSOLICITACAOPENDENTES-001"
     Acessar a tela "Materiais e Logística>Almoxarifado>Relatórios>Operacionais>Solicitação Pendentes"@nprint @las
     
-    Preencher Estoque e Produto |${dados}[Estoque]|
+    Preencher Estoque |${dados}[Estoque]|
     Preencher Intervalo Fixo |${dados}[DataIni]| |${dados}[DataFim]|
     Validar Relatorio

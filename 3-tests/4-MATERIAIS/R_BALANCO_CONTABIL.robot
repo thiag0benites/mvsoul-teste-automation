@@ -13,7 +13,7 @@
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource          ../../1-resources/4-MATERIAIS/R_DIVERGE_CONTA_STEPS.robot
+Resource          ../../1-resources/4-MATERIAIS/R_BALANCO_CONTABIL_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
 #Suite Setup      Nova sessao
 #Suite Teardown    Encerra sessao
@@ -23,17 +23,17 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}          R_DIVERGE_CONTA
+${suite}          R_BALANCO_CONTABIL
 # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR4MRRDIVERGECONTA-001:Fluxo Principal
-# robot -v browser:chrome -t "SCR4MRRDIVERGECONTA-001:Fluxo Principal" -d ./5-results/SCR4MRRDIVERGECONTA-001 "3-tests/4-MATERIAIS/R_DIVERGE_CONTA.robot"
-# robot -v browser:firefox -t "SCR4MRRDIVERGECONTA-001:Fluxo Principal" -d ./5-results/SCR4MRRDIVERGECONTA-001 "3-tests/4-MATERIAIS/R_DIVERGE_CONTA.robot"
-    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MRRDIVERGECONTA-001"
-    Acessar a tela "Materiais e Logística>Almoxarifado>Relatórios>Contagem>Divergências da Contagem"@nprint @las
+SCR4MRBALANCOCONTABIL-001:Fluxo Principal
+# robot -v browser:chrome -t "SCR4MRBALANCOCONTABIL-001:Fluxo Principal" -d ./5-results/SCR4MRBALANCOCONTABIL-001 "3-tests/4-MATERIAIS/R_BALANCO_CONTABIL.robot"
+# robot -v browser:firefox -t "SCR4MRBALANCOCONTABIL-001:Fluxo Principal" -d ./5-results/SCR4MRBALANCOCONTABIL-001 "3-tests/4-MATERIAIS/R_BALANCO_CONTABIL.robot"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR4MRBALANCOCONTABIL-001"
+    Acessar a tela "Materiais e Logística>Almoxarifado>Relatórios>Contábeis>Balanço Contábil"@nprint @las
     
     Preencher Estoque |${dados}[Estoque]|
-    Preencher Intervalo Fixo |${dados}[DataIni]| |${dados}[DataFim]|
+    Preencher Intervalo Fixo |${dados}[DataIni]|
     Validar Relatorio

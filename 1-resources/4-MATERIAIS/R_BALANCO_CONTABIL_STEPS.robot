@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 #### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/4-MATERIAIS/R_DIVERGE_CONTA_PAGE.robot
+Resource          ../../2-pages/4-MATERIAIS/R_BALANCO_CONTABIL_PAGE.robot
 
 *** Variable ***
 
@@ -13,9 +13,11 @@ Resource          ../../2-pages/4-MATERIAIS/R_DIVERGE_CONTA_PAGE.robot
 Preencher Estoque |${Estoque}|
     Wait Until Element Is Visible      ${CampoEstoque}        250
     Preencher Campo                    ${CampoEstoque}        ${Estoque}
-Preencher Intervalo Fixo |${DataIni}| |${DataFim}|
-    Preencher Campo                    ${CampoDataIni}        ${DataIni}
-    Preencher Campo                    ${CampoDataFim}        ${DataFim}
+    Send Keys    TAB
+    Click no Item                      ${BotaoOK} 
+Preencher Intervalo Fixo |${DataIni}|
+    Preencher Campo                    ${CampoDataComp}        ${DataIni}
+
     
 
 Validar Relatorio

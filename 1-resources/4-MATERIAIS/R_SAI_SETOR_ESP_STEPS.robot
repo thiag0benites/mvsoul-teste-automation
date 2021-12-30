@@ -4,13 +4,13 @@
 ##################################################################################################################################
 *** Settings ***
 #### Pages utilizadas na Suite de teste
-Resource          ../../2-pages/4-MATERIAIS/R_DIVERGE_CONTA_PAGE.robot
+Resource          ../../2-pages/4-MATERIAIS/R_SAI_SETOR_ESP_PAGE.robot
 
 *** Variable ***
 
 *** Keywords ***
 
-Preencher Estoque |${Estoque}|
+Preencher Estoque e Produto |${Estoque}|
     Wait Until Element Is Visible      ${CampoEstoque}        250
     Preencher Campo                    ${CampoEstoque}        ${Estoque}
 Preencher Intervalo Fixo |${DataIni}| |${DataFim}|
