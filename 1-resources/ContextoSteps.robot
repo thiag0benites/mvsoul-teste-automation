@@ -317,7 +317,7 @@ Valida Mensagem
     # Should Be Equal As Strings    ${MensagemEsperada}    ${msgObtida}
     # #Log To Console    *** Mensagem de alerta não foi apresentada!
 
-Clicar no botao ${nomeBtn}
+Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Salvar do menu'
         Wait Until Element Is Visible    ${btnSalvar}    60
         Click Element    ${btnSalvar}
@@ -345,7 +345,24 @@ Clicar no botao ${nomeBtn}
     ELSE IF    '${nomeBtn}' == 'Sim'
         Wait Until Element Is Visible    ${btnSimNotifications}    30
         Click Element    ${btnSimNotifications}
-    END
 
-Captura dos logs da tela
+    ELSE IF    '${nomeBtn}' == 'OK'
+        Wait Until Element Is Visible    ${btnOKNotifications}    30
+        Click Element    ${btnOKNotifications}
+
+    END
     
+Valida notificacao pop-up com botao|${coluna}|[${nomeBtn}]
+    Wait Until Element Is Visible    ${notifPopUp}    240     
+    ${msgObtida}    Get Text    ${notifPopUp}
+    Should Be Equal As Strings    ${coluna}    ${msgObtida}
+    Sleep    1
+    Clicar no botao [${nomeBtn}]
+    Sleep    1
+        
+Captura notificacao pop-up na "${suite}","${id}" coluna "${coluna}"
+    Wait Until Element Is Visible    ${notifPopUp}    240
+    ${msgObtida}    Get Text    ${notifPopUp}
+    Should Not Be Empty   ${notifPopUp}
+    Altera massa de dados da "${suite}", linha "${id}", coluna "${coluna}", valor "${msgObtida}"
+

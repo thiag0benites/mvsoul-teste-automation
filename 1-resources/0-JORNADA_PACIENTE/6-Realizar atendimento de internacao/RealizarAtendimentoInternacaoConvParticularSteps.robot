@@ -27,7 +27,6 @@ Preencher campos da tela internacao do paciente |${origem}|,|${servico}|,|${acom
   Sleep    1
   Seleciona Item Combobox    ${selectAcompanhante}    ${acompanhante}
   Sleep    3
->>>>>>> 9913bf1d24ed457ce7e2ab13cc7a064a3a90bd3f
   Preencher campo    ${inputLeito}   ${CodLeito}
   Sleep    1.5
   # ${dataHrPrevAlta}    Captura data atual adicao de horas
