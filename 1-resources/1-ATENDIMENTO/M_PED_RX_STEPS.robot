@@ -13,7 +13,7 @@ Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
 
 *** Keywords ***
 ####   Keyword para validar pré requisito do teste   ###
-Criacao de atendimento
+    
     Validar Configuracao de Acesso a Tela           ## Keyword para configurar parâmetro de acesso a tela principal ##
     Acessa a Tela Pela Busca |ATEURG||Atendimento| @no @las
     #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
