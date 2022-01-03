@@ -26,3 +26,9 @@ Informar no Relatorio <Fatura> |${VlFatura}| <Paciente> |${VlPaciente}| <Atendim
 # Imprimir
     Click no Item    ${BtImprimir}
 
+Captura da ulr do pdf gerado <suite> |${suite}| <id> |${id}|
+    Should Not Be Empty   ${BtImprimir}
+    Switch Window
+    ${URLImpres}  Get Location
+    Altera massa de dados da "${suite}", linha "${id}", coluna "Relmpres", valor "${URLImpres}"
+

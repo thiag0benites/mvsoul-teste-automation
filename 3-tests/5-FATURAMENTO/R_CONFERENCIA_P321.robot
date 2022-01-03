@@ -33,3 +33,4 @@ SCR5FRCONFERENCIAP321001:Fluxo Principal
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5FRCONFERENCIAP321001"
     Acessar a tela "Faturamento>Faturamento Ambulatorial SUS (BPA e APAC)>Relatórios>Operacionais>Controle de Conferencia por Paciente"@nprint @las
     Informar no Relatorio <Fatura> |${dados}[Fatura]| <Paciente> |${dados}[Paciente]| <Atendimento> |${dados}[Atendimento]|
+    Captura da ulr do pdf gerado <suite> |${suite}| <id> |${dados}[id]|  
