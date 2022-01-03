@@ -33,8 +33,6 @@ SCR6CRCTRECCONVRS-001:Fluxo Principal          # :
 # robot -v browser:firefox -t "SCR6CRCTRECCONVRS-001:Fluxo Principal" -d ./5-results/SCR6CRCTRECCONVRS-001 "3-tests/6-CONTROLADORIA/R_CT_REC_CONV_RS.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CRCTRECCONVRS-001"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Relatórios>Contas a Receber>Resumo Geral de Contas a Receber"@nprint @las
-    #Acessar a tela pela busca |R_CT_REC_CONV_RS||A Receber|@las
-    #Acessar a tela pelo primeiro registro |R_CT_REC_CONV_RS| @las
 
     Preencher Intervalo Fixo |${dados}[DataIni]| |${dados}[DataFim]|
     Validar Relatorio

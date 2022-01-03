@@ -3,16 +3,16 @@
 # Decrição: Exemplo de como criar uma suite de teste
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:    robot -v browser:chrome -d ./5-results/SCR6CMCONCOR-001 "3-tests\6-CONTROLADORIA/R_CON_ARECEB.robot"
-# firefox:   robot -v browser:firefox -d ./5-results/SCR6CMCONCOR-001 "3-tests\6-CONTROLADORIA/R_CON_ARECEB.robot"
+# chrome:    robot -v browser:chrome -d ./5-results/SCR5CMCONCOR-001 "3-tests\5-FATURAMENTO/R_ATENDE_SEM_CONTA.robot"
+# firefox:   robot -v browser:firefox -d ./5-results/SCR5CMCONCOR-001 "3-tests\5-FATURAMENTO/R_ATENDE_SEM_CONTA.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:    robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\6-CONTROLADORIA/R_CON_ARECEB.robot"
-# firefox:   robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\6-CONTROLADORIA/R_CON_ARECEB.robot"
+# chrome:    robot -v browser:headlesschrome -d ./5-results/C_LISTAGEM_CONFERENCIA_STEPS "3-tests\5-FATURAMENTO/R_ATENDE_SEM_CONTA.robot"
+# firefox:   robot -v browser:headlessfirefox -d ./5-results/C_LISTAGEM_CONFERENCIA_RPA_STEPS "3-tests\5-FATURAMENTO/R_ATENDE_SEM_CONTA.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/6-CONTROLADORIA/R_CON_ARECEB_STEPS.robot
+Resource            ../../1-resources/5-FATURAMENTO/R_ATENDE_SEM_CONTA_STEPS.robot
 
 ### Inicia/fecha sessão do navegador por suite de teste
 # Suite Setup       Nova sessão
@@ -23,16 +23,16 @@ Test Teardown     Encerra sessao
 
 *** Variable ***
  # Suite registrada no gerenciador de dados
-${suite}        R_CON_ARECEB   
+${suite}        R_ATENDE_SEM_CONTA   
  # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SCR6CRCONARECEB-001:Fluxo Principal          # : 
-# robot -v browser:chrome -t "SCR6CRCONARECEB-001:Fluxo Principal" -d ./5-results/SCR6CRCONARECEB-001 "3-tests/6-CONTROLADORIA/R_CON_ARECEB.robot"
-# robot -v browser:firefox -t "SCR6CRCONARECEB-001:Fluxo Principal" -d ./5-results/SCR6CRCONARECEB-001 "3-tests/6-CONTROLADORIA/R_CON_ARECEB.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CRCONARECEB-001"
-    Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Relatórios>Contas a Receber>A Receber>A Receber"@nprint @las
+SCR5CRATENDESEMCONTA-001:Fluxo Principal          # : 
+# robot -v browser:chrome -t "SCR5CRATENDESEMCONTA-001:Fluxo Principal" -d ./5-results/SCR5CRATENDESEMCONTA-001 "3-tests/5-FATURAMENTO/R_ATENDE_SEM_CONTA.robot"
+# robot -v browser:firefox -t "SCR5CRATENDESEMCONTA-001:Fluxo Principal" -d ./5-results/SCR5CRATENDESEMCONTA-001 "3-tests/5-FATURAMENTO/R_ATENDE_SEM_CONTA.robot"
+    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR5CRATENDESEMCONTA-001"
+    Acessar a tela "Faturamento>Faturamento de Convênios e Particulares>Relatórios>Operacionais>Situação das Contas"@nprint @las
 
     Preencher Intervalo Fixo |${dados}[DataIni]| |${dados}[DataFim]|
     Validar Relatorio
