@@ -10,12 +10,19 @@ Resource                            ../../2-pages/6-CONTROLADORIA/O_IMPORTACAO_P
 
 *** Keywords ***
 Selecionar no Campo [Tipo de Importacao] |${TipoDeImportacao_2}|
-    Preencher Campo                                        ${campoTipoImp}    ${TipoDeImportacao_2}
+    Wait Until Element Is Visible                          ${campoTipoImp}    120
+    Seleciona Item Combobox                                ${campoTipoImp}    ${TipoDeImportacao_2}
 Selecionar no Campo [Plano Contabil] o Plano Contabil |${PlanoContabil}|
     Clicar Botao se estiver Visivel                        ${btnPlano}
-    Clicar no Campo e Preencher Informacao                 ${campoFiltro}    ${campoFiltro}    ${PlanoContabil}
+    Preencher Campo                                        ${campoFiltro}    ${PlanoContabil}
+    Clicar Botao se estiver Visivel                        ${btnFiltrar}
+    Click no Item                                          ${planoSelecionado}
+    Clicar Botao se estiver Visivel                        ${btnOk}
 Marcar o Check Box "Agrupar Lancamentos Por Cod. Reduzido?" |${TipoDeImportacao}|
-    Preencher Campo                                        ${campoTipoImp}    ${TipoDeImportacao}
+    #Click no Item                                          ${campoTipoImp}
+    Wait Until Element Is Visible                          ${btnTipoImp}
+    Seleciona Item Combobox                                ${campoTipoImp}    ${TipoDeImportacao}
+    #Seleciona Item Combobox                                ${btnTipoImp}    ${TipoDeImportacao}
     Clicar Botao se estiver Visivel                        ${btnAgrupLancCodRed}
 Marcar o Check Box "Utilizar Sequencial do Plano de Contas?" |${TipoDeImportacao_2}|
     Preencher Campo                                        ${campoTipoImp}    ${TipoDeImportacao_2}

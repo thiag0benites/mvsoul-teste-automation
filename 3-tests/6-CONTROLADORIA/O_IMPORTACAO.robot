@@ -34,7 +34,7 @@ SMF-8560 : Geral - Importar Plano Contábil
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SMF-8560"
     #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
     Acessa a Tela Pela Busca |O_IMPORTACAO||Geral| @nao
-    Validar Acesso a Tela |Informações para a importação|
+    #Validar Acesso a Tela |Informações para a importação|
     Selecionar no Campo [Tipo de Importacao] |${dados}[TipoDeImportacao_2]|
     Selecionar no Campo [Plano Contabil] o Plano Contabil |${dados}[PlanoContabil]|
     Marcar o Check Box "Agrupar Lancamentos Por Cod. Reduzido?" |${dados}[TipoDeImportacao]|
@@ -53,3 +53,9 @@ SMF-8561 : Geral - Importar Geral
     #Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Controle Financeiro>Contas a Receber>Recebimentos>Recebimentos de Convênio"@nprint @nao
     Acessa a Tela Pela Busca |O_IMPORTACAO||Geral| @nao
     Validar Acesso a Tela |Informações para a importação|
+    Selecionar no Campo [Tipo de Importacao] |${dados}[TipoDeImportacao_2]|
+    Selecionar no Campo [Plano Contabil] o Plano Contabil |${dados}[PlanoContabil]|
+    Marcar o Check Box "Agrupar Lancamentos Por Cod. Reduzido?" |${dados}[TipoDeImportacao]|
+    Marcar o Check Box "Gerar Contas Com o Mesmo Cod Reduzido do Plano"
+    Marcar o Check Box "Unico Cod. de Movimento?" |${dados}[TipoDeImportacao]|
+    Marcar o Check Box "Considerar Data de Referencia Como Data de Lancamento?"

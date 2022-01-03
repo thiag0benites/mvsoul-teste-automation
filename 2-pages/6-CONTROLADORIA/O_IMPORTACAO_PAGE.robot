@@ -9,7 +9,7 @@ Resource    ../../Config.robot
 *** Variables ***
 
 ### Campos ###
-${campoTipoImp}                    xpath=//*[@id="tpImportacao_ac"]
+${campoTipoImp}                    xpath=//input[@id="tpImportacao_ac"]
 ${campoFiltro}                     xpath=//input[@id="#filterLov"]
 
 ### Botoes ###
@@ -21,5 +21,9 @@ ${btnUnicoCodMov}                  xpath=//button[@id="inp:snUnicoLctoMovimento_
 ${btnConsiderarDtRef}              xpath=//button[@id="inp:snDtReferencia_btn"]
 ${btnImportarDiverg}               xpath=//button[@id="inp:chkImpDivergencias_btn"]
 ${btnImportar}                     xpath=//button[@id="butImportar"]
+${btnFiltrar}                      xpath=//button[@id="btfilter"]
+${btnOk}                           xpath=//button[@id="btok"]
+${btnTipoImp}                      xpath=//*[@id="tpImportacao"]/button
 
 ### Diversos ###
+${planoSelecionado}                xpath=//div[@id="grdLov"]//div[@data-member="CD_PLANO"][@title="PLTEST02"]
