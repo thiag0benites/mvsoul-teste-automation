@@ -36,5 +36,5 @@ SCR6CRMOVCAIXA-001:Fluxo Principal          # :
     #Acessar a tela pela busca |R_MOV_CAIXA||Extrato Caixa/Banco|@las
     Acessar a tela pelo primeiro registro |R_MOV_CAIXA| @las
 
-    Preencher Estoque e Produto |${dados}[Empresa]| |${dados}[Caixa]|
+    Preencher Empresa e Caixa |${dados}[Empresa]| |${dados}[Caixa]|
     Validar Relatorio

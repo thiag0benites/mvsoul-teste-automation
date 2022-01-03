@@ -28,7 +28,7 @@ Acessar a tela pelo primeiro registro |${tela}|${printscreen} ${las}
     Seleciona frame    ${IdIframe}    180
     Sleep    3
     Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
-Preencher Estoque e Produto |${Empresa}| |${Caixa}|
+Preencher Empresa e Caixa |${Empresa}| |${Caixa}|
     Wait Until Element Is Visible      ${CampoEmpresa}        250
     Preencher Campo                    ${CampoEmpresa}        ${Empresa}
     Preencher Campo                    ${CampoCaixa}        ${Caixa}
