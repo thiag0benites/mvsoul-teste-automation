@@ -13,22 +13,22 @@ Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
 
 *** Keywords ***
 ####   Keyword para validar pré requisito do teste   ###
-Criacao de atendimento  
+Criacao de atendimento |${NomeModulo}| |${TituloTela}| |${Paciente}| |${CdPaciente}| |${Medico2}| |${Origem}| |${LocalProc}| |${Destino}| |${TipoPaciente}| |${Servico}| |${CID}| |${Procedimento}| |${NumCarteira}| |${ValidadeCarteira}| |${MensagemSucesso}|
     Validar Configuracao de Acesso a Tela           ## Keyword para configurar parâmetro de acesso a tela principal ##
-    Acessa a Tela Pela Busca |ATEURG||Atendimento| @no @las
+    Acessa a Tela Pela Busca |${NomeModulo}||${TituloTela}| @no @las
     #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
     Validar Acesso a Tela |Atendimento de Urgência/Emergência|
     Clicar Botao Paciente   
-    Pesquisar Pelo Paciente |ACACIA MARIA MAIA COSTA| |505146| 
+    Pesquisar Pelo Paciente |${Paciente}| |${CdPaciente}|  
     Click no Item    ${BtnSim}
-    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |ORIGEM| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
+    Preencher Campos Obrigatorios |${Medico2}| |${Origem}| |${LocalProc}| |${Destino}| |${TipoPaciente}| |${Servico}| |${CID}| |${Procedimento}|
     Clicar Botao Carteira 
-    Validar Informacoes Carteira |999325208340007| |30/10/2023|
+    Validar Informacoes Carteira |${NumCarteira}| |${ValidadeCarteira}|
     Click Elemento por titulo    Salvar
     Click no Item    ${BtnSim}
     Click no Item    ${BtnSim}
     Click no Item    ${BtnSim}
-    Confirmar Atendimento |Registro Salvo com Sucesso!|
+    Confirmar Atendimento |${MensagemSucesso}|
     
     
     

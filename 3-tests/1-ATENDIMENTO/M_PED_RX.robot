@@ -19,7 +19,7 @@ Resource          ../../1-resources/1-ATENDIMENTO/M_PED_RX_STEPS.robot
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
-Test Teardown     Encerra sessao
+#Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
@@ -32,7 +32,7 @@ SRC1AMPEDRX-001:Fluxo principal
 # robot -v browser:chrome -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 # robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
-    Criacao de atendimento    ####    Keyword para validar pré requisito do teste    ###
+    Criacao de atendimento |${dados}[NomeModulo]| |${dados}[TituloTela]| |${dados}[Paciente]| |${dados}[CdPaciente]| |${dados}[Medico2]| |${dados}[Origem]| |${dados}[LocalProc]| |${dados}[Destino]| |${dados}[TipoPaciente]| |${dados}[Servico]| |${dados}[CID]| |${dados}[Procedimento]| |${dados}[NumCarteira]| |${dados}[ValidadeCarteira]| |${dados}[MensagemSucesso]|    ####    Keyword para validar pré requisito do teste    ###
     Captura do numero de atendimento |${suite}|${dados}[id]|
     Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @no @las
     #Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedidos de Exames Imagem"@nprint @las
