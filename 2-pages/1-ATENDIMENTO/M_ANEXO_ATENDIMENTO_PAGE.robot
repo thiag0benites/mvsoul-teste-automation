@@ -20,5 +20,6 @@ ${BtnTipoStatus}                   xpath=//*[@id="cdStatusArquivoAtendimento"]/b
 ${CampoTipoStatus}                 xpath=//div[@class="ui-widget-content slick-row odd"]
 ${BtnOk}                           xpath=//button[@id="btok"]
 ${CampoDescricao}                  xpath=//input[@id="inp:dsNomeArquivo"]
-${BtnAne}                    xpath=//input[@name="file[]"]
-${FILE}    C:\\Users\\ACER\\Downloads\\teste.txt
+${BtnAne}                    xpath=//div[@data-member="BTN_ANEXAR"]
+${FILE}                      C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files
+${File1}  C:\Users\ACER\Downloads\\teste2.pdf  

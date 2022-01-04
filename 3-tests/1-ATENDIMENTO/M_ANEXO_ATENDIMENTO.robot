@@ -36,5 +36,5 @@ SMF-10552 : Anexar documentos do paciente
     Clique no botao Documentos do paciente
     Clique no botao Novo documento 
     Preencher os campos e clicar no botao anexar documento
-    Teste Upload
+    #Teste Upload
     Faz upload de um arquivo 

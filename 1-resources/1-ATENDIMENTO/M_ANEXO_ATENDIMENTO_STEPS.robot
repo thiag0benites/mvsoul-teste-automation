@@ -15,7 +15,7 @@ Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 Pesquisar ou cadastrar uma pre internacao para o paciente
     # Wait Until Element Is Visible    ${BtnPes}           120
     # Click no Item                   ${BtnPes} 
-    Sleep    100    
+    Sleep    80   
 
     Click Elemento por titulo        Procurar
     Click no Item                    ${CampoCodigo} 
@@ -38,16 +38,22 @@ Preencher os campos e clicar no botao anexar documento
     #Click no Item                    ${CampoTipoStatus}
     Click no Item                    ${BtnOk} 
     Preencher campo                  ${CampoDescricao}                    TESTE 
-    Sleep    3
-    Click no Item                    ${BtnAne}    
+    Sleep    5
+    #Click no Item                    ${BtnAne}    
 
-Teste Upload
-    Faz upload de um arquivo
+#Teste Upload
+    #Faz upload de um arquivo
 
 Faz upload de um arquivo  
-    Open Browser                http://qadevelop.mv.com.br:83/soul-mv/?t=1637584139003/upload        chrome
-    Wait Until Element Is Visible           file-submit         10
-    Choose File                             file-upload     ${FILE}
-    Click Button                            file-submit
+    #Open Browser                http://qadevelop.mv.com.br:83/soul-mv/?t=1637584139003/upload        chrome
+
+    
+    Wait Until Element Is Visible           ${BtnAne}        10
+    Click no Item                           ${BtnAne}
+    
+    Choose File                             ${File1}                   ${EXECDIR}C:\\Users\\ACER\\Downloads\\teste2.pdf  
+    #Choose File                             ${FILE}                   ${EXECDIR}C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files\\teste.pdf  
+    #Input Text    /images/file_path.PDF     C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files ${FILE}
+    #Choose File                               ${BtnAne}   C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files\\teste.pdf  
     Wait Until Page Contains                O documento foi anexado com sucesso.
     Capture Page Screenshot
