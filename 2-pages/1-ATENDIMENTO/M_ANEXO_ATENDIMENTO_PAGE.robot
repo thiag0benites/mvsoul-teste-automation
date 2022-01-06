@@ -7,9 +7,10 @@
 Resource    ../../Config.robot
 
 *** Variable ***
-${BtnPes}                    xpath=//li[@id="tb-search"]
+${AbaPreInt}                       xpath=//nav[@class="workspace-header navbar navbar-default navbar-fixed-top"]
+${BtnPes}                          xpath=//li[@id="tb-search"]
 ${MsgValidacao}                    xpath=//p[@class="notifications-item-text"]
-${CampoCodigo}                     xpath=//input[@id="inp:cdResLei"][@class="ui-widget-content ui-corner-all"]
+${CampoCodigo}                     xpath=//input[@id="inp:cdResLei"]
 ${BtnConfirmar}                    xpath=//i[@class="mv-basico-confirmar"]/..
 ${BtnNotificacao}                  xpath=//li[@id="notifications"]/a
 ${BtnPaciente}                  xpath=//button[@id="btnDocumentoPaciente"]  
@@ -20,6 +21,7 @@ ${BtnTipoStatus}                   xpath=//*[@id="cdStatusArquivoAtendimento"]/b
 ${CampoTipoStatus}                 xpath=//div[@class="ui-widget-content slick-row odd"]
 ${BtnOk}                           xpath=//button[@id="btok"]
 ${CampoDescricao}                  xpath=//input[@id="inp:dsNomeArquivo"]
-${BtnAne}                    xpath=//div[@data-member="BTN_ANEXAR"]
-${FILE}                      C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files
-${File1}  C:\Users\ACER\Downloads\\teste2.pdf  
+${BtnAne}                    xpath=//div[@data-widget="fileinput"]
+${FILE}                      C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files\\teste.pdf 
+${TipoArquivo}               xpath=//input[@type="file"]
+${MsgLida}                         xpath=//p[@class="notifications-item-text"]

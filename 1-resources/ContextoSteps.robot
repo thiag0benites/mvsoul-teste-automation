@@ -320,15 +320,15 @@ Valida Mensagem
     ${MensagemRecebida}         Get Text     ${MensagemRecebida}
     Should Be Equal As Strings    ${MensagemRecebida}   ${MensagemEsperada}
 
-Clicar no botao ${nomeBtn}
+Clicar no botao [${nomeBtn}]
     IF    '${nomeBtn}' == 'Salvar do menu'
         Wait Until Element Is Visible    ${btnSalvar}    60
         Click Element    ${btnSalvar}
     ELSE IF    '${nomeBtn}' == 'Adicionar'
         Wait Until Element Is Visible    ${btnAdicionar}    30
         Click Element    ${btnAdicionar}
-    ELSE IF    '${nomeBtn}' == 'Pesquisar'
-        Wait Until Element Is Visible    ${btnPesquisar}    30
+    ELSE IF    '${nomeBtn}' == 'Procurar'
+        Wait Until Element Is Visible    ${btnPesquisar}    180
         Click Element    ${btnPesquisar}
     ELSE IF    '${nomeBtn}' == 'Executar'
         Wait Until Element Is Visible    ${btnExecute}    30

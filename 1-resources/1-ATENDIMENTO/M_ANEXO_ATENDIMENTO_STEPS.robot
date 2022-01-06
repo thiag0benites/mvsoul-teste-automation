@@ -12,48 +12,37 @@ Resource    ../1-ATENDIMENTO/ATE_COMPL_STEPS.robot
 
 *** Variable ***
 *** Keywords ***
-Pesquisar ou cadastrar uma pre internacao para o paciente
-    # Wait Until Element Is Visible    ${BtnPes}           120
-    # Click no Item                   ${BtnPes} 
-    Sleep    80   
-
-    Click Elemento por titulo        Procurar
-    Click no Item                    ${CampoCodigo} 
-    
-    Preencher campo                  ${CampoCodigo}                   38968
-    Click Elemento por titulo        Executar Consulta
-    Click no Item                    ${BtnNotificacao} 
+Pesquisar ou cadastrar uma pre internacao para o paciente |${Codigo}|
+    Wait Until Element Is Visible                    ${AbaPreInt}         120
+    Click Elemento por titulo                        Procurar
+    Preencher campo                                  ${CampoCodigo}                   ${Codigo}
+    Sleep                                            2
+    Clicar no botao [Executar]
+    Sleep                                            2            
+    Click no Item                                    ${BtnNotificacao} 
 
 Clique no botao Documentos do paciente 
-    Click no Item                    ${BtnPaciente} 
+    Click no Item                                    ${BtnPaciente} 
 
 Clique no botao Novo documento
-    Click no Item                    ${BtnNovoDoc}
+    Click no Item                                    ${BtnNovoDoc}
 
-Preencher os campos e clicar no botao anexar documento
-    Click no Item                    ${BtnTipoDoc}  
-    Click no Item                    ${CampoTipoDoc}
-    Click no Item                    ${BtnOk}  
-    Click no Item                    ${BtnTipoStatus}
-    #Click no Item                    ${CampoTipoStatus}
-    Click no Item                    ${BtnOk} 
-    Preencher campo                  ${CampoDescricao}                    TESTE 
-    Sleep    5
-    #Click no Item                    ${BtnAne}    
-
-#Teste Upload
-    #Faz upload de um arquivo
-
-Faz upload de um arquivo  
-    #Open Browser                http://qadevelop.mv.com.br:83/soul-mv/?t=1637584139003/upload        chrome
-
+Preencher os campos e clicar no botao anexar documento |${Descricao}|
+    Click no Item                                    ${BtnTipoDoc}  
+    Click no Item                                    ${CampoTipoDoc}
+    Click no Item                                    ${BtnOk}  
+    Click no Item                                    ${BtnTipoStatus}
+    Click no Item                                    ${BtnOk} 
+    Preencher campo                                  ${CampoDescricao}                    ${Descricao} 
     
-    Wait Until Element Is Visible           ${BtnAne}        10
-    Click no Item                           ${BtnAne}
-    
-    Choose File                             ${File1}                   ${EXECDIR}C:\\Users\\ACER\\Downloads\\teste2.pdf  
-    #Choose File                             ${FILE}                   ${EXECDIR}C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files\\teste.pdf  
-    #Input Text    /images/file_path.PDF     C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files ${FILE}
-    #Choose File                               ${BtnAne}   C:\\Wati - Pastas e Arquivos\\mvsoul-teste-automation\\6-files\\teste.pdf  
-    Wait Until Page Contains                O documento foi anexado com sucesso.
+   
+
+Faz upload de um arquivo |${MsgUsuario}| 
+    Wait Until Element Is Visible                    ${BtnAne}         10
+    Click no Item                                    ${BtnAne}
+    Choose File                                      ${TipoArquivo}      ${FILE}      
+    Wait Until Page Contains                         O documento foi anexado com sucesso.
     Capture Page Screenshot
+    Validar Informacao Item                          ${MsgLida}                    ${MsgUsuario}
+                   
+    
