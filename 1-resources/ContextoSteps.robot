@@ -313,13 +313,6 @@ Preencher o Campo Input
     Input Text    ${input}    ${text}
     Sleep    3
 
-Valida Mensagem
-    [Arguments]    ${MensagemRecebida}    ${MensagemEsperada}
-    Wait Until Element Is Visible    ${MensagemRecebida}    120
-    Sleep    3
-    ${MensagemRecebida}         Get Text     ${MensagemRecebida}
-    Should Be Equal As Strings    ${MensagemRecebida}   ${MensagemEsperada}
-
 Clicar no botao ${nomeBtn}
     IF    '${nomeBtn}' == 'Salvar do menu'
         Wait Until Element Is Visible    ${btnSalvar}    60
