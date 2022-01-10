@@ -3,44 +3,42 @@
 # Decrição: Testes da tela M_PED_RX
 #################################################################################################################################################################
 # Execução Exemplo:
-# chrome:  robot -v browser:chrome -d ./5-results/M_PED_RX "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
+# chrome:         robot -v browser:chrome -d ./5-results/M_PED_RX "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 # firefox: robot -v browser:firefox -d ./5-results/M_PED_RX "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 #################################################################################################################################################################
 # Execução modo headless (invisível)
-# chrome:  robot -v browser:headlesschrome -d ./5-results/M_PED_RX "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
+# chrome:         robot -v browser:headlesschrome -d ./5-results/M_PED_RX "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 # firefox: robot -v browser:headlessfirefox -d ./5-results/M_PED_RX "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
 ### Pega massa de dados do Gerenciador
-Resource            ../../1-resources/1-ATENDIMENTO/M_PED_RX_STEPS.robot
-Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
- 
-
+Resource          ../../1-resources/1-ATENDIMENTO/M_PED_RX_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
-Test Setup          Nova sessao
-#Test Teardown       Encerra sessao
+Test Setup        Nova sessao
+#Test Teardown     Encerra sessao
 
 *** Variable ***
 # Suite registrada no gerenciador de dados
-${suite}            m_ped_rx
+${suite}          m_ped_rx
 # Recebe dados do gerenciador
 ${dados}
 
 *** Test Case ***
-SRC1AMPEDRX-001:Fluxo principal 
+SRC1AMPEDRX-001:Fluxo principal
 # robot -v browser:chrome -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
 # robot -v browser:firefox -t "SRC1AMPEDRX-001:Fluxo principal" -d ./5-results/SRC1AMPEDRX-001 "3-tests/1-ATENDIMENTO/M_PED_RX.robot"
-    ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
-    Criacao de atendimento              ####   Keyword para validar pré requisito do teste   ###
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SRC1AMPEDRX-001"
+    Criacao de atendimento |${dados}[NomeModulo]| |${dados}[TituloTela]| |${dados}[Paciente]| |${dados}[CdPaciente]| |${dados}[Medico2]| |${dados}[Origem]| |${dados}[LocalProc]| |${dados}[Destino]| |${dados}[TipoPaciente]| |${dados}[Servico]| |${dados}[CID]| |${dados}[Procedimento]| |${dados}[NumCarteira]| |${dados}[ValidadeCarteira]| |${dados}[MensagemSucesso]|    ####    Keyword para validar pré requisito do teste    ###
+    Captura do numero de atendimento |${suite}|${dados}[id]|
+    Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @no @las
     #Acessar a tela "Diagnostico e Terapia>Diagnóstico por Imagem>Atendimentos>Pedidos de Exames Imagem"@nprint @las
-    #Captura do protocolo da previsao de pagamentos|${suite}|${id}|
-    #Acessa a Tela Pela Busca |M_PED_RX||Pedidos de Exames Imagem| @las
-    # Preencher atendimento |${dados}[Atendimento]|
-    # Escolha o medico solicitante |${dados}[Medico]|
-    # Digite a data da coleta |${dados}[Data]|
-    # Escolha <o setor executante> |${dados}[Setor]|, <o setor solicitante> |${dados}[Solicitante]|, <o tecnico> |${dados}[Tecnico]|, <o exame> |${dados}[Exame]|
-    # Clicar em Salvar
+    Preencher atendimento |${dados}[Atendimento]|
+    Escolha o medico solicitante |${dados}[Medico]|
+    Digite a data da coleta |${dados}[Data]|
+    Escolha <o setor executante> |${dados}[Setor]|, <o setor solicitante> |${dados}[Solicitante]|, <o tecnico> |${dados}[Tecnico]|, <o exame> |${dados}[Exame]|
+    Clicar em Salvar
+    Captura do numero de pedido |${suite}|${dados}[id]|

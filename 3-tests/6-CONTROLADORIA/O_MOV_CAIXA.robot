@@ -47,7 +47,7 @@ SMF-6478 : Lançamentos/Fechamento - Aplicação Direta - Despesa Direta
     Informar o caixa que sera vizualizado operado
     Clicar em Executar Pesquisa
     Abrir a Aba APLICACAO DIRETA
-    Selecionar no campo Lancamento o tipo de pagamento a efetuar
+    Selecionar no campo Lancamento o tipo de pagamento a efetuar
     Informar o valor no campo valor |${dados}[Valor2]|
     Selecionar no campo setor o setor para o qual sera alocado esta despesa
     Selecionar no campo Motivo de lancamento

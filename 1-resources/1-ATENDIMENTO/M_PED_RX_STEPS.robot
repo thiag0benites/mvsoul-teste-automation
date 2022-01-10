@@ -13,30 +13,39 @@ Resource            ../../1-resources/2-ASSISTENCIAL/ATEURG_STEPS.robot
 
 *** Keywords ***
 ####   Keyword para validar pré requisito do teste   ###
-Criacao de atendimento
+Criacao de atendimento |${NomeModulo}| |${TituloTela}| |${Paciente}| |${CdPaciente}| |${Medico2}| |${Origem}| |${LocalProc}| |${Destino}| |${TipoPaciente}| |${Servico}| |${CID}| |${Procedimento}| |${NumCarteira}| |${ValidadeCarteira}| |${MensagemSucesso}|
     Validar Configuracao de Acesso a Tela           ## Keyword para configurar parâmetro de acesso a tela principal ##
-    Acessa a Tela Pela Busca |ATEURG||Atendimento| @no @las
+    Acessa a Tela Pela Busca |${NomeModulo}||${TituloTela}| @no @las
     #Acessar a tela "Atendimento>Urgência e Emergência>Atendimento>Atendimento"@nprint @no
     Validar Acesso a Tela |Atendimento de Urgência/Emergência|
     Clicar Botao Paciente   
-    Pesquisar Pelo Paciente |ACACIA MARIA MAIA COSTA| |505146|
-    Preencher Campos Obrigatorios |GEISHA ABREU SOARES DE PINA| |ORIGEM URGENCIA| |DOMICILIO| |CONSULTORIO MEDICO| |EMERGENCIA ADULTO| |CARDIOLOGIA CLINICA| |R100| |BIÓPSIA HEPÁTICA (PERCUTÂNEA/LAPAROSCÓPICA)|
+    Pesquisar Pelo Paciente |${Paciente}| |${CdPaciente}|  
+    Click no Item    ${BtnSim}
+    Preencher Campos Obrigatorios |${Medico2}| |${Origem}| |${LocalProc}| |${Destino}| |${TipoPaciente}| |${Servico}| |${CID}| |${Procedimento}|
     Clicar Botao Carteira 
-    Validar Informacoes Carteira |999325208340007| |30/10/2023|
-    Confirmar Atendimento |Registro Salvo com Sucesso!|
+    Validar Informacoes Carteira |${NumCarteira}| |${ValidadeCarteira}|
+    Click Elemento por titulo    Salvar
+    Click no Item    ${BtnSim}
+    Click no Item    ${BtnSim}
+    Click no Item    ${BtnSim}
+    Confirmar Atendimento |${MensagemSucesso}|
     
     
-Captura do protocolo da previsao de pagamentos |${suite}|${id}|
+    
+Captura do numero de atendimento |${suite}|${id}|
     Sleep    1
-    Should Not Be Empty   ${MensagemSucesso}
-    ${protocolo}    Get Text    ${MensagemSucesso}    
-    Altera massa de dados da "${suite}", linha "${id}", coluna "MsgValidada", valor "${protocolo}"
+    Should Not Be Empty   ${CampoAtendimento}
+    ${protocolo}    Get Element Attribute    ${CampoAtendimento}    title       
+    Altera massa de dados da "${suite}", linha "${id}", coluna "Atendimento", valor "${protocolo}"
     Sleep    3
 
 Preencher atendimento |${Atendimento}|
-    Preencher Campo    ${CampoAtendimento}    ${Atendimento}
+    Preencher Campo    ${CampoAtendimento2}     ${Atendimento}
+    
 
 Escolha o medico solicitante |${Medico}|
+    Click no Item    ${BtnMedico}
+    Click no Item      ${BtnOk2} 
     Click no Item    ${BtnMedico}
     Preencher Campo    ${FiltroMedico}    ${Medico}
     Click no Item    ${BtnFiltro}
@@ -68,8 +77,15 @@ Escolha <o setor executante> |${Setor}|, <o setor solicitante> |${Solicitante}|,
     Click no Item    ${BtnFiltro}
     Click no Item    ${LinhaDescricao}
     Click no Item    ${BtnOk}
-    Click no Item    ${BtnOk2}
+    
 
 Clicar em Salvar
     Click Elemento por titulo    Salvar
     Sleep    2
+
+Captura do numero de pedido |${suite}|${id}|
+    Sleep    1
+    Should Not Be Empty   ${CampoPedido} 
+    ${protocolo}    Get Element Attribute    ${CampoPedido}     title       
+    Altera massa de dados da "${suite}", linha "${id}", coluna "NumeroPedido", valor "${protocolo}"
+    Sleep    3
