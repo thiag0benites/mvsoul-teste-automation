@@ -12,10 +12,9 @@
 #################################################################################################################################################################
 *** Settings ***
 ### Keywords personalizadas para os testes
-Resource            ../../1-resources/2-ASSISTENCIAL/M_AUDIT_PRESC_STEPS.robot
-
+Resource          ../../1-resources/2-ASSISTENCIAL/M_AUDIT_PRESC_STEPS.robot
 ### Inicia/fecha sessão do navegador por suite de teste
-# Suite Setup       Nova sessão
+# Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessãojrobot -v browser:chrome -d ./5-results/FATUR_1.31_CONSULTA_DE_CONTA_DE_PACIENTE "3-tests/Faturamento de convenio e particulares/Consultas/ContaDoPaciente.robot"
 ### Inicia/fecha sessão do navegador por cenario de teste
 Test Setup        Nova sessao
@@ -31,7 +30,7 @@ ${dados}
 SCR2AMAUDITPRESC-001 : Fluxo Principal
     # robot -v browser:chrome -t "SCR2AMAUDITPRESC-001 : Fluxo Principal" -d ./5-results/SCR2AMAUDITPRESC-001 "3-tests/2-ASSISTENCIAL/M_AUDIT_PRESC.robot"
     # robot -v browser:firefox -t "SCR2AMAUDITPRESC-001 : Fluxo Principal"3-tests/2-ASSISTENCIAL/M_AUDIT_PRESC.robot"
-    ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMAUDITPRESC-001"
+    ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "SCR2AMAUDITPRESC-001"
     #Acessar a tela "Clínica e Assistencial>Controle de Infecção Hospitalar>Atendimento>Auditoria de Prescrições>Internação e Urgência"@nprint @nao
     Acessa a Tela Pela Busca |M_AUDIT_PRESC||Internação e Urgência| @nao
     Alterar Data Inicial |${dados}[DtInicial]|
@@ -40,5 +39,3 @@ SCR2AMAUDITPRESC-001 : Fluxo Principal
     Adicionar Registro |${dados}[Descricao]| |${dados}[ReavaliarEm]| |${dados}[PendenteDe]|
     Preencher Regras da Auditoria do Produto |${dados}[NrDias]| |${dados}[TpAcao]| |${dados}[Mensagem]|
     Salvar Registro
-    
-    
