@@ -1,13 +1,10 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Elementos e metodos da tela de Abertura de Cirurgia
+# Decrição: Elementos e metodos da página de Relatório de Pacientes Internados por Tipo de Acomodação
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
-*** Variables ***
-${AvisoCirurgia}    xpath=//input[@name="cdAvisoCirurgia"]
-${Atendimento}    xpath=//input[@name="cdAtendimento"]
-${BtnConfirmar}    xpath=//button[@id="butConfirmar"]
-${BtnMenUsuario}    xpath=//button[@id="frames45"]
+*** Variable ***
+${BotaoImprimir}                                   xpath=//button[@data-action="btnGerarRelatorio_click"]

@@ -1,13 +1,11 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Elementos e metodos da tela de Abertura de Cirurgia
+# Decrição: Elementos e metodos da página de Consulta de Agendamento Ambulatorial Simplificado (Std)
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
-*** Variables ***
-${AvisoCirurgia}    xpath=//input[@name="cdAvisoCirurgia"]
-${Atendimento}    xpath=//input[@name="cdAtendimento"]
-${BtnConfirmar}    xpath=//button[@id="butConfirmar"]
-${BtnMenUsuario}    xpath=//button[@id="frames45"]
+*** Variable ***
+${BtnPrestador}    xpath=//input[@name="pPrestador"]
+${BtnPesq}        xpath=//button[@title="Pesquisar"]

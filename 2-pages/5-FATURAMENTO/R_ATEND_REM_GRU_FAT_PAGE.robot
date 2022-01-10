@@ -1,13 +1,12 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Elementos e metodos da tela de Abertura de Cirurgia
+# Decrição: Teste da tela Consulta APAC
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
-*** Variables ***
-${AvisoCirurgia}    xpath=//input[@name="cdAvisoCirurgia"]
-${Atendimento}    xpath=//input[@name="cdAtendimento"]
-${BtnConfirmar}    xpath=//button[@id="butConfirmar"]
-${BtnMenUsuario}    xpath=//button[@id="frames45"]
+*** Variable ***
+${BotaoImprimir}                                   xpath=//button[@data-action="btnGerarRelatorio_click"]
+${CRemessa}                                        xpath=//input[@id="inp:cdRemessa"]
+${TipoAtendimento}                                 xpath=//input[@id="CV_TAB_PADRAO_tpTipo_ac"]

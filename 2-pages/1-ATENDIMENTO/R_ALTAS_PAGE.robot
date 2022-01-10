@@ -1,13 +1,12 @@
 ##################################################################################################################################
 # Autor: Fernando Lima
-# Decrição: Elementos e metodos da tela de Abertura de Cirurgia
+# Decrição: Elementos e metodos da página de Relatório de Altas no Período
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
 Resource          ../../Config.robot
 
-*** Variables ***
-${AvisoCirurgia}    xpath=//input[@name="cdAvisoCirurgia"]
-${Atendimento}    xpath=//input[@name="cdAtendimento"]
-${BtnConfirmar}    xpath=//button[@id="butConfirmar"]
-${BtnMenUsuario}    xpath=//button[@id="frames45"]
+*** Variable ***
+${Dt1}                                             xpath=//input[@name="dtInicial"]
+${Dt2}                                             xpath=//input[@name="dtFinal"]
+${BotaoImprimir}                                   xpath=//button[@data-action="btnGerarRelatorio_click"]

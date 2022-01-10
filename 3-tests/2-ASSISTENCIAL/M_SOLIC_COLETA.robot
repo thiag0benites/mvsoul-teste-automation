@@ -36,5 +36,7 @@ SCR2AMSOLICCOLETA-001:Fluxo Principal
     Validar Acesso a Tela |${dados}[NomeTela]|
     Pesquisar Atendimento |${dados}[Atendimento]| |${dados}[MensagemPaciente]| |${dados}[Paciente]|
     Incluir Amostra |${dados}[Tpcoleta]| |${dados}[Material]|
+    Sleep    5
     Incluir Exame |${dados}[Exame]|
+    Sleep    5
     Clicar Botao Salvar |${dados}[MensagemSucesso]|
