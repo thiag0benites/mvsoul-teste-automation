@@ -67,7 +67,7 @@ Seleciona frame
     Sleep    1
         
 Click Elemento por titulo
-    [Arguments]    ${titulo}    ${timeout}=${60}
+    [Arguments]    ${titulo}    ${timeout}=${180}
     ${elemento}    Set Variable    xpath=//*[contains(@title, '${titulo}')]
     Wait Until Element Is Visible    ${elemento}    ${timeout}    O elemento ${elemento} não foi carregado
     Wait Until Element Is Enabled    ${elemento}    ${timeout}    O elemento ${elemento} não esta habilitado
@@ -83,15 +83,6 @@ Validar Elemento Pelo Titulo
 Validar Acesso a Tela |${TituloEsperado}|
     Wait Until Element Is Visible           xpath=//div[contains(text(), "${TituloEsperado}")]              250
     Element Should Contain                  xpath=//div[contains(text(), "${TituloEsperado}")]              ${TituloEsperado}
-
-Selecionar Item Na Lista         
-    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
-    Click no Item                           ${BotaoLov}    
-    Click no Item                           xpath=//input[@name="filterLov"]                  
-    Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
-    Click no Item                           xpath=//button[@id="btfilter"]                  
-    Click Elemento por titulo               ${ItemLista}
-    Click no Item                           xpath=//button[@id="btok"]
 
 Clicar Botao Salvar 
     Click Elemento por titulo               Salvar

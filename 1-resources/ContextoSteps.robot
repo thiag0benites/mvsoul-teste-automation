@@ -226,7 +226,7 @@ Clicar Item e Selecionar da Lista
 
 Clicar Botao Salvar |${MensagemEsperada}|
     Click Elemento por titulo    Salvar
-    Valida Mensagem    ${MensagemToast}    ${MensagemEsperada}
+    Genericos.Valida Mensagem    ${MensagemToast}    ${MensagemEsperada}
 
 Selecionar Item Na Lista
     [Arguments]    ${BotaoLov}    ${Item}    ${ItemLista}
