@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# Autor: Rodrigo Torquato
+# Autor: Danilo Campanello
 # Decrição: Elementos e metodos da página de Entrada dos Produtos
 ##################################################################################################################################
 *** Settings ***
@@ -8,18 +8,35 @@ Resource            ../../Config.robot
 
 *** Variable ***
 
-${IconSetorSolicitante}                          xpath=//div[@id='cdSetor']//button[@type='button']
-${PopUpLista}                                    xpath=//span[normalize-space()='Listagem de Setores']
-${btnPesquisar}                                  xpath=//*[@id="btnPesquisar"]
-${btnObsPedido}                                  xpath=//button[@id='btnObsPedido']
-${CampoFiltro}                                   xpath=//input[@id='#filterLov']
-${btnFiltrar}                                    xpath=//button[@id='btfilter']
-${btnOK}                                         xpath=//button[@id="btok"]
-${PopUpObsPedido}                                xpath=//span[@class='ui-dialog-title ui-dialog-title-overflow']
-${CampoObs}                                      xpath=//textarea[@name='dsObservacao']
-${btnVoltar}                                     xpath=//*[@id="btnVoltarObs"]
+
+### Campos ###
+${CampoFiltrar}                                  xpath=//input[@id='#filterLov']
 ${CampoTipoEntrega}                              xpath=//input[@id='inp:cdTipoEntrega']
-${btnPesquisa}                                   Xpath=//*[@id="btnPesquisar"]
+${CampoObs}                                      xpath=//textarea
+${CampoFiltro}                                   xpath=//input[@id='#filterLov']
+${CampoAtendimento}                              xpath=//input[@id='inp:cdAtendimento']
+${CampoNomeResp}                                 xpath=//input[@id='inp:nmResponsavel']
+${CampoCPF}                                      xpath=//input[@id='inp:nrCpf']
+${CampoTelContato}                               xpath=//input[@id='inp:nrFone']
+${CampoUsuResp}                                  xpath=//input[@id='inp:cdUsuario']
+### Botoes ###
+${BtnFiltrar}                                    xpath=//button[@id='btfilter']
+${BtnPesquisa}                                   Xpath=//*[@id="btnPesquisar"]
+${btnVoltar}                                     xpath=//*[@id="btnVoltarObs"]
+${BtnOKFiltrar}                                  xpath=//button[@id='btok']
+${BtnFiltrar}                                    xpath=//button[@id='btfilter']
+${BtnObsPedido}                                  xpath=//button[@id='btnObsPedido']
+${btnPesquisar}                                  xpath=//*[@id="btnPesquisar"]
+${ChBoxEntregar}                                 xpath=//button[@class='ui-button ui-widget ui-state-default ui-button-icon-only ui-label-position-default ui-fixed-width mode-edit']
+${BtnGerarProt}                                  xpath=//button[@id='btnProtocolo']
+${BtnTipoParent}                                 xpath=//*[@id="cdTipParen"]/button
+${BtnConfirmar}                                  xpath=//button[@id='btnConfirmar']
+${BtnOkAlerta}                                   xpath=//button[@class='btn btn-primary']
+### Variados ###
+${PopUpObsPedido}                                xpath=//span[@class='ui-dialog-title ui-dialog-title-overflow']
+${PopUpLista}                                    xpath=//span[normalize-space()='Listagem de Setores']
+${IconSetorSolicitante}                          xpath=//*[@id="cdSetor"]/button
+${MsgAlerta}                                     xpath=//p[@class='notifications-item-text']
 
 
 

@@ -363,3 +363,70 @@ Desmarcar Checkbox |${CheckboxDes}|
     ${StatusCheckbox}    Run Keyword And Return Status    Checkbox Should Be Selected    ${CheckboxDes}
     Log To Console    *** ${StatusCheckbox}
     Run Keyword If    ${StatusCheckbox} == False    Click Element    ${CheckboxDes}
+
+Escolhe Item Menu Vertical Js
+    [Arguments]    ${itemList}
+    Wait Until Element Is Visible    @{menuSetores}    30
+    Sleep    1
+    @{list}    Get WebElements    @{menuSetores}
+    FOR    ${currentItem}    IN    @{list}
+        ${textSetor}    SeleniumLibrary.Get Text    ${currentItem}
+        ${localizou}    Run Keyword If
+        ...    '${itemList}' == '${textSetor}'
+        ...    Click Item Js     ${currentItem}
+        # ...    Click Item Setor    ${currentItem}
+        ...    ELSE
+        ...    Set Variable    nao
+        Exit For Loop If    '${localizou}' == 'sim'
+    END
+
+Click Item Js
+    [Arguments]    ${eleItem}
+    ${textoSetor}    SeleniumLibrary.Get Text    ${eleItem}
+    # Realcar Elemento Execucao        ${eleItem}
+    Execute Javascript    arguments[0].click();    ARGUMENTS    ${eleItem}
+    Log To Console    *** Setor ${textoSetor} selecionado
+    Log    *** Setor ${textoSetor} selecionado
+    [Return]    sim
+
+Escolhe Item Menu Horizontal Js
+    [Arguments]    ${itemMenu}
+    Wait Until Element Is Visible    xpath=//div[@class='pep-horizontal-nav-container']    30
+    ${locator}    Run Keyword If
+    ...    '${itemMenu}' == 'Internação'
+    ...    Set Variable    xpath=//a[@class='pep-horizontal-navitem ng-star-inserted mv-active']//div[@class='pep-horizontal-navitem-wrapper'][contains(text(),'Internação')]
+    ...    ELSE
+    ...    Set Variable    xpath=//a[@class='pep-horizontal-navitem ng-star-inserted']//div[@class='pep-horizontal-navitem-wrapper'][contains(text(),'${itemMenu}')]
+    Sleep    3
+    ${element}    Get WebElement    ${locator}
+    ${txtItemMenu}    SeleniumLibrary.Get Text    ${element}
+    ${x}    Get Horizontal Position    ${locator}
+    ${y}    Get Vertical Position    ${locator}
+    Execute Javascript    window.scrollTo(${x},${y});
+    Sleep    3
+    # Realcar Elemento Execucao        ${element}
+    Execute Javascript    arguments[0].click();    ARGUMENTS    ${element}
+    Log To Console    *** Item ${txtItemMenu} selecionado
+    Log    *** Item ${txtItemMenu} selecionado
+
+Seleciona Item |${Item}| Menu Vertical
+    Sleep    5
+    Escolhe Item Menu Vertical Js    ${Item}
+    Sleep    2
+
+Seleciona Item Menu |${Item}| Horizontal
+    Sleep    5
+    Escolhe Item Menu Horizontal Js    ${Item}
+    Sleep    2
+
+Clicar no Menu |${titulo}|${printscreen}
+    Sleep    3
+    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
+    @{listaItensMenu}    Converte string em lista    ${titulo}    >
+    FOR    ${itemMenu}    IN    @{listaItensMenu}
+        Click Elemento por titulo    ${itemMenu}
+        Log To Console    *** Item ${itemMenu} selecionado no menu
+        Log    *** Item ${itemMenu} selecionado no menu
+    END
+    Run Keyword If    '${printscreen}' == '@print'    Capture Page Screenshot
+    Sleep    10
