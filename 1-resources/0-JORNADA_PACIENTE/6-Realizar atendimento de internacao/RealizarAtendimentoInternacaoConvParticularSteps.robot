@@ -30,7 +30,7 @@ Preencher campos da tela internacao do paciente |${origem}|,|${acompanhante}|,|$
   Preencher campo    ${inputHrInternacao}    ${HrCadastro}
   Sleep    2
   Seleciona Item Combobox    ${selectAcompanhante}    ${acompanhante}
-  Sleep    2
+  Sleep    3
   Preencher campo    ${inputLeito}   ${CodLeito}
   Sleep    2
   Preencher campo    ${inputServico}    ${servico}
