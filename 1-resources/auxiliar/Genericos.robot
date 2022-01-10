@@ -84,6 +84,11 @@ Validar Acesso a Tela |${TituloEsperado}|
     Wait Until Element Is Visible           xpath=//div[contains(text(), "${TituloEsperado}")]              250
     Element Should Contain                  xpath=//div[contains(text(), "${TituloEsperado}")]              ${TituloEsperado}
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> origin/feature/andrea
 Clicar Botao Salvar 
     Click Elemento por titulo               Salvar
     Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso

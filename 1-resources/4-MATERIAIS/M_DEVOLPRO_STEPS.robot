@@ -1,44 +1,37 @@
 ##################################################################################################################################
-# Autor: Letícia Andrade
+# Autor: Luiz Henrique Ramalho
+# Decrição: Elementos e metodos da pagina
 ##################################################################################################################################
+
 *** Settings ***
+### Keywords personalizadas para os testes
+### Pega massa de dados do Gerenciador
 Resource          ../../2-pages/4-MATERIAIS/M_DEVOLPRO_PAGE.robot
 
-*** Variable ***
-
 *** Keywords ***
-Marcar o check box <2- Setor> 
-    Click no Item  ${buttonSetor}
+Destino da Solicitacao|${SolicitaEstoque}||${MotivoDevolucao}||${Setor}|
+    Wait Until Element Is Visible    ${BtnSetor}    180
+    Click no Item    ${BtnSetor}
+    Preencher campo    ${CampoSolicitaEstoque}    ${SolicitaEstoque}
+    Send Keys    enter
+    Preencher campo    ${CampoMotivoDevolucao}    ${MotivoDevolucao}
+    Send Keys    enter
+    Click no Item    ${BtnUrgente}
+    Preencher campo    ${CampoSetor}    ${Setor}
+    Send Keys    enter
 
-Preencher os campos |${SolicitaEstoque}|,|${MotivoDevolucao}|,|${Setor}|
-    Preencher Campo        ${campoSolicitaEstoque}       ${SolicitaEstoque} 
-    Preencher Campo        ${campoMotivoDev}             ${MotivoDevolucao} 
-    Preencher Campo        ${campoSetor}                 ${Setor} 
+Produtos Solicitados|${Produto}||${Lote}||${Quantidade}|
+    Click no Item    ${DivProduto}
+    #Validar Informacao Item    ${Alerta}    Atenção : A Data/Hora digitada é menor do que a data atual. Confirma ?
+    #Click no Item    ${BtnSim}
+    Preencher campo    ${CampoEmEdicao}    ${Produto}
+    Send Keys    enter
+    Selecionar Item Na Lista    ${BtnLote}    ${Lote}    ${Lote}
+    Click no Item    ${DivQuantidade}
+    Preencher campo    ${CampoQuantidade}    ${Quantidade}
+    Click no Item    ${BtnSalvar}
 
-Clique no botao Sim da notificacao da tela de devolucao do produto
-    Click no Item   ${campoProduto}
-    Sleep    1
-    Click no Item  ${buttonSim}
-
-Preencher produto solicitado |${Produto}|,|${Lote}|,|${Quantidade}|,|${Data}|
-    Click no Item   ${campoProduto}
-    Sleep    1
-    Preencher Campo        ${campoProdutoInput}       ${Produto} 
-
-    Click no Item   ${campoLote}
-    Sleep    1
-    Preencher Campo        ${campoLoteInput}            ${Lote} 
-    Press Keys      ${campoLoteInput}       TAB
-
-    Sleep    1
-    Preencher Campo        ${campoDataInput}            ${Data} 
-
-    Click no Item   ${campoQuantidade}
-    Sleep    1
-    Preencher Campo        ${campoQuantidadeInput}       ${Quantidade} 
-
-Clique em salvar 
-    Click no Item  ${btnSalvar}
-
-Validar cadastro realizado |${MsgEsperada}|
-    Valida Mensagem    ${ElementoMsgRecebida}    ${MsgEsperada}
+Salvar e Validar Informacao|${MsgEsperada1}||${MsgEsperada2}|
+    Valida Mensagem    ${Alerta}    ${MsgEsperada1}
+    Valida Mensagem    ${Alerta2}    ${MsgEsperada2}
+    Click no Item    ${BtnSim}
