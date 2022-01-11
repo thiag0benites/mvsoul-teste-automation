@@ -4,7 +4,7 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource          ../../Config.robot
+Resource          ../../ConfigPep.robot
 
 *** Variable ***
 ### Elementos da Pagina de Login

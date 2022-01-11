@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.2 on win32)" generated="20220107 08:56:07.942" rpa="false" schemaversion="2">
+<suite id="s1" name="MVPEP TEMA EVOLUCAO" source="c:\WATI - Pastas e Arquivos\AUTOMAÇÃO\mvsoul-teste-automation\3-tests\3-CLINICO (PEP)\MVPEP_TEMA_EVOLUCAO.robot">
+<test id="s1-t1" name="SMF-5499:Criar Evolucao">
+<kw name="Nova sessao" library="Config" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>*** Teste no Sistema Operacional: ${so}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220107 08:56:11.237" level="INFO">*** Teste no Sistema Operacional: windows</msg>
+<status status="PASS" starttime="20220107 08:56:11.237" endtime="20220107 08:56:11.237"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Teste no Sistema Operacional: ${so}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220107 08:56:11.237" endtime="20220107 08:56:11.239"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220107 08:56:11.239" level="INFO">Opening browser 'chrome' to base url 'http://qarelease.mv.com.br:84/soul-mv/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220107 08:56:14.675" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20220107 08:56:14.675" endtime="20220107 08:56:14.675"/>
+</kw>
+<msg timestamp="20220107 08:56:14.677" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 95
+Current browser version is 97.0.4692.71 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+</msg>
+<status status="FAIL" starttime="20220107 08:56:11.239" endtime="20220107 08:56:14.677"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220107 08:56:14.677" endtime="20220107 08:56:14.677"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qadevelop'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaDevelop}</arg>
+<arg>${dadosLoginSenhaQaDevelop}</arg>
+<arg>${dadosLoginEmpresaQaDevelop}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220107 08:56:14.677" endtime="20220107 08:56:14.677"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qarelease'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaRelease}</arg>
+<arg>${dadosLoginSenhaQaRelease}</arg>
+<arg>${dadosLoginEmpresaQaRelease}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220107 08:56:14.677" endtime="20220107 08:56:14.677"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${ambiente}' == 'qaautomacao'</arg>
+<arg>Realiza Login</arg>
+<arg>${dadosLoginUsuarioQaAutomacao}</arg>
+<arg>${dadosLoginSenhaQaAutomacao}</arg>
+<arg>${dadosLoginEmpresaQaAutomacao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220107 08:56:14.677" endtime="20220107 08:56:14.677"/>
+</kw>
+<status status="FAIL" starttime="20220107 08:56:11.221" endtime="20220107 08:56:14.677"/>
+</kw>
+<kw name="Encerra sessao" library="Config" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220107 08:56:14.677" endtime="20220107 08:56:14.683"/>
+</kw>
+<status status="PASS" starttime="20220107 08:56:14.677" endtime="20220107 08:56:14.683"/>
+</kw>
+<kw name="Stop Recording Test" library="AutoRecorder">
+<arg>SMF-5499:Criar Evolucao</arg>
+<doc>There is no need to execute this keyword manually.
+Basically - alias for https://mihaiparvu.github.io/ScreenCapLibrary/ScreenCapLibrary.html#Stop%20Video%20Recording</doc>
+<msg timestamp="20220107 08:56:14.695" level="INFO" html="true">&lt;a href="recording_2.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_2.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220107 08:56:14.684" endtime="20220107 08:56:14.696"/>
+</kw>
+<status status="FAIL" starttime="20220107 08:56:09.102" endtime="20220107 08:56:14.683">Setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 95
+Current browser version is 97.0.4692.71 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+</status>
+</test>
+<status status="FAIL" starttime="20220107 08:56:07.945" endtime="20220107 08:56:14.698"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="MVPEP TEMA EVOLUCAO">MVPEP TEMA EVOLUCAO</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

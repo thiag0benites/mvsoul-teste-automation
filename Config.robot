@@ -43,11 +43,11 @@ ${so}             windows
 # ${so}           ubuntu
 ### Configurações do Browser
 ${browser}        chrome
-${ambiente}       qadevelop
-# ${ambiente}     qarelease
+# ${ambiente}       qadevelop
+${ambiente}     qarelease
 # ${ambiente}     qaautomacao
-# ${url}          http://qarelease.mv.com.br:84/soul-mv/
-${url}            http://qadevelop.mv.com.br:83/soul-mv/
+${url}          http://qarelease.mv.com.br:84/soul-mv/
+# ${url}            http://qadevelop.mv.com.br:83/soul-mv/
 # ${url}          http://sqa-app-lnx07.mvrec.local:84/soul-mv/
 # ${grid}         http://192.168.0.242:4444/wd/hub
 # ${grid}         http://localhost:4444/wd/hub
@@ -64,6 +64,7 @@ Nova sessao
     Run Keyword If    '${ambiente}' == 'qadevelop'    Realiza Login    ${dadosLoginUsuarioQaDevelop}    ${dadosLoginSenhaQaDevelop}    ${dadosLoginEmpresaQaDevelop}
     Run Keyword If    '${ambiente}' == 'qarelease'    Realiza Login    ${dadosLoginUsuarioQaRelease}    ${dadosLoginSenhaQaRelease}    ${dadosLoginEmpresaQaRelease}
     Run Keyword If    '${ambiente}' == 'qaautomacao'    Realiza Login    ${dadosLoginUsuarioQaAutomacao}    ${dadosLoginSenhaQaAutomacao}    ${dadosLoginEmpresaQaAutomacao}
+
 ### Encerra sessão do browser
 
 Encerra sessao

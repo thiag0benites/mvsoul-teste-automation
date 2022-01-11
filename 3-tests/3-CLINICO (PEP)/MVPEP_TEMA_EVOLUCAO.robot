@@ -32,8 +32,8 @@ Resource          ../../1-resources/3-CLINICO (PEP)/MVPEP_TEMA_EVOLUCAO_STEPS.ro
 # Suite Setup     Nova sessão
 # Suite Teardown    Encerra sessão
 ### Inicia/fecha sessão do navegador por cenario de teste
-Test Setup        Nova sessão
-Test Teardown     Encerra sessão
+Test Setup        Nova sessao
+Test Teardown     Encerra sessao
 
 *** Variables ***
 # Suite registrada no gerenciador de dados
@@ -43,8 +43,8 @@ Test Teardown     Encerra sessão
 
 *** Test Cases ***
 SMF-5499:Criar Evolucao
-# robot -v browser:chrome -t "SMF-5499:Criar Evolucao" -d ./5-results/SMF-5499 "3-tests/PRONTUARIO ELETRONICO/MVPEP_TEMA_EVOLUCAO.robot"
-# robot -v browser:firefox -t "SMF-5499:Criar Evolucao" -d ./5-results/SMF-5499 "3-tests/PRONTUARIO ELETRONICO/MVPEP_TEMA_EVOLUCAO.robot"
+# robot -v browser:chrome -t "SMF-5499:Criar Evolucao" -d ./5-results/SMF-5499 "3-tests/3-CLINICO (PEP)/MVPEP_TEMA_EVOLUCAO.robot"
+# robot -v browser:firefox -t "SMF-5499:Criar Evolucao" -d ./5-results/SMF-5499 "3-tests/3-CLINICO (PEP)/MVPEP_TEMA_EVOLUCAO.robot"
     Seleciona Item |APARTAMENTO - UNID 01| Menu Vertical
     Selecionar o paciente ''@nprint
     Clicar no Menu |Evolução Tema|@nprint
