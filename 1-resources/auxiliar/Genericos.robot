@@ -1,7 +1,7 @@
 ##################################################################################################################################
 # Autor: Thiago Benites
 # Data: 17/11/2020
-# Decrição: Keywords genericas para utilização em qualquer sisteme WEB
+# Decrição: Keywords genericas para utilização em qualquer sistema WEB
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
@@ -83,19 +83,6 @@ Validar Elemento Pelo Titulo
 Validar Acesso a Tela |${TituloEsperado}|
     Wait Until Element Is Visible           xpath=//div[contains(text(), "${TituloEsperado}")]              250
     Element Should Contain                  xpath=//div[contains(text(), "${TituloEsperado}")]              ${TituloEsperado}
-
-Selecionar Item Na Lista         
-    [Arguments]                             ${BotaoLov}                 ${Item}                         ${ItemLista}   
-    Click no Item                           ${BotaoLov}    
-    Click no Item                           xpath=//input[@name="filterLov"]                  
-    Preencher Campo                         xpath=//input[@name="filterLov"]                  %${Item}
-    Click no Item                           xpath=//button[@id="btfilter"]                  
-    Click Elemento por titulo               ${ItemLista}
-    Click no Item                           xpath=//button[@id="btok"]
-
-Clicar Botao Salvar 
-    Click Elemento por titulo               Salvar
-    Valida Mensagem                         xpath=//p[@class="notifications-item-text"]               Registros gravados com sucesso
 
 ##############################################################################################################################################################################
 #    Métodos com retorno (Funções)
@@ -224,13 +211,6 @@ Conta Linhas Tabela
     ${TotalLinhas}    Get Length    ${Linhas}
     [Return]    ${TotalLinhas}
 
-Clicar no botão Salvar do menu
-    Click Element     ${btnSalvar}
-    Sleep             60
-
-Clicar no botão Adicionar
-    Click Element     ${btnAdicionar}
-    
 Captura hora atual
     ${CurrentTime}    Get Current Date    result_format=%H:%M
     [Return]        ${CurrentTime}
@@ -249,7 +229,7 @@ Preencher campo com data e hora
     Log To Console      ${CurrentDate}
     Click Element    ${elemento}
     Sleep    2
-    Input Text    ${elemento}    ${CurrentDate}
+    Preencher Campo    ${elemento}    ${CurrentDate}
 
     
 

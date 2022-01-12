@@ -14,5 +14,5 @@ ${idAbaAtendimento}                   id=TAB_CANVAS_TAB_CANVAS_tab1
 ${selectConsultaPaciente}             xpath=//input[@id='TB_ATENDIMENTO_snMostraConsulta_ac']
 ${validaPreCondicao}                  id=btnDocumento
 ${inputProntCodPaciente}              id=inp:cdPaciente
-#${inputPrimeiroNome}                  id=inp:primeiroNome
+#${inputPrimeiroNome}                 id=inp:primeiroNome
 ${selectNomeLista}                    xpath=//div[@class='ui-widget-content slick-row even active']

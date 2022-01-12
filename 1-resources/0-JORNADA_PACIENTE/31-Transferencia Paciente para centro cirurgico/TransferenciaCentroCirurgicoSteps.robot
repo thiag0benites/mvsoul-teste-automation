@@ -17,8 +17,8 @@ Pesquisar o paciente pelo codigo de atendimento |${CodAtendimento}|${print}
     Clicar no botao [Executar]||
 
 Preencher os campos do registro de transferencias |${preIntMsgEsperada}|
-    Clicar no botao [Reticencias]||
-    Clicar no botao [OK Tela]||
+    Clicar no botao [Reticencias]
+    Clicar no botao [OK]
     Press Keys    ${divAvisoCir}    ENTER
     Sleep     2
     Press Keys    ${divDtTransp}    ENTER

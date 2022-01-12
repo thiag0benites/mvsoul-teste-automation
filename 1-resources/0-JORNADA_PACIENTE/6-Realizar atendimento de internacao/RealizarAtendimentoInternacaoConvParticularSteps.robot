@@ -21,6 +21,7 @@ Revisar os dados de internacao incluindo leito |${CodLeito}|,|${dataHrPrevAlta}|
   
 Preencher campos da tela internacao do paciente |${origem}|,|${acompanhante}|,|${CodLeito}|,|${servico}|,|${CodCobertura}|,|${especialidade}|${print}
   Wait Until Element Is Visible    ${inputOrigem}    30
+  Sleep    1
   Preencher campo    ${inputOrigem}    ${origem}
   Sleep    2
   Preencher campo com data e hora    ${inputDtInternacao}    %d/%m/%Y    0

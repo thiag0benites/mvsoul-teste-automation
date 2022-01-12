@@ -18,6 +18,7 @@ ${inputDataNascimento}          id=inp:dtNascimento
 ${notificacaoGravarRegistro}    xpath=//div[@class='notifications-item']
 ${inputCodPaciente}             xpath=//input[@id='inp:cdPaciente']
 ${msgWarning}                   class=notification-warning
+${msgSuccess}                   class=notification-success
 ${msgWargingBtnSim}             xpath=//ul[@class='dropdown-menu workspace-notifications-menu']/li[@class='notification-buttons']/button[contains(text(),'Sim')]
 ${numeroEndereco}               id=inp:nrEndereco
 ${inputDataCadastro}            id=inp:dtCadastroManual
@@ -26,7 +27,6 @@ ${inputDataCadastro}            id=inp:dtCadastroManual
 ${btnSim}                       xpath=//ul[@class='dropdown-menu workspace-notifications-menu']//li[@class='notification-buttons']/button[contains(text(),'Sim')]
 ${btnNao}                       xpath=//ul[@class='dropdown-menu workspace-notifications-menu']//li[@class='notification-buttons']/button[contains(text(),'Não')]
 ${btnMsgOK}                     xpath=//ul[@class='dropdown-menu workspace-notifications-menu']/li[@class='notification-buttons']/button[contains(text(),'OK')]
-${btnOKTela}                    xpath=//button[@id='btok']
 ${btnSair}                      xpath=//li[@id='tb-exit']//a
 ${btnRetornar}                  xpath=//button[@data-member='BTN_RETORNAR']
 ${btnPesquisarNome}             id=btnPesquisar
@@ -43,7 +43,6 @@ ${btnConfAlta}                  xpath=//button[@data-member='BTN_CONFIRMAR']
 ${btnSairTela}                  xpath=//button[@data-member='BTN_SAIR'] 
 ${btnReservaSala}               xpath=//button[@data-member='BTN_RESERVA_SALA']
 ${btnAvisoCirurgia}             xpath=//button[@data-member='BTN_AVI_CIR']
-${btnReticencias}               xpath=//button[@class='ui-button ui-widget ui-corner-right ui-button-icon']//span[@class='ui-button-icon ui-icon mv-basico-reticencias']
 ${btnTipoAnestesia}             xpath=//button[@data-member='BUT_TIPO_ANESTESIA']
 ${btnFiltrar}                   xpath=//button[@id='btfilter']
 ${btnNovaDescricao}             xpath=//button[@data-member='BTN_NOVA_DESCRICAO']

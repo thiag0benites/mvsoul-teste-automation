@@ -85,7 +85,7 @@ SCR0JSMK-001:Jornada do Paciente
     #Pre-condicao: Executar a tela de Registro de Internacao atraves de uma tela de consulta [Não]
     #Pesquisar pre-internacao existente pelo codigo do paciente |${dados}[cadPacOutputCodPaciente]|
     Clicar no botao [Sim]|${dados}[intPacMsgEsperada]|
-    Clicar no botao [OK Tela]||
+    Clicar no botao [OK]
     Preencher campos da tela internacao do paciente |${dados}[preIntOrigem]|,|${dados}[preIntAcompanhante]|,|${dados}[intPacCodLeito]|,|${dados}[preIntCodServico]|,|${dados}[intPacCodCobertura]|,|${dados}[preIntCodEspecialidade]|@nprint
     Clicar no botao [Salvar]|${dados}[preIntMsgEsperada]|
     Captura codigo do Atendimento Cadastrado|${suite}|${dados}[id]|
@@ -130,13 +130,8 @@ SCR0JSMK-001:Jornada do Paciente
     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Descrição Cirúrgica"@nprint @nlas
     Informar o codigo do aviso de cirurgia |${dados}[preAgCirAvisoCirurgia]|
-    Descrever os detalhamentos da descricao cirurgica
-    # Informar os campos Data de início da cirurgia |${dados}[descCirDtInicio]|,Data fim da cirurgia |${dados}[descCirDtFim]|, CID pré operatório |${dados}[agCirurNumCid]|, CID pós operatório |${dados}[agCirurNumCid]|
-    # Clicar no botao [NovaDescricao]||
-    # Descrever a cirurgia
-    # Clicar no botao [Salvar]||
-    # Clicar no botao [Retornar]|${dados}[descCirMsgEsperada]|
-
+    Descrever os campos para detalhamento da descricao cirurgica |${dados}[descrCirMeuTexto]|
+    Concluir a descricao e liberar o aviso de cirurgia para confirmacao |${dados}[descrCirMsgEsperada]|
 
 # #SMF-8251:Cadastrar Pré-Internação com Convênio do Tipo Particular
 #     ${dados}    Seleciona massa de dados na suite "${suite}" do caso de teste "${filtro}"

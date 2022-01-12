@@ -48,9 +48,9 @@ Verificar mensagem de aviso
 Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
     
     IF    '${nomeBtn}' == 'Salvar'
-        Wait Until Element Is Visible    ${btnSalvar}    60
+        Wait Until Element Is Visible    ${btnTbSave}    60
         Sleep    1
-        Click Element    ${btnSalvar}
+        Click Element    ${btnTbSave}
         Wait Until Element Is Visible    ${notificacaoGravarRegistro}    60
         Sleep    3
         ${msgObtida}    Get Text    ${notificacaoGravarRegistro}
@@ -132,13 +132,7 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Wait Until Element Is Visible    ${btnMsgOK}    30
         Sleep    1
         Click Element    ${btnMsgOK}
-        Sleep    1 
-
-    ELSE IF    '${nomeBtn}' == 'OK Tela'
-        Wait Until Element Is Visible    ${btnOKTela}    30
         Sleep    1
-        Click Element    ${btnOKTela}   
-        Sleep    2
     
     ELSE IF    '${nomeBtn}' == '5-Imprimir'
         Wait Until Element Is Visible    ${btnPrintInt}    30
@@ -193,12 +187,6 @@ Clicar no botao [${nomeBtn}]|${cadPacMsgEsperada}|
         Sleep    1
         Click Element    ${btnAvisoCirurgia}
         Sleep    5
-
-    ELSE IF    '${nomeBtn}' == 'Reticencias'
-        Wait Until Element Is Visible    ${btnReticencias}    30
-        Sleep    1
-        Click Element    ${btnReticencias}
-        Sleep    1
      
     ELSE IF    '${nomeBtn}' == 'Tipo de Anestesia'
         Wait Until Element Is Visible    ${btnTipoAnestesia}    30

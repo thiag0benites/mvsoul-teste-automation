@@ -49,13 +49,13 @@ Preencher os campos com as datas da cirurgia e transferir paciente para Centro C
     Press Keys    ${divDtHrFimLimpeza}    ENTER
     Sleep    1
     Clicar no botao [Tipo de Anestesia]||
-    Clicar no botao [Reticencias]||
+    Clicar no botao [Reticencias]
     Sleep    1
     Preencher campo    ${inputFiltroTela}    ${tipoAnestesia}
     Sleep    1
     Clicar no botao [Filtrar]||
     Sleep    2
-    Clicar no botao [OK Tela]||
+    Clicar no botao [OK]
     Sleep    2
     Clicar no botao [Retornar]||
     Clicar no botao [Sim]|${tipoAnestesiaMsgEsperada}|
@@ -75,13 +75,13 @@ Preencher os campos com as datas da cirurgia e transferir paciente para Centro C
 #Retornar a tela "Transferência de Paciente para Centro Cirúrgico" |${transfPacCentroCirurgicoRpa}|
 
     Seleciona Item Combobox    ${selectLocalTranfCir}    ${transfPacCentroCirurgicoRpa}
-    Clicar no botao [Reticencias]||
+    Clicar no botao [Reticencias]
     Sleep    1
     Preencher campo    ${inputFiltroTela}    APARTAMENTO - UNID 01
     Sleep    1
     Clicar no botao [Filtrar]||
     Sleep    2
-    Clicar no botao [OK Tela]||
+    Clicar no botao [OK]
     Sleep    2
     Press Keys    ${divRecPosAnestesia}    ENTER 
     Sleep    2

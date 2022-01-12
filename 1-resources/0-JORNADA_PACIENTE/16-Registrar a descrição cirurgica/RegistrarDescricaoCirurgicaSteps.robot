@@ -1,12 +1,10 @@
 ##################################################################################################################################
-# Autor: Amanda Nascimento
-# Decrição: 
+# Autor: Gabriel Passos
+# Decrição: Testes da tela Registrar a descricao cirurgica
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
 Resource          ../../../2-pages/0-JORNADA_PACIENTE/RegistrarDescricaoCirurgicaPage.robot
-Resource    ../1-Cadastro de Paciente/CadastroDePacienteSteps.robot
-Resource    ../../4-MATERIAIS/M_RECEBE_NOTA_STEPS.robot
 
 *** Variable ***
 
@@ -15,33 +13,89 @@ Informar o codigo do aviso de cirurgia |${codAvCirurgia}|
     Wait Until Element Is Visible    ${inputAvisoCirurgia}    120
     Preencher campo    ${inputAvisoCirurgia}    ${codAvCirurgia}
     Sleep    1
-    Clicar no botao [Executar]||
+    Clicar no botao [Executar]
     Sleep    2
-Descrever os detalhamentos da descricao cirurgica
-    Clicar no botao [Detalhamento]||
-
-    # FOR    ${meusTextos}    IN    ${descricaoCir}
-    # Clicar no botao [Meus Textos]||
-    # Click Element    ${textoPadrao}
-    # Clicar no botao [OK Tela]||
-    # Clicar no botao [Salvar Tela]||
-    # Clicar no botao [Cancelar]||
-    # END
-
-
-    # FOR    ${itemMenu}    IN    @{listaXpathItensMenu}
-    #     ${visivel}    Elemento Visivel    xpath=${itemMenu}
-    #     Log To Console    *** Visivel: ${visivel}
-    #     ${classe}    Get Element Attribute    xpath=${itemMenu}/ancestor::li[1]    class
-    #     Log To Console    *** Visivel: ${classe}
-    #     IF    '${classe}' == 'menu-node'
-    #         Seleciona item no menu    ${itemMenu}
-    #     END
-    #     Log To Console    *** Item ${itemMenu} selecionado no menu
-    #     Log    *** Item ${itemMenu} selecionado no menu
-    # END
-
-
+Descrever os campos para detalhamento da descricao cirurgica |${meuTexto}|
+    Click Button    ${btnNovadescricao}
     
+    Wait Until Element Is Visible    ${btnMeusTextos}    30
+    Click Button    ${btnMeusTextos}
+    Click Elemento por titulo    ${meuTexto}
+    Clicar no botao [OK]
+    Sleep    1
+    Clicar no botao [Salvar]
+    Sleep    1
+    Click Button    ${btnRetornarDescr}
+    Sleep    1
+
+    Click Button    ${btnRiscos}
+
+    Wait Until Element Is Visible    ${btnMeusTextos}    30
+    Click Button    ${btnMeusTextos}
+    Click Elemento por titulo    ${meuTexto}
+    Clicar no botao [OK]
+    Sleep    1
+    Clicar no botao [Salvar]
+    Sleep    1
+    Click Button    ${btnRetornarDescr}
+    Sleep    1
+
+    Click Button    ${btnIntercorrencias}
+    
+    Wait Until Element Is Visible    ${btnMeusTextos}    30
+    Click Button    ${btnMeusTextos}
+    Click Elemento por titulo    ${meuTexto}
+    Clicar no botao [OK]
+    Sleep    1
+    Clicar no botao [Salvar]
+    Sleep    1
+    Click Button    ${btnRetornarDescr}
+    Sleep    1
+
+    Click Button    ${btnOrteseProtese}
+    
+    Wait Until Element Is Visible    ${btnMeusTextos}    30
+    Click Button    ${btnMeusTextos}
+    Click Elemento por titulo    ${meuTexto}
+    Clicar no botao [OK]
+    Sleep    1
+    Clicar no botao [Salvar]
+    Sleep    1
+    Click Button    ${btnRetornarDescr}
+    Sleep    1
+
+    Click Button    ${btnAtoAnestesico}
+
+    Wait Until Element Is Visible    ${btnMeusTextos}    30
+    Click Button    ${btnMeusTextos}
+    Click Elemento por titulo    ${meuTexto}
+    Clicar no botao [OK]
+    Sleep    1
+    Clicar no botao [Salvar]
+    Sleep    1
+    Click Button    ${btnRetornarDescr}
+    Sleep    1
+
+    Click Button    ${btnAchadosCirurgicos}
+
+    Wait Until Element Is Visible    ${txtDescrComplementar}    30
+    Clicar no botao [Reticencias]
+    Input Text    ${txtDescrComplementar}    ${meuTexto}
+    Clicar no botao [OK]
+    Sleep    1
+    Click Button    ${btnSalvarDescr}
+    Sleep    1
+    Click Button    ${btnRetornarComplem}
+    Sleep    3
+    
+Concluir a descricao e liberar o aviso de cirurgia para confirmacao |${msgDescricaoCir}|
+    Wait Until Element Is Visible    ${btnConcluirDescr}
+    Click Button    ${btnConcluirDescr}
+    Sleep    1
+    Click Button    ${btnLiberaAviso}
+    Sleep    1
+    Valida notificacao pop-up com botao|${msgDescricaoCir}|[Sim]
+
+
 
 
