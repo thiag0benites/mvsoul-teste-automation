@@ -230,8 +230,3 @@ Preencher campo com data e hora
     Click Element    ${elemento}
     Sleep    2
     Preencher Campo    ${elemento}    ${CurrentDate}
-
-    
-
-
-

@@ -30,17 +30,11 @@ ${dados}
 
 *** Test Case ***
 SRC4OCANSOL-001:Cancelar uma solicitação de compra
-# robot -v browser:chrome -t "SRC4OCANSOL-001:Cancelar uma solicitação de compra" -d ./5-results/SRC4OCANSOL "3-tests/4-MATERIAIS/O_CANSOL.robot"
-# robot -v browser:firefox -t "SRC4OCANSOL-001:Cancelar uma solicitação de compra" -d ./5-results/SRC4OCANSOL "3-tests/4-MATERIAIS/O_CANSOL.robot"
+# robot -v browser:chrome -t "SRC4OCANSOL-001:Cancelar uma solicitação de compra" -d ./5-results/SRC4OCANSOL-001 "3-tests/4-MATERIAIS/O_CANSOL.robot"
+# robot -v browser:firefox -t "SRC4OCANSOL-001:Cancelar uma solicitação de compra" -d ./5-results/SRC4OCANSOL-001"3-tests/4-MATERIAIS/O_CANSOL.robot"
     ${dados}   Seleciona massa de dados na suite "${suite}" do caso de teste "SRC4OCANSOL-001"
-    Acessar a tela "Materiais e Logística>Compras>Compras>Solicitação de Compras>Aprovação"@nprint @las
-    Clicar no botao Pesquisar
-    Preencher o Codigo |${dados}[codigo]|
-    Clicar no botao Executar 
-    Validar Codigo |${dados}[validacaoCodigo]|
-    Clicar no botao de Autorizacao  
-    Clicar no botao de Nao Autorizar 
-    Validar Mensagem |${dados}[mensagemNaoAprovacao]|
-    Clicar no Botao |OK|
-
-    
+    Acessar a tela "Materiais e Logística>Compras>Compras>Solicitação de Compras>Cancelamento"@nprint @las
+    Validar Acesso a Tela |${dados}[nomeTela]| 
+    Preencher o Codigo |${dados}[codigo]| e validar Codigo
+    Preencher o Cancelar |${dados}[motivoCancelamento]|
+    Preencher o Descricao Nao Atendimento |${dados}[descricaoNaoAtendimento]| e validar mensagem |${dados}[mensagemSucesso]|

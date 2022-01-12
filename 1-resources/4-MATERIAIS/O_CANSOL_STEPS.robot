@@ -4,43 +4,33 @@
 ##################################################################################################################################
 *** Settings ***
 ### Pages utilizadas na Suite de teste
-Resource                ../../2-pages/4-MATERIAIS/O_CANSOL_PAGE.robot
+Resource          ../../2-pages/4-MATERIAIS/O_CANSOL_PAGE.robot
 
 *** Variable ***
 
 *** Keywords ***
+Preencher o Codigo |${codigo}| e validar Codigo
+    Wait Until Element Is Visible    ${inputCodigo}
+    Preencher campo    ${inputCodigo}    ${codigo}
+    Clicar no botao Executar
+    Validar Elemento Pelo Titulo    ${codigo}
 
-Preencher o Codigo |${codigo}|
-    Sleep            1
-    Preencher campo  ${inputCodigo}  ${codigo}            
+Preencher o Cancelar |${motivoCancelamento}|
+    Click Element    ${campoMotivoCancel}
+    Preencher campo    ${campoMotivoCancelamentoInput}    ${motivoCancelamento}
+    Send keys    enter
+    Validar Elemento Pelo Titulo    ${motivoCancelamento}gi
 
-Clicar no botao de Autorizacao 
-    Sleep            1
-    Click Element    ${btnAprovacao}
-
-
-Clicar no botao de Nao Autorizar 
-    Sleep            1
-    Click Element    ${btnNaoAutorizar}
-
-Clicar no Botao |${nomeBtn}|
-    IF    '${nomeBtn}' == 'OK'
-        Wait Until Element Is Visible    ${btnOk}    120
-        Sleep    1
-        Click Element    ${btnOk}
-        Sleep    1
-    END    
-
-
-Validar Codigo |${validacaoCodigo}|
-    Validar Informacao Item  ${campoDescricaoSetor}    ${validacaoCodigo} 
-
-
-Validar Mensagem |${mensagemNaoAprovacao}|
-    Validar Informacao Item  ${campoDescricaoSetor}    ${mensagemNaoAprovacao}
-
-
-
-    
-          
-
+Preencher o Descricao Nao Atendimento |${descricaoNaoAtendimento}| e validar mensagem |${mensagemSucesso}|
+    Wait Until Element Is Visible    ${campoDescricaoNaoAtendimento}
+    Preencher campo    ${campoDescricaoNaoAtendimento}    ${descricaoNaoAtendimento}
+    Send keys    tab
+    Validar Elemento Pelo Titulo    ${descricaoNaoAtendimento}
+    Send keys    Enter
+    Click Element    ${btnConfimar}
+    Wait Until Element Is Visible    ${btnSim}
+    Click Element    ${btnSim}
+    Wait Until Element Is Visible    ${mensagemApresentada}    120
+    Element Should Contain    ${mensagemApresentada}    ${mensagemSucesso}
+    Click Element    ${btnOk}
+    Sleep    1

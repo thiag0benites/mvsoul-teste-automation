@@ -33,4 +33,4 @@ SCR6CCCONDETRES-001:Fluxo Principal
 # robot -v browser:firefox -t "SCR6CCCONDETRES-001:Fluxo Principal" -d ./5-results/SCR6CCCONDETRES-001 "3-tests/6-CONTROLADORIA/C_CONDET_RES.robot"
     ${dados}        Seleciona massa de dados na suite "${suite}" do caso de teste "SCR6CCCONDETRES"
     Acessar a tela "Controladoria>Controle Financeiro (Cta a Pagar/Cta a Receber/Bancos)>Fiscal>Consultas>Retenção de Impostos"@nprint @las
-    Descrição do Documento |${dados}[Codigo]||${dados}[Titulo]|
+    Descricao do Documento |${dados}[MsgEsperada]||${dados}[Codigo]||${dados}[Titulo]|

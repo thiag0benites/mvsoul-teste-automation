@@ -4,24 +4,14 @@
 ##################################################################################################################################
 *** Settings ***
 ### Configurações iniciais
-Resource    ../../Config.robot
+Resource          ../../Config.robot
 
 *** Variables ***
-
 ### Campos ###
-${CampoCodigo}                        xpath=//div[@data-member="CD_CON_PAG"]/input
-
-
-
+${CampoCodigo}    xpath=//div[@data-member="CD_CON_PAG"]/input
 ### Botoes ###
-${BtnOK}                              xpath=//button[@class="btn btn-primary"]
-${BtnProcurar}                        xpath=//a[@title="Procurar"]
-${BtnExecutar}                        xpath=//a[@title="Executar Consulta"]
-
-
-
+${BtnOK}          xpath=//button[@class="btn btn-primary"]
+${BtnProcurar}    xpath=//a[@title="Procurar"]
+${BtnExecutar}    xpath=//a[@title="Executar Consulta"]
 ### Diversos ###
-
-
-${Alerta}                             xpath=//p[@class="notifications-item-text"]
-
+${Alerta}         xpath=//p[@class="notifications-item-text"]

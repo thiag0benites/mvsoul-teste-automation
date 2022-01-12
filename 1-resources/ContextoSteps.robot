@@ -187,9 +187,15 @@ Clicar em Estoque
     Sleep
 
 Clicar Botao se estiver Visivel
+<<<<<<< HEAD
     [Arguments]    ${Botao}
     ${Status}    Run Keyword And Return Status    Wait Until Element Is Visible    ${Botao}    120
     Run Keyword If    '${Status}' == 'True'    Click no Item    ${Botao}
+=======
+    [Arguments]             ${Botao}                        
+    ${Status}           Run Keyword And Return Status           Wait Until Element Is Visible        ${Botao}        120  
+    Run Keyword If          '${Status}' == 'True'               Click no Item                        ${Botao}
+>>>>>>> 5eeeedd89658f40a75ce0512e7ae6b6e6a38d461
 
 Click no Item
     [Arguments]    ${elemento}
@@ -234,7 +240,11 @@ Selecionar Item Na Lista
     Preencher Campo    ${CampoFiltro}    %${Item}
     Click no Item    ${BotaoFiltrar}
     Click Elemento por titulo    ${ItemLista}
+<<<<<<< HEAD
     Click no Item    ${BotaoOKFiltrar}
+=======
+    Click no Item    ${BotaoOKFiltrar}    
+>>>>>>> 5eeeedd89658f40a75ce0512e7ae6b6e6a38d461
 
 Acessa a Tela Pela Busca |${NomeTela}||${NomeMenu}| ${las}
     Unselect Frame
