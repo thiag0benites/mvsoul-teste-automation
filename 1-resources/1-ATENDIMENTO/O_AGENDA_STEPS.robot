@@ -45,26 +45,37 @@ Clicar no botao[${nomeBtn}]
         Wait Until Element Is Visible    ${btnAgendar}    240
         Sleep       2
         Click Button    ${btnAgendar}
-    ELSE IF    '${nomeBtn}' == ''
-        Wait Until Element Is Visible    ${}    30
+    ELSE IF    '${nomeBtn}' == 'Confirmar'
+        Wait Until Element Is Visible    ${btnConfirmar}    30
         Sleep       4
-        Click Element    ${}
+        Click Element    ${btnConfirmar}
         Sleep       2
-    ELSE IF    '${nomeBtn}' == ''
-        Wait Until Element Is Visible    ${}    30
+    ELSE IF    '${nomeBtn}' == 'Nao'
+        Wait Until Element Is Visible    ${btnNao}    30
         Sleep        4
-        Click Element    ${}
+        Click Element    ${btnNao}
         Sleep         2
-    ELSE IF    '${}' == ''
-        Wait Until Element Is Visible    ${}    30
-        Sleep    1
-        Click Element    ${}
-        Sleep    8
     END
 
-Clicar no botao[Sim]
-    
-Preencher Campos Cod paciente |${dados}[codPac]|, tipo acomodacao |${dados}[tpAcom]|, Unidade Internacao |${dados}[undInt]|, equipe medica |${dados}[eqpMed]|, anestesista |${dados}[anestesista]|, cid |${dados}[cid]|
+Preencher Campos Cod paciente |${codPac}|, tipo acomodacao |${tpAcom}|, Unidade Internacao |${undInt}|, equipe medica |${eqpMed}|, anestesista |${anestesista}|, cid |${cid}|
+    Wait Until Element Is Visible       ${cpCodPac}         240
+    Preencher Campo         ${cpCodPac}         ${codPac}
+    Sleep       1
+    Press Keys          ${cpCodPac}       ENTER
+    Sleep       3
+    Preencher Campo         ${cpTpAcom}         ${tpAcom}
+    Press Keys          ${cpTpAcom}       ENTER
+    Sleep       3
+    Preencher Campo         ${cpUnInt}         ${undInt}
+    Press Keys          ${cpUnInt}       ENTER
+    Sleep       3
+    Preencher Campo         ${cpEqMed}         ${eqpMed}
+    Press Keys          ${cpEqMed}       ENTER
+    Sleep       3
+    Preencher Campo         ${cpAnestesista}         ${anestesista}
+    Press Keys          ${cpAnestesista}       ENTER
+    Sleep       3
+    Preencher Campo         ${cpCid}         ${cid}
+    Press Keys          ${cpCid}       ENTER
+    Sleep       3
 
-Clicar no botao[Confirmar]
-Clicar no botao[Nao]

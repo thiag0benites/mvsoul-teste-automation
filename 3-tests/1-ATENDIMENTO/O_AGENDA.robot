@@ -35,7 +35,6 @@ SMF-9623:Fluxo Principal
     Acessar a tela "Atendimento>Centro Cirúrgico e Obstétrico>Centro Cirúrgico>Agendamento"@nprint @las
     Preencher Campos Centro Cirurgico |${dados}[centroCirurgico]|, sala |${dados}[sala]|, data |${dados}[dtHora]|, convenio |${dados}[convenio]|, plano |${dados}[plano]|, cirurgiao |${dados}[cirurgiao]|, medico associado |${dados}[medicoAssociado]|
     Clicar no botao[Agendar]
-    # Clicar no botao[Sim]
-    # Preencher Campos Cod paciente |${dados}[codPac]|, tipo acomodacao |${dados}[tpAcom]|, Unidade Internacao |${dados}[undInt]|, equipe medica |${dados}[eqpMed]|, anestesista |${dados}[anestesista]|, cid |${dados}[cid]|
-    # Clicar no botao[Confirmar]
-    # Clicar no botao[Nao]
+    Preencher Campos Cod paciente |${dados}[codPac]|, tipo acomodacao |${dados}[tpAcom]|, Unidade Internacao |${dados}[undInt]|, equipe medica |${dados}[eqpMed]|, anestesista |${dados}[anestesista]|, cid |${dados}[cid]|
+    Clicar no botao[Confirmar]
+    Clicar no botao[Nao]
